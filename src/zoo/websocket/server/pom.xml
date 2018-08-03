@@ -5,3 +5,8 @@
 	<name>${project.artifactId}</name>
 
 	<parent>
+		<groupId>org.t-io</groupId>
+		<artifactId>tio-websocket-parent</artifactId>
+		<version>0.0.4-tio-websocket</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
