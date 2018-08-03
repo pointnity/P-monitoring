@@ -16,3 +16,8 @@
 			<groupId>org.t-io</groupId>
 			<artifactId>tio-websocket-common</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.t-io</groupId>
+			<artifactId>tio-http-server</artifactId>
+		</dependency>
