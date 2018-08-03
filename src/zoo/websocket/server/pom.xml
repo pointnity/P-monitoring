@@ -10,3 +10,8 @@
 		<version>0.0.4-tio-websocket</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.t-io</groupId>
+			<artifactId>tio-websocket-common</artifactId>
