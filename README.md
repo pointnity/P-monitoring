@@ -5,7 +5,7 @@ Extremely thoughtful built-in API
 Built-in heartbeat detection
 Built-in heartbeat
 Various convenient binding APIs, such as binding groups for message grouping, binding users for sending messages to specified users, etc.
-Various convenient sending APIs, such as sendToGroup(), sendToUser(), etc.
+Various convenient sending APIs, such as sendToGroup, sendToUser, etc.
 Blocking send and asynchronous send are just a matter of bSendXxx and sendXxx, which is extremely convenient
 Client built-in disconnection automatic reconnection function
 The monitoring data of the connection is done to the extreme: how many bytes of the service packet are sent, received, processed, and all monitored.
