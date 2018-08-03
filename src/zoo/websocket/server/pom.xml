@@ -21,3 +21,7 @@
 			<groupId>org.t-io</groupId>
 			<artifactId>tio-http-server</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
