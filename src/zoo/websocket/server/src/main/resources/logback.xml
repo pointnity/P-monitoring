@@ -216,3 +216,45 @@
 		<appender-ref ref="tio-addressxxxx-trace-log-appender"/>
 	</logger>
 	
+	<!-- userAgent Log printing  -->
+	<appender name="tio-userAgentxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/userAgentxxxx.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/userAgentxxxx.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>${max.history}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="tio-userAgentxxxx-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-userAgentxxxx-trace-log-appender"/>
+	</logger>
+	
+	<!-- ipblacklistxxxx ip黑名单  -->
+	<appender name="tio-ipblacklistxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/ipblacklistxxxx.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/ipblacklistxxxx.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>${max.history}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="tio-ipblacklistxxxx-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-ipblacklistxxxx-trace-log-appender"/>
+	</logger>
+	
+
+</configuration>
