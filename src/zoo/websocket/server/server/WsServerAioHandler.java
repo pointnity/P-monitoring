@@ -55,7 +55,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * @param args
 	 *
 	 * @author tanyaowu
-	 * November 18, 2016 上午9:13:15
+	 * November 18, 2016 moring 9:13:15
 	 *
 	 */
 	public static void main(String[] args) {
@@ -116,3 +116,20 @@ public class WsServerAioHandler implements ServerAioHandler {
 
 		WsRequest websocketPacket = WsServerDecoder.decode(buffer, channelContext);
 		return websocketPacket;
+		//		if (websocketPacket == null) {
+		//			return null;
+		//		}
+		//
+		//		if (!websocketPacket.isWsEof()) {
+		//			log.error("{} websocket包还没有传完", channelContext);
+		//			return null;
+		//		}
+		//
+		//		Opcode opcode = websocketPacket.getWsOpcode();
+		//		if (opcode == Opcode.BINARY) {
+		//			byte[] wsBody = websocketPacket.getWsBody();
+		//			if (wsBody == null || wsBody.length == 0) {
+		//				throw new AioDecodeException("worrong websocke box，body");
+		//			}
+		//
+		//			WsRequest imPacket = new WsRequest();
