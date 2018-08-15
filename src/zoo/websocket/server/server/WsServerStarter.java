@@ -36,3 +36,24 @@ public class WsServerStarter {
 	/**
 	 * @return the wsServerConfig
 	 */
+	public WsServerConfig getWsServerConfig() {
+		return wsServerConfig;
+	}
+
+	/**
+	 * @return the wsMsgHandler
+	 */
+	public IWsMsgHandler getWsMsgHandler() {
+		return wsMsgHandler;
+	}
+
+	/**
+	 * @return the wsServerAioHandler
+	 */
+	public WsServerAioHandler getWsServerAioHandler() {
+		return wsServerAioHandler;
+	}
+
+	/**
+	 * @return the wsServerAioListener
+	 */
