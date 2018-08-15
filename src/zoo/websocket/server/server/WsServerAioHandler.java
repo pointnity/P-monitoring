@@ -161,3 +161,52 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * November 18, 2016 9:37:44 AM
 	 *
 	 */
+	@Override
+	public ByteBuffer encode(Packet packet, GroupContext groupContext, ChannelContext channelContext) {
+		WsResponse wsResponse = (WsResponse) packet;
+
+		//握手包
+		if (wsResponse.isHandShake()) {
+			WsSessionContext imSessionContext = (WsSessionContext) channelContext.getAttribute();
+			HttpResponse handshakeResponsePacket = imSessionContext.getHandshakeResponsePacket();
+			return HttpResponseEncoder.encode(handshakeResponsePacket, groupContext, channelContext, false);
+		}
+
+		ByteBuffer byteBuffer = WsServerEncoder.encode(wsResponse, groupContext, channelContext);
+		return byteBuffer;
+	}
+
+	/**
+	 * @return the httpConfig
+	 */
+	public WsServerConfig getHttpConfig() {
+		return wsServerConfig;
+	}
+	
+	private WsResponse h(WsRequest websocketPacket, byte[] bytes, Opcode opcode, ChannelContext channelContext) throws Exception {
+		WsResponse wsResponse = null;
+		if (opcode == Opcode.TEXT) {
+			if (bytes == null || bytes.length == 0) {
+				Aio.remove(channelContext, "Wrong websocket package, body is empty");
+				return null;
+			}
+			String text = new String(bytes, wsServerConfig.getCharset());
+			Object retObj = wsMsgHandler.onText(websocketPacket, text, channelContext);
+			String methodName = "onText";
+			wsResponse = processRetObj(retObj, methodName, channelContext);
+			return wsResponse;
+		} else if (opcode == Opcode.BINARY) {
+			if (bytes == null || bytes.length == 0) {
+				Aio.remove(channelContext, "Wrong websocket package, body is empty");
+				return null;
+			}
+			Object retObj = wsMsgHandler.onBytes(websocketPacket, bytes, channelContext);
+			String methodName = "onBytes";
+			wsResponse = processRetObj(retObj, methodName, channelContext);
+			return wsResponse;
+		} else if (opcode == Opcode.PING || opcode == Opcode.PONG) {
+			log.error("Roger that" + opcode);
+			return null;
+		} else if (opcode == Opcode.CLOSE) {
+			Object retObj = wsMsgHandler.onClose(websocketPacket, bytes, channelContext);
+			String methodName = "onClose";
