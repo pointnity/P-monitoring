@@ -81,3 +81,27 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * @see org.tio.core.intf.AioHandler#decode(java.nio.ByteBuffer)
 	 *
 	 * @param buffer
+	 * @return
+	 * @throws AioDecodeException
+	 * @author tanyaowu
+	 * 2016年11月18日 上午9:37:44
+	 *
+	 */
+	@Override
+	public WsRequest decode(ByteBuffer buffer, ChannelContext channelContext) throws AioDecodeException {
+		WsSessionContext wsSessionContext = (WsSessionContext) channelContext.getAttribute();
+		//		int initPosition = buffer.position();
+
+		if (!wsSessionContext.isHandshaked()) {
+			HttpRequest request = HttpRequestDecoder.decode(buffer, channelContext);
+			if (request == null) {
+				return null;
+			}
+
+			HttpResponse httpResponse = updateWebSocketProtocol(request, channelContext);
+			if (httpResponse == null) {
+				throw new AioDecodeException("http协议升级到websocket协议失败");
+			}
+
+			wsSessionContext.setHandshakeRequestPacket(request);
+			wsSessionContext.setHandshakeResponsePacket(httpResponse);
