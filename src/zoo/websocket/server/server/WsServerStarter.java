@@ -20,3 +20,19 @@ import org.tio.websocket.server.handler.IWsMsgHandler;
 public class WsServerStarter {
 	@SuppressWarnings("unused")
 	private static Logger log = LoggerFactory.getLogger(WsServerStarter.class);
+
+	private WsServerConfig wsServerConfig = null;
+
+	private IWsMsgHandler wsMsgHandler = null;
+
+	private WsServerAioHandler wsServerAioHandler = null;
+
+	private WsServerAioListener wsServerAioListener = null;
+
+	private ServerGroupContext serverGroupContext = null;
+
+	private AioServer aioServer = null;
+
+	/**
+	 * @return the wsServerConfig
+	 */
