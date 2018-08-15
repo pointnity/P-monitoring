@@ -21,3 +21,18 @@ import org.tio.http.common.HttpResponseStatus;
 import org.tio.server.intf.ServerAioHandler;
 import org.tio.websocket.common.Opcode;
 import org.tio.websocket.common.WsRequest;
+import org.tio.websocket.common.WsResponse;
+import org.tio.websocket.common.WsServerDecoder;
+import org.tio.websocket.common.WsServerEncoder;
+import org.tio.websocket.common.WsSessionContext;
+import org.tio.websocket.common.util.BASE64Util;
+import org.tio.websocket.common.util.SHA1Util;
+import org.tio.websocket.server.handler.IWsMsgHandler;
+
+/**
+ *
+ * @author tanyaowu
+ *
+ */
+public class WsServerAioHandler implements ServerAioHandler {
+	private static Logger log = LoggerFactory.getLogger(WsServerAioHandler.class);
