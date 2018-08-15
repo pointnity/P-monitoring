@@ -45,3 +45,22 @@ public class WsServerAioHandler implements ServerAioHandler {
 	//		handlerMap.put(Command.COMMAND_JOIN_GROUP_REQ, new JoinReqHandler());
 	//		handlerMap.put(Command.COMMAND_HEARTBEAT_REQ, new HeartbeatReqHandler());
 	//		handlerMap.put(Command.COMMAND_CLOSE_REQ, new CloseReqHandler());
+	//
+	//		handlerMap.put(Command.COMMAND_LOGIN_REQ, new LoginReqHandler());
+	//		handlerMap.put(Command.COMMAND_CLIENT_PAGE_REQ, new ClientPageReqHandler());
+	//
+	//	}
+
+	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 * November 18, 2016 上午9:13:15
+	 *
+	 */
+	public static void main(String[] args) {
+	}
+
+	private WsServerConfig wsServerConfig;
+
+	private IWsMsgHandler wsMsgHandler;
