@@ -69,7 +69,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 *
 	 *
 	 * @author tanyaowu
-	 * November 18, 2016 上午9:13:15
+	 * November 18, 2016 morning 9:13:15
 	 *
 	 */
 	public WsServerAioHandler(WsServerConfig wsServerConfig, IWsMsgHandler wsMsgHandler) {
@@ -84,7 +84,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * @return
 	 * @throws AioDecodeException
 	 * @author tanyaowu
-	 * 2016年11月18日 上午9:37:44
+	 * November 18, 2016 Morning 9:37:44
 	 *
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 
 			HttpResponse httpResponse = updateWebSocketProtocol(request, channelContext);
 			if (httpResponse == null) {
-				throw new AioDecodeException("http协议升级到websocket协议失败");
+				throw new AioDecodeException("The http protocol upgrade to the websocket protocol failed.");
 			}
 
 			wsSessionContext.setHandshakeRequestPacket(request);
