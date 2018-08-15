@@ -37,3 +37,28 @@ public class WsServerConfig {
 	 * @return the bindIp
 	 */
 	public String getBindIp() {
+}
+
+	/**
+	 * @return the bindPort
+	 */
+	public Integer getBindPort() {
+		return bindPort;
+	}
+
+	/**
+	 * @return the charset
+	 */
+	public String getCharset() {
+		return charset;
+	}
+
+	/**
+	 * @param bindIp the bindIp to set
+	 */
+	public void setBindIp(String bindIp) {
+		this.bindIp = bindIp;
+	}
+
+	/**
+	 * @param charset the charset to set
