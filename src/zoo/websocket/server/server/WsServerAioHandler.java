@@ -146,3 +146,18 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//			WsRequest imPacket = new WsRequest();
 		//			return imPacket;
 		//		} else if (opcode == Opcode.TEXT) {
+		//			throw new AioDecodeException("The package has not been delivered yet.");
+		//		} else {
+		//			throw new AioDecodeException("Wrong websocket package, wrong Opcode");
+		//		}
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#encode(org.tio.core.intf.Packet)
+	 *
+	 * @param packet
+	 * @return
+	 * @author tanyaowu
+	 * November 18, 2016 9:37:44 AM
+	 *
+	 */
