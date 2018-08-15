@@ -210,3 +210,31 @@ public class WsServerAioHandler implements ServerAioHandler {
 		} else if (opcode == Opcode.CLOSE) {
 			Object retObj = wsMsgHandler.onClose(websocketPacket, bytes, channelContext);
 			String methodName = "onClose";
+			wsResponse = processRetObj(retObj, methodName, channelContext);
+			return wsResponse;
+		} else {
+			Aio.remove(channelContext, "Wrong websocket package, wrong Opcode");
+			return null;
+		}
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#handler(org.tio.core.intf.Packet)
+	 *
+	 * @param packet
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 * November 18, 2016 9:37:44 AM
+	 *
+	 */
+	@Override
+	public void handler(Packet packet, ChannelContext channelContext) throws Exception {
+		WsRequest wsRequestPacket = (WsRequest) packet;
+
+		if (wsRequestPacket.isHandShake()) {
+			WsSessionContext wsSessionContext = (WsSessionContext) channelContext.getAttribute();
+			HttpRequest request = wsSessionContext.getHandshakeRequestPacket();
+			HttpResponse httpResponse = wsSessionContext.getHandshakeResponsePacket();
+			HttpResponse r = wsMsgHandler.handshake(request, httpResponse, channelContext);
+			if (r == null) {
