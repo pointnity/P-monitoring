@@ -57,3 +57,17 @@ public class WsServerStarter {
 	/**
 	 * @return the wsServerAioListener
 	 */
+	public WsServerAioListener getWsServerAioListener() {
+		return wsServerAioListener;
+	}
+
+	/**
+	 * @return the serverGroupContext
+	 */
+	public ServerGroupContext getServerGroupContext() {
+		return serverGroupContext;
+	}
+
+	public WsServerStarter(int port, IWsMsgHandler wsMsgHandler) throws IOException {
+		this(port, wsMsgHandler, null, null);
+	}
