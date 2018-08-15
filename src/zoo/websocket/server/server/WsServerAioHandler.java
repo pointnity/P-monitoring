@@ -121,7 +121,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//		}
 		//
 		//		if (!websocketPacket.isWsEof()) {
-		//			log.error("{} websocket包还没有传完", channelContext);
+		//			log.error("{} websocket The package has not been delivered yet.", channelContext);
 		//			return null;
 		//		}
 		//
@@ -133,3 +133,16 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//			}
 		//
 		//			WsRequest imPacket = new WsRequest();
+		//
+		//			if (wsBody.length > 1) {
+		//				byte[] dst = new byte[wsBody.length - 1];
+		//				System.arraycopy(wsBody, 1, dst, 0, dst.length);
+		//				imPacket.setBody(dst);
+		//			}
+		//			return imPacket;
+		//		} else if (opcode == Opcode.PING || opcode == Opcode.PONG) {
+		//			return heartbeatPacket;
+		//		} else if (opcode == Opcode.CLOSE) {
+		//			WsRequest imPacket = new WsRequest();
+		//			return imPacket;
+		//		} else if (opcode == Opcode.TEXT) {
