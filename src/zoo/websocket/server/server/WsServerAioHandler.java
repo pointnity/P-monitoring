@@ -64,3 +64,20 @@ public class WsServerAioHandler implements ServerAioHandler {
 	private WsServerConfig wsServerConfig;
 
 	private IWsMsgHandler wsMsgHandler;
+
+	/**
+	 *
+	 *
+	 * @author tanyaowu
+	 * November 18, 2016 上午9:13:15
+	 *
+	 */
+	public WsServerAioHandler(WsServerConfig wsServerConfig, IWsMsgHandler wsMsgHandler) {
+		this.wsServerConfig = wsServerConfig;
+		this.wsMsgHandler = wsMsgHandler;
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#decode(java.nio.ByteBuffer)
+	 *
+	 * @param buffer
