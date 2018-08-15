@@ -71,3 +71,16 @@ public class WsServerStarter {
 	public WsServerStarter(int port, IWsMsgHandler wsMsgHandler) throws IOException {
 		this(port, wsMsgHandler, null, null);
 	}
+
+	public WsServerStarter(int port, IWsMsgHandler wsMsgHandler, SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) throws IOException {
+		//		this.wsServerConfig = new WsServerConfig(port);
+		this(new WsServerConfig(port), wsMsgHandler, tioExecutor, groupExecutor);
+	}
+
+	public WsServerStarter(WsServerConfig wsServerConfig, IWsMsgHandler wsMsgHandler) throws IOException {
+		this(wsServerConfig, wsMsgHandler, null, null);
+	}
+
+	public WsServerStarter(WsServerConfig wsServerConfig, IWsMsgHandler wsMsgHandler, SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) throws IOException {
+		this(wsServerConfig, wsMsgHandler, new WsTioUuid(), tioExecutor, groupExecutor);
+	}
