@@ -62,3 +62,11 @@ public class WsServerConfig {
 
 	/**
 	 * @param charset the charset to set
+	 * @param charset the charset to set
+	 */
+	public void setCharset(String charset) {
+		this.charset = charset;
+	}
+
+}
+comment ( 0 )
