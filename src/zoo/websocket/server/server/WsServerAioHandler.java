@@ -36,3 +36,12 @@ import org.tio.websocket.server.handler.IWsMsgHandler;
  */
 public class WsServerAioHandler implements ServerAioHandler {
 	private static Logger log = LoggerFactory.getLogger(WsServerAioHandler.class);
+
+	//	private static Map<Command, ImBsHandlerIntf> handlerMap = new HashMap<>();
+	//	static {
+	//		handlerMap.put(Command.COMMAND_HANDSHAKE_REQ, new HandshakeReqHandler());
+	//		handlerMap.put(Command.COMMAND_AUTH_REQ, new AuthReqHandler());
+	//		handlerMap.put(Command.COMMAND_CHAT_REQ, new ChatReqHandler());
+	//		handlerMap.put(Command.COMMAND_JOIN_GROUP_REQ, new JoinReqHandler());
+	//		handlerMap.put(Command.COMMAND_HEARTBEAT_REQ, new HeartbeatReqHandler());
+	//		handlerMap.put(Command.COMMAND_CLOSE_REQ, new CloseReqHandler());
