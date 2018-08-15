@@ -11,3 +11,12 @@ import org.tio.server.ServerGroupContext;
 import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 import org.tio.websocket.common.WsTioUuid;
 import org.tio.websocket.server.handler.IWsMsgHandler;
+
+/**
+ *
+ * @author tanyaowu
+ * July 30, 2017 9:45:54 AM
+ */
+public class WsServerStarter {
+	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(WsServerStarter.class);
