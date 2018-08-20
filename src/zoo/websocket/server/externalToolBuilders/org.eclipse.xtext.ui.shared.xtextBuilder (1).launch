@@ -4,3 +4,4 @@
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_DISABLED_BUILDER" value="org.eclipse.xtext.ui.shared.xtextBuilder"/>
 <mapAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS"/>
 <booleanAttribute key="org.eclipse.ui.externaltools.ATTR_TRIGGERS_CONFIGURED" value="true"/>
+</launchConfiguration>
