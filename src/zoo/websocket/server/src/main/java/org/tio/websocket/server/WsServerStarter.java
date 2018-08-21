@@ -76,3 +76,7 @@ public class WsServerStarter {
 		//		this.wsServerConfig = new WsServerConfig(port);
 		this(new WsServerConfig(port), wsMsgHandler, tioExecutor, groupExecutor);
 	}
+
+	public WsServerStarter(WsServerConfig wsServerConfig, IWsMsgHandler wsMsgHandler) throws IOException {
+		this(wsServerConfig, wsMsgHandler, null, null);
+	}
