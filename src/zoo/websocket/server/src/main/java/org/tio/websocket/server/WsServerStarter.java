@@ -20,3 +20,5 @@ import org.tio.websocket.server.handler.IWsMsgHandler;
 public class WsServerStarter {
 	@SuppressWarnings("unused")
 	private static Logger log = LoggerFactory.getLogger(WsServerStarter.class);
+
+	private WsServerConfig wsServerConfig = null;
