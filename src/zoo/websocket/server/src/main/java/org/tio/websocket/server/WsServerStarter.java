@@ -30,3 +30,5 @@ public class WsServerStarter {
 	private WsServerAioListener wsServerAioListener = null;
 
 	private ServerGroupContext serverGroupContext = null;
+
+	private AioServer aioServer = null;
