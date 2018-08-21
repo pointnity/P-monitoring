@@ -13,3 +13,4 @@
 		</fileSet>
         
 		<fileSet>
+			<directory>${project.basedir}</directory>
