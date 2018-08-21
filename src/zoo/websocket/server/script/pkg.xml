@@ -3,3 +3,5 @@
 <formats>
 <format>dir</format>
 	</formats>
+	
+	<includeBaseDirectory>false</includeBaseDirectory>
