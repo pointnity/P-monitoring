@@ -22,3 +22,5 @@ public class WsServerStarter {
 	private static Logger log = LoggerFactory.getLogger(WsServerStarter.class);
 
 	private WsServerConfig wsServerConfig = null;
+
+	private IWsMsgHandler wsMsgHandler = null;
