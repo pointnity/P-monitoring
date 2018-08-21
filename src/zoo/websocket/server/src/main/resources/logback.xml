@@ -9,7 +9,7 @@
 		</encoder>
 	</appender>
 	
-	<!-- root file 日志 -->
+	<!-- Root file Log -->
 	<appender name="root-file-error"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/error.log</file>
@@ -236,7 +236,7 @@
 		<appender-ref ref="tio-userAgentxxxx-trace-log-appender"/>
 	</logger>
 	
-	<!-- ipblacklistxxxx ip黑名单  -->
+	<!-- ipblacklistxxxx IP blacklist -->
 	<appender name="tio-ipblacklistxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/ipblacklistxxxx.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
