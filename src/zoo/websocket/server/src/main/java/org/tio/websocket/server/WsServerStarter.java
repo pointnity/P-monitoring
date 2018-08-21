@@ -97,3 +97,6 @@ public class WsServerStarter {
 		aioServer = new AioServer(serverGroupContext);
 
 		serverGroupContext.setTioUuid(tioUuid);
+	}
+
+	public void start() throws IOException {
