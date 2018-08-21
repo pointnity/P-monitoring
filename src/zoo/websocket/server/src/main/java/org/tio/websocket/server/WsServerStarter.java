@@ -26,3 +26,5 @@ public class WsServerStarter {
 	private IWsMsgHandler wsMsgHandler = null;
 
 	private WsServerAioHandler wsServerAioHandler = null;
+
+	private WsServerAioListener wsServerAioListener = null;
