@@ -1,7 +1,7 @@
 <assembly>
-<id>dist</id>
-<formats>
-<format>dir</format>
+	<id>dist</id>
+	<formats>
+		<format>dir</format>
 	</formats>
 	
 	<includeBaseDirectory>false</includeBaseDirectory>
@@ -11,3 +11,5 @@
 			<directory>${project.basedir}/src/main/resources</directory>
 			<outputDirectory>config</outputDirectory>
 		</fileSet>
+        
+		<fileSet>
