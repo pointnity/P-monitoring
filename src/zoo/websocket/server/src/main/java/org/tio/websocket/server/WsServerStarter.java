@@ -58,3 +58,10 @@ public class WsServerStarter {
 	 * @return the wsServerAioListener
 	 */
 	public WsServerAioListener getWsServerAioListener() {
+		return wsServerAioListener;
+	}
+
+	/**
+	 * @return the serverGroupContext
+	 */
+	public ServerGroupContext getServerGroupContext() {
