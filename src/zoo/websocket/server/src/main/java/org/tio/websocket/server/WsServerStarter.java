@@ -44,3 +44,9 @@ public class WsServerStarter {
 	 * @return the wsMsgHandler
 	 */
 	public IWsMsgHandler getWsMsgHandler() {
+		return wsMsgHandler;
+	}
+
+	/**
+	 * @return the wsServerAioHandler
+	 */
