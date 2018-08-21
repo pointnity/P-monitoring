@@ -87,3 +87,6 @@ public class WsServerStarter {
 	
 	public WsServerStarter(WsServerConfig wsServerConfig, IWsMsgHandler wsMsgHandler, TioUuid tioUuid, SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) throws IOException {
 		this.wsServerConfig = wsServerConfig;
+		this.wsMsgHandler = wsMsgHandler;
+		wsServerAioHandler = new WsServerAioHandler(wsServerConfig, wsMsgHandler);
+		wsServerAioListener = new WsServerAioListener();
