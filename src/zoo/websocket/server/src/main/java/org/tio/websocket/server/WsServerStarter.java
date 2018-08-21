@@ -32,3 +32,8 @@ public class WsServerStarter {
 	private ServerGroupContext serverGroupContext = null;
 
 	private AioServer aioServer = null;
+
+	/**
+	 * @return the wsServerConfig
+	 */
+	public WsServerConfig getWsServerConfig() {
