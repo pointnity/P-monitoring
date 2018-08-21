@@ -37,3 +37,10 @@ public class WsServerStarter {
 	 * @return the wsServerConfig
 	 */
 	public WsServerConfig getWsServerConfig() {
+		return wsServerConfig;
+	}
+
+	/**
+	 * @return the wsMsgHandler
+	 */
+	public IWsMsgHandler getWsMsgHandler() {
