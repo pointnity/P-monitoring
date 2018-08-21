@@ -100,3 +100,7 @@ public class WsServerStarter {
 	}
 
 	public void start() throws IOException {
+		aioServer.start(wsServerConfig.getBindIp(), wsServerConfig.getBindPort());
+
+	}
+}
