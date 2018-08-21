@@ -50,3 +50,5 @@ public class WsServerStarter {
 	/**
 	 * @return the wsServerAioHandler
 	 */
+	public WsServerAioHandler getWsServerAioHandler() {
+		return wsServerAioHandler;
