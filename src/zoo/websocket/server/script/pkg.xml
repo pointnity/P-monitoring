@@ -1,3 +1,4 @@
 <assembly>
 <id>dist</id>
 <formats>
+<format>dir</format>
