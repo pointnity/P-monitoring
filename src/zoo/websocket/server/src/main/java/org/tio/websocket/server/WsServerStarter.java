@@ -28,3 +28,5 @@ public class WsServerStarter {
 	private WsServerAioHandler wsServerAioHandler = null;
 
 	private WsServerAioListener wsServerAioListener = null;
+
+	private ServerGroupContext serverGroupContext = null;
