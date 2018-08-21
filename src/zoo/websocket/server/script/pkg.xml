@@ -8,3 +8,4 @@
   
 	<fileSets> 
 		<fileSet>
+			<directory>${project.basedir}/src/main/resources</directory>
