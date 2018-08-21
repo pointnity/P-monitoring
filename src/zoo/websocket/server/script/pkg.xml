@@ -14,3 +14,4 @@
         
 		<fileSet>
 			<directory>${project.basedir}</directory>
+			<outputDirectory></outputDirectory>
