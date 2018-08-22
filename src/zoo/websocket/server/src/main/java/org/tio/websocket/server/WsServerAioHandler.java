@@ -138,3 +138,8 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//				byte[] dst = new byte[wsBody.length - 1];
 		//				System.arraycopy(wsBody, 1, dst, 0, dst.length);
 		//				imPacket.setBody(dst);
+		//			}
+		//			return imPacket;
+		//		} else if (opcode == Opcode.PING || opcode == Opcode.PONG) {
+		//			return heartbeatPacket;
+		//		} else if (opcode == Opcode.CLOSE) {
