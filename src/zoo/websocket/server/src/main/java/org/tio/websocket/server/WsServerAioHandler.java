@@ -305,3 +305,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 		String Sec_WebSocket_Key = headers.get(HttpConst.RequestHeaderKey.Sec_WebSocket_Key);
 
 		if (StringUtils.isNotBlank(Sec_WebSocket_Key)) {
+			String Sec_WebSocket_Key_Magic = Sec_WebSocket_Key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
+			byte[] key_array = SHA1Util.SHA1(Sec_WebSocket_Key_Magic);
+			String acceptKey = BASE64Util.byteArrayToBase64(key_array);
+			HttpResponse httpResponse = new HttpResponse(request, null);
+
+			httpResponse.setStatus(HttpResponseStatus.C101);
