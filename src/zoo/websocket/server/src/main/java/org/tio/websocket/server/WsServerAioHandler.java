@@ -93,3 +93,10 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//		int initPosition = buffer.position();
 
 		if (!wsSessionContext.isHandshaked()) {
+			HttpRequest request = HttpRequestDecoder.decode(buffer, channelContext);
+			if (request == null) {
+				return null;
+			}
+
+			HttpResponse httpResponse = updateWebSocketProtocol(request, channelContext);
+			if (httpResponse == null) {
