@@ -132,3 +132,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//				throw new AioDecodeException("Wrong WebSocket package, body is empty");
 		//			}
 		//
+		//			WsRequest imPacket = new WsRequest();
+		//
+		//			if (wsBody.length > 1) {
+		//				byte[] dst = new byte[wsBody.length - 1];
+		//				System.arraycopy(wsBody, 1, dst, 0, dst.length);
+		//				imPacket.setBody(dst);
