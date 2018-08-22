@@ -166,3 +166,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 		WsResponse wsResponse = (WsResponse) packet;
 
 		//Handshake Package
+		if (wsResponse.isHandShake()) {
+			WsSessionContext imSessionContext = (WsSessionContext) channelContext.getAttribute();
+			HttpResponse handshakeResponsePacket = imSessionContext.getHandshakeResponsePacket();
+			return HttpResponseEncoder.encode(handshakeResponsePacket, groupContext, channelContext, false);
