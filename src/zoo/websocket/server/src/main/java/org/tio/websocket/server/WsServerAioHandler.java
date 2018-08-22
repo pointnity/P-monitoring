@@ -195,3 +195,6 @@ public class WsServerAioHandler implements ServerAioHandler {
 			String methodName = "onText";
 			wsResponse = processRetObj(retObj, methodName, channelContext);
 			return wsResponse;
+		} else if (opcode == Opcode.BINARY) {
+			if (bytes == null || bytes.length == 0) {
+				Aio.remove(channelContext, "Wrong WebSocket package, body is empty");
