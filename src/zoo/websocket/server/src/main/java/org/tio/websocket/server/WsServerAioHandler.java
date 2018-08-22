@@ -118,3 +118,8 @@ public class WsServerAioHandler implements ServerAioHandler {
 		return websocketPacket;
 		//		if (websocketPacket == null) {
 		//			return null;
+		//		}
+		//
+		//		if (!websocketPacket.isWsEof()) {
+		//			log.error("{} WebSocket Bag's not finished yet.", channelContext);
+		//			return null;
