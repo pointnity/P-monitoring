@@ -287,3 +287,8 @@ public class WsServerAioHandler implements ServerAioHandler {
 	/**
 	 * @param httpConfig the httpConfig to set
 	 */
+	public void setHttpConfig(WsServerConfig httpConfig) {
+		this.wsServerConfig = httpConfig;
+	}
+
+	/**
