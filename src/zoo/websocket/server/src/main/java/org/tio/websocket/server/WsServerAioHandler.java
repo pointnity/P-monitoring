@@ -278,3 +278,12 @@ public class WsServerAioHandler implements ServerAioHandler {
 				wsResponse = WsResponse.fromBytes(bs);
 				return wsResponse;
 			} else {
+				log.error("{} {}.{}()method, only allowed to return byte[]、ByteBuffer、WsResponse.null，But the program returns.{}", channelContext, this.getClass().getName(), methodName, obj.getClass().getName());
+				return null;
+			}
+		}
+	}
+
+	/**
+	 * @param httpConfig the httpConfig to set
+	 */
