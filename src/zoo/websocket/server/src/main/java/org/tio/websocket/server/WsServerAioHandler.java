@@ -239,3 +239,17 @@ public class WsServerAioHandler implements ServerAioHandler {
 			HttpResponse r = wsMsgHandler.handshake(request, httpResponse, channelContext);
 			if (r == null) {
 				Aio.remove(channelContext, "Business layer does not agree to shake hands");
+				return;
+			}
+			wsSessionContext.setHandshakeResponsePacket(r);
+
+			WsResponse wsResponse = new WsResponse();
+			wsResponse.setHandShake(true);
+			Aio.send(channelContext, wsResponse);
+			wsSessionContext.setHandshaked(true);
+			return;
+		}
+
+		WsResponse wsResponse = h(wsRequestPacket, wsRequestPacket.getBody(), wsRequestPacket.getWsOpcode(), channelContext);
+
+		if (wsResponse != null) {
