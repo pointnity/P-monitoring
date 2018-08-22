@@ -170,3 +170,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 			WsSessionContext imSessionContext = (WsSessionContext) channelContext.getAttribute();
 			HttpResponse handshakeResponsePacket = imSessionContext.getHandshakeResponsePacket();
 			return HttpResponseEncoder.encode(handshakeResponsePacket, groupContext, channelContext, false);
+		}
+
+		ByteBuffer byteBuffer = WsServerEncoder.encode(wsResponse, groupContext, channelContext);
+		return byteBuffer;
