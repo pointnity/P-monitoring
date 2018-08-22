@@ -64,3 +64,11 @@ public class WsServerAioHandler implements ServerAioHandler {
 	private WsServerConfig wsServerConfig;
 
 	private IWsMsgHandler wsMsgHandler;
+
+	/**
+	 *
+	 *
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
