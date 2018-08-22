@@ -115,3 +115,6 @@ public class WsServerAioHandler implements ServerAioHandler {
 		}
 
 		WsRequest websocketPacket = WsServerDecoder.decode(buffer, channelContext);
+		return websocketPacket;
+		//		if (websocketPacket == null) {
+		//			return null;
