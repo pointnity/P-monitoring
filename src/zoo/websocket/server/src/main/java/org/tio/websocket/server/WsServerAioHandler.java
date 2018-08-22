@@ -292,3 +292,10 @@ public class WsServerAioHandler implements ServerAioHandler {
 	}
 
 	/**
+	 * 
+	 * 
+	 * @param request
+	 * @param channelContext
+	 * @return
+	 * @author tanyaowu
+	 */
