@@ -42,3 +42,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 	//		handlerMap.put(Command.COMMAND_HANDSHAKE_REQ, new HandshakeReqHandler());
 	//		handlerMap.put(Command.COMMAND_AUTH_REQ, new AuthReqHandler());
 	//		handlerMap.put(Command.COMMAND_CHAT_REQ, new ChatReqHandler());
+	//		handlerMap.put(Command.COMMAND_JOIN_GROUP_REQ, new JoinReqHandler());
+	//		handlerMap.put(Command.COMMAND_HEARTBEAT_REQ, new HeartbeatReqHandler());
+	//		handlerMap.put(Command.COMMAND_CLOSE_REQ, new CloseReqHandler());
+	//
