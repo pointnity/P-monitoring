@@ -123,3 +123,8 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//		if (!websocketPacket.isWsEof()) {
 		//			log.error("{} WebSocket Bag's not finished yet.", channelContext);
 		//			return null;
+		//		}
+		//
+		//		Opcode opcode = websocketPacket.getWsOpcode();
+		//		if (opcode == Opcode.BINARY) {
+		//			byte[] wsBody = websocketPacket.getWsBody();
