@@ -174,3 +174,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 
 		ByteBuffer byteBuffer = WsServerEncoder.encode(wsResponse, groupContext, channelContext);
 		return byteBuffer;
+	}
+
+	/**
+	 * @return the httpConfig
+	 */
+	public WsServerConfig getHttpConfig() {
