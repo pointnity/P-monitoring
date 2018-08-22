@@ -38,3 +38,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 	private static Logger log = LoggerFactory.getLogger(WsServerAioHandler.class);
 
 	//	private static Map<Command, ImBsHandlerIntf> handlerMap = new HashMap<>();
+	//	static {
+	//		handlerMap.put(Command.COMMAND_HANDSHAKE_REQ, new HandshakeReqHandler());
+	//		handlerMap.put(Command.COMMAND_AUTH_REQ, new AuthReqHandler());
+	//		handlerMap.put(Command.COMMAND_CHAT_REQ, new ChatReqHandler());
