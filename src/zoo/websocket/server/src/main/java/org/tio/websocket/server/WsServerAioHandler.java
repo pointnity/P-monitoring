@@ -58,3 +58,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * 
 	 *
 	 */
+	public static void main(String[] args) {
+	}
+
+	private WsServerConfig wsServerConfig;
+
+	private IWsMsgHandler wsMsgHandler;
