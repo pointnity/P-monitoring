@@ -210,3 +210,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 		} else if (opcode == Opcode.CLOSE) {
 			Object retObj = wsMsgHandler.onClose(websocketPacket, bytes, channelContext);
 			String methodName = "onClose";
+			wsResponse = processRetObj(retObj, methodName, channelContext);
+			return wsResponse;
+		} else {
+			Aio.remove(channelContext, "The wrong WebSocket package, the wrong opcode");
