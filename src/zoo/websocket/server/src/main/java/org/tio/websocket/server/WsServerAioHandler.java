@@ -206,3 +206,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 			return wsResponse;
 		} else if (opcode == Opcode.PING || opcode == Opcode.PONG) {
 			log.error("Roger that" + opcode);
+		return null;
+		} else if (opcode == Opcode.CLOSE) {
+			Object retObj = wsMsgHandler.onClose(websocketPacket, bytes, channelContext);
+			String methodName = "onClose";
