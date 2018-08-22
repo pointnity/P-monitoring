@@ -149,3 +149,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//			throw new AioDecodeException("Bad WebSocket package, text-type data not supported");
 		//		} else {
 		//			throw new AioDecodeException("The wrong WebSocket package, the wrong opcode");
+		//		}
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#encode(org.tio.core.intf.Packet)
+	 *
