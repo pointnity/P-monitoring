@@ -185,3 +185,6 @@ public class WsServerAioHandler implements ServerAioHandler {
 
 	private WsResponse h(WsRequest websocketPacket, byte[] bytes, Opcode opcode, ChannelContext channelContext) throws Exception {
 		WsResponse wsResponse = null;
+		if (opcode == Opcode.TEXT) {
+			if (bytes == null || bytes.length == 0) {
+				Aio.remove(channelContext, "Wrong WebSocket package, body is empty");
