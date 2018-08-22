@@ -191,3 +191,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 				return null;
 			}
 			String text = new String(bytes, wsServerConfig.getCharset());
+			Object retObj = wsMsgHandler.onText(websocketPacket, text, channelContext);
+			String methodName = "onText";
+			wsResponse = processRetObj(retObj, methodName, channelContext);
+			return wsResponse;
