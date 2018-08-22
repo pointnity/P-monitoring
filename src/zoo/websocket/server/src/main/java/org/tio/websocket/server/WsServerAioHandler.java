@@ -161,3 +161,8 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * 
 	 *
 	 */
+	@Override
+	public ByteBuffer encode(Packet packet, GroupContext groupContext, ChannelContext channelContext) {
+		WsResponse wsResponse = (WsResponse) packet;
+
+		//Handshake Package
