@@ -28,3 +28,10 @@ import org.tio.websocket.common.WsSessionContext;
 import org.tio.websocket.common.util.BASE64Util;
 import org.tio.websocket.common.util.SHA1Util;
 import org.tio.websocket.server.handler.IWsMsgHandler;
+
+/**
+ *
+ * @author tanyaowu
+ *
+ */
+public class WsServerAioHandler implements ServerAioHandler {
