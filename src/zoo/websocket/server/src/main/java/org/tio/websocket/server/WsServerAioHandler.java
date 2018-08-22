@@ -264,3 +264,17 @@ public class WsServerAioHandler implements ServerAioHandler {
 		if (obj == null) {
 			return null;
 		} else {
+			if (obj instanceof String) {
+				String str = (String) obj;
+				wsResponse = WsResponse.fromText(str, wsServerConfig.getCharset());
+				return wsResponse;
+			} else if (obj instanceof byte[]) {
+				wsResponse = WsResponse.fromBytes((byte[])obj);
+				return wsResponse;
+			} else if (obj instanceof WsResponse) {
+				return (WsResponse) obj;
+			} else if (obj instanceof ByteBuffer) {
+				byte[] bs = ((ByteBuffer) obj).array();
+				wsResponse = WsResponse.fromBytes(bs);
+				return wsResponse;
+			} else {
