@@ -25,3 +25,6 @@ import org.tio.websocket.common.WsResponse;
 import org.tio.websocket.common.WsServerDecoder;
 import org.tio.websocket.common.WsServerEncoder;
 import org.tio.websocket.common.WsSessionContext;
+import org.tio.websocket.common.util.BASE64Util;
+import org.tio.websocket.common.util.SHA1Util;
+import org.tio.websocket.server.handler.IWsMsgHandler;
