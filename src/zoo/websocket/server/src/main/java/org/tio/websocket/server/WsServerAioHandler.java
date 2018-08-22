@@ -72,3 +72,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * 
 	 *
 	 */
+	public WsServerAioHandler(WsServerConfig wsServerConfig, IWsMsgHandler wsMsgHandler) {
+		this.wsServerConfig = wsServerConfig;
+		this.wsMsgHandler = wsMsgHandler;
+	}
+
+	/**
