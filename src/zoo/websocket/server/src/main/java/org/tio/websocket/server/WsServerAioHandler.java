@@ -100,3 +100,8 @@ public class WsServerAioHandler implements ServerAioHandler {
 
 			HttpResponse httpResponse = updateWebSocketProtocol(request, channelContext);
 			if (httpResponse == null) {
+				throw new AioDecodeException("HTTP protocol upgrade to WebSocket protocol failed");
+			}
+
+			wsSessionContext.setHandshakeRequestPacket(request);
+			wsSessionContext.setHandshakeResponsePacket(httpResponse);
