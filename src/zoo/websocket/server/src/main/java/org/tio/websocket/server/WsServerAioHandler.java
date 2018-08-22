@@ -87,3 +87,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * 
 	 *
 	 */
+	@Override
+	public WsRequest decode(ByteBuffer buffer, ChannelContext channelContext) throws AioDecodeException {
+		WsSessionContext wsSessionContext = (WsSessionContext) channelContext.getAttribute();
+		//		int initPosition = buffer.position();
+
+		if (!wsSessionContext.isHandshaked()) {
