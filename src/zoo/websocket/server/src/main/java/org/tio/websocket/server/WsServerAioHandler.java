@@ -35,3 +35,6 @@ import org.tio.websocket.server.handler.IWsMsgHandler;
  *
  */
 public class WsServerAioHandler implements ServerAioHandler {
+	private static Logger log = LoggerFactory.getLogger(WsServerAioHandler.class);
+
+	//	private static Map<Command, ImBsHandlerIntf> handlerMap = new HashMap<>();
