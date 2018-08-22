@@ -311,3 +311,15 @@ public class WsServerAioHandler implements ServerAioHandler {
 			HttpResponse httpResponse = new HttpResponse(request, null);
 
 			httpResponse.setStatus(HttpResponseStatus.C101);
+
+			Map<String, String> respHeaders = new HashMap<>();
+			respHeaders.put(HttpConst.ResponseHeaderKey.Connection, HttpConst.ResponseHeaderValue.Connection.Upgrade);
+			respHeaders.put(HttpConst.ResponseHeaderKey.Upgrade, "WebSocket");
+			respHeaders.put(HttpConst.ResponseHeaderKey.Sec_WebSocket_Accept, acceptKey);
+			httpResponse.setHeaders(respHeaders);
+			return httpResponse;
+		}
+		return null;
+	}
+
+}
