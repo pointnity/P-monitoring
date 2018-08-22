@@ -128,3 +128,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//		Opcode opcode = websocketPacket.getWsOpcode();
 		//		if (opcode == Opcode.BINARY) {
 		//			byte[] wsBody = websocketPacket.getWsBody();
+		//			if (wsBody == null || wsBody.length == 0) {
+		//				throw new AioDecodeException("Wrong WebSocket package, body is empty");
+		//			}
+		//
