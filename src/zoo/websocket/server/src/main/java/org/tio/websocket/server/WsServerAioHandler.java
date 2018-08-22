@@ -46,3 +46,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 	//		handlerMap.put(Command.COMMAND_HEARTBEAT_REQ, new HeartbeatReqHandler());
 	//		handlerMap.put(Command.COMMAND_CLOSE_REQ, new CloseReqHandler());
 	//
+	//		handlerMap.put(Command.COMMAND_LOGIN_REQ, new LoginReqHandler());
+	//		handlerMap.put(Command.COMMAND_CLIENT_PAGE_REQ, new ClientPageReqHandler());
+	//
+	//	}
