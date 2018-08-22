@@ -143,3 +143,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 		//		} else if (opcode == Opcode.PING || opcode == Opcode.PONG) {
 		//			return heartbeatPacket;
 		//		} else if (opcode == Opcode.CLOSE) {
+		//			WsRequest imPacket = new WsRequest();
+		//			return imPacket;
+		//		} else if (opcode == Opcode.TEXT) {
+		//			throw new AioDecodeException("Bad WebSocket package, text-type data not supported");
