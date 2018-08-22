@@ -109,3 +109,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 			WsRequest wsRequestPacket = new WsRequest();
 			//			wsRequestPacket.setHeaders(httpResponse.getHeaders());
 			//			wsRequestPacket.setBody(httpResponse.getBody());
+			wsRequestPacket.setHandShake(true);
+
+			return wsRequestPacket;
+		}
+
+		WsRequest websocketPacket = WsServerDecoder.decode(buffer, channelContext);
