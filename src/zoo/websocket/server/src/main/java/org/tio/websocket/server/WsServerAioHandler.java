@@ -253,3 +253,14 @@ public class WsServerAioHandler implements ServerAioHandler {
 		WsResponse wsResponse = h(wsRequestPacket, wsRequestPacket.getBody(), wsRequestPacket.getWsOpcode(), channelContext);
 
 		if (wsResponse != null) {
+			Aio.send(channelContext, wsResponse);
+		}
+
+		return;
+	}
+
+	private WsResponse processRetObj(Object obj, String methodName, ChannelContext channelContext) throws Exception {
+		WsResponse wsResponse = null;
+		if (obj == null) {
+			return null;
+		} else {
