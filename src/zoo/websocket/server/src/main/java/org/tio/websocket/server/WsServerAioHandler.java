@@ -221,3 +221,10 @@ public class WsServerAioHandler implements ServerAioHandler {
 	/**
 	 * @see org.tio.core.intf.AioHandler#handler(org.tio.core.intf.Packet)
 	 *
+	 * @param packet
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
