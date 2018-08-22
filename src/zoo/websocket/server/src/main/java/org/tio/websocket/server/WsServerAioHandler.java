@@ -202,3 +202,7 @@ public class WsServerAioHandler implements ServerAioHandler {
 			}
 			Object retObj = wsMsgHandler.onBytes(websocketPacket, bytes, channelContext);
 			String methodName = "onBytes";
+			wsResponse = processRetObj(retObj, methodName, channelContext);
+			return wsResponse;
+		} else if (opcode == Opcode.PING || opcode == Opcode.PONG) {
+			log.error("Roger that" + opcode);
