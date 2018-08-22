@@ -155,3 +155,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 	/**
 	 * @see org.tio.core.intf.AioHandler#encode(org.tio.core.intf.Packet)
 	 *
+	 * @param packet
+	 * @return
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
