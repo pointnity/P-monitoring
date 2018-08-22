@@ -214,3 +214,10 @@ public class WsServerAioHandler implements ServerAioHandler {
 			return wsResponse;
 		} else {
 			Aio.remove(channelContext, "The wrong WebSocket package, the wrong opcode");
+			return null;
+		}
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#handler(org.tio.core.intf.Packet)
+	 *
