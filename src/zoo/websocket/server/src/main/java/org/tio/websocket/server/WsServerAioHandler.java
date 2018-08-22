@@ -228,3 +228,8 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * 
 	 *
 	 */
+	@Override
+	public void handler(Packet packet, ChannelContext channelContext) throws Exception {
+		WsRequest wsRequestPacket = (WsRequest) packet;
+
+		if (wsRequestPacket.isHandShake()) {
