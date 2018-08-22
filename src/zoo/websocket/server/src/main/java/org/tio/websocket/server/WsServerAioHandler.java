@@ -299,3 +299,9 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public static HttpResponse updateWebSocketProtocol(HttpRequest request, ChannelContext channelContext) {
+		Map<String, String> headers = request.getHeaders();
+
+		String Sec_WebSocket_Key = headers.get(HttpConst.RequestHeaderKey.Sec_WebSocket_Key);
+
+		if (StringUtils.isNotBlank(Sec_WebSocket_Key)) {
