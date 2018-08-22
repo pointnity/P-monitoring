@@ -180,3 +180,8 @@ public class WsServerAioHandler implements ServerAioHandler {
 	 * @return the httpConfig
 	 */
 	public WsServerConfig getHttpConfig() {
+		return wsServerConfig;
+	}
+
+	private WsResponse h(WsRequest websocketPacket, byte[] bytes, Opcode opcode, ChannelContext channelContext) throws Exception {
+		WsResponse wsResponse = null;
