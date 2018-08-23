@@ -45,3 +45,10 @@ public interface IWsMsgHandler {
 	Object onClose(WsRequest wsRequest, byte[] bytes, ChannelContext channelContext) throws Exception;
 
 	/**
+	 * @param wsRequest
+	 * @param text
+	 * @param channelContext
+	 * @return Can be wsresponse, byte[], Bytebuffer, string, or null, and if it is null, the framework does not return messages
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
