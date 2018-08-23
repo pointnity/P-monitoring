@@ -23,3 +23,9 @@ public class WsServerConfig {
 	//	private File rootFile = null;
 
 	private String charset = HttpConst.CHARSET_NAME;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public WsServerConfig(Integer bindPort) {
