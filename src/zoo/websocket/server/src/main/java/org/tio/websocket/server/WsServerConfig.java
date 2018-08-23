@@ -15,3 +15,7 @@ public class WsServerConfig {
 	public static void main(String[] args) {
 
 	}
+
+	private String bindIp = null;//"127.0.0.1";
+
+	private Integer bindPort = 9322;
