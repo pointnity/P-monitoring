@@ -31,3 +31,11 @@ public interface IWsMsgHandler {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	Object onBytes(WsRequest wsRequest, byte[] bytes, ChannelContext channelContext) throws Exception;
+
+	/**
+	 *
+	 * @param wsRequest
+	 * @param bytes
+	 * @param channelContext
+	 * @return Can be wsresponse, byte[], Bytebuffer, string, or null, and if it is null, the framework does not return messages
