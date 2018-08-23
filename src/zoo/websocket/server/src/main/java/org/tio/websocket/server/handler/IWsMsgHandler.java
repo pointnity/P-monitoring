@@ -20,3 +20,11 @@ public interface IWsMsgHandler {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	public HttpResponse handshake(HttpRequest httpRequest, HttpResponse httpResponse, ChannelContext channelContext) throws Exception;
+
+	/**
+	 *
+	 * @param wsRequest
+	 * @param bytes
+	 * @param channelContext
+	 * @return Can be wsresponse, byte[], Bytebuffer, string, or null, and if it is null, the framework does not return messages
