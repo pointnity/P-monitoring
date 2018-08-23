@@ -37,3 +37,7 @@ public class WsServerAioListener implements ServerAioListener {
 	}
 
 	@Override
+	public void onBeforeClose(ChannelContext channelContext, Throwable throwable, String remark, boolean isRemove) {
+	}
+
+}
