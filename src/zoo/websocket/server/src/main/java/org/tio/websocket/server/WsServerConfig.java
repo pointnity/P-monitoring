@@ -19,3 +19,7 @@ public class WsServerConfig {
 	private String bindIp = null;//"127.0.0.1";
 
 	private Integer bindPort = 9322;
+
+	//	private File rootFile = null;
+
+	private String charset = HttpConst.CHARSET_NAME;
