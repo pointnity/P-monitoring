@@ -60,3 +60,12 @@ public class WsServerConfig {
 	public void setBindIp(String bindIp) {
 		this.bindIp = bindIp;
 	}
+
+	/**
+	 * @param charset the charset to set
+	 */
+	public void setCharset(String charset) {
+		this.charset = charset;
+	}
+
+}
