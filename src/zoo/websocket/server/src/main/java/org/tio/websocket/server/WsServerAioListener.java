@@ -25,3 +25,11 @@ public class WsServerAioListener implements ServerAioListener {
 		WsSessionContext wsSessionContext = new WsSessionContext();
 		channelContext.setAttribute(wsSessionContext);
 		return;
+	}
+
+	@Override
+	public void onAfterReceived(ChannelContext channelContext, Packet packet, int packetSize) {
+
+	}
+
+	@Override
