@@ -55,3 +55,8 @@ public class WsServerConfig {
 	}
 
 	/**
+	 * @param bindIp the bindIp to set
+	 */
+	public void setBindIp(String bindIp) {
+		this.bindIp = bindIp;
+	}
