@@ -1,36 +1,36 @@
 echo off
 echo -
-echo #下载源代码
+echo #Download source code
 echo mvn dependency:sources
 echo -
 
-echo #下载源代码jar。 -DdownloadJavadocs=true 下载javadoc包
+echo #Download source code jar。 -DdownloadJavadocs=true Download Javadoc Package
 echo -DdownloadSources=true
 echo -
 echo -
 
 
 
-echo #将jar解压出来
+echo #Unzip the jar.
 echo mvn dependency:unpack-dependencies
 echo -
 
-echo #将jar拷贝到某一目录中(所有jar在同一目录中)
+echo #Copy jar to a directory (all jars in the same directory)
 echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=false
 echo -
 
-echo #将jar按仓库目录拷贝出来()
+echo #Copy jar to warehouse directory ()
 echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=true -Dmdep.copyPom=true
 echo -
 echo -
 
 
 
-echo #检查版本更新
+echo #Checking for version updates
 echo mvn versions:display-dependency-updates
 echo -
 
-echo #版本变更
+echo #Version change
 echo mvn versions:set -DnewVersion=4.0.0-talent-999
 echo -
 
