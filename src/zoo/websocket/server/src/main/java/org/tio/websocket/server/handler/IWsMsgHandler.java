@@ -52,3 +52,5 @@ public interface IWsMsgHandler {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	Object onText(WsRequest wsRequest, String text, ChannelContext channelContext) throws Exception;
+}
