@@ -29,3 +29,8 @@ public class WsServerConfig {
 	 * @author tanyaowu
 	 */
 	public WsServerConfig(Integer bindPort) {
+
+		this.bindPort = bindPort;
+	}
+
+	/**
