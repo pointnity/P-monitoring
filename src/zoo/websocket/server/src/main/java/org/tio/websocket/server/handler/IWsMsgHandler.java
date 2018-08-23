@@ -28,3 +28,6 @@ public interface IWsMsgHandler {
 	 * @param bytes
 	 * @param channelContext
 	 * @return Can be wsresponse, byte[], Bytebuffer, string, or null, and if it is null, the framework does not return messages
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
