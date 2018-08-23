@@ -37,3 +37,9 @@ public class WsServerConfig {
 	 * @return the bindIp
 	 */
 	public String getBindIp() {
+		return bindIp;
+	}
+
+	/**
+	 * @return the bindPort
+	 */
