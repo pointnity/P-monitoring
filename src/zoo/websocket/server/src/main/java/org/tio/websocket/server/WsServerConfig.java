@@ -50,3 +50,8 @@ public class WsServerConfig {
 	/**
 	 * @return the charset
 	 */
+	public String getCharset() {
+		return charset;
+	}
+
+	/**
