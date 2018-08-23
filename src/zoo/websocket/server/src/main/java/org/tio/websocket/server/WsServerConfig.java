@@ -43,3 +43,10 @@ public class WsServerConfig {
 	/**
 	 * @return the bindPort
 	 */
+	public Integer getBindPort() {
+		return bindPort;
+	}
+
+	/**
+	 * @return the charset
+	 */
