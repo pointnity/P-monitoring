@@ -28,3 +28,4 @@ xsi:schemaLocation
 		</dependency>
 	</dependencies>
 	<build>
+		<plugins>
