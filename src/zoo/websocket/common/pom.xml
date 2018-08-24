@@ -16,3 +16,4 @@ xsi:schemaLocation
 			<groupId>org.t-io</groupId>
 			<artifactId>tio-http-common</artifactId>
 		</dependency>
+		<dependency>
