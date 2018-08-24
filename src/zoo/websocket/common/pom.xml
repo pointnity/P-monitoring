@@ -31,3 +31,6 @@ xsi:schemaLocation
 		<plugins>
 
 		</plugins>
+	</build>
+
+</project>
