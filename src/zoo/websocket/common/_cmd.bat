@@ -4,7 +4,7 @@ echo #Download source code
 echo mvn dependency:sources
 echo -
 
-echo #Download source code jar。 -DdownloadJavadocs=true Download Javadoc Package
+echo #Download source code jar. -DdownloadJavadocs=true Download Javadoc Package
 echo -DdownloadSources=true
 echo -
 echo -
@@ -33,3 +33,6 @@ echo -
 echo #Version change
 echo mvn versions:set -DnewVersion=4.0.0-talent-999
 echo -
+
+
+call cmd
