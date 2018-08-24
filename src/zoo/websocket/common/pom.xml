@@ -5,3 +5,4 @@ xsi:schemaLocation
 	<name>${project.artifactId}</name>
 
 	<parent>
+		<groupId>org.t-io</groupId>
