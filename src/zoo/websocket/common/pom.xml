@@ -27,3 +27,4 @@ xsi:schemaLocation
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
