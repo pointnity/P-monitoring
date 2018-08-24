@@ -12,3 +12,4 @@ xsi:schemaLocation
 	</parent>
 
 	<dependencies>
+		<dependency>
