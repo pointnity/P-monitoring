@@ -27,3 +27,7 @@ echo -
 
 
 echo #Checking for version updates
+echo mvn versions:display-dependency-updates
+echo -
+
+echo #Version change
