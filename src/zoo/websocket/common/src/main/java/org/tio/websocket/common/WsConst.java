@@ -6,3 +6,4 @@ package org.tio.websocket.common;
  */
 public interface WsConst {
 	String SESSION_KEY = "session_key";
+}
