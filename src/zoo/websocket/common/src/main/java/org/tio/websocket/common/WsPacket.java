@@ -51,3 +51,7 @@ public class WsPacket extends Packet {
 	private String wsBodyText; //This field is only available when text is
 
 	public WsPacket() {
+
+	}
+
+	public WsPacket(byte[] body) {
