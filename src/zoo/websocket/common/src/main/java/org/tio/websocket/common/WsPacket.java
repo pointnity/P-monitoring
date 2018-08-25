@@ -146,3 +146,29 @@ public class WsPacket extends Packet {
 	/**
 	 * @param wsBodyLength the wsBodyLength to set
 	 */
+	public void setWsBodyLength(long wsBodyLength) {
+		this.wsBodyLength = wsBodyLength;
+	}
+
+	/**
+	 * @param wsBodyText the wsBodyText to set
+	 */
+	public void setWsBodyText(String wsBodyText) {
+		this.wsBodyText = wsBodyText;
+	}
+
+	/**
+	 * @param wsEof the wsEof to set
+	 */
+	public void setWsEof(boolean wsEof) {
+		this.wsEof = wsEof;
+	}
+
+	/**
+	 * @param wsHasMask the wsHasMask to set
+	 */
+	public void setWsHasMask(boolean wsHasMask) {
+		this.wsHasMask = wsHasMask;
+	}
+
+	/**
