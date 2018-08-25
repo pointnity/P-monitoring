@@ -27,3 +27,6 @@ public enum Opcode {
 
 	private Opcode(byte code) {
 		this.code = code;
+	}
+
+	public byte getCode() {
