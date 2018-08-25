@@ -55,3 +55,10 @@ public class WsPacket extends Packet {
 	}
 
 	public WsPacket(byte[] body) {
+		this();
+		this.body = body;
+	}
+
+	/**
+	 * @return the body
+	 */
