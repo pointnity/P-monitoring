@@ -31,3 +31,6 @@ public enum Opcode {
 
 	public byte getCode() {
 		return code;
+	}
+
+}
