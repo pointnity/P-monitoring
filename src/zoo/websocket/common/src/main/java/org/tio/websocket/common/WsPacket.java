@@ -47,3 +47,7 @@ public class WsPacket extends Packet {
 	private long wsBodyLength;
 
 	private byte[] wsMask;
+
+	private String wsBodyText; //This field is only available when text is
+
+	public WsPacket() {
