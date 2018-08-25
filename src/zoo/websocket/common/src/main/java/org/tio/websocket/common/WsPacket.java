@@ -21,5 +21,10 @@ public class WsPacket extends Packet {
 	public static final int MAX_LENGTH_OF_BODY = (int) (1024 * 1024 * 2.1); //How many m data is supported only
 	public static final int MINIMUM_HEADER_LENGTH = 2;
 
-public static final int MAX_BODY_LENGTH = 1024 * 512; //Up to 1024 * 512 (half m) data received
+        public static final int MAX_BODY_LENGTH = 1024 * 512; //Up to 1024 * 512 (half m) data received
 
+        public static final String CHARSET_NAME = "utf-8";
+
+	/**
+	 * @param args
+	 */
