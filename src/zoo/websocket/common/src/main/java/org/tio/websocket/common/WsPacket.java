@@ -76,3 +76,5 @@ public class WsPacket extends Packet {
 	/**
 	 * @return the wsBodyText
 	 */
+	public String getWsBodyText() {
+		return wsBodyText;
