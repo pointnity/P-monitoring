@@ -69,3 +69,4 @@ public class WsPacket extends Packet {
 	/**
 	 * @return the wsBodyLength
 	 */
+	public long getWsBodyLength() {
