@@ -78,3 +78,8 @@ public class WsPacket extends Packet {
 	 */
 	public String getWsBodyText() {
 		return wsBodyText;
+	}
+
+	/**
+	 * @return the wsMask
+	 */
