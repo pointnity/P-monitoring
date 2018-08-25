@@ -37,3 +37,5 @@ public class WsPacket extends Packet {
 	private boolean isHandShake = false;
 
 	private byte[] body;
+
+	private boolean wsEof;
