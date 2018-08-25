@@ -107,3 +107,19 @@ public class WsPacket extends Packet {
 	public boolean isWsEof() {
 		return wsEof;
 	}
+
+	/**
+	 * @return the wsHasMask
+	 */
+	public boolean isWsHasMask() {
+		return wsHasMask;
+	}
+
+	/**
+	 * @see org.tio.core.intf.Packet#logstr()
+	 *
+	 * @return
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
