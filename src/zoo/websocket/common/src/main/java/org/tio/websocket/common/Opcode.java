@@ -22,3 +22,5 @@ public enum Opcode {
 	public static Opcode valueOf(byte code) {
 		return map.get(code);
 	}
+
+	private final byte code;
