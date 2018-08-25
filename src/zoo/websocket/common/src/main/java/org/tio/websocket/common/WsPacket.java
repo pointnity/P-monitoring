@@ -34,3 +34,6 @@ public class WsPacket extends Packet {
 	/**
 	 * Whether it is a handshake package
 	 */
+	private boolean isHandShake = false;
+
+	private byte[] body;
