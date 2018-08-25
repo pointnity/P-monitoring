@@ -41,3 +41,5 @@ public class WsPacket extends Packet {
 	private boolean wsEof;
 
 	private Opcode wsOpcode = Opcode.BINARY;
+
+	private boolean wsHasMask;
