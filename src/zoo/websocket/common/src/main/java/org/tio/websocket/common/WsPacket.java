@@ -28,3 +28,9 @@ public class WsPacket extends Packet {
 	/**
 	 * @param args
 	 */
+	public static void main(String[] args) {
+	}
+
+	/**
+	 * Whether it is a handshake package
+	 */
