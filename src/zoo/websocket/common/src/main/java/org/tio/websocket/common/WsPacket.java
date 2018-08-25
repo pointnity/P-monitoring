@@ -123,3 +123,19 @@ public class WsPacket extends Packet {
 	 * 
 	 *
 	 */
+	@Override
+	public String logstr() {
+		return "websocket";
+
+	}
+
+	/**
+	 * @param body the body to set
+	 */
+	public void setBody(byte[] body) {
+		this.body = body;
+	}
+
+	/**
+	 * @param isHandShake the isHandShake to set
+	 */
