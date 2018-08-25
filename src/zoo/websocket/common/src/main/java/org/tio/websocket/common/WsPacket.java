@@ -63,3 +63,5 @@ public class WsPacket extends Packet {
 	 * @return the body
 	 */
 	public byte[] getBody() {
+		return body;
+	}
