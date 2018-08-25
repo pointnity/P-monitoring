@@ -18,3 +18,6 @@ public class WsPacket extends Packet {
 	/**
 	 * The maximum number of message bodies
 	 */
+	public static final int MAX_LENGTH_OF_BODY = (int) (1024 * 1024 * 2.1); //How many m data is supported only
+	public static final int MINIMUM_HEADER_LENGTH = 2;
+
