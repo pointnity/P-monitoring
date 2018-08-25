@@ -192,3 +192,10 @@ public class WsPacket extends Packet {
 	//		return headers;
 	//	}
 	//
+	//	/**
+	//	 * @param headers the headers to set
+	//	 */
+	//	public void setHeaders(Map<String, String> headers) {
+	//		this.headers = headers;
+	//	}
+}
