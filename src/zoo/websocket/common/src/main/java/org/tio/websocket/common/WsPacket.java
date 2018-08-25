@@ -172,3 +172,23 @@ public class WsPacket extends Packet {
 	}
 
 	/**
+	 * @param wsMask the wsMask to set
+	 */
+	public void setWsMask(byte[] wsMask) {
+		this.wsMask = wsMask;
+	}
+
+	/**
+	 * @param wsOpcode the wsOpcode to set
+	 */
+	public void setWsOpcode(Opcode wsOpcode) {
+		this.wsOpcode = wsOpcode;
+	}
+
+	//	/**
+	//	 * @return the headers
+	//	 */
+	//	public Map<String, String> getHeaders() {
+	//		return headers;
+	//	}
+	//
