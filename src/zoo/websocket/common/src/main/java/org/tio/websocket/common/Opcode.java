@@ -14,3 +14,7 @@ public enum Opcode {
 	private static final Map<Byte, Opcode> map = new HashMap<>();
 
 	static {
+		for (Opcode command : values()) {
+			map.put(command.getCode(), command);
+		}
+	}
