@@ -139,3 +139,10 @@ public class WsPacket extends Packet {
 	/**
 	 * @param isHandShake the isHandShake to set
 	 */
+	public void setHandShake(boolean isHandShake) {
+		this.isHandShake = isHandShake;
+	}
+
+	/**
+	 * @param wsBodyLength the wsBodyLength to set
+	 */
