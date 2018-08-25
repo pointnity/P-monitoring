@@ -18,3 +18,5 @@ public enum Opcode {
 			map.put(command.getCode(), command);
 		}
 	}
+
+	public static Opcode valueOf(byte code) {
