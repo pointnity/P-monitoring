@@ -83,3 +83,6 @@ public class WsPacket extends Packet {
 	/**
 	 * @return the wsMask
 	 */
+	public byte[] getWsMask() {
+		return wsMask;
+	}
