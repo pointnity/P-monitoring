@@ -86,3 +86,24 @@ public class WsPacket extends Packet {
 	public byte[] getWsMask() {
 		return wsMask;
 	}
+
+	/**
+	 * @return the wsOpcode
+	 */
+	public Opcode getWsOpcode() {
+		return wsOpcode;
+	}
+
+	/**
+	 * @return the isHandShake
+	 */
+	public boolean isHandShake() {
+		return isHandShake;
+	}
+
+	/**
+	 * @return the wsEof
+	 */
+	public boolean isWsEof() {
+		return wsEof;
+	}
