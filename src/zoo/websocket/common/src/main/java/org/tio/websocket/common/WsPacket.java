@@ -39,3 +39,5 @@ public class WsPacket extends Packet {
 	private byte[] body;
 
 	private boolean wsEof;
+
+	private Opcode wsOpcode = Opcode.BINARY;
