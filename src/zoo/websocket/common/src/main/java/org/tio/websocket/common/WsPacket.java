@@ -44,4 +44,6 @@ public class WsPacket extends Packet {
 
 	private boolean wsHasMask;
 
-	private boolean wsHasMask;
+	private long wsBodyLength;
+
+	private byte[] wsMask;
