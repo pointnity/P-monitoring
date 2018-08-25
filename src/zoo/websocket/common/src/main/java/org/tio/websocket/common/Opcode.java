@@ -24,3 +24,5 @@ public enum Opcode {
 	}
 
 	private final byte code;
+
+	private Opcode(byte code) {
