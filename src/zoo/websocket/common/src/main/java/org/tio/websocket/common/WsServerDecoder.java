@@ -36,3 +36,8 @@ public class WsServerDecoder {
 		if (readableLength < headLength) {
 			return null;
 		}
+
+		byte first = buf.get();
+		//		int b = first & 0xFF; //Convert to 32-bit
+		boolean fin = (first & 0x80) > 0; //Get 8th place 10000000>0
+		@SuppressWarnings("unused")
