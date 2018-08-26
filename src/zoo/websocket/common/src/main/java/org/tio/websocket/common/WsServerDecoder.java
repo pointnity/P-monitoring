@@ -114,3 +114,28 @@ public class WsServerDecoder {
 		if (payloadLength == 0) {
 			return websocketPacket;
 		}
+
+		byte[] array = ByteBufferUtils.readBytes(buf, payloadLength);
+		if (hasMask) {
+			for (int i = 0; i < array.length; i++) {
+				array[i] = (byte) (array[i] ^ mask[i % 4]);
+			}
+		}
+
+		if (!fin) {
+			//lastParts.add(array);
+			log.error("payloadLength {}, lastParts size {}, array length {}", payloadLength, lastParts.size(), array.length);
+			return websocketPacket;
+		} else {
+			int allLength = array.length;
+			if (lastParts != null) {
+				for (byte[] part : lastParts) {
+					allLength += part.length;
+				}
+				byte[] allByte = new byte[allLength];
+
+				int offset = 0;
+				for (byte[] part : lastParts) {
+					System.arraycopy(part, 0, allByte, offset, part.length);
+					offset += part.length;
+				}
