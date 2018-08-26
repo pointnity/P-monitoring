@@ -112,3 +112,5 @@ public class WsServerDecoder {
 		websocketPacket.setWsBodyLength(payloadLength);
 
 		if (payloadLength == 0) {
+			return websocketPacket;
+		}
