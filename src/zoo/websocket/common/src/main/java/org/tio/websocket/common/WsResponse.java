@@ -28,3 +28,4 @@ public class WsResponse extends WsPacket {
 	
 	public static WsResponse fromBytes(byte[] bytes) {	
 		WsResponse wsResponse = new WsResponse();
+		wsResponse.setBody(bytes);
