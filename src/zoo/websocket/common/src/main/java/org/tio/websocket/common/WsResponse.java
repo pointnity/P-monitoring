@@ -16,3 +16,4 @@ public class WsResponse extends WsPacket {
 	private static final long serialVersionUID = 963847148301021559L;
 	
 	public static WsResponse fromText(String text, String charset) {
+		WsResponse wsResponse = new WsResponse();
