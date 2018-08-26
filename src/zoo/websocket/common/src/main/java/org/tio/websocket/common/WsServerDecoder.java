@@ -81,3 +81,26 @@ public class WsServerDecoder {
 			payloadLength = ByteBufferUtils.readUB2WithBigEdian(buf);
 			log.info("{} payloadLengthFlag: 126，payloadLength {}", channelContext, payloadLength);
 
+		} else if (payloadLength == 127) { //127 reads 8 bytes, and the latter 8 bytes is payloadlength
+			headLength += 8;
+			if (readableLength < headLength) {
+				return null;
+			}
+
+			payloadLength = (int) buf.getLong();
+			log.info("{} payloadLengthFlag: 127，payloadLength {}", channelContext, payloadLength);
+		}
+
+		if (payloadLength < 0 || payloadLength > WsPacket.MAX_BODY_LENGTH) {
+			throw new AioDecodeException("body length(" + payloadLength + ") is not right");
+		}
+
+		if (readableLength < headLength + payloadLength) {
+			return null;
+		}
+
+		if (hasMask) {
+			mask = ByteBufferUtils.readBytes(buf, 4);
+		}
+
+		//Second phase analysis
