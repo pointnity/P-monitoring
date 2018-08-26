@@ -11,3 +11,4 @@ import org.slf4j.LoggerFactory;
  * 
  */
 public class WsResponse extends WsPacket {
+	private static Logger log = LoggerFactory.getLogger(WsResponse.class);
