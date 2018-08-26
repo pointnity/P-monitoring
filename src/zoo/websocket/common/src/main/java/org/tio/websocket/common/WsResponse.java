@@ -32,3 +32,4 @@ public class WsResponse extends WsPacket {
 		wsResponse.setWsOpcode(Opcode.BINARY);
 		return wsResponse;
 	}
+}
