@@ -10,3 +10,4 @@ import org.slf4j.LoggerFactory;
  * @author tanyaowu
  * 
  */
+public class WsResponse extends WsPacket {
