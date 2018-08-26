@@ -70,3 +70,14 @@ public class WsServerDecoder {
 		} else {
 			headLength += 4;
 		}
+		int payloadLength = second & 0x7F; //After reading the 7-bit Payload legth, if <126 is Payloadlength
+
+		byte[] mask = null;
+		if (payloadLength == 126) { //126 reads 2 bytes, and the latter two bytes is payloadlength
+			headLength += 2;
+			if (readableLength < headLength) {
+				return null;
+			}
+			payloadLength = ByteBufferUtils.readUB2WithBigEdian(buf);
+			log.info("{} payloadLengthFlag: 126，payloadLength {}", channelContext, payloadLength);
+
