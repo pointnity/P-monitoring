@@ -22,3 +22,4 @@ public class WsResponse extends WsPacket {
 		} catch (UnsupportedEncodingException e) {
 			log.error(e.toString(), e);
 		}
+		wsResponse.setWsOpcode(Opcode.TEXT);
