@@ -58,3 +58,15 @@ public class WsServerDecoder {
 			//				imSessionContext.setLastParts(lastParts);
 			//			}
 		} else {
+			imSessionContext.setLastParts(null);
+		}
+
+		byte second = buf.get(); //Read backward one byte
+		boolean hasMask = (second & 0xFF) >> 7 == 1; //Used to identify whether Payloaddata has been masked.If the data in the 1,masking-key field is a mask key, it is used to decode the payloaddata.The data frames emitted by the client need to be masked, so this bit is 1.
+
+              //Client data must be masked
+              //if (!Hasmask) {//9th for mask, must be 1
+			//throw new AioDecodeException("websocket client data must be masked");
+		} else {
+			headLength += 4;
+		}
