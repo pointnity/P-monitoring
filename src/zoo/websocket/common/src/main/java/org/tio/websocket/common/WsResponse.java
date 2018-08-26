@@ -24,3 +24,5 @@ public class WsResponse extends WsPacket {
 		}
 		wsResponse.setWsOpcode(Opcode.TEXT);
 		return wsResponse;
+	}
+	
