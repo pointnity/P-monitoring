@@ -26,3 +26,4 @@ public class WsResponse extends WsPacket {
 		return wsResponse;
 	}
 	
+	public static WsResponse fromBytes(byte[] bytes) {	
