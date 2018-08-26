@@ -148,3 +148,11 @@ public class WsServerDecoder {
 			if (opcode == Opcode.BINARY) {
 
 			} else {
+				try {
+					String text = null;
+					text = new String(array, WsPacket.CHARSET_NAME);
+					websocketPacket.setWsBodyText(text);
+				} catch (UnsupportedEncodingException e) {
+					log.error(e.toString(), e);
+				}
+			}
