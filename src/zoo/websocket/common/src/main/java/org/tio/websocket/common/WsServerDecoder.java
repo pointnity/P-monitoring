@@ -20,3 +20,7 @@ public class WsServerDecoder {
 	public static enum Step {
 		header, remain_header, data,
 	}
+
+	private static Logger log = LoggerFactory.getLogger(WsServerDecoder.class);
+
+	public static WsRequest decode(ByteBuffer buf, ChannelContext channelContext) throws AioDecodeException {
