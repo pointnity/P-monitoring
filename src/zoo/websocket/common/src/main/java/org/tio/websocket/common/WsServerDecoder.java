@@ -28,3 +28,5 @@ public class WsServerDecoder {
 		List<byte[]> lastParts = imSessionContext.getLastParts();
 
 		//First phase analysis
+		int initPosition = buf.position();
+		int readableLength = buf.limit() - initPosition;
