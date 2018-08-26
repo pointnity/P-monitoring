@@ -16,3 +16,7 @@ import org.tio.core.utils.ByteBufferUtils;
  * @author tanyaowu
  * 
  */
+public class WsServerDecoder {
+	public static enum Step {
+		header, remain_header, data,
+	}
