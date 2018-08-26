@@ -24,3 +24,7 @@ public class WsServerDecoder {
 	private static Logger log = LoggerFactory.getLogger(WsServerDecoder.class);
 
 	public static WsRequest decode(ByteBuffer buf, ChannelContext channelContext) throws AioDecodeException {
+		WsSessionContext imSessionContext = (WsSessionContext) channelContext.getAttribute();
+		List<byte[]> lastParts = imSessionContext.getLastParts();
+
+		//First phase analysis
