@@ -41,10 +41,14 @@ public class WsServerDecoder {
 		//		int b = first & 0xFF; //Convert to 32-bit
 		boolean fin = (first & 0x80) > 0; //Get 8th place 10000000>0
 		@SuppressWarnings("unused")
-		int rsv = (first & 0x70) >>> 4;//Get5、6、7 为01110000 Then move right four digits to00000111
+		int rsv = (first & 0x70) >>> 4;//Get5、6、7 For 01110000 Then move right four digits to00000111
 		byte opCodeByte = (byte) (first & 0x0F);//The latter four digits areopCode 00001111
 		Opcode opcode = Opcode.valueOf(opCodeByte);
 		if (opcode == Opcode.CLOSE) {
 			//			Aio.remove(channelContext, "Roger that opcode:" + opcode);
 			//			return null;
 		}
+		if (!fin) {
+			log.error("{} Request for Fin false is not supported temporarily", channelContext);
+			Aio.remove(channelContext, "Request for Fin false is not supported temporarily");
+			return null;
