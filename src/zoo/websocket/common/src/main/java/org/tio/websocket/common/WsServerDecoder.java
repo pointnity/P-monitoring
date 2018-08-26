@@ -108,3 +108,7 @@ public class WsServerDecoder {
 		websocketPacket.setWsEof(fin);
 		websocketPacket.setWsHasMask(hasMask);
 		websocketPacket.setWsMask(mask);
+		websocketPacket.setWsOpcode(opcode);
+		websocketPacket.setWsBodyLength(payloadLength);
+
+		if (payloadLength == 0) {
