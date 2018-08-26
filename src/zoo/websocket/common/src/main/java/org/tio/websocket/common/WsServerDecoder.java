@@ -142,3 +142,9 @@ public class WsServerDecoder {
 				System.arraycopy(array, 0, allByte, offset, array.length);
 				array = allByte;
 			}
+
+			websocketPacket.setBody(array);
+
+			if (opcode == Opcode.BINARY) {
+
+			} else {
