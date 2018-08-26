@@ -139,3 +139,6 @@ public class WsServerDecoder {
 					System.arraycopy(part, 0, allByte, offset, part.length);
 					offset += part.length;
 				}
+				System.arraycopy(array, 0, allByte, offset, array.length);
+				array = allByte;
+			}
