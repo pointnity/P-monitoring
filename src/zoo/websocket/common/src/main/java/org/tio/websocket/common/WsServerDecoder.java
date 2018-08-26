@@ -52,3 +52,9 @@ public class WsServerDecoder {
 			log.error("{} Request for Fin false is not supported temporarily", channelContext);
 			Aio.remove(channelContext, "Request for Fin false is not supported temporarily");
 			return null;
+			//The following code should not be deleted, and if you support fin in the future, you will need
+			//			if (lastParts == null) {
+			//				lastParts = new ArrayList<>();
+			//				imSessionContext.setLastParts(lastParts);
+			//			}
+		} else {
