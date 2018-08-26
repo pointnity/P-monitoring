@@ -156,3 +156,15 @@ public class WsServerDecoder {
 					log.error(e.toString(), e);
 				}
 			}
+		}
+		return websocketPacket;
+
+	}
+
+	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
