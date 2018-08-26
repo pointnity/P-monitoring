@@ -23,3 +23,4 @@ public class WsResponse extends WsPacket {
 			log.error(e.toString(), e);
 		}
 		wsResponse.setWsOpcode(Opcode.TEXT);
+		return wsResponse;
