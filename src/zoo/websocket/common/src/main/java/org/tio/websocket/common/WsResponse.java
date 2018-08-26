@@ -21,3 +21,4 @@ public class WsResponse extends WsPacket {
 			wsResponse.setBody(text.getBytes(charset));
 		} catch (UnsupportedEncodingException e) {
 			log.error(e.toString(), e);
+		}
