@@ -30,3 +30,9 @@ public class WsServerDecoder {
 		//First phase analysis
 		int initPosition = buf.position();
 		int readableLength = buf.limit() - initPosition;
+
+		int headLength = WsPacket.MINIMUM_HEADER_LENGTH;
+
+		if (readableLength < headLength) {
+			return null;
+		}
