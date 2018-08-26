@@ -104,3 +104,7 @@ public class WsServerDecoder {
 		}
 
 		//Second phase analysis
+		WsRequest websocketPacket = new WsRequest();
+		websocketPacket.setWsEof(fin);
+		websocketPacket.setWsHasMask(hasMask);
+		websocketPacket.setWsMask(mask);
