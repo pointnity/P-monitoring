@@ -18,3 +18,4 @@ public class WsResponse extends WsPacket {
 	public static WsResponse fromText(String text, String charset) {
 		WsResponse wsResponse = new WsResponse();
 		try {
+			wsResponse.setBody(text.getBytes(charset));
