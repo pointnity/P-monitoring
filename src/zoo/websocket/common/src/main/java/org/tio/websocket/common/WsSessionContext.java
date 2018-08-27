@@ -91,3 +91,10 @@ public class WsSessionContext {
 	/**
 	 * @param isHandshaked the isHandshaked to set
 	 */
+	public void setHandshaked(boolean isHandshaked) {
+		this.isHandshaked = isHandshaked;
+	}
+
+	/**
+	 * @param httpHandshakePacket the httpHandshakePacket to set
+	 */
