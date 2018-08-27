@@ -37,3 +37,7 @@ public class WsServerEncoder {
 	public static ByteBuffer encode(WsResponse wsResponse, GroupContext groupContext, ChannelContext channelContext) {
 		byte[] imBody = wsResponse.getBody();//is the body of WS, excluding the head of WS
 		int wsBodyLength = 0;
+
+		if (imBody != null) {
+			wsBodyLength += imBody.length;
+		}
