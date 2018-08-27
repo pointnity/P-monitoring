@@ -83,3 +83,7 @@ public class WsServerEncoder {
 	 * 
 	 *
 	 */
+	public WsServerEncoder() {
+
+	}
+}
