@@ -15,3 +15,4 @@ import org.tio.core.utils.ByteBufferUtils;
  *
  */
 public class WsServerEncoder {
+	@SuppressWarnings("unused")
