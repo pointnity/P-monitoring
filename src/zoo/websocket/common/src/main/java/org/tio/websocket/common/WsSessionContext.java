@@ -12,3 +12,9 @@ import org.tio.http.common.HttpResponse;
  */
 public class WsSessionContext {
 	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
