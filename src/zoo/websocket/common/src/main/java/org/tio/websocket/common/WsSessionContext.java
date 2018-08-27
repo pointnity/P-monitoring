@@ -105,3 +105,6 @@ public class WsSessionContext {
 	/**
 	 * @param handshakeResponsePacket the handshakeResponsePacket to set
 	 */
+	public void setHandshakeResponsePacket(HttpResponse handshakeResponsePacket) {
+		this.handshakeResponsePacket = handshakeResponsePacket;
+	}
