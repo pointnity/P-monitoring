@@ -19,3 +19,5 @@ public class WsServerEncoder {
 	private static Logger log = LoggerFactory.getLogger(WsServerEncoder.class);
 
 	public static final int MAX_HEADER_LENGTH = 20480;
+
+	private static void checkLength(byte[] bytes, int length, int offset) {
