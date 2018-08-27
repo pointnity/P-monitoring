@@ -73,3 +73,6 @@ public class WsServerEncoder {
 
 		bytes[offset + 3] = (byte) (value & 0xff);
 		bytes[offset + 2] = (byte) (value >> 8 * 1 & 0xff);
+		bytes[offset + 1] = (byte) (value >> 8 * 2 & 0xff);
+		bytes[offset + 0] = (byte) (value >> 8 * 3);
+	}
