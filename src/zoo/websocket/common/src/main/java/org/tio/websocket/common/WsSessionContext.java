@@ -25,3 +25,8 @@ public class WsSessionContext {
 	/**
 	 * Have you ever held hands
 	 */
+	private boolean isHandshaked = false;
+
+	/**
+	 * websocket Handshake Request Package
+	 */
