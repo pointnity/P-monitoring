@@ -14,3 +14,4 @@ import org.tio.core.utils.ByteBufferUtils;
  * @author tanyaowu
  *
  */
+public class WsServerEncoder {
