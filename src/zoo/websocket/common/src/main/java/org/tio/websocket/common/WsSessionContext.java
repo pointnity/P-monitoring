@@ -38,3 +38,9 @@ public class WsSessionContext {
 	private HttpResponse handshakeResponsePacket = null;
 
 	private String token = null;
+
+	//websocket protocol used, and sometimes the packet is divided into several, pay attention to that fin field, this IM temporarily does not support
+	private List<byte[]> lastParts = null;
+
+	/**
+	 *
