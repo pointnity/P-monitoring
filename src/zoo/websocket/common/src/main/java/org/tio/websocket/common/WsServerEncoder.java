@@ -16,3 +16,4 @@ import org.tio.core.utils.ByteBufferUtils;
  */
 public class WsServerEncoder {
 	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(WsServerEncoder.class);
