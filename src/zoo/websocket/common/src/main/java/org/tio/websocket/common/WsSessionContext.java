@@ -66,3 +66,10 @@ public class WsSessionContext {
 	public HttpResponse getHandshakeResponsePacket() {
 		return handshakeResponsePacket;
 	}
+
+	/**
+	 * @return the lastPart
+	 */
+	public List<byte[]> getLastParts() {
+		return lastParts;
+	}
