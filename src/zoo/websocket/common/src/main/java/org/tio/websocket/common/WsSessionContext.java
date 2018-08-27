@@ -108,3 +108,7 @@ public class WsSessionContext {
 	public void setHandshakeResponsePacket(HttpResponse handshakeResponsePacket) {
 		this.handshakeResponsePacket = handshakeResponsePacket;
 	}
+
+	/**
+	 * @param lastParts the lastPart to set
+	 */
