@@ -73,3 +73,17 @@ public class WsSessionContext {
 	public List<byte[]> getLastParts() {
 		return lastParts;
 	}
+
+	/**
+	 * @return the token
+	 */
+	public String getToken() {
+		return token;
+	}
+
+	/**
+	 * @return the isHandshaked
+	 */
+	public boolean isHandshaked() {
+		return isHandshaked;
+	}
