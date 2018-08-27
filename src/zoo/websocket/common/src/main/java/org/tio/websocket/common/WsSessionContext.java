@@ -114,3 +114,8 @@ public class WsSessionContext {
 	 */
 	public void setLastParts(List<byte[]> lastParts) {
 		this.lastParts = lastParts;
+	}
+
+	/**
+	 * @param token the token to set
+	 */
