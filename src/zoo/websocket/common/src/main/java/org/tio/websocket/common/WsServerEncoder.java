@@ -50,3 +50,5 @@ public class WsServerEncoder {
 			buf.put((byte) wsBodyLength);
 		} else if (wsBodyLength < (1 << 16) - 1) {
 			buf = ByteBuffer.allocate(4 + wsBodyLength);
+			buf.put(header0);
+			buf.put((byte) 126);
