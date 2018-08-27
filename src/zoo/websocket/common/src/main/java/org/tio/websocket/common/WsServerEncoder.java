@@ -41,3 +41,6 @@ public class WsServerEncoder {
 		if (imBody != null) {
 			wsBodyLength += imBody.length;
 		}
+
+		byte header0 = (byte) (0x8f & (wsResponse.getWsOpcode().getCode() | 0xf0));
+		ByteBuffer buf = null;
