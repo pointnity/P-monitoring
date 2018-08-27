@@ -10,7 +10,7 @@ import org.tio.core.utils.ByteBufferUtils;
 
 /**
  * 
- * generallycloud.nio.codec.http11.WebSocketProtocolEncoder
+ * generallycloud.nio.codec.11.WebSocketProtocolEncoder
  * @author tanyaowu
  *
  */
