@@ -56,3 +56,5 @@ public class WsServerEncoder {
 		} else {
 			buf = ByteBuffer.allocate(10 + wsBodyLength);
 			buf.put(header0);
+			buf.put((byte) 127);
+			buf.put(new byte[] { 0, 0, 0, 0 });
