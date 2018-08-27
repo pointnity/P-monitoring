@@ -98,3 +98,6 @@ public class WsSessionContext {
 	/**
 	 * @param httpHandshakePacket the httpHandshakePacket to set
 	 */
+	public void setHandshakeRequestPacket(HttpRequest handshakeRequestPacket) {
+		this.handshakeRequestPacket = handshakeRequestPacket;
+	}
