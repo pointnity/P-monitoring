@@ -2,8 +2,8 @@ package org.tio.websocket.common;
 
 import java.util.List;
 
-import org.tio.http.common.HttpRequest;
-import org.tio.http.common.HttpResponse;
+import org.tio.common.HttpRequest;
+import org.tio.common.HttpResponse;
 
 /**
  *
@@ -48,4 +48,11 @@ public class WsSessionContext {
 	 * @author tanyaowu
 	 * 
 	 *
+	 */
+	public WsSessionContext() {
+
+	}
+
+	/**
+	 * @return the httpHandshakePacket
 	 */
