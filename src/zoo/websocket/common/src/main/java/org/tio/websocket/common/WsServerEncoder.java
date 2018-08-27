@@ -33,3 +33,7 @@ public class WsServerEncoder {
 			throw new IllegalArgumentException("invalidate length " + bytes.length);
 		}
 	}
+
+	public static ByteBuffer encode(WsResponse wsResponse, GroupContext groupContext, ChannelContext channelContext) {
+		byte[] imBody = wsResponse.getBody();//is the body of WS, excluding the head of WS
+		int wsBodyLength = 0;
