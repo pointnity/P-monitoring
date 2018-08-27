@@ -21,3 +21,6 @@ public class WsServerEncoder {
 	public static final int MAX_HEADER_LENGTH = 20480;
 
 	private static void checkLength(byte[] bytes, int length, int offset) {
+		if (bytes == null) {
+			throw new IllegalArgumentException("null");
+		}
