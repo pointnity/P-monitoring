@@ -61,3 +61,8 @@ public class WsSessionContext {
 	}
 
 	/**
+	 * @return the handshakeResponsePacket
+	 */
+	public HttpResponse getHandshakeResponsePacket() {
+		return handshakeResponsePacket;
+	}
