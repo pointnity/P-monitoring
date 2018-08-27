@@ -52,3 +52,5 @@ public class WsServerEncoder {
 			buf = ByteBuffer.allocate(4 + wsBodyLength);
 			buf.put(header0);
 			buf.put((byte) 126);
+			ByteBufferUtils.writeUB2WithBigEdian(buf, wsBodyLength);
+		} else {
