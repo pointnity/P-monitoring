@@ -24,3 +24,7 @@ public class WsServerEncoder {
 		if (bytes == null) {
 			throw new IllegalArgumentException("null");
 		}
+
+		if (offset < 0) {
+			throw new IllegalArgumentException("invalidate offset " + offset);
+		}
