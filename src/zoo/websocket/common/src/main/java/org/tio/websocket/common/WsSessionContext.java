@@ -18,3 +18,10 @@ public class WsSessionContext {
 	 * 
 	 *
 	 */
+	public static void main(String[] args) {
+
+	}
+
+	/**
+	 * Have you ever held hands
+	 */
