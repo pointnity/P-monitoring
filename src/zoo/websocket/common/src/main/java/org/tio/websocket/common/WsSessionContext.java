@@ -30,3 +30,8 @@ public class WsSessionContext {
 	/**
 	 * websocket Handshake Request Package
 	 */
+	private HttpRequest handshakeRequestPacket = null;
+
+	/**
+	 * websocket Handshake Response Package
+	 */
