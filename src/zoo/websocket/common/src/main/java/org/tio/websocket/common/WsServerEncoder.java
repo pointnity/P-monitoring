@@ -60,3 +60,10 @@ public class WsServerEncoder {
 			buf.put(new byte[] { 0, 0, 0, 0 });
 			ByteBufferUtils.writeUB4WithBigEdian(buf, wsBodyLength);
 		}
+
+		if (imBody != null && imBody.length > 0) {
+			buf.put(imBody);
+		}
+
+		return buf;
+	}
