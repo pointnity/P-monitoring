@@ -44,3 +44,8 @@ public class WsSessionContext {
 
 	/**
 	 *
+	 *
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
