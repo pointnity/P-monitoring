@@ -28,3 +28,8 @@ public class WsServerEncoder {
 		if (offset < 0) {
 			throw new IllegalArgumentException("invalidate offset " + offset);
 		}
+
+		if (bytes.length - offset < length) {
+			throw new IllegalArgumentException("invalidate length " + bytes.length);
+		}
+	}
