@@ -87,3 +87,7 @@ public class WsSessionContext {
 	public boolean isHandshaked() {
 		return isHandshaked;
 	}
+
+	/**
+	 * @param isHandshaked the isHandshaked to set
+	 */
