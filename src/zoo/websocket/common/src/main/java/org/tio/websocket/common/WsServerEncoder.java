@@ -7,3 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.tio.core.ChannelContext;
 import org.tio.core.GroupContext;
 import org.tio.core.utils.ByteBufferUtils;
+
+/**
+ * 
+ * generallycloud.nio.codec.http11.WebSocketProtocolEncoder
+ * @author tanyaowu
+ *
+ */
