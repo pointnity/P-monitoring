@@ -67,3 +67,6 @@ public class WsServerEncoder {
 
 		return buf;
 	}
+
+	public static void int2Byte(byte[] bytes, int value, int offset) {
+		checkLength(bytes, 4, offset);
