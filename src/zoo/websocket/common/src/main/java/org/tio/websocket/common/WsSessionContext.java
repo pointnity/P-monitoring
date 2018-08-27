@@ -35,3 +35,6 @@ public class WsSessionContext {
 	/**
 	 * websocket Handshake Response Package
 	 */
+	private HttpResponse handshakeResponsePacket = null;
+
+	private String token = null;
