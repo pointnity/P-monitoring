@@ -112,3 +112,4 @@ public class WsSessionContext {
 	/**
 	 * @param lastParts the lastPart to set
 	 */
+	public void setLastParts(List<byte[]> lastParts) {
