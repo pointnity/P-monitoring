@@ -121,3 +121,6 @@ public class WsSessionContext {
 	 */
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+}
