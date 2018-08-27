@@ -17,3 +17,5 @@ import org.tio.core.utils.ByteBufferUtils;
 public class WsServerEncoder {
 	@SuppressWarnings("unused")
 	private static Logger log = LoggerFactory.getLogger(WsServerEncoder.class);
+
+	public static final int MAX_HEADER_LENGTH = 20480;
