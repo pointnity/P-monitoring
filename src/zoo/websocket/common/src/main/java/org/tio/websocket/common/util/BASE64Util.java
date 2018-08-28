@@ -92,3 +92,7 @@ public class BASE64Util {
 				missingBytesInLastGroup++;
 			}
 		}
+		byte[] result = new byte[3 * numGroups - missingBytesInLastGroup];
+
+		// Translate all full groups from base64 to byte array elements
+		int inCursor = 0, outCursor = 0;
