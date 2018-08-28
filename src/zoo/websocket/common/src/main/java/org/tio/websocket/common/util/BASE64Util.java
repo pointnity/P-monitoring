@@ -79,3 +79,5 @@ public class BASE64Util {
 		int sLen = s.length();
 		int numGroups = sLen / 4;
 		if (4 * numGroups != sLen) {
+			throw new IllegalArgumentException("String length must be a multiple of four. len=" + sLen);
+		}
