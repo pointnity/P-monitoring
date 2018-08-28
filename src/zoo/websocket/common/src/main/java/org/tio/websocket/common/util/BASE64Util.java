@@ -162,3 +162,10 @@ public class BASE64Util {
 		int resultLen = 4 * ((aLen + 2) / 3);
 		StringBuilder result = new StringBuilder(resultLen);
 		char[] intToAlpha = alternate ? intToAltBase64 : intToBase64;
+
+		// Translate all full groups from byte array elements to Base64
+		int inCursor = 0;
+		for (int i = 0; i < numFullGroups; i++) {
+			int byte0 = a[inCursor++] & 0xff;
+			int byte1 = a[inCursor++] & 0xff;
+			int byte2 = a[inCursor++] & 0xff;
