@@ -102,3 +102,6 @@ public class BASE64Util {
 			int ch2 = base64toInt(s.charAt(inCursor++), alphaToInt);
 			int ch3 = base64toInt(s.charAt(inCursor++), alphaToInt);
 			result[outCursor++] = (byte) (ch0 << 2 | ch1 >> 4);
+			result[outCursor++] = (byte) (ch1 << 4 | ch2 >> 2);
+			result[outCursor++] = (byte) (ch2 << 6 | ch3);
+		}
