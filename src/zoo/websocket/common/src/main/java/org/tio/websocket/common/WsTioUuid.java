@@ -25,3 +25,4 @@ public class WsTioUuid implements TioUuid {
 	 * @author tanyaowu
 	 */
 	@Override
+	public String uuid() {
