@@ -63,3 +63,5 @@ public class BASE64Util {
 	 * byte array.
 	 */
 	public static byte[] altBase64ToByteArray(String s) {
+		return base64ToByteArray(s, true);
+	}
