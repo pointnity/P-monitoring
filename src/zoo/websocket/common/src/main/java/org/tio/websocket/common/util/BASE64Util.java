@@ -65,3 +65,8 @@ public class BASE64Util {
 	public static byte[] altBase64ToByteArray(String s) {
 		return base64ToByteArray(s, true);
 	}
+
+	/**
+	 * Translates the specified Base64 string (as per Preferences.get(byte[]))
+	 * into a byte array.
+	 */
