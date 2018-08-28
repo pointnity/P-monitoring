@@ -9,3 +9,4 @@ import com.xiaoleilu.hutool.util.RandomUtil;
  * @author tanyaowu
  * 
  */
+public class WsTioUuid implements TioUuid {
