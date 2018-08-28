@@ -28,3 +28,4 @@ public class BASE64Util {
 
 	/**
 	 * This array is a lookup table that translates 6-bit positive integer
+	 * index values into their "Alternate Base64 Alphabet" equivalents. This is
