@@ -169,3 +169,8 @@ public class BASE64Util {
 			int byte0 = a[inCursor++] & 0xff;
 			int byte1 = a[inCursor++] & 0xff;
 			int byte2 = a[inCursor++] & 0xff;
+			result.append(intToAlpha[byte0 >> 2]);
+			result.append(intToAlpha[byte0 << 4 & 0x3f | byte1 >> 4]);
+			result.append(intToAlpha[byte1 << 2 & 0x3f | byte2 >> 6]);
+			result.append(intToAlpha[byte2 & 0x3f]);
+		}
