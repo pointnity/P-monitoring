@@ -96,3 +96,6 @@ public class BASE64Util {
 
 		// Translate all full groups from base64 to byte array elements
 		int inCursor = 0, outCursor = 0;
+		for (int i = 0; i < numFullGroups; i++) {
+			int ch0 = base64toInt(s.charAt(inCursor++), alphaToInt);
+			int ch1 = base64toInt(s.charAt(inCursor++), alphaToInt);
