@@ -134,3 +134,12 @@ public class BASE64Util {
 		if (result < 0) {
 			throw new IllegalArgumentException("Illegal character " + c);
 		}
+		return result;
+	}
+
+	/**
+	 * Translates the specified byte array into an "alternate representation"
+	 * Base64 string. This non-standard variant uses an alphabet that does not
+	 * contain the uppercase alphabetic characters, which makes it suitable for
+	 * use in situations where case-folding occurs.
+	 */
