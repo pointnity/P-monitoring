@@ -78,3 +78,4 @@ public class BASE64Util {
 		byte[] alphaToInt = alternate ? altBase64ToInt : base64ToInt;
 		int sLen = s.length();
 		int numGroups = sLen / 4;
+		if (4 * numGroups != sLen) {
