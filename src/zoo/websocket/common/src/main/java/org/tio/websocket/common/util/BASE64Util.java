@@ -70,3 +70,4 @@ public class BASE64Util {
 	 * Translates the specified Base64 string (as per Preferences.get(byte[]))
 	 * into a byte array.
 	 */
+	public static byte[] base64ToByteArray(String s) {
