@@ -32,3 +32,4 @@ public class BASE64Util {
 	 * NOT the real Base64 Alphabet as per in Table 1 of RFC 2045. This
 	 * alternate alphabet does not use the capital letters. It is designed for
 	 * use in environments where "case folding" occurs.
+	 */
