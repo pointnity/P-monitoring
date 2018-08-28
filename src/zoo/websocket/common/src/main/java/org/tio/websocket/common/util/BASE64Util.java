@@ -41,3 +41,4 @@ public class BASE64Util {
 	 * This array is a lookup table that translates unicode characters drawn
 	 * from the "Base64 Alphabet" (as specified in Table 1 of RFC 2045) into
 	 * their 6-bit positive integer equivalents. Characters that are not in the
+	 * Base64 alphabet but fall within the bounds of the array are translated
