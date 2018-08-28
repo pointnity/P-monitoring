@@ -27,3 +27,4 @@ public class BASE64Util {
 			'7', '8', '9', '+', '/' };
 
 	/**
+	 * This array is a lookup table that translates 6-bit positive integer
