@@ -143,3 +143,11 @@ public class BASE64Util {
 	 * contain the uppercase alphabetic characters, which makes it suitable for
 	 * use in situations where case-folding occurs.
 	 */
+	public static String byteArrayToAltBase64(byte[] a) {
+		return byteArrayToBase64(a, true);
+	}
+
+	/**
+	 * Translates the specified byte array into a Base64 string as per
+	 * Preferences.put(byte[]).
+	 */
