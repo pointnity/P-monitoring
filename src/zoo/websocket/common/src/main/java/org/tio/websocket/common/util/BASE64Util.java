@@ -117,3 +117,9 @@ public class BASE64Util {
 				result[outCursor++] = (byte) (ch1 << 4 | ch2 >> 2);
 			}
 		}
+		// assert inCursor == s.length()-missingBytesInLastGroup;
+		// assert outCursor == result.length;
+		return result;
+	}
+
+	/**
