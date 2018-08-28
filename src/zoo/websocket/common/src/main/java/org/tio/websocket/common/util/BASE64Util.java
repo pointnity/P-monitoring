@@ -59,3 +59,4 @@ public class BASE64Util {
 			47, 48, 49, 50, 51, 22, 23, 24, 25 };
 
 	/**
+	 * Translates the specified "alternate representation" Base64 string into a
