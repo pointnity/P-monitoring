@@ -38,3 +38,4 @@ public class BASE64Util {
 			'6', '7', '8', '9', '+', '?' };
 
 	/**
+	 * This array is a lookup table that translates unicode characters drawn
