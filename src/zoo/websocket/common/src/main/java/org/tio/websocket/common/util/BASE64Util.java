@@ -111,3 +111,9 @@ public class BASE64Util {
 			int ch0 = base64toInt(s.charAt(inCursor++), alphaToInt);
 			int ch1 = base64toInt(s.charAt(inCursor++), alphaToInt);
 			result[outCursor++] = (byte) (ch0 << 2 | ch1 >> 4);
+
+			if (missingBytesInLastGroup == 1) {
+				int ch2 = base64toInt(s.charAt(inCursor++), alphaToInt);
+				result[outCursor++] = (byte) (ch1 << 4 | ch2 >> 2);
+			}
+		}
