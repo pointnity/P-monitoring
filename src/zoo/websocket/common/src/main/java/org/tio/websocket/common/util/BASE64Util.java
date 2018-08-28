@@ -174,3 +174,12 @@ public class BASE64Util {
 			result.append(intToAlpha[byte1 << 2 & 0x3f | byte2 >> 6]);
 			result.append(intToAlpha[byte2 & 0x3f]);
 		}
+
+		// Translate partial group if present
+		if (numBytesInPartialGroup != 0) {
+			int byte0 = a[inCursor++] & 0xff;
+			result.append(intToAlpha[byte0 >> 2]);
+			if (numBytesInPartialGroup == 1) {
+				result.append(intToAlpha[byte0 << 4 & 0x3f]);
+				result.append("==");
+			} else {
