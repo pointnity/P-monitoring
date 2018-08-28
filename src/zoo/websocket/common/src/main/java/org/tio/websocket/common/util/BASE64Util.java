@@ -99,3 +99,6 @@ public class BASE64Util {
 		for (int i = 0; i < numFullGroups; i++) {
 			int ch0 = base64toInt(s.charAt(inCursor++), alphaToInt);
 			int ch1 = base64toInt(s.charAt(inCursor++), alphaToInt);
+			int ch2 = base64toInt(s.charAt(inCursor++), alphaToInt);
+			int ch3 = base64toInt(s.charAt(inCursor++), alphaToInt);
+			result[outCursor++] = (byte) (ch0 << 2 | ch1 >> 4);
