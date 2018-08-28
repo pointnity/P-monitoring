@@ -76,3 +76,4 @@ public class BASE64Util {
 
 	private static byte[] base64ToByteArray(String s, boolean alternate) {
 		byte[] alphaToInt = alternate ? altBase64ToInt : base64ToInt;
+		int sLen = s.length();
