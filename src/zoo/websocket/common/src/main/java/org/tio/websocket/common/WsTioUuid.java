@@ -15,3 +15,5 @@ public class WsTioUuid implements TioUuid {
 	public WsTioUuid() {
 		snowflake = new Snowflake(RandomUtil.randomInt(1, 30), RandomUtil.randomInt(1, 30));
 	}
+
+	public WsTioUuid(long workerId, long datacenterId) {
