@@ -14,3 +14,5 @@
  * limitations under the License.
  */
 package org.tio.websocket.common.util;
+
+public class BASE64Util {
