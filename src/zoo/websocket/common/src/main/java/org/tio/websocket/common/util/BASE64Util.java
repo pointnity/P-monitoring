@@ -51,3 +51,4 @@ public class BASE64Util {
 
 	/**
 	 * This array is the analogue of base64ToInt, but for the nonstandard
+	 * variant that avoids the use of uppercase alphabetic characters.
