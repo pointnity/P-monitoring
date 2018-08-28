@@ -123,3 +123,9 @@ public class BASE64Util {
 	}
 
 	/**
+	 * Translates the specified character, which is assumed to be in the
+	 * "Base 64 Alphabet" into its equivalent 6-bit positive integer.
+	 *
+	 * @throw IllegalArgumentException or ArrayOutOfBoundsException if c is not
+	 *        in the Base64 Alphabet.
+	 */
