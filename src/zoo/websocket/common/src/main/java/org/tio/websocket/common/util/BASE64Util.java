@@ -50,3 +50,4 @@ public class BASE64Util {
 			48, 49, 50, 51 };
 
 	/**
+	 * This array is the analogue of base64ToInt, but for the nonstandard
