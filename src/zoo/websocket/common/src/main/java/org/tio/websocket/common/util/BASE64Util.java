@@ -151,3 +151,9 @@ public class BASE64Util {
 	 * Translates the specified byte array into a Base64 string as per
 	 * Preferences.put(byte[]).
 	 */
+	public static String byteArrayToBase64(byte[] a) {
+		return byteArrayToBase64(a, false);
+	}
+
+	private static String byteArrayToBase64(byte[] a, boolean alternate) {
+		int aLen = a.length;
