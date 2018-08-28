@@ -72,3 +72,7 @@ public class BASE64Util {
 	 */
 	public static byte[] base64ToByteArray(String s) {
 	return base64ToByteArray(s, false);
+}
+
+	private static byte[] base64ToByteArray(String s, boolean alternate) {
+		byte[] alphaToInt = alternate ? altBase64ToInt : base64ToInt;
