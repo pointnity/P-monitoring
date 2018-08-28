@@ -129,3 +129,8 @@ public class BASE64Util {
 	 * @throw IllegalArgumentException or ArrayOutOfBoundsException if c is not
 	 *        in the Base64 Alphabet.
 	 */
+	private static int base64toInt(char c, byte[] alphaToInt) {
+		int result = alphaToInt[c];
+		if (result < 0) {
+			throw new IllegalArgumentException("Illegal character " + c);
+		}
