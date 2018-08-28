@@ -83,3 +83,5 @@ public class BASE64Util {
 		}
 		int missingBytesInLastGroup = 0;
 		int numFullGroups = numGroups;
+		if (sLen != 0) {
+			if (s.charAt(sLen - 1) == '=') {
