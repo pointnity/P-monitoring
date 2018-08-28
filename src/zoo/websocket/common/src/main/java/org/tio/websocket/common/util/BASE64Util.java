@@ -105,3 +105,9 @@ public class BASE64Util {
 			result[outCursor++] = (byte) (ch1 << 4 | ch2 >> 2);
 			result[outCursor++] = (byte) (ch2 << 6 | ch3);
 		}
+
+		// Translate partial group, if present
+		if (missingBytesInLastGroup != 0) {
+			int ch0 = base64toInt(s.charAt(inCursor++), alphaToInt);
+			int ch1 = base64toInt(s.charAt(inCursor++), alphaToInt);
+			result[outCursor++] = (byte) (ch0 << 2 | ch1 >> 4);
