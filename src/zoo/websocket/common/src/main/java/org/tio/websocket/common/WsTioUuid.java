@@ -10,3 +10,4 @@ import com.xiaoleilu.hutool.util.RandomUtil;
  * 
  */
 public class WsTioUuid implements TioUuid {
+	private Snowflake snowflake;
