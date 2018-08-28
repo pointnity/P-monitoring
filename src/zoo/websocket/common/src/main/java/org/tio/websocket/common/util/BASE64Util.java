@@ -16,3 +16,9 @@
 package org.tio.websocket.common.util;
 
 public class BASE64Util {
+
+	/**
+	 * This array is a lookup table that translates 6-bit positive integer
+	 * index values into their "Base64 Alphabet" equivalents as specified in
+	 * Table 1 of RFC 2045.
+	 */
