@@ -157,3 +157,8 @@ public class BASE64Util {
 
 	private static String byteArrayToBase64(byte[] a, boolean alternate) {
 		int aLen = a.length;
+		int numFullGroups = aLen / 3;
+		int numBytesInPartialGroup = aLen - 3 * numFullGroups;
+		int resultLen = 4 * ((aLen + 2) / 3);
+		StringBuilder result = new StringBuilder(resultLen);
+		char[] intToAlpha = alternate ? intToAltBase64 : intToBase64;
