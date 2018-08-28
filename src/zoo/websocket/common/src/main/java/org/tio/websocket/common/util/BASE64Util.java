@@ -60,3 +60,5 @@ public class BASE64Util {
 
 	/**
 	 * Translates the specified "alternate representation" Base64 string into a
+	 * byte array.
+	 */
