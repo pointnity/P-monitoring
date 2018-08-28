@@ -39,3 +39,4 @@ public class BASE64Util {
 
 	/**
 	 * This array is a lookup table that translates unicode characters drawn
+	 * from the "Base64 Alphabet" (as specified in Table 1 of RFC 2045) into
