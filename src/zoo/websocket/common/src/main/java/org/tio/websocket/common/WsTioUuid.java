@@ -17,3 +17,4 @@ public class WsTioUuid implements TioUuid {
 	}
 
 	public WsTioUuid(long workerId, long datacenterId) {
+		snowflake = new Snowflake(workerId, datacenterId);
