@@ -81,3 +81,4 @@ public class BASE64Util {
 		if (4 * numGroups != sLen) {
 			throw new IllegalArgumentException("String length must be a multiple of four. len=" + sLen);
 		}
+		int missingBytesInLastGroup = 0;
