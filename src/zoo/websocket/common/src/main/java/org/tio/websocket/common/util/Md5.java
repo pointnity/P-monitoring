@@ -24,3 +24,4 @@ public class Md5 {
 		}
 		try {
 			return content.getBytes(charset);
+		} catch (UnsupportedEncodingException e) {
