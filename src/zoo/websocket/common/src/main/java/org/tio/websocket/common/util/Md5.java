@@ -28,3 +28,5 @@ public class Md5 {
 			throw new RuntimeException("MD5 An error occurred during the signature process, the specified encoding set is incorrect, and the encoding set you currently specify is:" + charset);
 		}
 	}
+
+	public static String getMD5(String input) {
