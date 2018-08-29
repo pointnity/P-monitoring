@@ -23,3 +23,4 @@ public class Md5 {
 			return content.getBytes();
 		}
 		try {
+			return content.getBytes(charset);
