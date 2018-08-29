@@ -37,3 +37,4 @@ public class Md5 {
 	 * Signature string
 	 * @param text A string that needs to be signed
 	 * @param key Secret key
+	 * @param input_charset Encoding format
