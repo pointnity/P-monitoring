@@ -52,3 +52,4 @@ public class Md5 {
 	 * @param key Secret key
 	 * @param input_charset Encoding format
 	 * @return Signature results
+	 */
