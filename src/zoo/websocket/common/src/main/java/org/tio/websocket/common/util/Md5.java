@@ -41,3 +41,4 @@ public class Md5 {
 	 * @return Signature results
 	 */
 	public static String sign(String text, String key, String input_charset) {
+		text = text + key;
