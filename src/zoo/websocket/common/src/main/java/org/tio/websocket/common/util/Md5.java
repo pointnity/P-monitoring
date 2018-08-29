@@ -25,3 +25,6 @@ public class Md5 {
 		try {
 			return content.getBytes(charset);
 		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("MD5 An error occurred during the signature process, the specified encoding set is incorrect, and the encoding set you currently specify is:" + charset);
+		}
+	}
