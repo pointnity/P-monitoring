@@ -20,3 +20,4 @@ public class Md5 {
 	 */
 	private static byte[] getContentBytes(String content, String charset) {
 		if (charset == null || "".equals(charset)) {
+			return content.getBytes();
