@@ -54,3 +54,4 @@ public class Md5 {
 	 * @return Signature results
 	 */
 	public static boolean verify(String text, String sign, String key, String input_charset) {
+		text = text + key;
