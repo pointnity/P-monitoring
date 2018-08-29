@@ -44,3 +44,5 @@ public class Md5 {
 		text = text + key;
 		return DigestUtils.md5Hex(getContentBytes(text, input_charset));
 	}
+
+	/**
