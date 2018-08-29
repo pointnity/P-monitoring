@@ -16,3 +16,5 @@ public class Md5 {
 	 * @param content
 	 * @param charset
 	 * @return
+	 * @author tanyaowu
+	 */
