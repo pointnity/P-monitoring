@@ -53,3 +53,4 @@ public class Md5 {
 	 * @param input_charset Encoding format
 	 * @return Signature results
 	 */
+	public static boolean verify(String text, String sign, String key, String input_charset) {
