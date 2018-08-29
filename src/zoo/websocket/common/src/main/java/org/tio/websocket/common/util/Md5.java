@@ -19,3 +19,4 @@ public class Md5 {
 	 * @author tanyaowu
 	 */
 	private static byte[] getContentBytes(String content, String charset) {
+		if (charset == null || "".equals(charset)) {
