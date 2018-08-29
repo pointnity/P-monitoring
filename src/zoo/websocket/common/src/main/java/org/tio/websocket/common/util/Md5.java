@@ -57,3 +57,4 @@ public class Md5 {
 		text = text + key;
 		String mysign = DigestUtils.md5Hex(getContentBytes(text, input_charset));
 		if (mysign.equals(sign)) {
+			return true;
