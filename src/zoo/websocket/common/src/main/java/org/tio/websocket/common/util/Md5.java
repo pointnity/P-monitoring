@@ -18,3 +18,4 @@ public class Md5 {
 	 * @return
 	 * @author tanyaowu
 	 */
+	private static byte[] getContentBytes(String content, String charset) {
