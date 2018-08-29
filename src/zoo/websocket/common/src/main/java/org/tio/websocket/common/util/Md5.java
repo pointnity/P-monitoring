@@ -60,3 +60,5 @@ public class Md5 {
 			return true;
 		} else {
 			return false;
+		}
+	}
