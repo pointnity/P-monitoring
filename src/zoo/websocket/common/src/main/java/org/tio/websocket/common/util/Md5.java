@@ -12,3 +12,5 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class Md5 {
 
 	/**
+	 *
+	 * @param content
