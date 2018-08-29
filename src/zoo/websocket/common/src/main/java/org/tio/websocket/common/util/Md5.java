@@ -39,3 +39,5 @@ public class Md5 {
 	 * @param key Secret key
 	 * @param input_charset Encoding format
 	 * @return Signature results
+	 */
+	public static String sign(String text, String key, String input_charset) {
