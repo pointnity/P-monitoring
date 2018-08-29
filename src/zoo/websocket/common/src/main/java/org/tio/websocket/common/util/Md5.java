@@ -30,3 +30,5 @@ public class Md5 {
 	}
 
 	public static String getMD5(String input) {
+	return sign(input, "", "utf-8");
+	}
