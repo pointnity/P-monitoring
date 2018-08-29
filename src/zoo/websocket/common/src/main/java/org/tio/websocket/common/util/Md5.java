@@ -59,3 +59,4 @@ public class Md5 {
 		if (mysign.equals(sign)) {
 			return true;
 		} else {
+			return false;
