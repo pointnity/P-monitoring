@@ -49,3 +49,4 @@ public class Md5 {
 	 * Signature string
 	 * @param text A string that needs to be signed
 	 * @param sign Signature results
+	 * @param key Secret key
