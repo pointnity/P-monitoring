@@ -18,3 +18,5 @@ package org.tio.websocket.common.util;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+public class SHA1Util {
