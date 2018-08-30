@@ -14,3 +14,5 @@
  * limitations under the License.
  */
 package org.tio.websocket.common.util;
+
+import java.nio.charset.Charset;
