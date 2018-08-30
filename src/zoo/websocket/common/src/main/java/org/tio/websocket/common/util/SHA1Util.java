@@ -24,3 +24,4 @@ public class SHA1Util {
 		try {
 			MessageDigest digest = java.security.MessageDigest.getInstance("SHA-1");
 			digest.update(decript.getBytes());
+			return digest.digest();
