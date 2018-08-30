@@ -26,3 +26,5 @@ public class SHA1Util {
 			digest.update(decript.getBytes());
 			return digest.digest();
 		} catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException(e);
+		}
