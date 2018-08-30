@@ -31,3 +31,4 @@ public class SHA1Util {
 	}
 
 	public static String SHA1(String decript, Charset encoding) {
+		byte[] array = SHA1(decript);
