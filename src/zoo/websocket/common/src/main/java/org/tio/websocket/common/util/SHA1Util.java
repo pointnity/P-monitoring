@@ -28,3 +28,6 @@ public class SHA1Util {
 		} catch (NoSuchAlgorithmException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public static String SHA1(String decript, Charset encoding) {
