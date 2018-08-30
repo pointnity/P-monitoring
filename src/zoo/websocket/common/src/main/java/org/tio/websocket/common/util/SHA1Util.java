@@ -20,3 +20,5 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class SHA1Util {
+	public static byte[] SHA1(String decript) {
+		try {
