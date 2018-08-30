@@ -22,3 +22,4 @@ import java.security.NoSuchAlgorithmException;
 public class SHA1Util {
 	public static byte[] SHA1(String decript) {
 		try {
+			MessageDigest digest = java.security.MessageDigest.getInstance("SHA-1");
