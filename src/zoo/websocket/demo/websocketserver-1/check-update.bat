@@ -16,3 +16,5 @@ echo mvn dependency:unpack-dependencies
 echo -
 
 echo #Copy jar to a directory (all jars in the same directory)
+echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=false
+echo -
