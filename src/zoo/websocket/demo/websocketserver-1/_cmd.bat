@@ -23,3 +23,6 @@ echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=true -Dmdep.cop
 echo -
 echo -
 
+
+
+echo #Check for version updates
