@@ -6,3 +6,4 @@
 
 	<parent>
 		<groupId>org.t-io</groupId>
+		<artifactId>tio-websocket-parent</artifactId>
