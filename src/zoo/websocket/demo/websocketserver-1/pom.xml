@@ -68,3 +68,5 @@
 						<exclude>logback.properties</exclude>
 						<exclude>logback.xml</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
