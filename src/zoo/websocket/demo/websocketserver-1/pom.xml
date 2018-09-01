@@ -47,3 +47,4 @@
 				<configuration>
 					<skip>true</skip>
 				</configuration>
+			</plugin>
