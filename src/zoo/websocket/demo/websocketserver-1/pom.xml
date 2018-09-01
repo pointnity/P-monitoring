@@ -85,3 +85,5 @@
 						<configuration>
 							<appendAssemblyId>false</appendAssemblyId>
 							<descriptors>
+								<descriptor>script/pkg.xml</descriptor>
+							</descriptors>
