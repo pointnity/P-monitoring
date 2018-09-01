@@ -18,3 +18,4 @@
 		</dependency>
 
 		<dependency>
+			<groupId>junit</groupId>
