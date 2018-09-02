@@ -15,3 +15,5 @@
 			<directory>${project.basedir}/src/main/resources</directory>
 			<outputDirectory>config</outputDirectory>
 		</fileSet>
+        
+		<fileSet>
