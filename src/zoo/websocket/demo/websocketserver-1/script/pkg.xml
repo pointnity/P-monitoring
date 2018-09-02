@@ -33,3 +33,4 @@
 		<dependencySet>
 			<outputDirectory>lib</outputDirectory>			
 		</dependencySet>
+	</dependencySets>
