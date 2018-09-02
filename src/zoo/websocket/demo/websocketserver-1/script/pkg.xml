@@ -11,3 +11,4 @@
 	<fileSets> 
 		
 		<!-- Put the configuration file of the project in the Config directory -->
+		<fileSet>
