@@ -24,3 +24,4 @@
 				<include>debug.*</include>
 				<include>_cmd.*</include>
 			</includes>
+		</fileSet>
