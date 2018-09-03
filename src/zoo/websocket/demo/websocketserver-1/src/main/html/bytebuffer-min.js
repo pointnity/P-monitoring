@@ -31,3 +31,5 @@ var start=offset,bits=value.length,bytes=(bits>>3),bit=0,k;offset+=this.writeVar
 if(bit<bits){var m=0;k=0;while(bit<bits)k=k|((!!value[bit++]&1)<<(m++));this.writeByte(k,offset++);}
 if(relative){this.offset=offset;return this;}
 return offset-start;}
+ByteBufferPrototype.readBitSet=function(offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;var ret=this.readVarint32(offset),bits=ret.value,bytes=(bits>>3),bit=0,value=[],k;offset+=ret.length;while(bytes--){k=this.readByte(offset++);value[bit++]=!!(k&0x01);value[bit++]=!!(k&0x02);value[bit++]=!!(k&0x04);value[bit++]=!!(k&0x08);value[bit++]=!!(k&0x10);value[bit++]=!!(k&0x20);value[bit++]=!!(k&0x40);value[bit++]=!!(k&0x80);}
+if(bit<bits){var m=0;k=this.readByte(offset++);while(bit<bits)value[bit++]=!!((k>>(m++))&1);}
