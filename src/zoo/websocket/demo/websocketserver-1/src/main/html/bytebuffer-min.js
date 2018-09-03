@@ -247,3 +247,10 @@ var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
 if(!(source instanceof ByteBuffer))
+source=ByteBuffer.wrap(source,encoding);var length=source.limit-source.offset;if(length<=0)return this;offset+=length;var capacity16=this.buffer.byteLength;if(offset>capacity16)
+this.resize((capacity16*=2)>offset?capacity16:offset);offset-=length;this.view.set(source.view.subarray(source.offset,source.limit),offset);source.offset+=length;if(relative)this.offset+=length;return this;};ByteBufferPrototype.appendTo=function(target,offset){target.append(this,offset);return this;};ByteBufferPrototype.assert=function(assert){this.noAssert=!assert;return this;};ByteBufferPrototype.capacity=function(){return this.buffer.byteLength;};ByteBufferPrototype.clear=function(){this.offset=0;this.limit=this.buffer.byteLength;this.markedOffset=-1;return this;};ByteBufferPrototype.clone=function(copy){var bb=new ByteBuffer(0,this.littleEndian,this.noAssert);if(copy){bb.buffer=new ArrayBuffer(this.buffer.byteLength);bb.view=new Uint8Array(bb.buffer);}else{bb.buffer=this.buffer;bb.view=this.view;}
+bb.offset=this.offset;bb.markedOffset=this.markedOffset;bb.limit=this.limit;return bb;};ByteBufferPrototype.compact=function(begin,end){if(typeof begin==='undefined')begin=this.offset;if(typeof end==='undefined')end=this.limit;if(!this.noAssert){if(typeof begin!=='number'||begin%1!==0)
+throw TypeError("Illegal begin: Not an integer");begin>>>=0;if(typeof end!=='number'||end%1!==0)
+throw TypeError("Illegal end: Not an integer");end>>>=0;if(begin<0||begin>end||end>this.buffer.byteLength)
+throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);}
+if(begin===0&&end===this.buffer.byteLength)
