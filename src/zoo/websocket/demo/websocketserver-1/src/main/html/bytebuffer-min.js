@@ -162,3 +162,13 @@ throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(of
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);}
 var c=0,value=0>>>0,b;do{if(!this.noAssert&&offset>this.limit){var err=Error("Truncated");err['truncated']=true;throw err;}
 b=this.view[offset++];if(c<5)
+value|=(b&0x7f)<<(7*c);++c;}while((b&0x80)!==0);value|=0;if(relative){this.offset=offset;return value;}
+return{"value":value,"length":c};};ByteBufferPrototype.readVarint32ZigZag=function(offset){var val=this.readVarint32(offset);if(typeof val==='object')
+val["value"]=ByteBuffer.zigZagDecode32(val["value"]);else
+val=ByteBuffer.zigZagDecode32(val);return val;};if(Long){ByteBuffer.MAX_VARINT64_BYTES=10;ByteBuffer.calculateVarint64=function(value){if(typeof value==='number')
+value=Long.fromNumber(value);else if(typeof value==='string')
+value=Long.fromString(value);var part0=value.toInt()>>>0,part1=value.shiftRightUnsigned(28).toInt()>>>0,part2=value.shiftRightUnsigned(56).toInt()>>>0;if(part2==0){if(part1==0){if(part0<1<<14)
+return part0<1<<7?1:2;else
+return part0<1<<21?3:4;}else{if(part1<1<<14)
+return part1<1<<7?5:6;else
+return part1<1<<21?7:8;}}else
