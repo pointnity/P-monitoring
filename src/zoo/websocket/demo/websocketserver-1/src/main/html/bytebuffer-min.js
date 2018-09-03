@@ -58,3 +58,4 @@ var value=this.view[offset];if(relative)this.offset+=1;return value;};ByteBuffer
 throw TypeError("Illegal value: "+value+" (not an integer)");value|=0;if(typeof offset!=='number'||offset%1!==0)
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+offset+=2;var capacity2=this.buffer.byteLength;if(offset>capacity2)
