@@ -254,3 +254,22 @@ throw TypeError("Illegal begin: Not an integer");begin>>>=0;if(typeof end!=='num
 throw TypeError("Illegal end: Not an integer");end>>>=0;if(begin<0||begin>end||end>this.buffer.byteLength)
 throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);}
 if(begin===0&&end===this.buffer.byteLength)
+return this;var len=end-begin;if(len===0){this.buffer=EMPTY_BUFFER;this.view=null;if(this.markedOffset>=0)this.markedOffset-=begin;this.offset=0;this.limit=0;return this;}
+var buffer=new ArrayBuffer(len);var view=new Uint8Array(buffer);view.set(this.view.subarray(begin,end));this.buffer=buffer;this.view=view;if(this.markedOffset>=0)this.markedOffset-=begin;this.offset=0;this.limit=len;return this;};ByteBufferPrototype.copy=function(begin,end){if(typeof begin==='undefined')begin=this.offset;if(typeof end==='undefined')end=this.limit;if(!this.noAssert){if(typeof begin!=='number'||begin%1!==0)
+throw TypeError("Illegal begin: Not an integer");begin>>>=0;if(typeof end!=='number'||end%1!==0)
+throw TypeError("Illegal end: Not an integer");end>>>=0;if(begin<0||begin>end||end>this.buffer.byteLength)
+throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);}
+if(begin===end)
+return new ByteBuffer(0,this.littleEndian,this.noAssert);var capacity=end-begin,bb=new ByteBuffer(capacity,this.littleEndian,this.noAssert);bb.offset=0;bb.limit=capacity;if(bb.markedOffset>=0)bb.markedOffset-=begin;this.copyTo(bb,0,begin,end);return bb;};ByteBufferPrototype.copyTo=function(target,targetOffset,sourceOffset,sourceLimit){var relative,targetRelative;if(!this.noAssert){if(!ByteBuffer.isByteBuffer(target))
+throw TypeError("Illegal target: Not a ByteBuffer");}
+targetOffset=(targetRelative=typeof targetOffset==='undefined')?target.offset:targetOffset|0;sourceOffset=(relative=typeof sourceOffset==='undefined')?this.offset:sourceOffset|0;sourceLimit=typeof sourceLimit==='undefined'?this.limit:sourceLimit|0;if(targetOffset<0||targetOffset>target.buffer.byteLength)
+throw RangeError("Illegal target range: 0 <= "+targetOffset+" <= "+target.buffer.byteLength);if(sourceOffset<0||sourceLimit>this.buffer.byteLength)
+throw RangeError("Illegal source range: 0 <= "+sourceOffset+" <= "+this.buffer.byteLength);var len=sourceLimit-sourceOffset;if(len===0)
+return target;target.ensureCapacity(targetOffset+len);target.view.set(this.view.subarray(sourceOffset,sourceLimit),targetOffset);if(relative)this.offset+=len;if(targetRelative)target.offset+=len;return this;};ByteBufferPrototype.ensureCapacity=function(capacity){var current=this.buffer.byteLength;if(current<capacity)
+return this.resize((current*=2)>capacity?current:capacity);return this;};ByteBufferPrototype.fill=function(value,begin,end){var relative=typeof begin==='undefined';if(relative)begin=this.offset;if(typeof value==='string'&&value.length>0)
+value=value.charCodeAt(0);if(typeof begin==='undefined')begin=this.offset;if(typeof end==='undefined')end=this.limit;if(!this.noAssert){if(typeof value!=='number'||value%1!==0)
+throw TypeError("Illegal value: "+value+" (not an integer)");value|=0;if(typeof begin!=='number'||begin%1!==0)
+throw TypeError("Illegal begin: Not an integer");begin>>>=0;if(typeof end!=='number'||end%1!==0)
+throw TypeError("Illegal end: Not an integer");end>>>=0;if(begin<0||begin>end||end>this.buffer.byteLength)
+throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);}
+if(begin>=end)
