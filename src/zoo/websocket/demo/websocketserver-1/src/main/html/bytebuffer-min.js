@@ -50,3 +50,4 @@ var value=this.view[offset];if((value&0x80)===0x80)value=-(0xFF-value+1);if(rela
 throw TypeError("Illegal value: "+value+" (not an integer)");value>>>=0;if(typeof offset!=='number'||offset%1!==0)
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+offset+=1;var capacity1=this.buffer.byteLength;if(offset>capacity1)
