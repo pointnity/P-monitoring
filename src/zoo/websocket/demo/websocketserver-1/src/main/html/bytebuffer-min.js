@@ -342,3 +342,21 @@ hex+=i===this.markedOffset?"]":">";else
 hex+=i===this.markedOffset?"'":(columns||(i!==0&&i!==k)?" ":"");}
 if(columns&&hex!==" "){while(hex.length<3*16+3)
 hex+=" ";out+=hex+asc+"\n";}
+return columns?out:hex;};ByteBuffer.fromDebug=function(str,littleEndian,noAssert){var k=str.length,bb=new ByteBuffer(((k+1)/3)|0,littleEndian,noAssert);var i=0,j=0,ch,b,rs=false,ho=false,hm=false,hl=false,fail=false;while(i<k){switch(ch=str.charAt(i++)){case'!':if(!noAssert){if(ho||hm||hl){fail=true;break;}
+ho=hm=hl=true;}
+bb.offset=bb.markedOffset=bb.limit=j;rs=false;break;case'|':if(!noAssert){if(ho||hl){fail=true;break;}
+ho=hl=true;}
+bb.offset=bb.limit=j;rs=false;break;case'[':if(!noAssert){if(ho||hm){fail=true;break;}
+ho=hm=true;}
+bb.offset=bb.markedOffset=j;rs=false;break;case'<':if(!noAssert){if(ho){fail=true;break;}
+ho=true;}
+bb.offset=j;rs=false;break;case']':if(!noAssert){if(hl||hm){fail=true;break;}
+hl=hm=true;}
+bb.limit=bb.markedOffset=j;rs=false;break;case'>':if(!noAssert){if(hl){fail=true;break;}
+hl=true;}
+bb.limit=j;rs=false;break;case"'":if(!noAssert){if(hm){fail=true;break;}
+hm=true;}
+bb.markedOffset=j;rs=false;break;case' ':rs=false;break;default:if(!noAssert){if(rs){fail=true;break;}}
+b=parseInt(ch+str.charAt(i++),16);if(!noAssert){if(isNaN(b)||b<0||b>255)
+throw TypeError("Illegal str: Not a debug encoded string");}
+bb.view[j++]=b;rs=true;}
