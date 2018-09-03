@@ -54,3 +54,5 @@ offset+=1;var capacity1=this.buffer.byteLength;if(offset>capacity1)
 this.resize((capacity1*=2)>offset?capacity1:offset);offset-=1;this.view[offset]=value;if(relative)this.offset+=1;return this;};ByteBufferPrototype.writeUInt8=ByteBufferPrototype.writeUint8;ByteBufferPrototype.readUint8=function(offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+1>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);}
+var value=this.view[offset];if(relative)this.offset+=1;return value;};ByteBufferPrototype.readUInt8=ByteBufferPrototype.readUint8;ByteBufferPrototype.writeInt16=function(value,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof value!=='number'||value%1!==0)
+throw TypeError("Illegal value: "+value+" (not an integer)");value|=0;if(typeof offset!=='number'||offset%1!==0)
