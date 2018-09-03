@@ -101,3 +101,5 @@ throw TypeError("Illegal value: "+value+" (not an integer or Long)");if(typeof o
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
 if(typeof value==='number')
+value=Long.fromNumber(value);else if(typeof value==='string')
+value=Long.fromString(value);offset+=8;var capacity6=this.buffer.byteLength;if(offset>capacity6)
