@@ -360,3 +360,28 @@ bb.markedOffset=j;rs=false;break;case' ':rs=false;break;default:if(!noAssert){if
 b=parseInt(ch+str.charAt(i++),16);if(!noAssert){if(isNaN(b)||b<0||b>255)
 throw TypeError("Illegal str: Not a debug encoded string");}
 bb.view[j++]=b;rs=true;}
+if(fail)
+throw TypeError("Illegal str: Invalid symbol at "+i);}
+if(!noAssert){if(!ho||!hl)
+throw TypeError("Illegal str: Missing offset or limit");if(j<bb.buffer.byteLength)
+throw TypeError("Illegal str: Not a debug encoded string (is it hex?) "+j+" < "+k);}
+return bb;};ByteBufferPrototype.toHex=function(begin,end){begin=typeof begin==='undefined'?this.offset:begin;end=typeof end==='undefined'?this.limit:end;if(!this.noAssert){if(typeof begin!=='number'||begin%1!==0)
+throw TypeError("Illegal begin: Not an integer");begin>>>=0;if(typeof end!=='number'||end%1!==0)
+throw TypeError("Illegal end: Not an integer");end>>>=0;if(begin<0||begin>end||end>this.buffer.byteLength)
+throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);}
+var out=new Array(end-begin),b;while(begin<end){b=this.view[begin++];if(b<0x10)
+out.push("0",b.toString(16));else out.push(b.toString(16));}
+return out.join('');};ByteBuffer.fromHex=function(str,littleEndian,noAssert){if(!noAssert){if(typeof str!=='string')
+throw TypeError("Illegal str: Not a string");if(str.length%2!==0)
+throw TypeError("Illegal str: Length not a multiple of 2");}
+var k=str.length,bb=new ByteBuffer((k/2)|0,littleEndian),b;for(var i=0,j=0;i<k;i+=2){b=parseInt(str.substring(i,i+2),16);if(!noAssert)
+if(!isFinite(b)||b<0||b>255)
+throw TypeError("Illegal str: Contains non-hex characters");bb.view[j++]=b;}
+bb.limit=j;return bb;};var utfx=function(){"use strict";var utfx={};utfx.MAX_CODEPOINT=0x10FFFF;utfx.encodeUTF8=function(src,dst){var cp=null;if(typeof src==='number')
+cp=src,src=function(){return null;};while(cp!==null||(cp=src())!==null){if(cp<0x80)
+dst(cp&0x7F);else if(cp<0x800)
+dst(((cp>>6)&0x1F)|0xC0),dst((cp&0x3F)|0x80);else if(cp<0x10000)
+dst(((cp>>12)&0x0F)|0xE0),dst(((cp>>6)&0x3F)|0x80),dst((cp&0x3F)|0x80);else
+dst(((cp>>18)&0x07)|0xF0),dst(((cp>>12)&0x3F)|0x80),dst(((cp>>6)&0x3F)|0x80),dst((cp&0x3F)|0x80);cp=null;}};utfx.decodeUTF8=function(src,dst){var a,b,c,d,fail=function(b){b=b.slice(0,b.indexOf(null));var err=Error(b.toString());err.name="TruncatedError";err['bytes']=b;throw err;};while((a=src())!==null){if((a&0x80)===0)
+dst(a);else if((a&0xE0)===0xC0)
+((b=src())===null)&&fail([a,b]),dst(((a&0x1F)<<6)|(b&0x3F));else if((a&0xF0)===0xE0)
