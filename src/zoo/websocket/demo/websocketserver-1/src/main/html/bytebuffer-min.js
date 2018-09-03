@@ -392,3 +392,13 @@ dst(c1);}
 if(c2!==null)dst(c2);};utfx.UTF8toUTF16=function(src,dst){var cp=null;if(typeof src==='number')
 cp=src,src=function(){return null;};while(cp!==null||(cp=src())!==null){if(cp<=0xFFFF)
 dst(cp);else
+cp-=0x10000,dst((cp>>10)+0xD800),dst((cp%0x400)+0xDC00);cp=null;}};utfx.encodeUTF16toUTF8=function(src,dst){utfx.UTF16toUTF8(src,function(cp){utfx.encodeUTF8(cp,dst);});};utfx.decodeUTF8toUTF16=function(src,dst){utfx.decodeUTF8(src,function(cp){utfx.UTF8toUTF16(cp,dst);});};utfx.calculateCodePoint=function(cp){return(cp<0x80)?1:(cp<0x800)?2:(cp<0x10000)?3:4;};utfx.calculateUTF8=function(src){var cp,l=0;while((cp=src())!==null)
+l+=(cp<0x80)?1:(cp<0x800)?2:(cp<0x10000)?3:4;return l;};utfx.calculateUTF16asUTF8=function(src){var n=0,l=0;utfx.UTF16toUTF8(src,function(cp){++n;l+=(cp<0x80)?1:(cp<0x800)?2:(cp<0x10000)?3:4;});return[n,l];};return utfx;}();ByteBufferPrototype.toUTF8=function(begin,end){if(typeof begin==='undefined')begin=this.offset;if(typeof end==='undefined')end=this.limit;if(!this.noAssert){if(typeof begin!=='number'||begin%1!==0)
+throw TypeError("Illegal begin: Not an integer");begin>>>=0;if(typeof end!=='number'||end%1!==0)
+throw TypeError("Illegal end: Not an integer");end>>>=0;if(begin<0||begin>end||end>this.buffer.byteLength)
+throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);}
+var sd;try{utfx.decodeUTF8toUTF16(function(){return begin<end?this.view[begin++]:null;}.bind(this),sd=stringDestination());}catch(e){if(begin!==end)
+throw RangeError("Illegal range: Truncated data, "+begin+" != "+end);}
+return sd();};ByteBuffer.fromUTF8=function(str,littleEndian,noAssert){if(!noAssert)
+if(typeof str!=='string')
+throw TypeError("Illegal str: Not a string");var bb=new ByteBuffer(utfx.calculateUTF16asUTF8(stringSource(str),true)[1],littleEndian,noAssert),i=0;utfx.encodeUTF16toUTF8(stringSource(str),function(b){bb.view[i++]=b;});bb.limit=i;return bb;};return ByteBuffer;});
