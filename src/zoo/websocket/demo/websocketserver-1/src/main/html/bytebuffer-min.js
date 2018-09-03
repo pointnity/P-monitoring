@@ -219,3 +219,10 @@ throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byte
 var start=offset;var len=this.readUint32(offset);var str=this.readUTF8String(len,ByteBuffer.METRICS_BYTES,offset+=4);offset+=str['length'];if(relative){this.offset=offset;return str['string'];}else{return{'string':str['string'],'length':offset-start};}};ByteBuffer.METRICS_CHARS='c';ByteBuffer.METRICS_BYTES='b';ByteBufferPrototype.writeUTF8String=function(str,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+var k;var start=offset;k=utfx.calculateUTF16asUTF8(stringSource(str))[1];offset+=k;var capacity14=this.buffer.byteLength;if(offset>capacity14)
+this.resize((capacity14*=2)>offset?capacity14:offset);offset-=k;utfx.encodeUTF16toUTF8(stringSource(str),function(b){this.view[offset++]=b;}.bind(this));if(relative){this.offset=offset;return this;}
+return offset-start;};ByteBufferPrototype.writeString=ByteBufferPrototype.writeUTF8String;ByteBuffer.calculateUTF8Chars=function(str){return utfx.calculateUTF16asUTF8(stringSource(str))[0];};ByteBuffer.calculateUTF8Bytes=function(str){return utfx.calculateUTF16asUTF8(stringSource(str))[1];};ByteBuffer.calculateString=ByteBuffer.calculateUTF8Bytes;ByteBufferPrototype.readUTF8String=function(length,metrics,offset){if(typeof metrics==='number'){offset=metrics;metrics=undefined;}
+var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(typeof metrics==='undefined')metrics=ByteBuffer.METRICS_CHARS;if(!this.noAssert){if(typeof length!=='number'||length%1!==0)
+throw TypeError("Illegal length: "+length+" (not an integer)");length|=0;if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
