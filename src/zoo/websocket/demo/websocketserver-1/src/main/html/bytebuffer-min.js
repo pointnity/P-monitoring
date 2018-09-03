@@ -226,3 +226,24 @@ var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(typeo
 throw TypeError("Illegal length: "+length+" (not an integer)");length|=0;if(typeof offset!=='number'||offset%1!==0)
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+var i=0,start=offset,sd;if(metrics===ByteBuffer.METRICS_CHARS){sd=stringDestination();utfx.decodeUTF8(function(){return i<length&&offset<this.limit?this.view[offset++]:null;}.bind(this),function(cp){++i;utfx.UTF8toUTF16(cp,sd);});if(i!==length)
+throw RangeError("Illegal range: Truncated data, "+i+" == "+length);if(relative){this.offset=offset;return sd();}else{return{"string":sd(),"length":offset-start};}}else if(metrics===ByteBuffer.METRICS_BYTES){if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+length>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+length+") <= "+this.buffer.byteLength);}
+var k=offset+length;utfx.decodeUTF8toUTF16(function(){return offset<k?this.view[offset++]:null;}.bind(this),sd=stringDestination(),this.noAssert);if(offset!==k)
+throw RangeError("Illegal range: Truncated data, "+offset+" == "+k);if(relative){this.offset=offset;return sd();}else{return{'string':sd(),'length':offset-start};}}else
+throw TypeError("Unsupported metrics: "+metrics);};ByteBufferPrototype.readString=ByteBufferPrototype.readUTF8String;ByteBufferPrototype.writeVString=function(str,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof str!=='string')
+throw TypeError("Illegal str: Not a string");if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+var start=offset,k,l;k=utfx.calculateUTF16asUTF8(stringSource(str),this.noAssert)[1];l=ByteBuffer.calculateVarint32(k);offset+=l+k;var capacity15=this.buffer.byteLength;if(offset>capacity15)
+this.resize((capacity15*=2)>offset?capacity15:offset);offset-=l+k;offset+=this.writeVarint32(k,offset);utfx.encodeUTF16toUTF8(stringSource(str),function(b){this.view[offset++]=b;}.bind(this));if(offset!==start+k+l)
+throw RangeError("Illegal range: Truncated data, "+offset+" == "+(offset+k+l));if(relative){this.offset=offset;return this;}
+return offset-start;};ByteBufferPrototype.readVString=function(offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+1>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);}
+var start=offset;var len=this.readVarint32(offset);var str=this.readUTF8String(len['value'],ByteBuffer.METRICS_BYTES,offset+=len['length']);offset+=str['length'];if(relative){this.offset=offset;return str['string'];}else{return{'string':str['string'],'length':offset-start};}};ByteBufferPrototype.append=function(source,encoding,offset){if(typeof encoding==='number'||typeof encoding!=='string'){offset=encoding;encoding=undefined;}
+var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+if(!(source instanceof ByteBuffer))
