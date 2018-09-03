@@ -290,3 +290,9 @@ this.toDebug(true));};ByteBufferPrototype.remaining=function(){return this.limit
 return this;};ByteBufferPrototype.resize=function(capacity){if(!this.noAssert){if(typeof capacity!=='number'||capacity%1!==0)
 throw TypeError("Illegal capacity: "+capacity+" (not an integer)");capacity|=0;if(capacity<0)
 throw RangeError("Illegal capacity: 0 <= "+capacity);}
+if(this.buffer.byteLength<capacity){var buffer=new ArrayBuffer(capacity);var view=new Uint8Array(buffer);view.set(this.view);this.buffer=buffer;this.view=view;}
+return this;};ByteBufferPrototype.reverse=function(begin,end){if(typeof begin==='undefined')begin=this.offset;if(typeof end==='undefined')end=this.limit;if(!this.noAssert){if(typeof begin!=='number'||begin%1!==0)
+throw TypeError("Illegal begin: Not an integer");begin>>>=0;if(typeof end!=='number'||end%1!==0)
+throw TypeError("Illegal end: Not an integer");end>>>=0;if(begin<0||begin>end||end>this.buffer.byteLength)
+throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);}
+if(begin===end)
