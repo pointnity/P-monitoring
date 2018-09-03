@@ -193,3 +193,7 @@ var start=offset,part0=0,part1=0,part2=0,b=0;b=this.view[offset++];part0=(b&0x7F
 var value=Long.fromBits(part0|(part1<<28),(part1>>>4)|(part2)<<24,false);if(relative){this.offset=offset;return value;}else{return{'value':value,'length':offset-start};}};ByteBufferPrototype.readVarint64ZigZag=function(offset){var val=this.readVarint64(offset);if(val&&val['value']instanceof Long)
 val["value"]=ByteBuffer.zigZagDecode64(val["value"]);else
 val=ByteBuffer.zigZagDecode64(val);return val;};}
+ByteBufferPrototype.writeCString=function(str,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;var i,k=str.length;if(!this.noAssert){if(typeof str!=='string')
+throw TypeError("Illegal str: Not a string");for(i=0;i<k;++i){if(str.charCodeAt(i)===0)
+throw RangeError("Illegal str: Contains NULL-characters");}
+if(typeof offset!=='number'||offset%1!==0)
