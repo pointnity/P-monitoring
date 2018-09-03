@@ -25,3 +25,5 @@ if(buffer instanceof Uint8Array){bb=new ByteBuffer(0,littleEndian,noAssert);if(b
 bb.view[i]=buffer[i];}else
 throw TypeError("Illegal buffer");return bb;};ByteBufferPrototype.writeBitSet=function(value,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(!(value instanceof Array))
 throw TypeError("Illegal BitSet: Not an array");if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
