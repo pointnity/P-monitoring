@@ -103,3 +103,11 @@ throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byte
 if(typeof value==='number')
 value=Long.fromNumber(value);else if(typeof value==='string')
 value=Long.fromString(value);offset+=8;var capacity6=this.buffer.byteLength;if(offset>capacity6)
+this.resize((capacity6*=2)>offset?capacity6:offset);offset-=8;var lo=value.low,hi=value.high;if(this.littleEndian){this.view[offset+3]=(lo>>>24)&0xFF;this.view[offset+2]=(lo>>>16)&0xFF;this.view[offset+1]=(lo>>>8)&0xFF;this.view[offset]=lo&0xFF;offset+=4;this.view[offset+3]=(hi>>>24)&0xFF;this.view[offset+2]=(hi>>>16)&0xFF;this.view[offset+1]=(hi>>>8)&0xFF;this.view[offset]=hi&0xFF;}else{this.view[offset]=(hi>>>24)&0xFF;this.view[offset+1]=(hi>>>16)&0xFF;this.view[offset+2]=(hi>>>8)&0xFF;this.view[offset+3]=hi&0xFF;offset+=4;this.view[offset]=(lo>>>24)&0xFF;this.view[offset+1]=(lo>>>16)&0xFF;this.view[offset+2]=(lo>>>8)&0xFF;this.view[offset+3]=lo&0xFF;}
+if(relative)this.offset+=8;return this;};ByteBufferPrototype.writeLong=ByteBufferPrototype.writeInt64;ByteBufferPrototype.readInt64=function(offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+8>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+8+") <= "+this.buffer.byteLength);}
+var lo=0,hi=0;if(this.littleEndian){lo=this.view[offset+2]<<16;lo|=this.view[offset+1]<<8;lo|=this.view[offset];lo+=this.view[offset+3]<<24>>>0;offset+=4;hi=this.view[offset+2]<<16;hi|=this.view[offset+1]<<8;hi|=this.view[offset];hi+=this.view[offset+3]<<24>>>0;}else{hi=this.view[offset+1]<<16;hi|=this.view[offset+2]<<8;hi|=this.view[offset+3];hi+=this.view[offset]<<24>>>0;offset+=4;lo=this.view[offset+1]<<16;lo|=this.view[offset+2]<<8;lo|=this.view[offset+3];lo+=this.view[offset]<<24>>>0;}
+var value=new Long(lo,hi,false);if(relative)this.offset+=8;return value;};ByteBufferPrototype.readLong=ByteBufferPrototype.readInt64;ByteBufferPrototype.writeUint64=function(value,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof value==='number')
+value=Long.fromNumber(value);else if(typeof value==='string')
+value=Long.fromString(value);else if(!(value&&value instanceof Long))
