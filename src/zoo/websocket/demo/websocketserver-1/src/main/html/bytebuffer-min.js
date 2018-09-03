@@ -111,3 +111,7 @@ var lo=0,hi=0;if(this.littleEndian){lo=this.view[offset+2]<<16;lo|=this.view[off
 var value=new Long(lo,hi,false);if(relative)this.offset+=8;return value;};ByteBufferPrototype.readLong=ByteBufferPrototype.readInt64;ByteBufferPrototype.writeUint64=function(value,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof value==='number')
 value=Long.fromNumber(value);else if(typeof value==='string')
 value=Long.fromString(value);else if(!(value&&value instanceof Long))
+throw TypeError("Illegal value: "+value+" (not an integer or Long)");if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+if(typeof value==='number')
