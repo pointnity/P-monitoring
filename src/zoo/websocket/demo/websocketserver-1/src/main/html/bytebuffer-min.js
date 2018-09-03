@@ -325,3 +325,20 @@ end=this.limit;begin=begin|0;end=end|0;if(begin<0||end>this.capacity||begin>end)
 throw RangeError("begin, end");var sd;lxiv.encode(function(){return begin<end?this.view[begin++]:null;}.bind(this),sd=stringDestination());return sd();};ByteBuffer.fromBase64=function(str,littleEndian){if(typeof str!=='string')
 throw TypeError("str");var bb=new ByteBuffer(str.length/4*3,littleEndian),i=0;lxiv.decode(stringSource(str),function(b){bb.view[i++]=b;});bb.limit=i;return bb;};ByteBuffer.btoa=function(str){return ByteBuffer.fromBinary(str).toBase64();};ByteBuffer.atob=function(b64){return ByteBuffer.fromBase64(b64).toBinary();};ByteBufferPrototype.toBinary=function(begin,end){if(typeof begin==='undefined')
 begin=this.offset;if(typeof end==='undefined')
+end=this.limit;begin|=0;end|=0;if(begin<0||end>this.capacity()||begin>end)
+throw RangeError("begin, end");if(begin===end)
+return"";var chars=[],parts=[];while(begin<end){chars.push(this.view[begin++]);if(chars.length>=1024)
+parts.push(String.fromCharCode.apply(String,chars)),chars=[];}
+return parts.join('')+String.fromCharCode.apply(String,chars);};ByteBuffer.fromBinary=function(str,littleEndian){if(typeof str!=='string')
+throw TypeError("str");var i=0,k=str.length,charCode,bb=new ByteBuffer(k,littleEndian);while(i<k){charCode=str.charCodeAt(i);if(charCode>0xff)
+throw RangeError("illegal char code: "+charCode);bb.view[i++]=charCode;}
+bb.limit=k;return bb;};ByteBufferPrototype.toDebug=function(columns){var i=-1,k=this.buffer.byteLength,b,hex="",asc="",out="";while(i<k){if(i!==-1){b=this.view[i];if(b<0x10)hex+="0"+b.toString(16).toUpperCase();else hex+=b.toString(16).toUpperCase();if(columns)
+asc+=b>32&&b<127?String.fromCharCode(b):'.';}
+++i;if(columns){if(i>0&&i%16===0&&i!==k){while(hex.length<3*16+3)hex+=" ";out+=hex+asc+"\n";hex=asc="";}}
+if(i===this.offset&&i===this.limit)
+hex+=i===this.markedOffset?"!":"|";else if(i===this.offset)
+hex+=i===this.markedOffset?"[":"<";else if(i===this.limit)
+hex+=i===this.markedOffset?"]":">";else
+hex+=i===this.markedOffset?"'":(columns||(i!==0&&i!==k)?" ":"");}
+if(columns&&hex!==" "){while(hex.length<3*16+3)
+hex+=" ";out+=hex+asc+"\n";}
