@@ -98,3 +98,4 @@ if(relative)this.offset+=4;return value;};ByteBufferPrototype.readUInt32=ByteBuf
 value=Long.fromNumber(value);else if(typeof value==='string')
 value=Long.fromString(value);else if(!(value&&value instanceof Long))
 throw TypeError("Illegal value: "+value+" (not an integer or Long)");if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
