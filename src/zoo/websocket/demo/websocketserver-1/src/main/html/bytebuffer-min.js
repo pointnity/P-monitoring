@@ -116,3 +116,17 @@ throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(of
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
 if(typeof value==='number')
 value=Long.fromNumber(value);else if(typeof value==='string')
+value=Long.fromString(value);offset+=8;var capacity7=this.buffer.byteLength;if(offset>capacity7)
+this.resize((capacity7*=2)>offset?capacity7:offset);offset-=8;var lo=value.low,hi=value.high;if(this.littleEndian){this.view[offset+3]=(lo>>>24)&0xFF;this.view[offset+2]=(lo>>>16)&0xFF;this.view[offset+1]=(lo>>>8)&0xFF;this.view[offset]=lo&0xFF;offset+=4;this.view[offset+3]=(hi>>>24)&0xFF;this.view[offset+2]=(hi>>>16)&0xFF;this.view[offset+1]=(hi>>>8)&0xFF;this.view[offset]=hi&0xFF;}else{this.view[offset]=(hi>>>24)&0xFF;this.view[offset+1]=(hi>>>16)&0xFF;this.view[offset+2]=(hi>>>8)&0xFF;this.view[offset+3]=hi&0xFF;offset+=4;this.view[offset]=(lo>>>24)&0xFF;this.view[offset+1]=(lo>>>16)&0xFF;this.view[offset+2]=(lo>>>8)&0xFF;this.view[offset+3]=lo&0xFF;}
+if(relative)this.offset+=8;return this;};ByteBufferPrototype.writeUInt64=ByteBufferPrototype.writeUint64;ByteBufferPrototype.readUint64=function(offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+8>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+8+") <= "+this.buffer.byteLength);}
+var lo=0,hi=0;if(this.littleEndian){lo=this.view[offset+2]<<16;lo|=this.view[offset+1]<<8;lo|=this.view[offset];lo+=this.view[offset+3]<<24>>>0;offset+=4;hi=this.view[offset+2]<<16;hi|=this.view[offset+1]<<8;hi|=this.view[offset];hi+=this.view[offset+3]<<24>>>0;}else{hi=this.view[offset+1]<<16;hi|=this.view[offset+2]<<8;hi|=this.view[offset+3];hi+=this.view[offset]<<24>>>0;offset+=4;lo=this.view[offset+1]<<16;lo|=this.view[offset+2]<<8;lo|=this.view[offset+3];lo+=this.view[offset]<<24>>>0;}
+var value=new Long(lo,hi,true);if(relative)this.offset+=8;return value;};ByteBufferPrototype.readUInt64=ByteBufferPrototype.readUint64;}
+function ieee754_read(buffer,offset,isLE,mLen,nBytes){var e,m,eLen=nBytes*8-mLen-1,eMax=(1<<eLen)-1,eBias=eMax>>1,nBits=-7,i=isLE?(nBytes-1):0,d=isLE?-1:1,s=buffer[offset+i];i+=d;e=s&((1<<(-nBits))-1);s>>=(-nBits);nBits+=eLen;for(;nBits>0;e=e*256+buffer[offset+i],i+=d,nBits-=8){}
+m=e&((1<<(-nBits))-1);e>>=(-nBits);nBits+=mLen;for(;nBits>0;m=m*256+buffer[offset+i],i+=d,nBits-=8){}
+if(e===0){e=1-eBias;}else if(e===eMax){return m?NaN:((s?-1:1)*Infinity);}else{m=m+Math.pow(2,mLen);e=e-eBias;}
+return(s?-1:1)*m*Math.pow(2,e-mLen);}
+function ieee754_write(buffer,value,offset,isLE,mLen,nBytes){var e,m,c,eLen=nBytes*8-mLen-1,eMax=(1<<eLen)-1,eBias=eMax>>1,rt=(mLen===23?Math.pow(2,-24)-Math.pow(2,-77):0),i=isLE?0:(nBytes-1),d=isLE?1:-1,s=value<0||(value===0&&1/value<0)?1:0;value=Math.abs(value);if(isNaN(value)||value===Infinity){m=isNaN(value)?1:0;e=eMax;}else{e=Math.floor(Math.log(value)/Math.LN2);if(value*(c=Math.pow(2,-e))<1){e--;c*=2;}
+if(e+eBias>=1){value+=rt/c;}else{value+=rt*Math.pow(2,1-eBias);}
+if(value*c>=2){e++;c/=2;}
