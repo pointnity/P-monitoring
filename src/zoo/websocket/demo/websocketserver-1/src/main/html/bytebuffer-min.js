@@ -30,3 +30,4 @@ throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byte
 var start=offset,bits=value.length,bytes=(bits>>3),bit=0,k;offset+=this.writeVarint32(bits,offset);while(bytes--){k=(!!value[bit++]&1)|((!!value[bit++]&1)<<1)|((!!value[bit++]&1)<<2)|((!!value[bit++]&1)<<3)|((!!value[bit++]&1)<<4)|((!!value[bit++]&1)<<5)|((!!value[bit++]&1)<<6)|((!!value[bit++]&1)<<7);this.writeByte(k,offset++);}
 if(bit<bits){var m=0;k=0;while(bit<bits)k=k|((!!value[bit++]&1)<<(m++));this.writeByte(k,offset++);}
 if(relative){this.offset=offset;return this;}
+return offset-start;}
