@@ -23,3 +23,5 @@ if(buffer===null||typeof buffer!=='object')
 throw TypeError("Illegal buffer");var bb;if(ByteBuffer.isByteBuffer(buffer)){bb=ByteBufferPrototype.clone.call(buffer);bb.markedOffset=-1;return bb;}
 if(buffer instanceof Uint8Array){bb=new ByteBuffer(0,littleEndian,noAssert);if(buffer.length>0){bb.buffer=buffer.buffer;bb.offset=buffer.byteOffset;bb.limit=buffer.byteOffset+buffer.byteLength;bb.view=new Uint8Array(buffer.buffer);}}else if(buffer instanceof ArrayBuffer){bb=new ByteBuffer(0,littleEndian,noAssert);if(buffer.byteLength>0){bb.buffer=buffer;bb.offset=0;bb.limit=buffer.byteLength;bb.view=buffer.byteLength>0?new Uint8Array(buffer):null;}}else if(Object.prototype.toString.call(buffer)==="[object Array]"){bb=new ByteBuffer(buffer.length,littleEndian,noAssert);bb.limit=buffer.length;for(var i=0;i<buffer.length;++i)
 bb.view[i]=buffer[i];}else
+throw TypeError("Illegal buffer");return bb;};ByteBufferPrototype.writeBitSet=function(value,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(!(value instanceof Array))
+throw TypeError("Illegal BitSet: Not an array");if(typeof offset!=='number'||offset%1!==0)
