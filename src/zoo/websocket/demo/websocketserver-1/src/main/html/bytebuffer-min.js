@@ -172,3 +172,14 @@ return part0<1<<7?1:2;else
 return part0<1<<21?3:4;}else{if(part1<1<<14)
 return part1<1<<7?5:6;else
 return part1<1<<21?7:8;}}else
+return part2<1<<7?9:10;};ByteBuffer.zigZagEncode64=function(value){if(typeof value==='number')
+value=Long.fromNumber(value,false);else if(typeof value==='string')
+value=Long.fromString(value,false);else if(value.unsigned!==false)value=value.toSigned();return value.shiftLeft(1).xor(value.shiftRight(63)).toUnsigned();};ByteBuffer.zigZagDecode64=function(value){if(typeof value==='number')
+value=Long.fromNumber(value,false);else if(typeof value==='string')
+value=Long.fromString(value,false);else if(value.unsigned!==false)value=value.toSigned();return value.shiftRightUnsigned(1).xor(value.and(Long.ONE).toSigned().negate()).toSigned();};ByteBufferPrototype.writeVarint64=function(value,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof value==='number')
+value=Long.fromNumber(value);else if(typeof value==='string')
+value=Long.fromString(value);else if(!(value&&value instanceof Long))
+throw TypeError("Illegal value: "+value+" (not an integer or Long)");if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+if(typeof value==='number')
