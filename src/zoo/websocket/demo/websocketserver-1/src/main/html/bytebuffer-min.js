@@ -73,3 +73,9 @@ this.resize((capacity3*=2)>offset?capacity3:offset);offset-=2;if(this.littleEndi
 if(relative)this.offset+=2;return this;};ByteBufferPrototype.writeUInt16=ByteBufferPrototype.writeUint16;ByteBufferPrototype.readUint16=function(offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+2>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+2+") <= "+this.buffer.byteLength);}
+var value=0;if(this.littleEndian){value=this.view[offset];value|=this.view[offset+1]<<8;}else{value=this.view[offset]<<8;value|=this.view[offset+1];}
+if(relative)this.offset+=2;return value;};ByteBufferPrototype.readUInt16=ByteBufferPrototype.readUint16;ByteBufferPrototype.writeInt32=function(value,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof value!=='number'||value%1!==0)
+throw TypeError("Illegal value: "+value+" (not an integer)");value|=0;if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+offset+=4;var capacity4=this.buffer.byteLength;if(offset>capacity4)
