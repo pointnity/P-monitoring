@@ -273,3 +273,20 @@ throw TypeError("Illegal begin: Not an integer");begin>>>=0;if(typeof end!=='num
 throw TypeError("Illegal end: Not an integer");end>>>=0;if(begin<0||begin>end||end>this.buffer.byteLength)
 throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);}
 if(begin>=end)
+return this;while(begin<end)this.view[begin++]=value;if(relative)this.offset=begin;return this;};ByteBufferPrototype.flip=function(){this.limit=this.offset;this.offset=0;return this;};ByteBufferPrototype.mark=function(offset){offset=typeof offset==='undefined'?this.offset:offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+this.markedOffset=offset;return this;};ByteBufferPrototype.order=function(littleEndian){if(!this.noAssert){if(typeof littleEndian!=='boolean')
+throw TypeError("Illegal littleEndian: Not a boolean");}
+this.littleEndian=!!littleEndian;return this;};ByteBufferPrototype.LE=function(littleEndian){this.littleEndian=typeof littleEndian!=='undefined'?!!littleEndian:true;return this;};ByteBufferPrototype.BE=function(bigEndian){this.littleEndian=typeof bigEndian!=='undefined'?!bigEndian:false;return this;};ByteBufferPrototype.prepend=function(source,encoding,offset){if(typeof encoding==='number'||typeof encoding!=='string'){offset=encoding;encoding=undefined;}
+var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+if(!(source instanceof ByteBuffer))
+source=ByteBuffer.wrap(source,encoding);var len=source.limit-source.offset;if(len<=0)return this;var diff=len-offset;if(diff>0){var buffer=new ArrayBuffer(this.buffer.byteLength+diff);var view=new Uint8Array(buffer);view.set(this.view.subarray(offset,this.buffer.byteLength),len);this.buffer=buffer;this.view=view;this.offset+=diff;if(this.markedOffset>=0)this.markedOffset+=diff;this.limit+=diff;offset+=diff;}else{var arrayView=new Uint8Array(this.buffer);}
+this.view.set(source.view.subarray(source.offset,source.limit),offset-len);source.offset=source.limit;if(relative)
+this.offset-=len;return this;};ByteBufferPrototype.prependTo=function(target,offset){target.prepend(this,offset);return this;};ByteBufferPrototype.printDebug=function(out){if(typeof out!=='function')out=console.log.bind(console);out(this.toString()+"\n"+"-------------------------------------------------------------------\n"+
+this.toDebug(true));};ByteBufferPrototype.remaining=function(){return this.limit-this.offset;};ByteBufferPrototype.reset=function(){if(this.markedOffset>=0){this.offset=this.markedOffset;this.markedOffset=-1;}else{this.offset=0;}
+return this;};ByteBufferPrototype.resize=function(capacity){if(!this.noAssert){if(typeof capacity!=='number'||capacity%1!==0)
+throw TypeError("Illegal capacity: "+capacity+" (not an integer)");capacity|=0;if(capacity<0)
+throw RangeError("Illegal capacity: 0 <= "+capacity);}
