@@ -43,3 +43,6 @@ throw TypeError("Illegal value: "+value+" (not an integer)");value|=0;if(typeof 
 throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
 offset+=1;var capacity0=this.buffer.byteLength;if(offset>capacity0)
+this.resize((capacity0*=2)>offset?capacity0:offset);offset-=1;this.view[offset]=value;if(relative)this.offset+=1;return this;};ByteBufferPrototype.writeByte=ByteBufferPrototype.writeInt8;ByteBufferPrototype.readInt8=function(offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+1>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);}
