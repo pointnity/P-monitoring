@@ -197,3 +197,13 @@ ByteBufferPrototype.writeCString=function(str,offset){var relative=typeof offset
 throw TypeError("Illegal str: Not a string");for(i=0;i<k;++i){if(str.charCodeAt(i)===0)
 throw RangeError("Illegal str: Contains NULL-characters");}
 if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+0>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);}
+k=utfx.calculateUTF16asUTF8(stringSource(str))[1];offset+=k+1;var capacity12=this.buffer.byteLength;if(offset>capacity12)
+this.resize((capacity12*=2)>offset?capacity12:offset);offset-=k+1;utfx.encodeUTF16toUTF8(stringSource(str),function(b){this.view[offset++]=b;}.bind(this));this.view[offset++]=0;if(relative){this.offset=offset;return this;}
+return k;};ByteBufferPrototype.readCString=function(offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof offset!=='number'||offset%1!==0)
+throw TypeError("Illegal offset: "+offset+" (not an integer)");offset>>>=0;if(offset<0||offset+1>this.buffer.byteLength)
+throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);}
+var start=offset,temp;var sd,b=-1;utfx.decodeUTF8toUTF16(function(){if(b===0)return null;if(offset>=this.limit)
+throw RangeError("Illegal range: Truncated data, "+offset+" < "+this.limit);b=this.view[offset++];return b===0?null:b;}.bind(this),sd=stringDestination(),true);if(relative){this.offset=offset;return sd();}else{return{"string":sd(),"length":offset-start};}};ByteBufferPrototype.writeIString=function(str,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof str!=='string')
+throw TypeError("Illegal str: Not a string");if(typeof offset!=='number'||offset%1!==0)
