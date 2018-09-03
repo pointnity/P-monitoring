@@ -96,3 +96,4 @@ throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byte
 var value=0;if(this.littleEndian){value=this.view[offset+2]<<16;value|=this.view[offset+1]<<8;value|=this.view[offset];value+=this.view[offset+3]<<24>>>0;}else{value=this.view[offset+1]<<16;value|=this.view[offset+2]<<8;value|=this.view[offset+3];value+=this.view[offset]<<24>>>0;}
 if(relative)this.offset+=4;return value;};ByteBufferPrototype.readUInt32=ByteBufferPrototype.readUint32;if(Long){ByteBufferPrototype.writeInt64=function(value,offset){var relative=typeof offset==='undefined';if(relative)offset=this.offset;if(!this.noAssert){if(typeof value==='number')
 value=Long.fromNumber(value);else if(typeof value==='string')
+value=Long.fromString(value);else if(!(value&&value instanceof Long))
