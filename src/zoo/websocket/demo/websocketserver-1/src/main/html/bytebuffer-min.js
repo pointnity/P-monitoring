@@ -11,3 +11,5 @@ this.buffer=capacity===0?EMPTY_BUFFER:new ArrayBuffer(capacity);this.view=capaci
 function stringDestination(){var cs=[],ps=[];return function(){if(arguments.length===0)
 return ps.join('')+stringFromCharCode.apply(String,cs);if(cs.length+arguments.length>1024)
 ps.push(stringFromCharCode.apply(String,cs)),cs.length=0;Array.prototype.push.apply(cs,arguments);};}
+ByteBuffer.accessor=function(){return Uint8Array;};ByteBuffer.allocate=function(capacity,littleEndian,noAssert){return new ByteBuffer(capacity,littleEndian,noAssert);};ByteBuffer.concat=function(buffers,encoding,littleEndian,noAssert){if(typeof encoding==='boolean'||typeof encoding!=='string'){noAssert=littleEndian;littleEndian=encoding;encoding=undefined;}
+var capacity=0;for(var i=0,k=buffers.length,length;i<k;++i){if(!ByteBuffer.isByteBuffer(buffers[i]))
