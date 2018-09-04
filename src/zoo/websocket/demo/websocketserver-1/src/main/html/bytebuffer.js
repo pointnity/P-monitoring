@@ -21,3 +21,5 @@
  * see: https://github.com/dcodeIO/bytebuffer.js for details
  */
 (function(global, factory) {
+
+    /* AMD */ if (typeof define === 'function' && define["amd"])
