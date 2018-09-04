@@ -23,3 +23,4 @@
 (function(global, factory) {
 
     /* AMD */ if (typeof define === 'function' && define["amd"])
+        define(["long"], factory);
