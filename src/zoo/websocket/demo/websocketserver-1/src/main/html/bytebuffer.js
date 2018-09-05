@@ -77,3 +77,4 @@
         this.view = capacity === 0 ? null : new Uint8Array(this.buffer);
 
         /**
+         * Absolute read/write offset.
