@@ -29,3 +29,4 @@
             var Long; try { Long = require("long"); } catch (e) {}
            return factory(Long);
         })();
+    /* Global */ else
