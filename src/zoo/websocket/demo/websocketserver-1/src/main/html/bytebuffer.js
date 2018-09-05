@@ -309,3 +309,343 @@
      * @returns {boolean} `true` if it is a ByteBuffer, otherwise `false`
      * @expose
      */
+    ByteBuffer.isByteBuffer = function(bb) {
+        return (bb && bb["__isByteBuffer__"]) === true;
+    };
+    /**
+     * Gets the backing buffer type.
+     * @returns {Function} `Buffer` under node.js, `ArrayBuffer` in the browser (classes)
+     * @expose
+     */
+    ByteBuffer.type = function() {
+        return ArrayBuffer;
+    };
+    /**
+     * Wraps a buffer or a string. Sets the allocated ByteBuffer's {@link ByteBuffer#offset} to `0` and its
+     *  {@link ByteBuffer#limit} to the length of the wrapped data.
+     * @param {!ByteBuffer|!ArrayBuffer|!Uint8Array|string|!Array.<number>} buffer Anything that can be wrapped
+     * @param {(string|boolean)=} encoding String encoding if `buffer` is a string ("base64", "hex", "binary", defaults to
+     *  "utf8")
+     * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+     *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+     * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+     *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+     * @returns {!ByteBuffer} A ByteBuffer wrapping `buffer`
+     * @expose
+     */
+    ByteBuffer.wrap = function(buffer, encoding, littleEndian, noAssert) {
+        if (typeof encoding !== 'string') {
+            noAssert = littleEndian;
+            littleEndian = encoding;
+            encoding = undefined;
+        }
+        if (typeof buffer === 'string') {
+            if (typeof encoding === 'undefined')
+                encoding = "utf8";
+            switch (encoding) {
+                case "base64":
+                    return ByteBuffer.fromBase64(buffer, littleEndian);
+                case "hex":
+                    return ByteBuffer.fromHex(buffer, littleEndian);
+                case "binary":
+                    return ByteBuffer.fromBinary(buffer, littleEndian);
+                case "utf8":
+                    return ByteBuffer.fromUTF8(buffer, littleEndian);
+                case "debug":
+                    return ByteBuffer.fromDebug(buffer, littleEndian);
+                default:
+                    throw Error("Unsupported encoding: "+encoding);
+            }
+        }
+        if (buffer === null || typeof buffer !== 'object')
+            throw TypeError("Illegal buffer");
+        var bb;
+        if (ByteBuffer.isByteBuffer(buffer)) {
+            bb = ByteBufferPrototype.clone.call(buffer);
+            bb.markedOffset = -1;
+            return bb;
+        }
+        if (buffer instanceof Uint8Array) { // Extract ArrayBuffer from Uint8Array
+            bb = new ByteBuffer(0, littleEndian, noAssert);
+            if (buffer.length > 0) { // Avoid references to more than one EMPTY_BUFFER
+                bb.buffer = buffer.buffer;
+                bb.offset = buffer.byteOffset;
+                bb.limit = buffer.byteOffset + buffer.byteLength;
+                bb.view = new Uint8Array(buffer.buffer);
+            }
+        } else if (buffer instanceof ArrayBuffer) { // Reuse ArrayBuffer
+            bb = new ByteBuffer(0, littleEndian, noAssert);
+            if (buffer.byteLength > 0) {
+                bb.buffer = buffer;
+                bb.offset = 0;
+                bb.limit = buffer.byteLength;
+                bb.view = buffer.byteLength > 0 ? new Uint8Array(buffer) : null;
+            }
+        } else if (Object.prototype.toString.call(buffer) === "[object Array]") { // Create from octets
+            bb = new ByteBuffer(buffer.length, littleEndian, noAssert);
+            bb.limit = buffer.length;
+            for (var i=0; i<buffer.length; ++i)
+                bb.view[i] = buffer[i];
+        } else
+            throw TypeError("Illegal buffer"); // Otherwise fail
+        return bb;
+    };
+
+    /**
+     * Writes the array as a bitset.
+     * @param {Array<boolean>} value Array of booleans to write
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `length` if omitted.
+     * @returns {!ByteBuffer}
+     * @expose
+     */
+    ByteBufferPrototype.writeBitSet = function(value, offset) {
+      var relative = typeof offset === 'undefined';
+      if (relative) offset = this.offset;
+      if (!this.noAssert) {
+        if (!(value instanceof Array))
+          throw TypeError("Illegal BitSet: Not an array");
+        if (typeof offset !== 'number' || offset % 1 !== 0)
+            throw TypeError("Illegal offset: "+offset+" (not an integer)");
+        offset >>>= 0;
+        if (offset < 0 || offset + 0 > this.buffer.byteLength)
+            throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+      }
+
+      var start = offset,
+          bits = value.length,
+          bytes = (bits >> 3),
+          bit = 0,
+          k;
+
+      offset += this.writeVarint32(bits,offset);
+
+      while(bytes--) {
+        k = (!!value[bit++] & 1) |
+            ((!!value[bit++] & 1) << 1) |
+            ((!!value[bit++] & 1) << 2) |
+            ((!!value[bit++] & 1) << 3) |
+            ((!!value[bit++] & 1) << 4) |
+            ((!!value[bit++] & 1) << 5) |
+            ((!!value[bit++] & 1) << 6) |
+            ((!!value[bit++] & 1) << 7);
+        this.writeByte(k,offset++);
+      }
+
+      if(bit < bits) {
+        var m = 0; k = 0;
+        while(bit < bits) k = k | ((!!value[bit++] & 1) << (m++));
+        this.writeByte(k,offset++);
+      }
+
+      if (relative) {
+        this.offset = offset;
+        return this;
+      }
+      return offset - start;
+    }
+
+    /**
+     * Reads a BitSet as an array of booleans.
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `length` if omitted.
+     * @returns {Array<boolean>
+     * @expose
+     */
+    ByteBufferPrototype.readBitSet = function(offset) {
+      var relative = typeof offset === 'undefined';
+      if (relative) offset = this.offset;
+
+      var ret = this.readVarint32(offset),
+          bits = ret.value,
+          bytes = (bits >> 3),
+          bit = 0,
+          value = [],
+          k;
+
+      offset += ret.length;
+
+      while(bytes--) {
+        k = this.readByte(offset++);
+        value[bit++] = !!(k & 0x01);
+        value[bit++] = !!(k & 0x02);
+        value[bit++] = !!(k & 0x04);
+        value[bit++] = !!(k & 0x08);
+        value[bit++] = !!(k & 0x10);
+        value[bit++] = !!(k & 0x20);
+        value[bit++] = !!(k & 0x40);
+        value[bit++] = !!(k & 0x80);
+      }
+
+      if(bit < bits) {
+        var m = 0;
+        k = this.readByte(offset++);
+        while(bit < bits) value[bit++] = !!((k >> (m++)) & 1);
+      }
+
+      if (relative) {
+        this.offset = offset;
+      }
+      return value;
+    }
+    /**
+     * Reads the specified number of bytes.
+     * @param {number} length Number of bytes to read
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `length` if omitted.
+     * @returns {!ByteBuffer}
+     * @expose
+     */
+    ByteBufferPrototype.readBytes = function(length, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + length > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+length+") <= "+this.buffer.byteLength);
+        }
+        var slice = this.slice(offset, offset + length);
+        if (relative) this.offset += length;
+        return slice;
+    };
+
+    /**
+     * Writes a payload of bytes. This is an alias of {@link ByteBuffer#append}.
+     * @function
+     * @param {!ByteBuffer|!ArrayBuffer|!Uint8Array|string} source Data to write. If `source` is a ByteBuffer, its offsets
+     *  will be modified according to the performed read operation.
+     * @param {(string|number)=} encoding Encoding if `data` is a string ("base64", "hex", "binary", defaults to "utf8")
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+     *  written if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeBytes = ByteBufferPrototype.append;
+
+    // types/ints/int8
+
+    /**
+     * Writes an 8bit signed integer.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeInt8 = function(value, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof value !== 'number' || value % 1 !== 0)
+                throw TypeError("Illegal value: "+value+" (not an integer)");
+            value |= 0;
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        offset += 1;
+        var capacity0 = this.buffer.byteLength;
+        if (offset > capacity0)
+            this.resize((capacity0 *= 2) > offset ? capacity0 : offset);
+        offset -= 1;
+        this.view[offset] = value;
+        if (relative) this.offset += 1;
+        return this;
+    };
+
+    /**
+     * Writes an 8bit signed integer. This is an alias of {@link ByteBuffer#writeInt8}.
+     * @function
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeByte = ByteBufferPrototype.writeInt8;
+
+    /**
+     * Reads an 8bit signed integer.
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+     * @returns {number} Value read
+     * @expose
+     */
+    ByteBufferPrototype.readInt8 = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+        }
+        var value = this.view[offset];
+        if ((value & 0x80) === 0x80) value = -(0xFF - value + 1); // Cast to signed
+        if (relative) this.offset += 1;
+        return value;
+    };
+
+    /**
+     * Reads an 8bit signed integer. This is an alias of {@link ByteBuffer#readInt8}.
+     * @function
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+     * @returns {number} Value read
+     * @expose
+     */
+    ByteBufferPrototype.readByte = ByteBufferPrototype.readInt8;
+
+    /**
+     * Writes an 8bit unsigned integer.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeUint8 = function(value, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof value !== 'number' || value % 1 !== 0)
+                throw TypeError("Illegal value: "+value+" (not an integer)");
+            value >>>= 0;
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        offset += 1;
+        var capacity1 = this.buffer.byteLength;
+        if (offset > capacity1)
+            this.resize((capacity1 *= 2) > offset ? capacity1 : offset);
+        offset -= 1;
+        this.view[offset] = value;
+        if (relative) this.offset += 1;
+        return this;
+    };
+
+    /**
+     * Writes an 8bit unsigned integer. This is an alias of {@link ByteBuffer#writeUint8}.
+     * @function
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeUInt8 = ByteBufferPrototype.writeUint8;
+
+    /**
+     * Reads an 8bit unsigned integer.
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+     * @returns {number} Value read
+     * @expose
+     */
+    ByteBufferPrototype.readUint8 = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+
