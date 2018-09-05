@@ -26,3 +26,4 @@
         define(["long"], factory);
    /* CommonJS */ else if (typeof require === 'function' && typeof module === "object" && module && module["exports"])
         module['exports'] = (function() {
+            var Long; try { Long = require("long"); } catch (e) {}
