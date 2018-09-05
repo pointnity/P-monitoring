@@ -51,3 +51,4 @@
         if (typeof capacity === 'undefined')
             capacity = ByteBuffer.DEFAULT_CAPACITY;
         if (typeof littleEndian === 'undefined')
+            littleEndian = ByteBuffer.DEFAULT_ENDIAN;
