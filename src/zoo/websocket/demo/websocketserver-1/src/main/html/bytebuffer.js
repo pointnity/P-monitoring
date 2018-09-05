@@ -87,3 +87,4 @@
 
         /**
         * Marked offset.
+        * @type {number}
