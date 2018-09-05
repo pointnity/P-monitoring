@@ -80,3 +80,4 @@
          * Absolute read/write offset.
          * @type {number}
          * @expose
+         * @see ByteBuffer#flip
