@@ -2647,3 +2647,379 @@
         if (relative) this.offset = begin;
         return this;
     };
+
+    /**
+     * Makes this ByteBuffer ready for a new sequence of write or relative read operations. Sets `limit = offset` and
+     *  `offset = 0`. Make sure always to flip a ByteBuffer when all relative read or write operations are complete.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.flip = function() {
+        this.limit = this.offset;
+        this.offset = 0;
+        return this;
+    };
+    /**
+     * Marks an offset on this ByteBuffer to be used later.
+     * @param {number=} offset Offset to mark. Defaults to {@link ByteBuffer#offset}.
+     * @returns {!ByteBuffer} this
+     * @throws {TypeError} If `offset` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @see ByteBuffer#reset
+     * @expose
+     */
+    ByteBufferPrototype.mark = function(offset) {
+        offset = typeof offset === 'undefined' ? this.offset : offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        this.markedOffset = offset;
+        return this;
+    };
+    /**
+     * Sets the byte order.
+     * @param {boolean} littleEndian `true` for little endian byte order, `false` for big endian
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.order = function(littleEndian) {
+        if (!this.noAssert) {
+            if (typeof littleEndian !== 'boolean')
+                throw TypeError("Illegal littleEndian: Not a boolean");
+        }
+        this.littleEndian = !!littleEndian;
+        return this;
+    };
+
+    /**
+     * Switches (to) little endian byte order.
+     * @param {boolean=} littleEndian Defaults to `true`, otherwise uses big endian
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.LE = function(littleEndian) {
+        this.littleEndian = typeof littleEndian !== 'undefined' ? !!littleEndian : true;
+        return this;
+    };
+
+    /**
+     * Switches (to) big endian byte order.
+     * @param {boolean=} bigEndian Defaults to `true`, otherwise uses little endian
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.BE = function(bigEndian) {
+        this.littleEndian = typeof bigEndian !== 'undefined' ? !bigEndian : false;
+        return this;
+    };
+    /**
+     * Prepends some data to this ByteBuffer. This will overwrite any contents before the specified offset up to the
+     *  prepended data's length. If there is not enough space available before the specified `offset`, the backing buffer
+     *  will be resized and its contents moved accordingly.
+     * @param {!ByteBuffer|string|!ArrayBuffer} source Data to prepend. If `source` is a ByteBuffer, its offset will be
+     *  modified according to the performed read operation.
+     * @param {(string|number)=} encoding Encoding if `data` is a string ("base64", "hex", "binary", defaults to "utf8")
+     * @param {number=} offset Offset to prepend at. Will use and decrease {@link ByteBuffer#offset} by the number of bytes
+     *  prepended if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     * @example A relative `00<01 02 03>.prepend(<04 05>)` results in `<04 05 01 02 03>, 04 05|`
+     * @example An absolute `00<01 02 03>.prepend(<04 05>, 2)` results in `04<05 02 03>, 04 05|`
+     */
+    ByteBufferPrototype.prepend = function(source, encoding, offset) {
+        if (typeof encoding === 'number' || typeof encoding !== 'string') {
+            offset = encoding;
+            encoding = undefined;
+        }
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        if (!(source instanceof ByteBuffer))
+            source = ByteBuffer.wrap(source, encoding);
+        var len = source.limit - source.offset;
+        if (len <= 0) return this; // Nothing to prepend
+        var diff = len - offset;
+        if (diff > 0) { // Not enough space before offset, so resize + move
+            var buffer = new ArrayBuffer(this.buffer.byteLength + diff);
+            var view = new Uint8Array(buffer);
+            view.set(this.view.subarray(offset, this.buffer.byteLength), len);
+            this.buffer = buffer;
+            this.view = view;
+            this.offset += diff;
+            if (this.markedOffset >= 0) this.markedOffset += diff;
+            this.limit += diff;
+            offset += diff;
+        } else {
+            var arrayView = new Uint8Array(this.buffer);
+        }
+        this.view.set(source.view.subarray(source.offset, source.limit), offset - len);
+
+        source.offset = source.limit;
+        if (relative)
+            this.offset -= len;
+        return this;
+    };
+
+    /**
+     * Prepends this ByteBuffer to another ByteBuffer. This will overwrite any contents before the specified offset up to the
+     *  prepended data's length. If there is not enough space available before the specified `offset`, the backing buffer
+     *  will be resized and its contents moved accordingly.
+     * @param {!ByteBuffer} target Target ByteBuffer
+     * @param {number=} offset Offset to prepend at. Will use and decrease {@link ByteBuffer#offset} by the number of bytes
+     *  prepended if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     * @see ByteBuffer#prepend
+     */
+    ByteBufferPrototype.prependTo = function(target, offset) {
+        target.prepend(this, offset);
+        return this;
+    };
+    /**
+     * Prints debug information about this ByteBuffer's contents.
+     * @param {function(string)=} out Output function to call, defaults to console.log
+     * @expose
+     */
+    ByteBufferPrototype.printDebug = function(out) {
+        if (typeof out !== 'function') out = console.log.bind(console);
+        out(
+            this.toString()+"\n"+
+            "-------------------------------------------------------------------\n"+
+            this.toDebug(/* columns */ true)
+        );
+    };
+
+    /**
+     * Gets the number of remaining readable bytes. Contents are the bytes between {@link ByteBuffer#offset} and
+     *  {@link ByteBuffer#limit}, so this returns `limit - offset`.
+     * @returns {number} Remaining readable bytes. May be negative if `offset > limit`.
+     * @expose
+     */
+    ByteBufferPrototype.remaining = function() {
+        return this.limit - this.offset;
+    };
+    /**
+     * Resets this ByteBuffer's {@link ByteBuffer#offset}. If an offset has been marked through {@link ByteBuffer#mark}
+     *  before, `offset` will be set to {@link ByteBuffer#markedOffset}, which will then be discarded. If no offset has been
+     *  marked, sets `offset = 0`.
+     * @returns {!ByteBuffer} this
+     * @see ByteBuffer#mark
+     * @expose
+     */
+    ByteBufferPrototype.reset = function() {
+        if (this.markedOffset >= 0) {
+            this.offset = this.markedOffset;
+            this.markedOffset = -1;
+        } else {
+            this.offset = 0;
+        }
+        return this;
+    };
+    /**
+     * Resizes this ByteBuffer to be backed by a buffer of at least the given capacity. Will do nothing if already that
+     *  large or larger.
+     * @param {number} capacity Capacity required
+     * @returns {!ByteBuffer} this
+     * @throws {TypeError} If `capacity` is not a number
+     * @throws {RangeError} If `capacity < 0`
+     * @expose
+     */
+    ByteBufferPrototype.resize = function(capacity) {
+        if (!this.noAssert) {
+            if (typeof capacity !== 'number' || capacity % 1 !== 0)
+                throw TypeError("Illegal capacity: "+capacity+" (not an integer)");
+            capacity |= 0;
+            if (capacity < 0)
+                throw RangeError("Illegal capacity: 0 <= "+capacity);
+        }
+        if (this.buffer.byteLength < capacity) {
+            var buffer = new ArrayBuffer(capacity);
+            var view = new Uint8Array(buffer);
+            view.set(this.view);
+            this.buffer = buffer;
+            this.view = view;
+        }
+        return this;
+    };
+    /**
+     * Reverses this ByteBuffer's contents.
+     * @param {number=} begin Offset to start at, defaults to {@link ByteBuffer#offset}
+     * @param {number=} end Offset to end at, defaults to {@link ByteBuffer#limit}
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.reverse = function(begin, end) {
+        if (typeof begin === 'undefined') begin = this.offset;
+        if (typeof end === 'undefined') end = this.limit;
+        if (!this.noAssert) {
+            if (typeof begin !== 'number' || begin % 1 !== 0)
+                throw TypeError("Illegal begin: Not an integer");
+            begin >>>= 0;
+            if (typeof end !== 'number' || end % 1 !== 0)
+                throw TypeError("Illegal end: Not an integer");
+            end >>>= 0;
+            if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+        }
+        if (begin === end)
+            return this; // Nothing to reverse
+        Array.prototype.reverse.call(this.view.subarray(begin, end));
+        return this;
+    };
+    /**
+     * Skips the next `length` bytes. This will just advance
+     * @param {number} length Number of bytes to skip. May also be negative to move the offset back.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.skip = function(length) {
+        if (!this.noAssert) {
+            if (typeof length !== 'number' || length % 1 !== 0)
+                throw TypeError("Illegal length: "+length+" (not an integer)");
+            length |= 0;
+        }
+        var offset = this.offset + length;
+        if (!this.noAssert) {
+            if (offset < 0 || offset > this.buffer.byteLength)
+                throw RangeError("Illegal length: 0 <= "+this.offset+" + "+length+" <= "+this.buffer.byteLength);
+        }
+        this.offset = offset;
+        return this;
+    };
+
+    /**
+     * Slices this ByteBuffer by creating a cloned instance with `offset = begin` and `limit = end`.
+     * @param {number=} begin Begin offset, defaults to {@link ByteBuffer#offset}.
+     * @param {number=} end End offset, defaults to {@link ByteBuffer#limit}.
+     * @returns {!ByteBuffer} Clone of this ByteBuffer with slicing applied, backed by the same {@link ByteBuffer#buffer}
+     * @expose
+     */
+    ByteBufferPrototype.slice = function(begin, end) {
+        if (typeof begin === 'undefined') begin = this.offset;
+        if (typeof end === 'undefined') end = this.limit;
+        if (!this.noAssert) {
+            if (typeof begin !== 'number' || begin % 1 !== 0)
+                throw TypeError("Illegal begin: Not an integer");
+            begin >>>= 0;
+            if (typeof end !== 'number' || end % 1 !== 0)
+                throw TypeError("Illegal end: Not an integer");
+            end >>>= 0;
+            if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+        }
+        var bb = this.clone();
+        bb.offset = begin;
+        bb.limit = end;
+        return bb;
+    };
+    /**
+     * Returns a copy of the backing buffer that contains this ByteBuffer's contents. Contents are the bytes between
+     *  {@link ByteBuffer#offset} and {@link ByteBuffer#limit}.
+     * @param {boolean=} forceCopy If `true` returns a copy, otherwise returns a view referencing the same memory if
+     *  possible. Defaults to `false`
+     * @returns {!ArrayBuffer} Contents as an ArrayBuffer
+     * @expose
+     */
+    ByteBufferPrototype.toBuffer = function(forceCopy) {
+        var offset = this.offset,
+            limit = this.limit;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: Not an integer");
+            offset >>>= 0;
+            if (typeof limit !== 'number' || limit % 1 !== 0)
+                throw TypeError("Illegal limit: Not an integer");
+            limit >>>= 0;
+            if (offset < 0 || offset > limit || limit > this.buffer.byteLength)
+                throw RangeError("Illegal range: 0 <= "+offset+" <= "+limit+" <= "+this.buffer.byteLength);
+        }
+        // NOTE: It's not possible to have another ArrayBuffer reference the same memory as the backing buffer. This is
+        // possible with Uint8Array#subarray only, but we have to return an ArrayBuffer by contract. So:
+        if (!forceCopy && offset === 0 && limit === this.buffer.byteLength)
+            return this.buffer;
+        if (offset === limit)
+            return EMPTY_BUFFER;
+        var buffer = new ArrayBuffer(limit - offset);
+        new Uint8Array(buffer).set(new Uint8Array(this.buffer).subarray(offset, limit), 0);
+        return buffer;
+    };
+
+    /**
+     * Returns a raw buffer compacted to contain this ByteBuffer's contents. Contents are the bytes between
+     *  {@link ByteBuffer#offset} and {@link ByteBuffer#limit}. This is an alias of {@link ByteBuffer#toBuffer}.
+     * @function
+     * @param {boolean=} forceCopy If `true` returns a copy, otherwise returns a view referencing the same memory.
+     *  Defaults to `false`
+     * @returns {!ArrayBuffer} Contents as an ArrayBuffer
+     * @expose
+     */
+    ByteBufferPrototype.toArrayBuffer = ByteBufferPrototype.toBuffer;
+
+    /**
+     * Converts the ByteBuffer's contents to a string.
+     * @param {string=} encoding Output encoding. Returns an informative string representation if omitted but also allows
+     *  direct conversion to "utf8", "hex", "base64" and "binary" encoding. "debug" returns a hex representation with
+     *  highlighted offsets.
+     * @param {number=} begin Offset to begin at, defaults to {@link ByteBuffer#offset}
+     * @param {number=} end Offset to end at, defaults to {@link ByteBuffer#limit}
+     * @returns {string} String representation
+     * @throws {Error} If `encoding` is invalid
+     * @expose
+     */
+    ByteBufferPrototype.toString = function(encoding, begin, end) {
+        if (typeof encoding === 'undefined')
+            return "ByteBufferAB(offset="+this.offset+",markedOffset="+this.markedOffset+",limit="+this.limit+",capacity="+this.capacity()+")";
+        if (typeof encoding === 'number')
+            encoding = "utf8",
+            begin = encoding,
+            end = begin;
+        switch (encoding) {
+            case "utf8":
+                return this.toUTF8(begin, end);
+            case "base64":
+                return this.toBase64(begin, end);
+            case "hex":
+                return this.toHex(begin, end);
+            case "binary":
+                return this.toBinary(begin, end);
+            case "debug":
+                return this.toDebug();
+            case "columns":
+                return this.toColumns();
+            default:
+                throw Error("Unsupported encoding: "+encoding);
+        }
+    };
+
+    // lxiv-embeddable
+
+    /**
+     * lxiv-embeddable (c) 2014 Daniel Wirtz <dcode@dcode.io>
+     * Released under the Apache License, Version 2.0
+     * see: https://github.com/dcodeIO/lxiv for details
+     */
+    var lxiv = function() {
+        "use strict";
+
+        /**
+         * lxiv namespace.
+         * @type {!Object.<string,*>}
+         * @exports lxiv
+         */
+        var lxiv = {};
+
+        /**
+         * Character codes for output.
+         * @type {!Array.<number>}
+         * @inner
+         */
