@@ -1405,3 +1405,134 @@
 
         buffer[offset + i - d] |= s * 128;
     }
+
+    /**
+     * Writes a 32bit float.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeFloat32 = function(value, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof value !== 'number')
+                throw TypeError("Illegal value: "+value+" (not a number)");
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        offset += 4;
+        var capacity8 = this.buffer.byteLength;
+        if (offset > capacity8)
+            this.resize((capacity8 *= 2) > offset ? capacity8 : offset);
+        offset -= 4;
+        ieee754_write(this.view, value, offset, this.littleEndian, 23, 4);
+        if (relative) this.offset += 4;
+        return this;
+    };
+
+    /**
+     * Writes a 32bit float. This is an alias of {@link ByteBuffer#writeFloat32}.
+     * @function
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeFloat = ByteBufferPrototype.writeFloat32;
+
+    /**
+     * Reads a 32bit float.
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @returns {number}
+     * @expose
+     */
+    ByteBufferPrototype.readFloat32 = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 4 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byteLength);
+        }
+        var value = ieee754_read(this.view, offset, this.littleEndian, 23, 4);
+        if (relative) this.offset += 4;
+        return value;
+    };
+
+    /**
+     * Reads a 32bit float. This is an alias of {@link ByteBuffer#readFloat32}.
+     * @function
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @returns {number}
+     * @expose
+     */
+    ByteBufferPrototype.readFloat = ByteBufferPrototype.readFloat32;
+
+    // types/floats/float64
+
+    /**
+     * Writes a 64bit float.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeFloat64 = function(value, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof value !== 'number')
+                throw TypeError("Illegal value: "+value+" (not a number)");
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        offset += 8;
+        var capacity9 = this.buffer.byteLength;
+        if (offset > capacity9)
+            this.resize((capacity9 *= 2) > offset ? capacity9 : offset);
+        offset -= 8;
+        ieee754_write(this.view, value, offset, this.littleEndian, 52, 8);
+        if (relative) this.offset += 8;
+        return this;
+    };
+
+    /**
+     * Writes a 64bit float. This is an alias of {@link ByteBuffer#writeFloat64}.
+     * @function
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.writeDouble = ByteBufferPrototype.writeFloat64;
+
+    /**
+     * Reads a 64bit float.
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+     * @returns {number}
+     * @expose
+     */
+    ByteBufferPrototype.readFloat64 = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 8 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+8+") <= "+this.buffer.byteLength);
+        }
+        var value = ieee754_read(this.view, offset, this.littleEndian, 52, 8);
+        if (relative) this.offset += 8;
+        return value;
+    };
