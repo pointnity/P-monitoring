@@ -39,3 +39,4 @@
      * Constructs a new ByteBuffer.
      * @class The swiss army knife for binary data in JavaScript.
      * @exports ByteBuffer
+     * @constructor
