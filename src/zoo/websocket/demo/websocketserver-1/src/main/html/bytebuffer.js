@@ -1835,3 +1835,70 @@
                 case 2 : this.view[offset+1] = size !== 2 ? (part0 >>>  7) | 0x80 : (part0 >>>  7) & 0x7F;
                 case 1 : this.view[offset  ] = size !== 1 ? (part0       ) | 0x80 : (part0       ) & 0x7F;
             }
+            if (relative) {
+                this.offset += size;
+                return this;
+            } else {
+                return size;
+            }
+        };
+
+        /**
+         * Writes a zig-zag encoded 64bit base 128 variable-length integer.
+         * @param {number|Long} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  written if omitted.
+         * @returns {!ByteBuffer|number} `this` if offset is omitted, else the actual number of bytes written.
+         * @expose
+         */
+        ByteBufferPrototype.writeVarint64ZigZag = function(value, offset) {
+            return this.writeVarint64(ByteBuffer.zigZagEncode64(value), offset);
+        };
+
+        /**
+         * Reads a 64bit base 128 variable-length integer. Requires Long.js.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  read if omitted.
+         * @returns {!Long|!{value: Long, length: number}} The value read if offset is omitted, else the value read and
+         *  the actual number of bytes read.
+         * @throws {Error} If it's not a valid varint
+         * @expose
+         */
+        ByteBufferPrototype.readVarint64 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+            }
+            // ref: src/google/protobuf/io/coded_stream.cc
+            var start = offset,
+                part0 = 0,
+                part1 = 0,
+                part2 = 0,
+                b  = 0;
+            b = this.view[offset++]; part0  = (b & 0x7F)      ; if ( b & 0x80                                                   ) {
+            b = this.view[offset++]; part0 |= (b & 0x7F) <<  7; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            b = this.view[offset++]; part0 |= (b & 0x7F) << 14; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            b = this.view[offset++]; part0 |= (b & 0x7F) << 21; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            b = this.view[offset++]; part1  = (b & 0x7F)      ; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            b = this.view[offset++]; part1 |= (b & 0x7F) <<  7; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            b = this.view[offset++]; part1 |= (b & 0x7F) << 14; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            b = this.view[offset++]; part1 |= (b & 0x7F) << 21; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            b = this.view[offset++]; part2  = (b & 0x7F)      ; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            b = this.view[offset++]; part2 |= (b & 0x7F) <<  7; if ((b & 0x80) || (this.noAssert && typeof b === 'undefined')) {
+            throw Error("Buffer overrun"); }}}}}}}}}}
+            var value = Long.fromBits(part0 | (part1 << 28), (part1 >>> 4) | (part2) << 24, false);
+            if (relative) {
+                this.offset = offset;
+                return value;
+            } else {
+                return {
+                    'value': value,
+                    'length': offset-start
+                };
+            }
+        };
