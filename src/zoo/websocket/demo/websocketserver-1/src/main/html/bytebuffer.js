@@ -86,3 +86,4 @@
         this.offset = 0;
 
         /**
+        * Marked offset.
