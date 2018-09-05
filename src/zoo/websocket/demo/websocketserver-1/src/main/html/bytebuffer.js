@@ -41,3 +41,4 @@
      * @exports ByteBuffer
      * @constructor
      * @param {number=} capacity Initial capacity. Defaults to {@link ByteBuffer.DEFAULT_CAPACITY}.
+     * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
