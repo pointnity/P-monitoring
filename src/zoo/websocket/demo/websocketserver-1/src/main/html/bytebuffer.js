@@ -99,3 +99,4 @@
          * @type {number}
         * @expose
          * @see ByteBuffer#flip
+         * @see ByteBuffer#clear
