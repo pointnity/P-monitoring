@@ -28,3 +28,4 @@
         module['exports'] = (function() {
             var Long; try { Long = require("long"); } catch (e) {}
            return factory(Long);
+        })();
