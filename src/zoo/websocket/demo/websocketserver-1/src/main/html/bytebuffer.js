@@ -56,3 +56,4 @@
             noAssert = ByteBuffer.DEFAULT_NOASSERT;
        if (!noAssert) {
             capacity = capacity | 0;
+            if (capacity < 0)
