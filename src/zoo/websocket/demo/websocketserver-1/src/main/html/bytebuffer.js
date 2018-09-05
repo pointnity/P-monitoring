@@ -47,3 +47,5 @@
      *  {@link ByteBuffer.DEFAULT_NOASSERT}.
      * @expose
      */
+    var ByteBuffer = function(capacity, littleEndian, noAssert) {
+        if (typeof capacity === 'undefined')
