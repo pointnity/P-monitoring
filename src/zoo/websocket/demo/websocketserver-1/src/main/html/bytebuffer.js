@@ -40,3 +40,4 @@
      * @class The swiss army knife for binary data in JavaScript.
      * @exports ByteBuffer
      * @constructor
+     * @param {number=} capacity Initial capacity. Defaults to {@link ByteBuffer.DEFAULT_CAPACITY}.
