@@ -72,3 +72,4 @@
         /**
          * Uint8Array utilized to manipulate the backing buffer. Becomes `null` if the backing buffer has a capacity of `0`.
          * @type {?Uint8Array}
+         * @expose
