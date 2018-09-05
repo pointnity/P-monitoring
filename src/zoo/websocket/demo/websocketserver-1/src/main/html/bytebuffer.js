@@ -3718,3 +3718,29 @@
         }
         return sd();
     };
+
+    /**
+     * Decodes an UTF8 encoded string to a ByteBuffer.
+     * @param {string} str String to decode
+     * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+     *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+     * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+     *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+     * @returns {!ByteBuffer} ByteBuffer
+     * @expose
+     */
+    ByteBuffer.fromUTF8 = function(str, littleEndian, noAssert) {
+        if (!noAssert)
+            if (typeof str !== 'string')
+                throw TypeError("Illegal str: Not a string");
+        var bb = new ByteBuffer(utfx.calculateUTF16asUTF8(stringSource(str), true)[1], littleEndian, noAssert),
+            i = 0;
+        utfx.encodeUTF16toUTF8(stringSource(str), function(b) {
+            bb.view[i++] = b;
+        });
+        bb.limit = i;
+        return bb;
+    };
+
+    return ByteBuffer;
+});
