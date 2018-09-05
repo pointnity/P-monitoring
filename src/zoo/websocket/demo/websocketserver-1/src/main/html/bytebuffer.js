@@ -3023,3 +3023,259 @@
          * @type {!Array.<number>}
          * @inner
          */
+       var aout = [
+            65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+            81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102,
+            103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118,
+            119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47
+        ];
+
+        /**
+         * Character codes for input.
+         * @type {!Array.<number>}
+         * @inner
+         */
+        var ain = [];
+        for (var i=0, k=aout.length; i<k; ++i)
+            ain[aout[i]] = i;
+
+        /**
+         * Encodes bytes to base64 char codes.
+         * @param {!function():number|null} src Bytes source as a function returning the next byte respectively `null` if
+         *  there are no more bytes left.
+         * @param {!function(number)} dst Characters destination as a function successively called with each encoded char
+         *  code.
+         */
+        lxiv.encode = function(src, dst) {
+            var b, t;
+            while ((b = src()) !== null) {
+                dst(aout[(b>>2)&0x3f]);
+                t = (b&0x3)<<4;
+                if ((b = src()) !== null) {
+                    t |= (b>>4)&0xf;
+                    dst(aout[(t|((b>>4)&0xf))&0x3f]);
+                    t = (b&0xf)<<2;
+                    if ((b = src()) !== null)
+                        dst(aout[(t|((b>>6)&0x3))&0x3f]),
+                        dst(aout[b&0x3f]);
+                    else
+                        dst(aout[t&0x3f]),
+                        dst(61);
+                } else
+                    dst(aout[t&0x3f]),
+                    dst(61),
+                    dst(61);
+            }
+        };
+
+        /**
+         * Decodes base64 char codes to bytes.
+         * @param {!function():number|null} src Characters source as a function returning the next char code respectively
+         *  `null` if there are no more characters left.
+         * @param {!function(number)} dst Bytes destination as a function successively called with the next byte.
+         * @throws {Error} If a character code is invalid
+         */
+        lxiv.decode = function(src, dst) {
+            var c, t1, t2;
+            function fail(c) {
+                throw Error("Illegal character code: "+c);
+            }
+            while ((c = src()) !== null) {
+                t1 = ain[c];
+                if (typeof t1 === 'undefined') fail(c);
+                if ((c = src()) !== null) {
+                    t2 = ain[c];
+                    if (typeof t2 === 'undefined') fail(c);
+                    dst((t1<<2)>>>0|(t2&0x30)>>4);
+                    if ((c = src()) !== null) {
+                        t1 = ain[c];
+                        if (typeof t1 === 'undefined')
+                            if (c === 61) break; else fail(c);
+                        dst(((t2&0xf)<<4)>>>0|(t1&0x3c)>>2);
+                        if ((c = src()) !== null) {
+                            t2 = ain[c];
+                            if (typeof t2 === 'undefined')
+                                if (c === 61) break; else fail(c);
+                            dst(((t1&0x3)<<6)>>>0|t2);
+                        }
+                    }
+                }
+            }
+        };
+
+        /**
+         * Tests if a string is valid base64.
+         * @param {string} str String to test
+         * @returns {boolean} `true` if valid, otherwise `false`
+         */
+        lxiv.test = function(str) {
+            return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(str);
+        };
+
+        return lxiv;
+    }();
+
+    // encodings/base64
+
+    /**
+     * Encodes this ByteBuffer's contents to a base64 encoded string.
+     * @param {number=} begin Offset to begin at, defaults to {@link ByteBuffer#offset}.
+     * @param {number=} end Offset to end at, defaults to {@link ByteBuffer#limit}.
+     * @returns {string} Base64 encoded string
+     * @throws {RangeError} If `begin` or `end` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.toBase64 = function(begin, end) {
+        if (typeof begin === 'undefined')
+            begin = this.offset;
+        if (typeof end === 'undefined')
+            end = this.limit;
+        begin = begin | 0; end = end | 0;
+        if (begin < 0 || end > this.capacity || begin > end)
+            throw RangeError("begin, end");
+        var sd; lxiv.encode(function() {
+            return begin < end ? this.view[begin++] : null;
+        }.bind(this), sd = stringDestination());
+        return sd();
+    };
+
+    /**
+     * Decodes a base64 encoded string to a ByteBuffer.
+     * @param {string} str String to decode
+     * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+     *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+     * @returns {!ByteBuffer} ByteBuffer
+     * @expose
+     */
+    ByteBuffer.fromBase64 = function(str, littleEndian) {
+        if (typeof str !== 'string')
+            throw TypeError("str");
+        var bb = new ByteBuffer(str.length/4*3, littleEndian),
+            i = 0;
+        lxiv.decode(stringSource(str), function(b) {
+            bb.view[i++] = b;
+        });
+        bb.limit = i;
+        return bb;
+    };
+
+    /**
+     * Encodes a binary string to base64 like `window.btoa` does.
+     * @param {string} str Binary string
+     * @returns {string} Base64 encoded string
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/Window.btoa
+     * @expose
+     */
+    ByteBuffer.btoa = function(str) {
+        return ByteBuffer.fromBinary(str).toBase64();
+    };
+
+    /**
+     * Decodes a base64 encoded string to binary like `window.atob` does.
+     * @param {string} b64 Base64 encoded string
+     * @returns {string} Binary string
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/Window.atob
+     * @expose
+     */
+    ByteBuffer.atob = function(b64) {
+        return ByteBuffer.fromBase64(b64).toBinary();
+    };
+
+    // encodings/binary
+
+    /**
+     * Encodes this ByteBuffer to a binary encoded string, that is using only characters 0x00-0xFF as bytes.
+     * @param {number=} begin Offset to begin at. Defaults to {@link ByteBuffer#offset}.
+     * @param {number=} end Offset to end at. Defaults to {@link ByteBuffer#limit}.
+     * @returns {string} Binary encoded string
+     * @throws {RangeError} If `offset > limit`
+     * @expose
+     */
+    ByteBufferPrototype.toBinary = function(begin, end) {
+        if (typeof begin === 'undefined')
+            begin = this.offset;
+        if (typeof end === 'undefined')
+            end = this.limit;
+        begin |= 0; end |= 0;
+        if (begin < 0 || end > this.capacity() || begin > end)
+            throw RangeError("begin, end");
+        if (begin === end)
+            return "";
+        var chars = [],
+            parts = [];
+        while (begin < end) {
+            chars.push(this.view[begin++]);
+            if (chars.length >= 1024)
+                parts.push(String.fromCharCode.apply(String, chars)),
+                chars = [];
+        }
+        return parts.join('') + String.fromCharCode.apply(String, chars);
+    };
+
+    /**
+     * Decodes a binary encoded string, that is using only characters 0x00-0xFF as bytes, to a ByteBuffer.
+     * @param {string} str String to decode
+     * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+     *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+     * @returns {!ByteBuffer} ByteBuffer
+     * @expose
+     */
+    ByteBuffer.fromBinary = function(str, littleEndian) {
+        if (typeof str !== 'string')
+            throw TypeError("str");
+        var i = 0,
+            k = str.length,
+            charCode,
+            bb = new ByteBuffer(k, littleEndian);
+        while (i<k) {
+            charCode = str.charCodeAt(i);
+            if (charCode > 0xff)
+                throw RangeError("illegal char code: "+charCode);
+            bb.view[i++] = charCode;
+        }
+        bb.limit = k;
+        return bb;
+    };
+
+    // encodings/debug
+
+    /**
+     * Encodes this ByteBuffer to a hex encoded string with marked offsets. Offset symbols are:
+     * * `<` : offset,
+     * * `'` : markedOffset,
+     * * `>` : limit,
+     * * `|` : offset and limit,
+     * * `[` : offset and markedOffset,
+     * * `]` : markedOffset and limit,
+     * * `!` : offset, markedOffset and limit
+     * @param {boolean=} columns If `true` returns two columns hex + ascii, defaults to `false`
+     * @returns {string|!Array.<string>} Debug string or array of lines if `asArray = true`
+     * @expose
+     * @example `>00'01 02<03` contains four bytes with `limit=0, markedOffset=1, offset=3`
+     * @example `00[01 02 03>` contains four bytes with `offset=markedOffset=1, limit=4`
+     * @example `00|01 02 03` contains four bytes with `offset=limit=1, markedOffset=-1`
+     * @example `|` contains zero bytes with `offset=limit=0, markedOffset=-1`
+     */
+    ByteBufferPrototype.toDebug = function(columns) {
+        var i = -1,
+            k = this.buffer.byteLength,
+            b,
+            hex = "",
+            asc = "",
+            out = "";
+        while (i<k) {
+            if (i !== -1) {
+                b = this.view[i];
+                if (b < 0x10) hex += "0"+b.toString(16).toUpperCase();
+                else hex += b.toString(16).toUpperCase();
+                if (columns)
+                    asc += b > 32 && b < 127 ? String.fromCharCode(b) : '.';
+            }
+            ++i;
+            if (columns) {
+                if (i > 0 && i % 16 === 0 && i !== k) {
+                    while (hex.length < 3*16+3) hex += " ";
+                    out += hex+asc+"\n";
+                    hex = asc = "";
+                }
+            }
