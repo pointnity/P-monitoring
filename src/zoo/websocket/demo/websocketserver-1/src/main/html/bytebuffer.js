@@ -88,3 +88,4 @@
         /**
         * Marked offset.
         * @type {number}
+         * @expose
