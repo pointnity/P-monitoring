@@ -78,3 +78,4 @@
 
         /**
          * Absolute read/write offset.
+         * @type {number}
