@@ -58,3 +58,4 @@
             capacity = capacity | 0;
             if (capacity < 0)
                 throw RangeError("Illegal capacity");
+           littleEndian = !!littleEndian;
