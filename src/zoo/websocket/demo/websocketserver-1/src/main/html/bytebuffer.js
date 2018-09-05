@@ -33,3 +33,4 @@
         (global["dcodeIO"] = global["dcodeIO"] || {})["ByteBuffer"] = factory(global["dcodeIO"]["Long"]);
 
 })(this, function(Long) {
+    "use strict";
