@@ -648,4 +648,5 @@
                 throw TypeError("Illegal offset: "+offset+" (not an integer)");
             offset >>>= 0;
             if (offset < 0 || offset + 1 > this.buffer.byteLength)
-                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+                
