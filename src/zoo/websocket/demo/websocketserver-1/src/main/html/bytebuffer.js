@@ -67,3 +67,4 @@
          * @type {!ArrayBuffer}
          * @expose
          */
+        this.buffer = capacity === 0 ? EMPTY_BUFFER : new ArrayBuffer(capacity);
