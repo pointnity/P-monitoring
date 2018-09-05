@@ -89,3 +89,4 @@
         * Marked offset.
         * @type {number}
          * @expose
+         * @see ByteBuffer#mark
