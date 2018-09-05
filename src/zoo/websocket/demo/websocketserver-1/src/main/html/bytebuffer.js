@@ -92,3 +92,4 @@
          * @see ByteBuffer#mark
          * @see ByteBuffer#reset
          */
+        this.markedOffset = -1;
