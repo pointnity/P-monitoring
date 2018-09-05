@@ -25,3 +25,4 @@
     /* AMD */ if (typeof define === 'function' && define["amd"])
         define(["long"], factory);
    /* CommonJS */ else if (typeof require === 'function' && typeof module === "object" && module && module["exports"])
+        module['exports'] = (function() {
