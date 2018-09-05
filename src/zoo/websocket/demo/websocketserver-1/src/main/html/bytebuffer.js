@@ -82,3 +82,5 @@
          * @expose
          * @see ByteBuffer#flip
          * @see ByteBuffer#clear
+         */
+        this.offset = 0;
