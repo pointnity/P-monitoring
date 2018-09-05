@@ -34,3 +34,5 @@
 
 })(this, function(Long) {
     "use strict";
+
+    /**
