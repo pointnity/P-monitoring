@@ -53,3 +53,4 @@
         if (typeof littleEndian === 'undefined')
             littleEndian = ByteBuffer.DEFAULT_ENDIAN;
         if (typeof noAssert === 'undefined')
+            noAssert = ByteBuffer.DEFAULT_NOASSERT;
