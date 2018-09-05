@@ -102,3 +102,48 @@
          * @see ByteBuffer#clear
          */
         this.limit = capacity;
+
+        /**
+         * Whether to use little endian byte order, defaults to `false` for big endian.
+         * @type {boolean}
+         * @expose
+         */
+        this.littleEndian = littleEndian;
+
+        /**
+         * Whether to skip assertions of offsets and values, defaults to `false`.
+         * @type {boolean}
+         * @expose
+         */
+        this.noAssert = noAssert;
+    };
+
+    /**
+     * ByteBuffer version.
+     * @type {string}
+     * @const
+     * @expose
+     */
+    ByteBuffer.VERSION = "5.0.1";
+
+    /**
+     * Little endian constant that can be used instead of its boolean value. Evaluates to `true`.
+     * @type {boolean}
+     * @const
+     * @expose
+     */
+    ByteBuffer.LITTLE_ENDIAN = true;
+
+    /**
+     * Big endian constant that can be used instead of its boolean value. Evaluates to `false`.
+     * @type {boolean}
+     * @const
+     * @expose
+     */
+    ByteBuffer.BIG_ENDIAN = false;
+
+    /**
+     * Default initial capacity of `16`.
+     * @type {number}
+     * @expose
+     */
