@@ -2076,3 +2076,290 @@
      * @expose
      * @see ByteBuffer#readVarint32
      */
+    ByteBufferPrototype.readIString = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 4 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byteLength);
+        }
+        var start = offset;
+        var len = this.readUint32(offset);
+        var str = this.readUTF8String(len, ByteBuffer.METRICS_BYTES, offset += 4);
+        offset += str['length'];
+        if (relative) {
+            this.offset = offset;
+            return str['string'];
+        } else {
+            return {
+                'string': str['string'],
+                'length': offset - start
+            };
+        }
+    };
+
+    // types/strings/utf8string
+
+    /**
+     * Metrics representing number of UTF8 characters. Evaluates to `c`.
+     * @type {string}
+     * @const
+     * @expose
+     */
+    ByteBuffer.METRICS_CHARS = 'c';
+
+    /**
+     * Metrics representing number of bytes. Evaluates to `b`.
+     * @type {string}
+     * @const
+     * @expose
+     */
+    ByteBuffer.METRICS_BYTES = 'b';
+
+    /**
+     * Writes an UTF8 encoded string.
+     * @param {string} str String to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} if omitted.
+     * @returns {!ByteBuffer|number} this if offset is omitted, else the actual number of bytes written.
+     * @expose
+     */
+    ByteBufferPrototype.writeUTF8String = function(str, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        var k;
+        var start = offset;
+        k = utfx.calculateUTF16asUTF8(stringSource(str))[1];
+        offset += k;
+        var capacity14 = this.buffer.byteLength;
+        if (offset > capacity14)
+            this.resize((capacity14 *= 2) > offset ? capacity14 : offset);
+        offset -= k;
+        utfx.encodeUTF16toUTF8(stringSource(str), function(b) {
+            this.view[offset++] = b;
+        }.bind(this));
+        if (relative) {
+            this.offset = offset;
+            return this;
+        }
+        return offset - start;
+    };
+
+    /**
+     * Writes an UTF8 encoded string. This is an alias of {@link ByteBuffer#writeUTF8String}.
+     * @function
+     * @param {string} str String to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} if omitted.
+     * @returns {!ByteBuffer|number} this if offset is omitted, else the actual number of bytes written.
+     * @expose
+     */
+    ByteBufferPrototype.writeString = ByteBufferPrototype.writeUTF8String;
+
+    /**
+     * Calculates the number of UTF8 characters of a string. JavaScript itself uses UTF-16, so that a string's
+     *  `length` property does not reflect its actual UTF8 size if it contains code points larger than 0xFFFF.
+     * @param {string} str String to calculate
+     * @returns {number} Number of UTF8 characters
+     * @expose
+     */
+    ByteBuffer.calculateUTF8Chars = function(str) {
+        return utfx.calculateUTF16asUTF8(stringSource(str))[0];
+    };
+
+    /**
+     * Calculates the number of UTF8 bytes of a string.
+     * @param {string} str String to calculate
+     * @returns {number} Number of UTF8 bytes
+     * @expose
+     */
+    ByteBuffer.calculateUTF8Bytes = function(str) {
+        return utfx.calculateUTF16asUTF8(stringSource(str))[1];
+    };
+
+    /**
+     * Calculates the number of UTF8 bytes of a string. This is an alias of {@link ByteBuffer.calculateUTF8Bytes}.
+     * @function
+     * @param {string} str String to calculate
+     * @returns {number} Number of UTF8 bytes
+     * @expose
+     */
+    ByteBuffer.calculateString = ByteBuffer.calculateUTF8Bytes;
+
+    /**
+     * Reads an UTF8 encoded string.
+     * @param {number} length Number of characters or bytes to read.
+     * @param {string=} metrics Metrics specifying what `length` is meant to count. Defaults to
+     *  {@link ByteBuffer.METRICS_CHARS}.
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+     *  read if omitted.
+     * @returns {string|!{string: string, length: number}} The string read if offset is omitted, else the string
+     *  read and the actual number of bytes read.
+     * @expose
+     */
+    ByteBufferPrototype.readUTF8String = function(length, metrics, offset) {
+        if (typeof metrics === 'number') {
+            offset = metrics;
+            metrics = undefined;
+        }
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (typeof metrics === 'undefined') metrics = ByteBuffer.METRICS_CHARS;
+        if (!this.noAssert) {
+            if (typeof length !== 'number' || length % 1 !== 0)
+                throw TypeError("Illegal length: "+length+" (not an integer)");
+            length |= 0;
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        var i = 0,
+            start = offset,
+            sd;
+        if (metrics === ByteBuffer.METRICS_CHARS) { // The same for node and the browser
+            sd = stringDestination();
+            utfx.decodeUTF8(function() {
+                return i < length && offset < this.limit ? this.view[offset++] : null;
+            }.bind(this), function(cp) {
+                ++i; utfx.UTF8toUTF16(cp, sd);
+            });
+            if (i !== length)
+                throw RangeError("Illegal range: Truncated data, "+i+" == "+length);
+            if (relative) {
+                this.offset = offset;
+                return sd();
+            } else {
+                return {
+                    "string": sd(),
+                    "length": offset - start
+                };
+            }
+        } else if (metrics === ByteBuffer.METRICS_BYTES) {
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + length > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+length+") <= "+this.buffer.byteLength);
+            }
+            var k = offset + length;
+            utfx.decodeUTF8toUTF16(function() {
+                return offset < k ? this.view[offset++] : null;
+            }.bind(this), sd = stringDestination(), this.noAssert);
+            if (offset !== k)
+                throw RangeError("Illegal range: Truncated data, "+offset+" == "+k);
+            if (relative) {
+                this.offset = offset;
+                return sd();
+            } else {
+                return {
+                    'string': sd(),
+                    'length': offset - start
+                };
+            }
+        } else
+            throw TypeError("Unsupported metrics: "+metrics);
+    };
+
+    /**
+     * Reads an UTF8 encoded string. This is an alias of {@link ByteBuffer#readUTF8String}.
+     * @function
+     * @param {number} length Number of characters or bytes to read
+     * @param {number=} metrics Metrics specifying what `n` is meant to count. Defaults to
+     *  {@link ByteBuffer.METRICS_CHARS}.
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+     *  read if omitted.
+     * @returns {string|!{string: string, length: number}} The string read if offset is omitted, else the string
+     *  read and the actual number of bytes read.
+     * @expose
+     */
+    ByteBufferPrototype.readString = ByteBufferPrototype.readUTF8String;
+
+    // types/strings/vstring
+
+    /**
+     * Writes a length as varint32 prefixed UTF8 encoded string.
+     * @param {string} str String to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+     *  written if omitted.
+     * @returns {!ByteBuffer|number} `this` if `offset` is omitted, else the actual number of bytes written
+     * @expose
+     * @see ByteBuffer#writeVarint32
+     */
+    ByteBufferPrototype.writeVString = function(str, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof str !== 'string')
+                throw TypeError("Illegal str: Not a string");
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        var start = offset,
+            k, l;
+        k = utfx.calculateUTF16asUTF8(stringSource(str), this.noAssert)[1];
+        l = ByteBuffer.calculateVarint32(k);
+        offset += l+k;
+        var capacity15 = this.buffer.byteLength;
+        if (offset > capacity15)
+            this.resize((capacity15 *= 2) > offset ? capacity15 : offset);
+        offset -= l+k;
+        offset += this.writeVarint32(k, offset);
+        utfx.encodeUTF16toUTF8(stringSource(str), function(b) {
+            this.view[offset++] = b;
+        }.bind(this));
+        if (offset !== start+k+l)
+            throw RangeError("Illegal range: Truncated data, "+offset+" == "+(offset+k+l));
+        if (relative) {
+            this.offset = offset;
+            return this;
+        }
+        return offset - start;
+    };
+
+    /**
+     * Reads a length as varint32 prefixed UTF8 encoded string.
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+     *  read if omitted.
+     * @returns {string|!{string: string, length: number}} The string read if offset is omitted, else the string
+     *  read and the actual number of bytes read.
+     * @expose
+     * @see ByteBuffer#readVarint32
+     */
+    ByteBufferPrototype.readVString = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+        }
+        var start = offset;
+        var len = this.readVarint32(offset);
+        var str = this.readUTF8String(len['value'], ByteBuffer.METRICS_BYTES, offset += len['length']);
+        offset += str['length'];
+        if (relative) {
+            this.offset = offset;
+            return str['string'];
+        } else {
+            return {
+                'string': str['string'],
+                'length': offset - start
+            };
+        }
+    };
