@@ -36,3 +36,4 @@
     "use strict";
 
     /**
+     * Constructs a new ByteBuffer.
