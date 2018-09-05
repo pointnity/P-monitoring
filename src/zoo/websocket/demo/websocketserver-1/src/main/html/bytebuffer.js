@@ -989,3 +989,153 @@
      * @returns {number} Value read
      * @expose
      */
+    ByteBufferPrototype.readUint32 = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 4 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byteLength);
+        }
+        var value = 0;
+        if (this.littleEndian) {
+            value  = this.view[offset+2] << 16;
+            value |= this.view[offset+1] <<  8;
+            value |= this.view[offset  ];
+            value += this.view[offset+3] << 24 >>> 0;
+        } else {
+            value  = this.view[offset+1] << 16;
+            value |= this.view[offset+2] <<  8;
+            value |= this.view[offset+3];
+            value += this.view[offset  ] << 24 >>> 0;
+        }
+        if (relative) this.offset += 4;
+        return value;
+    };
+
+    /**
+     * Reads a 32bit unsigned integer. This is an alias of {@link ByteBuffer#readUint32}.
+     * @function
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @returns {number} Value read
+     * @expose
+     */
+    ByteBufferPrototype.readUInt32 = ByteBufferPrototype.readUint32;
+
+    // types/ints/int64
+
+    if (Long) {
+
+        /**
+         * Writes a 64bit signed integer.
+         * @param {number|!Long} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeInt64 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value === 'number')
+                    value = Long.fromNumber(value);
+                else if (typeof value === 'string')
+                    value = Long.fromString(value);
+                else if (!(value && value instanceof Long))
+                    throw TypeError("Illegal value: "+value+" (not an integer or Long)");
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            if (typeof value === 'number')
+                value = Long.fromNumber(value);
+            else if (typeof value === 'string')
+                value = Long.fromString(value);
+            offset += 8;
+            var capacity6 = this.buffer.byteLength;
+            if (offset > capacity6)
+                this.resize((capacity6 *= 2) > offset ? capacity6 : offset);
+            offset -= 8;
+            var lo = value.low,
+                hi = value.high;
+            if (this.littleEndian) {
+                this.view[offset+3] = (lo >>> 24) & 0xFF;
+                this.view[offset+2] = (lo >>> 16) & 0xFF;
+                this.view[offset+1] = (lo >>>  8) & 0xFF;
+                this.view[offset  ] =  lo         & 0xFF;
+                offset += 4;
+                this.view[offset+3] = (hi >>> 24) & 0xFF;
+                this.view[offset+2] = (hi >>> 16) & 0xFF;
+                this.view[offset+1] = (hi >>>  8) & 0xFF;
+                this.view[offset  ] =  hi         & 0xFF;
+            } else {
+                this.view[offset  ] = (hi >>> 24) & 0xFF;
+                this.view[offset+1] = (hi >>> 16) & 0xFF;
+                this.view[offset+2] = (hi >>>  8) & 0xFF;
+                this.view[offset+3] =  hi         & 0xFF;
+                offset += 4;
+                this.view[offset  ] = (lo >>> 24) & 0xFF;
+                this.view[offset+1] = (lo >>> 16) & 0xFF;
+                this.view[offset+2] = (lo >>>  8) & 0xFF;
+                this.view[offset+3] =  lo         & 0xFF;
+            }
+            if (relative) this.offset += 8;
+            return this;
+        };
+
+        /**
+         * Writes a 64bit signed integer. This is an alias of {@link ByteBuffer#writeInt64}.
+         * @param {number|!Long} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeLong = ByteBufferPrototype.writeInt64;
+
+        /**
+         * Reads a 64bit signed integer.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+         * @returns {!Long}
+         * @expose
+         */
+        ByteBufferPrototype.readInt64 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 8 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+8+") <= "+this.buffer.byteLength);
+            }
+            var lo = 0,
+                hi = 0;
+            if (this.littleEndian) {
+                lo  = this.view[offset+2] << 16;
+                lo |= this.view[offset+1] <<  8;
+                lo |= this.view[offset  ];
+                lo += this.view[offset+3] << 24 >>> 0;
+                offset += 4;
+                hi  = this.view[offset+2] << 16;
+                hi |= this.view[offset+1] <<  8;
+                hi |= this.view[offset  ];
+                hi += this.view[offset+3] << 24 >>> 0;
+            } else {
+                hi  = this.view[offset+1] << 16;
+                hi |= this.view[offset+2] <<  8;
+                hi |= this.view[offset+3];
+                hi += this.view[offset  ] << 24 >>> 0;
+                offset += 4;
+                lo  = this.view[offset+1] << 16;
+                lo |= this.view[offset+2] <<  8;
+                lo |= this.view[offset+3];
+                lo += this.view[offset  ] << 24 >>> 0;
+            }
+            var value = new Long(lo, hi, false);
+            if (relative) this.offset += 8;
+            return value;
+        };
