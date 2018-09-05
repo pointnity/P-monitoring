@@ -2363,3 +2363,287 @@
             };
         }
     };
+
+
+    /**
+     * Appends some data to this ByteBuffer. This will overwrite any contents behind the specified offset up to the appended
+     *  data's length.
+     * @param {!ByteBuffer|!ArrayBuffer|!Uint8Array|string} source Data to append. If `source` is a ByteBuffer, its offsets
+     *  will be modified according to the performed read operation.
+     * @param {(string|number)=} encoding Encoding if `data` is a string ("base64", "hex", "binary", defaults to "utf8")
+     * @param {number=} offset Offset to append at. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+     *  written if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     * @example A relative `<01 02>03.append(<04 05>)` will result in `<01 02 04 05>, 04 05|`
+     * @example An absolute `<01 02>03.append(04 05>, 1)` will result in `<01 04>05, 04 05|`
+     */
+    ByteBufferPrototype.append = function(source, encoding, offset) {
+        if (typeof encoding === 'number' || typeof encoding !== 'string') {
+            offset = encoding;
+            encoding = undefined;
+        }
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        if (!(source instanceof ByteBuffer))
+            source = ByteBuffer.wrap(source, encoding);
+        var length = source.limit - source.offset;
+        if (length <= 0) return this; // Nothing to append
+        offset += length;
+        var capacity16 = this.buffer.byteLength;
+        if (offset > capacity16)
+            this.resize((capacity16 *= 2) > offset ? capacity16 : offset);
+        offset -= length;
+        this.view.set(source.view.subarray(source.offset, source.limit), offset);
+        source.offset += length;
+        if (relative) this.offset += length;
+        return this;
+    };
+
+    /**
+     * Appends this ByteBuffer's contents to another ByteBuffer. This will overwrite any contents at and after the
+        specified offset up to the length of this ByteBuffer's data.
+     * @param {!ByteBuffer} target Target ByteBuffer
+     * @param {number=} offset Offset to append to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+     *  read if omitted.
+     * @returns {!ByteBuffer} this
+     * @expose
+     * @see ByteBuffer#append
+     */
+    ByteBufferPrototype.appendTo = function(target, offset) {
+        target.append(this, offset);
+        return this;
+    };
+
+    /**
+     * Enables or disables assertions of argument types and offsets. Assertions are enabled by default but you can opt to
+     *  disable them if your code already makes sure that everything is valid.
+     * @param {boolean} assert `true` to enable assertions, otherwise `false`
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.assert = function(assert) {
+        this.noAssert = !assert;
+        return this;
+    };
+
+    /**
+     * Gets the capacity of this ByteBuffer's backing buffer.
+     * @returns {number} Capacity of the backing buffer
+     * @expose
+     */
+    ByteBufferPrototype.capacity = function() {
+        return this.buffer.byteLength;
+    };
+    /**
+     * Clears this ByteBuffer's offsets by setting {@link ByteBuffer#offset} to `0` and {@link ByteBuffer#limit} to the
+     *  backing buffer's capacity. Discards {@link ByteBuffer#markedOffset}.
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.clear = function() {
+        this.offset = 0;
+        this.limit = this.buffer.byteLength;
+        this.markedOffset = -1;
+        return this;
+    };
+
+    /**
+     * Creates a cloned instance of this ByteBuffer, preset with this ByteBuffer's values for {@link ByteBuffer#offset},
+     *  {@link ByteBuffer#markedOffset} and {@link ByteBuffer#limit}.
+     * @param {boolean=} copy Whether to copy the backing buffer or to return another view on the same, defaults to `false`
+     * @returns {!ByteBuffer} Cloned instance
+     * @expose
+     */
+    ByteBufferPrototype.clone = function(copy) {
+        var bb = new ByteBuffer(0, this.littleEndian, this.noAssert);
+        if (copy) {
+            bb.buffer = new ArrayBuffer(this.buffer.byteLength);
+            bb.view = new Uint8Array(bb.buffer);
+        } else {
+            bb.buffer = this.buffer;
+            bb.view = this.view;
+        }
+        bb.offset = this.offset;
+        bb.markedOffset = this.markedOffset;
+        bb.limit = this.limit;
+        return bb;
+    };
+
+    /**
+     * Compacts this ByteBuffer to be backed by a {@link ByteBuffer#buffer} of its contents' length. Contents are the bytes
+     *  between {@link ByteBuffer#offset} and {@link ByteBuffer#limit}. Will set `offset = 0` and `limit = capacity` and
+     *  adapt {@link ByteBuffer#markedOffset} to the same relative position if set.
+     * @param {number=} begin Offset to start at, defaults to {@link ByteBuffer#offset}
+     * @param {number=} end Offset to end at, defaults to {@link ByteBuffer#limit}
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.compact = function(begin, end) {
+        if (typeof begin === 'undefined') begin = this.offset;
+        if (typeof end === 'undefined') end = this.limit;
+        if (!this.noAssert) {
+            if (typeof begin !== 'number' || begin % 1 !== 0)
+                throw TypeError("Illegal begin: Not an integer");
+            begin >>>= 0;
+            if (typeof end !== 'number' || end % 1 !== 0)
+                throw TypeError("Illegal end: Not an integer");
+            end >>>= 0;
+            if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+        }
+        if (begin === 0 && end === this.buffer.byteLength)
+            return this; // Already compacted
+        var len = end - begin;
+        if (len === 0) {
+            this.buffer = EMPTY_BUFFER;
+            this.view = null;
+            if (this.markedOffset >= 0) this.markedOffset -= begin;
+            this.offset = 0;
+            this.limit = 0;
+            return this;
+        }
+        var buffer = new ArrayBuffer(len);
+        var view = new Uint8Array(buffer);
+        view.set(this.view.subarray(begin, end));
+        this.buffer = buffer;
+        this.view = view;
+        if (this.markedOffset >= 0) this.markedOffset -= begin;
+        this.offset = 0;
+        this.limit = len;
+        return this;
+    };
+
+    /**
+     * Creates a copy of this ByteBuffer's contents. Contents are the bytes between {@link ByteBuffer#offset} and
+     *  {@link ByteBuffer#limit}.
+     * @param {number=} begin Begin offset, defaults to {@link ByteBuffer#offset}.
+     * @param {number=} end End offset, defaults to {@link ByteBuffer#limit}.
+     * @returns {!ByteBuffer} Copy
+     * @expose
+     */
+    ByteBufferPrototype.copy = function(begin, end) {
+        if (typeof begin === 'undefined') begin = this.offset;
+        if (typeof end === 'undefined') end = this.limit;
+        if (!this.noAssert) {
+            if (typeof begin !== 'number' || begin % 1 !== 0)
+                throw TypeError("Illegal begin: Not an integer");
+            begin >>>= 0;
+            if (typeof end !== 'number' || end % 1 !== 0)
+                throw TypeError("Illegal end: Not an integer");
+            end >>>= 0;
+            if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+        }
+        if (begin === end)
+            return new ByteBuffer(0, this.littleEndian, this.noAssert);
+        var capacity = end - begin,
+            bb = new ByteBuffer(capacity, this.littleEndian, this.noAssert);
+        bb.offset = 0;
+        bb.limit = capacity;
+        if (bb.markedOffset >= 0) bb.markedOffset -= begin;
+        this.copyTo(bb, 0, begin, end);
+        return bb;
+    };
+
+    /**
+     * Copies this ByteBuffer's contents to another ByteBuffer. Contents are the bytes between {@link ByteBuffer#offset} and
+     *  {@link ByteBuffer#limit}.
+     * @param {!ByteBuffer} target Target ByteBuffer
+     * @param {number=} targetOffset Offset to copy to. Will use and increase the target's {@link ByteBuffer#offset}
+     *  by the number of bytes copied if omitted.
+     * @param {number=} sourceOffset Offset to start copying from. Will use and increase {@link ByteBuffer#offset} by the
+     *  number of bytes copied if omitted.
+     * @param {number=} sourceLimit Offset to end copying from, defaults to {@link ByteBuffer#limit}
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.copyTo = function(target, targetOffset, sourceOffset, sourceLimit) {
+        var relative,
+            targetRelative;
+        if (!this.noAssert) {
+            if (!ByteBuffer.isByteBuffer(target))
+                throw TypeError("Illegal target: Not a ByteBuffer");
+        }
+        targetOffset = (targetRelative = typeof targetOffset === 'undefined') ? target.offset : targetOffset | 0;
+        sourceOffset = (relative = typeof sourceOffset === 'undefined') ? this.offset : sourceOffset | 0;
+        sourceLimit = typeof sourceLimit === 'undefined' ? this.limit : sourceLimit | 0;
+
+        if (targetOffset < 0 || targetOffset > target.buffer.byteLength)
+            throw RangeError("Illegal target range: 0 <= "+targetOffset+" <= "+target.buffer.byteLength);
+        if (sourceOffset < 0 || sourceLimit > this.buffer.byteLength)
+            throw RangeError("Illegal source range: 0 <= "+sourceOffset+" <= "+this.buffer.byteLength);
+
+        var len = sourceLimit - sourceOffset;
+        if (len === 0)
+            return target; // Nothing to copy
+
+        target.ensureCapacity(targetOffset + len);
+
+        target.view.set(this.view.subarray(sourceOffset, sourceLimit), targetOffset);
+
+        if (relative) this.offset += len;
+        if (targetRelative) target.offset += len;
+
+        return this;
+    };
+
+    /**
+     * Makes sure that this ByteBuffer is backed by a {@link ByteBuffer#buffer} of at least the specified capacity. If the
+     *  current capacity is exceeded, it will be doubled. If double the current capacity is less than the required capacity,
+     *  the required capacity will be used instead.
+     * @param {number} capacity Required capacity
+     * @returns {!ByteBuffer} this
+     * @expose
+     */
+    ByteBufferPrototype.ensureCapacity = function(capacity) {
+        var current = this.buffer.byteLength;
+        if (current < capacity)
+            return this.resize((current *= 2) > capacity ? current : capacity);
+        return this;
+    };
+
+    /**
+     * Overwrites this ByteBuffer's contents with the specified value. Contents are the bytes between
+     *  {@link ByteBuffer#offset} and {@link ByteBuffer#limit}.
+     * @param {number|string} value Byte value to fill with. If given as a string, the first character is used.
+     * @param {number=} begin Begin offset. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+     *  written if omitted. defaults to {@link ByteBuffer#offset}.
+     * @param {number=} end End offset, defaults to {@link ByteBuffer#limit}.
+     * @returns {!ByteBuffer} this
+     * @expose
+     * @example `someByteBuffer.clear().fill(0)` fills the entire backing buffer with zeroes
+     */
+    ByteBufferPrototype.fill = function(value, begin, end) {
+        var relative = typeof begin === 'undefined';
+        if (relative) begin = this.offset;
+        if (typeof value === 'string' && value.length > 0)
+            value = value.charCodeAt(0);
+        if (typeof begin === 'undefined') begin = this.offset;
+        if (typeof end === 'undefined') end = this.limit;
+        if (!this.noAssert) {
+            if (typeof value !== 'number' || value % 1 !== 0)
+                throw TypeError("Illegal value: "+value+" (not an integer)");
+            value |= 0;
+            if (typeof begin !== 'number' || begin % 1 !== 0)
+                throw TypeError("Illegal begin: Not an integer");
+            begin >>>= 0;
+            if (typeof end !== 'number' || end % 1 !== 0)
+                throw TypeError("Illegal end: Not an integer");
+            end >>>= 0;
+            if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+        }
+        if (begin >= end)
+            return this; // Nothing to fill
+        while (begin < end) this.view[begin++] = value;
+        if (relative) this.offset = begin;
+        return this;
+    };
