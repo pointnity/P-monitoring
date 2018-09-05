@@ -649,4 +649,343 @@
             offset >>>= 0;
             if (offset < 0 || offset + 1 > this.buffer.byteLength)
                 throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
-                
+        }
+        var value = this.view[offset];
+        if (relative) this.offset += 1;
+        return value;
+    };
+
+    /**
+     * Reads an 8bit unsigned integer. This is an alias of {@link ByteBuffer#readUint8}.
+     * @function
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+     * @returns {number} Value read
+     * @expose
+     */
+    ByteBufferPrototype.readUInt8 = ByteBufferPrototype.readUint8;
+
+    // types/ints/int16
+
+    /**
+     * Writes a 16bit signed integer.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+     * @throws {TypeError} If `offset` or `value` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.writeInt16 = function(value, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof value !== 'number' || value % 1 !== 0)
+                throw TypeError("Illegal value: "+value+" (not an integer)");
+            value |= 0;
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        offset += 2;
+        var capacity2 = this.buffer.byteLength;
+        if (offset > capacity2)
+            this.resize((capacity2 *= 2) > offset ? capacity2 : offset);
+        offset -= 2;
+        if (this.littleEndian) {
+            this.view[offset+1] = (value & 0xFF00) >>> 8;
+            this.view[offset  ] =  value & 0x00FF;
+        } else {
+            this.view[offset]   = (value & 0xFF00) >>> 8;
+            this.view[offset+1] =  value & 0x00FF;
+        }
+        if (relative) this.offset += 2;
+        return this;
+    };
+
+    /**
+     * Writes a 16bit signed integer. This is an alias of {@link ByteBuffer#writeInt16}.
+     * @function
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+     * @throws {TypeError} If `offset` or `value` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.writeShort = ByteBufferPrototype.writeInt16;
+
+    /**
+     * Reads a 16bit signed integer.
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+     * @returns {number} Value read
+     * @throws {TypeError} If `offset` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.readInt16 = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 2 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+2+") <= "+this.buffer.byteLength);
+        }
+        var value = 0;
+        if (this.littleEndian) {
+            value  = this.view[offset  ];
+            value |= this.view[offset+1] << 8;
+        } else {
+            value  = this.view[offset  ] << 8;
+            value |= this.view[offset+1];
+        }
+        if ((value & 0x8000) === 0x8000) value = -(0xFFFF - value + 1); // Cast to signed
+        if (relative) this.offset += 2;
+        return value;
+    };
+
+    /**
+     * Reads a 16bit signed integer. This is an alias of {@link ByteBuffer#readInt16}.
+     * @function
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+     * @returns {number} Value read
+     * @throws {TypeError} If `offset` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.readShort = ByteBufferPrototype.readInt16;
+
+    /**
+     * Writes a 16bit unsigned integer.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+     * @throws {TypeError} If `offset` or `value` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.writeUint16 = function(value, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof value !== 'number' || value % 1 !== 0)
+                throw TypeError("Illegal value: "+value+" (not an integer)");
+            value >>>= 0;
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        offset += 2;
+        var capacity3 = this.buffer.byteLength;
+        if (offset > capacity3)
+            this.resize((capacity3 *= 2) > offset ? capacity3 : offset);
+        offset -= 2;
+        if (this.littleEndian) {
+            this.view[offset+1] = (value & 0xFF00) >>> 8;
+            this.view[offset  ] =  value & 0x00FF;
+        } else {
+            this.view[offset]   = (value & 0xFF00) >>> 8;
+            this.view[offset+1] =  value & 0x00FF;
+        }
+        if (relative) this.offset += 2;
+        return this;
+    };
+
+    /**
+     * Writes a 16bit unsigned integer. This is an alias of {@link ByteBuffer#writeUint16}.
+     * @function
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+     * @throws {TypeError} If `offset` or `value` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.writeUInt16 = ByteBufferPrototype.writeUint16;
+
+    /**
+     * Reads a 16bit unsigned integer.
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+     * @returns {number} Value read
+     * @throws {TypeError} If `offset` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.readUint16 = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 2 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+2+") <= "+this.buffer.byteLength);
+        }
+        var value = 0;
+        if (this.littleEndian) {
+            value  = this.view[offset  ];
+            value |= this.view[offset+1] << 8;
+        } else {
+            value  = this.view[offset  ] << 8;
+            value |= this.view[offset+1];
+        }
+        if (relative) this.offset += 2;
+        return value;
+    };
+
+    /**
+     * Reads a 16bit unsigned integer. This is an alias of {@link ByteBuffer#readUint16}.
+     * @function
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+     * @returns {number} Value read
+     * @throws {TypeError} If `offset` is not a valid number
+     * @throws {RangeError} If `offset` is out of bounds
+     * @expose
+     */
+    ByteBufferPrototype.readUInt16 = ByteBufferPrototype.readUint16;
+
+    // types/ints/int32
+
+    /**
+     * Writes a 32bit signed integer.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @expose
+     */
+    ByteBufferPrototype.writeInt32 = function(value, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof value !== 'number' || value % 1 !== 0)
+                throw TypeError("Illegal value: "+value+" (not an integer)");
+            value |= 0;
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        offset += 4;
+        var capacity4 = this.buffer.byteLength;
+        if (offset > capacity4)
+            this.resize((capacity4 *= 2) > offset ? capacity4 : offset);
+        offset -= 4;
+        if (this.littleEndian) {
+            this.view[offset+3] = (value >>> 24) & 0xFF;
+            this.view[offset+2] = (value >>> 16) & 0xFF;
+            this.view[offset+1] = (value >>>  8) & 0xFF;
+            this.view[offset  ] =  value         & 0xFF;
+        } else {
+            this.view[offset  ] = (value >>> 24) & 0xFF;
+            this.view[offset+1] = (value >>> 16) & 0xFF;
+            this.view[offset+2] = (value >>>  8) & 0xFF;
+            this.view[offset+3] =  value         & 0xFF;
+        }
+        if (relative) this.offset += 4;
+        return this;
+    };
+
+    /**
+     * Writes a 32bit signed integer. This is an alias of {@link ByteBuffer#writeInt32}.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @expose
+     */
+    ByteBufferPrototype.writeInt = ByteBufferPrototype.writeInt32;
+
+    /**
+     * Reads a 32bit signed integer.
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @returns {number} Value read
+     * @expose
+     */
+    ByteBufferPrototype.readInt32 = function(offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 4 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byteLength);
+        }
+        var value = 0;
+        if (this.littleEndian) {
+            value  = this.view[offset+2] << 16;
+            value |= this.view[offset+1] <<  8;
+            value |= this.view[offset  ];
+            value += this.view[offset+3] << 24 >>> 0;
+        } else {
+            value  = this.view[offset+1] << 16;
+            value |= this.view[offset+2] <<  8;
+            value |= this.view[offset+3];
+            value += this.view[offset  ] << 24 >>> 0;
+        }
+        value |= 0; // Cast to signed
+        if (relative) this.offset += 4;
+        return value;
+    };
+
+    /**
+     * Reads a 32bit signed integer. This is an alias of {@link ByteBuffer#readInt32}.
+     * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `4` if omitted.
+     * @returns {number} Value read
+     * @expose
+     */
+    ByteBufferPrototype.readInt = ByteBufferPrototype.readInt32;
+
+    /**
+     * Writes a 32bit unsigned integer.
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @expose
+     */
+    ByteBufferPrototype.writeUint32 = function(value, offset) {
+        var relative = typeof offset === 'undefined';
+        if (relative) offset = this.offset;
+        if (!this.noAssert) {
+            if (typeof value !== 'number' || value % 1 !== 0)
+                throw TypeError("Illegal value: "+value+" (not an integer)");
+            value >>>= 0;
+            if (typeof offset !== 'number' || offset % 1 !== 0)
+                throw TypeError("Illegal offset: "+offset+" (not an integer)");
+            offset >>>= 0;
+            if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+        }
+        offset += 4;
+        var capacity5 = this.buffer.byteLength;
+        if (offset > capacity5)
+            this.resize((capacity5 *= 2) > offset ? capacity5 : offset);
+        offset -= 4;
+        if (this.littleEndian) {
+            this.view[offset+3] = (value >>> 24) & 0xFF;
+            this.view[offset+2] = (value >>> 16) & 0xFF;
+            this.view[offset+1] = (value >>>  8) & 0xFF;
+            this.view[offset  ] =  value         & 0xFF;
+        } else {
+            this.view[offset  ] = (value >>> 24) & 0xFF;
+            this.view[offset+1] = (value >>> 16) & 0xFF;
+            this.view[offset+2] = (value >>>  8) & 0xFF;
+            this.view[offset+3] =  value         & 0xFF;
+        }
+        if (relative) this.offset += 4;
+        return this;
+    };
+
+    /**
+     * Writes a 32bit unsigned integer. This is an alias of {@link ByteBuffer#writeUint32}.
+     * @function
+     * @param {number} value Value to write
+     * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @expose
+     */
+    ByteBufferPrototype.writeUInt32 = ByteBufferPrototype.writeUint32;
+
+    /**
+     * Reads a 32bit unsigned integer.
+     * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+     * @returns {number} Value read
+     * @expose
+     */
