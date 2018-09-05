@@ -98,3 +98,4 @@
          * Absolute limit of the contained data. Set to the backing buffer's capacity upon allocation.
          * @type {number}
         * @expose
+         * @see ByteBuffer#flip
