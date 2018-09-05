@@ -50,3 +50,4 @@
     var ByteBuffer = function(capacity, littleEndian, noAssert) {
         if (typeof capacity === 'undefined')
             capacity = ByteBuffer.DEFAULT_CAPACITY;
+        if (typeof littleEndian === 'undefined')
