@@ -74,3 +74,6 @@
          * @type {?Uint8Array}
          * @expose
         */
+        this.view = capacity === 0 ? null : new Uint8Array(this.buffer);
+
+        /**
