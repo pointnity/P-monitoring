@@ -45,3 +45,5 @@
      *  {@link ByteBuffer.DEFAULT_ENDIAN}.
      * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
      *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+     * @expose
+     */
