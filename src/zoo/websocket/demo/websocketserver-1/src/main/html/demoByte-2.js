@@ -9,3 +9,4 @@ function initWs() {
 			var arrayBuffer = event.data;
 			var byteBuffer = ByteBuffer.wrap(arrayBuffer);
 			console.log(byteBuffer);
+			//byteBuffer.flip();
