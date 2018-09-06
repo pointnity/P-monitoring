@@ -47,3 +47,4 @@ function initWs() {
 
     };
 }
+function send() {
