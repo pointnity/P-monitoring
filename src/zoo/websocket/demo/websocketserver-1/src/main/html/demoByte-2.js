@@ -50,3 +50,8 @@ function initWs() {
 function send() {
 	var msg = document.getElementById("textId").value;
     //alert(msg.value);
+    //ws.send(msg.value);
+	
+	
+	
+	var bb = new ByteBuffer()
