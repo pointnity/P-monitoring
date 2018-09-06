@@ -44,3 +44,6 @@ function initWs() {
 		ws.send(ab);
     };
    ws.onerror = function (event) {
+
+    };
+}
