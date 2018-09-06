@@ -49,3 +49,4 @@ function initWs() {
 }
 function send() {
 	var msg = document.getElementById("textId").value;
+    //alert(msg.value);
