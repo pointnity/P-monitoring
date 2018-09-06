@@ -5,3 +5,12 @@ body {
     margin: 0;
     padding: 0;
 }
+
+html {
+    overflow-y: scroll;
+}
+
+:root {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
