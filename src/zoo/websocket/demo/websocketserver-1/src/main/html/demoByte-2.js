@@ -62,3 +62,4 @@ function send() {
 	//console.log(bb);
 	
 	//bb.flip();
+	var ab = bb.toArrayBuffer();
