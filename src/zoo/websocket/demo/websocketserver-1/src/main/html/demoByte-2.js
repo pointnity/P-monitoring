@@ -37,3 +37,4 @@ function initWs() {
 		
 		
 		var bb = new ByteBuffer()
+            .writeUTF8String("hello tio")
