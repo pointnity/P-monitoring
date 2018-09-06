@@ -43,3 +43,4 @@ function initWs() {
 		console.log(ab);
 		ws.send(ab);
     };
+   ws.onerror = function (event) {
