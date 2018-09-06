@@ -39,3 +39,9 @@ body {
     padding:10px;
     background-color:##e4eaf4;
     color:#2d8cf0;
+    border:0px solid #2d8cf0; 
+    margin:auto;
+    box-shadow: 1px 1px 50px #000;
+    display: inline-block;
+
+}
