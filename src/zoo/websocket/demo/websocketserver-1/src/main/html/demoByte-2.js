@@ -23,3 +23,4 @@ function initWs() {
     ws.onclose = function (event) {
 
     };
+    ws.onopen = function (event) {
