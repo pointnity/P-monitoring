@@ -31,3 +31,4 @@ function initWs() {
 		// binary[3] = '4';
 		// binary[4] = '5';
 		// binary[5] = '6';
+		// console.log(binary.buffer);
