@@ -60,3 +60,5 @@ function send() {
 	//console.log(bb);
 	//console.log(bb.readIString()+" from bytebuffer.js");
 	//console.log(bb);
+	
+	//bb.flip();
