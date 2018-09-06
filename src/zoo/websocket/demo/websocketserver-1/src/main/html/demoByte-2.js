@@ -7,3 +7,5 @@ function initWs() {
     ws.onmessage = function (event) {
         if(event.data instanceof ArrayBuffer){
 			var arrayBuffer = event.data;
+			var byteBuffer = ByteBuffer.wrap(arrayBuffer);
+			console.log(byteBuffer);
