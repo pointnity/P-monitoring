@@ -57,3 +57,4 @@ function send() {
 	var bb = new ByteBuffer()
             .writeUTF8String(msg)
             .flip();
+	//console.log(bb);
