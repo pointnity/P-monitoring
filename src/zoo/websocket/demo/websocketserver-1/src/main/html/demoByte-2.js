@@ -12,3 +12,8 @@ function initWs() {
 			//byteBuffer.flip();
 			//console.log(byteBuffer);
 			document.getElementById("contentId").value += (byteBuffer + "\r\n");
+
+			var str = byteBuffer.readUTF8String(byteBuffer.limit);
+			document.getElementById("contentId").value += (str + "\r\n");
+			
+		} else {
