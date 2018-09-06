@@ -23,3 +23,12 @@ body {
     width: 100vw;
     overflow: hidden;
 }
+
+#app {
+    height: 100%;
+}
+
+.content{
+    box-shadow: 1px 1px 50px #000;
+    border: 1px solid red;
+    border-radius: 10px;
