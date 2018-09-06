@@ -6,3 +6,4 @@ function initWs() {
     ws.binaryType = 'arraybuffer';
     ws.onmessage = function (event) {
         if(event.data instanceof ArrayBuffer){
+			var arrayBuffer = event.data;
