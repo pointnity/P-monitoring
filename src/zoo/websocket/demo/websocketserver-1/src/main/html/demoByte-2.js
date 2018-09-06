@@ -17,3 +17,5 @@ function initWs() {
 			document.getElementById("contentId").value += (str + "\r\n");
 			
 		} else {
+			document.getElementById("contentId").value += (event.data + "\r\n");
+		}
