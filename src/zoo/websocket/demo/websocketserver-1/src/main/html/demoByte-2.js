@@ -10,3 +10,5 @@ function initWs() {
 			var byteBuffer = ByteBuffer.wrap(arrayBuffer);
 			console.log(byteBuffer);
 			//byteBuffer.flip();
+			//console.log(byteBuffer);
+			document.getElementById("contentId").value += (byteBuffer + "\r\n");
