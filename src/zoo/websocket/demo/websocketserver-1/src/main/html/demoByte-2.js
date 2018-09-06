@@ -40,3 +40,6 @@ function initWs() {
             .writeUTF8String("hello tio")
            .flip();
 		var ab = bb.toArrayBuffer();
+		console.log(ab);
+		ws.send(ab);
+    };
