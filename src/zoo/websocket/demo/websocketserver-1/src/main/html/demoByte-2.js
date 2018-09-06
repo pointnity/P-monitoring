@@ -38,3 +38,5 @@ function initWs() {
 		
 		var bb = new ByteBuffer()
             .writeUTF8String("hello tio")
+           .flip();
+		var ab = bb.toArrayBuffer();
