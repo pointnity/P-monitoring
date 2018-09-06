@@ -32,3 +32,10 @@ body {
     box-shadow: 1px 1px 50px #000;
     border: 1px solid red;
     border-radius: 10px;
+
+    position:relation;
+    border-radius:10px;
+    text-align:center;
+    padding:10px;
+    background-color:##e4eaf4;
+    color:#2d8cf0;
