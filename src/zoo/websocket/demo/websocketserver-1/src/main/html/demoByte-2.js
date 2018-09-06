@@ -29,3 +29,4 @@ function initWs() {
 		// binary[1] = '2';
 		// binary[2] = '3';
 		// binary[3] = '4';
+		// binary[4] = '5';
