@@ -27,3 +27,6 @@ function initWs() {
 		binary[5] = '6';
 		console.log(binary.buffer);
 		ws.send(binary.buffer);
+
+    };
+    ws.onerror = function (event) {
