@@ -55,3 +55,11 @@ subtrahend=fromValue(subtrahend);return this.add(subtrahend.neg());};LongPrototy
 return ZERO;if(!isLong(multiplier))
 multiplier=fromValue(multiplier);if(multiplier.isZero())
 return ZERO;if(this.eq(MIN_VALUE))
+return multiplier.isOdd()?MIN_VALUE:ZERO;if(multiplier.eq(MIN_VALUE))
+return this.isOdd()?MIN_VALUE:ZERO;if(this.isNegative()){if(multiplier.isNegative())
+return this.neg().mul(multiplier.neg());else
+return this.neg().mul(multiplier).neg();}else if(multiplier.isNegative())
+return this.mul(multiplier.neg()).neg();if(this.lt(TWO_PWR_24)&&multiplier.lt(TWO_PWR_24))
+return fromNumber(this.toNumber()*multiplier.toNumber(),this.unsigned);var a48=this.high>>>16;var a32=this.high&0xFFFF;var a16=this.low>>>16;var a00=this.low&0xFFFF;var b48=multiplier.high>>>16;var b32=multiplier.high&0xFFFF;var b16=multiplier.low>>>16;var b00=multiplier.low&0xFFFF;var c48=0,c32=0,c16=0,c00=0;c00+=a00*b00;c16+=c00>>>16;c00&=0xFFFF;c16+=a16*b00;c32+=c16>>>16;c16&=0xFFFF;c16+=a00*b16;c32+=c16>>>16;c16&=0xFFFF;c32+=a32*b00;c48+=c32>>>16;c32&=0xFFFF;c32+=a16*b16;c48+=c32>>>16;c32&=0xFFFF;c32+=a00*b32;c48+=c32>>>16;c32&=0xFFFF;c48+=a48*b00+a32*b16+a16*b32+a00*b48;c48&=0xFFFF;return fromBits((c16<<16)|c00,(c48<<16)|c32,this.unsigned);};LongPrototype.mul=LongPrototype.multiply;LongPrototype.divide=function divide(divisor){if(!isLong(divisor))
+divisor=fromValue(divisor);if(divisor.isZero())
+throw Error('division by zero');if(this.isZero())
