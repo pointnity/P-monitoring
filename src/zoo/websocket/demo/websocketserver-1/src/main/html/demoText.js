@@ -1,0 +1,2 @@
+var ws;
+function initWs() {
