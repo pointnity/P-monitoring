@@ -13,3 +13,7 @@ function initWs() {
 		} else {
 			document.getElementById("contentId").value += (event.data + "\r\n");
 		}
+    };
+    ws.onclose = function (event) {
+
+    };
