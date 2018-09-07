@@ -72,3 +72,13 @@ return this.div(divisor.neg()).neg();res=ZERO;}else{if(!divisor.unsigned)
 divisor=divisor.toUnsigned();if(divisor.gt(this))
 return UZERO;if(divisor.gt(this.shru(1)))
 return UONE;res=UZERO;}
+rem=this;while(rem.gte(divisor)){approx=Math.max(1,Math.floor(rem.toNumber()/divisor.toNumber()));var log2=Math.ceil(Math.log(approx)/Math.LN2),delta=(log2<=48)?1:pow_dbl(2,log2-48),approxRes=fromNumber(approx),approxRem=approxRes.mul(divisor);while(approxRem.isNegative()||approxRem.gt(rem)){approx-=delta;approxRes=fromNumber(approx,this.unsigned);approxRem=approxRes.mul(divisor);}
+if(approxRes.isZero())
+approxRes=ONE;res=res.add(approxRes);rem=rem.sub(approxRem);}
+return res;};LongPrototype.div=LongPrototype.divide;LongPrototype.modulo=function modulo(divisor){if(!isLong(divisor))
+divisor=fromValue(divisor);return this.sub(this.div(divisor).mul(divisor));};LongPrototype.mod=LongPrototype.modulo;LongPrototype.not=function not(){return fromBits(~this.low,~this.high,this.unsigned);};LongPrototype.and=function and(other){if(!isLong(other))
+other=fromValue(other);return fromBits(this.low&other.low,this.high&other.high,this.unsigned);};LongPrototype.or=function or(other){if(!isLong(other))
+other=fromValue(other);return fromBits(this.low|other.low,this.high|other.high,this.unsigned);};LongPrototype.xor=function xor(other){if(!isLong(other))
+other=fromValue(other);return fromBits(this.low^other.low,this.high^other.high,this.unsigned);};LongPrototype.shiftLeft=function shiftLeft(numBits){if(isLong(numBits))
+numBits=numBits.toInt();if((numBits&=63)===0)
+return this;else if(numBits<32)
