@@ -20,3 +20,6 @@ function initWs() {
    ws.onopen = function (event) {
         var binary = new Uint8Array(6);
 		binary[0] = '1';
+		binary[1] = '2';
+		binary[2] = '3';
+		binary[3] = '4';
