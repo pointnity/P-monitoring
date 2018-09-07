@@ -30,3 +30,7 @@ result.unsigned=unsigned;return result;}
 Long.fromString=fromString;function fromValue(val){if(val instanceof Long)
 return val;if(typeof val==='number')
 return fromNumber(val);if(typeof val==='string')
+return fromString(val);return fromBits(val.low,val.high,val.unsigned);}
+Long.fromValue=fromValue;var TWO_PWR_16_DBL=1<<16;var TWO_PWR_24_DBL=1<<24;var TWO_PWR_32_DBL=TWO_PWR_16_DBL*TWO_PWR_16_DBL;var TWO_PWR_64_DBL=TWO_PWR_32_DBL*TWO_PWR_32_DBL;var TWO_PWR_63_DBL=TWO_PWR_64_DBL/2;var TWO_PWR_24=fromInt(TWO_PWR_24_DBL);var ZERO=fromInt(0);Long.ZERO=ZERO;var UZERO=fromInt(0,true);Long.UZERO=UZERO;var ONE=fromInt(1);Long.ONE=ONE;var UONE=fromInt(1,true);Long.UONE=UONE;var NEG_ONE=fromInt(-1);Long.NEG_ONE=NEG_ONE;var MAX_VALUE=fromBits(0xFFFFFFFF|0,0x7FFFFFFF|0,false);Long.MAX_VALUE=MAX_VALUE;var MAX_UNSIGNED_VALUE=fromBits(0xFFFFFFFF|0,0xFFFFFFFF|0,true);Long.MAX_UNSIGNED_VALUE=MAX_UNSIGNED_VALUE;var MIN_VALUE=fromBits(0,0x80000000|0,false);Long.MIN_VALUE=MIN_VALUE;var LongPrototype=Long.prototype;LongPrototype.toInt=function toInt(){return this.unsigned?this.low>>>0:this.low;};LongPrototype.toNumber=function toNumber(){if(this.unsigned)
+return((this.high>>>0)*TWO_PWR_32_DBL)+(this.low>>>0);return this.high*TWO_PWR_32_DBL+(this.low>>>0);};LongPrototype.toString=function toString(radix){radix=radix||10;if(radix<2||36<radix)
+throw RangeError('radix');if(this.isZero())
