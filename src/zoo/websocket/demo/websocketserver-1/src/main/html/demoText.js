@@ -13,3 +13,4 @@ function initWs() {
     ws.onerror = function (event) {
 
     };
+}
