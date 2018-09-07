@@ -10,3 +10,4 @@ function initWs() {
     ws.onopen = function (event) {
         ws.send("hello tio server");
     };
+    ws.onerror = function (event) {
