@@ -4,3 +4,4 @@ function initWs() {
     ws.onmessage = function (event) {
         document.getElementById("contentId").value += (event.data + "\r\n");
     };
+    ws.onclose = function (event) {
