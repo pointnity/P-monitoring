@@ -16,3 +16,4 @@ return UZERO;if(value>=TWO_PWR_64_DBL)
 return MAX_UNSIGNED_VALUE;}else{if(value<=-TWO_PWR_63_DBL)
 return MIN_VALUE;if(value+1>=TWO_PWR_63_DBL)
 return MAX_VALUE;}
+if(value<0)
