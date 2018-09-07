@@ -63,3 +63,12 @@ return this.mul(multiplier.neg()).neg();if(this.lt(TWO_PWR_24)&&multiplier.lt(TW
 return fromNumber(this.toNumber()*multiplier.toNumber(),this.unsigned);var a48=this.high>>>16;var a32=this.high&0xFFFF;var a16=this.low>>>16;var a00=this.low&0xFFFF;var b48=multiplier.high>>>16;var b32=multiplier.high&0xFFFF;var b16=multiplier.low>>>16;var b00=multiplier.low&0xFFFF;var c48=0,c32=0,c16=0,c00=0;c00+=a00*b00;c16+=c00>>>16;c00&=0xFFFF;c16+=a16*b00;c32+=c16>>>16;c16&=0xFFFF;c16+=a00*b16;c32+=c16>>>16;c16&=0xFFFF;c32+=a32*b00;c48+=c32>>>16;c32&=0xFFFF;c32+=a16*b16;c48+=c32>>>16;c32&=0xFFFF;c32+=a00*b32;c48+=c32>>>16;c32&=0xFFFF;c48+=a48*b00+a32*b16+a16*b32+a00*b48;c48&=0xFFFF;return fromBits((c16<<16)|c00,(c48<<16)|c32,this.unsigned);};LongPrototype.mul=LongPrototype.multiply;LongPrototype.divide=function divide(divisor){if(!isLong(divisor))
 divisor=fromValue(divisor);if(divisor.isZero())
 throw Error('division by zero');if(this.isZero())
+return this.unsigned?UZERO:ZERO;var approx,rem,res;if(!this.unsigned){if(this.eq(MIN_VALUE)){if(divisor.eq(ONE)||divisor.eq(NEG_ONE))
+return MIN_VALUE;else if(divisor.eq(MIN_VALUE))
+return ONE;else{var halfThis=this.shr(1);approx=halfThis.div(divisor).shl(1);if(approx.eq(ZERO)){return divisor.isNegative()?ONE:NEG_ONE;}else{rem=this.sub(divisor.mul(approx));res=approx.add(rem.div(divisor));return res;}}}else if(divisor.eq(MIN_VALUE))
+return this.unsigned?UZERO:ZERO;if(this.isNegative()){if(divisor.isNegative())
+return this.neg().div(divisor.neg());return this.neg().div(divisor).neg();}else if(divisor.isNegative())
+return this.div(divisor.neg()).neg();res=ZERO;}else{if(!divisor.unsigned)
+divisor=divisor.toUnsigned();if(divisor.gt(this))
+return UZERO;if(divisor.gt(this.shru(1)))
+return UONE;res=UZERO;}
