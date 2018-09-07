@@ -17,3 +17,9 @@ return MAX_UNSIGNED_VALUE;}else{if(value<=-TWO_PWR_63_DBL)
 return MIN_VALUE;if(value+1>=TWO_PWR_63_DBL)
 return MAX_VALUE;}
 if(value<0)
+return fromNumber(-value,unsigned).neg();return fromBits((value%TWO_PWR_32_DBL)|0,(value/TWO_PWR_32_DBL)|0,unsigned);}
+Long.fromNumber=fromNumber;function fromBits(lowBits,highBits,unsigned){return new Long(lowBits,highBits,unsigned);}
+Long.fromBits=fromBits;var pow_dbl=Math.pow;function fromString(str,unsigned,radix){if(str.length===0)
+throw Error('empty string');if(str==="NaN"||str==="Infinity"||str==="+Infinity"||str==="-Infinity")
+return ZERO;if(typeof unsigned==='number'){radix=unsigned,unsigned=false;}else{unsigned=!!unsigned;}
+radix=radix||10;if(radix<2||36<radix)
