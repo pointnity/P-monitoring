@@ -43,3 +43,6 @@ function send() {
 	var bb = new ByteBuffer()
             .writeUTF8String(msg)
             .flip();
+	//console.log(bb);
+	//console.log(bb.readIString()+" from bytebuffer.js");
+	//console.log(bb);
