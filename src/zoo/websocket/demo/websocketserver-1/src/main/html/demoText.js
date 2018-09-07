@@ -11,3 +11,5 @@ function initWs() {
         ws.send("hello tio server");
     };
     ws.onerror = function (event) {
+
+    };
