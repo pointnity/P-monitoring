@@ -86,3 +86,14 @@ return fromBits(this.low<<numBits,(this.high<<numBits)|(this.low>>>(32-numBits))
 return fromBits(0,this.low<<(numBits-32),this.unsigned);};LongPrototype.shl=LongPrototype.shiftLeft;LongPrototype.shiftRight=function shiftRight(numBits){if(isLong(numBits))
 numBits=numBits.toInt();if((numBits&=63)===0)
 return this;else if(numBits<32)
+return fromBits((this.low>>>numBits)|(this.high<<(32-numBits)),this.high>>numBits,this.unsigned);else
+return fromBits(this.high>>(numBits-32),this.high>=0?0:-1,this.unsigned);};LongPrototype.shr=LongPrototype.shiftRight;LongPrototype.shiftRightUnsigned=function shiftRightUnsigned(numBits){if(isLong(numBits))
+numBits=numBits.toInt();numBits&=63;if(numBits===0)
+return this;else{var high=this.high;if(numBits<32){var low=this.low;return fromBits((low>>>numBits)|(high<<(32-numBits)),high>>>numBits,this.unsigned);}else if(numBits===32)
+return fromBits(high,0,this.unsigned);else
+return fromBits(high>>>(numBits-32),0,this.unsigned);}};LongPrototype.shru=LongPrototype.shiftRightUnsigned;LongPrototype.toSigned=function toSigned(){if(!this.unsigned)
+return this;return fromBits(this.low,this.high,false);};LongPrototype.toUnsigned=function toUnsigned(){if(this.unsigned)
+return this;return fromBits(this.low,this.high,true);};LongPrototype.toBytes=function(le){return le?this.toBytesLE():this.toBytesBE();}
+LongPrototype.toBytesLE=function(){var hi=this.high,lo=this.low;return[lo&0xff,(lo>>>8)&0xff,(lo>>>16)&0xff,(lo>>>24)&0xff,hi&0xff,(hi>>>8)&0xff,(hi>>>16)&0xff,(hi>>>24)&0xff];}
+LongPrototype.toBytesBE=function(){var hi=this.high,lo=this.low;return[(hi>>>24)&0xff,(hi>>>16)&0xff,(hi>>>8)&0xff,hi&0xff,(lo>>>24)&0xff,(lo>>>16)&0xff,(lo>>>8)&0xff,lo&0xff];}
+return Long;});
