@@ -30,3 +30,7 @@ function initWs() {
 
     };
     ws.onerror = function (event) {
+
+    };
+}
+function send() {
