@@ -10,3 +10,5 @@ UINT_CACHE[value]=obj;return obj;}else{value|=0;if(cache=(-128<=value&&value<128
 return cachedObj;}
 obj=fromBits(value,value<0?-1:0,false);if(cache)
 INT_CACHE[value]=obj;return obj;}}
+Long.fromInt=fromInt;function fromNumber(value,unsigned){if(isNaN(value)||!isFinite(value))
+return unsigned?UZERO:ZERO;if(unsigned){if(value<0)
