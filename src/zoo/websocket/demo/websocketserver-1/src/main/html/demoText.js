@@ -5,3 +5,6 @@ function initWs() {
         document.getElementById("contentId").value += (event.data + "\r\n");
     };
     ws.onclose = function (event) {
+
+    };
+    ws.onopen = function (event) {
