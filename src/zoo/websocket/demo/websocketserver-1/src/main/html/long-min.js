@@ -47,3 +47,4 @@ return false;return this.high===other.high&&this.low===other.low;};LongPrototype
 other=fromValue(other);if(this.eq(other))
 return 0;var thisNeg=this.isNegative(),otherNeg=other.isNegative();if(thisNeg&&!otherNeg)
 return-1;if(!thisNeg&&otherNeg)
+return 1;if(!this.unsigned)
