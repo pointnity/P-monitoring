@@ -9,3 +9,7 @@ function initWs() {
 			var arrayBuffer = event.data;
 			var byteBuffer = ByteBuffer.wrap(arrayBuffer);
 			console.log(byteBuffer);
+			document.getElementById("contentId").value += (byteBuffer + "\r\n");
+		} else {
+			document.getElementById("contentId").value += (event.data + "\r\n");
+		}
