@@ -12,3 +12,7 @@ obj=fromBits(value,value<0?-1:0,false);if(cache)
 INT_CACHE[value]=obj;return obj;}}
 Long.fromInt=fromInt;function fromNumber(value,unsigned){if(isNaN(value)||!isFinite(value))
 return unsigned?UZERO:ZERO;if(unsigned){if(value<0)
+return UZERO;if(value>=TWO_PWR_64_DBL)
+return MAX_UNSIGNED_VALUE;}else{if(value<=-TWO_PWR_63_DBL)
+return MIN_VALUE;if(value+1>=TWO_PWR_63_DBL)
+return MAX_VALUE;}
