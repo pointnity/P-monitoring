@@ -82,3 +82,7 @@ other=fromValue(other);return fromBits(this.low|other.low,this.high|other.high,t
 other=fromValue(other);return fromBits(this.low^other.low,this.high^other.high,this.unsigned);};LongPrototype.shiftLeft=function shiftLeft(numBits){if(isLong(numBits))
 numBits=numBits.toInt();if((numBits&=63)===0)
 return this;else if(numBits<32)
+return fromBits(this.low<<numBits,(this.high<<numBits)|(this.low>>>(32-numBits)),this.unsigned);else
+return fromBits(0,this.low<<(numBits-32),this.unsigned);};LongPrototype.shl=LongPrototype.shiftLeft;LongPrototype.shiftRight=function shiftRight(numBits){if(isLong(numBits))
+numBits=numBits.toInt();if((numBits&=63)===0)
+return this;else if(numBits<32)
