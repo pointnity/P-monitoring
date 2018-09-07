@@ -23,3 +23,4 @@ Long.fromBits=fromBits;var pow_dbl=Math.pow;function fromString(str,unsigned,rad
 throw Error('empty string');if(str==="NaN"||str==="Infinity"||str==="+Infinity"||str==="-Infinity")
 return ZERO;if(typeof unsigned==='number'){radix=unsigned,unsigned=false;}else{unsigned=!!unsigned;}
 radix=radix||10;if(radix<2||36<radix)
+throw RangeError('radix');var p;if((p=str.indexOf('-'))>0)
