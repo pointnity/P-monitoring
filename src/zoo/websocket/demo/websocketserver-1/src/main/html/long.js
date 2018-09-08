@@ -28,3 +28,6 @@ apache.org/licenses/LICENSE-2.0
         module["exports"] = factory();
     /* Global */ else
         (global["dcodeIO"] = global["dcodeIO"] || {})["Long"] = factory();
+
+})(this, function() {
+    "use strict";
