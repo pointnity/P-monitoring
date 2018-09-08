@@ -49,3 +49,8 @@ apache.org/licenses/LICENSE-2.0
          * @type {number}
         */
         this.low = low | 0;
+
+        /**
+         * The high 32 bits as a signed value.
+         * @type {number}
+         */
