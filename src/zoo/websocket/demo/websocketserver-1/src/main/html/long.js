@@ -24,3 +24,5 @@ apache.org/licenses/LICENSE-2.0
 
     /* AMD */ if (typeof define === 'function' && define["amd"])
         define([], factory);
+    /* CommonJS */ else if (typeof require === 'function' && typeof module === "object" && module && module["exports"])
+        module["exports"] = factory();
