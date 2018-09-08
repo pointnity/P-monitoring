@@ -59,3 +59,6 @@ apache.org/licenses/LICENSE-2.0
         /**
          * Whether unsigned or not.
          * @type {boolean}
+       */
+        this.unsigned = !!unsigned;
+    }
