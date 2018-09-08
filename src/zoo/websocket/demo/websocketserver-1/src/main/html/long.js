@@ -1144,3 +1144,65 @@ apache.org/licenses/LICENSE-2.0
     LongPrototype.toSigned = function toSigned() {
         if (!this.unsigned)
             return this;
+        return fromBits(this.low, this.high, false);
+    };
+
+    /**
+     * Converts this Long to unsigned.
+     * @returns {!Long} Unsigned long
+     */
+    LongPrototype.toUnsigned = function toUnsigned() {
+        if (this.unsigned)
+            return this;
+        return fromBits(this.low, this.high, true);
+    };
+
+    /**
+     * Converts this Long to its byte representation.
+     * @param {boolean=} le Whether little or big endian, defaults to big endian
+     * @returns {!Array.<number>} Byte representation
+     */
+    LongPrototype.toBytes = function(le) {
+        return le ? this.toBytesLE() : this.toBytesBE();
+    }
+
+    /**
+     * Converts this Long to its little endian byte representation.
+     * @returns {!Array.<number>} Little endian byte representation
+     */
+    LongPrototype.toBytesLE = function() {
+        var hi = this.high,
+            lo = this.low;
+        return [
+             lo         & 0xff,
+            (lo >>>  8) & 0xff,
+            (lo >>> 16) & 0xff,
+            (lo >>> 24) & 0xff,
+             hi         & 0xff,
+            (hi >>>  8) & 0xff,
+            (hi >>> 16) & 0xff,
+            (hi >>> 24) & 0xff
+        ];
+    }
+
+    /**
+     * Converts this Long to its big endian byte representation.
+     * @returns {!Array.<number>} Big endian byte representation
+     */
+    LongPrototype.toBytesBE = function() {
+        var hi = this.high,
+            lo = this.low;
+        return [
+            (hi >>> 24) & 0xff,
+            (hi >>> 16) & 0xff,
+            (hi >>>  8) & 0xff,
+             hi         & 0xff,
+            (lo >>> 24) & 0xff,
+            (lo >>> 16) & 0xff,
+            (lo >>>  8) & 0xff,
+             lo         & 0xff
+        ];
+    }
+
+    return Long;
+});
