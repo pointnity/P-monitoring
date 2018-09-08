@@ -76,3 +76,5 @@ apache.org/licenses/LICENSE-2.0
     // (-2^63) because -MIN_VALUE == MIN_VALUE (since 2^63 cannot be represented as
     // a positive number, it overflows back into a negative).  Not handling this
     // case would often result in infinite recursion.
+    //
+    // Common constant values ZERO, ONE, NEG_ONE, etc. are defined below the from*
