@@ -110,3 +110,9 @@ apache.org/licenses/LICENSE-2.0
      * @returns {boolean}
      */
     Long.isLong = isLong;
+
+    /**
+     * A cache of the Long representations of small integer values.
+     * @type {!Object}
+     * @inner
+     */
