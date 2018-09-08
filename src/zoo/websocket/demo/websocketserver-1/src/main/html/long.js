@@ -97,3 +97,5 @@ apache.org/licenses/LICENSE-2.0
     /**
      * @function
     * @param {*} obj Object
+    * @returns {boolean}
+     * @inner
