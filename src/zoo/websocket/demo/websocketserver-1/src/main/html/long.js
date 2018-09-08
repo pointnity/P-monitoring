@@ -21,3 +21,6 @@ apache.org/licenses/LICENSE-2.0
  * see: github.com/dcodeIO/long.js for details
  */
 (function(global, factory) {
+
+    /* AMD */ if (typeof define === 'function' && define["amd"])
+        define([], factory);
