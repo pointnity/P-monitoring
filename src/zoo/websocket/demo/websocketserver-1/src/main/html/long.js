@@ -123,3 +123,11 @@ apache.org/licenses/LICENSE-2.0
      * @type {!Object}
      * @inner
      */
+    var UINT_CACHE = {};
+
+    /**
+     * @param {number} value
+     * @param {boolean=} unsigned
+     * @returns {!Long}
+     * @inner
+     */
