@@ -67,3 +67,5 @@ apache.org/licenses/LICENSE-2.0
     // We use 32-bit pieces because these are the size of integers on which
     // Javascript performs bit-operations.  For operations like addition and
     // multiplication, we split each number into 16 bit pieces, which can easily be
+    // multiplied within Javascript's floating-point representation without overflow
+    // or change in sign.
