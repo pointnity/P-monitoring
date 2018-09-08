@@ -70,3 +70,4 @@ apache.org/licenses/LICENSE-2.0
     // multiplied within Javascript's floating-point representation without overflow
     // or change in sign.
     //
+    // In the algorithms below, we frequently reduce the negative case to the
