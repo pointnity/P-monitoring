@@ -988,3 +988,159 @@ apache.org/licenses/LICENSE-2.0
             rem = rem.sub(approxRem);
         }
         return res;
+    };
+
+    /**
+     * Returns this Long divided by the specified. This is an alias of {@link Long#divide}.
+     * @function
+     * @param {!Long|number|string} divisor Divisor
+     * @returns {!Long} Quotient
+     */
+    LongPrototype.div = LongPrototype.divide;
+
+    /**
+     * Returns this Long modulo the specified.
+     * @param {!Long|number|string} divisor Divisor
+     * @returns {!Long} Remainder
+     */
+    LongPrototype.modulo = function modulo(divisor) {
+        if (!isLong(divisor))
+            divisor = fromValue(divisor);
+        return this.sub(this.div(divisor).mul(divisor));
+    };
+
+    /**
+     * Returns this Long modulo the specified. This is an alias of {@link Long#modulo}.
+     * @function
+     * @param {!Long|number|string} divisor Divisor
+     * @returns {!Long} Remainder
+     */
+    LongPrototype.mod = LongPrototype.modulo;
+
+    /**
+     * Returns the bitwise NOT of this Long.
+     * @returns {!Long}
+     */
+    LongPrototype.not = function not() {
+        return fromBits(~this.low, ~this.high, this.unsigned);
+    };
+
+    /**
+     * Returns the bitwise AND of this Long and the specified.
+     * @param {!Long|number|string} other Other Long
+     * @returns {!Long}
+     */
+    LongPrototype.and = function and(other) {
+        if (!isLong(other))
+            other = fromValue(other);
+        return fromBits(this.low & other.low, this.high & other.high, this.unsigned);
+    };
+
+    /**
+     * Returns the bitwise OR of this Long and the specified.
+     * @param {!Long|number|string} other Other Long
+     * @returns {!Long}
+     */
+    LongPrototype.or = function or(other) {
+        if (!isLong(other))
+            other = fromValue(other);
+        return fromBits(this.low | other.low, this.high | other.high, this.unsigned);
+    };
+
+    /**
+     * Returns the bitwise XOR of this Long and the given one.
+     * @param {!Long|number|string} other Other Long
+     * @returns {!Long}
+     */
+    LongPrototype.xor = function xor(other) {
+        if (!isLong(other))
+            other = fromValue(other);
+        return fromBits(this.low ^ other.low, this.high ^ other.high, this.unsigned);
+    };
+
+    /**
+     * Returns this Long with bits shifted to the left by the given amount.
+     * @param {number|!Long} numBits Number of bits
+     * @returns {!Long} Shifted Long
+     */
+    LongPrototype.shiftLeft = function shiftLeft(numBits) {
+        if (isLong(numBits))
+            numBits = numBits.toInt();
+        if ((numBits &= 63) === 0)
+            return this;
+        else if (numBits < 32)
+            return fromBits(this.low << numBits, (this.high << numBits) | (this.low >>> (32 - numBits)), this.unsigned);
+        else
+            return fromBits(0, this.low << (numBits - 32), this.unsigned);
+    };
+
+    /**
+     * Returns this Long with bits shifted to the left by the given amount. This is an alias of {@link Long#shiftLeft}.
+     * @function
+     * @param {number|!Long} numBits Number of bits
+     * @returns {!Long} Shifted Long
+     */
+    LongPrototype.shl = LongPrototype.shiftLeft;
+
+    /**
+     * Returns this Long with bits arithmetically shifted to the right by the given amount.
+     * @param {number|!Long} numBits Number of bits
+     * @returns {!Long} Shifted Long
+     */
+    LongPrototype.shiftRight = function shiftRight(numBits) {
+        if (isLong(numBits))
+            numBits = numBits.toInt();
+        if ((numBits &= 63) === 0)
+            return this;
+        else if (numBits < 32)
+            return fromBits((this.low >>> numBits) | (this.high << (32 - numBits)), this.high >> numBits, this.unsigned);
+        else
+            return fromBits(this.high >> (numBits - 32), this.high >= 0 ? 0 : -1, this.unsigned);
+    };
+
+    /**
+     * Returns this Long with bits arithmetically shifted to the right by the given amount. This is an alias of {@link Long#shiftRight}.
+     * @function
+     * @param {number|!Long} numBits Number of bits
+     * @returns {!Long} Shifted Long
+     */
+    LongPrototype.shr = LongPrototype.shiftRight;
+
+    /**
+     * Returns this Long with bits logically shifted to the right by the given amount.
+     * @param {number|!Long} numBits Number of bits
+     * @returns {!Long} Shifted Long
+     */
+    LongPrototype.shiftRightUnsigned = function shiftRightUnsigned(numBits) {
+        if (isLong(numBits))
+            numBits = numBits.toInt();
+        numBits &= 63;
+        if (numBits === 0)
+            return this;
+        else {
+            var high = this.high;
+            if (numBits < 32) {
+                var low = this.low;
+                return fromBits((low >>> numBits) | (high << (32 - numBits)), high >>> numBits, this.unsigned);
+            } else if (numBits === 32)
+                return fromBits(high, 0, this.unsigned);
+            else
+                return fromBits(high >>> (numBits - 32), 0, this.unsigned);
+        }
+    };
+
+    /**
+     * Returns this Long with bits logically shifted to the right by the given amount. This is an alias of {@link Long#shiftRightUnsigned}.
+     * @function
+     * @param {number|!Long} numBits Number of bits
+     * @returns {!Long} Shifted Long
+     */
+    LongPrototype.shru = LongPrototype.shiftRightUnsigned;
+
+    /**
+     * Converts this Long to signed.
+     * @returns {!Long} Signed long
+     */
+    LongPrototype.toSigned = function toSigned() {
+        if (!this.unsigned)
+            return this;
