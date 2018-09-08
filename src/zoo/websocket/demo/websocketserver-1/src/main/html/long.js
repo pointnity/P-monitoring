@@ -26,3 +26,5 @@ apache.org/licenses/LICENSE-2.0
         define([], factory);
     /* CommonJS */ else if (typeof require === 'function' && typeof module === "object" && module && module["exports"])
         module["exports"] = factory();
+    /* Global */ else
+        (global["dcodeIO"] = global["dcodeIO"] || {})["Long"] = factory();
