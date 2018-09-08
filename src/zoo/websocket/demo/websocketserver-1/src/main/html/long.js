@@ -78,3 +78,4 @@ apache.org/licenses/LICENSE-2.0
     // case would often result in infinite recursion.
     //
     // Common constant values ZERO, ONE, NEG_ONE, etc. are defined below the from*
+    // methods on which they depend.
