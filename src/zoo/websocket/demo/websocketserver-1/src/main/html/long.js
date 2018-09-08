@@ -82,3 +82,4 @@ apache.org/licenses/LICENSE-2.0
 
     /**
      * An indicator used to reliably determine if an object is a Long or not.
+     * @type {boolean}
