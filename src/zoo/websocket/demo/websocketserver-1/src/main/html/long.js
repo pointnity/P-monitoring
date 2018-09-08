@@ -85,3 +85,5 @@ apache.org/licenses/LICENSE-2.0
      * @type {boolean}
      * @const
      * @private
+     */
+    Long.prototype.__isLong__;
