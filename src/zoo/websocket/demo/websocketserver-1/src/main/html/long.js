@@ -506,3 +506,147 @@ apache.org/licenses/LICENSE-2.0
             } else
                 return '-' + this.neg().toString(radix);
         }
+
+        // Do several (6) digits each time through the loop, so as to
+        // minimize the calls to the very expensive emulated div.
+        var radixToPower = fromNumber(pow_dbl(radix, 6), this.unsigned),
+            rem = this;
+        var result = '';
+        while (true) {
+            var remDiv = rem.div(radixToPower),
+                intval = rem.sub(remDiv.mul(radixToPower)).toInt() >>> 0,
+                digits = intval.toString(radix);
+            rem = remDiv;
+            if (rem.isZero())
+                return digits + result;
+            else {
+                while (digits.length < 6)
+                    digits = '0' + digits;
+                result = '' + digits + result;
+            }
+        }
+    };
+
+    /**
+     * Gets the high 32 bits as a signed integer.
+     * @returns {number} Signed high bits
+     */
+    LongPrototype.getHighBits = function getHighBits() {
+        return this.high;
+    };
+
+    /**
+     * Gets the high 32 bits as an unsigned integer.
+     * @returns {number} Unsigned high bits
+     */
+    LongPrototype.getHighBitsUnsigned = function getHighBitsUnsigned() {
+        return this.high >>> 0;
+    };
+
+    /**
+     * Gets the low 32 bits as a signed integer.
+     * @returns {number} Signed low bits
+     */
+    LongPrototype.getLowBits = function getLowBits() {
+        return this.low;
+    };
+
+    /**
+     * Gets the low 32 bits as an unsigned integer.
+     * @returns {number} Unsigned low bits
+     */
+    LongPrototype.getLowBitsUnsigned = function getLowBitsUnsigned() {
+        return this.low >>> 0;
+    };
+
+    /**
+     * Gets the number of bits needed to represent the absolute value of this Long.
+     * @returns {number}
+     */
+    LongPrototype.getNumBitsAbs = function getNumBitsAbs() {
+        if (this.isNegative()) // Unsigned Longs are never negative
+            return this.eq(MIN_VALUE) ? 64 : this.neg().getNumBitsAbs();
+        var val = this.high != 0 ? this.high : this.low;
+        for (var bit = 31; bit > 0; bit--)
+            if ((val & (1 << bit)) != 0)
+                break;
+        return this.high != 0 ? bit + 33 : bit + 1;
+    };
+
+    /**
+     * Tests if this Long's value equals zero.
+     * @returns {boolean}
+     */
+    LongPrototype.isZero = function isZero() {
+        return this.high === 0 && this.low === 0;
+    };
+
+    /**
+     * Tests if this Long's value is negative.
+     * @returns {boolean}
+     */
+    LongPrototype.isNegative = function isNegative() {
+        return !this.unsigned && this.high < 0;
+    };
+
+    /**
+     * Tests if this Long's value is positive.
+     * @returns {boolean}
+     */
+    LongPrototype.isPositive = function isPositive() {
+        return this.unsigned || this.high >= 0;
+    };
+
+    /**
+     * Tests if this Long's value is odd.
+     * @returns {boolean}
+     */
+    LongPrototype.isOdd = function isOdd() {
+        return (this.low & 1) === 1;
+    };
+
+    /**
+     * Tests if this Long's value is even.
+     * @returns {boolean}
+     */
+    LongPrototype.isEven = function isEven() {
+        return (this.low & 1) === 0;
+    };
+
+    /**
+     * Tests if this Long's value equals the specified's.
+     * @param {!Long|number|string} other Other value
+     * @returns {boolean}
+     */
+    LongPrototype.equals = function equals(other) {
+        if (!isLong(other))
+            other = fromValue(other);
+        if (this.unsigned !== other.unsigned && (this.high >>> 31) === 1 && (other.high >>> 31) === 1)
+            return false;
+        return this.high === other.high && this.low === other.low;
+    };
+
+    /**
+     * Tests if this Long's value equals the specified's. This is an alias of {@link Long#equals}.
+     * @function
+     * @param {!Long|number|string} other Other value
+     * @returns {boolean}
+     */
+    LongPrototype.eq = LongPrototype.equals;
+
+    /**
+     * Tests if this Long's value differs from the specified's.
+     * @param {!Long|number|string} other Other value
+     * @returns {boolean}
+     */
+    LongPrototype.notEquals = function notEquals(other) {
+        return !this.eq(/* validates */ other);
+    };
+
+    /**
+     * Tests if this Long's value differs from the specified's. This is an alias of {@link Long#notEquals}.
+     * @function
+     * @param {!Long|number|string} other Other value
+     * @returns {boolean}
+     */
+    LongPrototype.neq = LongPrototype.notEquals;
