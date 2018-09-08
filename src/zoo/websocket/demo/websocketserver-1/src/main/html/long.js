@@ -16,5 +16,6 @@ apache.org/licenses/LICENSE-2.0
 */
 
 /**
- * @license long.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
+ * @license long.js (c)  Daniel Wirtz <dcode@dcode.io>
  * Released under the Apache License, Version 2.0
+ * see: github.com/dcodeIO/long.js for details
