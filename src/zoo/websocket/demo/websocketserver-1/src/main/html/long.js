@@ -92,3 +92,7 @@ apache.org/licenses/LICENSE-2.0
         value: true,
         enumerable: false,
         configurable: false
+    });
+
+    /**
+     * @function
