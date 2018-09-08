@@ -102,3 +102,7 @@ apache.org/licenses/LICENSE-2.0
     function isLong(obj) {
         return (obj && obj["__isLong__"]) === true;
     }
+
+    /**
+     * Tests if the specified object is a Long.
+     * @function
