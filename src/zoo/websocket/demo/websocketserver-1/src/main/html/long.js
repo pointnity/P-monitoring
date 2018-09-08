@@ -71,3 +71,4 @@ apache.org/licenses/LICENSE-2.0
     // or change in sign.
     //
     // In the algorithms below, we frequently reduce the negative case to the
+    // positive case by negating the input(s) and then post-processing the result.
