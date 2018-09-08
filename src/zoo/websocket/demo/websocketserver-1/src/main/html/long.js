@@ -57,3 +57,5 @@ apache.org/licenses/LICENSE-2.0
         this.high = high | 0;
 
         /**
+         * Whether unsigned or not.
+         * @type {boolean}
