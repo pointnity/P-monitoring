@@ -116,3 +116,10 @@ apache.org/licenses/LICENSE-2.0
      * @type {!Object}
      * @inner
      */
+   var INT_CACHE = {};
+
+    /**
+     * A cache of the Long representations of small unsigned integer values.
+     * @type {!Object}
+     * @inner
+     */
