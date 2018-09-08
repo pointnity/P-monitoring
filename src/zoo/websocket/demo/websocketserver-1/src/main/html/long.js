@@ -75,3 +75,4 @@ apache.org/licenses/LICENSE-2.0
     // Note that we must ALWAYS check specially whether those values are MIN_VALUE
     // (-2^63) because -MIN_VALUE == MIN_VALUE (since 2^63 cannot be represented as
     // a positive number, it overflows back into a negative).  Not handling this
+    // case would often result in infinite recursion.
