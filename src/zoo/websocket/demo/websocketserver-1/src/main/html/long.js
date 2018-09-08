@@ -62,3 +62,7 @@ apache.org/licenses/LICENSE-2.0
        */
         this.unsigned = !!unsigned;
     }
+
+    // The internal representation of a long is the two given signed, 32-bit values.
+    // We use 32-bit pieces because these are the size of integers on which
+    // Javascript performs bit-operations.  For operations like addition and
