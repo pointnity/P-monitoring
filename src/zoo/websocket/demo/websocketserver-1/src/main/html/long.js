@@ -106,3 +106,7 @@ apache.org/licenses/LICENSE-2.0
     /**
      * Tests if the specified object is a Long.
      * @function
+     * @param {*} obj Object
+     * @returns {boolean}
+     */
+    Long.isLong = isLong;
