@@ -91,3 +91,4 @@ apache.org/licenses/LICENSE-2.0
     Object.defineProperty(Long.prototype, "__isLong__", {
         value: true,
         enumerable: false,
+        configurable: false
