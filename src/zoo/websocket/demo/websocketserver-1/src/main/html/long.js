@@ -1,4 +1,3 @@
-/*
  Copyright  Daniel Wirtz <dcode@dcode.io>
  Copyright  The Closure Library Authors. All Rights Reserved.
 
@@ -96,6 +95,10 @@ apache.org/licenses/LICENSE-2.0
 
     /**
      * @function
-    * @param {*} obj Object
-    * @returns {boolean}
+     * @param {*} obj Object
+     * @returns {boolean}
      * @inner
+     */
+    function isLong(obj) {
+        return (obj && obj["__isLong__"]) === true;
+    }
