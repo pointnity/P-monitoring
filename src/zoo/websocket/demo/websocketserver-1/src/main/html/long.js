@@ -87,3 +87,6 @@ apache.org/licenses/LICENSE-2.0
      * @private
      */
     Long.prototype.__isLong__;
+
+    Object.defineProperty(Long.prototype, "__isLong__", {
+        value: true,
