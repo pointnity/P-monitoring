@@ -34,3 +34,5 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 	}
 
 	@Override
+	public HttpResponse handshake(HttpRequest request, HttpResponse httpResponse, ChannelContext channelContext) throws Exception {
+		return httpResponse;
