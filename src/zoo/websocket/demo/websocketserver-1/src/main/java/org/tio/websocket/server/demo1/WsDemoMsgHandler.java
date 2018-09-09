@@ -22,3 +22,6 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	public static void main(String[] args) {
+
+	}
