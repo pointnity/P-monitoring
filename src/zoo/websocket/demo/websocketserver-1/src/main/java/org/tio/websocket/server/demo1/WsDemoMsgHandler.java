@@ -8,3 +8,4 @@ import org.tio.core.Aio;
 import org.tio.core.ChannelContext;
 import org.tio.common.HttpRequest;
 import org.tio.common.HttpResponse;
+import org.tio.http.common.HttpResponse;
