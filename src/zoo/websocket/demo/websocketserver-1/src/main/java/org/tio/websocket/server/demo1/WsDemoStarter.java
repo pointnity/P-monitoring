@@ -16,3 +16,4 @@ public class WsDemoStarter {
 
 	/**
 	 * @param args
+	 * @author tanyaowu
