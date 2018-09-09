@@ -19,3 +19,6 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 	private static Logger log = LoggerFactory.getLogger(WsDemoMsgHandler.class);
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
