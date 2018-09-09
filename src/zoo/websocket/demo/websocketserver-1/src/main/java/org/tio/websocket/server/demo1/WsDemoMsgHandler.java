@@ -30,3 +30,5 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 	 *
 	 * @author tanyaowu
 	 */
+	public WsDemoMsgHandler() {
+	}
