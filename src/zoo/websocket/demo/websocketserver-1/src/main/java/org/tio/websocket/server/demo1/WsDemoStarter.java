@@ -36,3 +36,5 @@ public class WsDemoStarter {
 		wsServerStarter = new WsServerStarter(port, wsMsgHandler);
 		serverGroupContext = wsServerStarter.getServerGroupContext();
 	}
+
+	public WsServerStarter getWsServerStarter() {
