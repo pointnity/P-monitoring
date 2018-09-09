@@ -43,3 +43,6 @@ public class WsDemoStarter {
 
 	public void start() throws IOException {
 		wsServerStarter.start();
+	}
+
+	/**
