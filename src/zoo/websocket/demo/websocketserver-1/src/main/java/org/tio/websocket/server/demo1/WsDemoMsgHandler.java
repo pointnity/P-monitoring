@@ -8,4 +8,5 @@ import org.tio.core.Aio;
 import org.tio.core.ChannelContext;
 import org.tio.common.HttpRequest;
 import org.tio.common.HttpResponse;
-import org.tio.http.common.HttpResponse;
+import org.tio.websocket.common.WsRequest;
+import org.tio.websocket.server.handler.IWsMsgHandler;
