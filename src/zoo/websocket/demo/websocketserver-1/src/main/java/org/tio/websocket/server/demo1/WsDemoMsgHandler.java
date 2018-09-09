@@ -15,3 +15,4 @@ import org.tio.websocket.server.handler.IWsMsgHandler;
  * @author tanyaowu
  * 
  */
+public class WsDemoMsgHandler implements IWsMsgHandler {
