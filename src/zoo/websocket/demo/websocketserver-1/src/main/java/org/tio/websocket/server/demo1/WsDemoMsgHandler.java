@@ -41,3 +41,4 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 	@Override
 	public Object onBytes(WsRequest wsRequest, byte[] bytes, ChannelContext channelContext) throws Exception {
 		String ss = new String(bytes, "utf-8");
+		log.info("Receive a byte message:{},{}", bytes, ss);
