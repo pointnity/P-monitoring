@@ -38,3 +38,4 @@ public class WsDemoStarter {
 	}
 
 	public WsServerStarter getWsServerStarter() {
+		return wsServerStarter;
