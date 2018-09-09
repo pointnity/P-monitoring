@@ -57,3 +57,5 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 	}
 
 	@Override
+	public Object onText(WsRequest wsRequest, String text, ChannelContext channelContext) throws Exception {
+		return "Receive text message:" + text;
