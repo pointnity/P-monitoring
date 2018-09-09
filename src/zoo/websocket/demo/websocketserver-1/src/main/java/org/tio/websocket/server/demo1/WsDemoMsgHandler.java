@@ -6,4 +6,5 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tio.core.Aio;
 import org.tio.core.ChannelContext;
-import org.tio.http.common.HttpRequest;
+import org.tio.common.HttpRequest;
+import org.tio.common.HttpResponse;
