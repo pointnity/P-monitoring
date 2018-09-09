@@ -19,3 +19,4 @@ public class WsDemoStarter {
 	 * @author tanyaowu
 	 * @throws IOException
 	 */
+	public static void main(String[] args) throws IOException {
