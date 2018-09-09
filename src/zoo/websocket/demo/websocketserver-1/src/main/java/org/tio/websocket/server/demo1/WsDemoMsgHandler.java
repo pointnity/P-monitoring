@@ -10,3 +10,6 @@ import org.tio.common.HttpRequest;
 import org.tio.common.HttpResponse;
 import org.tio.websocket.common.WsRequest;
 import org.tio.websocket.server.handler.IWsMsgHandler;
+
+/**
+ * @author tanyaowu
