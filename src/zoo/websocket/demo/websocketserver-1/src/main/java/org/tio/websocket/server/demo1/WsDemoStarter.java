@@ -34,3 +34,5 @@ public class WsDemoStarter {
 	 */
 	public WsDemoStarter(int port, WsDemoMsgHandler wsMsgHandler) throws IOException {
 		wsServerStarter = new WsServerStarter(port, wsMsgHandler);
+		serverGroupContext = wsServerStarter.getServerGroupContext();
+	}
