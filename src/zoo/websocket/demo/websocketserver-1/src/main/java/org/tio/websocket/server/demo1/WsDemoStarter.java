@@ -11,3 +11,4 @@ import org.tio.websocket.server.WsServerStarter;
  * @author tanyaowu
  * 
  */
+public class WsDemoStarter {
