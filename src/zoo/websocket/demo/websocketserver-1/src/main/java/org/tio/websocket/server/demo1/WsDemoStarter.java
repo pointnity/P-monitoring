@@ -39,3 +39,7 @@ public class WsDemoStarter {
 
 	public WsServerStarter getWsServerStarter() {
 		return wsServerStarter;
+	}
+
+	public void start() throws IOException {
+		wsServerStarter.start();
