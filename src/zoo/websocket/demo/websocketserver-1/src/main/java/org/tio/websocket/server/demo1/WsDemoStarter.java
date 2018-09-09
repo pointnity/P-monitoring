@@ -46,3 +46,5 @@ public class WsDemoStarter {
 	}
 
 	/**
+	 * @return the serverGroupContext
+	 */
