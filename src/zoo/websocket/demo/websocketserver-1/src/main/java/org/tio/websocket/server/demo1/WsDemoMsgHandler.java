@@ -46,3 +46,5 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 		//		byte[] bs1 = "Receive a byte message".getBytes("utf-8");
 		ByteBuffer buffer = ByteBuffer.allocate(bytes.length);
 		buffer.put(bytes);
+
+		return buffer;
