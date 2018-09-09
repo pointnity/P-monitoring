@@ -50,3 +50,6 @@ public class WsDemoStarter {
 	 */
 	public ServerGroupContext getServerGroupContext() {
 		return serverGroupContext;
+	}
+
+}
