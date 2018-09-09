@@ -48,3 +48,6 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 		buffer.put(bytes);
 
 		return buffer;
+	}
+
+	@Override
