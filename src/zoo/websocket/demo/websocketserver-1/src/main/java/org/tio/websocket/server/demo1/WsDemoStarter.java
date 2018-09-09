@@ -26,3 +26,4 @@ public class WsDemoStarter {
 
 	private WsServerStarter wsServerStarter;
 //	private WsDemoMsgHandler wsMsgHandler;
+	private ServerGroupContext serverGroupContext;
