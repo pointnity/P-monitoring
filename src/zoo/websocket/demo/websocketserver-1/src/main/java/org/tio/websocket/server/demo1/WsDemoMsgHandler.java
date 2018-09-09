@@ -54,3 +54,6 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 	public Object onClose(WsRequest wsRequest, byte[] bytes, ChannelContext channelContext) throws Exception {
 		Aio.remove(channelContext, "receive close flag");
 		return null;
+	}
+
+	@Override
