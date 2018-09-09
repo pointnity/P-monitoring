@@ -16,3 +16,6 @@ import org.tio.websocket.server.handler.IWsMsgHandler;
  * 
  */
 public class WsDemoMsgHandler implements IWsMsgHandler {
+	private static Logger log = LoggerFactory.getLogger(WsDemoMsgHandler.class);
+
+	/**
