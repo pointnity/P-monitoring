@@ -21,3 +21,4 @@ public class WsDemoStarter {
 	 */
 	public static void main(String[] args) throws IOException {
 		WsDemoStarter appStarter = new WsDemoStarter(9321, new WsDemoMsgHandler());
+		appStarter.start();
