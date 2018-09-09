@@ -31,3 +31,6 @@ public class WsDemoStarter {
 	/**
 	 *
 	 * @author tanyaowu
+	 */
+	public WsDemoStarter(int port, WsDemoMsgHandler wsMsgHandler) throws IOException {
+		wsServerStarter = new WsServerStarter(port, wsMsgHandler);
