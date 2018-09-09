@@ -32,3 +32,5 @@ public class WsDemoMsgHandler implements IWsMsgHandler {
 	 */
 	public WsDemoMsgHandler() {
 	}
+
+	@Override
