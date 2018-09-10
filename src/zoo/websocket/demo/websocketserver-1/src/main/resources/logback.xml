@@ -171,3 +171,9 @@
 			<pattern>%d %m%n</pattern>
 		</encoder>
 	</appender>
+	<logger name="tio-ip-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-ip-trace-log-appender"/>
+	</logger>
+	
+	<!-- chatxxxxLog printing  -->
