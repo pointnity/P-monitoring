@@ -255,3 +255,6 @@
 		<level value="info"/>
 		<appender-ref ref="tio-ipblacklistxxxx-trace-log-appender"/>
 	</logger>
+	
+
+</configuration>
