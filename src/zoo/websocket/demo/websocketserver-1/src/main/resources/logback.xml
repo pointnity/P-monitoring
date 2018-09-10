@@ -207,3 +207,13 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 			<maxHistory>${max.history}</maxHistory>
 		</rollingPolicy>
+		<encoder>
+			<pattern>%d%n %m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="tio-addressxxxx-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-addressxxxx-trace-log-appender"/>
+	</logger>
+	
+	<!-- userAgentxxxx Log printing  -->
