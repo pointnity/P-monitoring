@@ -81,3 +81,11 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 			<maxHistory>${max.history}</maxHistory>
 		</rollingPolicy>
+		<encoder>
+			<pattern>${conversion.pattern}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">   
+			<level>debug</level>   
+			<onMatch>ACCEPT</onMatch>   
+			<onMismatch>DENY</onMismatch>   
+		</filter> 
