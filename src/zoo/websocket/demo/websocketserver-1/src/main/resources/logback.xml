@@ -196,3 +196,14 @@
 		<appender-ref ref="tio-chatxxxx-trace-log-appender"/>
 	</logger>
 	
+	<!-- addressxxxxLog printing  -->
+	<appender name="tio-addressxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/addressxxxx.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/addressxxxx.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>${max.history}</maxHistory>
+		</rollingPolicy>
