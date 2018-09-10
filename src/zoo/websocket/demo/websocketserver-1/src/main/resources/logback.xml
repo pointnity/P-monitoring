@@ -217,3 +217,21 @@
 	</logger>
 	
 	<!-- userAgentxxxx Log printing  -->
+	<appender name="tio-userAgentxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/userAgentxxxx.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/userAgentxxxx.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>${max.history}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="tio-userAgentxxxx-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-userAgentxxxx-trace-log-appender"/>
+	</logger>
