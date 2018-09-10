@@ -247,3 +247,11 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 			<maxHistory>${max.history}</maxHistory>
 		</rollingPolicy>
+		<encoder>
+			<pattern>%m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="tio-ipblacklistxxxx-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-ipblacklistxxxx-trace-log-appender"/>
+	</logger>
