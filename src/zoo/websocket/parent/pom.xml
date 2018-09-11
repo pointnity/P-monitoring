@@ -4,4 +4,8 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 	<artifactId>tio-zoo-parent</artifactId>
 	<packaging>pom</packaging>
 	<name>${project.artifactId}</name>
-	<url>http://maven.apache.org</url>
+	<url>maven.apache.org</url>
+
+	<description>tio-zoo's parent</description>
+	
+	<parent>
