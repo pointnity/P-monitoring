@@ -55,3 +55,6 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
