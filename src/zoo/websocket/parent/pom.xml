@@ -61,3 +61,8 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 					<skip>false</skip>
 				</configuration>
 			</plugin>
+			
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
