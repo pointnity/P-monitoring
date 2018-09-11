@@ -13,3 +13,7 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 		<artifactId>tio-parent</artifactId>
 		<version>2.0.2.v20171129-RELEASE</version>
 		<relativePath>../../parent/pom.xml</relativePath>
+	</parent>
+
+
+	<modules>
