@@ -17,7 +17,7 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 
 
 	<modules>
-		<module>../http/parent</module>
+		<module>../parent</module>
 		<module>../websocket/parent</module>
 		
 		<module>../flash-policy-server</module>
@@ -53,3 +53,5 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 
 	<!-- Plug-in configuration -->
 	<build>
+		<plugins>
+			<plugin>
