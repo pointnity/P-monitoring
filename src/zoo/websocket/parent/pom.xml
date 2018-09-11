@@ -33,3 +33,6 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 			<email>tywo45@163.com</email>
 			<url>gitee.com/tywo45/t-io</url>
 		</developer>
+	</developers>
+
+	<repositories>
