@@ -12,3 +12,4 @@ echo -
 
 
 echo #Unzip the jar.
+echo mvn dependency:unpack-dependencies
