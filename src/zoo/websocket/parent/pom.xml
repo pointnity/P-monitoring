@@ -73,3 +73,4 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 					</archive>
 
 					<!-- Filter out files that you don't want to include in the jar -->
+					<excludes>
