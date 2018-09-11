@@ -22,3 +22,8 @@ project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi=w3.org/XMLSchema-instance"
 		
 		<module>../flash-policy-server</module>
 		
+	</modules>
+
+
+
+	<developers>
