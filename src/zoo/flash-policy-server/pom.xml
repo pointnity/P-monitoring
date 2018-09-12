@@ -52,3 +52,5 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+		</plugins>
