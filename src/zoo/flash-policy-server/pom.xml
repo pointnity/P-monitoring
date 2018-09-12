@@ -45,3 +45,5 @@
 
 					<excludes>
 						<exclude>**/config/**/*</exclude>
+
+						<exclude>app.conf</exclude>
