@@ -82,3 +82,18 @@
 			<maxHistory>${max.history}</maxHistory>
 		</rollingPolicy>
 		<encoder>
+			<pattern>${conversion.pattern}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">   
+			<level>debug</level>   
+			<onMatch>ACCEPT</onMatch>   
+			<onMismatch>DENY</onMismatch>   
+		</filter> 
+	</appender>
+	<root level="${root.level}">
+		<appender-ref ref="console" />
+		<appender-ref ref="root-file-error"/>
+		<appender-ref ref="root-file-warn"/>
+		<appender-ref ref="root-file-info"/>
+		<appender-ref ref="root-file-debug"/>
+	</root>
