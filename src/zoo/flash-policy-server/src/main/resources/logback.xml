@@ -7,3 +7,4 @@
 		<encoder>
 			<pattern>${conversion.pattern}</pattern>
 		</encoder>
+	</appender>
