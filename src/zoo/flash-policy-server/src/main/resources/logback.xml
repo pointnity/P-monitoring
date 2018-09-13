@@ -113,3 +113,5 @@
 					<maxFileSize>20MB</maxFileSize>
 				</rollingPolicy>
 				<Append>false</Append>
+				<layout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>%m%n</pattern>
