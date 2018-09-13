@@ -10,3 +10,4 @@
 	</appender>
 	
 	<!-- root file Log-->
+	<appender name="root-file-error"
