@@ -4,3 +4,4 @@
 	<contextName>${context.name}</contextName>                         <!-- The name of the project-->
    
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
