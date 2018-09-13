@@ -32,3 +32,4 @@
 	</appender>
 	<appender name="root-file-warn"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/warn.log</file>
