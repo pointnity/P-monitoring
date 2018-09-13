@@ -124,3 +124,5 @@
 		<level value="info"/>
 		<appender-ref ref="tio-client-trace-log-appender"/>
 	</logger>
+
+</configuration>
