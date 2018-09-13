@@ -26,3 +26,4 @@
 		</encoder>
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">   
 			<level>ERROR</level>   
+			<onMatch>ACCEPT</onMatch>   
