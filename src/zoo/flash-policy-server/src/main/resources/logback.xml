@@ -30,3 +30,5 @@
 			<onMismatch>DENY</onMismatch>   
 		</filter> 
 	</appender>
+	<appender name="root-file-warn"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
