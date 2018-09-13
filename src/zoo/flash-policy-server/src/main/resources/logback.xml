@@ -11,3 +11,4 @@
 	
 	<!-- root file Log-->
 	<appender name="root-file-error"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
