@@ -5,3 +5,4 @@
    
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
+			<pattern>${conversion.pattern}</pattern>
