@@ -117,3 +117,4 @@
 					<pattern>%m%n</pattern>
 				</layout>
 			</appender>
+		</sift>
