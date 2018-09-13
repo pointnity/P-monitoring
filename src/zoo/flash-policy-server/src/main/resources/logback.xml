@@ -28,3 +28,4 @@
 			<level>ERROR</level>   
 			<onMatch>ACCEPT</onMatch>   
 			<onMismatch>DENY</onMismatch>   
+		</filter> 
