@@ -19,3 +19,4 @@ import org.tio.server.intf.ServerAioHandler;
  * 
  */
 public class FlashPolicyServerAioHandler implements ServerAioHandler {
+	private static Logger log = LoggerFactory.getLogger(FlashPolicyServerAioHandler.class);
