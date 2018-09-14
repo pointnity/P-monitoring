@@ -30,3 +30,7 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 	}
 
 	public static final String REQUEST_STR = "<policy-file-request/>";
+
+	/**
+	 * <policy-file-request/>
+	 * @param buffer
