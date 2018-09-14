@@ -17,3 +17,6 @@ public class FlashPolicyPacket extends Packet {
 	public static final FlashPolicyPacket RESPONSE = new FlashPolicyPacket();
 
 	private FlashPolicyPacket() {
+	}
+
+}
