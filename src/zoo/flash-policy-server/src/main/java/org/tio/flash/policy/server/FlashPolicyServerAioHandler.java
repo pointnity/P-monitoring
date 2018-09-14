@@ -81,3 +81,9 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 	 * @return
 	 * @author tanyaowu
 	 */
+	@Override
+	public ByteBuffer encode(Packet packet, GroupContext groupContext, ChannelContext channelContext) {
+		ByteBuffer ret = ByteBuffer.wrap(RESPONSE_BYTES);
+		//		ret.position(ret.limit());
+		return ret;
+	}
