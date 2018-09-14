@@ -34,3 +34,8 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 	/**
 	 * <policy-file-request/>
 	 * @param buffer
+	 * @param channelContext
+	 * @return
+	 * @throws AioDecodeException
+	 * @author tanyaowu
+	 */
