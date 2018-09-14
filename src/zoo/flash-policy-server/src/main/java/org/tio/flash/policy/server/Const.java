@@ -12,3 +12,5 @@ public interface Const {
 	public static final int TIMEOUT = 5000;
 	
 	public static final String CHARSET = "utf-8";
+
+}
