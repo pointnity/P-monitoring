@@ -27,3 +27,4 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 	@Override
 	public void handler(Packet packet, ChannelContext channelContext) throws Exception {
 		Aio.send(channelContext, FlashPolicyPacket.RESPONSE);
+	}
