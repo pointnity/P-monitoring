@@ -44,3 +44,7 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 		int readableLength = buffer.limit() - buffer.position();
 		//The received data group is not a business package, then NULL is returned to tell the framework that the data is insufficient
 		if (readableLength < FlashPolicyPacket.MIN_LENGHT) {
+			return null;
+		}
+
+		String line = null;
