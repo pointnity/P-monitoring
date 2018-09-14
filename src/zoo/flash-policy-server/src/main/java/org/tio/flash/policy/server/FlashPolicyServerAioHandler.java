@@ -48,3 +48,5 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 		}
 
 		String line = null;
+
+		try {
