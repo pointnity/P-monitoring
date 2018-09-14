@@ -58,3 +58,4 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 		if (line == null) {
 			return null;
 		} else {
+			log.info("Receive Message:{}", line);
