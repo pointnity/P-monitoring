@@ -66,3 +66,7 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 			}
 		}
 	}
+
+	public static byte[] RESPONSE_BYTES;
+
+	static {
