@@ -18,3 +18,4 @@ import org.tio.server.intf.ServerAioHandler;
  * @author tanyaowu 
  * 
  */
+public class FlashPolicyServerAioHandler implements ServerAioHandler {
