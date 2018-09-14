@@ -61,3 +61,8 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 			log.info("Receive Message:{}", line);
 			if (REQUEST_STR.equalsIgnoreCase(line)) {
 				return FlashPolicyPacket.REQUEST;
+			} else {
+				throw new AioDecodeException("");
+			}
+		}
+	}
