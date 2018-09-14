@@ -25,3 +25,4 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 	 * Processing messages
 	 */
 	@Override
+	public void handler(Packet packet, ChannelContext channelContext) throws Exception {
