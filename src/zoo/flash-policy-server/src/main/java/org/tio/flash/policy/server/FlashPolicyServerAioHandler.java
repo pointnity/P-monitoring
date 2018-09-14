@@ -72,3 +72,6 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 	static {
 		RESPONSE_BYTES = ("<cross-domain-policy><allow-access-from domain=\"*\" to-ports=\"*\" /></cross-domain-policy>\0").getBytes();
 	}
+
+	/**
+	 * 
