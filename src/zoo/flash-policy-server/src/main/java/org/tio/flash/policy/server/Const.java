@@ -8,3 +8,5 @@ package org.tio.flash.policy.server;
 public interface Const {
 
 	public static final int PORT = 843;
+
+	public static final int TIMEOUT = 5000;
