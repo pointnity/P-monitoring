@@ -13,3 +13,5 @@ public class FlashPolicyPacket extends Packet {
 	public static final int MAX_LING_LENGHT = 256;//Maximum length of a row
 	
 	public static final FlashPolicyPacket REQUEST = new FlashPolicyPacket();
+
+	public static final FlashPolicyPacket RESPONSE = new FlashPolicyPacket();
