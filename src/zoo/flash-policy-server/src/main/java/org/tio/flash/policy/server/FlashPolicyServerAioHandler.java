@@ -50,3 +50,7 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 		String line = null;
 
 		try {
+			line = ByteBufferUtils.readLine(buffer, Const.CHARSET, '\0', FlashPolicyPacket.MAX_LING_LENGHT);
+		} catch (LengthOverflowException e) {
+			throw new AioDecodeException(e);
+		}
