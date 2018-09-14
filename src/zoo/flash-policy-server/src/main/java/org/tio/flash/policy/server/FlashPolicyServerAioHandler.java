@@ -43,3 +43,4 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 	public FlashPolicyPacket decode(ByteBuffer buffer, ChannelContext channelContext) throws AioDecodeException {
 		int readableLength = buffer.limit() - buffer.position();
 		//The received data group is not a business package, then NULL is returned to tell the framework that the data is insufficient
+		if (readableLength < FlashPolicyPacket.MIN_LENGHT) {
