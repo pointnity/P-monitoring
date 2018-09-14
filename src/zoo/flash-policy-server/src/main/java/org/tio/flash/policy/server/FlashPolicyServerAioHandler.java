@@ -54,3 +54,7 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 		} catch (LengthOverflowException e) {
 			throw new AioDecodeException(e);
 		}
+
+		if (line == null) {
+			return null;
+		} else {
