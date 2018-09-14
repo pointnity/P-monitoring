@@ -75,3 +75,9 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 
 	/**
 	 * 
+	 * @param packet
+	 * @param groupContext
+	 * @param channelContext
+	 * @return
+	 * @author tanyaowu
+	 */
