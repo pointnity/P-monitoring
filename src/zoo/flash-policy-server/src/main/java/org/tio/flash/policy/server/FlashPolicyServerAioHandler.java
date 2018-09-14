@@ -28,3 +28,5 @@ public class FlashPolicyServerAioHandler implements ServerAioHandler {
 	public void handler(Packet packet, ChannelContext channelContext) throws Exception {
 		Aio.send(channelContext, FlashPolicyPacket.RESPONSE);
 	}
+
+	public static final String REQUEST_STR = "<policy-file-request/>";
