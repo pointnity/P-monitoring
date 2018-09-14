@@ -8,3 +8,4 @@ import org.tio.core.intf.Packet;
  *
  */
 public class FlashPolicyPacket extends Packet {
+	private static final long serialVersionUID = -172060606924066412L;
