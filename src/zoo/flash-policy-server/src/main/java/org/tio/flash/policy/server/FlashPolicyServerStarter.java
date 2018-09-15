@@ -68,3 +68,6 @@ public class FlashPolicyServerStarter {
 	public static void start(String ip, Integer port) {
 		start(ip, port, Threads.tioExecutor, Threads.groupExecutor);
 	}
+
+	public static void main(String[] args) throws IOException {
+	}
