@@ -65,3 +65,4 @@ public class FlashPolicyServerStarter {
 	 * @param port
 	 * @author tanyaowu
 	 */
+	public static void start(String ip, Integer port) {
