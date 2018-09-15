@@ -20,3 +20,4 @@ public class FlashPolicyServerStarter {
 	private static Logger log = LoggerFactory.getLogger(FlashPolicyServerStarter.class);
 
 	//handler, Includes encoding, decoding, message processing
+	public static ServerAioHandler aioHandler = null;
