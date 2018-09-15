@@ -53,3 +53,4 @@ public class FlashPolicyServerStarter {
 
 		try {
 			aioServer.start(ip, port);
+		} catch (Throwable e) {
