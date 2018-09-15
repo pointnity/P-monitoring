@@ -30,3 +30,7 @@ public class FlashPolicyServerStarter {
 
 	//aioServer Object
 	public static AioServer aioServer = null;
+
+	/**
+	 * 
+	 * @param ip can be null
