@@ -66,3 +66,5 @@ public class FlashPolicyServerStarter {
 	 * @author tanyaowu
 	 */
 	public static void start(String ip, Integer port) {
+		start(ip, port, Threads.tioExecutor, Threads.groupExecutor);
+	}
