@@ -17,3 +17,4 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
  * 
  */
 public class FlashPolicyServerStarter { 
+	private static Logger log = LoggerFactory.getLogger(FlashPolicyServerStarter.class);
