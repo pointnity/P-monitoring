@@ -11,8 +11,9 @@ import org.tio.server.intf.ServerAioHandler;
 import org.tio.server.intf.ServerAioListener;
 import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 
-/**
+ /**
  *
-* @author tanyaowu
+ * @author tanyaowu
  * 
-*/
+ */
+public class FlashPolicyServerStarter { 
