@@ -41,3 +41,5 @@ public class FlashPolicyServerStarter {
 	 */
 	public static void start(String ip, Integer port, SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) {
 		if (port == null) {
+			port = Const.PORT;
+		}
