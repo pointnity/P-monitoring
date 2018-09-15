@@ -27,3 +27,5 @@ public class FlashPolicyServerStarter {
 
 	//A set of connection-sharing context objects
 	public static ServerGroupContext serverGroupContext = null;
+
+	//aioServer Object
