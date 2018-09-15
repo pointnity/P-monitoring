@@ -46,3 +46,5 @@ public class FlashPolicyServerStarter {
 		aioHandler = new FlashPolicyServerAioHandler();
 
 		serverGroupContext = new ServerGroupContext(aioHandler, aioListener, tioExecutor, groupExecutor);
+
+		serverGroupContext.setHeartbeatTimeout(Const.TIMEOUT);
