@@ -63,3 +63,5 @@ public class FlashPolicyServerStarter {
 	 * 
 	 * @param ip
 	 * @param port
+	 * @author tanyaowu
+	 */
