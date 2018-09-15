@@ -44,3 +44,5 @@ public class FlashPolicyServerStarter {
 			port = Const.PORT;
 		}
 		aioHandler = new FlashPolicyServerAioHandler();
+
+		serverGroupContext = new ServerGroupContext(aioHandler, aioListener, tioExecutor, groupExecutor);
