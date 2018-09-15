@@ -56,3 +56,5 @@ public class FlashPolicyServerStarter {
 		} catch (Throwable e) {
 			log.error(e.toString(), e);
 			System.exit(1);
+		}
+	}
