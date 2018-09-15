@@ -58,3 +58,8 @@ public class FlashPolicyServerStarter {
 			System.exit(1);
 		}
 	}
+	
+	/**
+	 * 
+	 * @param ip
+	 * @param port
