@@ -23,3 +23,4 @@ public class FlashPolicyServerStarter {
 	public static ServerAioHandler aioHandler = null;
 
 	//Event listener, which can be null, but it is recommended to implement the interface yourself, you can refer to showcase to learn some interfaces
+	public static ServerAioListener aioListener = null;
