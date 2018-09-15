@@ -21,3 +21,5 @@ public class FlashPolicyServerStarter {
 
 	//handler, Includes encoding, decoding, message processing
 	public static ServerAioHandler aioHandler = null;
+
+	//Event listener, which can be null, but it is recommended to implement the interface yourself, you can refer to showcase to learn some interfaces
