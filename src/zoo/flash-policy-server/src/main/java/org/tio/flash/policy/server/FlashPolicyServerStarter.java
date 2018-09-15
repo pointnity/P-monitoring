@@ -71,3 +71,5 @@ public class FlashPolicyServerStarter {
 
 	public static void main(String[] args) throws IOException {
 	}
+
+}
