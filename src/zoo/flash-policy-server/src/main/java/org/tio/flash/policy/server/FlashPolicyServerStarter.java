@@ -29,3 +29,4 @@ public class FlashPolicyServerStarter {
 	public static ServerGroupContext serverGroupContext = null;
 
 	//aioServer Object
+	public static AioServer aioServer = null;
