@@ -43,3 +43,4 @@ public class FlashPolicyServerStarter {
 		if (port == null) {
 			port = Const.PORT;
 		}
+		aioHandler = new FlashPolicyServerAioHandler();
