@@ -50,3 +50,6 @@ public class FlashPolicyServerStarter {
 		serverGroupContext.setHeartbeatTimeout(Const.TIMEOUT);
 
 		aioServer = new AioServer(serverGroupContext);
+
+		try {
+			aioServer.start(ip, port);
