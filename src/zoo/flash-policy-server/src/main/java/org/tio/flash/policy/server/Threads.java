@@ -44,3 +44,4 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 	/**
 	 * @param args
 	 */
+	public static void main(String[] args) {
