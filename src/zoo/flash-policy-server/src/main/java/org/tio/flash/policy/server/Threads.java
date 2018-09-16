@@ -22,3 +22,5 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 	// _CORE_POOL_SIZE;
 
 	public static final int MAX_POOL_SIZE = CORE_POOL_SIZE * 2 < 16 ? 16 : CORE_POOL_SIZE * 2;
+
+	public static final long KEEP_ALIVE_TIME = 90L;
