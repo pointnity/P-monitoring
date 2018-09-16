@@ -21,3 +21,4 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 	// public static final int CORE_POOL_SIZE = _CORE_POOL_SIZE;// < 160 ? 160 :
 	// _CORE_POOL_SIZE;
 
+	public static final int MAX_POOL_SIZE = CORE_POOL_SIZE * 2 < 16 ? 16 : CORE_POOL_SIZE * 2;
