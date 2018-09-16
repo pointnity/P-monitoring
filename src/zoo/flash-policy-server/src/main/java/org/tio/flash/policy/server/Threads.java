@@ -29,3 +29,4 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 
 	static {
 		LinkedBlockingQueue<Runnable> tioQueue = new LinkedBlockingQueue<>();
+		String tioThreadName = "tio";
