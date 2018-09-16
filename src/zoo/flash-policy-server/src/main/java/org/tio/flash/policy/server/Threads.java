@@ -36,3 +36,5 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 
 		LinkedBlockingQueue<Runnable> groupQueue = new LinkedBlockingQueue<>();
 		String groupThreadName = "tio-group";
+		groupExecutor = new ThreadPoolExecutor(MAX_POOL_SIZE, MAX_POOL_SIZE, KEEP_ALIVE_TIME, TimeUnit.SECONDS, groupQueue,
+				DefaultThreadFactory.getInstance(groupThreadName, Thread.NORM_PRIORITY));
