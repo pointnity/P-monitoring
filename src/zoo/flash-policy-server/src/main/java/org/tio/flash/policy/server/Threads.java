@@ -32,3 +32,4 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 		String tioThreadName = "tio";
 		tioExecutor = new SynThreadPoolExecutor(MAX_POOL_SIZE, MAX_POOL_SIZE, KEEP_ALIVE_TIME, tioQueue, DefaultThreadFactory.getInstance(tioThreadName, Thread.NORM_PRIORITY),
 				tioThreadName);
+		tioExecutor.prestartAllCoreThreads();
