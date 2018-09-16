@@ -15,4 +15,5 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
  * @author tanyaowu 
  * 
  */
-public class Threads {
+ public class Threads {
+	public static int CORE_POOL_SIZE = Runtime.getRuntime().availableProcessors() * 1;
