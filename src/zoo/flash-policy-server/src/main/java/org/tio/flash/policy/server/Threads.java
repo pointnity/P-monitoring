@@ -25,3 +25,4 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 
 	public static final long KEEP_ALIVE_TIME = 90L;
 	public static ThreadPoolExecutor groupExecutor = null;
+	public static SynThreadPoolExecutor tioExecutor = null;
