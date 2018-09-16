@@ -51,3 +51,4 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 	/**
 	 *
 	 */
+	public Threads() {
