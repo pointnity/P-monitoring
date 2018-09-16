@@ -28,3 +28,4 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
 	public static SynThreadPoolExecutor tioExecutor = null;
 
 	static {
+		LinkedBlockingQueue<Runnable> tioQueue = new LinkedBlockingQueue<>();
