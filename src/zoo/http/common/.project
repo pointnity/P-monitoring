@@ -7,3 +7,4 @@
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
+			<arguments>
