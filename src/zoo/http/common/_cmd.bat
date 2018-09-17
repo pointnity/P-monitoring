@@ -8,3 +8,7 @@ echo #Download the source code jar.-ddownloadjavadocs=true Download Javadoc Pack
 echo -DdownloadSources=true
 echo -
 echo -
+
+
+
+echo #Unzip the jar.
