@@ -20,3 +20,4 @@ echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=false
 echo -
 
 echo #Copy jar to warehouse directory ()
+echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=true -Dmdep.copyPom=true
