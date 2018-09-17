@@ -5,3 +5,4 @@ echo mvn dependency:sources
 echo -
 
 echo #Download the source code jar.-ddownloadjavadocs=true Download Javadoc Package
+echo -DdownloadSources=true
