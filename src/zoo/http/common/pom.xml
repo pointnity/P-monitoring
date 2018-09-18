@@ -55,3 +55,4 @@
 			<artifactId>jul-to-slf4j</artifactId>
 		</dependency>
 		<!-- redirect log4j -->
+		<dependency>
