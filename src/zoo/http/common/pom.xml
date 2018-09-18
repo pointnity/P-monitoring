@@ -33,4 +33,5 @@
 
 
 
-		<!-- slf4j-logbacK Binding-->
+		<!-- slf4j-logback Binding-->
+		<dependency>
