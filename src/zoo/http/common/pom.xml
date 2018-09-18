@@ -15,4 +15,4 @@
 
 		<dependency>
 			<groupId>org.t-io</groupId>
-
+			<artifactId>tio-core</artifactId>
