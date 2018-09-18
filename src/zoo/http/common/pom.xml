@@ -19,3 +19,4 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>org.redisson</groupId>
