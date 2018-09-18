@@ -39,3 +39,4 @@
 			<artifactId>logback-classic</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>ch.qos.logback</groupId>
