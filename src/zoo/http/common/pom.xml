@@ -35,3 +35,4 @@
 
 		<!-- slf4j-logback Binding-->
 		<dependency>
+			<groupId>ch.qos.logback</groupId>
