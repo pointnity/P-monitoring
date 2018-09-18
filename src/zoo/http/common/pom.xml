@@ -46,3 +46,4 @@
 
 		<!-- redirect apache commons logging -->
 		<dependency>
+			<groupId>org.slf4j</groupId>
