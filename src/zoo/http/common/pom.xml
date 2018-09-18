@@ -50,3 +50,4 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 		</dependency>
 		<!-- redirect jdk util logging -->
+		<dependency>
