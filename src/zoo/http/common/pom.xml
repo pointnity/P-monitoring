@@ -1,1 +1,2 @@
 <project xmlns="/maven.apache.org/POM/4.0.0" xmlns:xsi=".w3.org/XMLSchema-instance"
+	xsi:schemaLocation="maven.apache.org/POM/4.0.0 /maven.apache.org/xsd/maven-4.0.0.xsd">
