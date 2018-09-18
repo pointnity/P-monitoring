@@ -42,3 +42,6 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-access</artifactId>
 		</dependency>
+
+
+		<!-- redirect apache commons logging -->
