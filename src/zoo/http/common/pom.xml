@@ -45,3 +45,4 @@
 
 
 		<!-- redirect apache commons logging -->
+		<dependency>
