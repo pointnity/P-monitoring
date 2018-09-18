@@ -56,3 +56,4 @@
 		</dependency>
 		<!-- redirect log4j -->
 		<dependency>
+			<groupId>org.slf4j</groupId>
