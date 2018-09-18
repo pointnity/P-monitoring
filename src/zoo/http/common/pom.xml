@@ -51,3 +51,4 @@
 		</dependency>
 		<!-- redirect jdk util logging -->
 		<dependency>
+			<groupId>org.slf4j</groupId>
