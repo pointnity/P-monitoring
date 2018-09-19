@@ -128,3 +128,6 @@ public class Cookie {
 	 * @param domain	cookie the Controlled domain
 	 * @param name		Name
 	 * @param value		Value
+	 * @param maxAge	Failure time, Unit seconds
+	 * @return Cookie Object
+	 */
