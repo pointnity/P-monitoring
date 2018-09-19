@@ -44,3 +44,6 @@ public class Cookie {
 			case "httponly":
 				cookie.setHttpOnly(true);
 				break;
+			case "expires":
+				cookie.setExpires(cookieMapItem.getValue());
+				break;
