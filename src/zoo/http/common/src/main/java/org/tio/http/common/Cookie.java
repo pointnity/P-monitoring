@@ -22,3 +22,4 @@ public class Cookie {
 
 	/**
 	 *Build a MAP with maps Cookie Object
+	 * @param cookieMap Cookie Property Map
