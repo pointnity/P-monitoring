@@ -25,3 +25,5 @@ public class Cookie {
 	 * @param cookieMap Cookie Property Map
 	 * @return Cookie Object
 	 */
+	public static Cookie buildCookie(Map<String, String> cookieMap) {
+		Cookie cookie = new Cookie();
