@@ -32,3 +32,6 @@ public class Cookie {
 			case "domain":
 				cookie.setDomain(cookieMapItem.getValue());
 				break;
+			case "path":
+				cookie.setPath(cookieMapItem.getValue());
+				break;
