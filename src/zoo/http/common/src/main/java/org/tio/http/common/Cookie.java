@@ -124,3 +124,5 @@ public class Cookie {
 	}
 
 	/**
+	 * Create a Cookie
+	 * @param domain	cookie the Controlled domain
