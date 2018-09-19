@@ -59,3 +59,6 @@ public class Cookie {
 		}
 		return cookie;
 	}
+
+	public static Map<String, String> getEqualMap(String cookieline) {
+		Map<String, String> equalMap = new HashMap<>();
