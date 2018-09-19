@@ -35,3 +35,6 @@ public class Cookie {
 			case "path":
 				cookie.setPath(cookieMapItem.getValue());
 				break;
+			case "max-age":
+				cookie.setMaxAge(Long.parseLong(cookieMapItem.getValue()));
+				break;
