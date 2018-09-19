@@ -106,3 +106,21 @@ public class Cookie {
 	private String domain = null;
 	private String path = null;
 	private Long maxAge = null;
+
+	private String expires = null;
+	private boolean secure = false;
+
+	private boolean httpOnly = false;
+
+	private String name;
+
+	private String value;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public Cookie() {
+	}
+
+	/**
