@@ -38,3 +38,6 @@ public class Cookie {
 			case "max-age":
 				cookie.setMaxAge(Long.parseLong(cookieMapItem.getValue()));
 				break;
+			case "secure":
+				cookie.setSecure(true);
+				break;
