@@ -71,3 +71,38 @@ public class Cookie {
 			equalStrings[1] = groupString.substring(equalCharIndex + 1, groupString.length());
 			if (equalStrings.length == 2) {
 				String key = equalStrings[0];
+				String value = equalStrings[1];
+				if (value.startsWith("\"") && value.endsWith("\"")) {
+					value = value.substring(1, value.length() - 1);
+				}
+				equalMap.put(key, value);
+			}
+		}
+		return equalMap;
+	}
+
+	public static String[] searchByRegex(String source, String regex) {
+		if (source == null) {
+			return null;
+		}
+
+		Map<Integer, Pattern> regexPattern = new HashMap<>();
+
+		Pattern pattern = null;
+		if (regexPattern.containsKey(regex.hashCode())) {
+			pattern = regexPattern.get(regex.hashCode());
+		} else {
+			pattern = Pattern.compile(regex);
+			regexPattern.put(regex.hashCode(), pattern);
+		}
+		Matcher matcher = pattern.matcher(source);
+		ArrayList<String> result = new ArrayList<>();
+		while (matcher.find()) {
+			result.add(matcher.group());
+		}
+		return result.toArray(new String[0]);
+	}
+
+	private String domain = null;
+	private String path = null;
+	private Long maxAge = null;
