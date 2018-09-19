@@ -41,3 +41,6 @@ public class Cookie {
 			case "secure":
 				cookie.setSecure(true);
 				break;
+			case "httponly":
+				cookie.setHttpOnly(true);
+				break;
