@@ -27,3 +27,5 @@ public class Cookie {
 	 */
 	public static Cookie buildCookie(Map<String, String> cookieMap) {
 		Cookie cookie = new Cookie();
+		for (Entry<String, String> cookieMapItem : cookieMap.entrySet()) {
+			switch (cookieMapItem.getKey().toLowerCase()) {
