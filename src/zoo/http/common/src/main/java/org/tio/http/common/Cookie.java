@@ -54,3 +54,6 @@ public class Cookie {
 				} catch (UnsupportedEncodingException e) {
 					log.error(e.toString(), e);
 				}
+				break;
+			}
+		}
