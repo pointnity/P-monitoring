@@ -50,3 +50,7 @@ public class Cookie {
 			default:
 				cookie.setName(cookieMapItem.getKey());
 				try {
+					cookie.setValue(URLDecoder.decode(cookieMapItem.getValue(), HttpConst.CHARSET_NAME));
+				} catch (UnsupportedEncodingException e) {
+					log.error(e.toString(), e);
+				}
