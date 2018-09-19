@@ -66,3 +66,8 @@ public class Cookie {
 		for (String groupString : searchedStrings) {
 			//The reason for not split here is that there is a possibility that an equal sign appears in the value string after the equals sign
 			String[] equalStrings = new String[2];
+			int equalCharIndex = groupString.indexOf("=");
+			equalStrings[0] = groupString.substring(0, equalCharIndex);
+			equalStrings[1] = groupString.substring(equalCharIndex + 1, groupString.length());
+			if (equalStrings.length == 2) {
+				String key = equalStrings[0];
