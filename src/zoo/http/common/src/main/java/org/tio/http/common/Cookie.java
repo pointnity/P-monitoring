@@ -62,3 +62,5 @@ public class Cookie {
 
 	public static Map<String, String> getEqualMap(String cookieline) {
 		Map<String, String> equalMap = new HashMap<>();
+		String[] searchedStrings = searchByRegex(cookieline, "([^ ;,]+=[^ ;,]+)");
+		for (String groupString : searchedStrings) {
