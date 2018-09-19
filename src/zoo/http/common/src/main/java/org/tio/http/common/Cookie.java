@@ -131,3 +131,34 @@ public class Cookie {
 	 * @param maxAge	Failure time, Unit seconds
 	 * @return Cookie Object
 	 */
+	public Cookie(String domain, String name, String value, Long maxAge) {
+		setName(name);
+		setValue(value);
+		setPath("/");
+		setDomain(domain);
+		setMaxAge(maxAge);
+		setHttpOnly(false);
+	}
+
+	public String getDomain() {
+		return domain;
+	}
+
+	public String getExpires() {
+		return expires;
+	}
+
+	public Long getMaxAge() {
+		return maxAge;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public String getValue() {
+		return value;
