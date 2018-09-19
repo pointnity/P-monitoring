@@ -30,3 +30,5 @@ public class Cookie {
 		for (Entry<String, String> cookieMapItem : cookieMap.entrySet()) {
 			switch (cookieMapItem.getKey().toLowerCase()) {
 			case "domain":
+				cookie.setDomain(cookieMapItem.getValue());
+				break;
