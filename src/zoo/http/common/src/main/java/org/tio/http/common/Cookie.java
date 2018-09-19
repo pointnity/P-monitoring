@@ -64,3 +64,5 @@ public class Cookie {
 		Map<String, String> equalMap = new HashMap<>();
 		String[] searchedStrings = searchByRegex(cookieline, "([^ ;,]+=[^ ;,]+)");
 		for (String groupString : searchedStrings) {
+			//The reason for not split here is that there is a possibility that an equal sign appears in the value string after the equals sign
+			String[] equalStrings = new String[2];
