@@ -19,3 +19,6 @@ import org.slf4j.LoggerFactory;
  */
 public class Cookie {
 	private static Logger log = LoggerFactory.getLogger(Cookie.class);
+
+	/**
+	 *Build a MAP with maps Cookie Object
