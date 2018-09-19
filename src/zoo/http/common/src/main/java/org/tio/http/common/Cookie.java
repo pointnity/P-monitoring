@@ -47,3 +47,6 @@ public class Cookie {
 			case "expires":
 				cookie.setExpires(cookieMapItem.getValue());
 				break;
+			default:
+				cookie.setName(cookieMapItem.getKey());
+				try {
