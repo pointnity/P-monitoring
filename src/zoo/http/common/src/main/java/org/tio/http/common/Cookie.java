@@ -162,3 +162,32 @@ public class Cookie {
 
 	public String getValue() {
 		return value;
+	}
+
+	public boolean isHttpOnly() {
+		return httpOnly;
+	}
+
+	public boolean isSecure() {
+		return secure;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	public void setExpires(String expires) {
+		this.expires = expires;
+	}
+
+	public void setHttpOnly(boolean httpOnly) {
+		this.httpOnly = httpOnly;
+	}
+
+	public void setMaxAge(Long maxAge) {
+		this.maxAge = maxAge;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
