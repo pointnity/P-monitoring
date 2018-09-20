@@ -36,3 +36,6 @@ public class HttpConfig {
 	/**
 	 * Default static resource cache time, units: seconds
 	 */
+	public static final int MAX_LIVETIME_OF_STATICRES = 60 * 10;
+	
+	/**
