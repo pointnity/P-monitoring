@@ -117,3 +117,6 @@ public class HttpConfig {
 
 	/**
 	 * Example:
+	 * 1、classpath in：page
+	 * 2、Absolute path：/page
+	 */
