@@ -176,3 +176,23 @@ public class HttpConfig {
 	/**
 	 * @return the charset
 	 */
+	public String getCharset() {
+		return charset;
+	}
+
+	/**
+	 * @return the maxLiveTimeOfStaticRes
+	 */
+	public int getMaxLiveTimeOfStaticRes() {
+		return maxLiveTimeOfStaticRes;
+	}
+
+	public String getPage404() {
+		return page404;
+	}
+
+	public String getPage500() {
+		return page500;
+	}
+
+	/**
