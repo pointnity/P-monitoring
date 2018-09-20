@@ -114,3 +114,6 @@ public class HttpConfig {
 	 * Whether the agent is
 	 */
 	private boolean isProxied = false;
+
+	/**
+	 * Example:
