@@ -71,3 +71,9 @@ public class HttpConfig {
 	private String serverInfo = HttpConst.SERVER_INFO;
 
 	private String charset = HttpConst.CHARSET_NAME;
+
+	private ICache sessionStore = null;
+	
+	private String contextPath = "";
+	
+	private String suffix = "";
