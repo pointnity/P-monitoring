@@ -19,3 +19,5 @@ public class HttpConfig {
 	//	private static Logger log = LoggerFactory.getLogger(HttpConfig.class);
 
 	/**
+	 *That holds the HttpSession object.cacheName
+	 */
