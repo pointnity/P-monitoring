@@ -77,3 +77,7 @@ public class HttpConfig {
 	private String contextPath = "";
 	
 	private String suffix = "";
+	
+	/**
+	 * The domain name that is allowed to be accessed, or null if not limited
+	 */
