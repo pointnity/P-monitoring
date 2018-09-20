@@ -86,3 +86,6 @@ public class HttpConfig {
 	/**
 	 * That holds the HttpSession object.cacheName
 	 */
+	private String sessionCacheName = SESSION_CACHE_NAME;
+
+	/**
