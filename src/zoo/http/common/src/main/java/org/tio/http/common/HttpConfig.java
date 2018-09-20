@@ -96,3 +96,5 @@ public class HttpConfig {
 	private String sessionCookieName = SESSION_COOKIE_NAME;
 
 	/**
+	 * The static resource cache time, if less than or equal to 0, is not cached, units: seconds
+	 */
