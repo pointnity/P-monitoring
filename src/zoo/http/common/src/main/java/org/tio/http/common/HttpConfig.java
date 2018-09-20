@@ -102,3 +102,7 @@ public class HttpConfig {
 
 	private String page404 = "/404.html";
 
+	//	private HttpSessionManager httpSessionManager;
+
+	private String page500 = "/500.html";
+
