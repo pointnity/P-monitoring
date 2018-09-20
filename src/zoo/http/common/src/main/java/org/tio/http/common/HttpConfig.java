@@ -57,3 +57,6 @@ public class HttpConfig {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	public static void main(String[] args) {
+
+	}
