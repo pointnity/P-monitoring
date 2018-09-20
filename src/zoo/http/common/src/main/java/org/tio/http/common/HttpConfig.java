@@ -246,3 +246,51 @@ public class HttpConfig {
 	/**
 	 * @param charset the charset to set
 	 */
+
+	public ISessionIdGenerator getSessionIdGenerator() {
+		return sessionIdGenerator;
+	}
+
+	public ICache getSessionStore() {
+		return sessionStore;
+	}
+
+	public long getSessionTimeout() {
+		return sessionTimeout;
+	}
+
+	/**
+	 * @param bindIp the bindIp to set
+	 */
+	public void setBindIp(String bindIp) {
+		this.bindIp = bindIp;
+	}
+
+	/**
+	 * @param charset the charset to set
+	 */
+	public void setCharset(String charset) {
+		this.charset = charset;
+	}
+
+	/**
+	 * @param maxLiveTimeOfStaticRes the maxLiveTimeOfStaticRes to set
+	 */
+	public void setMaxLiveTimeOfStaticRes(int maxLiveTimeOfStaticRes) {
+		this.maxLiveTimeOfStaticRes = maxLiveTimeOfStaticRes;
+	}
+
+	public void setPage404(String page404) {
+		this.page404 = page404;
+	}
+
+	public void setPage500(String page500) {
+		this.page500 = page500;
+	}
+
+	/**
+	 * 
+	 * @param pageRoot
+	 * @author tanyaowu
+	 * @throws IOException 
+	 */
