@@ -89,3 +89,5 @@ public class HttpConfig {
 	private String sessionCacheName = SESSION_CACHE_NAME;
 
 	/**
+	 * session Time-out, units: seconds
+	 */
