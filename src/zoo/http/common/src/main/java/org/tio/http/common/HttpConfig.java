@@ -64,3 +64,5 @@ public class HttpConfig {
 	private String bindIp = null;//"127.0.0.1";
 
 	/**
+	 * Listening port
+	 */
