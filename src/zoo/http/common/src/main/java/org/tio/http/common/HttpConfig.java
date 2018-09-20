@@ -29,3 +29,5 @@ public class HttpConfig {
 	public static final String SESSION_COOKIE_NAME = "big-tio";
 
 	/**
+	 * session Default time-out, units: seconds
+	 */
