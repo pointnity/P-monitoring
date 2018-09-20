@@ -51,3 +51,6 @@ public class HttpConfig {
 	/**
 	 * Maximum length of the body when uploading files
 	 */
+	public static final int MAX_LENGTH_OF_MULTI_BODY = 1024 * 1024 * 20;
+
+	/**
