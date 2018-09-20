@@ -84,3 +84,5 @@ public class HttpConfig {
 	private String[] allowDomains = null;
 
 	/**
+	 * That holds the HttpSession object.cacheName
+	 */
