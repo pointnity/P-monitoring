@@ -14,3 +14,8 @@ import com.xiaoleilu.hutool.io.FileUtil;
  * @author tanyaowu
  * 
  */
+public class HttpConfig {
+
+	//	private static Logger log = LoggerFactory.getLogger(HttpConfig.class);
+
+	/**
