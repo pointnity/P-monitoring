@@ -26,3 +26,6 @@ public class HttpConfig {
 	/**
 	 * Storage of SessionID cookie name
 	 */
+	public static final String SESSION_COOKIE_NAME = "big-tio";
+
+	/**
