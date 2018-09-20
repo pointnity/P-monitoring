@@ -140,3 +140,16 @@ public class HttpConfig {
 	 *
 	 * @author tanyaowu
 	 */
+	public HttpConfig(Integer bindPort, Long sessionTimeout, String contextPath, String suffix) {
+		this.bindPort = bindPort;
+		if (sessionTimeout != null) {
+			this.sessionTimeout = sessionTimeout;
+		}
+		
+		if (contextPath == null) {
+			contextPath = "";
+		}
+		this.contextPath = contextPath;
+		
+		if (suffix == null) {
+			suffix = "";
