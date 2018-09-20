@@ -21,3 +21,6 @@ public class HttpConfig {
 	/**
 	 *That holds the HttpSession object.cacheName
 	 */
+	public static final String SESSION_CACHE_NAME = "tio-h-s";
+
+	/**
