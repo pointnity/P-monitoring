@@ -34,3 +34,5 @@ public class HttpConfig {
 	public static final long DEFAULT_SESSION_TIMEOUT = 30 * 60;
 
 	/**
+	 * Default static resource cache time, units: seconds
+	 */
