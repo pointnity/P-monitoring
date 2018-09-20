@@ -335,3 +335,30 @@ public class HttpConfig {
 
 	/**
 	 * @return the httpRequestHandler
+	 */
+	public HttpRequestHandler getHttpRequestHandler() {
+		return httpRequestHandler;
+	}
+
+	/**
+	 * @param httpRequestHandler the httpRequestHandler to set
+	 */
+	public void setHttpRequestHandler(HttpRequestHandler httpRequestHandler) {
+		this.httpRequestHandler = httpRequestHandler;
+	}
+
+	public String getContextPath() {
+		return contextPath;
+	}
+
+	public String getSuffix() {
+		return suffix;
+	}
+
+	public String[] getAllowDomains() {
+		return allowDomains;
+	}
+
+	public void setAllowDomains(String[] allowDomains) {
+		this.allowDomains = allowDomains;
+	}
