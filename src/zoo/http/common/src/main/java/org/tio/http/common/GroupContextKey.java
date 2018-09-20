@@ -5,3 +5,6 @@ package org.tio.http.common;
  * 
  */
 public interface GroupContextKey {
+	/**
+	 * Stored HttpConfig
+	 */
