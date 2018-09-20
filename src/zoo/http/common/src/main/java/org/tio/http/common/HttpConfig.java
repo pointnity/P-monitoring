@@ -31,3 +31,6 @@ public class HttpConfig {
 	/**
 	 * session Default time-out, units: seconds
 	 */
+	public static final long DEFAULT_SESSION_TIMEOUT = 30 * 60;
+
+	/**
