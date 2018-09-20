@@ -91,3 +91,8 @@ public class HttpConfig {
 	/**
 	 * session Time-out, units: seconds
 	 */
+	private long sessionTimeout = DEFAULT_SESSION_TIMEOUT;
+
+	private String sessionCookieName = SESSION_COOKIE_NAME;
+
+	/**
