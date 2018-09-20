@@ -110,3 +110,6 @@ public class HttpConfig {
 	
 	private HttpRequestHandler httpRequestHandler;
 	
+	/**
+	 * Whether the agent is
+	 */
