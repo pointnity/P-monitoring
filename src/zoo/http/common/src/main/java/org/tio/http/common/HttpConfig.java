@@ -223,3 +223,26 @@ public class HttpConfig {
 	//	public void setSessionTimeout(long sessionTimeout) {
 	//		this.sessionTimeout = sessionTimeout;
 	//	}
+
+	public ISessionIdGenerator getSessionIdGenerator() {
+		return sessionIdGenerator;
+	}
+
+	public ICache getSessionStore() {
+		return sessionStore;
+	}
+
+	public long getSessionTimeout() {
+		return sessionTimeout;
+	}
+
+	/**
+	 * @param bindIp the bindIp to set
+	 */
+	public void setBindIp(String bindIp) {
+		this.bindIp = bindIp;
+	}
+
+	/**
+	 * @param charset the charset to set
+	 */
