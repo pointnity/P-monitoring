@@ -246,29 +246,6 @@ public class HttpConfig {
 	/**
 	 * @param charset the charset to set
 	 */
-
-	public ISessionIdGenerator getSessionIdGenerator() {
-		return sessionIdGenerator;
-	}
-
-	public ICache getSessionStore() {
-		return sessionStore;
-	}
-
-	public long getSessionTimeout() {
-		return sessionTimeout;
-	}
-
-	/**
-	 * @param bindIp the bindIp to set
-	 */
-	public void setBindIp(String bindIp) {
-		this.bindIp = bindIp;
-	}
-
-	/**
-	 * @param charset the charset to set
-	 */
 	public void setCharset(String charset) {
 		this.charset = charset;
 	}
@@ -362,3 +339,18 @@ public class HttpConfig {
 	public void setAllowDomains(String[] allowDomains) {
 		this.allowDomains = allowDomains;
 	}
+
+	/**
+	 * @return the isProxied
+	 */
+	public boolean isProxied() {
+		return isProxied;
+	}
+
+	/**
+	 * @param isProxied the isProxied to set
+	 */
+	public void setProxied(boolean isProxied) {
+		this.isProxied = isProxied;
+	}
+}
