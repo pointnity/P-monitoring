@@ -81,3 +81,6 @@ public class HttpConfig {
 	/**
 	 * The domain name that is allowed to be accessed, or null if not limited
 	 */
+	private String[] allowDomains = null;
+
+	/**
