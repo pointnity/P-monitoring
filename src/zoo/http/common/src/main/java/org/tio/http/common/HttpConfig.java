@@ -39,3 +39,5 @@ public class HttpConfig {
 	public static final int MAX_LIVETIME_OF_STATICRES = 60 * 10;
 	
 	/**
+	 * The maximum length of the boundary value when the file is uploaded
+	 */
