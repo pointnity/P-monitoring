@@ -294,3 +294,16 @@ public class HttpConfig {
 	 * @author tanyaowu
 	 * @throws IOException 
 	 */
+	public void setPageRoot(String pageRoot) throws IOException {
+		if (pageRoot == null) {
+			return;
+		}
+		
+		if (StringUtils.startsWithIgnoreCase(pageRoot, "classpath:")) {
+			this.pageRoot = new File(FileUtil.getAbsolutePath(pageRoot));
+		} else {
+			this.pageRoot = new File(pageRoot);
+		}
+	}
+
+	/**
