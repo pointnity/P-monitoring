@@ -66,3 +66,8 @@ public class HttpConfig {
 	/**
 	 * Listening port
 	 */
+	private Integer bindPort = 80;
+
+	private String serverInfo = HttpConst.SERVER_INFO;
+
+	private String charset = HttpConst.CHARSET_NAME;
