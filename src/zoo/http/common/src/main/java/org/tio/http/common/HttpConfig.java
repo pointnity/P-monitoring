@@ -98,3 +98,7 @@ public class HttpConfig {
 	/**
 	 * The static resource cache time, if less than or equal to 0, is not cached, units: seconds
 	 */
+	private int maxLiveTimeOfStaticRes = MAX_LIVETIME_OF_STATICRES;
+
+	private String page404 = "/404.html";
+
