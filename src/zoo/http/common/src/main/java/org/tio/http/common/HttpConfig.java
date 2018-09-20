@@ -120,3 +120,23 @@ public class HttpConfig {
 	 * 1、classpath in：page
 	 * 2、Absolute path：/page
 	 */
+	private File pageRoot = null;//FileUtil.getAbsolutePath("page");//"/page";
+
+	//	/**
+	//	 * @return the httpSessionManager
+	//	 */
+	//	public HttpSessionManager getHttpSessionManager() {
+	//		return httpSessionManager;
+	//	}
+	//
+	//	/**
+	//	 * @param httpSessionManager the httpSessionManager to set
+	//	 */
+	//	public void setHttpSessionManager(HttpSessionManager httpSessionManager) {
+	//		this.httpSessionManager = httpSessionManager;
+	//	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
