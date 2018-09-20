@@ -46,3 +46,6 @@ public class HttpConfig {
 	/**
 	 * Maximum length of the head when uploading files
 	 */
+	public static final int MAX_LENGTH_OF_MULTI_HEADER = 128;
+	
+	/**
