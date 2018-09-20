@@ -307,3 +307,31 @@ public class HttpConfig {
 	}
 
 	/**
+	 * @param serverInfo the serverInfo to set
+	 */
+	public void setServerInfo(String serverInfo) {
+		this.serverInfo = serverInfo;
+	}
+
+	/**
+	 * @param sessionCacheName the sessionCacheName to set
+	 */
+	public void setSessionCacheName(String sessionCacheName) {
+		this.sessionCacheName = sessionCacheName;
+	}
+
+	public void setSessionCookieName(String sessionCookieName) {
+		this.sessionCookieName = sessionCookieName;
+	}
+
+	public void setSessionIdGenerator(ISessionIdGenerator sessionIdGenerator) {
+		this.sessionIdGenerator = sessionIdGenerator;
+	}
+
+	public void setSessionStore(ICache sessionStore) {
+		this.sessionStore = sessionStore;
+		//		this.httpSessionManager = HttpSessionManager.getInstance(sessionStore);
+	}
+
+	/**
+	 * @return the httpRequestHandler
