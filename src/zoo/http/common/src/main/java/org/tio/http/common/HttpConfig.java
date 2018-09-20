@@ -24,3 +24,5 @@ public class HttpConfig {
 	public static final String SESSION_CACHE_NAME = "tio-h-s";
 
 	/**
+	 * Storage of SessionID cookie name
+	 */
