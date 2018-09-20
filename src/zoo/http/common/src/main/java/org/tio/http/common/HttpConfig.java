@@ -196,3 +196,30 @@ public class HttpConfig {
 	}
 
 	/**
+	 * @return the pageRoot
+	 */
+	public File getPageRoot() {
+		return pageRoot;
+	}
+
+	/**
+	 * @return the serverInfo
+	 */
+	public String getServerInfo() {
+		return serverInfo;
+	}
+
+	/**
+	 * @return the sessionCacheName
+	 */
+	public String getSessionCacheName() {
+		return sessionCacheName;
+	}
+
+	public String getSessionCookieName() {
+		return sessionCookieName;
+	}
+
+	//	public void setSessionTimeout(long sessionTimeout) {
+	//		this.sessionTimeout = sessionTimeout;
+	//	}
