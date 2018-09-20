@@ -153,3 +153,26 @@ public class HttpConfig {
 		
 		if (suffix == null) {
 			suffix = "";
+		}
+		this.suffix = suffix;
+	}
+
+	//	private File rootFile = null;
+
+	/**
+	 * @return the bindIp
+	 */
+	public String getBindIp() {
+		return bindIp;
+	}
+
+	/**
+	 * @return the bindPort
+	 */
+	public Integer getBindPort() {
+		return bindPort;
+	}
+
+	/**
+	 * @return the charset
+	 */
