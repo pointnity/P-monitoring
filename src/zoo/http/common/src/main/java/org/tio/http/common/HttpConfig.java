@@ -41,3 +41,6 @@ public class HttpConfig {
 	/**
 	 * The maximum length of the boundary value when the file is uploaded
 	 */
+	public static final int MAX_LENGTH_OF_BOUNDARY = 256;
+	
+	/**
