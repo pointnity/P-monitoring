@@ -106,3 +106,7 @@ public class HttpConfig {
 
 	private String page500 = "/500.html";
 
+	private ISessionIdGenerator sessionIdGenerator;
+	
+	private HttpRequestHandler httpRequestHandler;
+	
