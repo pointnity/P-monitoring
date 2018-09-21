@@ -182,3 +182,5 @@ public interface HttpConst {
 	String SERVER_INFO = "tio-httpserver/0.0.1";
 
 	/**
+	 *By default, clients connected to this server are unified with Utf-8
+	 */
