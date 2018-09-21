@@ -46,3 +46,5 @@ public interface HttpConst {
 		String Accept_Encoding = "Accept-Encoding".toLowerCase(); //gzip, deflate, br
 		String Accept_Language = "Accept-Language".toLowerCase(); //zh-CN,zh;q=0.8,en;q=0.6
 		String Upgrade = "Upgrade".toLowerCase(); //websocket
+		String Sec_WebSocket_Extensions = "Sec-WebSocket-Extensions".toLowerCase(); //permessage-deflate; client_max_window_bits
+		String Content_Length = "Content-Length".toLowerCase(); //65
