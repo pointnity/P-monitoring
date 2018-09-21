@@ -160,3 +160,8 @@ public interface HttpConst {
 		/**
 		 * Is the data obtained from the cache, Tio-httpserver unique header information
 		 */
+		String tio_from_cache = "tio-from-cache";
+	}
+
+	/**
+	 *
