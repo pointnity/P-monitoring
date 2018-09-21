@@ -165,3 +165,6 @@ public interface HttpConst {
 
 	/**
 	 *
+	 * @author tanyaowu
+	 * 
+	 */
