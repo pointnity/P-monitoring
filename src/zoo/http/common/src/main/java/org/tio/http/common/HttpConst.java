@@ -39,3 +39,5 @@ public interface HttpConst {
 		String Sec_WebSocket_Key = "Sec-WebSocket-Key".toLowerCase(); //2GFwqJ1Z37glm62YKKLUeA==
 		String Cache_Control = "Cache-Control".toLowerCase(); //no-cache
 		String Connection = "Connection".toLowerCase(); //Upgrade,  keep-alive
+		String User_Agent = "User-Agent".toLowerCase(); //Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3088.3 Safari/537.36
+		String Sec_WebSocket_Version = "Sec-WebSocket-Version".toLowerCase(); //13
