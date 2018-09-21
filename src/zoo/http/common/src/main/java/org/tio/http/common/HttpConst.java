@@ -128,3 +128,5 @@ public interface HttpConst {
 		 * The last modification time of the document.The customer can provide a date through the If-modified-since request header, which will be treated as a conditional get,
 		 * Only documents that have been modified later than the specified time are returned, otherwise a 304 (not Modified) state is returned.Last-modified can also be set using the Setdateheader method.
 		 */
+		String Last_Modified = "Last-Modified".toLowerCase();
+		/**
