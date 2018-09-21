@@ -33,3 +33,4 @@ public interface HttpConst {
 	 * @author tanyaowu
 	 * 
 	 */
+	public interface RequestHeaderKey {
