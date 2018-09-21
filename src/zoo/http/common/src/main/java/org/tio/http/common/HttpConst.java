@@ -102,3 +102,5 @@ public interface HttpConst {
 		 * Content-Disposition: attachment;filename=FileName.txt
 		 * File download
 		 */
+		String Content_disposition = "Content-disposition".toLowerCase();
+		/**
