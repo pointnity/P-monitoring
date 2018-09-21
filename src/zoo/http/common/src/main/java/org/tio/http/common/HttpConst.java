@@ -184,3 +184,5 @@ public interface HttpConst {
 	/**
 	 *By default, clients connected to this server are unified with Utf-8
 	 */
+	String CHARSET_NAME = "utf-8";
+}
