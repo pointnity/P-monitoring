@@ -31,3 +31,5 @@ public interface HttpConst {
 	                    Pragma : no-cache
 	 *
 	 * @author tanyaowu
+	 * 
+	 */
