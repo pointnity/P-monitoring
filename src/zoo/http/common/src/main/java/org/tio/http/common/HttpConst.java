@@ -134,3 +134,5 @@ public interface HttpConst {
 		 */
 		String Location = "Location".toLowerCase();
 		/**
+		 *Indicates how much time the browser should refresh the document, in seconds.In addition to refreshing the current document, you can also pass SetHeader ("Refresh", "5;Url//host/path ") lets the browser read the specified page.
+		Note This functionality is usually done by setting the HTML page in the head area of the For Servlets, however, it is more convenient to set the refresh header directly.
