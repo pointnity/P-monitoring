@@ -98,3 +98,7 @@ public interface HttpConst {
 		String Sec_WebSocket_Accept = "Sec-WebSocket-Accept".toLowerCase();
 		String Upgrade = "Upgrade".toLowerCase();
 
+		/**
+		 * Content-Disposition: attachment;filename=FileName.txt
+		 * File download
+		 */
