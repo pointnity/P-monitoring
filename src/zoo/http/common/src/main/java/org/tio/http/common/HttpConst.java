@@ -36,3 +36,5 @@ public interface HttpConst {
 	public interface RequestHeaderKey {
 		String Cookie = "Cookie".toLowerCase();//Cookie: $Version=1; Skin=new;
 		String Origin = "Origin".toLowerCase(); /127.0.0.1
+		String Sec_WebSocket_Key = "Sec-WebSocket-Key".toLowerCase(); //2GFwqJ1Z37glm62YKKLUeA==
+		String Cache_Control = "Cache-Control".toLowerCase(); //no-cache
