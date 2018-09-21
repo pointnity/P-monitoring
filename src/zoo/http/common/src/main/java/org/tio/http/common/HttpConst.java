@@ -150,3 +150,6 @@ public interface HttpConst {
 		/**
 		 *
 		 */
+		String Access_Control_Allow_Origin = "Access-Control-Allow-Origin".toLowerCase(); //value: *
+
+		/**
