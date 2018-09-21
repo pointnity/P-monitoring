@@ -106,3 +106,4 @@ public interface HttpConst {
 		/**
 		 * The encoding (Encode) method of the document.Can only be obtained after decoding Content-Type the content type specified by the header.
 		 * Using gzip to compress documents can significantly reduce the download time of HTML documents.
+		 * Java's gzipoutputstream can be easily gzip compressed, but only on Unix Netscape and IE 4, ie 5 on Windows.
