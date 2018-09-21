@@ -21,3 +21,4 @@ public interface HttpConst {
 	     Sec-WebSocket-Version : 13
 	  Sec-WebSocket-Extensions : permessage-deflate; client_max_window_bits
 	                   Upgrade : websocket
+	                      Host : t-io.org:9321
