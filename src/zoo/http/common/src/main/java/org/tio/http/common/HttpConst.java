@@ -121,3 +121,5 @@ public interface HttpConst {
 		 */
 		String Date = "Date".toLowerCase();
 		/**
+		 * When should I think that the document has expired so that it is no longer cached?
+		 */
