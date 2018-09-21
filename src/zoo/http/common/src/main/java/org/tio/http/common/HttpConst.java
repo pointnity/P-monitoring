@@ -45,3 +45,4 @@ public interface HttpConst {
 		String Pragma = "Pragma".toLowerCase(); //no-cache
 		String Accept_Encoding = "Accept-Encoding".toLowerCase(); //gzip, deflate, br
 		String Accept_Language = "Accept-Language".toLowerCase(); //zh-CN,zh;q=0.8,en;q=0.6
+		String Upgrade = "Upgrade".toLowerCase(); //websocket
