@@ -56,3 +56,7 @@ public interface HttpConst {
 		 */
 		String X_Requested_With = "X-Requested-With".toLowerCase();//XMLHttpRequest
 	}
+
+	//	Content-Type: text/html;charset:utf-8;
+
+	/**
