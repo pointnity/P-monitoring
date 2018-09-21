@@ -34,3 +34,5 @@ public interface HttpConst {
 	 * 
 	 */
 	public interface RequestHeaderKey {
+		String Cookie = "Cookie".toLowerCase();//Cookie: $Version=1; Skin=new;
+		String Origin = "Origin".toLowerCase(); /127.0.0.1
