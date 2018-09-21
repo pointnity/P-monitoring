@@ -84,3 +84,6 @@ public interface HttpConst {
 			/**
 			 * Normal.key-value
 			 */
+			String application_x_www_form_urlencoded = "application/x-www-form-urlencoded".toLowerCase();
+		}
+	}
