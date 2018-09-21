@@ -65,3 +65,4 @@ public interface HttpConst {
 	 * 
 	 */
 	public interface RequestHeaderValue {
+		public interface Connection {
