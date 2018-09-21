@@ -153,3 +153,8 @@ public interface HttpConst {
 		String Access_Control_Allow_Origin = "Access-Control-Allow-Origin".toLowerCase(); //value: *
 
 		/**
+		 *
+		 */
+		String Access_Control_Allow_Headers = "Access-Control-Allow-Headers".toLowerCase(); //value: x-requested-with,content-type
+
+		/**
