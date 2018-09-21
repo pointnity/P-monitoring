@@ -143,3 +143,5 @@ public interface HttpConst {
 		 */
 		String Refresh = "Refresh".toLowerCase();
 		/**
+		 * Server name.The servlet generally does not set this value, but is set by the Web server itself.
+		 */
