@@ -125,3 +125,4 @@ public interface HttpConst {
 		 */
 		String Expires = "Expires".toLowerCase();
 		/**
+		 * The last modification time of the document.The customer can provide a date through the If-modified-since request header, which will be treated as a conditional get,
