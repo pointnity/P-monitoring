@@ -76,3 +76,6 @@ public interface HttpConst {
 			/**
 			 * Normal text, usually JSON or xml
 			 */
+			String text_plain = "text/plain".toLowerCase();
+			/**
+			 * File Upload
