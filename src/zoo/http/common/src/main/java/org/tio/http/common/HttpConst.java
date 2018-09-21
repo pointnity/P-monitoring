@@ -68,3 +68,5 @@ public interface HttpConst {
 		public interface Connection {
 			String keep_alive = "keep-alive".toLowerCase();
 			String Upgrade = "Upgrade".toLowerCase();
+			String close = "close".toLowerCase();
+		}
