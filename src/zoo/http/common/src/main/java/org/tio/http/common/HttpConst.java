@@ -6,3 +6,5 @@ package org.tio.http.common;
  *
  */
 public interface HttpConst {
+
+	/**
