@@ -15,3 +15,7 @@ public interface HttpConst {
 	public enum RequestBodyFormat {
 		URLENCODED, MULTIPART, TEXT
 	}
+
+	/**
+	 *         Accept-Language : zh-CN,zh;q=0.8
+	     Sec-WebSocket-Version : 13
