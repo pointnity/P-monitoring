@@ -79,3 +79,6 @@ public interface HttpConst {
 			String text_plain = "text/plain".toLowerCase();
 			/**
 			 * File Upload
+			 */
+			String multipart_form_data = "multipart/form-data".toLowerCase();
+			/**
