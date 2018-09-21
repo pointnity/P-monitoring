@@ -108,4 +108,6 @@ public interface HttpConst {
 		 * Using gzip to compress documents can significantly reduce the download time of HTML documents.
 		 * Java's gzipoutputstream can be easily gzip compressed, but only on Unix Netscape and IE 4, ie 5 on Windows.
 		 * Therefore, the servlet should look through the accept-encoding header (that is, request.GetHeader ("accept-encoding")) check if the browser supports gzip,
+		 * Returns the gzip-compressed HTML page for a browser that supports gzip, returning a normal page for another browser.
+		 */
 
