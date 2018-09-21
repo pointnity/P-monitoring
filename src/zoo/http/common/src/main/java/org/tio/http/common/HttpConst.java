@@ -70,3 +70,6 @@ public interface HttpConst {
 			String Upgrade = "Upgrade".toLowerCase();
 			String close = "close".toLowerCase();
 		}
+
+		//application/x-www-form-urlencoded、multipart/form-data、text/plain
+		public interface Content_Type {
