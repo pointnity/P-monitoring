@@ -22,3 +22,4 @@ public interface HttpConst {
 	  Sec-WebSocket-Extensions : permessage-deflate; client_max_window_bits
 	                   Upgrade : websocket
 	                      Host : t-io.org:9321
+	           Accept-Encoding : gzip, deflate, sdch
