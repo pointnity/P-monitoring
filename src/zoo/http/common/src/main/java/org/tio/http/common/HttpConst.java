@@ -115,3 +115,5 @@ public interface HttpConst {
 		 * Indicates what MIME type the following document belongs to.The servlet defaults to Text/plain, but it usually needs to be explicitly specified as text/html.
 		 * Because Content-type is often set up, HttpServletResponse provides a dedicated method setContentType.
 		 */
+		String Content_Type = "Content-Type".toLowerCase();
+		/**
