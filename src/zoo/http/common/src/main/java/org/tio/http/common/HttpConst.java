@@ -117,3 +117,5 @@ public interface HttpConst {
 		 */
 		String Content_Type = "Content-Type".toLowerCase();
 		/**
+		 * The current GMT time.You can use Setdateheader to set this header to avoid the hassle of converting the time format.
+		 */
