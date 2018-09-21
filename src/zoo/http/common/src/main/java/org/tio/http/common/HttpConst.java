@@ -145,3 +145,8 @@ public interface HttpConst {
 		/**
 		 * Server name.The servlet generally does not set this value, but is set by the Web server itself.
 		 */
+		String Server = "Server".toLowerCase();
+
+		/**
+		 *
+		 */
