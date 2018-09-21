@@ -50,3 +50,7 @@ public interface HttpConst {
 		String Content_Length = "Content-Length".toLowerCase(); //65
 		String Content_Type = "Content-Type".toLowerCase();// : 【application/x-www-form-urlencoded】【application/x-www-form-urlencoded; charset=UTF-8】【multipart/form-data; boundary=----WebKitFormBoundaryuwYcfA2AIgxqIxA0 】
 		String If_Modified_Since = "If-Modified-Since".toLowerCase(); //与Last-Modifiedc With
+
+		/**
+		 * Value is XMLHttpRequest is the Ajax
+		 */
