@@ -12,3 +12,4 @@ public interface HttpConst {
 	 * @author tanyaowu
 	 *  
 	 */
+	public enum RequestBodyFormat {
