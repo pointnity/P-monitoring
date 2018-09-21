@@ -27,3 +27,4 @@ public interface HttpConst {
 	                    Origin 
 	         Sec-WebSocket-Key : kmCL2C7q9vtNSMyHpft7lw==
 	                Connection : Upgrade
+	             Cache-Control : no-cache
