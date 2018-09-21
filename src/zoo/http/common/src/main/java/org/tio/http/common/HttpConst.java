@@ -93,3 +93,8 @@ public interface HttpConst {
 		String Set_Cookie = "Set-Cookie".toLowerCase(); //Set-Cookie: UserID=JohnDoe; Max-Age=3600; Version=1
 		String Content_Length = "Content-Length".toLowerCase(); //65
 
+		String Connection = "Connection".toLowerCase(); //Upgrade,  keep-alive
+		String Keep_Alive = "Keep-Alive".toLowerCase(); //Keep-Alive:timeout=20
+		String Sec_WebSocket_Accept = "Sec-WebSocket-Accept".toLowerCase();
+		String Upgrade = "Upgrade".toLowerCase();
+
