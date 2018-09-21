@@ -9,3 +9,6 @@ public interface HttpConst {
 
 	/**
 	 * Format of the request body
+	 * @author tanyaowu
+	 *  
+	 */
