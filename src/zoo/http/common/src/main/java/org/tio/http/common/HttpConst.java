@@ -87,3 +87,9 @@ public interface HttpConst {
 			String application_x_www_form_urlencoded = "application/x-www-form-urlencoded".toLowerCase();
 		}
 	}
+
+	public interface ResponseHeaderKey {
+		//Set-Cookie: UserID=JohnDoe; Max-Age=3600; Version=1
+		String Set_Cookie = "Set-Cookie".toLowerCase(); //Set-Cookie: UserID=JohnDoe; Max-Age=3600; Version=1
+		String Content_Length = "Content-Length".toLowerCase(); //65
+
