@@ -173,3 +173,12 @@ public interface HttpConst {
 			String keep_alive = "keep-alive".toLowerCase();
 			String Upgrade = "Upgrade".toLowerCase();
 			String close = "close".toLowerCase();
+		}
+	}
+
+	/**
+	 *
+	 */
+	String SERVER_INFO = "tio-httpserver/0.0.1";
+
+	/**
