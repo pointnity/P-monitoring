@@ -13,3 +13,5 @@ public interface HttpConst {
 	 *  
 	 */
 	public enum RequestBodyFormat {
+		URLENCODED, MULTIPART, TEXT
+	}
