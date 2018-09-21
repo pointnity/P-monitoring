@@ -19,3 +19,5 @@ public interface HttpConst {
 	/**
 	 *         Accept-Language : zh-CN,zh;q=0.8
 	     Sec-WebSocket-Version : 13
+	  Sec-WebSocket-Extensions : permessage-deflate; client_max_window_bits
+	                   Upgrade : websocket
