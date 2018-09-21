@@ -8,3 +8,4 @@ package org.tio.http.common;
 public interface HttpConst {
 
 	/**
+	 * Format of the request body
