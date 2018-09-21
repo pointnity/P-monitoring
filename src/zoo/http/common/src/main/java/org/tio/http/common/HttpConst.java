@@ -140,3 +140,6 @@ public interface HttpConst {
 		Note that the meaning of refresh is "refresh this page after n seconds or visit the specified page" instead of "refresh this page every n seconds or visit the specified page".Therefore, continuous refresh requires a refresh header to be sent each time, and sending a 204 status code prevents the browser from continuing to refresh, whether it is using the refresh header or the >
 		
 		Note that the refresh header is not part of the HTTP 1.1 formal specification, but rather an extension, but both Netscape and IE support it.
+		 */
+		String Refresh = "Refresh".toLowerCase();
+		/**
