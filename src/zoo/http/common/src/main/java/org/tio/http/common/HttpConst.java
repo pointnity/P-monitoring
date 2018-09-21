@@ -41,3 +41,4 @@ public interface HttpConst {
 		String Connection = "Connection".toLowerCase(); //Upgrade,  keep-alive
 		String User_Agent = "User-Agent".toLowerCase(); //Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3088.3 Safari/537.36
 		String Sec_WebSocket_Version = "Sec-WebSocket-Version".toLowerCase(); //13
+		String Host = "Host".toLowerCase(); //127.0.0.1:9321
