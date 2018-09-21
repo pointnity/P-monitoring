@@ -66,3 +66,5 @@ public interface HttpConst {
 	 */
 	public interface RequestHeaderValue {
 		public interface Connection {
+			String keep_alive = "keep-alive".toLowerCase();
+			String Upgrade = "Upgrade".toLowerCase();
