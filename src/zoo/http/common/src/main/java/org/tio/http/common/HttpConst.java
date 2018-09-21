@@ -104,3 +104,5 @@ public interface HttpConst {
 		 */
 		String Content_disposition = "Content-disposition".toLowerCase();
 		/**
+		 * The encoding (Encode) method of the document.Can only be obtained after decoding Content-Type the content type specified by the header.
+		 * Using gzip to compress documents can significantly reduce the download time of HTML documents.
