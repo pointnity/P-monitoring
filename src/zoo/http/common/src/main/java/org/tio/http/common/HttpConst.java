@@ -43,3 +43,5 @@ public interface HttpConst {
 		String Sec_WebSocket_Version = "Sec-WebSocket-Version".toLowerCase(); //13
 		String Host = "Host".toLowerCase(); //127.0.0.1:9321
 		String Pragma = "Pragma".toLowerCase(); //no-cache
+		String Accept_Encoding = "Accept-Encoding".toLowerCase(); //gzip, deflate, br
+		String Accept_Language = "Accept-Language".toLowerCase(); //zh-CN,zh;q=0.8,en;q=0.6
