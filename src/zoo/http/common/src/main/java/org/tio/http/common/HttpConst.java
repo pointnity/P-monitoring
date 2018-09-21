@@ -110,4 +110,5 @@ public interface HttpConst {
 		 * Therefore, the servlet should look through the accept-encoding header (that is, request.GetHeader ("accept-encoding")) check if the browser supports gzip,
 		 * Returns the gzip-compressed HTML page for a browser that supports gzip, returning a normal page for another browser.
 		 */
-
+		String Content_Encoding = "Content-Encoding".toLowerCase();
+		/**
