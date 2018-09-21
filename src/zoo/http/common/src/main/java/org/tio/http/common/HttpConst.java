@@ -82,3 +82,5 @@ public interface HttpConst {
 			 */
 			String multipart_form_data = "multipart/form-data".toLowerCase();
 			/**
+			 * Normal.key-value
+			 */
