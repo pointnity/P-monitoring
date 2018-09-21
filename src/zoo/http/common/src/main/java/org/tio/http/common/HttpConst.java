@@ -130,3 +130,5 @@ public interface HttpConst {
 		 */
 		String Last_Modified = "Last-Modified".toLowerCase();
 		/**
+		 *Indicates where the customer should go to extract the document.Location is usually not set directly, but by HttpServletResponse's Sendredirect method, which sets the status code to 302.
+		 */
