@@ -29,3 +29,5 @@ public interface HttpConst {
 	                Connection : Upgrade
 	             Cache-Control : no-cache
 	                    Pragma : no-cache
+	 *
+	 * @author tanyaowu
