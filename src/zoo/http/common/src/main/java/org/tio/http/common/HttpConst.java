@@ -73,3 +73,6 @@ public interface HttpConst {
 
 		//application/x-www-form-urlencoded、multipart/form-data、text/plain
 		public interface Content_Type {
+			/**
+			 * Normal text, usually JSON or xml
+			 */
