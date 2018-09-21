@@ -136,3 +136,7 @@ public interface HttpConst {
 		/**
 		 *Indicates how much time the browser should refresh the document, in seconds.In addition to refreshing the current document, you can also pass SetHeader ("Refresh", "5;Url//host/path ") lets the browser read the specified page.
 		Note This functionality is usually done by setting the HTML page in the head area of the For Servlets, however, it is more convenient to set the refresh header directly.
+		
+		Note that the meaning of refresh is "refresh this page after n seconds or visit the specified page" instead of "refresh this page every n seconds or visit the specified page".Therefore, continuous refresh requires a refresh header to be sent each time, and sending a 204 status code prevents the browser from continuing to refresh, whether it is using the refresh header or the >
+		
+		Note that the refresh header is not part of the HTTP 1.1 formal specification, but rather an extension, but both Netscape and IE support it.
