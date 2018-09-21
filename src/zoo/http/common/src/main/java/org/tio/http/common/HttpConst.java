@@ -168,3 +168,8 @@ public interface HttpConst {
 	 * @author tanyaowu
 	 * 
 	 */
+	public interface ResponseHeaderValue {
+		public interface Connection {
+			String keep_alive = "keep-alive".toLowerCase();
+			String Upgrade = "Upgrade".toLowerCase();
+			String close = "close".toLowerCase();
