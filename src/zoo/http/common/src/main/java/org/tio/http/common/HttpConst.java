@@ -54,3 +54,5 @@ public interface HttpConst {
 		/**
 		 * Value is XMLHttpRequest is the Ajax
 		 */
+		String X_Requested_With = "X-Requested-With".toLowerCase();//XMLHttpRequest
+	}
