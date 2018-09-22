@@ -27,3 +27,7 @@ public class HttpMultiBodyDecoder {
 		private String name = null;
 		private String filename = null;
 		private String contentType = null;
+
+		private Map<String, String> map = new HashMap<>();
+
+		public String getContentDisposition() {
