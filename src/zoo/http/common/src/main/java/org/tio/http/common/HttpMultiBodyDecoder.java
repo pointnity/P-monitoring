@@ -225,3 +225,8 @@ public class HttpMultiBodyDecoder {
 	 * 
 	 * @param header
 	 * @param request
+	 * @param buffer
+	 * @param boundary
+	 * @param endBoundary
+	 * @param channelContext
+	 * @return
