@@ -128,3 +128,7 @@ public class HttpMultiBodyDecoder {
 					//                    int offset = HttpMultiBodyDecoder.processReadIndex(buffer);
 					if (boundary.equals(line)) {
 						step = Step.HEADER;
+					} else if (endBoundary.equals(line)) // It's over
+					{
+						//                        int ss = buffer.readerIndex() + 2 - offset;
+						break;
