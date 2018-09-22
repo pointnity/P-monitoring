@@ -178,3 +178,7 @@ public class HttpMultiBodyDecoder {
 	/**
 	 * The return value does not include the last\r\n
 	 * @param buffer
+	 * @param charset
+	 * @return
+	 * @throws UnsupportedEncodingException
+	 */
