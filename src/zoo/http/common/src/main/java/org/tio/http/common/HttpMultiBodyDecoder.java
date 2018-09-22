@@ -89,3 +89,5 @@ public class HttpMultiBodyDecoder {
 	}
 
 	public static enum Step {
+		BOUNDARY, HEADER, BODY, END
+	}
