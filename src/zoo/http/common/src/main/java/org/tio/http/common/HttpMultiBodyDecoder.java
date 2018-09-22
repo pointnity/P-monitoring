@@ -66,3 +66,7 @@ public class HttpMultiBodyDecoder {
 			this.map = map;
 		}
 
+		public void setName(String name) {
+			this.name = name;
+		}
+	}
