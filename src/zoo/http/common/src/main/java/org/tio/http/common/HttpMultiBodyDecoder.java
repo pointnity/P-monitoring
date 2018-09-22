@@ -182,3 +182,5 @@ public class HttpMultiBodyDecoder {
 	 * @return
 	 * @throws UnsupportedEncodingException
 	 */
+	//	public static String getLine(ByteBuffer buffer, String charset) throws UnsupportedEncodingException {
+	//		char lastByte = 0; // Previous byte
