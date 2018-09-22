@@ -47,3 +47,9 @@ public class HttpMultiBodyDecoder {
 		}
 
 		public String getName() {
+			return name;
+		}
+
+		public void setContentDisposition(String contentDisposition) {
+			this.contentDisposition = contentDisposition;
+		}
