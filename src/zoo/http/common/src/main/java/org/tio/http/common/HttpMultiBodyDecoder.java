@@ -109,3 +109,8 @@ public class HttpMultiBodyDecoder {
 		if (StringUtils.isBlank(initboundary)) {
 			throw new AioDecodeException("boundary is null");
 		}
+
+		long start = SystemTimer.currentTimeMillis();
+
+		ByteBuffer buffer = ByteBuffer.wrap(bodyBytes);
+		buffer.position(0);
