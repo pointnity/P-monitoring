@@ -163,3 +163,8 @@ public class HttpMultiBodyDecoder {
 				}
 
 			}
+		} catch (LengthOverflowException loe) {
+			throw new AioDecodeException(loe);
+		} catch (UnsupportedEncodingException e) {
+			log.error(channelContext.toString(), e);
+		} finally {
