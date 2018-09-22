@@ -17,3 +17,5 @@ import org.tio.core.utils.ByteBufferUtils;
 import org.tio.http.common.utils.HttpParseUtils;
 import org.tio.utils.SystemTimer;
 
+/**
+ * @author tanyaowu
