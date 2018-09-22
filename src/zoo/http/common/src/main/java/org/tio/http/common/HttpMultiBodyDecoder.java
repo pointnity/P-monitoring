@@ -120,3 +120,6 @@ public class HttpMultiBodyDecoder {
 
 		//        int boundaryLength = boundary.getBytes().length;
 		Step step = Step.BOUNDARY;
+		//        int bufferLength = buffer.capacity();
+		try {
+			label1: while (true) {
