@@ -285,3 +285,9 @@ public class HttpMultiBodyDecoder {
 	 * @param header
 	 * @author tanyaowu
 	 */
+	public static void parseHeader(List<String> lines, Header header, ChannelContext channelContext) throws AioDecodeException {
+		if (lines == null || lines.size() == 0) {
+			throw new AioDecodeException("multipart_form_data 格The wrong type, no header information");
+		}
+
+		try {
