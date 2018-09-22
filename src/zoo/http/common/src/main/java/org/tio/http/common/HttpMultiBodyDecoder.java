@@ -196,3 +196,8 @@ public class HttpMultiBodyDecoder {
 	//					int length = endIndex - startIndex;
 	//					byte[] dst = new byte[length];
 	//
+	//					System.arraycopy(buffer.array(), startIndex, dst, 0, length);
+	//					String line = new String(dst, charset);
+	//					return line;
+	//				}
+	//			}
