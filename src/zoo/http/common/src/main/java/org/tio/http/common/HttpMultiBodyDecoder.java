@@ -53,3 +53,6 @@ public class HttpMultiBodyDecoder {
 		public void setContentDisposition(String contentDisposition) {
 			this.contentDisposition = contentDisposition;
 		}
+
+		public void setContentType(String contentType) {
+			this.contentType = contentType;
