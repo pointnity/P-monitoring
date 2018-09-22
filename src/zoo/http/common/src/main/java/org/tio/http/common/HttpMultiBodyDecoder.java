@@ -43,3 +43,7 @@ public class HttpMultiBodyDecoder {
 		}
 
 		public Map<String, String> getMap() {
+			return map;
+		}
+
+		public String getName() {
