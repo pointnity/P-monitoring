@@ -239,3 +239,8 @@ public class HttpMultiBodyDecoder {
 		int initPosition = buffer.position();
 
 		while (buffer.hasRemaining()) {
+			String line = ByteBufferUtils.readLine(buffer, request.getCharset(), HttpConfig.MAX_LENGTH_OF_MULTI_BODY);
+			boolean isEndBoundary = endBoundary.equals(line);
+			boolean isBoundary = boundary.equals(line);
+			if (isBoundary || isEndBoundary) {
+				int startIndex = initPosition;
