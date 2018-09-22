@@ -123,3 +123,8 @@ public class HttpMultiBodyDecoder {
 		//        int bufferLength = buffer.capacity();
 		try {
 			label1: while (true) {
+				if (step == Step.BOUNDARY) {
+					String line = ByteBufferUtils.readLine(buffer, request.getCharset(), HttpConfig.MAX_LENGTH_OF_BOUNDARY);
+					//                    int offset = HttpMultiBodyDecoder.processReadIndex(buffer);
+					if (boundary.equals(line)) {
+						step = Step.HEADER;
