@@ -35,3 +35,7 @@ public class HttpMultiBodyDecoder {
 		}
 
 		public String getContentType() {
+			return contentType;
+		}
+
+		public String getFilename() {
