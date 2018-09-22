@@ -230,3 +230,7 @@ public class HttpMultiBodyDecoder {
 	 * @param endBoundary
 	 * @param channelContext
 	 * @return
+	 * @throws UnsupportedEncodingException
+	 * @throws LengthOverflowException
+	 * @author tanyaowu
+	 */
