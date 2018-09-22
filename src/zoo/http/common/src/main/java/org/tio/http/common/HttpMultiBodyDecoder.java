@@ -23,3 +23,5 @@ import org.tio.utils.SystemTimer;
  */
 public class HttpMultiBodyDecoder {
 	public static class Header {
+		private String contentDisposition = "form-data";
+		private String name = null;
