@@ -145,3 +145,10 @@ public class HttpMultiBodyDecoder {
 						if ("".equals(line)) {
 							break label2;
 						} else {
+							lines.add(line);
+						}
+					}
+
+					parseHeader(lines, multiBodyHeader, channelContext);
+					step = Step.BODY;
+				}
