@@ -201,3 +201,7 @@ public class HttpMultiBodyDecoder {
 	//					return line;
 	//				}
 	//			}
+	//			lastByte = b;
+	//		}
+	//		return null;
+	//	}
