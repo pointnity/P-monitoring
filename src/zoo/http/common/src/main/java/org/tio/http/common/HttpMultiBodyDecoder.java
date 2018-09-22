@@ -21,3 +21,5 @@ import org.tio.utils.SystemTimer;
  * @author tanyaowu
  *  
  */
+public class HttpMultiBodyDecoder {
+	public static class Header {
