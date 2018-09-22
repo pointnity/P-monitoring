@@ -101,3 +101,6 @@ public class HttpMultiBodyDecoder {
 	//        {
 	//            buffer.readerIndex(newReaderIndex + 1);
 	//            return 1;
+	//        }
+	//        return 0;
+	//    }
