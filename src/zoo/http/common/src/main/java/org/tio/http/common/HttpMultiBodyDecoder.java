@@ -333,3 +333,13 @@ public class HttpMultiBodyDecoder {
 		//				header.setContentType(contentType);
 		//			}
 		//		}
+	}
+
+	/**
+	 *
+	 */
+	public HttpMultiBodyDecoder() {
+
+	}
+
+}
