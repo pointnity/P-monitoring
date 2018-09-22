@@ -217,3 +217,11 @@ public class HttpMultiBodyDecoder {
 
 		String xString = ByteBufferUtils.readLine(buffer, "utf-8");
 		System.out.println(xString);
+		xString = ByteBufferUtils.readLine(buffer, "utf-8");
+		System.out.println(xString);
+	}
+
+	/**
+	 * 
+	 * @param header
+	 * @param request
