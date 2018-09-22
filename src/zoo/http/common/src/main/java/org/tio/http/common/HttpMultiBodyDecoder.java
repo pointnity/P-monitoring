@@ -234,3 +234,8 @@ public class HttpMultiBodyDecoder {
 	 * @throws LengthOverflowException
 	 * @author tanyaowu
 	 */
+	public static Step parseBody(Header header, HttpRequest request, ByteBuffer buffer, String boundary, String endBoundary, ChannelContext channelContext)
+			throws UnsupportedEncodingException, LengthOverflowException {
+		int initPosition = buffer.position();
+
+		while (buffer.hasRemaining()) {
