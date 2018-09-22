@@ -269,3 +269,11 @@ public class HttpMultiBodyDecoder {
 				}
 			}
 		}
+		return null;
+	}
+
+	/**
+	 * 【
+	 * Content-Disposition: form-data; name="uploadFile"; filename=""
+	 * Content-Type: application/octet-stream
+	 * 】
