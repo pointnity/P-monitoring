@@ -141,3 +141,7 @@ public class HttpMultiBodyDecoder {
 				if (step == Step.HEADER) {
 					List<String> lines = new ArrayList<>(2);
 					label2: while (true) {
+						String line = ByteBufferUtils.readLine(buffer, request.getCharset(), HttpConfig.MAX_LENGTH_OF_MULTI_HEADER);
+						if ("".equals(line)) {
+							break label2;
+						} else {
