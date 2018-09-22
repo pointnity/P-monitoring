@@ -244,3 +244,11 @@ public class HttpMultiBodyDecoder {
 			boolean isBoundary = boundary.equals(line);
 			if (isBoundary || isEndBoundary) {
 				int startIndex = initPosition;
+				int endIndex = buffer.position() - line.getBytes().length - 2 - 2;
+				int length = endIndex - startIndex;
+				byte[] dst = new byte[length];
+
+				System.arraycopy(buffer.array(), startIndex, dst, 0, length);
+				String filename = header.getFilename();
+				if (filename != null)//The field type is file
+				{
