@@ -60,3 +60,9 @@ public class HttpMultiBodyDecoder {
 
 		public void setFilename(String filename) {
 			this.filename = filename;
+		}
+
+		public void setMap(Map<String, String> map) {
+			this.map = map;
+		}
+
