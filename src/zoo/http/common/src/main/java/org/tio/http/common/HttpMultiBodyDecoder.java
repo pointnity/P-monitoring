@@ -114,3 +114,9 @@ public class HttpMultiBodyDecoder {
 
 		ByteBuffer buffer = ByteBuffer.wrap(bodyBytes);
 		buffer.position(0);
+
+		String boundary = "--" + initboundary;
+		String endBoundary = boundary + "--";
+
+		//        int boundaryLength = boundary.getBytes().length;
+		Step step = Step.BOUNDARY;
