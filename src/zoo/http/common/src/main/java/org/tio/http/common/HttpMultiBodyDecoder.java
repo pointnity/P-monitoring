@@ -137,3 +137,7 @@ public class HttpMultiBodyDecoder {
 					}
 				}
 
+				Header multiBodyHeader = new Header();
+				if (step == Step.HEADER) {
+					List<String> lines = new ArrayList<>(2);
+					label2: while (true) {
