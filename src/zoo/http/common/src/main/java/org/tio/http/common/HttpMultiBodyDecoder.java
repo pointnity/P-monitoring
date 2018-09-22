@@ -56,3 +56,7 @@ public class HttpMultiBodyDecoder {
 
 		public void setContentType(String contentType) {
 			this.contentType = contentType;
+		}
+
+		public void setFilename(String filename) {
+			this.filename = filename;
