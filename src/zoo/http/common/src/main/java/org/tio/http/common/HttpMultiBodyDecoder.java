@@ -168,3 +168,7 @@ public class HttpMultiBodyDecoder {
 		} catch (UnsupportedEncodingException e) {
 			log.error(channelContext.toString(), e);
 		} finally {
+			long end = SystemTimer.currentTimeMillis();
+			long iv = end - start;
+			log.info("Parsing time-consuming:{}ms", iv);
+		}
