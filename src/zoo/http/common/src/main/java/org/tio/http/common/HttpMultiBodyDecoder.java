@@ -91,3 +91,9 @@ public class HttpMultiBodyDecoder {
 	public static enum Step {
 		BOUNDARY, HEADER, BODY, END
 	}
+
+	private static Logger log = LoggerFactory.getLogger(HttpMultiBodyDecoder.class);
+
+	//    public static int processReadIndex(ByteBuffer buffer)
+	//    {
+	//        int newReaderIndex = buffer.readerIndex();
