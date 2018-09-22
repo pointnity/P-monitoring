@@ -328,3 +328,8 @@ public class HttpMultiBodyDecoder {
 		//					header.setFilename(FilenameUtils.getName(filename));
 		//				}
 		//			} else if (i == 1) {
+		//				String[] map = StringUtils.split(line, ":");
+		//				String contentType = map[1].trim();//
+		//				header.setContentType(contentType);
+		//			}
+		//		}
