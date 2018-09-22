@@ -277,3 +277,11 @@ public class HttpMultiBodyDecoder {
 	 * Content-Disposition: form-data; name="uploadFile"; filename=""
 	 * Content-Type: application/octet-stream
 	 * 】
+	 *
+	 * 【
+	 * Content-Disposition: form-data; name="end"
+	 * 】
+	 * @param lines
+	 * @param header
+	 * @author tanyaowu
+	 */
