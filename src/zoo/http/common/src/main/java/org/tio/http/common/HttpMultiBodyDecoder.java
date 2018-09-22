@@ -104,3 +104,8 @@ public class HttpMultiBodyDecoder {
 	//        }
 	//        return 0;
 	//    }
+
+	public static void decode(HttpRequest request, RequestLine firstLine, byte[] bodyBytes, String initboundary, ChannelContext channelContext) throws AioDecodeException {
+		if (StringUtils.isBlank(initboundary)) {
+			throw new AioDecodeException("boundary is null");
+		}
