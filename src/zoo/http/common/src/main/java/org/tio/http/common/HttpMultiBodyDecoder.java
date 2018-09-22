@@ -86,3 +86,6 @@ public class HttpMultiBodyDecoder {
 	public static interface MultiBodyHeaderKey {
 		String Content_Disposition = "Content-Disposition".toLowerCase();
 		String Content_Type = "Content-Type".toLowerCase();
+	}
+
+	public static enum Step {
