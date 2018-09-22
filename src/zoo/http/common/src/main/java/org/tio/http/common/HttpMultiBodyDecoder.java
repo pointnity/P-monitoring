@@ -132,3 +132,8 @@ public class HttpMultiBodyDecoder {
 					{
 						//                        int ss = buffer.readerIndex() + 2 - offset;
 						break;
+					} else {
+						throw new AioDecodeException("line need:" + boundary + ", but is: " + line + "");
+					}
+				}
+
