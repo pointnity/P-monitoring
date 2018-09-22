@@ -259,3 +259,6 @@ public class HttpMultiBodyDecoder {
 						uploadFile.setSize(dst.length);
 						request.addParam(header.getName(), uploadFile);
 					}
+				} else { //This field is a normal key-value
+					request.addParam(header.getName(), new String(dst, request.getCharset()));
+				}
