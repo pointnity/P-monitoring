@@ -316,3 +316,9 @@ public class HttpMultiBodyDecoder {
 		//		for (int i = 0; i < lines.size(); i++) {
 		//			String line = lines.get(i);
 		//			if (i == 0) {
+		//				String[] mapStrings = StringUtils.split(line, ";");
+		//				String s = mapStrings[0];//
+		//
+		//				String[] namekeyvalue = StringUtils.split(mapStrings[1], "=");
+		//				header.setName(namekeyvalue[1].substring(1, namekeyvalue[1].length() - 1));
+		//
