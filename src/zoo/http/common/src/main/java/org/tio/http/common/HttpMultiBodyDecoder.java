@@ -291,3 +291,9 @@ public class HttpMultiBodyDecoder {
 		}
 
 		try {
+			for (String line : lines) {
+				String[] keyvalue = StringUtils.split(line, ":");
+				String key = StringUtils.lowerCase(StringUtils.trim(keyvalue[0]));//
+				String value = StringUtils.trim(keyvalue[1]);
+				header.map.put(key, value);
+			}
