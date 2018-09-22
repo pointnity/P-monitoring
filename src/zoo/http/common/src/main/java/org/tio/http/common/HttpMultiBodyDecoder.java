@@ -297,3 +297,13 @@ public class HttpMultiBodyDecoder {
 				String value = StringUtils.trim(keyvalue[1]);
 				header.map.put(key, value);
 			}
+
+			String contentDisposition = header.map.get(MultiBodyHeaderKey.Content_Disposition);
+			String name = HttpParseUtils.getPerprotyEqualValue(header.map, MultiBodyHeaderKey.Content_Disposition, "name");
+			String filename = HttpParseUtils.getPerprotyEqualValue(header.map, MultiBodyHeaderKey.Content_Disposition, "filename");
+			String contentType = header.map.get(MultiBodyHeaderKey.Content_Type);//.HttpParseUtils.getPerprotyEqualValue(header.map, MultiBodyHeaderKey.Content_Type, "filename");
+
+			header.setContentDisposition(contentDisposition);
+			header.setName(name);
+			header.setFilename(filename);
+			header.setContentType(contentType);
