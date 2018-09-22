@@ -322,3 +322,9 @@ public class HttpMultiBodyDecoder {
 		//				String[] namekeyvalue = StringUtils.split(mapStrings[1], "=");
 		//				header.setName(namekeyvalue[1].substring(1, namekeyvalue[1].length() - 1));
 		//
+		//				if (mapStrings.length == 3) {
+		//					String[] finenamekeyvalue = StringUtils.split(mapStrings[2], "=");
+		//					String filename = finenamekeyvalue[1].substring(1, finenamekeyvalue[1].length() - 1);
+		//					header.setFilename(FilenameUtils.getName(filename));
+		//				}
+		//			} else if (i == 1) {
