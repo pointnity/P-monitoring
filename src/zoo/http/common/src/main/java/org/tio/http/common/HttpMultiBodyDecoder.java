@@ -172,3 +172,9 @@ public class HttpMultiBodyDecoder {
 			long iv = end - start;
 			log.info("Parsing time-consuming:{}ms", iv);
 		}
+
+	}
+
+	/**
+	 * The return value does not include the last\r\n
+	 * @param buffer
