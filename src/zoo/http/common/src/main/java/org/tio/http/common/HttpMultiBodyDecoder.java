@@ -262,3 +262,10 @@ public class HttpMultiBodyDecoder {
 				} else { //This field is a normal key-value
 					request.addParam(header.getName(), new String(dst, request.getCharset()));
 				}
+				if (isEndBoundary) {
+					return Step.END;
+				} else {
+					return Step.HEADER;
+				}
+			}
+		}
