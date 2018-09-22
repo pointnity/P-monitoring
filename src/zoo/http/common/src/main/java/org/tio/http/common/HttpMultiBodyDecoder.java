@@ -70,3 +70,9 @@ public class HttpMultiBodyDecoder {
 			this.name = name;
 		}
 	}
+
+	/**
+	 * 【
+	 * Content-Disposition: form-data; name="uploadFile"; filename=""
+	 * Content-Type: application/octet-stream
+	 * 】
