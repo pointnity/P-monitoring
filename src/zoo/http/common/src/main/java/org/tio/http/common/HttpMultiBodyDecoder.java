@@ -156,3 +156,10 @@ public class HttpMultiBodyDecoder {
 				if (step == Step.BODY) {
 					Step newParseStep = parseBody(multiBodyHeader, request, buffer, boundary, endBoundary, channelContext);
 					step = newParseStep;
+
+					if (step == Step.END) {
+						break label1;
+					}
+				}
+
+			}
