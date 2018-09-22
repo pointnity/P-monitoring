@@ -97,3 +97,7 @@ public class HttpMultiBodyDecoder {
 	//    public static int processReadIndex(ByteBuffer buffer)
 	//    {
 	//        int newReaderIndex = buffer.readerIndex();
+	//        if (newReaderIndex < buffer.capacity())
+	//        {
+	//            buffer.readerIndex(newReaderIndex + 1);
+	//            return 1;
