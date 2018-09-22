@@ -211,3 +211,9 @@ public class HttpMultiBodyDecoder {
 	 * @throws UnsupportedEncodingException
 	 * @throws LengthOverflowException 
 	 */
+	public static void main(String[] args) throws UnsupportedEncodingException, LengthOverflowException {
+		String testString = "hello\r\nddd\r\n";
+		ByteBuffer buffer = ByteBuffer.wrap(testString.getBytes());
+
+		String xString = ByteBufferUtils.readLine(buffer, "utf-8");
+		System.out.println(xString);
