@@ -152,3 +152,7 @@ public class HttpMultiBodyDecoder {
 					parseHeader(lines, multiBodyHeader, channelContext);
 					step = Step.BODY;
 				}
+
+				if (step == Step.BODY) {
+					Step newParseStep = parseBody(multiBodyHeader, request, buffer, boundary, endBoundary, channelContext);
+					step = newParseStep;
