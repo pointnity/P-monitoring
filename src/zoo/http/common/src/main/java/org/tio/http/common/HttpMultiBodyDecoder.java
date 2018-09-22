@@ -39,3 +39,7 @@ public class HttpMultiBodyDecoder {
 		}
 
 		public String getFilename() {
+			return filename;
+		}
+
+		public Map<String, String> getMap() {
