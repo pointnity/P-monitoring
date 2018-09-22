@@ -187,3 +187,12 @@ public class HttpMultiBodyDecoder {
 	//		int initPosition = buffer.position();
 	//
 	//		while (buffer.hasRemaining()) {
+	//			char b = (char) buffer.get();
+	//
+	//			if (b == '\n') {
+	//				if (lastByte == '\r') {
+	//					int startIndex = initPosition;
+	//					int endIndex = buffer.position() - 2;
+	//					int length = endIndex - startIndex;
+	//					byte[] dst = new byte[length];
+	//
