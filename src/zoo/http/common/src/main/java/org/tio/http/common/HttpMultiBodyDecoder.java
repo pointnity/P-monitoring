@@ -252,3 +252,10 @@ public class HttpMultiBodyDecoder {
 				String filename = header.getFilename();
 				if (filename != null)//The field type is file
 				{
+					if (!"".equals(filename)) { //
+						UploadFile uploadFile = new UploadFile();
+						uploadFile.setName(filename);
+						uploadFile.setData(dst);
+						uploadFile.setSize(dst.length);
+						request.addParam(header.getName(), uploadFile);
+					}
