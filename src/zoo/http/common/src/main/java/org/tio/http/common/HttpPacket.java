@@ -76,3 +76,8 @@ public class HttpPacket extends Packet {
 	protected Map<String, String> headers = new HashMap<>();
 
 	public HttpPacket() {
+	}
+
+	public void addHeader(String key, String value) {
+		headers.put(key, value);
+	}
