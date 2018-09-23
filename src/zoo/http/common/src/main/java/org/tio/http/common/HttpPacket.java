@@ -113,3 +113,7 @@ public class HttpPacket extends Packet {
 	public void removeHeader(String key, String value) {
 		headers.remove(key);
 	}
+
+	/**
+	 * @param headers the headers to set
+	 */
