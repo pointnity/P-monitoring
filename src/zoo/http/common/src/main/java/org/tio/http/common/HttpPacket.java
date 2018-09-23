@@ -102,3 +102,6 @@ public class HttpPacket extends Packet {
 	/**
 	 * @return the headers
 	 */
+	public Map<String, String> getHeaders() {
+		return headers;
+	}
