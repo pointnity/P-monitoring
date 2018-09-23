@@ -35,3 +35,6 @@ public class HttpPacket extends Packet {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public Object getAttribute(String key) {
+		return props.get(key);
+	}
