@@ -63,3 +63,5 @@ public class HttpPacket extends Packet {
 	 * @param key
 	 * @param value
 	 * @param httpConfig
+	 * @author tanyaowu
+	 */
