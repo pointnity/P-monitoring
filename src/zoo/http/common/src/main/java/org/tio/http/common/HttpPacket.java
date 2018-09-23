@@ -87,3 +87,7 @@ public class HttpPacket extends Packet {
 			this.headers.putAll(headers);
 		}
 	}
+
+	/**
+	 * @return the body
+	 */
