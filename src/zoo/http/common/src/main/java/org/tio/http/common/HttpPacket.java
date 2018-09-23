@@ -12,3 +12,5 @@ import org.tio.core.intf.Packet;
  * @author tanyaowu
  *
  */
+public class HttpPacket extends Packet {
+
