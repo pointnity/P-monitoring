@@ -84,3 +84,6 @@ public class HttpPacket extends Packet {
 
 	public void addHeaders(Map<String, String> headers) {
 		if (headers != null) {
+			this.headers.putAll(headers);
+		}
+	}
