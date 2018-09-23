@@ -26,3 +26,7 @@ public class HttpPacket extends Packet {
 	public static void main(String[] args) {
 
 	}
+	
+	private Map<String, Serializable> props = new ConcurrentHashMap<>();
+	
+	/**
