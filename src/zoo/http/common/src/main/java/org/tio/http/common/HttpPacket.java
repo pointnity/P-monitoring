@@ -65,3 +65,6 @@ public class HttpPacket extends Packet {
 	 * @param httpConfig
 	 * @author tanyaowu
 	 */
+	public void setAttribute(String key, Serializable value) {
+		props.put(key, value);
+	}
