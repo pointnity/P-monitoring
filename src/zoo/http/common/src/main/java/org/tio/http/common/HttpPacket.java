@@ -68,3 +68,7 @@ public class HttpPacket extends Packet {
 	public void setAttribute(String key, Serializable value) {
 		props.put(key, value);
 	}
+	
+	protected byte[] body;
+
+	private String headerString;
