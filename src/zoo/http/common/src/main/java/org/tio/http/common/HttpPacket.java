@@ -60,3 +60,6 @@ public class HttpPacket extends Packet {
 
 	/**
 	 * Set request Properties
+	 * @param key
+	 * @param value
+	 * @param httpConfig
