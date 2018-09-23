@@ -41,3 +41,6 @@ public class HttpPacket extends Packet {
 	
 	public Object getAttribute(String key, Serializable defaultValue) {
 		Serializable ret = props.get(key);
+		if (ret == null) {
+			return defaultValue;
+		}
