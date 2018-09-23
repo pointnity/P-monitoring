@@ -91,3 +91,10 @@ public class HttpPacket extends Packet {
 	/**
 	 * @return the body
 	 */
+	public byte[] getBody() {
+		return body;
+	}
+
+	public String getHeader(String key) {
+		return headers.get(key);
+	}
