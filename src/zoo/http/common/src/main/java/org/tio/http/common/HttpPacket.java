@@ -72,3 +72,7 @@ public class HttpPacket extends Packet {
 	protected byte[] body;
 
 	private String headerString;
+
+	protected Map<String, String> headers = new HashMap<>();
+
+	public HttpPacket() {
