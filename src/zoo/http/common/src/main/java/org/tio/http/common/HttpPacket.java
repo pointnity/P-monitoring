@@ -54,3 +54,6 @@ public class HttpPacket extends Packet {
 	 * @param httpConfig
 	 * @author tanyaowu
 	 */
+	public void removeAttribute(String key) {
+		props.remove(key);
+	}
