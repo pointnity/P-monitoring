@@ -21,3 +21,5 @@ public class HttpPacket extends Packet {
 	//	public static final int MAX_LENGTH_OF_BODY = (int) (1024 * 1024 * 5.1); //Only how much m data is supported
 
 	/**
+	 * @param args
+	 */
