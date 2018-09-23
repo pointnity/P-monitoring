@@ -57,3 +57,6 @@ public class HttpPacket extends Packet {
 	public void removeAttribute(String key) {
 		props.remove(key);
 	}
+
+	/**
+	 * Set request Properties
