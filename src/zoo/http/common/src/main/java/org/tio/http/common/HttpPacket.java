@@ -98,3 +98,7 @@ public class HttpPacket extends Packet {
 	public String getHeader(String key) {
 		return headers.get(key);
 	}
+
+	/**
+	 * @return the headers
+	 */
