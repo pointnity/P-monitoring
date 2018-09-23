@@ -30,3 +30,5 @@ public class HttpPacket extends Packet {
 	private Map<String, Serializable> props = new ConcurrentHashMap<>();
 	
 	/**
+	 * Get Request Properties
+	 * @param key
