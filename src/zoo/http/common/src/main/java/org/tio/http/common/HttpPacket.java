@@ -44,3 +44,7 @@ public class HttpPacket extends Packet {
 		if (ret == null) {
 			return defaultValue;
 		}
+		return ret;
+	}
+	
+	/**
