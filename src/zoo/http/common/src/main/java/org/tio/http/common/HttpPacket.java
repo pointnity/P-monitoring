@@ -105,3 +105,7 @@ public class HttpPacket extends Packet {
 	public Map<String, String> getHeaders() {
 		return headers;
 	}
+
+	public String getHeaderString() {
+		return headerString;
+	}
