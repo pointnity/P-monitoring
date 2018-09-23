@@ -38,3 +38,6 @@ public class HttpPacket extends Packet {
 	public Object getAttribute(String key) {
 		return props.get(key);
 	}
+	
+	public Object getAttribute(String key, Serializable defaultValue) {
+		Serializable ret = props.get(key);
