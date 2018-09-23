@@ -17,3 +17,7 @@ public class HttpPacket extends Packet {
 	//	private static Logger log = LoggerFactory.getLogger(HttpPacket.class);
 
 	private static final long serialVersionUID = 3903186670675671956L;
+
+	//	public static final int MAX_LENGTH_OF_BODY = (int) (1024 * 1024 * 5.1); //Only how much m data is supported
+
+	/**
