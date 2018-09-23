@@ -32,3 +32,6 @@ public class HttpPacket extends Packet {
 	/**
 	 * Get Request Properties
 	 * @param key
+	 * @return
+	 * @author tanyaowu
+	 */
