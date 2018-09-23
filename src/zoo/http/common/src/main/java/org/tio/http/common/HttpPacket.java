@@ -109,3 +109,7 @@ public class HttpPacket extends Packet {
 	public String getHeaderString() {
 		return headerString;
 	}
+
+	public void removeHeader(String key, String value) {
+		headers.remove(key);
+	}
