@@ -230,3 +230,19 @@ public class HttpRequest extends HttpPacket {
 	/**
 	 * @return the httpConfig
 	 */
+	public HttpConfig getHttpConfig() {
+		return httpConfig;
+	}
+
+	/**
+	 * @return the httpSession
+	 */
+	public HttpSession getHttpSession() {
+		return httpSession;
+	}
+
+	/**
+	 * @return the isAjax
+	 */
+	public Boolean getIsAjax() {
+		if (isAjax == null) {
