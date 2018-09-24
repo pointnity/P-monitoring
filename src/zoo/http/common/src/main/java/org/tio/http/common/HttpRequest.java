@@ -45,3 +45,5 @@ public class HttpRequest extends HttpPacket {
 	private List<Cookie> cookies = null;
 	private Map<String, Cookie> cookieMap = null;
 	private int contentLength;
+	//	private byte[] bodyBytes;
+	private String bodyString;
