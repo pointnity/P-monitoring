@@ -305,3 +305,21 @@ public class HttpRequest extends HttpPacket {
 	public Node getRemote() {
 		return remote;
 	}
+
+	/**
+	 * @return the firstLine
+	 */
+	public RequestLine getRequestLine() {
+		return requestLine;
+	}
+
+	/**
+	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
+	public String logstr() {
+		String str = "\r\n请求ID_" + getId() + "\r\n" + getHeaderString();
+		if (null != getBodyString()) {
+			str += getBodyString();
+		}
