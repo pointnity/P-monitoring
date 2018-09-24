@@ -41,3 +41,7 @@ public class HttpRequest extends HttpPacket {
 	/**
 	 *Request parameters
 	 */
+	private Map<String, Object[]> params = null;
+	private List<Cookie> cookies = null;
+	private Map<String, Cookie> cookieMap = null;
+	private int contentLength;
