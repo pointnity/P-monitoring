@@ -73,3 +73,8 @@ public class HttpRequest extends HttpPacket {
 	public HttpRequest(Node remote) {
 		this.remote = remote;
 	}
+
+	public void addParam(String key, Object value) {
+		if (params == null) {
+			params = new HashMap<>();
+		}
