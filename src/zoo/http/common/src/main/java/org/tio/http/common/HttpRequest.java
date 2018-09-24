@@ -112,3 +112,7 @@ public class HttpRequest extends HttpPacket {
 	 * @return
 	 * @author: tanyaowu
 	 */
+	public String getHost() {
+		if (host != null) {
+			return host;
+		}
