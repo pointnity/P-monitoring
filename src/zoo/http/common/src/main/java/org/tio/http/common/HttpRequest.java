@@ -256,3 +256,18 @@ public class HttpRequest extends HttpPacket {
 
 		return isAjax;
 	}
+
+	/**
+	 * @return the isSupportGzip
+	 */
+	public Boolean getIsSupportGzip() {
+		if (isSupportGzip == null) {
+			String Accept_Encoding = getHeader(HttpConst.RequestHeaderKey.Accept_Encoding);
+			if (StringUtils.isNoneBlank(Accept_Encoding)) {
+				String[] ss = StringUtils.split(Accept_Encoding, ",");
+				if (ArrayUtil.contains(ss, "gzip")) {
+					isSupportGzip = true;
+				} else {
+					isSupportGzip = false;
+				}
+			} else {
