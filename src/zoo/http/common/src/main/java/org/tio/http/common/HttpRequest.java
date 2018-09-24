@@ -340,3 +340,8 @@ public class HttpRequest extends HttpPacket {
 
 				Cookie cookie = Cookie.buildCookie(cookieOneMap);
 				cookies.add(cookie);
+				cookieMap.put(cookie.getName(), cookie);
+				//				log.error("{}, Roger that cookie:{}", channelContext, cookie.toString());
+			}
+		}
+	}
