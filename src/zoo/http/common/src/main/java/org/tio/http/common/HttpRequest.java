@@ -365,3 +365,15 @@ public class HttpRequest extends HttpPacket {
 	}
 
 	/**
+	 * @param channelContext the channelContext to set
+	 */
+	public void setChannelContext(ChannelContext channelContext) {
+		this.channelContext = channelContext;
+	}
+
+	/**
+	 * @param charset the charset to set
+	 */
+	public void setCharset(String charset) {
+		this.charset = charset;
+	}
