@@ -323,3 +323,20 @@ public class HttpRequest extends HttpPacket {
 		if (null != getBodyString()) {
 			str += getBodyString();
 		}
+		return str;
+	}
+
+	public void parseCookie() {
+		String cookieline = headers.get(HttpConst.RequestHeaderKey.Cookie);
+		if (StringUtils.isNotBlank(cookieline)) {
+			cookies = new ArrayList<>();
+			cookieMap = new HashMap<>();
+			Map<String, String> _cookiemap = Cookie.getEqualMap(cookieline);
+			List<Map<String, String>> cookieListMap = new ArrayList<>();
+			for (Entry<String, String> cookieMapEntry : _cookiemap.entrySet()) {
+				HashMap<String, String> cookieOneMap = new HashMap<>();
+				cookieOneMap.put(cookieMapEntry.getKey(), cookieMapEntry.getValue());
+				cookieListMap.add(cookieOneMap);
+
+				Cookie cookie = Cookie.buildCookie(cookieOneMap);
+				cookies.add(cookie);
