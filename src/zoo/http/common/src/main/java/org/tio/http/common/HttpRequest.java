@@ -36,3 +36,6 @@ public class HttpRequest extends HttpPacket {
 	 */
 	public static void main(String[] args) {
 	}
+
+	private RequestLine requestLine = null;
+	/**
