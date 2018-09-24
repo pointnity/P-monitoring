@@ -70,3 +70,6 @@ public class HttpRequest extends HttpPacket {
 	 * 
 	 *
 	 */
+	public HttpRequest(Node remote) {
+		this.remote = remote;
+	}
