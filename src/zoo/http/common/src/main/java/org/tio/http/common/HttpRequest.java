@@ -67,3 +67,6 @@ public class HttpRequest extends HttpPacket {
 	 *
 	 *
 	 * @author tanyaowu
+	 * 
+	 *
+	 */
