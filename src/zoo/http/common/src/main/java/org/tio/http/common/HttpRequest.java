@@ -30,3 +30,7 @@ public class HttpRequest extends HttpPacket {
 	/**
 	 * @param args
 	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
