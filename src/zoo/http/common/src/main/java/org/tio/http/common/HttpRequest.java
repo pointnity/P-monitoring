@@ -39,3 +39,5 @@ public class HttpRequest extends HttpPacket {
 
 	private RequestLine requestLine = null;
 	/**
+	 *Request parameters
+	 */
