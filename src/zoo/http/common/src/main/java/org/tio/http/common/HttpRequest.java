@@ -47,3 +47,5 @@ public class HttpRequest extends HttpPacket {
 	private int contentLength;
 	//	private byte[] bodyBytes;
 	private String bodyString;
+	//	private UserAgent userAgent;
+	private RequestBodyFormat bodyFormat;
