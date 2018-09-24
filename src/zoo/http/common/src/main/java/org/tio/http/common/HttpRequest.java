@@ -103,3 +103,8 @@ public class HttpRequest extends HttpPacket {
 	 * @return
 	 * @author: tanyaowu
 	 */
+	public String getUserAgent() {
+		return this.headers.get(HttpConst.RequestHeaderKey.User_Agent);
+	}
+
+	/**
