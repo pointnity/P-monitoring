@@ -178,3 +178,9 @@ public class HttpRequest extends HttpPacket {
 		return contentLength;
 	}
 
+	public Cookie getCookie(String cooiename) {
+		if (cookieMap == null) {
+			return null;
+		}
+		return cookieMap.get(cooiename);
+	}
