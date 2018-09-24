@@ -271,3 +271,17 @@ public class HttpRequest extends HttpPacket {
 					isSupportGzip = false;
 				}
 			} else {
+				isSupportGzip = true;
+			}
+		}
+		return isSupportGzip;
+	}
+
+	/**
+	 * @return the params
+	 */
+	public Map<String, Object[]> getParams() {
+		return params;
+	}
+
+	/**
