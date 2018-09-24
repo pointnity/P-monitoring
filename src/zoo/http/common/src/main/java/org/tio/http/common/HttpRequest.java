@@ -216,3 +216,12 @@ public class HttpRequest extends HttpPacket {
 	//	}
 
 	/**
+	 * @return the cookies
+	 */
+	public List<Cookie> getCookies() {
+		return cookies;
+	}
+
+	/**
+	 * @return the httpConfig
+	 */
