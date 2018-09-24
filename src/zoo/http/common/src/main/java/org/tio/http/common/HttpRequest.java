@@ -122,3 +122,7 @@ public class HttpRequest extends HttpPacket {
 	}
 	
 	/**
+	 * Get the Real client IP
+	 * @return
+	 * @author tanyaowu
+	 */
