@@ -431,3 +431,20 @@ public class HttpRequest extends HttpPacket {
 	public void setHttpSession(HttpSession httpSession) {
 		this.httpSession = httpSession;
 	}
+
+	/**
+	 * @param isAjax the isAjax to set
+	 */
+	public void setIsAjax(Boolean isAjax) {
+		this.isAjax = isAjax;
+	}
+
+	/**
+	 * @param isSupportGzip the isSupportGzip to set
+	 */
+	public void setIsSupportGzip(Boolean isSupportGzip) {
+		this.isSupportGzip = isSupportGzip;
+	}
+
+	/**
+	 * @param params the params to set
