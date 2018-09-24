@@ -319,7 +319,7 @@ public class HttpRequest extends HttpPacket {
 	 */
 	@Override
 	public String logstr() {
-		String str = "\r\n请求ID_" + getId() + "\r\n" + getHeaderString();
+		String str = "\r\n Request ID_" + getId() + "\r\n" + getHeaderString();
 		if (null != getBodyString()) {
 			str += getBodyString();
 		}
