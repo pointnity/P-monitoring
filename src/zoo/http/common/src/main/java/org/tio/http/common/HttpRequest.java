@@ -151,3 +151,8 @@ public class HttpRequest extends HttpPacket {
 	}
 
 	/**
+	 * @return the bodyString
+	 */
+	public String getBodyString() {
+		return bodyString;
+	}
