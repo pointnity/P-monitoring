@@ -356,3 +356,12 @@ public class HttpRequest extends HttpPacket {
 	public void setBodyFormat(RequestBodyFormat bodyFormat) {
 		this.bodyFormat = bodyFormat;
 	}
+
+	/**
+	 * @param bodyString the bodyString to set
+	 */
+	public void setBodyString(String bodyString) {
+		this.bodyString = bodyString;
+	}
+
+	/**
