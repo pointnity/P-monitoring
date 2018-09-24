@@ -54,3 +54,7 @@ public class HttpRequest extends HttpPacket {
 	private Boolean isSupportGzip = null;
 	private HttpSession httpSession;
 	private Node remote = null;
+	//	private HttpSession httpSession = null;
+	private ChannelContext channelContext;
+
+	private HttpConfig httpConfig;
