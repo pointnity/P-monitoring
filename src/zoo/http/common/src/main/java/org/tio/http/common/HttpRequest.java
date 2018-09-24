@@ -108,3 +108,7 @@ public class HttpRequest extends HttpPacket {
 	}
 
 	/**
+	 * Gets the host field in the request header, in the form: www.T-io.org:8080, www.T-io.ORG equivalent
+	 * @return
+	 * @author: tanyaowu
+	 */
