@@ -116,3 +116,9 @@ public class HttpRequest extends HttpPacket {
 		if (host != null) {
 			return host;
 		}
+		
+		host = this.headers.get(HttpConst.RequestHeaderKey.Host);
+		return host;
+	}
+	
+	/**
