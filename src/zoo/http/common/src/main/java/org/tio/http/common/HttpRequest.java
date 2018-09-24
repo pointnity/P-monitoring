@@ -126,3 +126,7 @@ public class HttpRequest extends HttpPacket {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public String getClientIp() {
+		if (clientIp == null) {
+			clientIp = IpUtils.getRealIp(this);
+		}		
