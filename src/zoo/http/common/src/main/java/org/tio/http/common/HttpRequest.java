@@ -23,3 +23,6 @@ import com.xiaoleilu.hutool.util.StrUtil;
  */
 public class HttpRequest extends HttpPacket {
 
+	//	private static Logger log = LoggerFactory.getLogger(HttpRequest.class);
+
+	private static final long serialVersionUID = -3849253977016967211L;
