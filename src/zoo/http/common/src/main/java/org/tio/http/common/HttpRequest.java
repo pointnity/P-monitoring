@@ -172,3 +172,9 @@ public class HttpRequest extends HttpPacket {
 	}
 
 	/**
+	 * @return the bodyLength
+	 */
+	public int getContentLength() {
+		return contentLength;
+	}
+
