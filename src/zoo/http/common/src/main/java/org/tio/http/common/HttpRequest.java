@@ -421,3 +421,13 @@ public class HttpRequest extends HttpPacket {
 	/**
 	 * @param httpConfig the httpConfig to set
 	 */
+	public void setHttpConfig(HttpConfig httpConfig) {
+		this.httpConfig = httpConfig;
+	}
+
+	/**
+	 * @param httpSession the httpSession to set
+	 */
+	public void setHttpSession(HttpSession httpSession) {
+		this.httpSession = httpSession;
+	}
