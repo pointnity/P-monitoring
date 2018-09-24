@@ -351,3 +351,8 @@ public class HttpRequest extends HttpPacket {
 	}
 
 	/**
+	 * @param bodyFormat the bodyFormat to set
+	 */
+	public void setBodyFormat(RequestBodyFormat bodyFormat) {
+		this.bodyFormat = bodyFormat;
+	}
