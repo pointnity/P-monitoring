@@ -1,4 +1,4 @@
-package org.tio.http.common;
+package .http.common;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -388,3 +388,15 @@ public class HttpRequest extends HttpPacket {
 	/**
 	 * @param cookieMap the cookieMap to set
 	 */
+	public void setCookieMap(Map<String, Cookie> cookieMap) {
+		this.cookieMap = cookieMap;
+	}
+
+	/**
+	 * @param cookies the cookies to set
+	 */
+	public void setCookies(List<Cookie> cookies) {
+		this.cookies = cookies;
+	}
+
+	/**
