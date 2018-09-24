@@ -34,3 +34,5 @@ public class HttpRequest extends HttpPacket {
 	 *  
 	 *
 	 */
+	public static void main(String[] args) {
+	}
