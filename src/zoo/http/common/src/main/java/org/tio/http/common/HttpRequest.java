@@ -460,3 +460,22 @@ public class HttpRequest extends HttpPacket {
 	/**
 	 * @param requestLine the requestLine to set
 	 */
+	public void setRequestLine(RequestLine requestLine) {
+		this.requestLine = requestLine;
+	}
+
+	//	/**
+	//	 * @return the httpSession
+	//	 */
+	//	public HttpSession getHttpSession() {
+	//		return httpSession;
+	//	}
+	//
+	//	/**
+	//	 * @param httpSession the httpSession to set
+	//	 */
+	//	public void setHttpSession(HttpSession httpSession) {
+	//		this.httpSession = httpSession;
+	//	}
+
+}
