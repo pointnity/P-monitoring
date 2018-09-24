@@ -207,3 +207,12 @@ public class HttpRequest extends HttpPacket {
 	//	}
 
 	//	/**
+	//
+	//	/**
+	//	 * @param userAgent the userAgent to set
+	//	 */
+	//	public void setUserAgent(UserAgent userAgent) {
+	//		this.userAgent = userAgent;
+	//	}
+
+	/**
