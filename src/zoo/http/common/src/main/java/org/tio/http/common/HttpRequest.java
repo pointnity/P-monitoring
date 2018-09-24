@@ -163,3 +163,12 @@ public class HttpRequest extends HttpPacket {
 	public ChannelContext getChannelContext() {
 		return channelContext;
 	}
+
+	/**
+	 * @return the charset
+	 */
+	public String getCharset() {
+		return charset;
+	}
+
+	/**
