@@ -58,3 +58,7 @@ public class HttpRequest extends HttpPacket {
 	private ChannelContext channelContext;
 
 	private HttpConfig httpConfig;
+
+	private String domain = null;
+	private String host = null;
+	private String clientIp = null;
