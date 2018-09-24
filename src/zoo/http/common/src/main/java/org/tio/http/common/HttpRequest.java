@@ -345,3 +345,9 @@ public class HttpRequest extends HttpPacket {
 			}
 		}
 	}
+
+	public void setBody(byte[] body) {
+		this.body = body;
+	}
+
+	/**
