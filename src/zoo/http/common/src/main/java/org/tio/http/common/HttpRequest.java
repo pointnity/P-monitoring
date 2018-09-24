@@ -62,3 +62,8 @@ public class HttpRequest extends HttpPacket {
 	private String domain = null;
 	private String host = null;
 	private String clientIp = null;
+
+	/**
+	 *
+	 *
+	 * @author tanyaowu
