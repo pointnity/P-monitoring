@@ -7,11 +7,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
-import org.tio.core.ChannelContext;
-import org.tio.core.Node;
-import org.tio.http.common.HttpConst.RequestBodyFormat;
-import org.tio.http.common.session.HttpSession;
-import org.tio.http.common.utils.IpUtils;
+import org.core.ChannelContext;
+import org.core.Node;
+import org.http.common.HttpConst.RequestBodyFormat;
+import org.http.common.session.HttpSession;
+import org.http.common.utils.IpUtils;
 
 import com.xiaoleilu.hutool.util.ArrayUtil;
 import com.xiaoleilu.hutool.util.StrUtil;
@@ -199,4 +199,11 @@ public class HttpRequest extends HttpPacket {
 	//		return bodyBytes;
 	//	}
 	//
+	//	/**
+	//	 * @param bodyBytes the bodyBytes to set
+	//	 */
+	//	public void setBodyBytes(byte[] bodyBytes) {
+	//		this.bodyBytes = bodyBytes;
+	//	}
+
 	//	/**
