@@ -377,3 +377,14 @@ public class HttpRequest extends HttpPacket {
 	public void setCharset(String charset) {
 		this.charset = charset;
 	}
+
+	/**
+	 * @param bodyLength the bodyLength to set
+	 */
+	public void setContentLength(int contentLength) {
+		this.contentLength = contentLength;
+	}
+
+	/**
+	 * @param cookieMap the cookieMap to set
+	 */
