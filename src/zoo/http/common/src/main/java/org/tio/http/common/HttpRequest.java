@@ -135,3 +135,7 @@ public class HttpRequest extends HttpPacket {
 	
 
 	/**
+	 * Based on the host field, gets the value of the pure domain name portion of the stripped port, as follows: ORG equivalent
+	 * @return
+	 * @author tanyaowu
+	 */
