@@ -130,3 +130,8 @@ public class HttpRequest extends HttpPacket {
 		if (clientIp == null) {
 			clientIp = IpUtils.getRealIp(this);
 		}		
+		return clientIp;
+	}
+	
+
+	/**
