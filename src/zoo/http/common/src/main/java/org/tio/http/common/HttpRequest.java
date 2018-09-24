@@ -139,3 +139,9 @@ public class HttpRequest extends HttpPacket {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public String getDomain() {
+		if (domain != null) {
+			return domain;
+		}
+		if (StrUtil.isBlank(getHost())) {
+			return null;
