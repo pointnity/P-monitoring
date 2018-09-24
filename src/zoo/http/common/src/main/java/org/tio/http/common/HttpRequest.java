@@ -410,3 +410,14 @@ public class HttpRequest extends HttpPacket {
 		if (headers != null) {
 			parseCookie();
 		}
+
+		//		String Sec_WebSocket_Key = headers.get(HttpConst.RequestHeaderKey.Sec_WebSocket_Key);
+		//		if (StringUtils.isNoneBlank(Sec_WebSocket_Key)) {
+		//			ImSessionContext httpSession = channelContext.getAttribute();
+		//			httpSession.setWebsocket(true);
+		//		}
+	}
+
+	/**
+	 * @param httpConfig the httpConfig to set
+	 */
