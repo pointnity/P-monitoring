@@ -285,3 +285,12 @@ public class HttpRequest extends HttpPacket {
 	}
 
 	/**
+	 * 
+	 * @param name
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public String getParam(String name) {
+		if (params == null) {
+			return null;
+		}
