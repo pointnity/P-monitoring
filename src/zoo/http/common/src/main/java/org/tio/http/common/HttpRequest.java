@@ -19,3 +19,7 @@ import com.xiaoleilu.hutool.util.StrUtil;
 /**
  *
  * @author tanyaowu
+ *
+ */
+public class HttpRequest extends HttpPacket {
+
