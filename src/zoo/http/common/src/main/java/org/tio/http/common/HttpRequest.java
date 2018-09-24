@@ -448,3 +448,15 @@ public class HttpRequest extends HttpPacket {
 
 	/**
 	 * @param params the params to set
+	 */
+	public void setParams(Map<String, Object[]> params) {
+		this.params = params;
+	}
+
+	public void setRemote(Node remote) {
+		this.remote = remote;
+	}
+
+	/**
+	 * @param requestLine the requestLine to set
+	 */
