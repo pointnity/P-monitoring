@@ -49,3 +49,5 @@ public class HttpRequest extends HttpPacket {
 	private String bodyString;
 	//	private UserAgent userAgent;
 	private RequestBodyFormat bodyFormat;
+	private String charset = HttpConst.CHARSET_NAME;
+	private Boolean isAjax = null;
