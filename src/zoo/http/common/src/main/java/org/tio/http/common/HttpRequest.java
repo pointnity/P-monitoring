@@ -90,3 +90,9 @@ public class HttpRequest extends HttpPacket {
 			params.put(key, newExistValue);
 		}
 	}
+
+	/**
+	 * @return the bodyFormat
+	 */
+	public RequestBodyFormat getBodyFormat() {
+		return bodyFormat;
