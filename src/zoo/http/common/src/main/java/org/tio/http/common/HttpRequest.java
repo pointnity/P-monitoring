@@ -184,3 +184,10 @@ public class HttpRequest extends HttpPacket {
 		}
 		return cookieMap.get(cooiename);
 	}
+
+	/**
+	 * @return the cookieMap
+	 */
+	public Map<String, Cookie> getCookieMap() {
+		return cookieMap;
+	}
