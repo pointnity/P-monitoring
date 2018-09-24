@@ -78,3 +78,11 @@ public class HttpRequest extends HttpPacket {
 		if (params == null) {
 			params = new HashMap<>();
 		}
+
+		Object[] existValue = params.get(key);
+		if (existValue != null) {
+			Object[] newExistValue = new Object[existValue.length + 1];
+			System.arraycopy(existValue, 0, newExistValue, 0, existValue.length);
+			newExistValue[newExistValue.length - 1] = value;
+			params.put(key, newExistValue);
+		} else {
