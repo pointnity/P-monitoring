@@ -246,3 +246,13 @@ public class HttpRequest extends HttpPacket {
 	 */
 	public Boolean getIsAjax() {
 		if (isAjax == null) {
+			String X_Requested_With = this.getHeader(HttpConst.RequestHeaderKey.X_Requested_With);
+			if (X_Requested_With != null && "XMLHttpRequest".equalsIgnoreCase(X_Requested_With)) {
+				isAjax = true;
+			} else {
+				isAjax = false;
+			}
+		}
+
+		return isAjax;
+	}
