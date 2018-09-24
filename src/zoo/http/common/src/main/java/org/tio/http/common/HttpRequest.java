@@ -156,3 +156,10 @@ public class HttpRequest extends HttpPacket {
 	public String getBodyString() {
 		return bodyString;
 	}
+
+	/**
+	 * @return the channelContext
+	 */
+	public ChannelContext getChannelContext() {
+		return channelContext;
+	}
