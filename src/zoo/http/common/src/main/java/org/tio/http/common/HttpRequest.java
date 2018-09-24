@@ -400,3 +400,13 @@ public class HttpRequest extends HttpPacket {
 	}
 
 	/**
+	 * When the header is set, the header information such as the cookie is also set.
+	 * @param headers the headers to set
+	 * @param channelContext
+	 */
+	@Override
+	public void setHeaders(Map<String, String> headers) {
+		this.headers = headers;
+		if (headers != null) {
+			parseCookie();
+		}
