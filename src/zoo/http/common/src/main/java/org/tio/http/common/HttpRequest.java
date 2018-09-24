@@ -96,3 +96,10 @@ public class HttpRequest extends HttpPacket {
 	 */
 	public RequestBodyFormat getBodyFormat() {
 		return bodyFormat;
+	}
+
+	/**
+	 * Get the User-agent field in the request header
+	 * @return
+	 * @author: tanyaowu
+	 */
