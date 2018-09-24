@@ -207,6 +207,11 @@ public class HttpRequest extends HttpPacket {
 	//	}
 
 	//	/**
+	//	 * @return the userAgent
+	//	 */
+	//	public UserAgent getUserAgent() {
+	//		return userAgent;
+	//	}
 	//
 	//	/**
 	//	 * @param userAgent the userAgent to set
@@ -214,14 +219,3 @@ public class HttpRequest extends HttpPacket {
 	//	public void setUserAgent(UserAgent userAgent) {
 	//		this.userAgent = userAgent;
 	//	}
-
-	/**
-	 * @return the cookies
-	 */
-	public List<Cookie> getCookies() {
-		return cookies;
-	}
-
-	/**
-	 * @return the httpConfig
-	 */
