@@ -86,3 +86,7 @@ public class HttpRequest extends HttpPacket {
 			newExistValue[newExistValue.length - 1] = value;
 			params.put(key, newExistValue);
 		} else {
+			Object[] newExistValue = new Object[] { value };
+			params.put(key, newExistValue);
+		}
+	}
