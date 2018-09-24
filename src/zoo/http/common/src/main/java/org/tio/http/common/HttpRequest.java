@@ -145,3 +145,9 @@ public class HttpRequest extends HttpPacket {
 		}
 		if (StrUtil.isBlank(getHost())) {
 			return null;
+		}
+		domain = StrUtil.subBefore(getHost(), ":", false);
+		return domain;
+	}
+
+	/**
