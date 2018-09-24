@@ -51,3 +51,6 @@ public class HttpRequest extends HttpPacket {
 	private RequestBodyFormat bodyFormat;
 	private String charset = HttpConst.CHARSET_NAME;
 	private Boolean isAjax = null;
+	private Boolean isSupportGzip = null;
+	private HttpSession httpSession;
+	private Node remote = null;
