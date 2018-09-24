@@ -191,3 +191,12 @@ public class HttpRequest extends HttpPacket {
 	public Map<String, Cookie> getCookieMap() {
 		return cookieMap;
 	}
+
+	//	/**
+	//	 * @return the bodyBytes
+	//	 */
+	//	public byte[] getBodyBytes() {
+	//		return bodyBytes;
+	//	}
+	//
+	//	/**
