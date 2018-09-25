@@ -50,7 +50,7 @@ public class HttpResponse extends HttpPacket {
 	/**
 	 *
 	 * @param request
-	 * @param httpConfig 可以为null
+	 * @param httpConfig Can think null
 	 * @author tanyaowu
 	 */
 	public HttpResponse(HttpRequest request, HttpConfig httpConfig) {
