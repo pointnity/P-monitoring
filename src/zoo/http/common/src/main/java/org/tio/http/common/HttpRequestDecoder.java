@@ -53,3 +53,18 @@ public class HttpRequestDecoder {
 		RequestLine firstLine = null;
 
 		while (buffer.hasRemaining()) {
+			String line;
+			try {
+				line = ByteBufferUtils.readLine(buffer, null, MAX_LENGTH_OF_LINE);
+			} catch (LengthOverflowException e) {
+				throw new AioDecodeException(e);
+			}
+
+			int newPosition = buffer.position();
+			if (newPosition - initPosition > MAX_HEADER_LENGTH) {
+				throw new AioDecodeException("max http header length " + MAX_HEADER_LENGTH);
+			}
+
+			if (line == null) {
+				return null;
+			}
