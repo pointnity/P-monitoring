@@ -335,3 +335,20 @@ public class HttpRequestDecoder {
 	 *  
 	 *
 	 */
+	public static RequestLine parseRequestLine(String line, ChannelContext channelContext) throws AioDecodeException {
+		try {
+			int index1 = line.indexOf(' ');
+			String _method = StringUtils.upperCase(line.substring(0, index1));
+			Method method = Method.from(_method);
+			int index2 = line.indexOf(' ', index1 + 1);
+			String pathAndQuerystr = line.substring(index1 + 1, index2); // "/user/get?name=999"
+			String path = null; //"/user/get"
+			String queryStr = null;
+			int indexOfQuestionmark = pathAndQuerystr.indexOf("?");
+			if (indexOfQuestionmark != -1) {
+				queryStr = StringUtils.substring(pathAndQuerystr, indexOfQuestionmark + 1);
+				path = StringUtils.substring(pathAndQuerystr, 0, indexOfQuestionmark);
+			} else {
+				path = pathAndQuerystr;
+				queryStr = "";
+			}
