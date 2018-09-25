@@ -235,3 +235,19 @@ public class HttpRequestDecoder {
 			log.info("{}, initboundary:{}", channelContext, initboundary);
 			HttpMultiBodyDecoder.decode(httpRequest, firstLine, bodyBytes, initboundary, channelContext);
 		} else {
+			String bodyString = null;
+			if (bodyBytes != null && bodyBytes.length > 0) {
+				try {
+					bodyString = new String(bodyBytes, httpRequest.getCharset());
+					httpRequest.setBodyString(bodyString);
+					log.info("{} body string\r\n{}", channelContext, bodyString);
+				} catch (UnsupportedEncodingException e) {
+					log.error(channelContext.toString(), e);
+				}
+			}
+
+			if (bodyFormat == RequestBodyFormat.URLENCODED) {
+				parseUrlencoded(httpRequest, firstLine, bodyBytes, bodyString, channelContext);
+			}
+		}
+	}
