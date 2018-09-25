@@ -201,3 +201,11 @@ public class HttpRequestDecoder {
 	}
 
 	/**
+	 * Parsing the message body
+	 * @param httpRequest
+	 * @param firstLine
+	 * @param bodyBytes
+	 * @param channelContext
+	 * @throws AioDecodeException
+	 * @author tanyaowu
+	 */
