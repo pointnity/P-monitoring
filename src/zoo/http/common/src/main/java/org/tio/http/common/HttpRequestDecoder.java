@@ -83,3 +83,14 @@ public class HttpRequestDecoder {
 					step = Step.body;
 					break;
 				} else {
+					return null;
+				}
+			} else {
+				if (step == Step.firstline) {
+					firstLine = parseRequestLine(line, channelContext);
+					step = Step.header;
+				} else if (step == Step.header) {
+					KeyValue keyValue = parseHeaderLine(line);
+					headers.put(keyValue.getKey(), keyValue.getValue());
+				}
+				continue;
