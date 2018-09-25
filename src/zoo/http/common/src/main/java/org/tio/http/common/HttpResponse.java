@@ -131,3 +131,24 @@ public class HttpResponse extends HttpPacket {
 	public HttpRequest getHttpRequest() {
 		return request;
 	}
+
+	/**
+	 * @return the status
+	 */
+	public HttpResponseStatus getStatus() {
+		return status;
+	}
+
+
+
+	/**
+	 * @return the isStaticRes
+	 */
+	public boolean isStaticRes() {
+		return isStaticRes;
+	}
+
+	@Override
+	public String logstr() {
+		String str = null;
+		if (request != null) {
