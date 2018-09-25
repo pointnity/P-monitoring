@@ -37,3 +37,9 @@ public class HttpRequestDecoder {
 	public static final int MAX_HEADER_LENGTH = 20480;
 
 	/**
+	 * Head, maximum number of bytes per line
+	 */
+	public static final int MAX_LENGTH_OF_LINE = 2048;
+
+	public static HttpRequest decode(ByteBuffer buffer, ChannelContext channelContext) throws AioDecodeException {
+		int initPosition = buffer.position();
