@@ -326,3 +326,12 @@ public class HttpRequestDecoder {
 	}
 
 	/**
+	 *Parse first row (request line)
+	 * @param line
+	 * @param channelContext
+	 * @return
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
