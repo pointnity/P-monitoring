@@ -220,3 +220,18 @@ public class HttpRequestDecoder {
 				String bodyString = null;
 				if (bodyBytes != null && bodyBytes.length > 0) {
 					try {
+
+						bodyString = new String(bodyBytes, httpRequest.getCharset());
+						log.info("{} multipart body string\r\n{}", channelContext, bodyString);
+					} catch (UnsupportedEncodingException e) {
+						log.error(channelContext.toString(), e);
+					}
+				}
+
+			}
+
+			//【multipart/form-data; boundary=----WebKitFormBoundaryuwYcfA2AIgxqIxA0】
+			String initboundary = HttpParseUtils.getPerprotyEqualValue(httpRequest.getHeaders(), HttpConst.RequestHeaderKey.Content_Type, "boundary");
+			log.info("{}, initboundary:{}", channelContext, initboundary);
+			HttpMultiBodyDecoder.decode(httpRequest, firstLine, bodyBytes, initboundary, channelContext);
+		} else {
