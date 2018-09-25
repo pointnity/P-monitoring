@@ -352,3 +352,27 @@ public class HttpRequestDecoder {
 				path = pathAndQuerystr;
 				queryStr = "";
 			}
+
+			String protocolVersion = line.substring(index2 + 1);
+			String[] pv = StringUtils.split(protocolVersion, "/");
+			String protocol = pv[0];
+			String version = pv[1];
+
+			RequestLine requestLine = new RequestLine();
+			requestLine.setMethod(method);
+			requestLine.setPath(path);
+			requestLine.setPathAndQuery(pathAndQuerystr);
+			requestLine.setQuery(queryStr);
+			requestLine.setVersion(version);
+			requestLine.setProtocol(protocol);
+			requestLine.setLine(line);
+
+			return requestLine;
+		} catch (Throwable e) {
+			log.error(channelContext.toString(), e);
+			throw new AioDecodeException(e);
+		}
+	}
+
+	/**
+	 * Parsing the message body in the urlencoded format
