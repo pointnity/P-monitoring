@@ -86,3 +86,24 @@ public class HttpResponse extends HttpPacket {
 	
 	/**
 	 * Get "Content-type" header content
+	 * @return
+	 * @author tanyaowu
+	 */
+	public String getContentType() {
+		return this.headers.get(HttpConst.RequestHeaderKey.Content_Type);
+	}
+
+	public boolean addCookie(Cookie cookie) {
+		if (cookies == null) {
+			synchronized (this) {
+				if (cookies == null) {
+					cookies = new ArrayList<>();
+				}
+			}
+		}
+		return cookies.add(cookie);
+	}
+
+	/**
+	 * @return the charset
+	 */
