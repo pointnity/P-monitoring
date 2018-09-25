@@ -209,3 +209,14 @@ public class HttpRequestDecoder {
 	 * @throws AioDecodeException
 	 * @author tanyaowu
 	 */
+	private static void parseBody(HttpRequest httpRequest, RequestLine firstLine, byte[] bodyBytes, ChannelContext channelContext) throws AioDecodeException {
+		parseBodyFormat(httpRequest, httpRequest.getHeaders());
+		RequestBodyFormat bodyFormat = httpRequest.getBodyFormat();
+
+		httpRequest.setBody(bodyBytes);
+
+		if (bodyFormat == RequestBodyFormat.MULTIPART) {
+			if (log.isInfoEnabled()) {
+				String bodyString = null;
+				if (bodyBytes != null && bodyBytes.length > 0) {
+					try {
