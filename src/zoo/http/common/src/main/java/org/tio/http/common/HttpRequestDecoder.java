@@ -107,3 +107,15 @@ public class HttpRequestDecoder {
 
 		HttpRequest httpRequest = new HttpRequest(channelContext.getClientNode());
 		httpRequest.setChannelContext(channelContext);
+		httpRequest.setHttpConfig((HttpConfig) channelContext.getGroupContext().getAttribute(GroupContextKey.HTTP_SERVER_CONFIG));
+		httpRequest.setHeaderString(headerSb.toString());
+		httpRequest.setRequestLine(firstLine);
+		httpRequest.setHeaders(headers);
+		httpRequest.setContentLength(contentLength);
+
+		if (contentLength == 0) {
+			if (StringUtils.isNotBlank(firstLine.getQuery())) {
+				Map<String, Object[]> params = decodeParams(firstLine.getQuery(), httpRequest.getCharset(), channelContext);
+				httpRequest.setParams(params);
+			}
+		} else {
