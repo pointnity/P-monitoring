@@ -163,3 +163,30 @@ public class HttpResponse extends HttpPacket {
 	public void setBody(byte[] body, HttpRequest request) {
 		this.body = body;
 	}
+
+	/**
+	 * @param charset the charset to set
+	 */
+	public void setCharset(String charset) {
+		this.charset = charset;
+	}
+
+	/**
+	 * @param cookies the cookies to set
+	 */
+	public void setCookies(List<Cookie> cookies) {
+		this.cookies = cookies;
+	}
+
+	/**
+	 * @param encodedBytes the encodedBytes to set
+	 */
+	public void setEncodedBytes(byte[] encodedBytes) {
+		this.encodedBytes = encodedBytes;
+	}
+
+	/**
+	 * @param request the request to set
+	 */
+	public void setHttpRequestPacket(HttpRequest request) {
+		this.request = request;
