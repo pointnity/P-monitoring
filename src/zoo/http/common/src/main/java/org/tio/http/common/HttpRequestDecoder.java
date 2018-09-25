@@ -385,3 +385,19 @@ public class HttpRequestDecoder {
 			paramStr += firstLine.getQuery();
 		}
 		if (bodyString != null) {
+			if (paramStr != null) {
+				paramStr += "&";
+			}
+			paramStr += bodyString;
+		}
+
+		if (paramStr != null) {
+			Map<String, Object[]> params = decodeParams(paramStr, httpRequest.getCharset(), channelContext);
+			httpRequest.setParams(params);
+			//			log.error("paramStr:{}", paramStr);
+			//			log.error("param:{}", Json.toJson(params));
+		}
+	}
+
+	/**
+	 *
