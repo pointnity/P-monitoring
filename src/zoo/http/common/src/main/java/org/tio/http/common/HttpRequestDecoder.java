@@ -251,3 +251,23 @@ public class HttpRequestDecoder {
 			}
 		}
 	}
+
+	//	private static void parseText(HttpRequestPacket httpRequest, RequestLine firstLine, byte[] bodyBytes, String bodyString) {
+	//		String paramStr = "";
+	//		if (StringUtils.isNotBlank(firstLine.getQueryStr())) {
+	//			paramStr += firstLine.getQueryStr();
+	//		}
+	//		if (bodyString != null) {
+	//			if (paramStr != null) {
+	//				paramStr += "&";
+	//			}
+	//			paramStr += bodyString;
+	//		}
+	//
+	//		if (paramStr != null) {
+	//			Map<String, List<String>> params = HttpUtil.decodeParams(paramStr, httpRequest.getCharset());
+	//			httpRequest.setParams(params);
+	//			log.error("paramStr:{}", paramStr);
+	//			log.error("param:{}", Json.toJson(params));
+	//		}
+	//	}
