@@ -159,3 +159,17 @@ public class HttpRequestDecoder {
 		//		if (pathEndPos > 0) {
 		//			paramsStr = StrUtil.subSuf(paramsStr, pathEndPos + 1);
 		//		}
+		Map<String, Object[]> ret = new HashMap<>();
+		String[] keyvalues = StringUtils.split(paramsStr, "&");
+		for (String keyvalue : keyvalues) {
+			String[] keyvalueArr = StringUtils.split(keyvalue, "=");
+			if (keyvalueArr.length != 2) {
+				continue;
+			}
+
+			String key = keyvalueArr[0];
+			String value = null;
+			try {
+				value = URLDecoder.decode(keyvalueArr[1], charset);
+			} catch (UnsupportedEncodingException e) {
+				log.error(channelContext.toString(), e);
