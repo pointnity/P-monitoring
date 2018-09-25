@@ -68,3 +68,18 @@ public class HttpRequestDecoder {
 			if (line == null) {
 				return null;
 			}
+
+			headerSb.append(line).append("\r\n");
+			if ("".equals(line)) {//The head resolution is complete.
+				String contentLengthStr = headers.get(HttpConst.RequestHeaderKey.Content_Length);
+				if (StringUtils.isBlank(contentLengthStr)) {
+					contentLength = 0;
+				} else {
+					contentLength = Integer.parseInt(contentLengthStr);
+				}
+
+				int readableLength = buffer.limit() - buffer.position();
+				if (readableLength >= contentLength) {
+					step = Step.body;
+					break;
+				} else {
