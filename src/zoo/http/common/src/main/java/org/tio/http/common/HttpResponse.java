@@ -190,3 +190,19 @@ public class HttpResponse extends HttpPacket {
 	 */
 	public void setHttpRequestPacket(HttpRequest request) {
 		this.request = request;
+	}
+
+	/**
+	 * @param isStaticRes the isStaticRes to set
+	 */
+	public void setStaticRes(boolean isStaticRes) {
+		this.isStaticRes = isStaticRes;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(HttpResponseStatus status) {
+		this.status = status;
+	}
+}
