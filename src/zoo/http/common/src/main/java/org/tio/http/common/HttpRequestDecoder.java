@@ -152,3 +152,10 @@ public class HttpRequestDecoder {
 	public static Map<String, Object[]> decodeParams(String paramsStr, String charset, ChannelContext channelContext) {
 		if (StrUtil.isBlank(paramsStr)) {
 			return Collections.emptyMap();
+		}
+
+		//		// Remove Path section
+		//		int pathEndPos = paramsStr.indexOf('?');
+		//		if (pathEndPos > 0) {
+		//			paramsStr = StrUtil.subSuf(paramsStr, pathEndPos + 1);
+		//		}
