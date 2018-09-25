@@ -134,3 +134,21 @@ public class HttpRequestDecoder {
 		//			UserAgent userAgent = userAgentAnalyzer.parse(User_Agent);
 		//			httpRequest.setUserAgent(userAgent);
 		//		}
+
+		//		StringBuilder logstr = new StringBuilder();
+		//		logstr.append("\r\n------------------ websocket header start ------------------------\r\n");
+		//		logstr.append(firstLine.getInitStr()).append("\r\n");
+		//		Set<Entry<String, String>> entrySet = headers.entrySet();
+		//		for (Entry<String, String> entry : entrySet) {
+		//			logstr.append(StringUtils.leftPad(entry.getKey(), 30)).append(" : ").append(entry.getValue()).append("\r\n");
+		//		}
+		//		logstr.append("------------------ websocket header start ------------------------\r\n");
+		//		log.error(logstr.toString());
+
+		return httpRequest;
+
+	}
+
+	public static Map<String, Object[]> decodeParams(String paramsStr, String charset, ChannelContext channelContext) {
+		if (StrUtil.isBlank(paramsStr)) {
+			return Collections.emptyMap();
