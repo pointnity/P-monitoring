@@ -401,3 +401,13 @@ public class HttpRequestDecoder {
 
 	/**
 	 *
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
+	public HttpRequestDecoder() {
+
+	}
+
+}
