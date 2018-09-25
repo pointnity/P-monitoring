@@ -16,3 +16,13 @@ public class HttpResponse extends HttpPacket {
 	private static Logger log = LoggerFactory.getLogger(HttpResponse.class);
 
 	private static final long serialVersionUID = -3512681144230291786L;
+
+	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
+	public static void main(String[] args) {
+	}
