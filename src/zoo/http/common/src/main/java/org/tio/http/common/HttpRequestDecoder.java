@@ -119,3 +119,9 @@ public class HttpRequestDecoder {
 				httpRequest.setParams(params);
 			}
 		} else {
+			bodyBytes = new byte[contentLength];
+			buffer.get(bodyBytes);
+			httpRequest.setBody(bodyBytes);
+			//Parsing the message body
+			parseBody(httpRequest, firstLine, bodyBytes, channelContext);
+		}
