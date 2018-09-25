@@ -300,3 +300,11 @@ public class HttpRequestDecoder {
 	}
 
 	/**
+	 * Parse each row of the request header
+	 * @param line
+	 * @return
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
