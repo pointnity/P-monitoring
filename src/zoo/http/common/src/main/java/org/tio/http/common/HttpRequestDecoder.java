@@ -376,3 +376,12 @@ public class HttpRequestDecoder {
 
 	/**
 	 * Parsing the message body in the urlencoded format
+	 *Shaped like: 【Content-Type : application/x-www-form-urlencoded; charset=UTF-8】
+	 * @author tanyaowu
+	 */
+	private static void parseUrlencoded(HttpRequest httpRequest, RequestLine firstLine, byte[] bodyBytes, String bodyString, ChannelContext channelContext) {
+		String paramStr = "";
+		if (StringUtils.isNotBlank(firstLine.getQuery())) {
+			paramStr += firstLine.getQuery();
+		}
+		if (bodyString != null) {
