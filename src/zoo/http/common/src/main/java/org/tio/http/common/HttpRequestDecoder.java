@@ -271,3 +271,24 @@ public class HttpRequestDecoder {
 	//			log.error("param:{}", Json.toJson(params));
 	//		}
 	//	}
+
+	/**
+	 * Content-Type : application/x-www-form-urlencoded; charset=UTF-8
+	 * Content-Type : application/x-www-form-urlencoded; charset=UTF-8
+	 * @param httpRequest
+	 * @param headers
+	 * @author tanyaowu
+	 */
+	public static void parseBodyFormat(HttpRequest httpRequest, Map<String, String> headers) {
+		String Content_Type = StringUtils.lowerCase(headers.get(HttpConst.RequestHeaderKey.Content_Type));
+		RequestBodyFormat bodyFormat = null;
+		if (StringUtils.contains(Content_Type, HttpConst.RequestHeaderValue.Content_Type.application_x_www_form_urlencoded)) {
+			bodyFormat = RequestBodyFormat.URLENCODED;
+		} else if (StringUtils.contains(Content_Type, HttpConst.RequestHeaderValue.Content_Type.multipart_form_data)) {
+			bodyFormat = RequestBodyFormat.MULTIPART;
+		} else {
+			bodyFormat = RequestBodyFormat.TEXT;
+		}
+		httpRequest.setBodyFormat(bodyFormat);
+
+		if (StringUtils.isNoneBlank(Content_Type)) {
