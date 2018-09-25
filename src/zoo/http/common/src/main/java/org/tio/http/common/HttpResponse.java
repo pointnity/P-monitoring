@@ -107,3 +107,27 @@ public class HttpResponse extends HttpPacket {
 	/**
 	 * @return the charset
 	 */
+	public String getCharset() {
+		return charset;
+	}
+
+	/**
+	 * @return the cookies
+	 */
+	public List<Cookie> getCookies() {
+		return cookies;
+	}
+
+	/**
+	 * @return the encodedBytes
+	 */
+	public byte[] getEncodedBytes() {
+		return encodedBytes;
+	}
+
+	/**
+	 * @return the request
+	 */
+	public HttpRequest getHttpRequest() {
+		return request;
+	}
