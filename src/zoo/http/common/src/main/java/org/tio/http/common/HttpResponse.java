@@ -26,3 +26,11 @@ public class HttpResponse extends HttpPacket {
 	 */
 	public static void main(String[] args) {
 	}
+
+	private HttpResponseStatus status = HttpResponseStatus.C200;
+
+	/**
+	 * Whether it is a static resource
+         * True: Static resources
+	 */
+	private boolean isStaticRes = false;
