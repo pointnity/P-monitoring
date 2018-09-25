@@ -125,3 +125,12 @@ public class HttpRequestDecoder {
 			//Parsing the message body
 			parseBody(httpRequest, firstLine, bodyBytes, channelContext);
 		}
+
+		//Analytical User_Agent(Browser operating system and other information)
+		//		String User_Agent = headers.get(HttpConst.RequestHeaderKey.User_Agent);
+		//		if (StringUtils.isNotBlank(User_Agent)) {
+		//			//			long start = System.currentTimeMillis();
+		//			UserAgentAnalyzer userAgentAnalyzer = UserAgentAnalyzerFactory.getUserAgentAnalyzer();
+		//			UserAgent userAgent = userAgentAnalyzer.parse(User_Agent);
+		//			httpRequest.setUserAgent(userAgent);
+		//		}
