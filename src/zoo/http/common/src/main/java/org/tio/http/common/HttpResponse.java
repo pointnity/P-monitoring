@@ -152,3 +152,14 @@ public class HttpResponse extends HttpPacket {
 	public String logstr() {
 		String str = null;
 		if (request != null) {
+			str = "\r\n Response: Request ID_" + request.getId() + "  " + request.getRequestLine().getPathAndQuery();
+			str += "\r\n" + this.getHeaderString();
+		} else {
+			str = "\r\nResponse\r\n" + status.getHeaderText();
+		}
+		return str;
+	}
+
+	public void setBody(byte[] body, HttpRequest request) {
+		this.body = body;
+	}
