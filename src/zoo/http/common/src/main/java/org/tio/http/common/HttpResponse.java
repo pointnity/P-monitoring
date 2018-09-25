@@ -34,3 +34,13 @@ public class HttpResponse extends HttpPacket {
          * True: Static resources
 	 */
 	private boolean isStaticRes = false;
+
+	private HttpRequest request = null;
+	private List<Cookie> cookies = null;
+
+	//	private int contentLength;
+	//	private byte[] bodyBytes;
+	private String charset = HttpConst.CHARSET_NAME;
+
+	/**
+	 * Already coded byte[]
