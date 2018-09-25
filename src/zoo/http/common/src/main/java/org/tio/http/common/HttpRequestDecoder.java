@@ -173,3 +173,22 @@ public class HttpRequestDecoder {
 				value = URLDecoder.decode(keyvalueArr[1], charset);
 			} catch (UnsupportedEncodingException e) {
 				log.error(channelContext.toString(), e);
+			}
+
+			Object[] existValue = ret.get(key);
+			if (existValue != null) {
+				String[] newExistValue = new String[existValue.length + 1];
+				System.arraycopy(existValue, 0, newExistValue, 0, existValue.length);
+				newExistValue[newExistValue.length - 1] = value;
+				ret.put(key, newExistValue);
+			} else {
+				String[] newExistValue = new String[] { value };
+				ret.put(key, newExistValue);
+			}
+		}
+		return ret;
+	}
+
+	/**
+	 * @param args
+	 *
