@@ -43,3 +43,12 @@ public class HttpRequestDecoder {
 
 	public static HttpRequest decode(ByteBuffer buffer, ChannelContext channelContext) throws AioDecodeException {
 		int initPosition = buffer.position();
+		Step step = Step.firstline;
+		//		StringBuilder currLine = new StringBuilder();
+		Map<String, String> headers = new HashMap<>();
+		int contentLength = 0;
+		byte[] bodyBytes = null;
+		StringBuilder headerSb = new StringBuilder(512);
+		RequestLine firstLine = null;
+
+		while (buffer.hasRemaining()) {
