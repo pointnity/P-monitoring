@@ -44,3 +44,17 @@ public class HttpResponse extends HttpPacket {
 
 	/**
 	 * Already coded byte[]
+	 */
+	private byte[] encodedBytes = null;
+
+	/**
+	 *
+	 * @param request
+	 * @param httpConfig 可以为null
+	 * @author tanyaowu
+	 */
+	public HttpResponse(HttpRequest request, HttpConfig httpConfig) {
+		this.request = request;
+
+		String Connection = StringUtils.lowerCase(request.getHeader(HttpConst.RequestHeaderKey.Connection));
+		RequestLine requestLine = request.getRequestLine();
