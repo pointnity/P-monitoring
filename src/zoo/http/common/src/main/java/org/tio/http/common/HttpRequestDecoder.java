@@ -32,3 +32,8 @@ public class HttpRequestDecoder {
 	private static Logger log = LoggerFactory.getLogger(HttpRequestDecoder.class);
 
 	/**
+	 * The maximum number of bytes in a head
+	 */
+	public static final int MAX_HEADER_LENGTH = 20480;
+
+	/**
