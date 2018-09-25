@@ -26,3 +26,9 @@ import com.xiaoleilu.hutool.util.StrUtil;
  */
 public class HttpRequestDecoder {
 	public static enum Step {
+		firstline, header, body
+	}
+
+	private static Logger log = LoggerFactory.getLogger(HttpRequestDecoder.class);
+
+	/**
