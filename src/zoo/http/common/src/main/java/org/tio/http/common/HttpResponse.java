@@ -77,3 +77,12 @@ public class HttpResponse extends HttpPacket {
 		
 
 		if (httpConfig != null) {
+			addHeader(HttpConst.ResponseHeaderKey.Server, httpConfig.getServerInfo());
+		}
+		//		String xx = DatePattern.HTTP_DATETIME_FORMAT.format(SystemTimer.currentTimeMillis());
+		//		addHeader(HttpConst.ResponseHeaderKey.Date, DatePattern.HTTP_DATETIME_FORMAT.format(SystemTimer.currentTimeMillis()));
+		//		addHeader(HttpConst.ResponseHeaderKey.Date, new Date().toGMTString());
+	}
+	
+	/**
+	 * Get "Content-type" header content
