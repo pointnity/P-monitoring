@@ -94,3 +94,16 @@ public class HttpRequestDecoder {
 					headers.put(keyValue.getKey(), keyValue.getValue());
 				}
 				continue;
+			}
+		}
+
+		if (step != Step.body) {
+			return null;
+		}
+
+		if (!headers.containsKey(HttpConst.RequestHeaderKey.Host)) {
+			throw new AioDecodeException("there is no host header");
+		}
+
+		HttpRequest httpRequest = new HttpRequest(channelContext.getClientNode());
+		httpRequest.setChannelContext(channelContext);
