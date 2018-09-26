@@ -60,3 +60,7 @@ public enum HttpResponseStatus {
 	/**
 	 *Similar to 301/302, the difference is that if the original request is the Post,location header the specified redirect target document should be fetched via get (HTTP 1.1 new).
 	 */
+	C303(303, "See Other", "303 See Other"),
+	/**
+	 *The client has a buffered document and issues a conditional request (typically providing a if-modified-since header indicating that the customer only wants to update the document than the specified date).The server tells the customer that the original buffered document can continue to be used.
+	 */
