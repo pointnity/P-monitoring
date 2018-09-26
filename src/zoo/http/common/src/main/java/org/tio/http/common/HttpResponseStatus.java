@@ -50,3 +50,7 @@ public enum HttpResponseStatus {
 	 */
 	C300(300, "Multiple Choices", "300 Multiple Choices"),
 	/**
+	 *The document requested by the customer elsewhere, the new URL is given in the location header, and the browser should automatically access the new URL.
+	 */
+	C301(301, "Moved Permanently", "301 Moved Permanently"),
+	/**
