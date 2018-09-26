@@ -138,3 +138,7 @@ public enum HttpResponseStatus {
 	 */
 	C500(500, "Internal Server Error", "500 Internal Server Error"),
 	/**
+	 *The server does not support the functionality required to implement the request.For example, a customer sends a put request that is not supported by the server.
+	 */
+	C501(501, "Not Implemented", "501 Not Implemented"),
+	/**
