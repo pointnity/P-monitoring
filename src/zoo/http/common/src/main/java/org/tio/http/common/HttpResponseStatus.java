@@ -150,3 +150,7 @@ public enum HttpResponseStatus {
 	 */
 	C503(503, "Service Unavailable", "503 Service Unavailable"),
 	/**
+	 *Used by a server acting as a proxy or gateway, indicating that an answer cannot be received from a remote server in a timely manner.(HTTP 1.1 new)
+	 */
+	C504(504, "Gateway Timeout", "504 Gateway Timeout"),
+	/**
