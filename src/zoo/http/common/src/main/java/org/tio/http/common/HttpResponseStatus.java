@@ -126,3 +126,7 @@ public enum HttpResponseStatus {
 	 */
 	C413(413, "Request Entity Too Large", "413 Request Entity Too Large"),
 	/**
+	 *The URI is too long (HTTP 1.1 new).
+	 */
+	C414(414, "Request URI Too Long", "414 Request URI Too Long"),
+	/**
