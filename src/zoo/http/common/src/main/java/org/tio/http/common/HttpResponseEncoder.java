@@ -34,3 +34,12 @@ public class HttpResponseEncoder {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public static ByteBuffer encode(HttpResponse httpResponse, GroupContext groupContext, ChannelContext channelContext, boolean skipCookie) {
+		byte[] encodedBytes = httpResponse.getEncodedBytes();
+		if (encodedBytes != null) {
+			ByteBuffer ret = ByteBuffer.wrap(encodedBytes);
+			ret.position(ret.limit());
+			return ret;
+		}
+
+		int bodyLength = 0;
