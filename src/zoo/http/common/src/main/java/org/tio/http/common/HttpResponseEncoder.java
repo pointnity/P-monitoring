@@ -130,3 +130,18 @@ public class HttpResponseEncoder {
 		String value = line.substring(p + 1).trim();
 
 		keyValue.setKey(name);
+		keyValue.setValue(value);
+
+		return keyValue;
+	}
+
+	/**
+	 *
+	 *
+	 * @author tanyaowu
+	 */
+	public HttpResponseEncoder() {
+
+	}
+
+}
