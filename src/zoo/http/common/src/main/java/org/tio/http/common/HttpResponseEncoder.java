@@ -20,3 +20,13 @@ public class HttpResponseEncoder {
 	public static enum Step {
 		firstline, header, body
 	}
+
+	private static Logger log = LoggerFactory.getLogger(HttpResponseEncoder.class);
+
+	public static final int MAX_HEADER_LENGTH = 20480;
+
+	/**
+	 *
+	 * @param httpResponse
+	 * @param groupContext
+	 * @param channelContext
