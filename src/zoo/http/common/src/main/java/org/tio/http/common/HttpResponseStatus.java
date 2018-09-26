@@ -70,3 +70,7 @@ public enum HttpResponseStatus {
 	 */
 	C305(305, "Use Proxy", "305 Use Proxy"),
 	/**
+	 *Same as 302 (Found).Many browsers incorrectly respond to a 302 response for redirection, even if the original request is post, even though it can actually be redirected only if the answer to the POST request is 303.For this reason, HTTP 1.1 has been added 307 to allow for more cleanup of the region in several status codes: When a 303 response occurs, the browser can follow the redirected get and post requests;If 307 is the answer, the browser can only follow the redirect to the GET request.(HTTP 1.1 new)
+	 */
+	C307(307, "Temporary Redirect", "307 Temporary Redirect"),
+	/**
