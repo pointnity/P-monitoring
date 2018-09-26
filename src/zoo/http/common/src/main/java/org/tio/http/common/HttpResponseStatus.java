@@ -42,3 +42,7 @@ public enum HttpResponseStatus {
 	 */
 	C205(205, "Reset Content", "205 Reset Content"),
 	/**
+	 *There is no new content, but the browser should reset what it displays.Used to force the browser to clear the form input (HTTP 1.1 new).
+	 */
+	C206(206, "Partial Content", "206 Partial Content"),
+	/**
