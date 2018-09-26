@@ -86,3 +86,7 @@ public enum HttpResponseStatus {
 	 */
 	C403(403, "Forbidden", "403 Forbidden"),
 	/**
+	 *The resource at the specified location could not be found.This is also a common answer.
+	 */
+	C404(404, "Not Found", "404 Not Found"),
+	/**
