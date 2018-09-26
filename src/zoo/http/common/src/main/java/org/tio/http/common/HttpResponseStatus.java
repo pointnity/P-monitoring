@@ -82,3 +82,7 @@ public enum HttpResponseStatus {
 	 */
 	C401(401, "Unauthorized", "401 Unauthorized"),
 	/**
+	 *The resource is not available.The server understands the customer's request, but refuses to process it.This is usually caused by the permissions set on the file or directory on the server.
+	 */
+	C403(403, "Forbidden", "403 Forbidden"),
+	/**
