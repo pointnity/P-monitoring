@@ -67,3 +67,14 @@ public class HttpResponseEncoder {
 			//Processing cookies
 			List<Cookie> cookies = httpResponse.getCookies();
 			if (cookies != null) {
+				for (Cookie cookie : cookies) {
+					sb.append(HttpConst.ResponseHeaderKey.Set_Cookie).append(": ");
+					sb.append(cookie.toString());
+					sb.append("\r\n");
+					if (log.isInfoEnabled()) {
+						log.info("{}, set-cookie:{}", channelContext, cookie.toString());
+					}
+				}
+			}
+		}
+
