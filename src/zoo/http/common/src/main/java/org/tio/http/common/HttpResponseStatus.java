@@ -106,3 +106,7 @@ public enum HttpResponseStatus {
 	 */
 	C408(408, "Request Timeout", "408 Request Timeout"),
 	/**
+	 *Usually related to put requests.The request cannot succeed because the request conflicts with the current state of the resource.(HTTP 1.1 new)
+	 */
+	C409(409, "Conflict", "409 Conflict"),
+	/**
