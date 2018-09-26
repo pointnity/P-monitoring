@@ -43,3 +43,12 @@ public class HttpResponseEncoder {
 		}
 
 		int bodyLength = 0;
+		byte[] body = httpResponse.getBody();
+		if (body != null) {
+			bodyLength = body.length;
+		}
+
+		StringBuilder sb = new StringBuilder(256);
+
+		HttpResponseStatus httpResponseStatus = httpResponse.getStatus();
+		//		httpResponseStatus.get
