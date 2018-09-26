@@ -142,3 +142,7 @@ public enum HttpResponseStatus {
 	 */
 	C501(501, "Not Implemented", "501 Not Implemented"),
 	/**
+	 *When the server acts as a gateway or proxy, the server returns an illegal response in order to complete the request to access the next server.
+	 */
+	C502(502, "Bad Gateway", "502 Bad Gateway"),
+	/**
