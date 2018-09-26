@@ -90,3 +90,7 @@ public enum HttpResponseStatus {
 	 */
 	C404(404, "Not Found", "404 Not Found"),
 	/**
+	 *The request method (GET, POST, HEAD, DELETE, PUT, Trace, and so on) does not apply to the specified resource.(HTTP 1.1 new)
+	 */
+	C405(405, "Method Not Allowed", "405 Method Not Allowed"),
+	/**
