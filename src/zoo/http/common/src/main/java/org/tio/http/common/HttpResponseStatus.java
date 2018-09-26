@@ -14,3 +14,7 @@ public enum HttpResponseStatus {
 	 */
 	C100(100, "Continue", "100 Continue"),
 	/**
+	 *The server translates the client's request to another protocol (HTTP 1.1 new)
+	 */
+	C101(101, "Switching Protocols", "101 Switching Protocols"),
+	/**
