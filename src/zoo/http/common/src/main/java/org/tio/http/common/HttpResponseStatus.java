@@ -118,3 +118,7 @@ public enum HttpResponseStatus {
 	 */
 	C411(411, "Length Required", "411 Length Required"),
 	/**
+	 *Some of the prerequisites specified in the request header failed (HTTP 1.1 new).
+	 */
+	C412(412, "Precondition Failed", "412 Precondition Failed"),
+	/**
