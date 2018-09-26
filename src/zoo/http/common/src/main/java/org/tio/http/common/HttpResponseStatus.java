@@ -122,3 +122,7 @@ public enum HttpResponseStatus {
 	 */
 	C412(412, "Precondition Failed", "412 Precondition Failed"),
 	/**
+	 *The size of the destination document exceeds the size that the server is currently willing to handle.If the server thinks it can process the request later, it should provide a Retry-after header (HTTP 1.1 new).
+	 */
+	C413(413, "Request Entity Too Large", "413 Request Entity Too Large"),
+	/**
