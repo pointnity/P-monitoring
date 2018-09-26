@@ -154,3 +154,14 @@ public enum HttpResponseStatus {
 	 */
 	C504(504, "Gateway Timeout", "504 Gateway Timeout"),
 	/**
+	 *The HTTP version indicated in the request is not supported by the server.(HTTP 1.1 new)
+	 */
+	C505(505, "HTTP Version Not Supported", "505 HTTP Version Not Supported");
+
+	public static HttpResponseStatus getHttpStatus(int status) {
+		HttpResponseStatus[] values = HttpResponseStatus.values();
+		for (HttpResponseStatus v : values) {
+			if (v.getStatus() == status) {
+				return v;
+			}
+		}
