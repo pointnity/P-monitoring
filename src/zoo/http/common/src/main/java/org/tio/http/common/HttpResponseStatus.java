@@ -58,3 +58,5 @@ public enum HttpResponseStatus {
 	 */
 	C302(302, "Found", "302 Found"),
 	/**
+	 *Similar to 301/302, the difference is that if the original request is the Post,location header the specified redirect target document should be fetched via get (HTTP 1.1 new).
+	 */
