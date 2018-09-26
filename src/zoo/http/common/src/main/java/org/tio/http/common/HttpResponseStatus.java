@@ -134,3 +134,7 @@ public enum HttpResponseStatus {
 	 */
 	C416(416, "Requested Range Not Satisfiable", "416 Requested Range Not Satisfiable"),
 	/**
+	 *The server encountered an unexpected situation and could not complete the customer's request.
+	 */
+	C500(500, "Internal Server Error", "500 Internal Server Error"),
+	/**
