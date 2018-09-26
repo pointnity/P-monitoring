@@ -62,3 +62,8 @@ public class HttpResponseEncoder {
 				sb.append(entry.getKey()).append(": ").append(entry.getValue()).append("\r\n");
 			}
 		}
+
+		if (!skipCookie) {
+			//Processing cookies
+			List<Cookie> cookies = httpResponse.getCookies();
+			if (cookies != null) {
