@@ -114,3 +114,7 @@ public enum HttpResponseStatus {
 	 */
 	C410(410, "Gone", "410 Gone"),
 	/**
+	 *The server cannot process the request unless the customer sends a content-length header.(HTTP 1.1 new)
+	 */
+	C411(411, "Length Required", "411 Length Required"),
+	/**
