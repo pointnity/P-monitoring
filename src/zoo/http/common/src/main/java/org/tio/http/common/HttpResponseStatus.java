@@ -26,3 +26,7 @@ public enum HttpResponseStatus {
 	 */
 	C201(201, "Created", "201 Created"),
 	/**
+	 *The request has been accepted, but the processing has not been completed.
+	 */
+	C202(202, "Accepted", "202 Accepted"),
+	/**
