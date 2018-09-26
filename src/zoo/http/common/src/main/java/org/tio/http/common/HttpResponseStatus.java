@@ -54,3 +54,7 @@ public enum HttpResponseStatus {
 	 */
 	C301(301, "Moved Permanently", "301 Moved Permanently"),
 	/**
+	 *Similar to 301, but the new URL should be treated as a temporary replacement instead of permanent.Note that the corresponding status information in HTTP1.0 is "Moved temporatily".When the status code appears, the browser can automatically access the new URL, so it is a useful status code.Note that this status code can sometimes be used with 301 substitutions.For example, if the browser mistakenly requests Http://host/~user (the trailing slash is missing), some servers return 301, and some return 302.Strictly speaking, we can only assume that the browser will automatically redirect only if the original request is get.See 307.
+	 */
+	C302(302, "Found", "302 Found"),
+	/**
