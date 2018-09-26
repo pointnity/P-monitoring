@@ -74,3 +74,7 @@ public enum HttpResponseStatus {
 	 */
 	C307(307, "Temporary Redirect", "307 Temporary Redirect"),
 	/**
+	 *A syntax error occurred in the request.
+	 */
+	C400(400, "Bad Request", "400 Bad Request"),
+	/**
