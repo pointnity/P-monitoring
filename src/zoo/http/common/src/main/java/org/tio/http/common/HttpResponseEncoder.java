@@ -110,3 +110,11 @@ public class HttpResponseEncoder {
 	}
 
 	/**
+	 * Parse each row of the request header
+	 * @param line
+	 * @return
+	 *
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
