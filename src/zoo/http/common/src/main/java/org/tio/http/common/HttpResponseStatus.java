@@ -146,3 +146,7 @@ public enum HttpResponseStatus {
 	 */
 	C502(502, "Bad Gateway", "502 Bad Gateway"),
 	/**
+	 *The server failed to answer due to maintenance or heavy load.For example, a servlet might return 503 if the database connection pool is full.A retry-after header can be supplied when the server returns 503.
+	 */
+	C503(503, "Service Unavailable", "503 Service Unavailable"),
+	/**
