@@ -30,3 +30,7 @@ public enum HttpResponseStatus {
 	 */
 	C202(202, "Accepted", "202 Accepted"),
 	/**
+	 *The document has returned normally, but some of the answer headers may be incorrect because a copy of the document is being used (HTTP 1.1 is new).
+	 */
+	C203(203, "Non-Authoritative Information", "203 Non-Authoritative Information"),
+	/**
