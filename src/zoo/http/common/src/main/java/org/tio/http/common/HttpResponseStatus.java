@@ -178,3 +178,25 @@ public enum HttpResponseStatus {
 
 	private HttpResponseStatus(int status, String description, String headerText) {
 		this.status = status;
+		this.description = description;
+		this.headerText = headerText;
+		this.headerBinary = headerText.getBytes();
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public byte[] getHeaderBinary() {
+		return headerBinary;
+	}
+
+	public String getHeaderText() {
+		return headerText;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+}
