@@ -98,3 +98,7 @@ public enum HttpResponseStatus {
 	 */
 	C406(406, "Not Acceptable", "406 Not Acceptable"),
 	/**
+	 *Similar to 401, indicates that the customer must be authorized by the proxy server first.(HTTP 1.1 new)
+	 */
+	C407(407, "Proxy Authentication Required", "407 Proxy Authentication Required"),
+	/**
