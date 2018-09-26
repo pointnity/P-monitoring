@@ -130,3 +130,7 @@ public enum HttpResponseStatus {
 	 */
 	C414(414, "Request URI Too Long", "414 Request URI Too Long"),
 	/**
+	 *The server does not meet the range header specified by the customer in the request.(HTTP 1.1 new)
+	 */
+	C416(416, "Requested Range Not Satisfiable", "416 Requested Range Not Satisfiable"),
+	/**
