@@ -78,3 +78,7 @@ public enum HttpResponseStatus {
 	 */
 	C400(400, "Bad Request", "400 Bad Request"),
 	/**
+	 *The customer attempted to access a password-protected page without authorization.A www-authenticate header is included in the answer, and the browser displays the user name/Password dialog box, and then makes a request again after filling in the appropriate authorization header.
+	 */
+	C401(401, "Unauthorized", "401 Unauthorized"),
+	/**
