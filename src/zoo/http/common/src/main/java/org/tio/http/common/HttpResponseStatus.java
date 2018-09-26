@@ -34,3 +34,7 @@ public enum HttpResponseStatus {
 	 */
 	C203(203, "Non-Authoritative Information", "203 Non-Authoritative Information"),
 	/**
+	 *Without a new document, the browser should continue to display the original document.This status code is useful if the user refreshes the page on a regular basis and the servlet can determine that the user's document is new enough.
+	 */
+	C204(204, "No Content", "204 No Content"),
+	/**
