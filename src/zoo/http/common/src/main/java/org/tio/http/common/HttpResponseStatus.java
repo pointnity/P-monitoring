@@ -94,3 +94,7 @@ public enum HttpResponseStatus {
 	 */
 	C405(405, "Method Not Allowed", "405 Method Not Allowed"),
 	/**
+	 *The specified resource has been found, but its MIME type is incompatible with the client specified in the Accpet header (HTTP 1.1 new).
+	 */
+	C406(406, "Not Acceptable", "406 Not Acceptable"),
+	/**
