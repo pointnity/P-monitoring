@@ -64,3 +64,9 @@ public enum HttpResponseStatus {
 	/**
 	 *The client has a buffered document and issues a conditional request (typically providing a if-modified-since header indicating that the customer only wants to update the document than the specified date).The server tells the customer that the original buffered document can continue to be used.
 	 */
+	C304(304, "Not Modified", "304 Not Modified"),
+	/**
+	 *The document requested by the client should be extracted from the proxy server indicated by the location header (HTTP 1.1 is new).
+	 */
+	C305(305, "Use Proxy", "305 Use Proxy"),
+	/**
