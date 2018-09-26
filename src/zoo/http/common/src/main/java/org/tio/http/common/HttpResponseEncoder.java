@@ -13,3 +13,10 @@ import org.tio.core.GroupContext;
 
 /**
  *
+ * @author tanyaowu
+ * 
+ */
+public class HttpResponseEncoder {
+	public static enum Step {
+		firstline, header, body
+	}
