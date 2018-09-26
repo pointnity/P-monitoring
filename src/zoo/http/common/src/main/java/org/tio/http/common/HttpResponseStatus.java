@@ -165,3 +165,16 @@ public enum HttpResponseStatus {
 				return v;
 			}
 		}
+		return C505;
+	}
+
+	private int status;
+
+	private String description;
+
+	private String headerText;
+
+	private byte[] headerBinary;
+
+	private HttpResponseStatus(int status, String description, String headerText) {
+		this.status = status;
