@@ -110,3 +110,7 @@ public enum HttpResponseStatus {
 	 */
 	C409(409, "Conflict", "409 Conflict"),
 	/**
+	 *The requested document is no longer available, and the server does not know which address to redirect to.It differs from 404 in that returning 407 means that the document has permanently left the specified location, and 404 indicates that the document is unavailable for unknown reasons.(HTTP 1.1 new)
+	 */
+	C410(410, "Gone", "410 Gone"),
+	/**
