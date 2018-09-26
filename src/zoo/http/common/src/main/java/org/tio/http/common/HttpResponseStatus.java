@@ -18,3 +18,7 @@ public enum HttpResponseStatus {
 	 */
 	C101(101, "Switching Protocols", "101 Switching Protocols"),
 	/**
+	 *Everything is OK, the answer document for Get and post requests is followed.
+	 */
+	C200(200, "OK", "200 OK"),
+	/**
