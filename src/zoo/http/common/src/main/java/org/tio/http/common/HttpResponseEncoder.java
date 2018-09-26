@@ -118,3 +118,15 @@ public class HttpResponseEncoder {
 	 * 
 	 *
 	 */
+	public static KeyValue parseHeaderLine(String line) {
+		KeyValue keyValue = new KeyValue();
+		int p = line.indexOf(":");
+		if (p == -1) {
+			keyValue.setKey(line);
+			return keyValue;
+		}
+
+		String name = line.substring(0, p).trim();
+		String value = line.substring(p + 1).trim();
+
+		keyValue.setKey(name);
