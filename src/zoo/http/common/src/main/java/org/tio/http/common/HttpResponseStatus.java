@@ -22,3 +22,7 @@ public enum HttpResponseStatus {
 	 */
 	C200(200, "OK", "200 OK"),
 	/**
+	 *The server has created the document, and the location header gives its URL.
+	 */
+	C201(201, "Created", "201 Created"),
+	/**
