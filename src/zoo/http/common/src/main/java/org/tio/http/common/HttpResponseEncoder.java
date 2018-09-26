@@ -78,3 +78,13 @@ public class HttpResponseEncoder {
 			}
 		}
 
+		sb.append("\r\n");
+
+		byte[] headerBytes = null;
+		try {
+			String headerString = sb.toString();
+			httpResponse.setHeaderString(headerString);
+			headerBytes = headerString.getBytes(httpResponse.getCharset());
+		} catch (Throwable e) {
+			throw new RuntimeException(e);
+		}
