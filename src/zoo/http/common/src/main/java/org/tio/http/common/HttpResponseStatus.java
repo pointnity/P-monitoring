@@ -102,3 +102,7 @@ public enum HttpResponseStatus {
 	 */
 	C407(407, "Proxy Authentication Required", "407 Proxy Authentication Required"),
 	/**
+	 *The customer has not made any requests during the waiting time for the server license.Customers can repeat the same request at a later time.(HTTP 1.1 new)
+	 */
+	C408(408, "Request Timeout", "408 Request Timeout"),
+	/**
