@@ -88,3 +88,16 @@ public class HttpResponseEncoder {
 		} catch (Throwable e) {
 			throw new RuntimeException(e);
 		}
+
+		ByteBuffer buffer = ByteBuffer.allocate(headerBytes.length + bodyLength);
+		buffer.put(headerBytes);
+
+		if (bodyLength > 0) {
+			buffer.put(body);
+		}
+		return buffer;
+	}
+
+	/**
+	 * @param args
+	 *
