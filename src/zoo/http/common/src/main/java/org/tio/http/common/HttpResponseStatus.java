@@ -46,3 +46,7 @@ public enum HttpResponseStatus {
 	 */
 	C206(206, "Partial Content", "206 Partial Content"),
 	/**
+	 *The documents requested by the customer can be found in multiple locations that are listed in the returned document.If the server wants to make a preference, it should be indicated in the location answer header.
+	 */
+	C300(300, "Multiple Choices", "300 Multiple Choices"),
+	/**
