@@ -30,3 +30,7 @@ public class HttpResponseEncoder {
 	 * @param httpResponse
 	 * @param groupContext
 	 * @param channelContext
+	 * @param skipCookie true: Ignore the encoding of the cookie section
+	 * @return
+	 * @author tanyaowu
+	 */
