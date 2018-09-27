@@ -27,3 +27,13 @@ public interface HttpRequestHandler {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public HttpResponse resp404(HttpRequest request, RequestLine requestLine);
+
+	/**
+	 * Response500
+	 * @param request
+	 * @param requestLine
+	 * @param throwable
+	 * @return
+	 * @author tanyaowu
+	 */
