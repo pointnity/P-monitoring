@@ -34,3 +34,12 @@ public class RequestLine {
 	public String getPath() {
 		return path;
 	}
+
+	public String getPathAndQuery() {
+		return pathAndQuery;
+	}
+
+	/**
+	 * name=tan&id=789
+	 * @return the query
+	 */
