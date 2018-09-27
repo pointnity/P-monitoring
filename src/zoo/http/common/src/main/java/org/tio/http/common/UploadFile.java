@@ -33,3 +33,17 @@ public class UploadFile {
 	public String getName() {
 		return name;
 	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setData(byte[] data) {
+		this.data = data;
+	}
+
+	//    public File getFile()
+	//    {
+	//        return file;
+	//    }
+	//
