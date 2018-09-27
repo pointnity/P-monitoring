@@ -12,3 +12,10 @@ public class KeyValue {
 	/**
 	 * @return the key
 	 */
+	public String getKey() {
+		return key;
+	}
+
+	/**
+	 * @return the value
+	 */
