@@ -12,3 +12,12 @@ public class HttpUuid implements TioUuid {
 	//	private static java.util.concurrent.atomic.AtomicLong seq = new AtomicLong();
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
+
+	}
+
+	/**
+	 *
