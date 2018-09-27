@@ -21,3 +21,17 @@ public class HttpUuid implements TioUuid {
 
 	/**
 	 *
+	 * @author tanyaowu
+	 */
+	public HttpUuid() {
+	}
+
+	/**
+	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
+	public String uuid() {
+		return null;
+	}
+}
