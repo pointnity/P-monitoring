@@ -28,3 +28,9 @@ public class RequestLine {
 	}
 
 	/**
+	 * /user/get
+	 * @return the path
+	 */
+	public String getPath() {
+		return path;
+	}
