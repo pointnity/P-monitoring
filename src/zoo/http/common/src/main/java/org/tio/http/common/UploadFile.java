@@ -22,3 +22,14 @@ public class UploadFile {
 	/**
 	 *
 	 */
+	public UploadFile() {
+
+	}
+
+	public byte[] getData() {
+		return data;
+	}
+
+	public String getName() {
+		return name;
+	}
