@@ -12,3 +12,8 @@ import org.http.common.RequestLine;
 public interface HttpRequestHandler {
 	/**
 	 * Processing requests
+	 * @param packet
+	 * @return can be null
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
