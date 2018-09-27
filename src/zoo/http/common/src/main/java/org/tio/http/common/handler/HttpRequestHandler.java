@@ -17,3 +17,13 @@ public interface HttpRequestHandler {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	public HttpResponse handler(HttpRequest packet) throws Exception;
+
+	/**
+	 *Response404
+	 * @param request
+	 * @param requestLine
+	 * @param channelContext
+	 * @return
+	 * @author tanyaowu
+	 */
