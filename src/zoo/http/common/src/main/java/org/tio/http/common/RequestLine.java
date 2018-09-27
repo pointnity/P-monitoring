@@ -69,3 +69,15 @@ public class RequestLine {
 	}
 
 	/**
+	 * /user/get
+	 * @param path the path to set
+	 */
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public void setPathAndQuery(String pathAndQuery) {
+		this.pathAndQuery = pathAndQuery;
+	}
+
+	/**
