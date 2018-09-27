@@ -47,3 +47,16 @@ public class UploadFile {
 	//        return file;
 	//    }
 	//
+	//    public void setFile(File file)
+	//    {
+	//        this.file = file;
+	//    }
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+}
