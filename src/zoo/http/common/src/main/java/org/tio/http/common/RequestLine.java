@@ -19,3 +19,12 @@ public class RequestLine {
 	public String getLine() {
 		return line;
 	}
+
+	/**
+	 * @return the method
+	 */
+	public Method getMethod() {
+		return method;
+	}
+
+	/**
