@@ -9,3 +9,6 @@ import org.http.common.RequestLine;
  * @author tanyaowu 
  * 
  */
+public interface HttpRequestHandler {
+	/**
+	 * Processing requests
