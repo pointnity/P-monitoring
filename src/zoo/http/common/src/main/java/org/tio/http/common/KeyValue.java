@@ -19,3 +19,13 @@ public class KeyValue {
 	/**
 	 * @return the value
 	 */
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * @param key the key to set
+	 */
+	public void setKey(String key) {
+		this.key = key;
+	}
