@@ -81,3 +81,20 @@ public class RequestLine {
 	}
 
 	/**
+	 *name=tan&id=789
+	 * @param query the query to set
+	 */
+	public void setQuery(String query) {
+		this.query = query;
+	}
+
+	/**
+	 * @param version the version to set
+	 */
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	/**
+	 * @return the protocol
+	 */
