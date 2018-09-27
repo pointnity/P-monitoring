@@ -55,3 +55,17 @@ public class RequestLine {
 	}
 
 	/**
+	 * @param line the line to set
+	 */
+	public void setLine(String line) {
+		this.line = line;
+	}
+
+	/**
+	 * @param method the method to set
+	 */
+	public void setMethod(Method method) {
+		this.method = method;
+	}
+
+	/**
