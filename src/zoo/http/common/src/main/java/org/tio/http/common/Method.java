@@ -17,3 +17,10 @@ public enum Method {
 		}
 		return GET;
 	}
+
+	String value;
+
+	private Method(String value) {
+		this.value = value;
+	}
+}
