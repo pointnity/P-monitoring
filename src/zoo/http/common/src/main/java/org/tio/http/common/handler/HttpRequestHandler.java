@@ -37,3 +37,6 @@ public interface HttpRequestHandler {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public HttpResponse resp500(HttpRequest request, RequestLine requestLine, java.lang.Throwable throwable);
+	
+	/**
