@@ -43,3 +43,15 @@ public class RequestLine {
 	 * name=tan&id=789
 	 * @return the query
 	 */
+	public String getQuery() {
+		return query;
+	}
+
+	/**
+	 * @return the version
+	 */
+	public String getVersion() {
+		return version;
+	}
+
+	/**
