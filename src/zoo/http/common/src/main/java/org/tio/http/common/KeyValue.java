@@ -29,3 +29,11 @@ public class KeyValue {
 	public void setKey(String key) {
 		this.key = key;
 	}
+
+	/**
+	 * @param value the value to set
+	 */
+	public void setValue(String value) {
+		this.value = value;
+	}
+}
