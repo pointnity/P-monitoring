@@ -11,3 +11,11 @@ public class RequestLine {
 	private String pathAndQuery;
 	private String protocol;
 	private String version;
+	private String line;
+
+	/**
+	 * @return the line
+	 */
+	public String getLine() {
+		return line;
+	}
