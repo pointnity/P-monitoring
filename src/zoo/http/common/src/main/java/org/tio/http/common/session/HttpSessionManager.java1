@@ -84,3 +84,7 @@ public class HttpSessionManager implements java.io.Serializable {
 	}
 
 	/**
+	 * Clear All Properties
+	 * 
+	 * @author tanyaowu
+	 */
