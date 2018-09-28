@@ -13,3 +13,9 @@ import org.tio.http.common.HttpConfig;
  * @author tanyaowu
  * 
  */
+public class HttpSession implements java.io.Serializable {
+	private static Logger log = LoggerFactory.getLogger(HttpSession.class);
+
+	private static final long serialVersionUID = 6077020620501316538L;
+
+	private Map<String, Serializable> data = new ConcurrentHashMap<>();
