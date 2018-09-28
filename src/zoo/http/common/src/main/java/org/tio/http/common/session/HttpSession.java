@@ -44,3 +44,7 @@ public class HttpSession implements java.io.Serializable {
 	 */
 	public void clear(HttpConfig httpConfig) {
 		data.clear();
+		update(httpConfig);
+	}
+
+	/**
