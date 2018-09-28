@@ -19,3 +19,9 @@ public class HttpSessionManager implements java.io.Serializable {
 
 	/**
 	 * @author tanyaowu
+	 */
+	private HttpSessionManager(ICache store) {
+		this.store = store;
+	}
+
+	/**
