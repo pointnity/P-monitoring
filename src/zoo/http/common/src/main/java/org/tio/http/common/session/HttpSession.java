@@ -90,3 +90,8 @@ public class HttpSession implements java.io.Serializable {
 	/**
 	 *
 	 * @param key
+	 * @param httpConfig
+	 * @author tanyaowu
+	 */
+	public void removeAttribute(String key, HttpConfig httpConfig) {
+		data.remove(key);
