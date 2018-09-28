@@ -73,3 +73,8 @@ public class HttpSession implements java.io.Serializable {
 	public <T> T getAttribute(String key, Class<T> clazz, T defaultObj) {
 		T t = (T) data.get(key);
 		if (t == null) {
+			log.warn("key【{}】'value in session is null", key);
+			return defaultObj;
+		}
+		return t;
+	}
