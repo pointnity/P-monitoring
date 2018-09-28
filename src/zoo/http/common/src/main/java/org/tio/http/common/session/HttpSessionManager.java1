@@ -69,3 +69,12 @@ public class HttpSessionManager implements java.io.Serializable {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public Object getAttribute(HttpSession httpSession, String key) {
+		return httpSession.getAttribute(key);
+	}
+
+	/**
+	 * 
+	 * @param key
+	 * @author tanyaowu
+	 */
