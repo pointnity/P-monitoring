@@ -53,3 +53,8 @@ public class HttpSession implements java.io.Serializable {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public Object getAttribute(String key) {
+		return data.get(key);
+	}
+
+	/**
