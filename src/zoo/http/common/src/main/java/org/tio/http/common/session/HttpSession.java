@@ -101,3 +101,7 @@ public class HttpSession implements java.io.Serializable {
 	/**
 	 * Set session Properties
 	 * @param key
+	 * @param value
+	 * @param httpConfig
+	 * @author tanyaowu
+	 */
