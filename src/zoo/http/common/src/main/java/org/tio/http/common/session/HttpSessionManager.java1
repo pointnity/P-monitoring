@@ -58,3 +58,9 @@ public class HttpSessionManager implements java.io.Serializable {
 	 * @param value
 	 * @author tanyaowu
 	 */
+	public void setAttribute(HttpSession httpSession, String key, Serializable value) {
+		httpSession.setAttribute(key, value);
+		store.put(httpSession.getId(), httpSession);
+	}
+
+	/**
