@@ -10,3 +10,7 @@ import org.tio.utils.cache.ICache;
  *  
  */
 public class HttpSessionManager implements java.io.Serializable {
+
+	private static final long serialVersionUID = 6077020620501316538L;
+
+	private ICache store = null;
