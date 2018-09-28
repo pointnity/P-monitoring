@@ -1,3 +1,9 @@
 package org.tio.http.common.session;
 
 import java.io.Serializable;
+
+import org.tio.utils.cache.ICache;
+
+/**
+ * 
+ * @author tanyaowu 
