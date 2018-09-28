@@ -30,3 +30,7 @@ public class HttpSessionManager implements java.io.Serializable {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public static HttpSessionManager getInstance(ICache store) {
+		if (instance == null) {
+			synchronized (HttpSessionManager.class) {
+				if (instance == null) {
