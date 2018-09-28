@@ -40,3 +40,10 @@ public class HttpSessionManager implements java.io.Serializable {
 		}
 		return instance;
 	}
+	
+	/**
+	 * 
+	 * @param sessionId
+	 * @return
+	 * @author tanyaowu
+	 */
