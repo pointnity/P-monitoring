@@ -23,3 +23,7 @@ public class HttpSession implements java.io.Serializable {
 	private String id = null;
 
 	/**
+	 *The empty constructor here must have
+	 * 
+	 * @author: tanyaowu
+	 */
