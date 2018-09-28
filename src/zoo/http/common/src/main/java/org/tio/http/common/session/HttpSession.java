@@ -49,3 +49,7 @@ public class HttpSession implements java.io.Serializable {
 
 	/**
 	 * Get Session Properties
+	 * @param key
+	 * @return
+	 * @author tanyaowu
+	 */
