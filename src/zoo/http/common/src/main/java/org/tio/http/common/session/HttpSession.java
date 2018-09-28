@@ -105,3 +105,7 @@ public class HttpSession implements java.io.Serializable {
 	 * @param httpConfig
 	 * @author tanyaowu
 	 */
+	public void setAttribute(String key, Serializable value, HttpConfig httpConfig) {
+		data.put(key, value);
+		update(httpConfig);
+	}
