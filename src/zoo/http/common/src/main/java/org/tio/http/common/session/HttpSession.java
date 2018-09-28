@@ -38,3 +38,4 @@ public class HttpSession implements java.io.Serializable {
 	}
 
 	/**
+	 * Clear All Properties
