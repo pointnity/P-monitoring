@@ -109,3 +109,7 @@ public class HttpSession implements java.io.Serializable {
 		data.put(key, value);
 		update(httpConfig);
 	}
+
+	public void update(HttpConfig httpConfig) {
+		httpConfig.getSessionStore().put(id, this);
+	}
