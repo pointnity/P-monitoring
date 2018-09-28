@@ -33,3 +33,8 @@ public class HttpSession implements java.io.Serializable {
 	/**
 	 * @author tanyaowu
 	 */
+	public HttpSession(String id) {
+		this.id = id;
+	}
+
+	/**
