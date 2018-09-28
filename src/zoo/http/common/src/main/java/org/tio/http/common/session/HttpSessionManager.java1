@@ -64,3 +64,8 @@ public class HttpSessionManager implements java.io.Serializable {
 	}
 
 	/**
+	 * Get Session Properties
+	 * @param key
+	 * @return
+	 * @author tanyaowu
+	 */
