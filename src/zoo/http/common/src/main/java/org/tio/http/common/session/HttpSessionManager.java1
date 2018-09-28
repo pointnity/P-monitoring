@@ -7,3 +7,6 @@ import org.tio.utils.cache.ICache;
 /**
  * 
  * @author tanyaowu 
+ *  
+ */
+public class HttpSessionManager implements java.io.Serializable {
