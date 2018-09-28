@@ -14,3 +14,8 @@ public class HttpSessionManager implements java.io.Serializable {
 	private static final long serialVersionUID = 6077020620501316538L;
 
 	private ICache store = null;
+
+	private static HttpSessionManager instance = null;
+
+	/**
+	 * @author tanyaowu
