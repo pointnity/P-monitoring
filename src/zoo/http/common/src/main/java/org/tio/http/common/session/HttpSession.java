@@ -95,3 +95,7 @@ public class HttpSession implements java.io.Serializable {
 	 */
 	public void removeAttribute(String key, HttpConfig httpConfig) {
 		data.remove(key);
+		update(httpConfig);
+	}
+
+	/**
