@@ -68,3 +68,8 @@ public class HttpSession implements java.io.Serializable {
 	public <T> T getAttribute(String key, Class<T> clazz) {
 		return (T) data.get(key);
 	}
+
+	@SuppressWarnings("unchecked")
+	public <T> T getAttribute(String key, Class<T> clazz, T defaultObj) {
+		T t = (T) data.get(key);
+		if (t == null) {
