@@ -99,3 +99,5 @@ public class HttpSession implements java.io.Serializable {
 	}
 
 	/**
+	 * Set session Properties
+	 * @param key
