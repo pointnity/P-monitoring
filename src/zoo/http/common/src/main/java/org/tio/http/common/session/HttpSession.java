@@ -27,3 +27,9 @@ public class HttpSession implements java.io.Serializable {
 	 * 
 	 * @author: tanyaowu
 	 */
+	public HttpSession() {
+	}
+
+	/**
+	 * @author tanyaowu
+	 */
