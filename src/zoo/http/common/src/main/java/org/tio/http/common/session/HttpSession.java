@@ -84,3 +84,9 @@ public class HttpSession implements java.io.Serializable {
 	//	}
 
 	public String getId() {
+		return id;
+	}
+
+	/**
+	 *
+	 * @param key
