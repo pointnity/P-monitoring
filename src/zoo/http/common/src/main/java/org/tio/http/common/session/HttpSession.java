@@ -78,3 +78,9 @@ public class HttpSession implements java.io.Serializable {
 		}
 		return t;
 	}
+
+	//	public Map<String, Serializable> getData() {
+	//		return data;
+	//	}
+
+	public String getId() {
