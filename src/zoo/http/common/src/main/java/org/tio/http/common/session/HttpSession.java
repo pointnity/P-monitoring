@@ -39,3 +39,8 @@ public class HttpSession implements java.io.Serializable {
 
 	/**
 	 * Clear All Properties
+	 * @param httpConfig
+	 * @author tanyaowu
+	 */
+	public void clear(HttpConfig httpConfig) {
+		data.clear();
