@@ -88,3 +88,8 @@ public class HttpSessionManager implements java.io.Serializable {
 	 * 
 	 * @author tanyaowu
 	 */
+	public void clear(HttpSession httpSession) {
+		httpSession.clear();
+		store.put(httpSession.getId(), httpSession);
+	}
+}
