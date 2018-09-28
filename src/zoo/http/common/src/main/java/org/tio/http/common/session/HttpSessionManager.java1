@@ -47,3 +47,9 @@ public class HttpSessionManager implements java.io.Serializable {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public HttpSession getHttpSession(String sessionId) {
+		HttpSession httpSession = (HttpSession)store.get(sessionId);
+		return httpSession;
+	}
+
+	/**
