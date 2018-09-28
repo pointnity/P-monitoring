@@ -34,3 +34,9 @@ public class HttpSessionManager implements java.io.Serializable {
 		if (instance == null) {
 			synchronized (HttpSessionManager.class) {
 				if (instance == null) {
+					instance = new HttpSessionManager(store);
+				}
+			}
+		}
+		return instance;
+	}
