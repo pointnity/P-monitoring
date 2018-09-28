@@ -78,3 +78,9 @@ public class HttpSessionManager implements java.io.Serializable {
 	 * @param key
 	 * @author tanyaowu
 	 */
+	public void removeAttribute(HttpSession httpSession, String key) {
+		httpSession.removeAttribute(key);
+		store.put(httpSession.getId(), httpSession);
+	}
+
+	/**
