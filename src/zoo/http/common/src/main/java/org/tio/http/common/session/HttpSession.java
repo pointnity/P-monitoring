@@ -19,3 +19,7 @@ public class HttpSession implements java.io.Serializable {
 	private static final long serialVersionUID = 6077020620501316538L;
 
 	private Map<String, Serializable> data = new ConcurrentHashMap<>();
+
+	private String id = null;
+
+	/**
