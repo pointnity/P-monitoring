@@ -14,3 +14,8 @@ public class SnowflakeSessionIdGenerator implements ISessionIdGenerator {
 
 	/**
 	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
+
+	}
