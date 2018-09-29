@@ -82,3 +82,7 @@ public class HttpParseUtils {
 		Map<String, String> equalMap = getEqualMap(propertyValue);
 		return equalMap.get(valueName);
 	}
+
+	/**
+	 * ------------------------------------------------------------------------------------】
+	 *  
