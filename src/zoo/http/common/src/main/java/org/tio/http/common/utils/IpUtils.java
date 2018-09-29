@@ -32,3 +32,7 @@ public class IpUtils {
 			Enumeration<InetAddress> address = ni.getInetAddresses();
 			while (address.hasMoreElements()) {
 				ip = address.nextElement();
+				if (!ip.isSiteLocalAddress() && !ip.isLoopbackAddress() && ip.getHostAddress().indexOf(":") == -1) {// External network IP
+					netip = ip.getHostAddress();
+					finded = true;
+					break;
