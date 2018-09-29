@@ -39,3 +39,9 @@ public class UUIDSessionIdGenerator implements ISessionIdGenerator {
 	/**
 	 * @return
 	 * @author tanyaowu
+	 */
+	@Override
+	public String sessionId(HttpConfig httpConfig, HttpRequest request) {
+		return RandomUtil.randomUUID().replace("-", "");
+	}
+}
