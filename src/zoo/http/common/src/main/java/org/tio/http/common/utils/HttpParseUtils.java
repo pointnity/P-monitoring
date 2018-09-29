@@ -103,3 +103,7 @@ public class HttpParseUtils {
 	 * @param regex Regular expressions
 	 * @return  Matched array of strings
 	 */
+	public static String[] searchByRegex(String source, String regex) {
+		if (source == null) {
+			return null;
+		}
