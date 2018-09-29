@@ -41,3 +41,12 @@ public class IpUtils {
 				}
 			}
 		}
+
+		if (netip != null && !"".equals(netip)) {
+			return netip;
+		} else {
+			return localip;
+		}
+	}
+
+	/**
