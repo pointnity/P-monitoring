@@ -33,3 +33,9 @@ public class UUIDSessionIdGenerator implements ISessionIdGenerator {
 	 *
 	 * @author tanyaowu
 	 */
+	private UUIDSessionIdGenerator() {
+	}
+
+	/**
+	 * @return
+	 * @author tanyaowu
