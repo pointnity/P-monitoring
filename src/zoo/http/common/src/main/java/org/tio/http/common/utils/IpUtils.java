@@ -28,3 +28,7 @@ public class IpUtils {
 		InetAddress ip = null;
 		boolean finded = false; // Whether to find an extranet IP
 		while (netInterfaces.hasMoreElements() && !finded) {
+			NetworkInterface ni = netInterfaces.nextElement();
+			Enumeration<InetAddress> address = ni.getInetAddresses();
+			while (address.hasMoreElements()) {
+				ip = address.nextElement();
