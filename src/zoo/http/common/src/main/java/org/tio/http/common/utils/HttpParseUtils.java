@@ -41,3 +41,7 @@ public class HttpParseUtils {
 	 *             An equation expression
 	 * @return An equals expression Map
 	 */
+	public static Map<String, String> getEqualMap(String str) {
+		Map<String, String> equalMap = new HashMap<>();
+		String[] searchedStrings = searchByRegex(str, "([^ ;,]+=[^ ;,]+)");
+		for (String groupString : searchedStrings) {
