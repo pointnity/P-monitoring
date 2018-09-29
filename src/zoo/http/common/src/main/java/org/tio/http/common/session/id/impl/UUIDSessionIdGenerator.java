@@ -12,3 +12,5 @@ import com.xiaoleilu.hutool.util.RandomUtil;
  * @author tanyaowu
  * 
  */
+public class UUIDSessionIdGenerator implements ISessionIdGenerator {
+	@SuppressWarnings("unused")
