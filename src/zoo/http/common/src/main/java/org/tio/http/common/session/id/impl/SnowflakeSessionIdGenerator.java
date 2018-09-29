@@ -39,3 +39,7 @@ public class SnowflakeSessionIdGenerator implements ISessionIdGenerator {
 	}
 
 	/**
+	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
