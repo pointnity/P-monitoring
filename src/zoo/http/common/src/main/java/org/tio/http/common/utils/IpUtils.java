@@ -26,3 +26,5 @@ public class IpUtils {
 
 		Enumeration<NetworkInterface> netInterfaces = NetworkInterface.getNetworkInterfaces();
 		InetAddress ip = null;
+		boolean finded = false; // Whether to find an extranet IP
+		while (netInterfaces.hasMoreElements() && !finded) {
