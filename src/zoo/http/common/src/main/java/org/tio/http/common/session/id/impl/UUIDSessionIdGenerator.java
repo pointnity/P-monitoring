@@ -23,3 +23,8 @@ public class UUIDSessionIdGenerator implements ISessionIdGenerator {
 	 * @author tanyaowu
 	 */
 	public static void main(String[] args) {
+		UUIDSessionIdGenerator uuidSessionIdGenerator = new UUIDSessionIdGenerator();
+		String xx = uuidSessionIdGenerator.sessionId(null, null);
+		System.out.println(xx);
+
+	}
