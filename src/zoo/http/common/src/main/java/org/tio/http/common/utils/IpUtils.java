@@ -55,3 +55,10 @@ public class IpUtils {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public static String getRealIp(HttpRequest request) {
+		HttpConfig httpConfig = request.getHttpConfig();
+		if(httpConfig.isProxied()) {
+			String ip = request.getHeader("x-forwarded-for");
+			if (StringUtils.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
+				ip = request.getHeader("proxy-client-ip");
+			}
