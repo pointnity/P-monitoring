@@ -36,3 +36,8 @@ public class IpUtils {
 					netip = ip.getHostAddress();
 					finded = true;
 					break;
+				} else if (ip.isSiteLocalAddress() && !ip.isLoopbackAddress() && ip.getHostAddress().indexOf(":") == -1) {// Intranet IP
+					localip = ip.getHostAddress();
+				}
+			}
+		}
