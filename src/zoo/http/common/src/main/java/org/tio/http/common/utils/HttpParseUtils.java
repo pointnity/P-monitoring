@@ -107,3 +107,10 @@ public class HttpParseUtils {
 		if (source == null) {
 			return null;
 		}
+
+		Pattern pattern = getCachedPattern(regex);
+		Matcher matcher = pattern.matcher(source);
+		ArrayList<String> result = new ArrayList<>();
+		while (matcher.find()) {
+			result.add(matcher.group());
+		}
