@@ -100,3 +100,4 @@ public class HttpParseUtils {
 	/**
 	 * Regular expression lookup, matching is extracted to do array
 	 * @param source Target string
+	 * @param regex Regular expressions
