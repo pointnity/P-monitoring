@@ -114,3 +114,13 @@ public class HttpParseUtils {
 		while (matcher.find()) {
 			result.add(matcher.group());
 		}
+		return result.toArray(new String[0]);
+	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public HttpParseUtils() {
+	}
+}
