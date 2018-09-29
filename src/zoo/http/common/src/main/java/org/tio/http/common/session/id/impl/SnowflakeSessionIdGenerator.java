@@ -34,3 +34,8 @@ public class SnowflakeSessionIdGenerator implements ISessionIdGenerator {
 	 *
 	 * @author tanyaowu
 	 */
+	public SnowflakeSessionIdGenerator(int workerId, int datacenterId) {
+		snowflake = new Snowflake(workerId, datacenterId);
+	}
+
+	/**
