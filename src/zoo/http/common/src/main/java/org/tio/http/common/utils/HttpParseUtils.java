@@ -22,3 +22,7 @@ public class HttpParseUtils {
 	 *
 	 * ------  start  ------
 	 */
+	private static ConcurrentHashMap<Integer, Pattern> regexPattern = new ConcurrentHashMap<>();
+
+	private static Pattern getCachedPattern(String regex) {
+		Pattern pattern = null;
