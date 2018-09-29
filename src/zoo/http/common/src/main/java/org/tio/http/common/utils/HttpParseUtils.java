@@ -33,3 +33,7 @@ public class HttpParseUtils {
 			regexPattern.put(regex.hashCode(), pattern);
 		}
 		return pattern;
+	}
+
+	/**
+	 * Parse all the Equals expressions in a string into a Map
