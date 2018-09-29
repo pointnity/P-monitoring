@@ -10,3 +10,5 @@ import org.tio.http.common.HttpRequest;
 public interface ISessionIdGenerator {
 
 	/**
+	 *
+	 * @return
