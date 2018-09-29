@@ -19,3 +19,7 @@ public class UUIDSessionIdGenerator implements ISessionIdGenerator {
 	public final static UUIDSessionIdGenerator instance = new UUIDSessionIdGenerator();
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
