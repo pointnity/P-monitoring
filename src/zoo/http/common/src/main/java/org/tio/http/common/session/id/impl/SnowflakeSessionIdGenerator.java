@@ -10,3 +10,7 @@ import com.xiaoleilu.hutool.lang.Snowflake;
  * @author tanyaowu
  *  
  */
+public class SnowflakeSessionIdGenerator implements ISessionIdGenerator {
+
+	/**
+	 * @param args
