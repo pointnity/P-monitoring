@@ -22,3 +22,4 @@ public class IpUtils {
 	 */
 	public static String getLocalIp() throws SocketException {
 		String localip = null; // Local IP, which is returned if no extranet IP is configured
+		String netip = null; //External network IP
