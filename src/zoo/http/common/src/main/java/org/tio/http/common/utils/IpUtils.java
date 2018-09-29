@@ -20,3 +20,5 @@ public class IpUtils {
 	 * Get the native IP
 	 * @return Native IP
 	 */
+	public static String getLocalIp() throws SocketException {
+		String localip = null; // Local IP, which is returned if no extranet IP is configured
