@@ -62,3 +62,6 @@ public class HttpParseUtils {
 		return equalMap;
 	}
 
+	/**
+	 * <pre>
+	 * Gets the value of the equation in the HTTP header attribute
