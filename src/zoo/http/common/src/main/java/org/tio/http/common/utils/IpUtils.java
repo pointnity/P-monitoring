@@ -18,3 +18,5 @@ public class IpUtils {
 
 	/**
 	 * Get the native IP
+	 * @return Native IP
+	 */
