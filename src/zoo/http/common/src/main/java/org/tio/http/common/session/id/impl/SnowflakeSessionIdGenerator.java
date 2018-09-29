@@ -25,3 +25,7 @@ public class SnowflakeSessionIdGenerator implements ISessionIdGenerator {
 //	/**
 //	 *
 //	 * @author tanyaowu
+//	 */
+//	public SnowflakeSessionIdGenerator() {
+//		snowflake = new Snowflake(RandomUtil.randomInt(0, 31), RandomUtil.randomInt(0, 31));
+//	}
