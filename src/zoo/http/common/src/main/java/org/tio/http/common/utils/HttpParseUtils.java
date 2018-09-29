@@ -65,3 +65,5 @@ public class HttpParseUtils {
 	/**
 	 * <pre>
 	 * Gets the value of the equation in the HTTP header attribute
+	 * 	Can be from a string Content-Type: multipart/form-data; boundary=ujjLiiJBznFt70fG1F4EUCkIupn7H4tzm
+	 * 	The value of the boundary is parsed directly.
