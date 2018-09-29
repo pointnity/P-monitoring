@@ -29,3 +29,7 @@ public class HttpParseUtils {
 		if (regexPattern.containsKey(regex.hashCode())) {
 			pattern = regexPattern.get(regex.hashCode());
 		} else {
+			pattern = Pattern.compile(regex);
+			regexPattern.put(regex.hashCode(), pattern);
+		}
+		return pattern;
