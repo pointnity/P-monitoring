@@ -56,3 +56,9 @@ public class HttpParseUtils {
 				if (value.startsWith("\"") && value.endsWith("\"")) {
 					value = value.substring(1, value.length() - 1);
 				}
+				equalMap.put(key, value);
+			}
+		}
+		return equalMap;
+	}
+
