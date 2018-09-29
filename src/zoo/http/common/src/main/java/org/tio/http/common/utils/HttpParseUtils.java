@@ -26,3 +26,6 @@ public class HttpParseUtils {
 
 	private static Pattern getCachedPattern(String regex) {
 		Pattern pattern = null;
+		if (regexPattern.containsKey(regex.hashCode())) {
+			pattern = regexPattern.get(regex.hashCode());
+		} else {
