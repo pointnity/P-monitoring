@@ -5,3 +5,8 @@ import org.tio.http.common.HttpRequest;
 import org.tio.http.common.session.id.ISessionIdGenerator;
 
 import com.xiaoleilu.hutool.lang.Snowflake;
+
+/**
+ * @author tanyaowu
+ *  
+ */
