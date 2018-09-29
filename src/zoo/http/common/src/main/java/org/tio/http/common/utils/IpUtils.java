@@ -15,3 +15,6 @@ import org.tio.http.common.HttpRequest;
  *  
  */
 public class IpUtils {
+
+	/**
+	 * Get the native IP
