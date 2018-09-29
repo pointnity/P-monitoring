@@ -62,3 +62,13 @@ public class IpUtils {
 			if (StringUtils.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
 				ip = request.getHeader("proxy-client-ip");
 			}
+			if (StringUtils.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
+				ip = request.getHeader("wl-proxy-client-ip");
+			}
+			if (StringUtils.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
+				ip = request.getRemote().getIp();
+			}
+			return ip;
+		} else {
+			return request.getRemote().getIp();
+		}
