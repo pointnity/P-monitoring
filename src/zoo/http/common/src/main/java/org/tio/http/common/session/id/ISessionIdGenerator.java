@@ -14,3 +14,6 @@ public interface ISessionIdGenerator {
 	 * @return
 	 * @author tanyaowu
 	 */
+	String sessionId(HttpConfig httpConfig, HttpRequest request);
+
+}
