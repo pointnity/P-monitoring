@@ -28,3 +28,8 @@ public class UUIDSessionIdGenerator implements ISessionIdGenerator {
 		System.out.println(xx);
 
 	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
