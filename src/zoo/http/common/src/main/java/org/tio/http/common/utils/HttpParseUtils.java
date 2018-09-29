@@ -73,3 +73,7 @@ public class HttpParseUtils {
 	 * @param valueName      Property value
 	 * @return
 	 */
+	public static String getPerprotyEqualValue(Map<String, String> packetMap, String propertyName, String valueName) {
+		String propertyValueObj = packetMap.get(propertyName);
+		if (propertyValueObj == null) {
+			return null;
