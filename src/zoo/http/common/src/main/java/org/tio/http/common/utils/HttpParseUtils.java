@@ -77,3 +77,8 @@ public class HttpParseUtils {
 		String propertyValueObj = packetMap.get(propertyName);
 		if (propertyValueObj == null) {
 			return null;
+		}
+		String propertyValue = propertyValueObj.toString();
+		Map<String, String> equalMap = getEqualMap(propertyValue);
+		return equalMap.get(valueName);
+	}
