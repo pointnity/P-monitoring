@@ -37,3 +37,7 @@ public class HttpParseUtils {
 
 	/**
 	 * Parse all the Equals expressions in a string into a Map
+	 * @param str
+	 *             An equation expression
+	 * @return An equals expression Map
+	 */
