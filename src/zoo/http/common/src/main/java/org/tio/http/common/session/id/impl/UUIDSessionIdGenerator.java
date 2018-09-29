@@ -14,3 +14,8 @@ import com.xiaoleilu.hutool.util.RandomUtil;
  */
 public class UUIDSessionIdGenerator implements ISessionIdGenerator {
 	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(UUIDSessionIdGenerator.class);
+
+	public final static UUIDSessionIdGenerator instance = new UUIDSessionIdGenerator();
+
+	/**
