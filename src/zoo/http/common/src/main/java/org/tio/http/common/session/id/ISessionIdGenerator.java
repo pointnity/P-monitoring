@@ -12,3 +12,5 @@ public interface ISessionIdGenerator {
 	/**
 	 *
 	 * @return
+	 * @author tanyaowu
+	 */
