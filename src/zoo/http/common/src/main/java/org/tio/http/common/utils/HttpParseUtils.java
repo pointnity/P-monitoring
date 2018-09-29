@@ -69,3 +69,4 @@ public class HttpParseUtils {
 	 * 	The value of the boundary is parsed directly.
 	 * 	How to use: Getperprotyequalvalue (Packetmap, "Content-type", "boundary") get ujjLiiJBznFt70fG1F4EUCkIupn7H4tzm
 	 * </pre>
+	 * @param propertyName   Property name
