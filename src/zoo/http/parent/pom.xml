@@ -49,3 +49,8 @@
 	<dependencyManagement>
 		
 	</dependencyManagement>
+
+
+
+	<!-- Plug-in configuration -->
+	<build>
