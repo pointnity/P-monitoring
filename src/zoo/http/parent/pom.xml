@@ -3,3 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>tio-http-parent</artifactId>
 	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://maven.apache.org</url>
+	<version>0.0.4-tio-http</version>
