@@ -40,3 +40,12 @@
 
 
 	</repositories>
+	<pluginRepositories>
+
+
+
+	</pluginRepositories>
+
+	<dependencyManagement>
+		
+	</dependencyManagement>
