@@ -18,3 +18,9 @@
 
 
 	<modules>
+
+		<module>../common</module>
+		<module>../server</module>
+		
+		<module>../demo/httpserver-1</module>
+	</modules>
