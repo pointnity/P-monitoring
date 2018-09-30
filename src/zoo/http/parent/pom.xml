@@ -69,3 +69,7 @@
 
 					<!-- Filter out files that you don't want to include in the jar -->
 					<excludes>
+						<exclude>**/*.properties</exclude>
+						<exclude>**/*.conf</exclude>
+						<exclude>**/*.xml</exclude>
+					</excludes>
