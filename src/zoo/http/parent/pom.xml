@@ -6,3 +6,7 @@
 	<name>${project.artifactId}</name>
 	<url>http://maven.apache.org</url>
 	<version>0.0.4-tio-http</version>
+
+	<description>tio-http's parent</description>
+	
+	<parent>
