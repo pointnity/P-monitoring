@@ -63,3 +63,6 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
 					<archive>
+						<!-- Do not include the POM in the generated jar.XML and Pom.The properties of these two files -->
+						<addMavenDescriptor>true</addMavenDescriptor>
+					</archive>
