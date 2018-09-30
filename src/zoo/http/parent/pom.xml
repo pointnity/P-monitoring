@@ -1,3 +1,5 @@
 <project xmlns
 	xsi:schemaLocation
 	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tio-http-parent</artifactId>
+	<packaging>pom</packaging>
