@@ -31,3 +31,9 @@ echo mvn versions:display-dependency-updates
 echo -
 
 echo #Version change
+echo mvn versions:set -DnewVersion=4.0.0-talent-999
+echo -
+
+
+call mvn versions:display-dependency-updates
+pause
