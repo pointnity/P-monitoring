@@ -13,3 +13,4 @@
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 9527 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 9090 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
