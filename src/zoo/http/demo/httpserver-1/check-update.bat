@@ -3,9 +3,6 @@ echo -
 echo #Download source code
 echo off
 echo -
-echo #Download source code
-echo mvn dependency:sources
-echo -
 
 echo #Download the source code jar.-ddownloadjavadocs=true Download Javadoc Package
 echo -DdownloadSources=true
@@ -23,3 +20,10 @@ echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=false
 echo -
 
 echo #Copy jar to warehouse directory ()
+echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=true -Dmdep.copyPom=true
+echo -
+echo -
+
+
+
+echo #Check for version updates
