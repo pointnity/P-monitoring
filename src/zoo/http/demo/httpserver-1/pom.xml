@@ -1,3 +1,7 @@
 <project xmlns
 	xsi:schemaLocation
 	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tio-http-server-demo-1</artifactId>
+	<name>${project.artifactId}</name>
+
+	<parent>
