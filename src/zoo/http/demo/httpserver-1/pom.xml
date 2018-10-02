@@ -92,3 +92,6 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>make-assembly</id> <!--Name any -->
+						<phase>package</phase>  <!-- Binding to the package life cycle phase -->
+						<goals>
