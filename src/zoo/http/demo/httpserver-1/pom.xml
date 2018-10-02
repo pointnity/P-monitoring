@@ -81,3 +81,7 @@
 					</archive>
 
 					<excludes>
+						<exclude>src/main/resources/**/*</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
