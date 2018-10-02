@@ -4,3 +4,4 @@ rem -Xms64m -Xmx2048m
 setlocal & pushd
 set APP_ENTRY=org.tio.http.server.demo1.HttpServerDemoStarter
 set BASE=%~dp0
+set CP=%BASE%\config;%BASE%\lib\*
