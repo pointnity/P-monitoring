@@ -32,6 +32,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
 		</dependency>
