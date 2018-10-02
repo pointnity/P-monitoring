@@ -5,3 +5,8 @@
 	<name>${project.artifactId}</name>
 
 	<parent>
+		<groupId>org.t-io</groupId>
+		<artifactId>tio-http-parent</artifactId>
+		<version>0.0.4-tio-http</version>
+		<relativePath>../../parent/pom.xml</relativePath>
+	</parent>
