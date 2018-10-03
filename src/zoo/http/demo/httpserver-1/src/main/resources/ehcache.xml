@@ -46,3 +46,9 @@
 		Eternal= "false"
 		overflowToDisk= "false"
 		diskSpoolBufferSizeMB= "5"
+		timeToIdleSeconds= "0"
+		timeToLiveSeconds= "60"
+		memoryStoreEvictionPolicy= "LFU"
+		/>
+		
+</ehcache>
