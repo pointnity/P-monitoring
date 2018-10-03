@@ -1,3 +1,4 @@
 <assembly>
 	<!--  maven-assembly-plugin/assembly.html -->
 	<id>dist</id>
+	<formats>
