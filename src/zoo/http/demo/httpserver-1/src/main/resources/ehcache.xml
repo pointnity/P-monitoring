@@ -8,3 +8,5 @@
 	<!--timeToLiveSeconds Destroy when the cache survives for n seconds (starts when the object is created) --> 
 	<!-- 
 								 Cache configuration:
+			   Name: The name of the cache. 
+			   maxElementsInMemory: The maximum number of caches. 
