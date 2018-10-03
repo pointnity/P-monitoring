@@ -23,3 +23,4 @@
 				<include>startup.*</include>
 				<include>debug.*</include>
 				<include>_cmd.*</include>
+			</includes>
