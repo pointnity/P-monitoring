@@ -32,3 +32,6 @@
 		maxElementsInMemory= "1000000"
 		Eternal= "false"
 		timeToIdleSeconds= "1200"
+		timeToLiveSeconds= "1200"
+		overflowToDisk= "true"
+		diskSpoolBufferSizeMB= "30"
