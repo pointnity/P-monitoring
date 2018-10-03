@@ -28,3 +28,7 @@
 
 		The defaultCache has an implicit name "default" which is a reserved cache name.
 		-->
+	<defaultCache
+		maxElementsInMemory= "1000000"
+		Eternal= "false"
+		timeToIdleSeconds= "1200"
