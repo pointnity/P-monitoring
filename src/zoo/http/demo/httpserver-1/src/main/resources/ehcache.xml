@@ -22,3 +22,9 @@
 			   clearOnFlush: Whether to clear when the maximum amount of memory. 
 		--> 
 	<diskStore  path= "java.io.tmpdir"  /> 
+	<!--
+		Mandatory Default Cache configuration. These settings will be applied to caches
+		Created programmtically using CacheManager.add(String cacheName).
+
+		The defaultCache has an implicit name "default" which is a reserved cache name.
+		-->
