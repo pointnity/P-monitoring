@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
         
 <ehcache xmlns:xsi
+	Xsi :noNamespaceSchemaLocation= "ehcache.xsd"
+	updateCheck= "false"  monitoring= "autodetect"
