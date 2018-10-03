@@ -20,3 +20,5 @@
 			<directory>${project.basedir}</directory>
 			<outputDirectory></outputDirectory>
 			<includes>
+				<include>startup.*</include>
+				<include>debug.*</include>
