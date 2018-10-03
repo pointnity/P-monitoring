@@ -10,3 +10,7 @@
 								 Cache configuration:
 			   Name: The name of the cache. 
 			   maxElementsInMemory: The maximum number of caches. 
+			   Eternal: Whether the object is permanently valid, once set, timeout will not work. 
+			   timeToIdleSeconds: Sets the allowable idle time (in seconds) before the object expires. Only used when the eternal=false object is not permanently valid. Optional attribute, the default value is 0, which means that the idle time is infinite.
+			   timeToLiveSeconds: Sets the allowable lifetime (in seconds) before the object expires. The maximum time is between the creation time and the expiration time. Only used when the eternal=false object is not permanently valid. The default is 0. That is, the object lifetime is infinite.
+			   overflowToDisk: When the number of objects in memory reaches maxElementsInMemory, Ehcache will write the object to disk. 
