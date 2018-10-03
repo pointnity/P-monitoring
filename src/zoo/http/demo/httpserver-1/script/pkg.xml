@@ -25,3 +25,8 @@
 				<include>_cmd.*</include>
 			</includes>
 		</fileSet>
+	</fileSets>
+	
+
+	
+	<dependencySets>
