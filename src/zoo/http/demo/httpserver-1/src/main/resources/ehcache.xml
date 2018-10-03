@@ -6,3 +6,5 @@
 	dynamicConfig= "false"  name= "talent-default-ehcache" >
 	<!--timeToIdleSeconds Destroy when the cache is idle for n seconds (calculated from the time the object is manipulated) --> 
 	<!--timeToLiveSeconds Destroy when the cache survives for n seconds (starts when the object is created) --> 
+	<!-- 
+								 Cache configuration:
