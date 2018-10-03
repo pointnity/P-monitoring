@@ -12,3 +12,6 @@
 		
 		<!-- Put the configuration file of the project in the Config directory -->
 		<fileSet>
+			<directory>${project.basedir}/src/main/resources</directory>
+			<outputDirectory>config</outputDirectory>
+		</fileSet>
