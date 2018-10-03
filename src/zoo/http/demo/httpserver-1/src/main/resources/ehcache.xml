@@ -38,3 +38,7 @@
 		maxElementsOnDisk= "10000000"
 		diskPersistent= "false"
 		diskExpiryThreadIntervalSeconds= "120"
+		memoryStoreEvictionPolicy= "LRU"
+		/>
+		
+	<cache  name= "t_60"
