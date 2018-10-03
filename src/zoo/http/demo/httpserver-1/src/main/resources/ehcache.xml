@@ -14,3 +14,11 @@
 			   timeToIdleSeconds: Sets the allowable idle time (in seconds) before the object expires. Only used when the eternal=false object is not permanently valid. Optional attribute, the default value is 0, which means that the idle time is infinite.
 			   timeToLiveSeconds: Sets the allowable lifetime (in seconds) before the object expires. The maximum time is between the creation time and the expiration time. Only used when the eternal=false object is not permanently valid. The default is 0. That is, the object lifetime is infinite.
 			   overflowToDisk: When the number of objects in memory reaches maxElementsInMemory, Ehcache will write the object to disk. 
+			   diskSpoolBufferSizeMB: This parameter sets the buffer size of the DiskStore. The default is 30MB. Each Cache should have its own buffer.
+			   maxElementsOnDisk: The maximum number of caches on the hard disk. 
+			   diskPersistent: Whether to cache virtual machine restart period data. The disk store persists between restarts of the Virtual Machine. The default value is false. 
+			   diskExpiryThreadIntervalSeconds: Disk invalid thread running interval, the default is 120 seconds. 
+			   memoryStoreEvictionPolicy: When the maxElementsInMemory limit is reached, Ehcache will clean up the memory according to the specified policy. The default policy is LRU (least recently used). You can set it to FIFO (first in, first out) or LFU (less used).
+			   clearOnFlush: Whether to clear when the maximum amount of memory. 
+		--> 
+	<diskStore  path= "java.io.tmpdir"  /> 
