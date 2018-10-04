@@ -244,3 +244,8 @@
 	</logger>
 	
 	<!-- ipblacklist IP blacklist -->
+	<appender name="tio-ipblacklist-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/ipblacklist.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/ipblacklist.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
