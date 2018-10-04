@@ -125,3 +125,10 @@
 		<appender-ref ref="root-file-debug" />
 		<appender-ref ref="console"/>
 	</logger>
+	
+	
+	
+	
+	<!-- Tracking Client Behavior -->
+	<appender name="tio-client-trace-log-appender" class="ch.qos.logback.classic.sift.SiftingAppender">
+		<discriminator>
