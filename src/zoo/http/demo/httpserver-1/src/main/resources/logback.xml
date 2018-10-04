@@ -70,3 +70,6 @@
 			<onMismatch>DENY</onMismatch>   
 		</filter> 
 	</appender>
+	<appender name="root-file-debug"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/debug.log</file>
