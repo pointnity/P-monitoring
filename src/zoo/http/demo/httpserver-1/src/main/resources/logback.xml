@@ -186,3 +186,8 @@
 	<!-- Chat Log Printing  -->
 	<appender name="tio-chat-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/chat.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/chat.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
