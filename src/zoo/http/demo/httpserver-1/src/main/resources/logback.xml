@@ -182,3 +182,7 @@
 		<level value="info"/>
 		<appender-ref ref="tio-ip-trace-log-appender"/>
 	</logger>
+	
+	<!-- Chat Log Printing  -->
+	<appender name="tio-chat-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/chat.log</file>
