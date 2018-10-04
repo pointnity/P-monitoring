@@ -137,3 +137,7 @@
 		</discriminator>
 		
 		<sift>
+			<appender name="${tio_client}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+				<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+					<fileNamePattern>${log.dir}/tio/client-trace/${tio_client}_%d{yyyyMMdd}.log</fileNamePattern>
+					<maxFileSize>20MB</maxFileSize>
