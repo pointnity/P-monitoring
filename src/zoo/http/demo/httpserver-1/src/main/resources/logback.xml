@@ -102,3 +102,8 @@
 	<logger name="${app.package}" additivity="false">
 		<level value="${app.level}" />
 		<appender-ref ref="root-file-error" />
+		<appender-ref ref="root-file-warn" />
+		<appender-ref ref="root-file-info" />
+		<appender-ref ref="root-file-debug" />
+		<appender-ref ref="console"/>
+	</logger>
