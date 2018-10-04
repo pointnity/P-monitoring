@@ -204,3 +204,8 @@
 	</logger>
 	
 	<!-- Address Log Printing  -->
+	<appender name="tio-address-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/address.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/address.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
