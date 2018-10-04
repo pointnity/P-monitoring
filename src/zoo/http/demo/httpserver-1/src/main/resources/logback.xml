@@ -33,3 +33,6 @@
 	<appender name="root-file-warn"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/warn.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/warn.%d{${rolling.policy.file.name.pattern}}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
