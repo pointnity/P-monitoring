@@ -92,3 +92,5 @@
 	</appender>
 	
 	<root level="${root.level}">
+		<appender-ref ref="root-file-error"/>
+		<appender-ref ref="root-file-warn"/>
