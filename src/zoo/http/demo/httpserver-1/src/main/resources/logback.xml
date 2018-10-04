@@ -198,3 +198,9 @@
 			<pattern>%d%n %m%n</pattern>
 		</encoder>
 	</appender>
+	<logger name="tio-chat-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-chat-trace-log-appender"/>
+	</logger>
+	
+	<!-- Address Log Printing  -->
