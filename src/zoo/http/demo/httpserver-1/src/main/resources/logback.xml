@@ -226,3 +226,8 @@
 	<!-- useragent Log Printing  -->
 	<appender name="tio-userAgent-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/userAgent.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/userAgent.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
