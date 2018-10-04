@@ -7,3 +7,6 @@
 		<encoder>
 			<pattern>${conversion.pattern}</pattern>
 		</encoder>
+	</appender>
+	
+	<!-- root file Log->
