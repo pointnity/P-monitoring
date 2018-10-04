@@ -258,3 +258,11 @@
 			<pattern>%m%n</pattern>
 		</encoder>
 	</appender>
+	<logger name="tio-ipblacklist-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-ipblacklist-trace-log-appender"/>
+	</logger>
+
+	
+
+</configuration>
