@@ -215,3 +215,10 @@
 			<maxHistory>${max.history}</maxHistory>
 		</rollingPolicy>
 		<encoder>
+			<pattern>%d%n %m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="tio-address-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-address-trace-log-appender"/>
+	</logger>
