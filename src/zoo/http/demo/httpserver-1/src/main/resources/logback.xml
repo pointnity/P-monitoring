@@ -231,3 +231,12 @@
 			<timeBasedFileNamingAndTriggeringPolicy
 				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>${max.history}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="tio-userAgent-trace-log" additivity="false">
+		<level value="info"/>
