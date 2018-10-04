@@ -141,3 +141,8 @@
 				<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 					<fileNamePattern>${log.dir}/tio/client-trace/${tio_client}_%d{yyyyMMdd}.log</fileNamePattern>
 					<maxFileSize>20MB</maxFileSize>
+				</rollingPolicy>
+				<Append>false</Append>
+				<layout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>%m%n</pattern>
+				</layout>
