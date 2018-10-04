@@ -152,3 +152,15 @@
 	
 	<logger name="tio-client-trace-log" additivity="false">
 		<level value="info"/>
+		<appender-ref ref="tio-client-trace-log-appender"/>
+	</logger>
+	
+
+
+
+
+
+
+
+
+	<!-- IP Access Printing -->
