@@ -222,3 +222,7 @@
 		<level value="info"/>
 		<appender-ref ref="tio-address-trace-log-appender"/>
 	</logger>
+	
+	<!-- useragent Log Printing  -->
+	<appender name="tio-userAgent-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/userAgent.log</file>
