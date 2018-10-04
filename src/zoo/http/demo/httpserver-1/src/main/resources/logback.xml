@@ -146,3 +146,9 @@
 				<layout class="ch.qos.logback.classic.PatternLayout">
 					<pattern>%m%n</pattern>
 				</layout>
+			</appender>
+		</sift>
+	</appender>
+	
+	<logger name="tio-client-trace-log" additivity="false">
+		<level value="info"/>
