@@ -50,3 +50,6 @@
 			<onMismatch>DENY</onMismatch>   
 		</filter> 
 	</appender>
+	<appender name="root-file-info"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/info.log</file>
