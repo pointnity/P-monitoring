@@ -240,3 +240,7 @@
 	</appender>
 	<logger name="tio-userAgent-trace-log" additivity="false">
 		<level value="info"/>
+		<appender-ref ref="tio-userAgent-trace-log-appender"/>
+	</logger>
+	
+	<!-- ipblacklist IP blacklist -->
