@@ -32,3 +32,6 @@ public class HttpServerDemoStarter {
 	 * @author tanyaowu
 	 * @throws IOException
 	 */
+	public static void main(String[] args) throws Exception {
+		PropInit.init();
+		
