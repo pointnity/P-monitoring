@@ -7,3 +7,5 @@ Here is the unified management of all  sql , the advantages are:
 # namespace ( "user" )
 # include ( "user.sql" )
 # end
+
+# namespace ( "donate" )
