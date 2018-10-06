@@ -23,3 +23,4 @@ CREATE  TABLE  `blog`  (
   `id`  int ( 11 )  NOT  NULL  AUTO_INCREMENT ,
   `loginname`  varchar ( 32 )  NOT  NULL ,
   `pwd`  varchar ( 64 )  NOT  NULL ,
+  `salt`  varchar ( 16 )  NOT  NULL ,
