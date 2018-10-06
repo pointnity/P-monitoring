@@ -23,3 +23,8 @@ import org.tio.http.server.demo1.init.PropInit;
  *  
  */
 public class HttpServerDemoStarter {
+	private static Logger log = LoggerFactory.getLogger(HttpServerDemoStarter.class);
+
+	//	public static Config conf = ConfigFactory.load("app.properties");
+
+	/**
