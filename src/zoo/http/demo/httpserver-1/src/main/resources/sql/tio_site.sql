@@ -22,3 +22,4 @@ DROP  TABLE  IF  EXISTS  `blog` ;
 CREATE  TABLE  `blog`  (
   `id`  int ( 11 )  NOT  NULL  AUTO_INCREMENT ,
   `loginname`  varchar ( 32 )  NOT  NULL ,
+  `pwd`  varchar ( 64 )  NOT  NULL ,
