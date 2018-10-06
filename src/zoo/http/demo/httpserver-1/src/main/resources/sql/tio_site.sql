@@ -24,3 +24,14 @@ CREATE  TABLE  `blog`  (
   `loginname`  varchar ( 32 )  NOT  NULL ,
   `pwd`  varchar ( 64 )  NOT  NULL ,
   `salt`  varchar ( 16 )  NOT  NULL ,
+  `nick`  varchar ( 16 )  NOT  NULL ,
+  `avatar`  varchar ( 64 )  CHARACTER  SET  utf8  NOT  NULL ,
+  ip` `  VARCHAR ( 16 )  the CHARACTER  the SET  UTF8  the NOT  NULL  the COMMENT  'registered IP' ,
+  `createtime`  timestamp  NOT  NULL  DEFAULT  CURRENT_TIMESTAMP  ON  UPDATE  CURRENT_TIMESTAMP ,
+  `status`  tinyint ( 2 )  NOT  NULL  DEFAULT  '1'  COMMENT  'User status, 1: Normal, 2: Logout, 3: Pulled black' ,
+  PRIMARY  KEY  ( `id` ),
+  KEY  `loginname`  ( `loginname` , `pwd` )
+)  ENGINE = the InnoDB  the DEFAULT  the CHARSET = utf8mb4 ;
+
+-- ----------------------------
+-- Records of blog
