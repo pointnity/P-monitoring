@@ -5,3 +5,4 @@ Here is the unified management of all  sql , the advantages are:
    For example, defining a generic  CRUD  template function
 
 # namespace ( "user" )
+# include ( "user.sql" )
