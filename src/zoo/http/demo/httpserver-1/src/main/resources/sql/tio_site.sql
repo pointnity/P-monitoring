@@ -126,3 +126,17 @@ CREATE  TABLE  `user`  (
 
 -- ----------------------------
 -- Table structure for user_osc
+-- ----------------------------
+DROP  TABLE  IF  EXISTS  `user_osc` ;
+CREATE  TABLE  `user_osc`  (
+  `id`  int ( 11 )  NOT  NULL  AUTO_INCREMENT ,
+  `userid`  int ( 11 )  NOT  NULL ,
+  `oscid`  varchar ( 32 )  NOT  NULL ,
+  `oscnick`  varchar ( 64 )  DEFAULT  NULL ,
+  `createtime`  timestamp  NOT  NULL  DEFAULT  CURRENT_TIMESTAMP  ON  UPDATE  CURRENT_TIMESTAMP ,
+  PRIMARY  KEY  ( `id` )
+)  ENGINE = the InnoDB  the DEFAULT  the CHARSET = utf8mb4 ;
+
+-- ----------------------------
+-- Records of user_osc
+-- ----------------------------
