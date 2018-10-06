@@ -44,3 +44,14 @@ DROP  TABLE  IF  EXISTS  `donate` ;
 CREATE  TABLE  `donate`  (
   `id`  int ( 11 )  NOT  NULL  AUTO_INCREMENT ,
   `amount`  double  NOT  NULL ,
+  `name`  varchar ( 16 )  NOT  NULL ,
+  `url`  varchar ( 128 )  DEFAULT  NULL  COMMENT  'user or company url' ,
+  `time`  timestamp  NOT  NULL  DEFAULT  CURRENT_TIMESTAMP ,
+  `way`  varchar ( 32 )  DEFAULT  NULL ,
+  `remark`  varchar ( 256 )  DEFAULT  NULL ,
+  leavemsg` `  VARCHAR ( 1024 )  the DEFAULT  NULL  the COMMENT  'message' ,
+  `myremark`  varchar ( 255 )  DEFAULT  NULL  COMMENT  'Give the author's own comments, do not display ' ,
+  PRIMARY  KEY  ( `id` )
+)  ENGINE = the InnoDB  the AUTO_INCREMENT = 46 is  the DEFAULT  the CHARSET = utf8mb4 ;
+
+-- ----------------------------
