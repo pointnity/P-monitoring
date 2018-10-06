@@ -9,3 +9,11 @@ Source Database : tio_site
 Target Server Type : MYSQL
 Target Server Version : 50718
 File Encoding : 65001
+
+Date: 2017-07-27 09:05:35
+*/
+
+SET  FOREIGN_KEY_CHECKS = 0 ;
+
+-- ----------------------------
+-- Table structure for blog
