@@ -35,3 +35,8 @@ public class HttpServerDemoStarter {
 	public static void main(String[] args) throws Exception {
 		PropInit.init();
 		
+		JsonInit.init();
+
+		JfinalInit.init();
+		
+		HttpServerInit.init();
