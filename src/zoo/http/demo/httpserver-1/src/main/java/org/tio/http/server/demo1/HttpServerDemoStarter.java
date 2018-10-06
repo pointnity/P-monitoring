@@ -40,3 +40,12 @@ public class HttpServerDemoStarter {
 		JfinalInit.init();
 		
 		HttpServerInit.init();
+	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public HttpServerDemoStarter() {
+	}
+}
