@@ -9,3 +9,4 @@ Here is the unified management of all  sql , the advantages are:
 # end
 
 # namespace ( "donate" )
+# include ( "donate.sql" )
