@@ -1,1 +1,2 @@
 #sql("page")
+	select *
