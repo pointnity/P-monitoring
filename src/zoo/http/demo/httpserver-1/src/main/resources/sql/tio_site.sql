@@ -35,3 +35,12 @@ CREATE  TABLE  `blog`  (
 
 -- ----------------------------
 -- Records of blog
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for donate
+-- ----------------------------
+DROP  TABLE  IF  EXISTS  `donate` ;
+CREATE  TABLE  `donate`  (
+  `id`  int ( 11 )  NOT  NULL  AUTO_INCREMENT ,
+  `amount`  double  NOT  NULL ,
