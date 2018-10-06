@@ -117,3 +117,12 @@ CREATE  TABLE  `user`  (
   `createtime`  timestamp  NOT  NULL  DEFAULT  CURRENT_TIMESTAMP  ON  UPDATE  CURRENT_TIMESTAMP ,
   `status`  tinyint ( 2 )  NOT  NULL  DEFAULT  '1'  COMMENT  'User status, 1: Normal, 2: Logout, 3: Pulled black' ,
   PRIMARY  KEY  ( `id` ),
+  KEY  `loginname`  ( `loginname` , `pwd` )
+)  ENGINE = the InnoDB  the DEFAULT  the CHARSET = utf8mb4 ;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for user_osc
