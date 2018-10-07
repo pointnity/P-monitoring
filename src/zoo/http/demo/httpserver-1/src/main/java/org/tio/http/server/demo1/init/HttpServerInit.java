@@ -31,3 +31,5 @@ public class HttpServerInit {
 		long start = SystemTimer.currentTimeMillis();
 
 		PropKit.use("app.properties");
+
+		int port = PropKit.getInt("http.port");//Start port
