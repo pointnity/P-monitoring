@@ -36,3 +36,11 @@ public class TestController {
 
 	String txt = html;
 
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public TestController() {
+	}
+
+	@RequestPath(value = "/abtest")
