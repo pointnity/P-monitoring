@@ -147,3 +147,6 @@ public class TestController {
 		} else {
 			ret = Resps.html(request, "Please select File and upload");
 		}
+		return ret;
+	}
+}
