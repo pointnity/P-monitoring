@@ -58,3 +58,9 @@ public class HttpServerInit {
 	 * @author tanyaowu
 	 * @throws IOException
 	 */
+	public static void main(String[] args) throws IOException {
+	}
+
+	/**
+	 *
+	 * @author tanyaowu
