@@ -37,3 +37,7 @@ public class ConfigController {
 		//		AppStarter.conf = ConfigFactory.load("app.conf");
 		PropKit.useless("app.properties");
 		PropKit.use("app.properties", "utf-8");
+		HttpResponse ret = Resps.json(request, "Update successful");
+		return ret;
+	}
+}
