@@ -55,3 +55,6 @@ public class TestController {
 	@RequestPath(value = "/abtest")
 	public HttpResponse abtest1(HttpRequest request) throws Exception {
 		log.info("");
+		HttpResponse ret = Resps.html(request, "OK---------1");
+		return ret;
+	}
