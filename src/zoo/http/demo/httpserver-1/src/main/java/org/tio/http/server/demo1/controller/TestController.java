@@ -76,3 +76,9 @@ public class TestController {
 		HttpResponse ret = Resps.file(request, new File("d:/eclipse-jee-neon-R-win32-x86_64.zip"));
 		return ret;
 	}
+
+	@RequestPath(value = "/getsession")
+	public HttpResponse getsession(HttpRequest request) throws Exception {
+		String value = (String) request.getHttpSession().getAttribute("test");
+		HttpResponse ret = Resps.json(request, "Gets the value:" + value);
+		return ret;
