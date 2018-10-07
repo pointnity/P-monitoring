@@ -50,3 +50,6 @@ public class TestController {
 	}
 
 	/**
+	 * Test Map Duplication
+	 */
+	@RequestPath(value = "/abtest")
