@@ -26,3 +26,8 @@ public class HttpServerInit {
 	public static HttpRequestHandler requestHandler;
 
 	public static HttpServerStarter httpServerStarter;
+
+	public static void init() throws Exception {
+		long start = SystemTimer.currentTimeMillis();
+
+		PropKit.use("app.properties");
