@@ -37,3 +37,5 @@ public class DonateController {
 	}
 
 	@RequestPath(value = "/page")
+	public HttpResponse page(Integer pageNumber, Integer pageSize, HttpRequest request) throws Exception {
+		Page<Donate> page = srv.page(pageNumber, pageSize);
