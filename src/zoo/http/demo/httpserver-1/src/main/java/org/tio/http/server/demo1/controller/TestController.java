@@ -137,3 +137,7 @@ public class TestController {
 	public HttpResponse upload(UploadFile uploadFile, String before, String end, HttpRequest request) throws Exception {
 		HttpResponse ret;
 		if (uploadFile != null) {
+			File file = new File("d:/" + uploadFile.getName());
+			FileUtil.writeBytes(uploadFile.getData(), file);//.writeByteArrayToFile(file, uploadFile.getData());
+
+			System.out.println("【" + before + "】");
