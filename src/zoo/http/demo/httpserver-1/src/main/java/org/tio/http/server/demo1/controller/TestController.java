@@ -8,3 +8,6 @@ import org.tio.http.common.HttpRequest;
 import org.tio.http.common.HttpResponse;
 import org.tio.http.common.UploadFile;
 import org.tio.http.server.annotation.RequestPath;
+import org.tio.http.server.demo1.model.User;
+import org.tio.http.server.util.Resps;
+import org.tio.utils.json.Json;
