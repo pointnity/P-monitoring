@@ -82,3 +82,8 @@ public class TestController {
 		String value = (String) request.getHttpSession().getAttribute("test");
 		HttpResponse ret = Resps.json(request, "Gets the value:" + value);
 		return ret;
+	}
+
+	@RequestPath(value = "/html")
+	public HttpResponse html(HttpRequest request) throws Exception {
+		HttpResponse ret = Resps.html(request, html);
