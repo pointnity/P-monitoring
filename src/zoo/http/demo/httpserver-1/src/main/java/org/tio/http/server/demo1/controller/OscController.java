@@ -27,3 +27,7 @@ public class OscController {
 	 *
 	 * @author tanyaowu
 	 */
+	public OscController() {
+	}
+
+	@RequestPath(value = "/cb")
