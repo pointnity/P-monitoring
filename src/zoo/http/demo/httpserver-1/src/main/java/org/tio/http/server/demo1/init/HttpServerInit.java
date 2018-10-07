@@ -50,3 +50,7 @@ public class HttpServerInit {
 
 		long end = SystemTimer.currentTimeMillis();
 		long iv = end - start;
+		log.info("Tio Http ServerBoot complete, time consuming: {}ms, access address:/http 127.0.0.1:{}", iv, port);
+	}
+
+	/**
