@@ -133,3 +133,7 @@ public class TestController {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	@RequestPath(value = "/upload")
+	public HttpResponse upload(UploadFile uploadFile, String before, String end, HttpRequest request) throws Exception {
+		HttpResponse ret;
+		if (uploadFile != null) {
