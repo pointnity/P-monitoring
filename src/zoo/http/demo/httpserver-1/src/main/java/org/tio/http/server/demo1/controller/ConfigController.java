@@ -31,3 +31,9 @@ public class ConfigController {
 	 */
 	public ConfigController() {
 	}
+
+	@RequestPath(value = "/update")
+	public HttpResponse json(HttpRequest request) throws Exception {
+		//		AppStarter.conf = ConfigFactory.load("app.conf");
+		PropKit.useless("app.properties");
+		PropKit.use("app.properties", "utf-8");
