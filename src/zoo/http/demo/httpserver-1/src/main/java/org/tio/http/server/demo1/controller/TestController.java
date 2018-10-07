@@ -124,3 +124,12 @@ public class TestController {
 	}
 
 	/**
+	 * Upload file test
+	 * @param uploadFile
+	 * @param request
+	 * @param config
+	 * @param channelContext
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
