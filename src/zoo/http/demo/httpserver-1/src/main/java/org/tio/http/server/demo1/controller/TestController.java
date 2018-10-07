@@ -145,3 +145,5 @@ public class TestController {
 
 			ret = Resps.html(request, "File "" + uploadfile.GetName () + "" "" + uploadfile.GetSize () + "byte" upload succeeded ");
 		} else {
+			ret = Resps.html(request, "Please select File and upload");
+		}
