@@ -109,3 +109,10 @@ public class TestController {
 		return ret;
 
 	}
+
+	@RequestPath(value = "/putsession")
+	public HttpResponse putsession(String value, HttpRequest request) throws Exception {
+		request.getHttpSession().setAttribute("test", value, request.getHttpConfig());
+		HttpResponse ret = Resps.json(request, "设置成功:" + value);
+		return ret;
+	}
