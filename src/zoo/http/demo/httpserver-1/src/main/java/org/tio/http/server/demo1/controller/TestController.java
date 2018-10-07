@@ -44,3 +44,9 @@ public class TestController {
 	}
 
 	@RequestPath(value = "/abtest")
+	public HttpResponse abtest(HttpRequest request) throws Exception {
+		HttpResponse ret = Resps.html(request, "OK");
+		return ret;
+	}
+
+	/**
