@@ -101,3 +101,11 @@ public class TestController {
 		String bodyString = request.getBodyString();
 		HttpResponse ret = Resps.html(request, bodyString);
 		return ret;
+	}
+
+	@RequestPath(value = "/post")
+	public HttpResponse post(String before, String end, HttpRequest request) throws Exception {
+		HttpResponse ret = Resps.html(request, "before:" + before + "<br>end:" + end);
+		return ret;
+
+	}
