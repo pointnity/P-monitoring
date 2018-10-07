@@ -22,3 +22,9 @@ public class DonateController {
 	static final DonateService srv = DonateService.me;
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
+
+	}
