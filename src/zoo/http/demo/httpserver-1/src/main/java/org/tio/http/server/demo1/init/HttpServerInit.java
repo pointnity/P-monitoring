@@ -38,3 +38,7 @@ public class HttpServerInit {
 		
 		
 		httpConfig = new HttpConfig(port, null, null, null);
+		httpConfig.setPageRoot(pageRoot);
+
+		
+		Routes routes = new Routes(scanPackages);
