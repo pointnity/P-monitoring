@@ -13,3 +13,8 @@ import com.jfinal.kit.PropKit;
  * @author tanyaowu
  * 
  */
+@RequestPath(value = "/config")
+public class ConfigController {
+	private static Logger log = LoggerFactory.getLogger(ConfigController.class);
+
+	/**
