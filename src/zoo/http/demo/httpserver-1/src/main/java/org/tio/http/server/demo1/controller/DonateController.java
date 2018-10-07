@@ -28,3 +28,8 @@ public class DonateController {
 	public static void main(String[] args) {
 
 	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
