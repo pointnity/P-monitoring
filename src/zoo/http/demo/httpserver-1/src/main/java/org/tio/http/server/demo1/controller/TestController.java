@@ -87,3 +87,7 @@ public class TestController {
 	@RequestPath(value = "/html")
 	public HttpResponse html(HttpRequest request) throws Exception {
 		HttpResponse ret = Resps.html(request, html);
+		return ret;
+	}
+
+	@RequestPath(value = "/json")
