@@ -63,3 +63,6 @@ public class TestController {
 	public HttpResponse bean(User user, HttpRequest request) throws Exception {
 		HttpResponse ret = Resps.json(request, Json.toFormatedJson(user));
 		return ret;
+	}
+
+	@RequestPath(value = "/filetest")
