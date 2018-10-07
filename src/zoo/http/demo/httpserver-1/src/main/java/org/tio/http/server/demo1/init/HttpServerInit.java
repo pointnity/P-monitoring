@@ -22,3 +22,7 @@ public class HttpServerInit {
 	private static Logger log = LoggerFactory.getLogger(HttpServerInit.class);
 
 	public static HttpConfig httpConfig;
+
+	public static HttpRequestHandler requestHandler;
+
+	public static HttpServerStarter httpServerStarter;
