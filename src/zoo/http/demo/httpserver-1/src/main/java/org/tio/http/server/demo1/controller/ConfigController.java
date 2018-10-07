@@ -26,3 +26,8 @@ public class ConfigController {
 	}
 
 	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public ConfigController() {
+	}
