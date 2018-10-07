@@ -97,3 +97,7 @@ public class TestController {
 	}
 
 	@RequestPath(value = "/plain")
+	public HttpResponse plain(String before, String end, HttpRequest request) throws Exception {
+		String bodyString = request.getBodyString();
+		HttpResponse ret = Resps.html(request, bodyString);
+		return ret;
