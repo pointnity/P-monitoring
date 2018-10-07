@@ -54,3 +54,7 @@ public class HttpServerInit {
 	}
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 * @throws IOException
+	 */
