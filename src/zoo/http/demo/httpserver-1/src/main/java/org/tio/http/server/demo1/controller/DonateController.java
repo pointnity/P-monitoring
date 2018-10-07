@@ -33,3 +33,7 @@ public class DonateController {
 	 *
 	 * @author tanyaowu
 	 */
+	public DonateController() {
+	}
+
+	@RequestPath(value = "/page")
