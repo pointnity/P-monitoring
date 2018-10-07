@@ -116,3 +116,11 @@ public class TestController {
 		HttpResponse ret = Resps.json(request, "设置成功:" + value);
 		return ret;
 	}
+
+	@RequestPath(value = "/txt")
+	public HttpResponse txt(HttpRequest request) throws Exception {
+		HttpResponse ret = Resps.txt(request, txt);
+		return ret;
+	}
+
+	/**
