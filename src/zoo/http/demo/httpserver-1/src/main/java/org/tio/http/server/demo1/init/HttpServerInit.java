@@ -64,3 +64,7 @@ public class HttpServerInit {
 	/**
 	 *
 	 * @author tanyaowu
+	 */
+	public HttpServerInit() {
+	}
+}
