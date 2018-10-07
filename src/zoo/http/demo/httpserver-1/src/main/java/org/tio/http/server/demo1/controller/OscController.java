@@ -11,3 +11,8 @@ import org.tio.http.server.util.Resps;
  * @author tanyaowu
  *  
  */
+@RequestPath(value = "/osc")
+public class OscController {
+	private static Logger log = LoggerFactory.getLogger(OscController.class);
+
+	/**
