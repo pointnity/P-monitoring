@@ -16,3 +16,9 @@ public class OscController {
 	private static Logger log = LoggerFactory.getLogger(OscController.class);
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
+
+	}
