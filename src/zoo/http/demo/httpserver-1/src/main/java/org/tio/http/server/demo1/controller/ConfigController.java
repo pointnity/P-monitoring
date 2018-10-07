@@ -18,3 +18,6 @@ public class ConfigController {
 	private static Logger log = LoggerFactory.getLogger(ConfigController.class);
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
