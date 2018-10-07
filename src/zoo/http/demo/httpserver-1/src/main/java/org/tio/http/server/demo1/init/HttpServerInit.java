@@ -18,3 +18,7 @@ import com.jfinal.kit.PropKit;
  * @author tanyaowu
  *  
  */
+public class HttpServerInit {
+	private static Logger log = LoggerFactory.getLogger(HttpServerInit.class);
+
+	public static HttpConfig httpConfig;
