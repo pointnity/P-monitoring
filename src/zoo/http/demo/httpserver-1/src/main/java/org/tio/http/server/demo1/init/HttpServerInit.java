@@ -47,3 +47,6 @@ public class HttpServerInit {
 		
 		httpServerStarter = new HttpServerStarter(httpConfig, requestHandler);
 		httpServerStarter.start();
+
+		long end = SystemTimer.currentTimeMillis();
+		long iv = end - start;
