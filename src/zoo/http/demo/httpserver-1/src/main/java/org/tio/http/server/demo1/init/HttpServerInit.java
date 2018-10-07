@@ -34,3 +34,7 @@ public class HttpServerInit {
 
 		int port = PropKit.getInt("http.port");//Start port
 		String pageRoot = PropKit.get("http.page");//root directory of html/css/js, support classpath:, also support absolute path
+		String[] scanPackages = new String[] { HttpServerDemoStarter.class.getPackage().getName() };//TIO MVC needs to scan the root package
+		
+		
+		httpConfig = new HttpConfig(port, null, null, null);
