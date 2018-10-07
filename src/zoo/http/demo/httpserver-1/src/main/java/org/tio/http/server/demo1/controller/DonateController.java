@@ -15,3 +15,10 @@ import com.jfinal.plugin.activerecord.Page;
  * @author tanyaowu
  *  
  */
+@RequestPath(value = "/donate")
+public class DonateController {
+	private static Logger log = LoggerFactory.getLogger(DonateController.class);
+
+	static final DonateService srv = DonateService.me;
+
+	/**
