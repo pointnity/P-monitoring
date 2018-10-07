@@ -31,3 +31,8 @@ public class OscController {
 	}
 
 	@RequestPath(value = "/cb")
+	public HttpResponse json(HttpRequest request) throws Exception {
+		HttpResponse ret = Resps.json(request, "ok");
+		return ret;
+	}
+}
