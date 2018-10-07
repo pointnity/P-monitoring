@@ -21,3 +21,8 @@ public class ConfigController {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	public static void main(String[] args) {
+
+	}
+
+	/**
