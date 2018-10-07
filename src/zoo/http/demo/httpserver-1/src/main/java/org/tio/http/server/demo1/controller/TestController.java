@@ -66,3 +66,6 @@ public class TestController {
 	}
 
 	@RequestPath(value = "/filetest")
+	public HttpResponse filetest(HttpRequest request) throws Exception {
+		HttpResponse ret = Resps.file(request, new File("d:/tio.exe"));
+		return ret;
