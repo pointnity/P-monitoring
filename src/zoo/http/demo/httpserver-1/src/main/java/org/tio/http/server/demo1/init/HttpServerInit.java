@@ -33,3 +33,4 @@ public class HttpServerInit {
 		PropKit.use("app.properties");
 
 		int port = PropKit.getInt("http.port");//Start port
+		String pageRoot = PropKit.get("http.page");//root directory of html/css/js, support classpath:, also support absolute path
