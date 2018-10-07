@@ -141,3 +141,7 @@ public class TestController {
 			FileUtil.writeBytes(uploadFile.getData(), file);//.writeByteArrayToFile(file, uploadFile.getData());
 
 			System.out.println("【" + before + "】");
+			System.out.println("【" + end + "】");
+
+			ret = Resps.html(request, "File "" + uploadfile.GetName () + "" "" + uploadfile.GetSize () + "byte" upload succeeded ");
+		} else {
