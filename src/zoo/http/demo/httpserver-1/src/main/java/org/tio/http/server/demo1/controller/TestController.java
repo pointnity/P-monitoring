@@ -72,3 +72,7 @@ public class TestController {
 	}
 
 	@RequestPath(value = "/filetest.zip")
+	public HttpResponse filetest_zip(HttpRequest request) throws Exception {
+		HttpResponse ret = Resps.file(request, new File("d:/eclipse-jee-neon-R-win32-x86_64.zip"));
+		return ret;
+	}
