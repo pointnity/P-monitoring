@@ -20,3 +20,6 @@ import com.xiaoleilu.hutool.io.FileUtil;
  */
 @RequestPath(value = "/test")
 public class TestController {
+	private static Logger log = LoggerFactory.getLogger(TestController.class);
+
+	/**
