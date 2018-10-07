@@ -53,3 +53,5 @@ public class TestController {
 	 * Test Map Duplication
 	 */
 	@RequestPath(value = "/abtest")
+	public HttpResponse abtest1(HttpRequest request) throws Exception {
+		log.info("");
