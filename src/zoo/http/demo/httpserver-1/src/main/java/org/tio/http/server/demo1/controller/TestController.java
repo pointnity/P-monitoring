@@ -58,3 +58,8 @@ public class TestController {
 		HttpResponse ret = Resps.html(request, "OK---------1");
 		return ret;
 	}
+
+	@RequestPath(value = "/bean")
+	public HttpResponse bean(User user, HttpRequest request) throws Exception {
+		HttpResponse ret = Resps.json(request, Json.toFormatedJson(user));
+		return ret;
