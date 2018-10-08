@@ -38,3 +38,27 @@ public abstract class BaseBlog<M extends BaseBlog<M>> extends Model<M> implement
 	public java.lang.String getPwd() {
 		return get("pwd");
 	}
+
+	public java.lang.String getSalt() {
+		return get("salt");
+	}
+
+	public java.lang.Integer getStatus() {
+		return get("status");
+	}
+
+	public void setAvatar(java.lang.String avatar) {
+		set("avatar", avatar);
+	}
+
+	public void setCreatetime(java.util.Date createtime) {
+		set("createtime", createtime);
+	}
+
+	public void setId(java.lang.Integer id) {
+		set("id", id);
+	}
+
+	public void setIp(java.lang.String ip) {
+		set("ip", ip);
+	}
