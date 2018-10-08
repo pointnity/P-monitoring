@@ -48,3 +48,5 @@ public class _Generator {
 		// Creating generators
 		Generator gen = new Generator(getDataSource(), baseModelPackageName, baseModelOutputDir, modelPackageName, modelOutputDir);
 		// Set Database dialect
+		gen.setDialect(new MysqlDialect());
+		// Add table names that you do not need to generate
