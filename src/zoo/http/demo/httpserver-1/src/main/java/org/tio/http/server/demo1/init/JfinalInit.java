@@ -54,3 +54,6 @@ public class JfinalInit {
 		try {
 			ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
 			arp.setTransactionLevel(Connection.TRANSACTION_READ_COMMITTED);
+			_MappingKit.mapping(arp);
+			// Enforces the order of the composite primary keys to prevent different development environments from generating compound primary key orders in _mappingkit
+//			arp.setPrimaryKey("document", "mainMenu,subMenu");
