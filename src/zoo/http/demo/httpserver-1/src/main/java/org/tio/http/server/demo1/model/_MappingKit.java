@@ -9,3 +9,5 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
  * public void configPlugin(Plugins me) {
  *     ActiveRecordPlugin arp = new ActiveRecordPlugin(...);
  *     _MappingKit.mapping(arp);
+ *     me.add(arp);
+ * }
