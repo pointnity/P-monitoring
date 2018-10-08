@@ -18,3 +18,23 @@ public abstract class BaseBlog<M extends BaseBlog<M>> extends Model<M> implement
 	public java.util.Date getCreatetime() {
 		return get("createtime");
 	}
+
+	public java.lang.Integer getId() {
+		return get("id");
+	}
+
+	public java.lang.String getIp() {
+		return get("ip");
+	}
+
+	public java.lang.String getLoginname() {
+		return get("loginname");
+	}
+
+	public java.lang.String getNick() {
+		return get("nick");
+	}
+
+	public java.lang.String getPwd() {
+		return get("pwd");
+	}
