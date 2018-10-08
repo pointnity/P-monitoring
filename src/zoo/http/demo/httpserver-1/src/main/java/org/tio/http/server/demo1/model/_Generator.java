@@ -28,3 +28,5 @@ public class _Generator {
 		return JfinalInit.druidPlugin.getDataSource();
 	}
 
+	public static void main(String[] args) {
+		org.tio.http.server.demo1.init.JfinalInit.init();
