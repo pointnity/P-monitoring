@@ -12,3 +12,6 @@ import com.jfinal.plugin.activerecord.Record;
  * 
  */
 public class JsonInit {
+	private static Logger log = LoggerFactory.getLogger(JsonInit.class);
+
+	public static void init() {
