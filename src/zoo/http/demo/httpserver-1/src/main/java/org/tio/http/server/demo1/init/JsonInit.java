@@ -9,3 +9,6 @@ import com.jfinal.plugin.activerecord.Record;
 
 /**
  * @author tanyaowu
+ * 
+ */
+public class JsonInit {
