@@ -21,3 +21,6 @@ public class PropInit {
 	}
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
