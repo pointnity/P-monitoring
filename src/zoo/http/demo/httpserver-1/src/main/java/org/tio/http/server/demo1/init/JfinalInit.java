@@ -63,3 +63,5 @@ public class JfinalInit {
 			}
 			arp.setBaseSqlTemplatePath(PathKit.getRootClassPath() + File.separator + PropKit.get("sqlfile"));
 			arp.addSqlTemplate("all_sqls.sql");
+			arp.start();
+		} catch (Exception e) {
