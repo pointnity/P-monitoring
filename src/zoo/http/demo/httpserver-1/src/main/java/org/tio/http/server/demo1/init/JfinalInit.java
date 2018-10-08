@@ -34,3 +34,6 @@ public class JfinalInit {
 			final String URL = PropKit.get("db01.jdbc.url");
 			final String USERNAME = PropKit.get("db01.jdbc.username");
 			String PASSWORD = null;
+			try {
+				PASSWORD = ConfigTools.decrypt(PropKit.get("db01.jdbc.password"));
+			} catch (Exception e) {
