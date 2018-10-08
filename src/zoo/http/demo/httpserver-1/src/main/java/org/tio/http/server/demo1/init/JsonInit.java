@@ -17,3 +17,8 @@ public class JsonInit {
 	public static void init() {
 		Json.put(Record.class, JfinalRecordSerializer.INSTANCE);
 	}
+
+	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
