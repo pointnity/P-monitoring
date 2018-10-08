@@ -48,3 +48,7 @@ public class JfinalInit {
 			druidPlugin.setFilters("stat,wall");
 			druidPlugin.start();
 		} catch (Exception e1) {
+			log.error(e1.toString(), e1);
+		}
+
+		try {
