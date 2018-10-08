@@ -69,3 +69,6 @@ public class JfinalInit {
 		}
 
 		try {
+			EhCachePlugin ehCache = new EhCachePlugin();
+			ehCache.start();
+		} catch (Exception e) {
