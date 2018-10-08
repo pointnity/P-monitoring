@@ -83,3 +83,8 @@ public class JfinalInit {
 	public static void main(String[] args) {
 
 	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
