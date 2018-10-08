@@ -12,3 +12,6 @@ import com.xiaoleilu.hutool.util.ReUtil;
 /**
  * Model、BaseModel、_MappingKit Generator
  */
+public class _Generator {
+
+	/**
