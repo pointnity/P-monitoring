@@ -38,3 +38,6 @@ public class _Generator {
 	        String baseModelPackageName = modelPackageName + ".base";
 
 		// base model File Save path
+		String baseModelOutputDir = PathKit.getWebRootPath() + "/src/main/java/" + ReUtil.replaceAll(baseModelPackageName, "\\.", "/");
+
+		System.out.println("Output Path:" + baseModelOutputDir);
