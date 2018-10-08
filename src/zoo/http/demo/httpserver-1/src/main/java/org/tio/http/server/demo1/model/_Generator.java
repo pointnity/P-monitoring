@@ -57,3 +57,5 @@ public class _Generator {
 		gen.setGenerateDaoInModel(false);
 		// Set whether to generate dictionary files
 		gen.setGenerateDataDictionary(false);
+		// Set the table name prefix that needs to be removed to generate Modelname.For example, the table name "osc_user", after removing the prefix "osc_" the resulting model named "user" instead of Oscuser
+		// gernerator.setRemovedTableNamePrefixes("t_");
