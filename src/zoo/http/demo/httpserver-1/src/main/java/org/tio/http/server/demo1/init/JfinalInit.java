@@ -25,3 +25,5 @@ public class JfinalInit {
 
 	public static void init() {
 		try {
+			PropInit.init();
+		} catch (Exception e2) {
