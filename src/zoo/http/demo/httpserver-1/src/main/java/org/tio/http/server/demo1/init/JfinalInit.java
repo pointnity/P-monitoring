@@ -41,3 +41,5 @@ public class JfinalInit {
 			}
 			final Integer INITIALSIZE = PropKit.getInt("db.jdbc.pool.initialSize");
 			final Integer MIDIDLE = PropKit.getInt("db.jdbc.pool.minIdle");
+			final Integer MAXACTIVEE = PropKit.getInt("db.jdbc.pool.maxActive");
+			druidPlugin = new DruidPlugin(URL, USERNAME, PASSWORD);
