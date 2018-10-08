@@ -47,3 +47,4 @@ public class JfinalInit {
 			druidPlugin.set(INITIALSIZE, MIDIDLE, MAXACTIVEE);
 			druidPlugin.setFilters("stat,wall");
 			druidPlugin.start();
+		} catch (Exception e1) {
