@@ -32,3 +32,6 @@ public class _Generator {
 		org.tio.http.server.demo1.init.JfinalInit.init();
 
 		// Package name used by model (mappingkit default package Name)
+		String modelPackageName = "org.tio.http.server.demo1.model";
+
+		// base model The name of the package used
