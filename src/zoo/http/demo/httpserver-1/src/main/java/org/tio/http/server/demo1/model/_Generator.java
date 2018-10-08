@@ -15,3 +15,5 @@ import com.xiaoleilu.hutool.util.ReUtil;
 public class _Generator {
 
 	/**
+	 * Some features are implemented using the Db + Record mode, without the need to generate the model table in this configuration
+	 */
