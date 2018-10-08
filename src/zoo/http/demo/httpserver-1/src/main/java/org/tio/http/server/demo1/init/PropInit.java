@@ -9,3 +9,4 @@ import com.jfinal.kit.PropKit;
  * @author tanyaowu
  *  
  */
+public class PropInit {
