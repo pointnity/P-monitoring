@@ -22,3 +22,8 @@ public class JsonInit {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	public static void main(String[] args) {
+
+	}
+
+	/**
