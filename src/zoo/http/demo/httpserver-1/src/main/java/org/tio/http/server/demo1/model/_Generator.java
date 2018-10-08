@@ -53,3 +53,5 @@ public class _Generator {
 		for (String table : excludedTable) {
 			gen.addExcludedTable(table);
 		}
+		// Sets whether a DAO object is generated in Model
+		gen.setGenerateDaoInModel(false);
