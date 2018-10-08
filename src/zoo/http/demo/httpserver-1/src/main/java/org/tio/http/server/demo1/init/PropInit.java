@@ -10,3 +10,6 @@ import com.jfinal.kit.PropKit;
  *  
  */
 public class PropInit {
+	private static Logger log = LoggerFactory.getLogger(PropInit.class);
+
+	public static void init() {
