@@ -7,3 +7,5 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
  * <pre>
  * Example:
  * public void configPlugin(Plugins me) {
+ *     ActiveRecordPlugin arp = new ActiveRecordPlugin(...);
+ *     _MappingKit.mapping(arp);
