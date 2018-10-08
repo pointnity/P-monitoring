@@ -16,3 +16,8 @@ public class PropInit {
 		try {
 			PropKit.use("app.properties");
 		} catch (Exception e2) {
+			log.error(e2.toString(), e2);
+		}
+	}
+
+	/**
