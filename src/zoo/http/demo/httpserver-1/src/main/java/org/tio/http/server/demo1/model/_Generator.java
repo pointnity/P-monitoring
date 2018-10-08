@@ -46,3 +46,5 @@ public class _Generator {
 		String modelOutputDir = baseModelOutputDir + "/..";
 
 		// Creating generators
+		Generator gen = new Generator(getDataSource(), baseModelPackageName, baseModelOutputDir, modelPackageName, modelOutputDir);
+		// Set Database dialect
