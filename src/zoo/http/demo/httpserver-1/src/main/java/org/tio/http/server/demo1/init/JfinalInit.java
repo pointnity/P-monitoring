@@ -37,3 +37,5 @@ public class JfinalInit {
 			try {
 				PASSWORD = ConfigTools.decrypt(PropKit.get("db01.jdbc.password"));
 			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
