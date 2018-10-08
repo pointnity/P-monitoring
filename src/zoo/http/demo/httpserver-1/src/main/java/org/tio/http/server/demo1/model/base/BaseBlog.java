@@ -62,3 +62,25 @@ public abstract class BaseBlog<M extends BaseBlog<M>> extends Model<M> implement
 	public void setIp(java.lang.String ip) {
 		set("ip", ip);
 	}
+
+	public void setLoginname(java.lang.String loginname) {
+		set("loginname", loginname);
+	}
+
+	public void setNick(java.lang.String nick) {
+		set("nick", nick);
+	}
+
+	public void setPwd(java.lang.String pwd) {
+		set("pwd", pwd);
+	}
+
+	public void setSalt(java.lang.String salt) {
+		set("salt", salt);
+	}
+
+	public void setStatus(java.lang.Integer status) {
+		set("status", status);
+	}
+
+}
