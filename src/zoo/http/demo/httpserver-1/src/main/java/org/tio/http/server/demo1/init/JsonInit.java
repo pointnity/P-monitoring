@@ -27,3 +27,9 @@ public class JsonInit {
 	}
 
 	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public JsonInit() {
+	}
+}
