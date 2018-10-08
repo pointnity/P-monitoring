@@ -21,3 +21,6 @@ public class _Generator {
 			"project_page_view", "share_page_view", "feedback_page_view", "login_log", "sensitive_words", "upload_counter", "task_run_log", "message_tip", "friend", "project_like",
 			"share_like", "feedback_like", "share_reply_like", "feedback_reply_like", "like_message_log" };
 
+	/**
+	 *Reuse the data source configuration in Jfinalclubconfig to avoid redundant configuration
+	 */
