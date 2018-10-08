@@ -39,3 +39,5 @@ public class JfinalInit {
 			} catch (Exception e) {
 				throw new RuntimeException(e);
 			}
+			final Integer INITIALSIZE = PropKit.getInt("db.jdbc.pool.initialSize");
+			final Integer MIDIDLE = PropKit.getInt("db.jdbc.pool.minIdle");
