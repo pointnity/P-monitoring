@@ -50,3 +50,6 @@ public class _Generator {
 		// Set Database dialect
 		gen.setDialect(new MysqlDialect());
 		// Add table names that you do not need to generate
+		for (String table : excludedTable) {
+			gen.addExcludedTable(table);
+		}
