@@ -31,3 +31,6 @@ public class JfinalInit {
 		}
 
 		try {
+			final String URL = PropKit.get("db01.jdbc.url");
+			final String USERNAME = PropKit.get("db01.jdbc.username");
+			String PASSWORD = null;
