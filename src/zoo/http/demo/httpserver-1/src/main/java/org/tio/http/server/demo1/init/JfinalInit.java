@@ -65,3 +65,7 @@ public class JfinalInit {
 			arp.addSqlTemplate("all_sqls.sql");
 			arp.start();
 		} catch (Exception e) {
+			log.error(e.toString(), e);
+		}
+
+		try {
