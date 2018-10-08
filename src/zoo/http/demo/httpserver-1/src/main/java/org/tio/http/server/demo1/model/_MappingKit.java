@@ -19,3 +19,6 @@ public class _MappingKit {
 		arp.addMapping("blog", "id", Blog.class);
 		arp.addMapping("donate", "id", Donate.class);
 		arp.addMapping("user", "id", User.class);
+		arp.addMapping("user_osc", "id", UserOsc.class);
+	}
+}
