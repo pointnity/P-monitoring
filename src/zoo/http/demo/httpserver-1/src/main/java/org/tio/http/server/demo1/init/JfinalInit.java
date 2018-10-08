@@ -88,3 +88,6 @@ public class JfinalInit {
 	 *
 	 * @author tanyaowu
 	 */
+	public JfinalInit() {
+	}
+}
