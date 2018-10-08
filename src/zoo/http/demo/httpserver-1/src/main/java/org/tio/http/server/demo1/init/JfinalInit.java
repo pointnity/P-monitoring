@@ -57,3 +57,6 @@ public class JfinalInit {
 			_MappingKit.mapping(arp);
 			// Enforces the order of the composite primary keys to prevent different development environments from generating compound primary key orders in _mappingkit
 //			arp.setPrimaryKey("document", "mainMenu,subMenu");
+			//    me.add(arp);
+			if (PropKit.getBoolean("devMode", false)) {
+				arp.setShowSql(true);
