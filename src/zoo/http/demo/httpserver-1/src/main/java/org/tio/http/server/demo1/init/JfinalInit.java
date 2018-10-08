@@ -22,3 +22,6 @@ public class JfinalInit {
 	private static Logger log = LoggerFactory.getLogger(JfinalInit.class);
 
 	public static DruidPlugin druidPlugin;
+
+	public static void init() {
+		try {
