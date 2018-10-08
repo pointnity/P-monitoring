@@ -10,3 +10,5 @@ import com.jfinal.plugin.activerecord.generator.Generator;
 import com.xiaoleilu.hutool.util.ReUtil;
 
 /**
+ * Model、BaseModel、_MappingKit Generator
+ */
