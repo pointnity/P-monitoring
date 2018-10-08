@@ -52,3 +52,5 @@ public class JfinalInit {
 		}
 
 		try {
+			ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
+			arp.setTransactionLevel(Connection.TRANSACTION_READ_COMMITTED);
