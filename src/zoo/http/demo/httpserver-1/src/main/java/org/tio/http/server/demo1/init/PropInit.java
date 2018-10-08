@@ -30,3 +30,8 @@ public class PropInit {
 
 	/**
 	 *
+	 * @author tanyaowu
+	 */
+	public PropInit() {
+	}
+}
