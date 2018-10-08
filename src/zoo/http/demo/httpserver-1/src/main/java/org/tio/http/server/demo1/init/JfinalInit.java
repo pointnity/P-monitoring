@@ -60,3 +60,6 @@ public class JfinalInit {
 			//    me.add(arp);
 			if (PropKit.getBoolean("devMode", false)) {
 				arp.setShowSql(true);
+			}
+			arp.setBaseSqlTemplatePath(PathKit.getRootClassPath() + File.separator + PropKit.get("sqlfile"));
+			arp.addSqlTemplate("all_sqls.sql");
