@@ -55,3 +55,5 @@ public class _Generator {
 		}
 		// Sets whether a DAO object is generated in Model
 		gen.setGenerateDaoInModel(false);
+		// Set whether to generate dictionary files
+		gen.setGenerateDataDictionary(false);
