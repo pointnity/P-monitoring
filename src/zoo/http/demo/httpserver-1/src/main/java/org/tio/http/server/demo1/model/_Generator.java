@@ -35,3 +35,6 @@ public class _Generator {
 		String modelPackageName = "org.tio.http.server.demo1.model";
 
 		// base model The name of the package used
+	        String baseModelPackageName = modelPackageName + ".base";
+
+		// base model File Save path
