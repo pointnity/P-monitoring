@@ -24,3 +24,7 @@ public class _Generator {
 	/**
 	 *Reuse the data source configuration in Jfinalclubconfig to avoid redundant configuration
 	 */
+	public static DataSource getDataSource() {
+		return JfinalInit.druidPlugin.getDataSource();
+	}
+
