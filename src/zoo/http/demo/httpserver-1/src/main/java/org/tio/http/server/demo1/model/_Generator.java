@@ -41,3 +41,7 @@ public class _Generator {
 		String baseModelOutputDir = PathKit.getWebRootPath() + "/src/main/java/" + ReUtil.replaceAll(baseModelPackageName, "\\.", "/");
 
 		System.out.println("Output Path:" + baseModelOutputDir);
+
+		// model File save path (mappingkit and datadictionary file default save Path)
+		String modelOutputDir = baseModelOutputDir + "/..";
+
