@@ -45,3 +45,5 @@ public class JfinalInit {
 			druidPlugin = new DruidPlugin(URL, USERNAME, PASSWORD);
 			//		druidPlugin.setConnectionProperties(PropKit.get("connectionProperties"));
 			druidPlugin.set(INITIALSIZE, MIDIDLE, MAXACTIVEE);
+			druidPlugin.setFilters("stat,wall");
+			druidPlugin.start();
