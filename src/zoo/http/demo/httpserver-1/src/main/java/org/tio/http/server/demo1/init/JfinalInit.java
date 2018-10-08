@@ -18,3 +18,7 @@ import com.jfinal.plugin.ehcache.EhCachePlugin;
  * @author tanyaowu
  *  
  */
+public class JfinalInit {
+	private static Logger log = LoggerFactory.getLogger(JfinalInit.class);
+
+	public static DruidPlugin druidPlugin;
