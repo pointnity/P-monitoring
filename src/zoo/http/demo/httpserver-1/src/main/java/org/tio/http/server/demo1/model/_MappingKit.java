@@ -11,3 +11,6 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
  *     _MappingKit.mapping(arp);
  *     me.add(arp);
  * }
+ * </pre>
+ */
+public class _MappingKit {
