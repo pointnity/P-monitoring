@@ -74,3 +74,8 @@ public class JfinalInit {
 		} catch (Exception e) {
 			log.error(e.toString(), e);
 		}
+	}
+
+	/**
+	 * @param args
+	 * @author tanyaowu
