@@ -29,3 +29,5 @@ public class JfinalInit {
 		} catch (Exception e2) {
 			log.error(e2.toString(), e2);
 		}
+
+		try {
