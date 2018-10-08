@@ -12,3 +12,9 @@ public abstract class BaseBlog<M extends BaseBlog<M>> extends Model<M> implement
 	private static final long serialVersionUID = 9026898583756109271L;
 
 	public java.lang.String getAvatar() {
+		return get("avatar");
+	}
+
+	public java.util.Date getCreatetime() {
+		return get("createtime");
+	}
