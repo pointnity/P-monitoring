@@ -70,3 +70,7 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 	public void setNick(java.lang.String nick) {
 		set("nick", nick);
 	}
+
+	public void setPwd(java.lang.String pwd) {
+		set("pwd", pwd);
+	}
