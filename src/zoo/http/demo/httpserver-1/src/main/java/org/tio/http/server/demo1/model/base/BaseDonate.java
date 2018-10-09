@@ -41,3 +41,11 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 
 	public java.lang.String getUrl() {
 		return get("url");
+	}
+
+	public java.lang.String getWay() {
+		return get("way");
+	}
+
+	public void setAmount(java.lang.Double amount) {
+		set("amount", amount);
