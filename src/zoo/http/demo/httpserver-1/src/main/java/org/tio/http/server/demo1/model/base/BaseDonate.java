@@ -32,3 +32,12 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 	}
 
 	public java.lang.String getRemark() {
+		return get("remark");
+	}
+
+	public java.util.Date getTime() {
+		return get("time");
+	}
+
+	public java.lang.String getUrl() {
+		return get("url");
