@@ -41,3 +41,14 @@ public abstract class BaseUserOsc<M extends BaseUserOsc<M>> extends Model<M> imp
 
 	public void setOscid(java.lang.String oscid) {
 		set("oscid", oscid);
+	}
+
+	public void setOscnick(java.lang.String oscnick) {
+		set("oscnick", oscnick);
+	}
+
+	public void setUserid(java.lang.Integer userid) {
+		set("userid", userid);
+	}
+
+}
