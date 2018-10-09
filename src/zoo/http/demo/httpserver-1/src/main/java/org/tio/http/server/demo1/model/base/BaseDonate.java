@@ -70,3 +70,7 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 	public void setRemark(java.lang.String remark) {
 		set("remark", remark);
 	}
+
+	public void setTime(java.util.Date time) {
+		set("time", time);
+	}
