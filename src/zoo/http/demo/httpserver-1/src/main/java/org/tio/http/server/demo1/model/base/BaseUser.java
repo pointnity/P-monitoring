@@ -50,3 +50,10 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 	public void setAvatar(java.lang.String avatar) {
 		set("avatar", avatar);
 	}
+
+	public void setCreatetime(java.util.Date createtime) {
+		set("createtime", createtime);
+	}
+
+	public void setId(java.lang.Integer id) {
+		set("id", id);
