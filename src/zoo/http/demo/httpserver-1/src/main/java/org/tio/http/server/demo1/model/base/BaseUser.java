@@ -12,3 +12,9 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 	private static final long serialVersionUID = -5967132586596290127L;
 
 	public java.lang.String getAvatar() {
+		return get("avatar");
+	}
+
+	public java.util.Date getCreatetime() {
+		return get("createtime");
+	}
