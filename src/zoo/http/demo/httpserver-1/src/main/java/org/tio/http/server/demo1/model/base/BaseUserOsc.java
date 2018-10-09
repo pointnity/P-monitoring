@@ -12,3 +12,9 @@ public abstract class BaseUserOsc<M extends BaseUserOsc<M>> extends Model<M> imp
 	private static final long serialVersionUID = 7995046067570049982L;
 
 	public java.util.Date getCreatetime() {
+		return get("createtime");
+	}
+
+	public java.lang.Integer getId() {
+		return get("id");
+	}
