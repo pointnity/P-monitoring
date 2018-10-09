@@ -57,3 +57,11 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 
 	public void setId(java.lang.Integer id) {
 		set("id", id);
+	}
+
+	public void setIp(java.lang.String ip) {
+		set("ip", ip);
+	}
+
+	public void setLoginname(java.lang.String loginname) {
+		set("loginname", loginname);
