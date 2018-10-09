@@ -78,3 +78,9 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 	public void setUrl(java.lang.String url) {
 		set("url", url);
 	}
+
+	public void setWay(java.lang.String way) {
+		set("way", way);
+	}
+
+}
