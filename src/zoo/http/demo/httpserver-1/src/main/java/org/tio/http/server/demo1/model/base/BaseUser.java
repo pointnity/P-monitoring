@@ -34,3 +34,12 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 	public java.lang.String getNick() {
 		return get("nick");
 	}
+
+	public java.lang.String getPwd() {
+		return get("pwd");
+	}
+
+	public java.lang.String getSalt() {
+		return get("salt");
+	}
+
