@@ -30,3 +30,10 @@ public class DonateService {
 	}
 
 	private final Donate dao = new Donate().dao();
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public DonateService() {
+	}
