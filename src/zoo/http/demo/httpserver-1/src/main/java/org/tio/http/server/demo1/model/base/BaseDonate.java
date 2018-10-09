@@ -17,3 +17,10 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 
 	public java.lang.Integer getId() {
 		return get("id");
+	}
+
+	public java.lang.String getLeavemsg() {
+		return get("leavemsg");
+	}
+
+	public java.lang.String getMyremark() {
