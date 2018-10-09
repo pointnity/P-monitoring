@@ -18,3 +18,9 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 	public java.util.Date getCreatetime() {
 		return get("createtime");
 	}
+
+	public java.lang.Integer getId() {
+		return get("id");
+	}
+
+	public java.lang.String getIp() {
