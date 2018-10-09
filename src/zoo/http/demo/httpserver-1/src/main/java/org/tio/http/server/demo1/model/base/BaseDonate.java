@@ -74,3 +74,7 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 	public void setTime(java.util.Date time) {
 		set("time", time);
 	}
+
+	public void setUrl(java.lang.String url) {
+		set("url", url);
+	}
