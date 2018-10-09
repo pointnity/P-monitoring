@@ -18,3 +18,10 @@ public abstract class BaseUserOsc<M extends BaseUserOsc<M>> extends Model<M> imp
 	public java.lang.Integer getId() {
 		return get("id");
 	}
+
+	public java.lang.String getOscid() {
+		return get("oscid");
+	}
+
+	public java.lang.String getOscnick() {
+		return get("oscnick");
