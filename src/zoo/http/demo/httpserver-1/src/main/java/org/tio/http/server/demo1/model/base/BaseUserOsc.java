@@ -25,3 +25,12 @@ public abstract class BaseUserOsc<M extends BaseUserOsc<M>> extends Model<M> imp
 
 	public java.lang.String getOscnick() {
 		return get("oscnick");
+	}
+
+	public java.lang.Integer getUserid() {
+		return get("userid");
+	}
+
+	public void setCreatetime(java.util.Date createtime) {
+		set("createtime", createtime);
+	}
