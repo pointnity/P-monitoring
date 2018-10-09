@@ -20,3 +20,13 @@ public class DonateService {
 
 	/**
 	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
+		JfinalInit.init();
+
+		Page<Donate> page = DonateService.me.page(1, 10);
+		System.out.println(page);
+	}
+
+	private final Donate dao = new Donate().dao();
