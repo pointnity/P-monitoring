@@ -24,3 +24,11 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 	}
 
 	public java.lang.String getMyremark() {
+		return get("myremark");
+	}
+
+	public java.lang.String getName() {
+		return get("name");
+	}
+
+	public java.lang.String getRemark() {
