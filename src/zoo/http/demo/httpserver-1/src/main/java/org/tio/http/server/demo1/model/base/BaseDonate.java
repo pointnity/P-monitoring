@@ -49,3 +49,11 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 
 	public void setAmount(java.lang.Double amount) {
 		set("amount", amount);
+	}
+
+	public void setId(java.lang.Integer id) {
+		set("id", id);
+	}
+
+	public void setLeavemsg(java.lang.String leavemsg) {
+		set("leavemsg", leavemsg);
