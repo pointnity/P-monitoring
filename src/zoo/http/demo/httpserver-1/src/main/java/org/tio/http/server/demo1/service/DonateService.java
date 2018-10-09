@@ -14,3 +14,9 @@ import com.jfinal.plugin.ehcache.CacheKit;
  * @author tanyaowu
  *  
  */
+public class DonateService {
+	private static Logger log = LoggerFactory.getLogger(DonateService.class);
+	public static final DonateService me = new DonateService();
+
+	/**
+	 * @param args
