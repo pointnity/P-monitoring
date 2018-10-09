@@ -34,3 +34,10 @@ public abstract class BaseUserOsc<M extends BaseUserOsc<M>> extends Model<M> imp
 	public void setCreatetime(java.util.Date createtime) {
 		set("createtime", createtime);
 	}
+
+	public void setId(java.lang.Integer id) {
+		set("id", id);
+	}
+
+	public void setOscid(java.lang.String oscid) {
+		set("oscid", oscid);
