@@ -45,3 +45,11 @@ public class DonateService {
 		Object obj = CacheKit.get(cacheName, cacheKey);
 		if (obj != null) {
 			return (Page<Donate>) obj;
+		}
+
+		SqlPara sqlPara = dao.getSqlPara("donate.page");
+		Page<Donate> ret = dao.paginate(pageNumber, pageSize, sqlPara);
+		CacheKit.put(cacheName, cacheKey, ret);
+		return ret;
+	}
+}
