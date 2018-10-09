@@ -43,3 +43,10 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return get("salt");
 	}
 
+	public java.lang.Integer getStatus() {
+		return get("status");
+	}
+
+	public void setAvatar(java.lang.String avatar) {
+		set("avatar", avatar);
+	}
