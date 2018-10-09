@@ -12,3 +12,8 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 	private static final long serialVersionUID = -7992873894635460955L;
 
 	public java.lang.Double getAmount() {
+		return get("amount");
+	}
+
+	public java.lang.Integer getId() {
+		return get("id");
