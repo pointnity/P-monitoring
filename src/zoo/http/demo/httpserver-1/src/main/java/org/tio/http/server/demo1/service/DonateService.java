@@ -37,3 +37,11 @@ public class DonateService {
 	 */
 	public DonateService() {
 	}
+
+	@SuppressWarnings("unchecked")
+	public Page<Donate> page(int pageNumber, int pageSize) {
+		String cacheName = EhcacheConst.CacheName.T_60;
+		String cacheKey = "donate_page" + "_" + pageNumber + "_" + pageSize;
+		Object obj = CacheKit.get(cacheName, cacheKey);
+		if (obj != null) {
+			return (Page<Donate>) obj;
