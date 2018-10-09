@@ -65,3 +65,8 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 
 	public void setLoginname(java.lang.String loginname) {
 		set("loginname", loginname);
+	}
+
+	public void setNick(java.lang.String nick) {
+		set("nick", nick);
+	}
