@@ -62,3 +62,7 @@ public abstract class BaseDonate<M extends BaseDonate<M>> extends Model<M> imple
 	public void setMyremark(java.lang.String myremark) {
 		set("myremark", myremark);
 	}
+
+	public void setName(java.lang.String name) {
+		set("name", name);
+	}
