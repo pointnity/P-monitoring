@@ -8,3 +8,9 @@ import org.tio.http.server.demo1.utils.EhcacheConst;
 
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.SqlPara;
+import com.jfinal.plugin.ehcache.CacheKit;
+
+/**
+ * @author tanyaowu
+ *  
+ */
