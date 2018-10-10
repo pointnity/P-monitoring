@@ -58,3 +58,7 @@
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 						</manifest>
+						<addMavenDescriptor>false</addMavenDescriptor><!-- Do not include the Pom in the generated jar.XML and Pom.The properties of these two files-->
+					</archive>
+
+					<excludes>
