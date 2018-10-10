@@ -65,3 +65,7 @@
 						<exclude>**/config/**/*</exclude>
 
 						<exclude>app.conf</exclude>
+						<exclude>logback.properties</exclude>
+						<exclude>logback.xml</exclude>
+					</excludes>
+				</configuration>
