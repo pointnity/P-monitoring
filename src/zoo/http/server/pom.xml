@@ -37,3 +37,7 @@
 			<groupId>io.github.lukehutch</groupId>
 			<artifactId>fast-classpath-scanner</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.paranamer</groupId>
+			<artifactId>paranamer</artifactId>
+		</dependency>
