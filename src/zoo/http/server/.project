@@ -14,3 +14,5 @@
 					<value>&lt;project&gt;/.externalToolBuilders/org.eclipse.xtext.ui.shared.xtextBuilder (1).launch</value>
 				</dictionary>
 			</arguments>
+		</buildCommand>
+		<buildCommand>
