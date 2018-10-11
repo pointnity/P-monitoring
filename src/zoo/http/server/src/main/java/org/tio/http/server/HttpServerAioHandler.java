@@ -57,3 +57,12 @@ public class HttpServerAioHandler implements ServerAioHandler {
 	 *  
 	 *
 	 */
+	public HttpServerAioHandler(HttpConfig httpConfig, HttpRequestHandler requestHandler) {
+		this.httpConfig = httpConfig;
+		this.requestHandler = requestHandler;
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#decode(java.nio.ByteBuffer)
+	 *
+	 * @param buffer
