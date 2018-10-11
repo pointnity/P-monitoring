@@ -18,3 +18,12 @@ import org.tio.http.common.handler.HttpRequestHandler;
 import org.tio.server.intf.ServerAioHandler;
 
 /**
+ *
+ * @author tanyaowu
+ *
+ */
+public class HttpServerAioHandler implements ServerAioHandler {
+	private static Logger log = LoggerFactory.getLogger(HttpServerAioHandler.class);
+
+	/**
+	 * @param args
