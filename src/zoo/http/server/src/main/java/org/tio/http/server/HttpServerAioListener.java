@@ -114,3 +114,12 @@ public class HttpServerAioListener implements ServerAioListener {
 	}
 
 	/**
+	 * @see org.tio.core.intf.AioListener#onAfterReceived(org.tio.core.ChannelContext, org.tio.core.intf.Packet, int)
+	 *
+	 * @param channelContext
+	 * @param packet
+	 * @param packetSize
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
