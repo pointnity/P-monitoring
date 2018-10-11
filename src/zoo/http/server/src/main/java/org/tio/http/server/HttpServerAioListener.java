@@ -71,3 +71,23 @@ public class HttpServerAioListener implements ServerAioListener {
 	 *  
 	 *
 	 */
+	//	@Override
+	//	public boolean onAfterAccepted(AsynchronousSocketChannel asynchronousSocketChannel, AioServer<ImSessionContext, HttpPacket, Object> aioServer)
+	//	{
+	//		return true;
+	//	}
+
+	@Override
+	public void onAfterConnected(ChannelContext channelContext, boolean isConnected, boolean isReconnect) {
+		//		HttpSessionContext httpSession = new HttpSessionContext();
+		//		channelContext.setAttribute(httpSession);
+
+		//		GroupContext<HttpSessionContext, HttpPacket, Object> groupContext = channelContext.getGroupContext();
+		//		log.info(groupContext.toString());
+		//		int permitsPerSecond = HttpServerStarter.conf.getInt("request.permitsPerSecond");
+		//		int warnClearInterval = 1000 * HttpServerStarter.conf.getInt("request.warnClearInterval");
+		//		int maxWarnCount = HttpServerStarter.conf.getInt("request.maxWarnCount");
+		//		int maxAllWarnCount = HttpServerStarter.conf.getInt("request.maxAllWarnCount");
+		//		RateLimiterWrap rateLimiterWrap = new RateLimiterWrap(permitsPerSecond, warnClearInterval, maxWarnCount, maxAllWarnCount);
+
+		if (isConnected) {
