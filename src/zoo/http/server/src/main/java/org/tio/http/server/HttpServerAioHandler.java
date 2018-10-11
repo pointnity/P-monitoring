@@ -32,3 +32,13 @@ public class HttpServerAioHandler implements ServerAioHandler {
 	 *  
 	 *
 	 */
+	public static void main(String[] args) {
+	}
+
+	protected HttpConfig httpConfig;
+
+	//	protected Routes routes = null;
+
+	//	public HttpServerAioHandler(HttpRequestHandler requestHandler) {
+	//		this.requestHandler = requestHandler;
+	//	}
