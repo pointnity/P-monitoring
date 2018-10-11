@@ -19,3 +19,18 @@ import org.tio.server.intf.ServerAioListener;
  * @author tanyaowu
  *
  */
+public class HttpServerAioListener implements ServerAioListener {
+
+	//	private static Logger log = LoggerFactory.getLogger(HttpServerAioListener.class);
+	private static Logger iplog = LoggerFactory.getLogger("tio-ip-trace-log");
+
+	static Map<String, AtomicLong> ipmap = new java.util.concurrent.ConcurrentHashMap<>();
+	static AtomicLong accessCount = new AtomicLong();
+
+	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
