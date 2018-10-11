@@ -66,3 +66,9 @@ public class HttpServerAioHandler implements ServerAioHandler {
 	 * @see org.tio.core.intf.AioHandler#decode(java.nio.ByteBuffer)
 	 *
 	 * @param buffer
+	 * @return
+	 * @throws AioDecodeException
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
