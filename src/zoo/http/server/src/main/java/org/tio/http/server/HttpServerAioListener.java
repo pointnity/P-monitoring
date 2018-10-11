@@ -57,3 +57,17 @@ public class HttpServerAioListener implements ServerAioListener {
 	 *  
 	 *
 	 */
+	@Override
+	public void onAfterClose(ChannelContext channelContext, Throwable throwable, String remark, boolean isRemove) {
+	}
+
+	/**
+	 * @see org.tio.server.intf.ServerAioListener#onAfterAccepted(java.nio.channels.AsynchronousSocketChannel, org.tio.server.AioServer)
+	 *
+	 * @param asynchronousSocketChannel
+	 * @param aioServer
+	 * @return
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
