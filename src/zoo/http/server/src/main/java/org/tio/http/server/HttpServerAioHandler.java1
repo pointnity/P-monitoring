@@ -27,3 +27,16 @@ public class HttpServerAioHandler extends AbstractHttpServerAioHandler {
 			ChannelContext<HttpSessionContext, HttpPacket, Object> channelContext) throws Exception {
 		
 		return null;
+	}
+
+	@Override
+	public HttpResponsePacket resp404(HttpRequestPacket request, RequestLine requestLine, ChannelContext<HttpSessionContext, HttpPacket, Object> channelContext) {
+		return null;
+	}
+
+	@Override
+	public HttpResponsePacket resp500(HttpRequestPacket request, RequestLine requestLine, ChannelContext<HttpSessionContext, HttpPacket, Object> channelContext) {
+		return null;
+	}
+
+}
