@@ -14,3 +14,16 @@ import org.tio.http.server.handler.AbstractHttpServerAioHandler;
 /**
  * Version: [1.0]
  * Function Description:
+ *  
+ */
+public class HttpServerAioHandler extends AbstractHttpServerAioHandler {
+
+	public HttpServerAioHandler(HttpConfig httpConfig) {
+		super(httpConfig);
+	}
+	
+	@Override
+	public HttpResponsePacket handler(HttpRequestPacket packet, RequestLine requestLine,
+			ChannelContext<HttpSessionContext, HttpPacket, Object> channelContext) throws Exception {
+		
+		return null;
