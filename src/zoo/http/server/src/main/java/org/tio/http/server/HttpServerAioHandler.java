@@ -120,3 +120,21 @@ public class HttpServerAioHandler implements ServerAioHandler {
 			Aio.remove(channelContext, ip + "In the Blacklist");
 			return;
 		}
+		
+		HttpResponse httpResponse = requestHandler.handler(request);
+		if (httpResponse != null) {
+			Aio.send(channelContext, httpResponse);
+		} else {
+			log.info("{}, {}, handler return null, request line: {}", channelContext.getGroupContext().getName(), channelContext.toString(), request.getRequestLine().getLine());
+			Aio.remove(channelContext, "handler return null");
+		}
+	}
+
+	/**
+	 * @param httpConfig the httpConfig to set
+	 */
+	public void setHttpConfig(HttpConfig httpConfig) {
+		this.httpConfig = httpConfig;
+	}
+
+}
