@@ -44,3 +44,16 @@ public class HttpServerAioListener implements ServerAioListener {
 	 * 
 	 *
 	 */
+	public HttpServerAioListener() {
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioListener#onAfterClose(org.tio.core.ChannelContext, java.lang.Throwable, java.lang.String)
+	 *
+	 * @param channelContext
+	 * @param throwable
+	 * @param remark
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
