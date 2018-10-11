@@ -95,3 +95,16 @@ public class HttpServerAioHandler implements ServerAioHandler {
 	}
 
 	/**
+	 * @return the httpConfig
+	 */
+	public HttpConfig getHttpConfig() {
+		return httpConfig;
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#handler(org.tio.core.intf.Packet)
+	 *
+	 * @param packet
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
