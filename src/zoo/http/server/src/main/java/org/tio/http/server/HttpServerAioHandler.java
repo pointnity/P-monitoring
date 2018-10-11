@@ -72,3 +72,13 @@ public class HttpServerAioHandler implements ServerAioHandler {
 	 *  
 	 *
 	 */
+	@Override
+	public HttpRequest decode(ByteBuffer buffer, ChannelContext channelContext) throws AioDecodeException {
+		HttpRequest request = HttpRequestDecoder.decode(buffer, channelContext);
+		return request;
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#encode(org.tio.core.intf.Packet)
+	 *
+	 * @param packet
