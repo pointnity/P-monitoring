@@ -106,3 +106,11 @@ public class HttpServerAioListener implements ServerAioListener {
 			String accessCountStr = StringUtils.rightPad(accessCount.incrementAndGet() + "", 9);
 			String ipCountStr = StringUtils.rightPad(ipmap.size() + "", 9);
 			String ipStr = StringUtils.leftPad(ip, 15);
+			//region, the number of times that all visits, how many different IPs, IP, this IP connection
+			iplog.info("Total number of visits: {}, total {} different IP access, [{}] access number {}, ", accessCountStr, ipCountStr, ipStr, ipcount);
+		}
+
+		return;
+	}
+
+	/**
