@@ -112,3 +112,11 @@ public class HttpServerAioHandler implements ServerAioHandler {
 	 *
 	 */
 	@Override
+	public void handler(Packet packet, ChannelContext channelContext) throws Exception {
+		HttpRequest request = (HttpRequest) packet;
+		String ip = request.getClientIp();
+		
+		if (channelContext.getGroupContext().ipBlacklist.isInBlacklist(ip)) {
+			Aio.remove(channelContext, ip + "In the Blacklist");
+			return;
+		}
