@@ -137,3 +137,13 @@ public class HttpServerAioListener implements ServerAioListener {
 	 *  
 	 *
 	 */
+	@Override
+	public void onAfterSent(ChannelContext channelContext, Packet packet, boolean isSentSuccess) {
+		//		if (isSentSuccess) {
+		//			CommandStat.getCount(packet.getCommand()).sent.incrementAndGet();
+		//		}
+
+		HttpResponse httpResponse = (HttpResponse) packet;
+
+		String Connection = httpResponse.getHeader(HttpConst.ResponseHeaderKey.Connection);
+		// It's almost 1.1 now, so use close to judge
