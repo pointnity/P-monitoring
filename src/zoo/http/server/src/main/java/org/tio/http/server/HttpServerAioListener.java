@@ -123,3 +123,17 @@ public class HttpServerAioListener implements ServerAioListener {
 	 *  
 	 *
 	 */
+	@Override
+	public void onAfterReceived(ChannelContext channelContext, Packet packet, int packetSize) {
+		//		CommandStat.getCount(packet.getCommand()).received.incrementAndGet();
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioListener#onBeforeSent(org.tio.core.ChannelContext, org.tio.core.intf.Packet, int)
+	 *
+	 * @param channelContext
+	 * @param packet
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
