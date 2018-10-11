@@ -147,3 +147,15 @@ public class HttpServerAioListener implements ServerAioListener {
 
 		String Connection = httpResponse.getHeader(HttpConst.ResponseHeaderKey.Connection);
 		// It's almost 1.1 now, so use close to judge
+		if (StringUtils.equalsIgnoreCase(Connection, HttpConst.ResponseHeaderValue.Connection.close)) {
+			HttpRequest request = httpResponse.getHttpRequest();
+			String line = request.getRequestLine().getLine();
+			Aio.remove(channelContext, "onAfterSent, " + line);
+		}
+	}
+
+	@Override
+	public void onBeforeClose(ChannelContext channelContext, Throwable throwable, String remark, boolean isRemove) {
+	}
+
+}
