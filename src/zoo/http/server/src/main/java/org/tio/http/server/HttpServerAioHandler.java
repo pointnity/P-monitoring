@@ -42,3 +42,15 @@ public class HttpServerAioHandler implements ServerAioHandler {
 	//	public HttpServerAioHandler(HttpRequestHandler requestHandler) {
 	//		this.requestHandler = requestHandler;
 	//	}
+
+	private HttpRequestHandler requestHandler;
+
+	//	public HttpServerAioHandler(HttpConfig httpConfig, HttpRequestHandler requestHandler) {
+	//		this(httpConfig, requestHandler);
+	////		this.routes = routes;
+	//	}
+
+	/**
+	 *
+	 *
+	 * @author tanyaowu
