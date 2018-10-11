@@ -91,3 +91,18 @@ public class HttpServerAioListener implements ServerAioListener {
 		//		RateLimiterWrap rateLimiterWrap = new RateLimiterWrap(permitsPerSecond, warnClearInterval, maxWarnCount, maxAllWarnCount);
 
 		if (isConnected) {
+			String ip = channelContext.getClientNode().getIp();
+
+			//			ImUtils.setClient(channelContext);
+
+			AtomicLong ipcount = ipmap.get(ip);
+			if (ipcount == null) {
+				ipcount = new AtomicLong();
+				ipmap.put(ip, ipcount);
+			}
+			ipcount.incrementAndGet();
+
+			//			String region = StringUtils.leftPad(dataBlock.getRegion(), 12);
+			String accessCountStr = StringUtils.rightPad(accessCount.incrementAndGet() + "", 9);
+			String ipCountStr = StringUtils.rightPad(ipmap.size() + "", 9);
+			String ipStr = StringUtils.leftPad(ip, 15);
