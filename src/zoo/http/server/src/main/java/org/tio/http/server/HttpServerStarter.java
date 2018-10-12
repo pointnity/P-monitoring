@@ -120,3 +120,12 @@ public class HttpServerStarter {
 	 * @author tanyaowu
 	 * @throws IOException 
 	 */
+	public HttpServerStarter(String pageRoot, int serverPort, String contextPath, String[] scanPackages, HttpServerInterceptor httpServerInterceptor, ICache sessionStore,
+			SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) throws IOException {
+		this(pageRoot, serverPort, contextPath, scanPackages, httpServerInterceptor, null, sessionStore, tioExecutor, groupExecutor);
+	}
+	
+	/**
+	 * @deprecated
+	 * pageRoot If NULL, no static resource service is provided
+	 * @param pageRoot
