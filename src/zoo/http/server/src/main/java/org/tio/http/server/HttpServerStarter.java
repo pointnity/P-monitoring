@@ -216,3 +216,25 @@ public class HttpServerStarter {
 	public void setHttpRequestHandler(HttpRequestHandler requestHandler) {
 		this.httpRequestHandler = requestHandler;
 	}
+
+	public void start() throws IOException {
+		if (httpConfig.getSessionStore() == null) {
+			GuavaCache guavaCache = GuavaCache.register(httpConfig.getSessionCacheName(), null, httpConfig.getSessionTimeout());
+			httpConfig.setSessionStore(guavaCache);
+		}
+
+//		if (httpConfig.getPageRoot() == null) {
+//			httpConfig.setPageRoot("page");
+//		}
+
+		if (httpConfig.getSessionIdGenerator() == null) {
+			httpConfig.setSessionIdGenerator(UUIDSessionIdGenerator.instance);
+		}
+
+		aioServer.start(this.httpConfig.getBindIp(), this.httpConfig.getBindPort());
+	}
+
+	public void stop() throws IOException {
+		aioServer.stop();
+	}
+}
