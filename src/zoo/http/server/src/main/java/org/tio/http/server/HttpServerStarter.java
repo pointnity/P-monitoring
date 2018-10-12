@@ -36,3 +36,15 @@ public class HttpServerStarter {
 	 *  
 	 *
 	 */
+	public static void main(String[] args) throws IOException {
+	}
+
+	private HttpConfig httpConfig = null;
+
+	private HttpServerAioHandler httpServerAioHandler = null;
+
+	//	private HttpGroupListener httpGroupListener = null;
+
+	private HttpServerAioListener httpServerAioListener = null;
+
+	private ServerGroupContext serverGroupContext = null;
