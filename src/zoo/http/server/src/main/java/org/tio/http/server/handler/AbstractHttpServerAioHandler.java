@@ -46,3 +46,17 @@ public abstract class AbstractHttpServerAioHandler implements ServerAioHandler, 
 	}
 
 	/**
+	 *
+	 *
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
+	public AbstractHttpServerAioHandler(HttpConfig httpConfig) {
+		this.httpConfig = httpConfig;
+	}
+
+	public AbstractHttpServerAioHandler(HttpConfig httpConfig, Routes routes) {
+		this(httpConfig);
+		this.routes = routes;
+	}
