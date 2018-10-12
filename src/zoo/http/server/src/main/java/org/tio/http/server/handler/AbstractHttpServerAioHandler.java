@@ -86,3 +86,23 @@ public abstract class AbstractHttpServerAioHandler implements ServerAioHandler, 
 	 *  
 	 *
 	 */
+	@Override
+	public ByteBuffer encode(Packet packet, GroupContext groupContext, ChannelContext channelContext) {
+		HttpResponse httpResponse = (HttpResponse) packet;
+		ByteBuffer byteBuffer = HttpResponseEncoder.encode(httpResponse, groupContext, channelContext, false);
+		return byteBuffer;
+	}
+
+	/**
+	 * @return the httpConfig
+	 */
+	public HttpConfig getHttpConfig() {
+		return httpConfig;
+	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#handler(org.tio.core.intf.Packet)
+	 *
+	 * @param packet
+	 * @return
+	 * @throws Exception
