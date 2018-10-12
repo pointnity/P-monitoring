@@ -24,3 +24,15 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
  *
  * @author tanyaowu
  */
+public class HttpServerStarter {
+	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(HttpServerStarter.class);
+
+	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 * @throws IOException
+	 *  
+	 *
+	 */
