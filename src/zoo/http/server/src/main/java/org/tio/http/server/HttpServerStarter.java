@@ -169,3 +169,28 @@ public class HttpServerStarter {
 	public HttpConfig getHttpConfig() {
 		return httpConfig;
 	}
+
+	public HttpRequestHandler getHttpRequestHandler() {
+		return httpRequestHandler;
+	}
+
+	/**
+	 * @return the httpServerAioHandler
+	 */
+	public HttpServerAioHandler getHttpServerAioHandler() {
+		return httpServerAioHandler;
+	}
+
+	/**
+	 * @return the httpServerAioListener
+	 */
+	public HttpServerAioListener getHttpServerAioListener() {
+		return httpServerAioListener;
+	}
+
+	/**
+	 * @return the serverGroupContext
+	 */
+	public ServerGroupContext getServerGroupContext() {
+		return serverGroupContext;
+	}
