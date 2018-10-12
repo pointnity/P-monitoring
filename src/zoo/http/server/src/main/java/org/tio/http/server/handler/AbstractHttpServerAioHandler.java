@@ -22,3 +22,17 @@ import org.tio.server.intf.ServerAioHandler;
  *
  * @author tanyaowu
  *
+ */
+public abstract class AbstractHttpServerAioHandler implements ServerAioHandler, HttpRequestHandler {
+	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(AbstractHttpServerAioHandler.class);
+
+	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
+	public static void main(String[] args) {
+	}
