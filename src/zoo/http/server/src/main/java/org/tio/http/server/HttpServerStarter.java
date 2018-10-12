@@ -66,3 +66,16 @@ public class HttpServerStarter {
 	}
 
 	/**
+	 * 
+	 * @param httpConfig
+	 * @param requestHandler
+	 * @param tioExecutor
+	 * @param groupExecutor
+	 * @author tanyaowu
+	 */
+	public HttpServerStarter(HttpConfig httpConfig, HttpRequestHandler requestHandler, SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) {
+		init(httpConfig, requestHandler, tioExecutor, groupExecutor);
+	}
+
+	/**
+	 * @deprecated
