@@ -60,3 +60,15 @@ public abstract class AbstractHttpServerAioHandler implements ServerAioHandler, 
 		this(httpConfig);
 		this.routes = routes;
 	}
+
+	/**
+	 * @see org.tio.core.intf.AioHandler#decode(java.nio.ByteBuffer)
+	 *
+	 * @param buffer
+	 * @return
+	 * @throws AioDecodeException
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
+	@Override
