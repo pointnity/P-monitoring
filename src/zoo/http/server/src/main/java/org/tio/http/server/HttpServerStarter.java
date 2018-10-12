@@ -48,3 +48,21 @@ public class HttpServerStarter {
 	private HttpServerAioListener httpServerAioListener = null;
 
 	private ServerGroupContext serverGroupContext = null;
+
+	private AioServer aioServer = null;
+
+	private HttpRequestHandler httpRequestHandler;
+	
+	
+
+	/**
+	 * 
+	 * @param httpConfig
+	 * @param requestHandler
+	 * @author tanyaowu
+	 */
+	public HttpServerStarter(HttpConfig httpConfig, HttpRequestHandler requestHandler) {
+		this(httpConfig, requestHandler, null, null);
+	}
+
+	/**
