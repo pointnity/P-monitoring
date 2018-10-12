@@ -151,3 +151,21 @@ public class HttpServerStarter {
 		}
 		
 		//		} else {
+		//			httpConfig.setHttpSessionStore(GuavaHttpSessionStore.getInstance(httpConfig.getSessionTimeout()));
+		//		}
+
+		//		String[] scanPackages = new String[] { AppStarter.class.getPackage().getName() };
+		Routes routes = new Routes(scanPackages);
+		DefaultHttpRequestHandler requestHandler = new DefaultHttpRequestHandler(httpConfig, routes);
+		requestHandler.setHttpServerInterceptor(httpServerInterceptor);
+		requestHandler.setHttpSessionListener(httpSessionListener);
+
+		init(httpConfig, requestHandler, tioExecutor, groupExecutor);
+	}
+
+	/**
+	 * @return the httpConfig
+	 */
+	public HttpConfig getHttpConfig() {
+		return httpConfig;
+	}
