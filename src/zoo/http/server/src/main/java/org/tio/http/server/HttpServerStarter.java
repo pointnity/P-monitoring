@@ -95,3 +95,16 @@ public class HttpServerStarter {
 	 * @deprecated
 	 * @param pageRoot If NULL, no static resource service is provided
 	 * @param serverPort
+	 * @param contextPath
+	 * @param scanPackages
+	 * @param httpServerInterceptor
+	 * @param sessionStore
+	 * @author tanyaowu
+	 * @throws IOException 
+	 */
+	public HttpServerStarter(String pageRoot, int serverPort, String contextPath, String[] scanPackages, HttpServerInterceptor httpServerInterceptor, ICache sessionStore) throws IOException {
+		this(pageRoot, serverPort, contextPath, scanPackages, httpServerInterceptor, sessionStore, null, null);
+	}
+
+	/**
+	 * @deprecated
