@@ -8,3 +8,12 @@ import java.lang.annotation.Target;
 /**
  * @author tanyaowu
  *  
+ */
+@Target({ ElementType.METHOD/**, ElementType.TYPE*/ })
+@Retention(RetentionPolicy.RUNTIME)
+public @interface HttpCache {
+	int timeToIdleSeconds() default 10;
+	int timeToLiveSeconds() default 0;
+	String[] params();
+	
+}
