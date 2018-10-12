@@ -129,3 +129,25 @@ public class HttpServerStarter {
 	 * @deprecated
 	 * pageRoot If NULL, no static resource service is provided
 	 * @param pageRoot
+	 * @param serverPort
+	 * @param contextPath
+	 * @param scanPackages
+	 * @param httpServerInterceptor
+	 * @param httpSessionListener
+	 * @param sessionStore
+	 * @param tioExecutor
+	 * @param groupExecutor
+	 * @author tanyaowu
+	 * @throws IOException 
+	 */
+	public HttpServerStarter(String pageRoot, int serverPort, String contextPath, String[] scanPackages, HttpServerInterceptor httpServerInterceptor, HttpSessionListener httpSessionListener, ICache sessionStore,
+			SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) throws IOException {
+		int port = serverPort;
+
+		httpConfig = new HttpConfig(port, null, contextPath, null);
+		httpConfig.setPageRoot(pageRoot);
+		if (sessionStore != null) {
+			httpConfig.setSessionStore(sessionStore);
+		}
+		
+		//		} else {
