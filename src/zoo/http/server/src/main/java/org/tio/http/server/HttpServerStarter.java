@@ -194,3 +194,25 @@ public class HttpServerStarter {
 	public ServerGroupContext getServerGroupContext() {
 		return serverGroupContext;
 	}
+
+	private void init(HttpConfig httpConfig, HttpRequestHandler requestHandler, SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) {
+		this.httpConfig = httpConfig;
+		this.httpRequestHandler = requestHandler;
+		httpConfig.setHttpRequestHandler(this.httpRequestHandler);
+		this.httpServerAioHandler = new HttpServerAioHandler(httpConfig, requestHandler);
+		httpServerAioListener = new HttpServerAioListener();
+		serverGroupContext = new ServerGroupContext(httpServerAioHandler, httpServerAioListener, tioExecutor, groupExecutor);
+		serverGroupContext.setHeartbeatTimeout(1000 * 20);
+		serverGroupContext.setShortConnection(true);
+		serverGroupContext.setAttribute(GroupContextKey.HTTP_SERVER_CONFIG, httpConfig);
+		serverGroupContext.setName("Tio Http Server");
+
+		aioServer = new AioServer(serverGroupContext);
+
+		HttpUuid imTioUuid = new HttpUuid();
+		serverGroupContext.setTioUuid(imTioUuid);
+	}
+
+	public void setHttpRequestHandler(HttpRequestHandler requestHandler) {
+		this.httpRequestHandler = requestHandler;
+	}
