@@ -79,3 +79,11 @@ public class HttpServerStarter {
 
 	/**
 	 * @deprecated
+	 * @param pageRoot If NULL, no static resource service is provided
+	 * @param serverPort
+	 * @param contextPath
+	 * @param scanPackages
+	 * @param httpServerInterceptor
+	 * @author tanyaowu
+	 * @throws IOException 
+	 */
