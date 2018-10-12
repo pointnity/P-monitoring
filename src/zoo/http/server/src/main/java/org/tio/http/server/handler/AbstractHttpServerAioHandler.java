@@ -36,3 +36,13 @@ public abstract class AbstractHttpServerAioHandler implements ServerAioHandler, 
 	 */
 	public static void main(String[] args) {
 	}
+
+	protected HttpConfig httpConfig;
+
+	protected Routes routes = null;
+
+	public AbstractHttpServerAioHandler() {
+		//default constructor;
+	}
+
+	/**
