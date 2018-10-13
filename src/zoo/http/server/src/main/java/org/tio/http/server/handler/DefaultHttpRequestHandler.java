@@ -367,3 +367,7 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 												writeMethod = ClassUtil.setAccessible(writeMethod);
 												Class<?>[] clazzes = writeMethod.getParameterTypes();
 												if (clazzes == null || clazzes.length != 1) {
+													log.info("The parameter length of the method is not1，{}.{}", paramType.getName(), writeMethod.getName());
+													continue label2;
+												}
+												Class<?> clazz = clazzes[0];
