@@ -107,3 +107,10 @@ public class Routes {
 	 * key: /user/update
 	 * value: method string
 	 */
+	public Map<String, String> pathMethodstrMap = new TreeMap<>();
+
+	/**
+	 * Method Parameter Name Mapping
+	 * key: method
+	 * value: ["id", "name", "scanPackages"]
+	 */
