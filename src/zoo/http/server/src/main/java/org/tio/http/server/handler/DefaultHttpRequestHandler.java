@@ -517,3 +517,26 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 						httpServerInterceptor.doAfterHandler(request, requestLine, ret);
 					}
 				} catch (Throwable e) {
+					logError(request, requestLine, e);
+				} finally {
+					gzip(request, ret);
+				}
+
+				//				try {
+				//					if (ret.isStaticRes() && (ret.getCookies() == null || ret.getCookies().size() == 0)) {
+				//						ByteBuffer byteBuffer = HttpResponseEncoder.encode(ret, channelContext.getGroupContext(), channelContext, true);
+				//						byte[] encodedBytes = byteBuffer.array();
+				//						ret.setEncodedBytes(encodedBytes);
+
+				//						GuavaCache guavaCache = GuavaCache.getCache(STATIC_RES_CACHENAME);
+				//						guavaCache.put(requestLine.getPath(), ret);
+				//					}
+				//				} catch (Throwable e) {
+				//					logError(request, requestLine, e);
+				//				}
+			}
+		}
+	}
+
+	private void logError(HttpRequest request, RequestLine requestLine, Throwable e) {
+		StringBuilder sb = new StringBuilder();
