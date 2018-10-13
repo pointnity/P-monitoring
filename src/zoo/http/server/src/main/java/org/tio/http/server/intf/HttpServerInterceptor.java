@@ -20,3 +20,8 @@ public interface HttpServerInterceptor {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	public void doAfterHandler(HttpRequest request, RequestLine requestLine, HttpResponse response) throws Exception;
+
+	/**
+	 * In the execution org.tio.http.server.handler.IHttpRequestHandler.handler(HttpRequestPacket, RequestLine, ChannelContext<HttpSessionContext, HttpPacket, Object>)前会先调用这个方法<br>
+	 *If the Httpresponsepacket object is returned, subsequent executions are no longer performed, indicating that the call stack ends 
