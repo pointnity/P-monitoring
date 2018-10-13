@@ -317,3 +317,11 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 			if (method != null) {
 				String[] paramnames = routes.methodParamnameMap.get(method);
 				Class<?>[] parameterTypes = method.getParameterTypes();
+
+				Object bean = routes.methodBeanMap.get(method);
+				Object obj = null;
+				Map<String, Object[]> params = request.getParams();
+				if (parameterTypes == null || parameterTypes.length == 0) {
+					obj = method.invoke(bean);
+				} else {
+					//Assign this code to refactor, first use the
