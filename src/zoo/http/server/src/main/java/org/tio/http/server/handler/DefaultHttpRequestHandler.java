@@ -652,3 +652,28 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	public void setHttpSessionListener(HttpSessionListener httpSessionListener) {
 		this.httpSessionListener = httpSessionListener;
 	}
+
+	public SessionCookieDecorator getSessionCookieDecorator() {
+		return sessionCookieDecorator;
+	}
+
+	public void setSessionCookieDecorator(SessionCookieDecorator sessionCookieDecorator) {
+		this.sessionCookieDecorator = sessionCookieDecorator;
+	}
+
+	public IpPathAccessStats getIpPathAccessStats() {
+		return ipPathAccessStats;
+	}
+
+	public void setIpPathAccessStats(IpPathAccessStats ipPathAccessStats) {
+		this.ipPathAccessStats = ipPathAccessStats;
+	}
+
+	public FreemarkerConfig getFreemarkerConfig() {
+		return freemarkerConfig;
+	}
+
+	public void setFreemarkerConfig(FreemarkerConfig freemarkerConfig) {
+		this.freemarkerConfig = freemarkerConfig;
+	}
+}
