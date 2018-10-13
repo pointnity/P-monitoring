@@ -28,3 +28,28 @@ public class FileCache implements java.io.Serializable {
 	private long lastModified;
 
 	private byte[] data;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public FileCache() {
+	}
+
+	public FileCache(Map<String, String> headers, long lastModified, byte[] data) {
+		super();
+		this.setHeaders(headers);
+		this.lastModified = lastModified;
+		this.data = data;
+	}
+
+	public byte[] getData() {
+		return data;
+	}
+
+	public Map<String, String> getHeaders() {
+		return headers;
+	}
+
+	public long getLastModified() {
+		return lastModified;
