@@ -396,3 +396,22 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 				}
 
 				if (obj instanceof HttpResponse) {
+					ret = (HttpResponse) obj;
+					return ret;
+				} else {
+					if (obj == null) {
+						//ret = Resps.txt(request, "");//.json(request, obj + "");
+						return null;
+					} else {
+						ret = Resps.json(request, obj);
+					}
+					return ret;
+				}
+			} else {
+				GuavaCache contentCache = null;
+				FileCache fileCache = null;
+				if (httpConfig.getMaxLiveTimeOfStaticRes() > 0) {
+					contentCache = GuavaCache.getCache(STATIC_RES_CONTENT_CACHENAME);
+					fileCache = (FileCache) contentCache.get(path);
+				}
+				if (fileCache != null) {
