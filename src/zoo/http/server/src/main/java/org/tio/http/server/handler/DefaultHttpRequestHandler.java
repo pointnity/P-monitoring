@@ -144,3 +144,32 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 
 	/**
 	 * Create HttpSession
+	 * @return
+	 * @author tanyaowu
+	 */
+	private HttpSession createSession(HttpRequest request) {
+		String sessionId = httpConfig.getSessionIdGenerator().sessionId(httpConfig, request);
+		HttpSession httpSession = new HttpSession(sessionId);
+		if (httpSessionListener != null) {
+			httpSessionListener.doAfterCreated(httpSession, httpConfig);
+		}
+		return httpSession;
+	}
+
+	/**
+	 * @return the httpConfig
+	 */
+	public HttpConfig getHttpConfig() {
+		return httpConfig;
+	}
+
+	public HttpServerInterceptor getHttpServerInterceptor() {
+		return httpServerInterceptor;
+	}
+
+	public static Cookie getSessionCookie(HttpRequest request, HttpConfig httpConfig) {
+		Cookie sessionCookie = request.getCookie(httpConfig.getSessionCookieName());
+		return sessionCookie;
+	}
+
+	/**
