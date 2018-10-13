@@ -225,3 +225,12 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	@Override
 	public HttpResponse handler(HttpRequest request) throws Exception {
 		if (!checkDomain(request)) {
+			Aio.remove(request.getChannelContext(), "Come over the domain name ["+ Request.GetDomain () + "] No");
+			return null;
+		}
+
+		HttpResponse ret = null;
+		RequestLine requestLine = request.getRequestLine();
+		String path = requestLine.getPath();
+
+		if (StringUtils.isNotBlank(contextPath)) {
