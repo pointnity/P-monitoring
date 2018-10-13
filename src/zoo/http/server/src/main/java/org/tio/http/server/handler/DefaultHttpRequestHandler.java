@@ -558,7 +558,7 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 			sessionId = cookie.getValue();
 			HttpSession httpSession1 = (HttpSession) httpConfig.getSessionStore().get(sessionId);
 
-			if (httpSession1 == null) {//有cookie But it's timed out.
+			if (httpSession1 == null) {//cookie But it's timed out.
 				createSessionCookie(request, httpSession, httpResponse);
 			}
 		}
@@ -566,3 +566,17 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 
 	/**
 	 * 
+	 * @param request
+	 * @param httpSession
+	 * @param httpResponse
+	 * @return
+	 * @author tanyaowu
+	 */
+	private Cookie createSessionCookie(HttpRequest request, HttpSession httpSession, HttpResponse httpResponse) {
+		String sessionId = httpSession.getId();
+		//		String host = request.getHost();
+		String domain = request.getDomain();
+
+		String name = httpConfig.getSessionCookieName();
+		long maxAge = httpConfig.getSessionTimeout();
+		//				maxAge = Long.MAX_VALUE; //Keep the expiration time on the server side
