@@ -80,3 +80,23 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	 * 
 	 *
 	 */
+	public static void main(String[] args) {
+	}
+
+	protected HttpConfig httpConfig;
+
+	protected Routes routes = null;
+
+	//	private LoadingCache<String, HttpSession> loadingCache = null;
+
+	private HttpServerInterceptor httpServerInterceptor;
+
+	private HttpSessionListener httpSessionListener;
+
+	private SessionCookieDecorator sessionCookieDecorator;
+
+	private IpPathAccessStats ipPathAccessStats;
+
+	private GuavaCache staticResCache;
+
+	private String contextPath;
