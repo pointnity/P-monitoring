@@ -241,3 +241,12 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 				//				return null;
 			}
 		}
+
+		if (StringUtils.isNotBlank(suffix)) {
+			if (StringUtils.endsWith(path, suffix)) {
+				path = StringUtils.substring(path, 0, path.length() - suffixLength);
+			} else {
+				//				Aio.remove(request.getChannelContext(), "The request path is illegal and must end with "+ suffix +"：" + requestLine.getLine());
+				//				return null;
+			}
+		}
