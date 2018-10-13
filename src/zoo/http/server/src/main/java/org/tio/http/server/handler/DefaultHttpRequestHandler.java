@@ -68,3 +68,6 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 
 	/**
 	 * CacheName of static resources
+	 * key:   path For example, "/index.html
+	 * value: FileCache
+	 */
