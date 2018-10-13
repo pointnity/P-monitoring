@@ -226,3 +226,17 @@ public class Routes {
 			fastClasspathScanner.scan();
 
 			log.info("class  mapping\r\n{}", Json.toFormatedJson(pathClassMap));
+			//			log.info("classPathMap scan result :\r\n {}\r\n", Json.toFormatedJson(classPathMap));
+			log.info("method mapping\r\n{}", Json.toFormatedJson(pathMethodstrMap));
+			//			log.info("methodParamnameMap scan result :\r\n {}\r\n", Json.toFormatedJson(methodParamnameMap));
+		}
+	}
+
+//	public String getSuffix() {
+//		return suffix;
+//	}
+//
+//	public void setSuffix(String suffix) {
+//		this.suffix = suffix;
+//	}
+}
