@@ -540,3 +540,18 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 
 	private void logError(HttpRequest request, RequestLine requestLine, Throwable e) {
 		StringBuilder sb = new StringBuilder();
+		sb.append("\r\n").append("remote  :").append(request.getRemote());
+		sb.append("\r\n").append("request :").append(requestLine.getLine());
+		log.error(sb.toString(), e);
+
+	}
+
+	private void processCookieAfterHandler(HttpRequest request, RequestLine requestLine, HttpResponse httpResponse) throws ExecutionException {
+		HttpSession httpSession = request.getHttpSession();//(HttpSession) channelContext.getAttribute();//.getHttpSession();//not null
+		Cookie cookie = getSessionCookie(request, httpConfig);
+		String sessionId = null;
+
+		if (cookie == null) {
+			createSessionCookie(request, httpSession, httpResponse);
+			log.info("{} Create a session Cookie, {}", request.getChannelContext(), cookie);
+		} else {
