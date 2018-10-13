@@ -69,3 +69,14 @@ public class Routes {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	public static void main(String[] args) {
+
+	}
+
+	/**
+	 * Path and object mappings
+	 * key: /user
+	 * value: object
+	 */
+	public Map<String, Object> pathBeanMap = new TreeMap<>();
+	/**
