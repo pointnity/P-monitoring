@@ -430,3 +430,28 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 					ret = new HttpResponse(request, httpConfig);
 					ret.setBody(bodyBytes, request);
 					ret.addHeaders(headers);
+					return ret;
+				} else {
+					File pageRoot = httpConfig.getPageRoot();
+					if (pageRoot != null) {
+						//						String root = FileUtil.getAbsolutePath(pageRoot);
+						File file = new File(pageRoot + path);
+						if (!file.exists() || file.isDirectory()) {
+							if (StringUtils.endsWith(path, "/")) {
+								path = path + "index.html";
+							} else {
+								path = path + "/index.html";
+							}
+							file = new File(pageRoot, path);
+						}
+
+						if (file.exists()) {
+							if (freemarkerConfig != null) {
+								String extension = FileNameUtil.getExtension(file.getName());
+								if (ArrayUtil.contains(freemarkerConfig.getSuffixes(), extension)) {
+									Configuration configuration = freemarkerConfig.getConfiguration();
+									Object model = freemarkerConfig.getModelMaker().maker(request);
+									if (configuration != null) {
+										TemplateLoader templateLoader = configuration.getTemplateLoader();//FileTemplateLoader
+										if (templateLoader instanceof FileTemplateLoader) {
+											try {
