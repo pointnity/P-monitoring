@@ -173,3 +173,15 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	}
 
 	/**
+	 * @return the staticResCache
+	 */
+	public GuavaCache getStaticResCache() {
+		return staticResCache;
+	}
+
+	/**
+	 *Check whether the domain name can access the site
+	 * @param request
+	 * @return
+	 * @author tanyaowu
+	 */
