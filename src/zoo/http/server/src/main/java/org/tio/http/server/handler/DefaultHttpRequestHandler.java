@@ -455,3 +455,19 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 										TemplateLoader templateLoader = configuration.getTemplateLoader();//FileTemplateLoader
 										if (templateLoader instanceof FileTemplateLoader) {
 											try {
+												String filePath = file.getCanonicalPath();
+												String pageRootPath = httpConfig.getPageRoot().getCanonicalPath();
+												String template = StringUtils.substring(filePath, pageRootPath.length());
+												String retStr = FreemarkerUtils.generateStringByFile(template, configuration, model);
+												ret = Resps.file(request, retStr.getBytes(configuration.getDefaultEncoding()), extension);
+												return ret;
+											} catch (Exception e) {
+												//freemarker Compile exception of all go commonview
+												log.error(e.toString());
+											}
+										}
+									}
+								}
+							}
+
+							ret = Resps.file(request, file);
