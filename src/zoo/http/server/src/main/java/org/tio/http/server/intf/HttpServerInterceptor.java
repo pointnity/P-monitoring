@@ -11,7 +11,7 @@ import org.tio.http.common.RequestLine;
 public interface HttpServerInterceptor {
 
 	/**
-	 * In the execution org.tio.http.server.handler.IHttpRequestHandler.handler(HttpRequestPacket, RequestLine, ChannelContext<HttpSessionContext, HttpPacket, Object>)后会调用此方法，业务层可以统一在这里给HttpResponsePacket作一些修饰
+	 * In the execution org.tio.http.server.handler.IHttpRequestHandler.handler(HttpRequestPacket, RequestLine, ChannelContext<HttpSessionContext, HttpPacket, Object>)This method will be called after the business layer can be unified here to give httpresponsepacket some decoration
 	 * @param request
 	 * @param requestLine
 	 * @param channelContext
@@ -23,7 +23,7 @@ public interface HttpServerInterceptor {
 	public void doAfterHandler(HttpRequest request, RequestLine requestLine, HttpResponse response) throws Exception;
 
 	/**
-	 * In the execution org.tio.http.server.handler.IHttpRequestHandler.handler(HttpRequestPacket, RequestLine, ChannelContext<HttpSessionContext, HttpPacket, Object>)前会先调用这个方法<br>
+	 * In the execution org.tio.http.server.handler.IHttpRequestHandler.handler(HttpRequestPacket, RequestLine, ChannelContext<HttpSessionContext, HttpPacket, Object>)This method is called before 
 	 *If the Httpresponsepacket object is returned, subsequent executions are no longer performed, indicating that the call stack ends 
 	 * @param request
 	 * @param requestLine
