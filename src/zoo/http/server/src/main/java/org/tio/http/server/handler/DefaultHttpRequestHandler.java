@@ -185,3 +185,19 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	 * @return
 	 * @author tanyaowu
 	 */
+	private boolean checkDomain(HttpRequest request) {
+		String[] allowDomains = httpConfig.getAllowDomains();
+		if (allowDomains == null || allowDomains.length == 0) {
+			return true;
+		}
+		String host = request.getHost();
+		if (ArrayUtil.contains(allowDomains, host)) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * 
+	 * @param request
+	 * @param response
