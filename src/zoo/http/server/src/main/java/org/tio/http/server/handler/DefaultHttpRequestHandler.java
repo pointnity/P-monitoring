@@ -71,3 +71,12 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	 * key:   path For example, "/index.html
 	 * value: FileCache
 	 */
+	private static final String STATIC_RES_CONTENT_CACHENAME = "TIO_HTTP_STATIC_RES_CONTENT";
+
+	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
