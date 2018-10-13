@@ -250,3 +250,16 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 				//				return null;
 			}
 		}
+		requestLine.setPath(path);
+
+		if (ipPathAccessStats != null) {
+			String ip = IpUtils.getRealIp(request);
+			List<Long> list = ipPathAccessStats.durationList;
+
+			Cookie cookie = getSessionCookie(request, httpConfig);
+
+			for (Long duration : list) {
+				IpAccessStat ipAccessStat = ipPathAccessStats.get(duration, ip);//.get(duration, ip, path);//.get(v, channelContext.getClientNode().getIp());
+
+				ipAccessStat.count.incrementAndGet();
+				ipAccessStat.setLastAccessTime(SystemTimer.currentTimeMillis());
