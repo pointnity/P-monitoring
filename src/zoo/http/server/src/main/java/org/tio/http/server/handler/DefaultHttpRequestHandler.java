@@ -415,3 +415,18 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 					fileCache = (FileCache) contentCache.get(path);
 				}
 				if (fileCache != null) {
+					byte[] bodyBytes = fileCache.getData();
+					Map<String, String> headers = fileCache.getHeaders();
+					long lastModified = fileCache.getLastModified();
+					log.info("Get from cache:[{}], {}", path, bodyBytes.length);
+
+					ret = Resps.try304(request, lastModified);
+					if (ret != null) {
+						ret.addHeader(HttpConst.ResponseHeaderKey.tio_from_cache, "true");
+
+						return ret;
+					}
+
+					ret = new HttpResponse(request, httpConfig);
+					ret.setBody(bodyBytes, request);
+					ret.addHeaders(headers);
