@@ -506,3 +506,14 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 			ret = resp404(request, requestLine);//Resps.html(request, "404--And didn't find what you were looking for.", httpConfig.getCharset());
 			return ret;
 		} catch (Throwable e) {
+			logError(request, requestLine, e);
+			ret = resp500(request, requestLine, e);//Resps.html(request, "500--There was a glitch in the server.", httpConfig.getCharset());
+			return ret;
+		} finally {
+			if (ret != null) {
+				try {
+					processCookieAfterHandler(request, requestLine, ret);
+					if (httpServerInterceptor != null) {
+						httpServerInterceptor.doAfterHandler(request, requestLine, ret);
+					}
+				} catch (Throwable e) {
