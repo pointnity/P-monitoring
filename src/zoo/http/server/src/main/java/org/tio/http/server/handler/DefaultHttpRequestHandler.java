@@ -218,3 +218,10 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 				}
 			}
 		} else {
+			log.info("{} Doesn't even support it.gzip, {}", request.getChannelContext(), request.getHeader(HttpConst.RequestHeaderKey.User_Agent));
+		}
+	}
+
+	@Override
+	public HttpResponse handler(HttpRequest request) throws Exception {
+		if (!checkDomain(request)) {
