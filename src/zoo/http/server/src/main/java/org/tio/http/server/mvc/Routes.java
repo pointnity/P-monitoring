@@ -24,3 +24,17 @@ import io.github.lukehutch.fastclasspathscanner.matchprocessor.MethodAnnotationM
  * @author tanyaowu
  *  
  */
+public class Routes {
+	private static Logger log = LoggerFactory.getLogger(Routes.class);
+	//	private HttpConfig httpConfig = null;
+
+	//	private String[] scanPackages = null;
+
+	
+
+	/**
+	 * Format a path such as "/user", "/"
+	 * @param initPath
+	 * @return
+	 * @author tanyaowu
+	 */
