@@ -629,3 +629,26 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 
 	public void setHttpServerInterceptor(HttpServerInterceptor httpServerInterceptor) {
 		this.httpServerInterceptor = httpServerInterceptor;
+	}
+
+	/**
+	 * @param staticResCache the staticResCache to set
+	 */
+	public void setStaticResCache(GuavaCache staticResCache) {
+		this.staticResCache = staticResCache;
+	}
+
+	@Override
+	public void clearStaticResCache(HttpRequest request) {
+		if (staticResCache != null) {
+			staticResCache.clear();
+		}
+	}
+
+	public HttpSessionListener getHttpSessionListener() {
+		return httpSessionListener;
+	}
+
+	public void setHttpSessionListener(HttpSessionListener httpSessionListener) {
+		this.httpSessionListener = httpSessionListener;
+	}
