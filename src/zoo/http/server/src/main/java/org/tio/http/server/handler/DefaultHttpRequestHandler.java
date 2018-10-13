@@ -295,3 +295,25 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 			//			if (ret != null) {
 			//				log.info("Get response from cache: {} ", requestLine.getPath());
 			//			}
+
+			if (httpServerInterceptor != null) {
+				ret = httpServerInterceptor.doBeforeHandler(request, requestLine, ret);
+				if (ret != null) {
+					return ret;
+				}
+			}
+			requestLine = request.getRequestLine();
+			//			if (ret != null) {
+			//				return ret;
+			//			}
+
+			path = requestLine.getPath();
+
+			Method method = null;
+			if (routes != null) {
+				method = routes.pathMethodMap.get(path);
+			}
+
+			if (method != null) {
+				String[] paramnames = routes.methodParamnameMap.get(method);
+				Class<?>[] parameterTypes = method.getParameterTypes();
