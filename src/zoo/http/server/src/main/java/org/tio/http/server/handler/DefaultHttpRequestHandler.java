@@ -325,3 +325,27 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 					obj = method.invoke(bean);
 				} else {
 					//Assign this code to refactor, first use the
+					Object[] paramValues = new Object[parameterTypes.length];
+					int i = 0;
+					for (Class<?> paramType : parameterTypes) {
+						try {
+							if (paramType.isAssignableFrom(HttpRequest.class)) {
+								paramValues[i] = request;
+							} else if (paramType == HttpSession.class) {
+								paramValues[i] = httpSession;
+							} else if (paramType.isAssignableFrom(HttpConfig.class)) {
+								paramValues[i] = httpConfig;
+							} else if (paramType.isAssignableFrom(ChannelContext.class)) {
+								paramValues[i] = request.getChannelContext();
+							} else {
+								if (params != null) {
+									if (ClassUtils.isSimpleTypeOrArray(paramType)) {
+										//										paramValues[i] = Ognl.getValue(paramnames[i], (Object) params, paramType);
+										Object[] value = params.get(paramnames[i]);
+										if (value != null && value.length > 0) {
+											if (paramType.isArray()) {
+												paramValues[i] = Convert.convert(paramType, value);
+											} else {
+												paramValues[i] = Convert.convert(paramType, value[0]);
+											}
+										}
