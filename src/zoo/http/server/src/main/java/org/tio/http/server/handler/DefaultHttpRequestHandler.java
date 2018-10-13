@@ -371,3 +371,28 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 													continue label2;
 												}
 												Class<?> clazz = clazzes[0];
+
+												if (ClassUtils.isSimpleTypeOrArray(clazz)) {
+													if (fieldValue != null && fieldValue.length > 0) {
+														if (clazz.isArray()) {
+															writeMethod.invoke(paramValues[i], Convert.convert(clazz, fieldValue));
+														} else {
+															writeMethod.invoke(paramValues[i], Convert.convert(clazz, fieldValue[0]));
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						} catch (Throwable e) {
+							log.error(e.toString(), e);
+						} finally {
+							i++;
+						}
+					}
+					obj = method.invoke(bean, paramValues);
+				}
+
+				if (obj instanceof HttpResponse) {
