@@ -33,3 +33,6 @@ public interface HttpServerInterceptor {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	public HttpResponse doBeforeHandler(HttpRequest request, RequestLine requestLine, HttpResponse responseFromCache) throws Exception;
+
+}
