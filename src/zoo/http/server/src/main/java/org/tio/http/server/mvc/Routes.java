@@ -149,3 +149,27 @@ public class Routes {
 				@Override
 				public void processMatch(Class<?> classWithAnnotation) {
 					try {
+						Object bean = classWithAnnotation.newInstance();
+						RequestPath mapping = classWithAnnotation.getAnnotation(RequestPath.class);
+//						String beanPath = Routes.this.contextPath + mapping.value();
+						String beanPath = mapping.value();
+						//						if (!StringUtils.endsWith(beanUrl, "/")) {
+						//							beanUrl = beanUrl + "/";
+						//						}
+
+						beanPath = formateBeanPath(beanPath);
+
+						Object obj = pathBeanMap.get(beanPath);
+						if (obj != null) {
+							log.error("mapping[{}] already exists in class [{}]", beanPath, obj.getClass().getName());
+						} else {
+							pathBeanMap.put(beanPath, bean);
+							pathClassMap.put(beanPath, classWithAnnotation);
+							classPathMap.put(classWithAnnotation, beanPath);
+						}
+					} catch (Throwable e) {
+
+						log.error(e.toString(), e);
+					}
+				}
+			});
