@@ -99,3 +99,11 @@ public class Routes {
 	 * key: /user/update
 	 * value: method
 	 */
+	public Map<String, Method> pathMethodMap = new TreeMap<>();
+
+	/**
+	 * Method Path Mapping
+	 * Just for printing logs
+	 * key: /user/update
+	 * value: method string
+	 */
