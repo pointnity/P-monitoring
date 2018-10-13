@@ -234,3 +234,10 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 		String path = requestLine.getPath();
 
 		if (StringUtils.isNotBlank(contextPath)) {
+			if (StringUtils.startsWith(path, contextPath)) {
+				path = StringUtils.substring(path, contextPathLength);
+			} else {
+				//				Aio.remove(request.getChannelContext(), "The request path is illegal and must begin with "+ ContextPath +": "+ requestline.GetLine ());
+				//				return null;
+			}
+		}
