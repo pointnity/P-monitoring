@@ -132,3 +132,15 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 		if (StringUtils.isNotBlank(suffix)) {
 			suffixLength = suffix.length();
 		}
+
+		this.httpConfig = httpConfig;
+
+		if (httpConfig.getMaxLiveTimeOfStaticRes() > 0) {
+			staticResCache = GuavaCache.register(STATIC_RES_CONTENT_CACHENAME, (long) httpConfig.getMaxLiveTimeOfStaticRes(), null);
+		}
+
+		this.routes = routes;
+	}
+
+	/**
+	 * Create HttpSession
