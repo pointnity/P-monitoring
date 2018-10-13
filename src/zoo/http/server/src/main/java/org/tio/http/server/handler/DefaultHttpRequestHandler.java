@@ -495,3 +495,14 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 									contentCache.put(path, fileCache);
 									log.info("Put cache:[{}], {}", path, ret.getBody().length);
 								}
+							}
+
+							return ret;
+						}
+					}
+				}
+			}
+
+			ret = resp404(request, requestLine);//Resps.html(request, "404--And didn't find what you were looking for.", httpConfig.getCharset());
+			return ret;
+		} catch (Throwable e) {
