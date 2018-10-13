@@ -263,3 +263,26 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 
 				ipAccessStat.count.incrementAndGet();
 				ipAccessStat.setLastAccessTime(SystemTimer.currentTimeMillis());
+
+				IpPathAccessStat ipPathAccessStat = ipAccessStat.get(path);
+				ipPathAccessStat.count.incrementAndGet();
+				ipPathAccessStat.setLastAccessTime(SystemTimer.currentTimeMillis());
+
+				if (cookie == null) {
+					ipAccessStat.noSessionCount.incrementAndGet();
+					ipPathAccessStat.noSessionCount.incrementAndGet();
+				} else {
+					ipAccessStat.sessionIds.add(cookie.getValue());
+				}
+
+				IpPathAccessStatListener ipPathAccessStatListener = ipPathAccessStats.getListener(duration);
+				if (ipPathAccessStatListener != null) {
+					boolean isContinue = ipPathAccessStatListener.onChanged(request, ip, path, ipAccessStat, ipPathAccessStat);
+					if (!isContinue) {
+						return null;
+					}
+				}
+			}
+		}
+
+		try {
