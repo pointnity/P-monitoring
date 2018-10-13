@@ -555,3 +555,14 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 			createSessionCookie(request, httpSession, httpResponse);
 			log.info("{} Create a session Cookie, {}", request.getChannelContext(), cookie);
 		} else {
+			sessionId = cookie.getValue();
+			HttpSession httpSession1 = (HttpSession) httpConfig.getSessionStore().get(sessionId);
+
+			if (httpSession1 == null) {//有cookie But it's timed out.
+				createSessionCookie(request, httpSession, httpResponse);
+			}
+		}
+	}
+
+	/**
+	 * 
