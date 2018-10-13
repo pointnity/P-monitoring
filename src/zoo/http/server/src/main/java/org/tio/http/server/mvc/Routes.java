@@ -197,3 +197,32 @@ public class Routes {
 					String completeMethodPath = methodPath;
 					if (beanPath != null) {
 						completeMethodPath = beanPath + methodPath;
+					}
+
+					Class<?>[] parameterTypes = matchingMethodOrConstructor.getParameterTypes();
+					Method method;
+					try {
+						method = matchingClass.getMethod(methodName, parameterTypes);
+
+						Paranamer paranamer = new BytecodeReadingParanamer();
+						String[] parameterNames = paranamer.lookupParameterNames(method, false); // will return null if not found
+
+						Method checkMethod = pathMethodMap.get(completeMethodPath);
+						if (checkMethod != null) {
+							log.error("mapping[{}] already exists in method [{}]", completeMethodPath, checkMethod.getDeclaringClass() + "#" + checkMethod.getName());
+							return;
+						}
+
+						pathMethodMap.put(completeMethodPath, method);
+						pathMethodstrMap.put(completeMethodPath, matchingClass.getName() + "." + method.getName() + "(" + ArrayUtil.join(parameterNames, ",") + ")");
+						methodParamnameMap.put(method, parameterNames);
+						methodBeanMap.put(method, bean);
+					} catch (Throwable e) {
+						log.error(e.toString(), e);
+					}
+				}
+			});
+
+			fastClasspathScanner.scan();
+
+			log.info("class  mapping\r\n{}", Json.toFormatedJson(pathClassMap));
