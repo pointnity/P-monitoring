@@ -611,3 +611,21 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	}
 
 	@Override
+	public HttpResponse resp404(HttpRequest request, RequestLine requestLine) {
+		return Resps.resp404(request, requestLine, httpConfig);
+	}
+
+	@Override
+	public HttpResponse resp500(HttpRequest request, RequestLine requestLine, Throwable throwable) {
+		return Resps.resp500(request, requestLine, httpConfig, throwable);
+	}
+
+	/**
+	 * @param httpConfig the httpConfig to set
+	 */
+	public void setHttpConfig(HttpConfig httpConfig) {
+		this.httpConfig = httpConfig;
+	}
+
+	public void setHttpServerInterceptor(HttpServerInterceptor httpServerInterceptor) {
+		this.httpServerInterceptor = httpServerInterceptor;
