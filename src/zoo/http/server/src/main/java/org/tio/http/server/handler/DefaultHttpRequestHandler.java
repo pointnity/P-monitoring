@@ -349,3 +349,21 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 												paramValues[i] = Convert.convert(paramType, value[0]);
 											}
 										}
+									} else {
+										paramValues[i] = paramType.newInstance();//BeanUtil.mapToBean(params, paramType, true);
+										Set<Entry<String, Object[]>> set = params.entrySet();
+										label2: for (Entry<String, Object[]> entry : set) {
+											String fieldName = entry.getKey();
+											Object[] fieldValue = entry.getValue();
+
+											PropertyDescriptor propertyDescriptor = BeanUtil.getPropertyDescriptor(paramType, fieldName, true);
+											if (propertyDescriptor == null) {
+												continue label2;
+											} else {
+												Method writeMethod = propertyDescriptor.getWriteMethod();
+												if (writeMethod == null) {
+													continue label2;
+												}
+												writeMethod = ClassUtil.setAccessible(writeMethod);
+												Class<?>[] clazzes = writeMethod.getParameterTypes();
+												if (clazzes == null || clazzes.length != 1) {
