@@ -64,3 +64,7 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	//	 * key:   path For example, "/index.html
 	//	 * value: HttpResponse
 	//	 */
+	//	private static final String STATIC_RES_CACHENAME = "TIO_HTTP_STATIC_RES";
+
+	/**
+	 * CacheName of static resources
