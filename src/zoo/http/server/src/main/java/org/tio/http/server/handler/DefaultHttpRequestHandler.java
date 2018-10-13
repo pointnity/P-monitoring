@@ -114,3 +114,21 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	//	}
 
 	/**
+	 *
+	 * @param httpConfig
+	 * @param routes
+	 * @author tanyaowu
+	 */
+	public DefaultHttpRequestHandler(HttpConfig httpConfig, Routes routes) {
+		if (httpConfig == null) {
+			throw new RuntimeException("httpConfig can not be null");
+		}
+		this.contextPath = httpConfig.getContextPath();
+		this.suffix = httpConfig.getSuffix();
+
+		if (StringUtils.isNotBlank(contextPath)) {
+			contextPathLength = contextPath.length();
+		}
+		if (StringUtils.isNotBlank(suffix)) {
+			suffixLength = suffix.length();
+		}
