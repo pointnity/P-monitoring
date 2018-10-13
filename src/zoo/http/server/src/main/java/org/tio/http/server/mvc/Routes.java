@@ -92,3 +92,10 @@ public class Routes {
 	 * key: class
 	 * value: /user
 	 */
+	public Map<Class<?>, String> classPathMap = new HashMap<>();
+
+	/**
+	 *Method Path Mapping
+	 * key: /user/update
+	 * value: method
+	 */
