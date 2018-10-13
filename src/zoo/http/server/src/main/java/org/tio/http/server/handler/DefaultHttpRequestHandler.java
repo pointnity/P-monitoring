@@ -599,3 +599,15 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 		if (cookie == null) {
 			httpSession = createSession(request);
 		} else {
+			//			httpSession = (HttpSession)httpSession.getAttribute(SESSIONID_KEY);//loadingCache.getIfPresent(sessionCookie.getValue());
+			String sessionId = cookie.getValue();
+			httpSession = (HttpSession) httpConfig.getSessionStore().get(sessionId);
+			if (httpSession == null) {
+				log.info("{} session【{}】Timeout", request.getChannelContext(), sessionId);
+				httpSession = createSession(request);
+			}
+		}
+		request.setHttpSession(httpSession);
+	}
+
+	@Override
