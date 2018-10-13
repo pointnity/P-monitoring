@@ -173,3 +173,27 @@ public class Routes {
 					}
 				}
 			});
+
+			fastClasspathScanner.matchClassesWithMethodAnnotation(RequestPath.class, new MethodAnnotationMatchProcessor() {
+				@Override
+				public void processMatch(Class<?> matchingClass, Executable matchingMethodOrConstructor) {
+					//					log.error(matchingMethodOrConstructor + "");
+					RequestPath mapping = matchingMethodOrConstructor.getAnnotation(RequestPath.class);
+
+					String methodName = matchingMethodOrConstructor.getName();
+
+//					String methodPath = mapping.value() + Routes.this.suffix;
+					String methodPath = mapping.value();
+
+					methodPath = formateMethodPath(methodPath);
+					String beanPath = classPathMap.get(matchingClass);
+
+					if (StringUtils.isBlank(beanPath)) {
+						log.error("The method has annotations, but the class is not annotated, method:{}, class:{}", methodName, matchingClass);
+						return;
+					}
+
+					Object bean = pathBeanMap.get(beanPath);
+					String completeMethodPath = methodPath;
+					if (beanPath != null) {
+						completeMethodPath = beanPath + methodPath;
