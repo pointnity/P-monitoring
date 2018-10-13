@@ -44,3 +44,20 @@ import com.xiaoleilu.hutool.bean.BeanUtil;
 import com.xiaoleilu.hutool.convert.Convert;
 import com.xiaoleilu.hutool.util.ArrayUtil;
 import com.xiaoleilu.hutool.util.ClassUtil;
+import com.xiaoleilu.hutool.util.ZipUtil;
+
+import freemarker.cache.FileTemplateLoader;
+import freemarker.cache.TemplateLoader;
+import freemarker.template.Configuration;
+import jodd.io.FileNameUtil;
+
+/**
+ *
+ * @author tanyaowu
+ *
+ */
+public class DefaultHttpRequestHandler implements HttpRequestHandler {
+	private static Logger log = LoggerFactory.getLogger(DefaultHttpRequestHandler.class);
+
+	//	/**
+	//	 * CacheName of static resources
