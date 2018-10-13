@@ -114,3 +114,10 @@ public class Routes {
 	 * key: method
 	 * value: ["id", "name", "scanPackages"]
 	 */
+	public Map<Method, String[]> methodParamnameMap = new HashMap<>();
+
+	/**
+	 * Method and Object Mappings
+	 * key: method
+	 * value: bean
+	 */
