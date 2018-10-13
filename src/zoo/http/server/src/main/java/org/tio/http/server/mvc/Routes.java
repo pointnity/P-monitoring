@@ -121,3 +121,31 @@ public class Routes {
 	 * key: method
 	 * value: bean
 	 */
+	public Map<Method, Object> methodBeanMap = new HashMap<>();
+
+	/**
+	 * 
+	 * @param contextPath
+	 * @param suffix
+	 * @param scanPackages
+	 * @author tanyaowu
+	 */
+	public Routes(String[] scanPackages) {
+		//		this.scanPackages = scanPackages;
+//		if (contextPath == null) {
+//			contextPath = "";
+//		}
+//		this.contextPath = contextPath;
+//		
+//		if (suffix == null) {
+//			suffix = "";
+//		}
+//		this.suffix = suffix;
+		
+		if (scanPackages != null) {
+			final FastClasspathScanner fastClasspathScanner = new FastClasspathScanner(scanPackages);
+			//			fastClasspathScanner.verbose();
+			fastClasspathScanner.matchClassesWithAnnotation(RequestPath.class, new ClassAnnotationMatchProcessor() {
+				@Override
+				public void processMatch(Class<?> classWithAnnotation) {
+					try {
