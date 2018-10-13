@@ -580,3 +580,22 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 		String name = httpConfig.getSessionCookieName();
 		long maxAge = httpConfig.getSessionTimeout();
 		//				maxAge = Long.MAX_VALUE; //Keep the expiration time on the server side
+
+		Cookie sessionCookie = new Cookie(domain, name, sessionId, maxAge);
+
+		if (sessionCookieDecorator != null) {
+			sessionCookieDecorator.decorate(sessionCookie);
+		}
+		httpResponse.addCookie(sessionCookie);
+
+		httpConfig.getSessionStore().put(sessionId, httpSession);
+
+		return sessionCookie;
+	}
+
+	private void processCookieBeforeHandler(HttpRequest request, RequestLine requestLine) throws ExecutionException {
+		Cookie cookie = getSessionCookie(request, httpConfig);
+		HttpSession httpSession = null;
+		if (cookie == null) {
+			httpSession = createSession(request);
+		} else {
