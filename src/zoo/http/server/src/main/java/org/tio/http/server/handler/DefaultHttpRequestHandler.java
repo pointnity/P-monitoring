@@ -286,3 +286,12 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 		}
 
 		try {
+
+			processCookieBeforeHandler(request, requestLine);
+			HttpSession httpSession = request.getHttpSession();//(HttpSession) channelContext.getAttribute();
+
+			//			GuavaCache guavaCache = GuavaCache.getCache(STATIC_RES_CACHENAME);
+			//			ret = (HttpResponse) guavaCache.get(requestLine.getPath());
+			//			if (ret != null) {
+			//				log.info("Get response from cache: {} ", requestLine.getPath());
+			//			}
