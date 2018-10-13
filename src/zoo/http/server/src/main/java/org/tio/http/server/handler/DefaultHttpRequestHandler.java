@@ -100,3 +100,17 @@ public class DefaultHttpRequestHandler implements HttpRequestHandler {
 	private GuavaCache staticResCache;
 
 	private String contextPath;
+	private int contextPathLength = 0;
+	private String suffix;
+	private int suffixLength = 0;
+
+	/**
+	 * Temporary support for Freemarker, primarily for front-end development in the development environment, temporarily not focused as a tio-http-server feature
+	 */
+	private FreemarkerConfig freemarkerConfig;
+
+	//	private static String randomCookieValue() {
+	//		return RandomUtil.randomUUID();
+	//	}
+
+	/**
