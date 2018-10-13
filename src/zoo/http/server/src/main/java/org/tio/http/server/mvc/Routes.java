@@ -80,3 +80,8 @@ public class Routes {
 	 */
 	public Map<String, Object> pathBeanMap = new TreeMap<>();
 	/**
+	 * Path and class mappings
+	 * It's just for printing.
+	 * key: /user
+	 * value: Class
+	 */
