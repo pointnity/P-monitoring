@@ -85,3 +85,10 @@ public class Routes {
 	 * key: /user
 	 * value: Class
 	 */
+	public Map<String, Class<?>> pathClassMap = new TreeMap<>();
+
+	/**
+	 *Path and class mappings
+	 * key: class
+	 * value: /user
+	 */
