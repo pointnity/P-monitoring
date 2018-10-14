@@ -118,3 +118,22 @@ public class IpAccessStat implements Serializable {
 	public MapWithLock<String, IpPathAccessStat> getIpPathAccessStatMap() {
 		return ipPathAccessStatMap;
 	}
+
+	public void setIpPathAccessStatMap(MapWithLock<String, IpPathAccessStat> ipPathAccessStatMap) {
+		this.ipPathAccessStatMap = ipPathAccessStatMap;
+	}
+	
+	/**
+	 * @return the duration
+	 */
+	public String getFormatedDuration() {
+		duration = SystemTimer.currentTimeMillis() - this.firstAccessTime;
+		BetweenFormater betweenFormater = new BetweenFormater(duration, Level.MILLSECOND);
+		return betweenFormater.format();
+	}
+	
+	public double getPerSecond() {
+		int count = this.count.get();
+		long duration = getDuration();
+		double perSecond = (double)((double)count / (double)duration) * (double)1000;
+		return perSecond;
