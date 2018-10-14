@@ -47,3 +47,16 @@ public class IpPathAccessStat implements Serializable {
 	/**
 	 * Last access time, unit: milliseconds
 	 */
+	private long lastAccessTime = SystemTimer.currentTimeMillis();
+
+	/**
+	 * The number of times this IP accesses this path
+	 */
+	public final AtomicInteger count = new AtomicInteger();
+	
+	public final AtomicInteger noSessionCount = new AtomicInteger();
+
+	/**
+	 * 
+	 * @author tanyaowu
+	 */
