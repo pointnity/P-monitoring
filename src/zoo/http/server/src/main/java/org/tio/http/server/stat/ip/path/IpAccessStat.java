@@ -158,3 +158,16 @@ public class IpAccessStat implements Serializable {
 	public long getFirstAccessTime() {
 		return firstAccessTime;
 	}
+
+	public void setFirstAccessTime(long firstAccessTime) {
+		this.firstAccessTime = firstAccessTime;
+	}
+
+	public long getLastAccessTime() {
+		return lastAccessTime;
+	}
+
+	public void setLastAccessTime(long lastAccessTime) {
+		this.lastAccessTime = lastAccessTime;
+	}
+}
