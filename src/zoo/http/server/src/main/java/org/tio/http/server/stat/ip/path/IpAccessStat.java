@@ -48,3 +48,12 @@ public class IpAccessStat implements Serializable {
 	 * ip
 	 */
 	private String ip;
+
+
+
+	/**
+	 *First access time, units: milliseconds
+	 */
+	private long firstAccessTime = SystemTimer.currentTimeMillis();
+
+	/**
