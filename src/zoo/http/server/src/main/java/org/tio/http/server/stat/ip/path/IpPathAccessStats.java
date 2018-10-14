@@ -140,3 +140,17 @@ public class IpPathAccessStats {
 	
 	
 	/**
+	 * Get Ipaccessstat
+	 * @param duration
+	 * @param ip
+	 * @param forceCreate
+	 * @return
+	 * @author tanyaowu
+	 */
+	public IpAccessStat get(Long duration, String ip, boolean forceCreate) {
+		if (StringUtils.isBlank(ip)) {
+			return null;
+		}
+		
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
