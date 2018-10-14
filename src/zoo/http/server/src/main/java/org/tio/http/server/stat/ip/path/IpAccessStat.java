@@ -86,3 +86,12 @@ public class IpAccessStat implements Serializable {
 	/**
 	 * Gets ipaccesspathstat based on Ipaccessstat, if it does not exist in the cache, determines whether to create a value based on forcecreate
 	 * @param ipAccessStat
+	 * @param path
+	 * @param forceCreate
+	 * @return
+	 * @author tanyaowu
+	 */
+	public IpPathAccessStat get(String path, boolean forceCreate) {
+		if (path == null) {
+			return null;
+		}
