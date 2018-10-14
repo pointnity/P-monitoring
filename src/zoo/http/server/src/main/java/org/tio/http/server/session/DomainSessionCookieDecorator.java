@@ -58,3 +58,21 @@ public class DomainSessionCookieDecorator implements SessionCookieDecorator {
 		System.out.println(bb);
 
 		Cookie sessionCookie = new Cookie();
+		sessionCookie.setDomain("www.baidu.com");
+		
+		System.out.println(sessionCookie.getDomain());
+
+		DomainSessionCookieDecorator domainSessionCookieDecorator = new DomainSessionCookieDecorator(".baidu.com");
+		domainSessionCookieDecorator.decorate(sessionCookie);
+		
+		System.out.println(sessionCookie.getDomain());
+	}
+
+	public String getDomain() {
+		return domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+}
