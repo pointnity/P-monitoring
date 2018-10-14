@@ -95,3 +95,26 @@ public class IpAccessStat implements Serializable {
 		if (path == null) {
 			return null;
 		}
+		
+		IpPathAccessStat ipPathAccessStat = ipPathAccessStatMap.get(path);
+		if (ipPathAccessStat == null && forceCreate) {
+			ipPathAccessStat = ipPathAccessStatMap.putIfAbsent(path, new IpPathAccessStat(durationType, ip, path));
+		}
+		
+		return ipPathAccessStat;
+	}
+
+	/**
+	 * 
+	 * @param durationType
+	 * @param ip
+	 * @author tanyaowu
+	 */
+	public IpAccessStat(Long durationType, String ip) {
+		this.durationType = durationType;
+		this.ip = ip;
+	}
+
+	public MapWithLock<String, IpPathAccessStat> getIpPathAccessStatMap() {
+		return ipPathAccessStatMap;
+	}
