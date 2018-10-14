@@ -17,3 +17,10 @@ import com.xiaoleilu.hutool.date.BetweenFormater.Level;
  * @author tanyaowu 
  *  
  */
+public class IpAccessStat implements Serializable {
+	private static final long serialVersionUID = 5314797979230623121L;
+
+	/**
+	 * key:   path, Shaped like："/user/login"
+	 * value: IpPathAccessStat
+	 */
