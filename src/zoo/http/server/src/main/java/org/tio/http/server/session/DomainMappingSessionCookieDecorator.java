@@ -24,3 +24,45 @@ public class DomainMappingSessionCookieDecorator implements SessionCookieDecorat
 	 * key:   Original domain, for example: , or it can be a regular expression, such as *.Baidu.Com
 	 * value : Replace the domain of the original domain, for example.Baidu.Com
 	 */
+	private Map<String, String> domainMap = null;
+
+	/**
+	 * 
+	 * @author: tanyaowu
+	 */
+	public DomainMappingSessionCookieDecorator(Map<String, String> domainMap) {
+		this.domainMap = domainMap;
+	}
+	
+	protected DomainMappingSessionCookieDecorator() {
+		
+	}
+
+	public void addMapping(String key, String value) {
+		domainMap.put(key, value);
+	}
+
+	public void removeMapping(String key) {
+		domainMap.remove(key);
+	}
+
+	/** 
+	 * @param sessionCookie
+	 * @author: tanyaowu
+	 */
+	@Override
+	public void decorate(Cookie sessionCookie) {
+		Set<Entry<String, String>> set = domainMap.entrySet();
+		String initDomain = sessionCookie.getDomain();
+		for (Entry<String, String> entry : set) {
+			String key = entry.getKey();
+			String value = entry.getValue();
+			if (StringUtils.equalsIgnoreCase(key, initDomain) || ReUtil.isMatch(key, initDomain)) {
+				sessionCookie.setDomain(value);
+			}
+		}
+	}
+
+	/**
+	 * @param args
+	 * @author: tanyaowu
