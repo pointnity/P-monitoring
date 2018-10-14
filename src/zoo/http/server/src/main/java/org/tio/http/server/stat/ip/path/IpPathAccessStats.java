@@ -46,3 +46,20 @@ public class IpPathAccessStats {
 	private final Map<Long, IpPathAccessStatListener> listenerMap = new HashMap<>();
 
 	/**
+	 * 
+	 * @param groupContext
+	 * @param ipPathAccessStatListener
+	 * @param durations
+	 * @author tanyaowu
+	 */
+	public IpPathAccessStats(GroupContext groupContext, IpPathAccessStatListener ipPathAccessStatListener, Long[] durations) {
+		this.groupContext = groupContext;
+		this.groupContextId = groupContext.getId();
+		if (durations != null) {
+			for (Long duration : durations) {
+				addDuration(duration, ipPathAccessStatListener);
+			}
+		}
+	}
+
+	/**
