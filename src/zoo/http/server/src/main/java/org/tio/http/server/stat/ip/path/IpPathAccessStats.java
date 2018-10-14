@@ -85,3 +85,13 @@ public class IpPathAccessStats {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public IpPathAccessStatListener getListener(Long duration) {
+		return listenerMap.get(duration);
+	}
+
+	/**
+	 * Add Monitoring window
+	 * @param durations Units: Seconds
+	 * @param ipPathAccessStatListener can be null
+	 * @author: tanyaowu
+	 */
