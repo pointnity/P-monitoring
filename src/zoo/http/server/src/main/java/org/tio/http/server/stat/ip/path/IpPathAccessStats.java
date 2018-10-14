@@ -63,3 +63,8 @@ public class IpPathAccessStats {
 	}
 
 	/**
+	 * Add Monitoring window
+	 * @param duration Units: Seconds
+	 * @param ipPathAccessStatListener can be null
+	 * @author: tanyaowu
+	 */
