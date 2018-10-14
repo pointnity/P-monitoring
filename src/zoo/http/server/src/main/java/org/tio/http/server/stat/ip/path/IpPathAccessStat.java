@@ -113,3 +113,21 @@ public class IpPathAccessStat implements Serializable {
 	public void setFirstAccessTime(long firstAccessTime) {
 		this.firstAccessTime = firstAccessTime;
 	}
+
+	public long getLastAccessTime() {
+		return lastAccessTime;
+	}
+
+	public void setLastAccessTime(long lastAccessTime) {
+		this.lastAccessTime = lastAccessTime;
+	}
+
+	public long getDuration() {
+		duration = SystemTimer.currentTimeMillis() - this.firstAccessTime;
+		return duration;
+	}
+
+	public void setDuration(long duration) {
+		this.duration = duration;
+	}
+}
