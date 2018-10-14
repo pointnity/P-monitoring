@@ -172,3 +172,16 @@ public class IpPathAccessStats {
 	}
 	
 	/**
+	 *Get Ipaccessstat
+	 * @param duration
+	 * @param ip
+	 * @return
+	 * @author tanyaowu
+	 */
+	public IpAccessStat get(Long duration, String ip) {
+		return get(duration, ip, true);
+	}
+
+	/**
+	 * key:   ip
+	 * value: IpPathAccessStat
