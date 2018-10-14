@@ -126,3 +126,17 @@ public class IpPathAccessStats {
 	}
 
 	/**
+	 * Emptying monitoring data
+	 * @author: tanyaowu
+	 */
+	public void clear(Long duration) {
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
+			return;
+		}
+		guavaCache.clear();
+	}
+
+	
+	
+	/**
