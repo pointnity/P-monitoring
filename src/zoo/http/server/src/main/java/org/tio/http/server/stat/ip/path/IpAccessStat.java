@@ -62,3 +62,8 @@ public class IpAccessStat implements Serializable {
 	private long lastAccessTime = SystemTimer.currentTimeMillis();
 
 	/**
+	 * The number of times this IP was accessed
+	 */
+	public final AtomicInteger count = new AtomicInteger();
+	
+	/**
