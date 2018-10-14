@@ -108,3 +108,21 @@ public class IpPathAccessStats {
 	 * @param duration
 	 * @author: tanyaowu
 	 */
+	public void removeMonitor(Long duration) {
+		clear(duration);
+		cacheMap.remove(duration);
+		durationList.remove(duration);
+	}
+
+	/**
+	 * 
+	 * @param duration
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public String getCacheName(Long duration) {
+		String cacheName = CACHE_NAME + "_" + this.groupContextId + "_";
+		return cacheName + duration;
+	}
+
+	/**
