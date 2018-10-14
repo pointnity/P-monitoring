@@ -185,3 +185,34 @@ public class IpPathAccessStats {
 	/**
 	 * key:   ip
 	 * value: IpPathAccessStat
+	 * @param duration
+	 * @return
+	 * @author tanyaowu
+	 */
+	public ConcurrentMap<String, Serializable> map(Long duration) {
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
+			return null;
+		}
+		ConcurrentMap<String, Serializable> map = guavaCache.asMap();
+		return map;
+	}
+
+	/**
+	 *
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public Long size(Long duration) {
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
+			return null;
+		}
+		return guavaCache.size();
+	}
+
+	/**
+	 *
+	 * @return
+	 * @author: tanyaowu
+	 */
