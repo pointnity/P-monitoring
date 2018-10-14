@@ -42,3 +42,8 @@ public class IpPathAccessStat implements Serializable {
 	/**
 	 * First access time, units: milliseconds
 	 */
+	private long firstAccessTime = SystemTimer.currentTimeMillis();
+
+	/**
+	 * Last access time, unit: milliseconds
+	 */
