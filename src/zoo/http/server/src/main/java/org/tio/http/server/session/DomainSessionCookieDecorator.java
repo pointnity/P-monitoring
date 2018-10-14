@@ -25,3 +25,20 @@ public class DomainSessionCookieDecorator implements SessionCookieDecorator {
 	private DomainMappingSessionCookieDecorator domainMappingSessionCookieDecorator;
 
 	/**
+	 * 
+	 * @param domain Shaped like:".baidu.com"
+	 * @author: tanyaowu
+	 */
+	public DomainSessionCookieDecorator(String domain) {
+		this.domain = domain;
+		
+		Map<String, String> domainMap = new HashMap<>();
+		domainMap.put("(\\w)*(" + domain + "){1}", domain);
+
+		domainMappingSessionCookieDecorator = new DomainMappingSessionCookieDecorator(domainMap);
+	}
+
+
+
+	/** 
+	 * @param sessionCookie
