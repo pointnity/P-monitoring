@@ -84,3 +84,32 @@ public class IpPathAccessStat implements Serializable {
 
 	public Long getDurationType() {
 		return durationType;
+	}
+
+	public void setDurationType(Long durationType) {
+		this.durationType = durationType;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public long getFirstAccessTime() {
+		return firstAccessTime;
+	}
+
+	public void setFirstAccessTime(long firstAccessTime) {
+		this.firstAccessTime = firstAccessTime;
+	}
