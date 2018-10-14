@@ -73,3 +73,9 @@ public class IpAccessStat implements Serializable {
 	
 	
 	/**
+	 * Gets the ipaccesspathstat based on IP, if it does not exist in the cache, creates
+	 * @param ipAccessStat
+	 * @param path
+	 * @return
+	 * @author tanyaowu
+	 */
