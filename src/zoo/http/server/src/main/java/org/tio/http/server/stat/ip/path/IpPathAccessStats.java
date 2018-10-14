@@ -95,3 +95,16 @@ public class IpPathAccessStats {
 	 * @param ipPathAccessStatListener can be null
 	 * @author: tanyaowu
 	 */
+	public void addDurations(Long[] durations, IpPathAccessStatListener ipPathAccessStatListener) {
+		if (durations != null) {
+			for (Long duration : durations) {
+				addDuration(duration, ipPathAccessStatListener);
+			}
+		}
+	}
+
+	/**
+	 * Delete Monitoring time period
+	 * @param duration
+	 * @author: tanyaowu
+	 */
