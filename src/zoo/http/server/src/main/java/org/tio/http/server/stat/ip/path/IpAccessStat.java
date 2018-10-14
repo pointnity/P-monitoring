@@ -31,3 +31,5 @@ public class IpAccessStat implements Serializable {
 	public final SetWithLock<String> sessionIds = new SetWithLock<>(new HashSet<>());
 	
 	/**
+	 * Current statistics for how long, units: milliseconds
+	 */
