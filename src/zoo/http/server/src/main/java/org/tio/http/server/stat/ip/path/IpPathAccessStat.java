@@ -28,3 +28,12 @@ public class IpPathAccessStat implements Serializable {
 	 * Current statistics for how long, units: milliseconds
 	 */
 	private long duration;
+
+	/**
+	 * ip
+	 */
+	private String ip;
+
+	/**
+	 * Path
+	 */
