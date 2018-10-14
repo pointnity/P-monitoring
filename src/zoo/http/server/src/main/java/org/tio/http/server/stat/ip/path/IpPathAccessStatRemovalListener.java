@@ -38,3 +38,14 @@ public class IpPathAccessStatRemovalListener implements RemovalListener {
 	}
 
 	@Override
+	public void onRemoval(RemovalNotification notification) {
+		String ip = (String) notification.getKey();
+		IpAccessStat ipAccessStat = (IpAccessStat) notification.getValue();
+
+		if (ipPathAccessStatListener != null) {
+			ipPathAccessStatListener.onExpired(groupContext, ip, ipAccessStat);
+		}
+
+		//		log.info("IP data statistics [{}] {}", ip, Json.toFormatedJson(ipAccesspathStat));
+	}
+}
