@@ -33,3 +33,18 @@ public class IpAccessStat implements Serializable {
 	/**
 	 * Current statistics for how long, units: milliseconds
 	 */
+	private long duration;
+
+	public long getDuration() {
+		duration = SystemTimer.currentTimeMillis() - this.firstAccessTime;
+		return duration;
+	}
+
+	public void setDuration(long duration) {
+		this.duration = duration;
+	}
+
+	/**
+	 * ip
+	 */
+	private String ip;
