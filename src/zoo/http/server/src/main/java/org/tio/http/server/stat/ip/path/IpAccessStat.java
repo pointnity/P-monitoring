@@ -137,3 +137,24 @@ public class IpAccessStat implements Serializable {
 		long duration = getDuration();
 		double perSecond = (double)((double)count / (double)duration) * (double)1000;
 		return perSecond;
+	}
+
+	public Long getDurationType() {
+		return durationType;
+	}
+
+	public void setDurationType(Long durationType) {
+		this.durationType = durationType;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public long getFirstAccessTime() {
+		return firstAccessTime;
+	}
