@@ -42,3 +42,19 @@ public class DomainSessionCookieDecorator implements SessionCookieDecorator {
 
 	/** 
 	 * @param sessionCookie
+	 * @author: tanyaowu
+	 */
+	@Override
+	public void decorate(Cookie sessionCookie) {
+		domainMappingSessionCookieDecorator.decorate(sessionCookie);
+	}
+
+	/**
+	 * @param args
+	 * @author: tanyaowu
+	 */
+	public static void main(String[] args) {
+		boolean bb = ReUtil.isMatch("(\\w)*(.baidu.com){1}", "www.baidu.com");
+		System.out.println(bb);
+
+		Cookie sessionCookie = new Cookie();
