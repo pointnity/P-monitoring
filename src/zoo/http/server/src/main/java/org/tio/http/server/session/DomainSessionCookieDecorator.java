@@ -13,3 +13,15 @@ import com.xiaoleilu.hutool.util.ReUtil;
  * @author tanyaowu 
  *  
  */
+public class DomainSessionCookieDecorator implements SessionCookieDecorator {
+	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(DomainSessionCookieDecorator.class);
+
+	/**
+	 *Shaped like:".baidu.com"
+	 */
+	private String domain;
+	
+	private DomainMappingSessionCookieDecorator domainMappingSessionCookieDecorator;
+
+	/**
