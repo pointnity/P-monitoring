@@ -68,3 +68,20 @@ public class IpPathAccessStats {
 	 * @param ipPathAccessStatListener can be null
 	 * @author: tanyaowu
 	 */
+	public void addDuration(Long duration, IpPathAccessStatListener ipPathAccessStatListener) {
+		@SuppressWarnings("unchecked")
+		GuavaCache guavaCache = GuavaCache.register(getCacheName(duration), duration, null, new IpPathAccessStatRemovalListener(groupContext, ipPathAccessStatListener));
+		cacheMap.put(duration, guavaCache);
+		durationList.add(duration);
+		
+		if (ipPathAccessStatListener != null) {
+			listenerMap.put(duration, ipPathAccessStatListener);
+		}
+	}
+	
+	/**
+	 * 
+	 * @param duration
+	 * @return
+	 * @author tanyaowu
+	 */
