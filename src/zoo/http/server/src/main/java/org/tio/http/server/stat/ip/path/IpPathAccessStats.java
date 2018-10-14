@@ -154,3 +154,21 @@ public class IpPathAccessStats {
 		
 		GuavaCache guavaCache = cacheMap.get(duration);
 		if (guavaCache == null) {
+			return null;
+		}
+
+		IpAccessStat ipAccessStat = (IpAccessStat) guavaCache.get(ip);
+		if (ipAccessStat == null && forceCreate) {
+			synchronized (guavaCache) {
+				ipAccessStat = (IpAccessStat) guavaCache.get(ip);
+				if (ipAccessStat == null) {
+					ipAccessStat = new IpAccessStat(duration, ip);//new MapWithLock<String, IpPathAccessStat>(new HashMap<>());//new IpPathAccessStat(duration, ip, path);
+					guavaCache.put(ip, ipAccessStat);
+				}
+			}
+		}
+		
+		return ipAccessStat;
+	}
+	
+	/**
