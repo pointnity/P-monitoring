@@ -37,3 +37,8 @@ public class IpPathAccessStat implements Serializable {
 	/**
 	 * Path
 	 */
+	private String path;
+
+	/**
+	 * First access time, units: milliseconds
+	 */
