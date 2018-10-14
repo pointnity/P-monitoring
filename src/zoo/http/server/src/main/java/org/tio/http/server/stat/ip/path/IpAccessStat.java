@@ -67,3 +67,9 @@ public class IpAccessStat implements Serializable {
 	public final AtomicInteger count = new AtomicInteger();
 	
 	/**
+	 * Number of visits without session
+	 */
+	public final AtomicInteger noSessionCount = new AtomicInteger();
+	
+	
+	/**
