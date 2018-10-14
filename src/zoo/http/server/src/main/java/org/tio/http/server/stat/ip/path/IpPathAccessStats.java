@@ -34,3 +34,15 @@ public class IpPathAccessStats {
 	//	private GuavaCache[] caches = null;
 	/**
 	 * key:  Time period, unit: seconds
+	 * value: GuavaCache: key: ip, value: IpAccessStat
+	 */
+	public final Map<Long, GuavaCache> cacheMap = new HashMap<>();
+
+	/**
+	 * List of time and long segments
+	 */
+	public final List<Long> durationList = new ArrayList<>();
+	
+	private final Map<Long, IpPathAccessStatListener> listenerMap = new HashMap<>();
+
+	/**
