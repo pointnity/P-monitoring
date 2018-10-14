@@ -79,3 +79,10 @@ public class IpAccessStat implements Serializable {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public IpPathAccessStat get(String path) {
+		return get(path, true);
+	}
+	
+	/**
+	 * Gets ipaccesspathstat based on Ipaccessstat, if it does not exist in the cache, determines whether to create a value based on forcecreate
+	 * @param ipAccessStat
