@@ -24,3 +24,10 @@ public class IpAccessStat implements Serializable {
 	 * key:   path, Shaped like："/user/login"
 	 * value: IpPathAccessStat
 	 */
+	private MapWithLock<String, IpPathAccessStat> ipPathAccessStatMap = new MapWithLock<>(new HashMap<>());
+	
+	private Long durationType;
+	
+	public final SetWithLock<String> sessionIds = new SetWithLock<>(new HashSet<>());
+	
+	/**
