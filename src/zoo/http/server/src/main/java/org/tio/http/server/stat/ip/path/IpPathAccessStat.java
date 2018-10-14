@@ -20,3 +20,11 @@ public class IpPathAccessStat implements Serializable {
 	 * key:   path, Shaped like："/user/login"
 	 * value: Number of visits
 	 */
+	//	private MapWithLock<String, AtomicInteger> mapWithLock = new MapWithLock<>(new HashMap<>());
+	
+	private Long durationType;
+	
+	/**
+	 * Current statistics for how long, units: milliseconds
+	 */
+	private long duration;
