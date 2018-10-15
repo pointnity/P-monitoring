@@ -84,3 +84,29 @@ public class Resps {
 	 * @throws IOException
 	 * @author tanyaowu
 	 */
+	public static HttpResponse file(HttpRequest request, File fileOnServer) throws IOException {
+		Date lastModified = FileUtil.lastModifiedTime(fileOnServer);
+		HttpResponse ret = try304(request, lastModified.getTime());
+		if (ret != null) {
+			return ret;
+		}
+
+		byte[] bodyBytes = FileUtil.readBytes(fileOnServer);
+		String filename = fileOnServer.getName();
+		String extension = FileNameUtil.getExtension(filename);
+		ret = file(request, bodyBytes, extension);
+		ret.addHeader(HttpConst.ResponseHeaderKey.Last_Modified, lastModified.getTime() + "");
+		return ret;
+	}
+
+	/**
+	 * 
+	 * @param request
+	 * @param path The relative pageroot path of the file on the server, as in the form: "/user/index.html
+	 * @param httpConfig
+	 * @return
+	 * @throws IOException
+	 * @author: tanyaowu
+	 */
+	public static HttpResponse file(HttpRequest request, String path, HttpConfig httpConfig) throws IOException {
+		File pageRoot = httpConfig.getPageRoot();
