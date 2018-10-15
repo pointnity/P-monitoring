@@ -163,3 +163,36 @@ public class Resps {
 //		httpConfig.getContextPath()
 //		
 //		if (newPath != null) {
+//			requestLine.setPath(newPath);
+//		}
+//		
+//		HttpRequestHandler httpRequestHandler = request.getHttpConfig().getHttpRequestHandler();
+//		return httpRequestHandler.handler(request);
+//	}
+
+	/**
+	 * 
+	 * @param request
+	 * @param requestLine
+	 * @param httpConfig
+	 * @param throwable
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public static HttpResponse resp500(HttpRequest request, RequestLine requestLine, HttpConfig httpConfig, Throwable throwable) {
+		File pageRoot = httpConfig.getPageRoot();
+		
+		if (pageRoot != null) {
+			String file500 = httpConfig.getPage500();
+//			String root = FileUtil.getAbsolutePath(pageRoot);
+			File file = new File(pageRoot + file500);
+			if (file.exists()) {
+				HttpResponse ret = Resps.redirect(request, file500 + "?tio_initpath=" + requestLine.getPathAndQuery());
+				return ret;
+			}
+		}
+		
+		HttpResponse ret = Resps.html(request, "500");
+		ret.setStatus(HttpResponseStatus.C500);
+		return ret;
+	}
