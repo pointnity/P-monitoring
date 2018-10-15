@@ -391,3 +391,21 @@ public class Resps {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Content-Type: text/plain; charset=utf-8
+	 * @param request
+	 * @param bodyString
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse txt(HttpRequest request, String bodyString) {
+		return txt(request, bodyString, HttpServerUtils.getHttpConfig(request).getCharset());
+	}
+
+	/**
+	 * Content-Type: text/plain; charset=utf-8
+	 * @param request
+	 * @param bodyString
+	 * @param charset
