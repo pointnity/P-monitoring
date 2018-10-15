@@ -247,3 +247,31 @@ public class Resps {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public static HttpResponse html(HttpRequest request, String bodyString, String charset) {
+		HttpResponse ret = string(request, bodyString, charset, MimeType.TEXT_HTML_HTML.getType() + "; charset=" + charset);
+		return ret;
+	}
+
+	/**
+	 * Content-Type: application/javascript; charset=utf-8
+	 * @param request
+	 * @param bodyString
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse js(HttpRequest request, String bodyString) {
+		return js(request, bodyString, HttpServerUtils.getHttpConfig(request).getCharset());
+	}
+
+	/**
+	 * Content-Type: application/javascript; charset=utf-8
+	 * @param request
+	 * @param bodyString
+	 * @param charset
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse js(HttpRequest request, String bodyString, String charset) {
+		HttpResponse ret = string(request, bodyString, charset, MimeType.APPLICATION_JAVASCRIPT_JS.getType() + "; charset=" + charset);
+		return ret;
+	}
