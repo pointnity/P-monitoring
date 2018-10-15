@@ -39,3 +39,8 @@ public class HttpServerUtils {
 
 	/**
 	 *
+	 * @author tanyaowu
+	 */
+	public HttpServerUtils() {
+	}
+}
