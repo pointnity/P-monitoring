@@ -72,3 +72,7 @@ public class FreemarkerConfig {
 	/**
 	 * @param suffixes the suffixes to set
 	 */
+	public void setSuffixes(String[] suffixes) {
+		this.suffixes = suffixes;
+	}
+}
