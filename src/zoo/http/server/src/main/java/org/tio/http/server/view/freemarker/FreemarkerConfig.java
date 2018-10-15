@@ -52,3 +52,23 @@ public class FreemarkerConfig {
 
 	/**
 	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
+
+	}
+
+
+
+	/**
+	 * @return the suffixes
+	 */
+	public String[] getSuffixes() {
+		return suffixes;
+	}
+
+
+
+	/**
+	 * @param suffixes the suffixes to set
+	 */
