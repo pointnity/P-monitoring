@@ -10,3 +10,18 @@ import com.xiaoleilu.hutool.util.ClassUtil;
  * @author tanyaowu
  *  
  */
+public class ClassUtils {
+	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(ClassUtils.class);
+
+	public static boolean isSimpleTypeOrArray(Class<?> clazz) {
+		return ClassUtil.isSimpleTypeOrArray(clazz) || clazz.isAssignableFrom(UploadFile.class);
+	}
+
+	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
+
+	}
