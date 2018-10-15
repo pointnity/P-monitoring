@@ -409,3 +409,18 @@ public class Resps {
 	 * @param request
 	 * @param bodyString
 	 * @param charset
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse txt(HttpRequest request, String bodyString, String charset) {
+		HttpResponse ret = string(request, bodyString, charset, MimeType.TEXT_PLAIN_TXT.getType() + "; charset=" + charset);
+		return ret;
+	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	private Resps() {
+	}
+}
