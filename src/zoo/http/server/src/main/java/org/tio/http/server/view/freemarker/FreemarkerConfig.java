@@ -28,3 +28,27 @@ public class FreemarkerConfig {
 	
 
 	public Configuration getConfiguration() {
+		return configuration;
+	}
+
+	public void setConfiguration(Configuration configuration) {
+		this.configuration = configuration;
+	}
+
+	public ModelMaker getModelMaker() {
+		return modelMaker;
+	}
+
+	public void setModelMaker(ModelMaker modelMaker) {
+		this.modelMaker = modelMaker;
+	}
+
+	/**
+	 * 
+	 * @author tanyaowu
+	 */
+	public FreemarkerConfig() {
+	}
+
+	/**
+	 * @param args
