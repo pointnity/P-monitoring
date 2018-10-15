@@ -28,3 +28,17 @@ public class SimpleWatcher implements Watcher {
 			}
 		});
 		SimpleWatcher simpleWatcher = new SimpleWatcher();
+		watchMonitor.setWatcher(simpleWatcher);
+		watchMonitor.start();
+	}
+
+	@Override
+	public void onCreate(WatchEvent<?> event, Path currentPath) {
+		Object obj = event.context();
+		System.out.println("Create：" + obj);
+
+	}
+
+	@Override
+	public void onDelete(WatchEvent<?> event, Path currentPath) {
+		Object obj = event.context();
