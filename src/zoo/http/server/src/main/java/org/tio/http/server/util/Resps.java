@@ -376,3 +376,18 @@ public class Resps {
 		String If_Modified_Since = request.getHeader(HttpConst.RequestHeaderKey.If_Modified_Since);//If-Modified-Since
 		if (StringUtils.isNoneBlank(If_Modified_Since)) {
 			Long If_Modified_Since_Date = null;
+			try {
+				If_Modified_Since_Date = Long.parseLong(If_Modified_Since);
+
+				if (lastModifiedOnServer <= If_Modified_Since_Date) {
+					HttpResponse ret = new HttpResponse(request, HttpServerUtils.getHttpConfig(request));
+					ret.setStatus(HttpResponseStatus.C304);
+					return ret;
+				}
+			} catch (NumberFormatException e) {
+				log.warn("{}, {}Not integer, browser information:{}", request.getRemote(), If_Modified_Since, request.getHeader(HttpConst.RequestHeaderKey.User_Agent));
+				return null;
+			}
+		}
+
+		return null;
