@@ -275,3 +275,31 @@ public class Resps {
 		HttpResponse ret = string(request, bodyString, charset, MimeType.APPLICATION_JAVASCRIPT_JS.getType() + "; charset=" + charset);
 		return ret;
 	}
+
+	/**
+	 * Content-Type: application/json; charset=utf-8
+	 * @param request
+	 * @param body
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse json(HttpRequest request, Object body) {
+		return json(request, body, HttpServerUtils.getHttpConfig(request).getCharset());
+	}
+
+	/**
+	 * Content-Type: application/json; charset=utf-8
+	 * @param request
+	 * @param body
+	 * @param charset
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse json(HttpRequest request, Object body, String charset) {
+		HttpResponse ret = null;
+		if (body == null) {
+			ret = string(request, "", charset, MimeType.TEXT_PLAIN_JSON.getType() + "; charset=" + charset);
+		} else {
+			if (body.getClass() == String.class || ClassUtil.isBasicType(body.getClass())) {
+				ret = string(request, body + "", charset, MimeType.TEXT_PLAIN_JSON.getType() + "; charset=" + charset);
+			} else {
