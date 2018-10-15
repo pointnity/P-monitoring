@@ -332,7 +332,7 @@ public class Resps {
 	}
 
 	/**
-	 * 创建字符串输出
+	 * To create a string output
 	 * @param request
 	 * @param bodyString
 	 * @param Content_Type
@@ -352,3 +352,17 @@ public class Resps {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public static HttpResponse string(HttpRequest request, String bodyString, String charset, String Content_Type) {
+		HttpResponse ret = new HttpResponse(request, HttpServerUtils.getHttpConfig(request));
+		if (bodyString != null) {
+			try {
+				ret.setBody(bodyString.getBytes(charset), request);
+			} catch (UnsupportedEncodingException e) {
+				log.error(e.toString(), e);
+			}
+		}
+		ret.addHeader(HttpConst.ResponseHeaderKey.Content_Type, Content_Type);
+		return ret;
+	}
+
+	/**
