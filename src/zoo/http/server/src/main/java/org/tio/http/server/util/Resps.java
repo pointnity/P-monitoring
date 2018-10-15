@@ -68,3 +68,19 @@ public class Resps {
 		if (StringUtils.isNoneBlank(extension)) {
 			MimeType mimeType = MimeType.fromExtension(extension);
 			if (mimeType != null) {
+				contentType = mimeType.getType();
+			} else {
+				contentType = "application/octet-stream";
+			}
+		}
+		return fileWithContentType(request, bodyBytes, contentType);
+	}
+
+	/**
+	 * Create responses based on files
+	 * @param request
+	 * @param fileOnServer
+	 * @return
+	 * @throws IOException
+	 * @author tanyaowu
+	 */
