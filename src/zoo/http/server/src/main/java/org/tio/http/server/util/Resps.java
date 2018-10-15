@@ -366,3 +366,13 @@ public class Resps {
 	}
 
 	/**
+	 *Attempt to return 304
+	 * @param request
+	 * @param lastModifiedOnServer LastModified of resources in the server
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse try304(HttpRequest request, long lastModifiedOnServer) {
+		String If_Modified_Since = request.getHeader(HttpConst.RequestHeaderKey.If_Modified_Since);//If-Modified-Since
+		if (StringUtils.isNoneBlank(If_Modified_Since)) {
+			Long If_Modified_Since_Date = null;
