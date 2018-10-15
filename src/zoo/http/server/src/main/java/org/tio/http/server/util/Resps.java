@@ -222,3 +222,28 @@ public class Resps {
 	 */
 	public static HttpResponse fileWithHeaders(HttpRequest request, byte[] bodyBytes, Map<String, String> headers, HttpConfig httpConfig) {
 		HttpResponse ret = new HttpResponse(request, httpConfig);
+		ret.setBody(bodyBytes, request);
+		ret.addHeaders(headers);
+		return ret;
+	}
+
+	/**
+	 *
+	 * @param request
+	 * @param bodyString
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse html(HttpRequest request, String bodyString) {
+		HttpConfig httpConfig = HttpServerUtils.getHttpConfig(request);
+		return html(request, bodyString, httpConfig.getCharset());
+	}
+
+	/**
+	 * Content-Type: text/html; charset=utf-8
+	 * @param request
+	 * @param bodyString
+	 * @param charset
+	 * @return
+	 * @author tanyaowu
+	 */
