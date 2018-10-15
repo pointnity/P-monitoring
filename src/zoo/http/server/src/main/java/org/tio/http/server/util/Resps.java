@@ -110,3 +110,25 @@ public class Resps {
 	 */
 	public static HttpResponse file(HttpRequest request, String path, HttpConfig httpConfig) throws IOException {
 		File pageRoot = httpConfig.getPageRoot();
+		if (pageRoot != null) {
+//			String root = FileUtil.getAbsolutePath(pageRoot);
+			File file = new File(pageRoot + path);
+			if (!file.exists()) {
+				return resp404(request, request.getRequestLine(), httpConfig);
+			}
+			return file(request, file);
+		} else {
+			return resp404(request, request.getRequestLine(), httpConfig);
+		}
+	}
+
+	/**
+	 * 
+	 * @param request
+	 * @param requestLine
+	 * @param httpConfig
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public static HttpResponse resp404(HttpRequest request, RequestLine requestLine, HttpConfig httpConfig) {
+		File pageRoot = httpConfig.getPageRoot();
