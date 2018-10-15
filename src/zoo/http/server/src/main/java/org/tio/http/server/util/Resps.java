@@ -132,3 +132,34 @@ public class Resps {
 	 */
 	public static HttpResponse resp404(HttpRequest request, RequestLine requestLine, HttpConfig httpConfig) {
 		File pageRoot = httpConfig.getPageRoot();
+		
+		if (pageRoot != null) {
+			String file404 = httpConfig.getPage404();
+//			String root = FileUtil.getAbsolutePath(pageRoot);
+			File file = new File(pageRoot + file404);
+			if (file.exists()) {
+				HttpResponse ret = Resps.redirect(request, file404 + "?tio_initpath=" + requestLine.getPathAndQuery());
+				return ret;
+			}
+		}
+		
+		HttpResponse ret = Resps.html(request, "404");
+		ret.setStatus(HttpResponseStatus.C404);
+		return ret;
+	}
+	
+//	/**
+//	 * 
+//	 * @param newPath
+//	 * @param request
+//	 * @return
+//	 * @throws Exception
+//	 * @author tanyaowu
+//	 */
+//	public static HttpResponse forward(String newPath, HttpRequest request) throws Exception {
+//		RequestLine requestLine  = request.getRequestLine();
+//		HttpConfig httpConfig = request.getHttpConfig();
+//		
+//		httpConfig.getContextPath()
+//		
+//		if (newPath != null) {
