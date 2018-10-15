@@ -197,3 +197,23 @@ configuration scan="true" scanPeriod="10 seconds" debug="true">
 	</logger>
 	
 	<!--Addressxxxx Log Printing  -->
+	<appender name="tio-addressxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/addressxxxx.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/addressxxxx.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>${max.history}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d%n %m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="tio-addressxxxx-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-addressxxxx-trace-log-appender"/>
+	</logger>
+	
+	<!-- userAgentxxxx Log printing -->
