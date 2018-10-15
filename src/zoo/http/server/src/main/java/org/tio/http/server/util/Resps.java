@@ -48,3 +48,23 @@ public class Resps {
 	 * @param charset
 	 * @return
 	 * @author tanyaowu
+	 */
+	public static HttpResponse css(HttpRequest request, String bodyString, String charset) {
+		HttpResponse ret = string(request, bodyString, charset, MimeType.TEXT_CSS_CSS.getType() + "; charset=" + charset);
+		return ret;
+	}
+
+	/**
+	 * Create responses based on file content
+	 * @param request
+	 * @param bodyBytes
+	 * @param extension
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse file(HttpRequest request, byte[] bodyBytes, String extension) {
+		String contentType = null;
+		//		String extension = FilenameUtils.getExtension(filename);
+		if (StringUtils.isNoneBlank(extension)) {
+			MimeType mimeType = MimeType.fromExtension(extension);
+			if (mimeType != null) {
