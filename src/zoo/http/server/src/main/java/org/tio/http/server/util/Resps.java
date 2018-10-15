@@ -324,3 +324,31 @@ public class Resps {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public static HttpResponse redirect(HttpRequest request, String path) {
+		HttpResponse ret = new HttpResponse(request, HttpServerUtils.getHttpConfig(request));
+		ret.setStatus(HttpResponseStatus.C302);
+		ret.addHeader(HttpConst.ResponseHeaderKey.Location, path);
+		return ret;
+	}
+
+	/**
+	 * 创建字符串输出
+	 * @param request
+	 * @param bodyString
+	 * @param Content_Type
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse string(HttpRequest request, String bodyString, String Content_Type) {
+		return string(request, bodyString, HttpServerUtils.getHttpConfig(request).getCharset(), Content_Type);
+	}
+
+	/**
+	 * To create a string output
+	 * @param request
+	 * @param bodyString
+	 * @param charset
+	 * @param Content_Type
+	 * @return
+	 * @author tanyaowu
+	 */
