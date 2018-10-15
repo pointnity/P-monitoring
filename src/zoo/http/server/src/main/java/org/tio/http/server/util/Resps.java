@@ -27,3 +27,24 @@ import jodd.io.FileNameUtil;
  * @author tanyaowu
  *  
  */
+public class Resps {
+	private static Logger log = LoggerFactory.getLogger(Resps.class);
+
+	/**
+	 * Content-Type: text/css; charset=utf-8
+	 * @param request
+	 * @param bodyString
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static HttpResponse css(HttpRequest request, String bodyString) {
+		return css(request, bodyString, HttpServerUtils.getHttpConfig(request).getCharset());
+	}
+
+	/**
+	 * Content-Type: text/css; charset=utf-8
+	 * @param request
+	 * @param bodyString
+	 * @param charset
+	 * @return
+	 * @author tanyaowu
