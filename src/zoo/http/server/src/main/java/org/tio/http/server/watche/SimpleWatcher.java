@@ -42,3 +42,18 @@ public class SimpleWatcher implements Watcher {
 	@Override
 	public void onDelete(WatchEvent<?> event, Path currentPath) {
 		Object obj = event.context();
+		System.out.println(The Delete：" + obj);
+	}
+
+	@Override
+	public void onModify(WatchEvent<?> event, Path currentPath) {
+		Object obj = event.context();
+		System.out.println("Modify：" + obj);
+	}
+
+	@Override
+	public void onOverflow(WatchEvent<?> event, Path currentPath) {
+		Object obj = event.context();
+		System.out.println("Overflow：" + obj);
+	}
+}
