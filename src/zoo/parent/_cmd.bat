@@ -27,3 +27,12 @@ Echo -
 
 
 Echo #check version update
+Echo mvn versions: display-dependency-updates
+Echo -
+
+Echo #version change
+Echo mvn versions: set -DnewVersion=4.0.0-talent-999
+Echo -
+
+
+Call cmd
