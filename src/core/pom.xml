@@ -16,3 +16,6 @@
 			<groupId>org.t-io</groupId>
 			<artifactId>tio-utils</artifactId>
 		</dependency>
+
+		<!-- slf4j-Logback binding -->
+		<dependency>
