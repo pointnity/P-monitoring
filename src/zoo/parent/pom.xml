@@ -80,3 +80,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			
+			
+		</plugins>
