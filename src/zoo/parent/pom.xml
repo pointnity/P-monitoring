@@ -76,3 +76,5 @@
 					<excludes>
 						<exclude>**/*.properties</exclude>
 						<exclude>**/*.conf</exclude>
+						<exclude>**/*.xml</exclude>
+					</excludes>
