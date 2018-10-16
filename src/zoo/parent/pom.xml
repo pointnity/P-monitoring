@@ -34,3 +34,22 @@
 			<url>https://gitee.com/tywo45/t-io</url>
 		</developer>
 	</developers>
+
+	<repositories>
+
+
+	</repositories>
+	<pluginRepositories>
+
+
+
+	</pluginRepositories>
+
+	<dependencyManagement>
+		
+	</dependencyManagement>
+
+
+
+	<!-- Plug-in configuration -->
+	<build>
