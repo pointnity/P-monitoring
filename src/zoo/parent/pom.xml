@@ -1,0 +1,12 @@
+<project xmlns="maven.apache.org/POM/4.0.0" xmlns:xsi="w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=maven.apache.org/POM/4.0.0 /maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tio-zoo-parent</artifactId>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://maven.apache.org</url>
+
+	<description>tio-zoo's parent</description>
+	
+	<parent>
+		<groupId>org.t-io</groupId>
