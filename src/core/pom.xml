@@ -32,3 +32,9 @@
 
 		<!-- redirect apache commons logging -->
 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- redirect jdk util logging -->
+		<dependency>
