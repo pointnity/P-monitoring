@@ -10,3 +10,27 @@
 	
 	<parent>
 		<groupId>org.t-io</groupId>
+		<artifactId>tio-parent</artifactId>
+		<version>2.0.2.v20171129-RELEASE</version>
+		<relativePath>../../parent/pom.xml</relativePath>
+	</parent>
+
+
+	<modules>
+		<module>../http/parent</module>
+		<module>../websocket/parent</module>
+		
+		<module>../flash-policy-server</module>
+		
+	</modules>
+
+
+
+	<developers>
+		<developer>
+			<id>tanyaowu</id>
+			<name>tanyaowu</name>
+			<email>tywo45@163.com</email>
+			<url>https://gitee.com/tywo45/t-io</url>
+		</developer>
+	</developers>
