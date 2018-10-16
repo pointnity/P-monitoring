@@ -3,3 +3,6 @@
 	<name>tio-core</name>
 	<comment></comment>
 	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
