@@ -79,3 +79,4 @@
 						<exclude>**/*.xml</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
