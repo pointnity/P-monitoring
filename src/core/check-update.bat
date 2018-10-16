@@ -33,3 +33,7 @@ Echo -
 Echo #version change
 Echo mvn versions: set -DnewVersion=4.0.0-talent-999
 Echo -
+
+
+Call mvn versions: display-dependency-updates
+Pause
