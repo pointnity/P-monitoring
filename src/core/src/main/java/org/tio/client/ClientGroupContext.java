@@ -14,3 +14,16 @@ import org.tio.core.stat.GroupStat;
  * @author tanyaowu
  *  
  */
+public class ClientGroupContext extends GroupContext {
+	static Logger log = LoggerFactory.getLogger(ClientGroupContext.class);
+
+	private ClientAioHandler clientAioHandler = null;
+
+	private ClientAioListener clientAioListener = null;
+
+	private ClientGroupStat clientGroupStat = new ClientGroupStat();
+
+	private ConnectionCompletionHandler connectionCompletionHandler = new ConnectionCompletionHandler();
+
+	/**
+	 *Do not re-connect
