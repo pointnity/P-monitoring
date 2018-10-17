@@ -118,3 +118,15 @@ public class AioClient {
 	 * @param serverNode
 	 * @throws Exception
 	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public void asynConnect(Node serverNode) throws Exception {
+		asynConnect(serverNode, null);
+	}
+
+	/**
+	 *
+	 * @param serverNode
+	 * @param timeout
+	 * @throws Exception
