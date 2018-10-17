@@ -73,3 +73,14 @@ public class AioClient {
 				}
 
 				if (channelContext.isClosed()) {
+					channelContext.setReconnCount(channelContext.getReconnCount() + 1);
+					//					cacheMap.put(channelContext.getServerNode(), SystemTimer.currentTimeMillis());
+					return;
+				}
+			} catch (java.lang.Throwable e) {
+				log.error(e.toString(), e);
+			} finally {
+				writeLock.unlock();
+			}
+
+		}
