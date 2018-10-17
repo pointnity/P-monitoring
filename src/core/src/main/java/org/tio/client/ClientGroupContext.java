@@ -58,3 +58,17 @@ public class ClientGroupContext extends GroupContext {
 	 * @author tanyaowu
 	 *  
 	 *
+	 */
+	@Override
+	public AioHandler getAioHandler() {
+		return this.getClientAioHandler();
+	}
+
+	/**
+	 * @see org.tio.core.GroupContext#getAioListener()
+	 *
+	 * @return
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
