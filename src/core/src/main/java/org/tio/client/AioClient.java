@@ -332,3 +332,25 @@ public class AioClient {
 					if (heartbeatTimeout <= 0) {
 						log.warn("The user cancels the frame-level heartbeat timing send function, please the user to complete the heartbeat mechanism");
 						break;
+					}
+					ReadLock readLock = null;
+					try {
+						SetWithLock<ChannelContext> setWithLock = clientGroupContext.connecteds.getSetWithLock();
+						readLock = setWithLock.getLock().readLock();
+						readLock.lock();
+						Set<ChannelContext> set = setWithLock.getObj();
+						long currtime = SystemTimer.currentTimeMillis();
+						for (ChannelContext entry : set) {
+							ClientChannelContext channelContext = (ClientChannelContext) entry;
+							if (channelContext.isClosed() || channelContext.isRemoved()) {
+								continue;
+							}
+
+							ChannelStat stat = channelContext.getStat();
+							long latestTimeOfReceivedByte = stat.getLatestTimeOfReceivedByte();
+							long latestTimeOfSentPacket = stat.getLatestTimeOfSentPacket();
+							long compareTime = Math.max(latestTimeOfReceivedByte, latestTimeOfSentPacket);
+							long interval = currtime - compareTime;
+							if (interval >= heartbeatTimeout / 2) {
+								Packet packet = aioHandler.heartbeatPacket();
+								if (packet != null) {
