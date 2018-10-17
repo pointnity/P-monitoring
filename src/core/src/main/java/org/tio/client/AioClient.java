@@ -103,3 +103,18 @@ public class AioClient {
 	 * @throws IOException
 	 *
 	 */
+	public AioClient(final ClientGroupContext clientGroupContext) throws IOException {
+		super();
+		this.clientGroupContext = clientGroupContext;
+		//		ExecutorService groupExecutor = clientGroupContext.getGroupExecutor();
+		this.channelGroup = AsynchronousChannelGroup.withThreadPool(clientGroupContext.getGroupExecutor());
+
+		startHeartbeatTask();
+		startReconnTask();
+	}
+
+	/**
+	 *
+	 * @param serverNode
+	 * @throws Exception
+	 *
