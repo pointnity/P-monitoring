@@ -146,3 +146,14 @@ public class AioClient {
 	 * @param timeout
 	 * @throws Exception
 	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public void asynConnect(Node serverNode, String bindIp, Integer bindPort, Integer timeout) throws Exception {
+		connect(serverNode, bindIp, bindPort, null, timeout, false);
+	}
+
+	/**
+	 *
+	 * @param serverNode
+	 * @return
