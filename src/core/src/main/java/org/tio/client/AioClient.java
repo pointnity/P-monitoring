@@ -199,3 +199,9 @@ public class AioClient {
 	 * @param bindIp
 	 * @param bindPort
 	 * @param initClientChannelContext
+	 * @param timeout Time-out, per second
+	 * @param isSyn true: Synchronous, false: Asynchronous
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
