@@ -109,3 +109,25 @@ public class ClientGroupContext extends GroupContext {
 	 * @author tanyaowu
 	 *  
 	 *
+	 */
+	@Override
+	public GroupStat getGroupStat() {
+		return this.getClientGroupStat();
+	}
+
+	/**
+	 * @param clientAioHandler the clientAioHandler to set
+	 */
+	public void setClientAioHandler(ClientAioHandler clientAioHandler) {
+		this.clientAioHandler = clientAioHandler;
+	}
+
+	/**
+	 * @param clientAioListener the clientAioListener to set
+	 */
+	public void setClientAioListener(ClientAioListener clientAioListener) {
+		this.clientAioListener = clientAioListener;
+		if (this.clientAioListener == null) {
+			this.clientAioListener = new DefaultClientAioListener();
+		}
+	}
