@@ -46,3 +46,31 @@ public class ClientChannelContext extends ChannelContext {
 		Node clientNode = new Node(inetSocketAddress.getHostString(), inetSocketAddress.getPort());
 		return clientNode;
 	}
+
+	/**
+	 * @return the bindIp
+	 */
+	public String getBindIp() {
+		return bindIp;
+	}
+
+	/**
+	 * @return the bindPort
+	 */
+	public Integer getBindPort() {
+		return bindPort;
+	}
+
+	/**
+	 * @param bindIp the bindIp to set
+	 */
+	public void setBindIp(String bindIp) {
+		this.bindIp = bindIp;
+	}
+
+	/**
+	 * @param bindPort the bindPort to set
+	 */
+	public void setBindPort(Integer bindPort) {
+		this.bindPort = bindPort;
+	}
