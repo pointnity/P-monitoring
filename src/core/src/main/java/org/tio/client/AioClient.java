@@ -391,3 +391,15 @@ public class AioClient {
 	 * @author tanyaowu
 	 *
 	 */
+	private void startReconnTask() {
+		final ReconnConf reconnConf = clientGroupContext.getReconnConf();
+		if (reconnConf == null || reconnConf.getInterval() <= 0) {
+			return;
+		}
+
+		final String id = clientGroupContext.getId();
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while (!clientGroupContext.isStopped()) {
+					//log.info("Ready to re-connect");
