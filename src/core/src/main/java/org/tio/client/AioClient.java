@@ -403,3 +403,17 @@ public class AioClient {
 			public void run() {
 				while (!clientGroupContext.isStopped()) {
 					//log.info("Ready to re-connect");
+					LinkedBlockingQueue<ChannelContext> queue = reconnConf.getQueue();
+					ClientChannelContext channelContext = null;
+					try {
+						channelContext = (ClientChannelContext) queue.take();
+					} catch (InterruptedException e1) {
+						log.error(e1.toString(), e1);
+					}
+					if (channelContext == null) {
+						continue;
+						//						return;
+					}
+
+					if (channelContext.isRemoved()) //has been deleted and does not need to be re-connected
+					{
