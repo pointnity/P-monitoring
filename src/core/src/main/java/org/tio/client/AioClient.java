@@ -214,3 +214,9 @@ public class AioClient {
 		//		ClientAioListener clientAioListener = clientGroupContext.getClientAioListener();
 
 		long start = SystemTimer.currentTimeMillis();
+		asynchronousSocketChannel = AsynchronousSocketChannel.open(channelGroup);
+		long end = SystemTimer.currentTimeMillis();
+		long iv = end - start;
+		if (iv >= 100) {
+			log.error("{}, open Take:{} ms", channelContext, iv);
+		}
