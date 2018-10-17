@@ -220,3 +220,30 @@ public class AioClient {
 		if (iv >= 100) {
 			log.error("{}, open Take:{} ms", channelContext, iv);
 		}
+
+		asynchronousSocketChannel.setOption(StandardSocketOptions.TCP_NODELAY, true);
+		asynchronousSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
+		asynchronousSocketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true);
+
+		InetSocketAddress bind = null;
+		if (bindPort != null && bindPort > 0) {
+			if (StringUtils.isNotBlank(bindIp)) {
+				bind = new InetSocketAddress(bindIp, bindPort);
+			} else {
+				bind = new InetSocketAddress(bindPort);
+			}
+		}
+
+		if (bind != null) {
+			asynchronousSocketChannel.bind(bind);
+		}
+
+		channelContext = initClientChannelContext;
+
+		start = SystemTimer.currentTimeMillis();
+
+		InetSocketAddress inetSocketAddress = new InetSocketAddress(serverNode.getIp(), serverNode.getPort());
+
+		ConnectionCompletionVo attachment = new ConnectionCompletionVo(channelContext, this, isReconnect, asynchronousSocketChannel, serverNode, bindIp, bindPort);
+
+		if (isSyn) {
