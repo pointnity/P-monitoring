@@ -95,3 +95,11 @@ public class AioClient {
 	/**
 	 * @param serverIp Can be empty
 	 * @param serverPort
+	 * @param aioDecoder
+	 * @param aioEncoder
+	 * @param aioHandler
+	 *
+	 * @author tanyaowu
+	 * @throws IOException
+	 *
+	 */
