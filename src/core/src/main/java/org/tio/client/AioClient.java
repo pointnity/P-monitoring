@@ -417,3 +417,21 @@ public class AioClient {
 
 					if (channelContext.isRemoved()) //has been deleted and does not need to be re-connected
 					{
+						continue;
+					}
+
+					long currtime = SystemTimer.currentTimeMillis();
+					long timeInReconnQueue = channelContext.getStat().getTimeInReconnQueue();
+					long sleeptime = reconnConf.getInterval() - (currtime - timeInReconnQueue);
+					//log.info("sleeptime:{}, closetime:{}", sleeptime, timeInReconnQueue);
+					if (sleeptime > 0) {
+						try {
+							Thread.sleep(sleeptime);
+						} catch (InterruptedException e) {
+							log.error(e.toString(), e);
+						}
+					}
+
+					if (channelContext.isRemoved() || !channelContext.isClosed()) //Deleted and already connected, no need to re-connect
+					{
+						continue;
