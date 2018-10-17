@@ -186,3 +186,16 @@ public class AioClient {
 	 * @param initClientChannelContext
 	 * @param timeout Time-out, per second
 	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
+	public ClientChannelContext connect(Node serverNode, String bindIp, Integer bindPort, ClientChannelContext initClientChannelContext, Integer timeout) throws Exception {
+		return connect(serverNode, bindIp, bindPort, initClientChannelContext, timeout, true);
+	}
+
+	/**
+	 *
+	 * @param serverNode
+	 * @param bindIp
+	 * @param bindPort
+	 * @param initClientChannelContext
