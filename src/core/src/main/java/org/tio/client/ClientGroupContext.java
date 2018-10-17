@@ -41,3 +41,20 @@ public class ClientGroupContext extends GroupContext {
 	 * @param aioListener
 	 * @param reconnConf Null is not required to automatically re-connect
 	 * @author tanyaowu
+	 */
+	public ClientGroupContext(ClientAioHandler aioHandler, ClientAioListener aioListener, ReconnConf reconnConf) {
+		super();
+
+		this.setClientAioHandler(aioHandler);
+		this.setClientAioListener(aioListener);
+
+		this.reconnConf = reconnConf;
+	}
+
+	/**
+	 * @see org.tio.core.GroupContext#getAioHandler()
+	 *
+	 * @return
+	 * @author tanyaowu
+	 *  
+	 *
