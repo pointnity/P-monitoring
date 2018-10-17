@@ -247,3 +247,25 @@ public class AioClient {
 		ConnectionCompletionVo attachment = new ConnectionCompletionVo(channelContext, this, isReconnect, asynchronousSocketChannel, serverNode, bindIp, bindPort);
 
 		if (isSyn) {
+			Integer realTimeout = timeout;
+			if (realTimeout == null) {
+				realTimeout = 5;
+			}
+
+			CountDownLatch countDownLatch = new CountDownLatch(1);
+			attachment.setCountDownLatch(countDownLatch);
+			asynchronousSocketChannel.connect(inetSocketAddress, attachment, clientGroupContext.getConnectionCompletionHandler());
+			countDownLatch.await(realTimeout, TimeUnit.SECONDS);
+			return attachment.getChannelContext();
+		} else {
+			asynchronousSocketChannel.connect(inetSocketAddress, attachment, clientGroupContext.getConnectionCompletionHandler());
+			return null;
+		}
+	}
+
+	/**
+	 *
+	 * @param serverNode
+	 * @param bindIp
+	 * @param bindPort
+	 * @param timeout Time-out, per second
