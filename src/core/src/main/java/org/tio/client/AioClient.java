@@ -48,3 +48,8 @@ public class AioClient {
 		 * @see java.lang.Runnable#run()
 		 *
 		 * @author tanyaowu
+		 *  
+		 *
+		 */
+		@Override
+		public void run() {
