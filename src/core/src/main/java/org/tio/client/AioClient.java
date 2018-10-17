@@ -33,3 +33,11 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
  *  
  */
 public class AioClient {
+	private static class ReconnRunnable implements Runnable {
+		ClientChannelContext channelContext = null;
+		AioClient aioClient = null;
+
+		//		private static Map<Node, Long> cacheMap = new HashMap<>();
+
+		public ReconnRunnable(ClientChannelContext channelContext, AioClient aioClient) {
+			this.channelContext = channelContext;
