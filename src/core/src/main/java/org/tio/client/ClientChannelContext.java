@@ -34,3 +34,15 @@ public class ClientChannelContext extends ChannelContext {
 	 * @see org.tio.core.ChannelContext#createClientNode(java.nio.channels.AsynchronousSocketChannel)
 	 *
 	 * @param asynchronousSocketChannel
+	 * @return
+	 * @throws IOException
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
+	@Override
+	public Node createClientNode(AsynchronousSocketChannel asynchronousSocketChannel) throws IOException {
+		InetSocketAddress inetSocketAddress = (InetSocketAddress) asynchronousSocketChannel.getLocalAddress();
+		Node clientNode = new Node(inetSocketAddress.getHostString(), inetSocketAddress.getPort());
+		return clientNode;
+	}
