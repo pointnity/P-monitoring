@@ -269,3 +269,29 @@ public class AioClient {
 	 * @param bindIp
 	 * @param bindPort
 	 * @param timeout Time-out, per second
+	 * @return
+	 * @throws Exception
+	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public ClientChannelContext connect(Node serverNode, String bindIp, Integer bindPort, Integer timeout) throws Exception {
+		return connect(serverNode, bindIp, bindPort, null, timeout);
+	}
+
+	/**
+	 * @return the channelGroup
+	 */
+	public AsynchronousChannelGroup getChannelGroup() {
+		return channelGroup;
+	}
+
+	/**
+	 * @return the clientGroupContext
+	 */
+	public ClientGroupContext getClientGroupContext() {
+		return clientGroupContext;
+	}
+
+	/**
+	 *
