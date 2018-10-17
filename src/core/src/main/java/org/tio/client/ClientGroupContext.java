@@ -72,3 +72,18 @@ public class ClientGroupContext extends GroupContext {
 	 *  
 	 *
 	 */
+	@Override
+	public AioListener getAioListener() {
+		return this.getClientAioListener();
+	}
+
+	/**
+	 * @return the clientAioHandler
+	 */
+	public ClientAioHandler getClientAioHandler() {
+		return clientAioHandler;
+	}
+
+	/**
+	 * @return the clientAioListener
+	 */
