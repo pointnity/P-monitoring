@@ -53,3 +53,10 @@ public class AioClient {
 		 */
 		@Override
 		public void run() {
+			ReentrantReadWriteLock closeLock = channelContext.getCloseLock();
+			WriteLock writeLock = closeLock.writeLock();
+
+			try {
+				writeLock.lock();
+				if (!channelContext.isClosed()) //It's already connected, no need to re-connect.
+				{
