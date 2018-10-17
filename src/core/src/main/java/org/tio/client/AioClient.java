@@ -174,3 +174,12 @@ public class AioClient {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	public ClientChannelContext connect(Node serverNode, Integer timeout) throws Exception {
+		return connect(serverNode, null, 0, timeout);
+	}
+
+	/**
+	 *
+	 * @param serverNode
+	 * @param bindIp
+	 * @param bindPort
