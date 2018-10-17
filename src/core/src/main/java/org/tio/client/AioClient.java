@@ -41,3 +41,10 @@ public class AioClient {
 
 		public ReconnRunnable(ClientChannelContext channelContext, AioClient aioClient) {
 			this.channelContext = channelContext;
+			this.aioClient = aioClient;
+		}
+
+		/**
+		 * @see java.lang.Runnable#run()
+		 *
+		 * @author tanyaowu
