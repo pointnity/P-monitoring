@@ -87,3 +87,25 @@ public class ClientGroupContext extends GroupContext {
 	/**
 	 * @return the clientAioListener
 	 */
+	public ClientAioListener getClientAioListener() {
+		return clientAioListener;
+	}
+
+	public ClientGroupStat getClientGroupStat() {
+		return clientGroupStat;
+	}
+
+	/**
+	 * @return the connectionCompletionHandler
+	 */
+	public ConnectionCompletionHandler getConnectionCompletionHandler() {
+		return connectionCompletionHandler;
+	}
+
+	/**
+	 * @see org.tio.core.GroupContext#getGroupStat()
+	 *
+	 * @return
+	 * @author tanyaowu
+	 *  
+	 *
