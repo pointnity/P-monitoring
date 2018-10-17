@@ -84,3 +84,14 @@ public class AioClient {
 			}
 
 		}
+	}
+
+	private static Logger log = LoggerFactory.getLogger(AioClient.class);
+
+	private AsynchronousChannelGroup channelGroup;
+
+	private ClientGroupContext clientGroupContext;
+
+	/**
+	 * @param serverIp Can be empty
+	 * @param serverPort
