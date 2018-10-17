@@ -435,3 +435,18 @@ public class AioClient {
 					if (channelContext.isRemoved() || !channelContext.isClosed()) //Deleted and already connected, no need to re-connect
 					{
 						continue;
+					}
+					ReconnRunnable runnable = new ReconnRunnable(channelContext, AioClient.this);
+					reconnConf.getThreadPoolExecutor().execute(runnable);
+				}
+			}
+		});
+		thread.setName("tio-timer-reconnect-" + id);
+		thread.setDaemon(true);
+		thread.start();
+
+	}
+
+	/**
+	 * This method is not available in the production environment and is not tested
+	 * @return
