@@ -317,3 +317,18 @@ public class AioClient {
 	/**
 	 * Timed tasks: Heartbeat
 	 * @author tanyaowu
+	 *
+	 */
+	private void startHeartbeatTask() {
+		final ClientGroupStat clientGroupStat = clientGroupContext.getClientGroupStat();
+		final ClientAioHandler aioHandler = clientGroupContext.getClientAioHandler();
+
+		final String id = clientGroupContext.getId();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while (!clientGroupContext.isStopped()) {
+					final long heartbeatTimeout = clientGroupContext.getHeartbeatTimeout();
+					if (heartbeatTimeout <= 0) {
+						log.warn("The user cancels the frame-level heartbeat timing send function, please the user to complete the heartbeat mechanism");
+						break;
