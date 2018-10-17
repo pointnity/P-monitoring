@@ -450,3 +450,26 @@ public class AioClient {
 	/**
 	 * This method is not available in the production environment and is not tested
 	 * @return
+	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public boolean stop() {
+		//		isWaitingStop = true;
+		boolean ret = true;
+		ExecutorService groupExecutor = clientGroupContext.getGroupExecutor();
+		SynThreadPoolExecutor tioExecutor = clientGroupContext.getTioExecutor();
+		groupExecutor.shutdown();
+		tioExecutor.shutdown();
+		clientGroupContext.setStopped(true);
+		try {
+			ret = ret && groupExecutor.awaitTermination(6000, TimeUnit.SECONDS);
+			ret = ret && tioExecutor.awaitTermination(6000, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+			log.error(e.getLocalizedMessage(), e);
+		}
+		log.info("client resource has released");
+		return ret;
+
+	}
+}
