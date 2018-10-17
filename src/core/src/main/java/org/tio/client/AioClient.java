@@ -205,3 +205,12 @@ public class AioClient {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	private ClientChannelContext connect(Node serverNode, String bindIp, Integer bindPort, ClientChannelContext initClientChannelContext, Integer timeout, boolean isSyn)
+			throws Exception {
+
+		AsynchronousSocketChannel asynchronousSocketChannel = null;
+		ClientChannelContext channelContext = null;
+		boolean isReconnect = initClientChannelContext != null;
+		//		ClientAioListener clientAioListener = clientGroupContext.getClientAioListener();
+
+		long start = SystemTimer.currentTimeMillis();
