@@ -27,3 +27,17 @@ public class ClientGroupContext extends GroupContext {
 
 	/**
 	 *Do not re-connect
+	 * @param aioHandler
+	 * @param aioListener
+	 * @author tanyaowu
+	 */
+	public ClientGroupContext(ClientAioHandler aioHandler, ClientAioListener aioListener) {
+		this(aioHandler, aioListener, null);
+	}
+
+	/**
+	 *
+	 * @param aioHandler
+	 * @param aioListener
+	 * @param reconnConf Null is not required to automatically re-connect
+	 * @author tanyaowu
