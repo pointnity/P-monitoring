@@ -360,3 +360,23 @@ public class AioClient {
 							}
 						}
 						if (log.isInfoEnabled()) {
+							log.info("[{}]: curr:{}, closed:{}, received:({}p)({}b), handled:{}, sent:({}p)({}b)", id, set.size(), clientGroupStat.getClosed().get(),
+									clientGroupStat.getReceivedPackets().get(), clientGroupStat.getReceivedBytes().get(), clientGroupStat.getHandledPacket().get(),
+									clientGroupStat.getSentPacket().get(), clientGroupStat.getSentBytes().get());
+						}
+
+					} catch (Throwable e) {
+						log.error("", e);
+					} finally {
+						try {
+							if (readLock != null) {
+								readLock.unlock();
+							}
+							Thread.sleep(heartbeatTimeout / 4);
+						} catch (Throwable e) {
+							log.error(e.toString(), e);
+						} finally {
+
+						}
+					}
+				}
