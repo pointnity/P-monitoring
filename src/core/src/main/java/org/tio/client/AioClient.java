@@ -295,3 +295,25 @@ public class AioClient {
 
 	/**
 	 *
+	 * @param channelContext
+	 * @param timeout
+	 * @return
+	 * @throws Exception
+	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public void reconnect(ClientChannelContext channelContext, Integer timeout) throws Exception {
+		connect(channelContext.getServerNode(), channelContext.getBindIp(), channelContext.getBindPort(), channelContext, timeout);
+	}
+
+	/**
+	 * @param clientGroupContext the clientGroupContext to set
+	 */
+	public void setClientGroupContext(ClientGroupContext clientGroupContext) {
+		this.clientGroupContext = clientGroupContext;
+	}
+
+	/**
+	 * Timed tasks: Heartbeat
+	 * @author tanyaowu
