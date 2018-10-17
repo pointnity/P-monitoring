@@ -131,3 +131,26 @@ public class ClientGroupContext extends GroupContext {
 			this.clientAioListener = new DefaultClientAioListener();
 		}
 	}
+
+	/**
+	 * @param clientGroupStat the clientGroupStat to set
+	 */
+	public void setClientGroupStat(ClientGroupStat clientGroupStat) {
+		this.clientGroupStat = clientGroupStat;
+	}
+
+	/**
+	 * @param connectionCompletionHandler the connectionCompletionHandler to set
+	 */
+	public void setConnectionCompletionHandler(ConnectionCompletionHandler connectionCompletionHandler) {
+		this.connectionCompletionHandler = connectionCompletionHandler;
+	}
+
+	/**
+	 * @param reconnConf the reconnConf to set
+	 */
+	public void setReconnConf(ReconnConf reconnConf) {
+		this.reconnConf = reconnConf;
+	}
+
+}
