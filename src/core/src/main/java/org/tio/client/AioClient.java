@@ -354,3 +354,9 @@ public class AioClient {
 							if (interval >= heartbeatTimeout / 2) {
 								Packet packet = aioHandler.heartbeatPacket();
 								if (packet != null) {
+									log.info("{}Send Heartbeat Pack", channelContext.toString());
+									Aio.send(channelContext, packet);
+								}
+							}
+						}
+						if (log.isInfoEnabled()) {
