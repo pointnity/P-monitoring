@@ -380,3 +380,14 @@ public class AioClient {
 						}
 					}
 				}
+			}
+		}, "tio-timer-heartbeat" + id).start();
+	}
+
+	/**
+	 * Start the re-connect task
+	 *
+	 *
+	 * @author tanyaowu
+	 *
+	 */
