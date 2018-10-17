@@ -74,3 +74,5 @@ public class ClientChannelContext extends ChannelContext {
 	public void setBindPort(Integer bindPort) {
 		this.bindPort = bindPort;
 	}
+
+}
