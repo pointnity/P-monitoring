@@ -66,3 +66,10 @@ public class AioClient {
 				aioClient.reconnect(channelContext, 2);
 				long end = SystemTimer.currentTimeMillis();
 				long iv = end - start;
+				if (iv >= 100) {
+					log.error("{},Time to re-connect:{} ms", channelContext, iv);
+				} else {
+					log.info("{},Time to re-connect:{} ms", channelContext, iv);
+				}
+
+				if (channelContext.isClosed()) {
