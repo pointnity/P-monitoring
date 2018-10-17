@@ -60,3 +60,9 @@ public class AioClient {
 				writeLock.lock();
 				if (!channelContext.isClosed()) //It's already connected, no need to re-connect.
 				{
+					return;
+				}
+				long start = SystemTimer.currentTimeMillis();
+				aioClient.reconnect(channelContext, 2);
+				long end = SystemTimer.currentTimeMillis();
+				long iv = end - start;
