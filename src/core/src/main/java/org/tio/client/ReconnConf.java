@@ -135,3 +135,7 @@ public class ReconnConf {
 	public void setInterval(long interval) {
 		this.interval = interval;
 	}
+
+	/**
+	 * @param retryCount the retryCount to set
+	 */
