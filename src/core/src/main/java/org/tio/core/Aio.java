@@ -47,3 +47,6 @@ public class Aio {
 	}
 	
 	/**
+	 * Whether a channel is in a group
+	 * @param channelContext
+	 * @param group
