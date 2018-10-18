@@ -29,3 +29,17 @@ public class ConnectionCompletionVo {
 	private CountDownLatch countDownLatch = null;
 
 	/**
+	 * @author tanyaowu
+	 *
+	 */
+	public ConnectionCompletionVo() {
+
+	}
+
+	/**
+	 * @param channelContext
+	 * @param aioClient
+	 * @param isReconnect
+	 * @param asynchronousSocketChannel
+	 * @param serverNode
+	 * @param bindIp
