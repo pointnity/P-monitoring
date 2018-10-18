@@ -50,3 +50,9 @@ public class ReconnConf {
 	 * Consecutive re-connection times, which are no longer re-connected when the successive re-connection fails so many times.0 and negative numbers are always re-connected
 	 */
 	private int retryCount = 0;
+
+	LinkedBlockingQueue<ChannelContext> queue = new LinkedBlockingQueue<>();
+
+	/**
+	 * Thread pool to re-connect
+	 */
