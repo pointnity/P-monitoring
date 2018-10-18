@@ -87,3 +87,22 @@ public class ConnectionCompletionVo {
 	public Integer getBindPort() {
 		return bindPort;
 	}
+
+	/**
+	 * @return the channelContext
+	 */
+	public ClientChannelContext getChannelContext() {
+		return channelContext;
+	}
+
+	/**
+	 * @return the countDownLatch
+	 */
+	public java.util.concurrent.CountDownLatch getCountDownLatch() {
+		return countDownLatch;
+	}
+
+	/**
+	 * @return the serverNode
+	 */
+	public Node getServerNode() {
