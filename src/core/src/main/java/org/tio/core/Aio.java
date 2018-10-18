@@ -112,3 +112,18 @@ public class Aio {
 	}
 
 	/**
+	 * Blocking the sending of messages to the specified Channelcontext
+	 * @param channelContext
+	 * @param packet
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static Boolean bSend(ChannelContext channelContext, Packet packet) {
+		if (channelContext == null) {
+			return false;
+		}
+		CountDownLatch countDownLatch = new CountDownLatch(1);
+		return send(channelContext, packet, countDownLatch, PacketSendMode.SINGLE_BLOCK);
+	}
+
+	/**
