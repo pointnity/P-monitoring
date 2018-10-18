@@ -891,3 +891,132 @@ public class Aio {
 	 * @param isBlock
 	 * @author tanyaowu
 	 */
+	Private  static  Boolean  sendToUser ( GroupContext  groupContext ,  String  userid ,  Packet  packet ,  boolean  isBlock )  {
+		SetWithLock < ChannelContext >  setWithLock  =  groupContext . users . find ( groupContext ,  userid );
+		Try  {
+			If  ( setWithLock  ==  null )  {
+				Return  false ;
+			}
+			
+			ReadLock  readLock  =  setWithLock . getLock (). readLock ();
+			readLock . lock ();
+			Try  {
+				Set < ChannelContext >  set  =  setWithLock . getObj ();
+				Boolean  ret  =  false ;
+				For  ( ChannelContext  channelContext  :  set )  {
+					Boolean  singleRet  =  false ;
+					// Don't use a = a || b() to easily leak the following function
+					If  ( isBlock )  {
+						singleRet  =  bSend ( channelContext ,  packet );
+					}  else  {
+						singleRet  =  send ( channelContext ,  packet );
+					}
+					If  ( singleRet )  {
+						Ret  =  true ;
+					}
+				}
+				Return  ret ;
+			}  catch  ( Throwable  e )  {
+				Log . error ( e . getMessage (),  e );
+			}  finally  {
+				readLock . unlock ();
+			}
+			Return  false ;
+		}  finally  {
+			
+		}
+	}
+	
+	/**
+	 * Send a message to the specified token
+	 * @param groupContext
+	 * @param token
+	 * @param packet
+	 * @param isBlock
+	 * @author tanyaowu
+	 */
+	Private  static  Boolean  sendToToken ( GroupContext  groupContext ,  String  token ,  Packet  packet ,  boolean  isBlock )  {
+		SetWithLock < ChannelContext >  setWithLock  =  groupContext . tokens . find ( groupContext ,  token );
+		Try  {
+			If  ( setWithLock  ==  null )  {
+				Return  false ;
+			}
+			
+			ReadLock  readLock  =  setWithLock . getLock (). readLock ();
+			readLock . lock ();
+			Try  {
+				Set < ChannelContext >  set  =  setWithLock . getObj ();
+				Boolean  ret  =  false ;
+				For  ( ChannelContext  channelContext  :  set )  {
+					Boolean  singleRet  =  false ;
+					// Don't use a = a || b() to easily leak the following function
+					If  ( isBlock )  {
+						singleRet  =  bSend ( channelContext ,  packet );
+					}  else  {
+						singleRet  =  send ( channelContext ,  packet );
+					}
+					If  ( singleRet )  {
+						Ret  =  true ;
+					}
+				}
+				Return  ret ;
+			}  catch  ( Throwable  e )  {
+				Log . error ( e . getMessage (),  e );
+			}  finally  {
+				readLock . unlock ();
+			}
+			Return  false ;
+		}  finally  {
+			
+		}
+	}
+
+	/**
+	 * Send and wait for a response.<br>
+	 * Note: <br>
+	 * 1, the synSeq of the parameter packet is not empty and greater than 0 (null, equal to less than 0 will not work) <br>
+	 * 2, after receiving the message, the peer needs to return a message like synSeq<br>
+	 * 3. For synchronous sending, the framework layer does not help the application to call the handler.handler(packet, channelContext) method. The application needs to process the response packet by itself. Reference: groupContext.getAioHandler().handler(packet, channelContext) ;<br>
+	 *
+	 * @param channelContext
+	 * @param packet
+	 * @param timeout
+	 * @return
+	 * @author tanyaowu
+	 */
+	@SuppressWarnings ( "finally" )
+	Public  static  Packet  synSend ( ChannelContext  channelContext ,  Packet  packet ,  long  timeout )  {
+		Integer  synSeq  =  packet . getSynSeq ();
+		If  ( synSeq  ==  null  ||  synSeq  <=  0 )  {
+			Throw  new  RuntimeException ( "synSeq must be greater than 0" );
+		}
+
+		ChannelContextMapWithLock  waitingResps  =  channelContext . getGroupContext (). getWaitingResps ();
+		Try  {
+			Waiting for Resps . put ( synSeq ,  packet );
+
+			Synchronized  ( packet )  {
+				Send ( channelContext ,  packet );
+				Try  {
+					Packet . wait ( timeout );
+				}  catch  ( InterruptedException  e )  {
+					Log . error ( e . toString ( ),  e );
+				}
+			}
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . toString ( ),  e );
+		}  finally  {
+			Packet  respPacket  =  waitingResps . remove ( synSeq );
+			If  ( respPacket  ==  null )  {
+				Log . error ( "respPacket == null,{}" ,  channelContext );
+				Return  null ;
+			}
+			If  ( respPacket  ==  packet )  {
+				Log . error ( "{}, synchronous send timeout, {}" ,  channelContext . getGroupContext (). getName (),  channelContext );
+				Return  null ;
+			}
+			Return  respPacket ;
+		}
+	}
+
+	/**
