@@ -74,3 +74,16 @@ public class ConnectionCompletionVo {
 		return asynchronousSocketChannel;
 	}
 
+	/**
+	 * @return the bindIp
+	 */
+	public String getBindIp() {
+		return bindIp;
+	}
+
+	/**
+	 * @return the bindPort
+	 */
+	public Integer getBindPort() {
+		return bindPort;
+	}
