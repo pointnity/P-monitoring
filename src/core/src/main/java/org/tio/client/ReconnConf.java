@@ -36,3 +36,11 @@ public class ReconnConf {
 
 		return false;
 	}
+
+	public static void put(ClientChannelContext clientChannelContext) {
+		isNeedReconn(clientChannelContext, true);
+	}
+
+	/**
+	 *The interval of the re-connection, in milliseconds per hour
+	 */
