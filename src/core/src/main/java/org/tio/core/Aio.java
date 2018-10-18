@@ -183,3 +183,15 @@ public class Aio {
 	}
 
 	/**
+	 * Sends a message to the specified collection
+	 * @param groupContext
+	 * @param setWithLock
+	 * @param packet
+	 * @param channelContextFilter
+	 * @author tanyaowu
+	 */
+	public static Boolean bSendToSet(GroupContext groupContext, ObjWithLock<Set<ChannelContext>> setWithLock, Packet packet, ChannelContextFilter channelContextFilter) {
+		return sendToSet(groupContext, setWithLock, packet, channelContextFilter, true);
+	}
+
+	/**
