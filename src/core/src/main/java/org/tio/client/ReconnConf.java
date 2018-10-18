@@ -139,3 +139,6 @@ public class ReconnConf {
 	/**
 	 * @param retryCount the retryCount to set
 	 */
+	public void setRetryCount(int retryCount) {
+		this.retryCount = retryCount;
+	}
