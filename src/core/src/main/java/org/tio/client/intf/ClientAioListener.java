@@ -15,3 +15,9 @@ public interface ClientAioListener extends AioListener {
 	 * @param isConnected True: Indicates that the connection succeeded, false: failed to connect again
 	 * @return
 	 *
+	 * @author tanyaowu
+	 *
+	 */
+	//	void onAfterReconnected(ChannelContext channelContext, boolean isConnected) throws Exception;
+
+	//	/**
