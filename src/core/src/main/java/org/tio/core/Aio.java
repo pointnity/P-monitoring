@@ -29,3 +29,12 @@ import org.tio.utils.thread.ThreadUtils;
  *
  * @author tanyaowu
  */
+public class Aio {
+	private Aio() {}
+
+
+	/** The log. */
+	private static Logger log = LoggerFactory.getLogger(Aio.class);
+
+	/**
+	 * Bind groups
