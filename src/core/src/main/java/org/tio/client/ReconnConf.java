@@ -102,3 +102,9 @@ public class ReconnConf {
 	}
 
 	/**
+	 * @return the interval
+	 */
+	public long getInterval() {
+		return interval;
+	}
+
