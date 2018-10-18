@@ -9,3 +9,23 @@ import org.tio.core.Node;
  *
  * @author tanyaowu
  *  
+ */
+public class ConnectionCompletionVo {
+
+	private ClientChannelContext channelContext = null;
+
+	private AioClient aioClient = null;
+
+	private boolean isReconnect = false;
+
+	private AsynchronousSocketChannel asynchronousSocketChannel;
+
+	private Node serverNode;
+
+	private String bindIp;
+
+	private Integer bindPort;
+
+	private CountDownLatch countDownLatch = null;
+
+	/**
