@@ -145,3 +145,23 @@ public class ConnectionCompletionVo {
 	}
 
 	/**
+	 * @param channelContext the channelContext to set
+	 */
+	public void setChannelContext(ClientChannelContext channelContext) {
+		this.channelContext = channelContext;
+	}
+
+	/**
+	 * @param countDownLatch the countDownLatch to set
+	 */
+	public void setCountDownLatch(java.util.concurrent.CountDownLatch countDownLatch) {
+		this.countDownLatch = countDownLatch;
+	}
+
+	/**
+	 * @param isReconnect the isReconnect to set
+	 */
+	public void setReconnect(boolean isReconnect) {
+		this.isReconnect = isReconnect;
+	}
+
