@@ -93,3 +93,12 @@ public class ReconnConf {
 	 * @param retryCount
 	 *
 	 * @author tanyaowu
+	 *
+	 */
+	public ReconnConf(long interval, int retryCount) {
+		this();
+		this.interval = interval;
+		this.retryCount = retryCount;
+	}
+
+	/**
