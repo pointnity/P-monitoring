@@ -92,3 +92,20 @@ public class ConnectionCompletionHandler implements CompletionHandler<Void, Conn
 				ReadCompletionHandler readCompletionHandler = channelContext.getReadCompletionHandler();
 				ByteBuffer readByteBuffer = readCompletionHandler.getReadByteBuffer();//ByteBuffer.allocateDirect(channelContext.getGroupContext().getReadBufferSize());
 				readByteBuffer.position(0);
+			readByteBuffer.limit(readByteBuffer.capacity());
+				asynchronousSocketChannel.read(readByteBuffer, readByteBuffer, readCompletionHandler);
+
+				log.info("connected to {}", serverNode);
+				if (isConnected && !isReconnect) {
+					channelContext.getStat().setTimeFirstConnected(SystemTimer.currentTimeMillis());
+				}
+			} else {
+				log.error(throwable.toString(), throwable);
+				if (channelContext == null) {
+					channelContext = new ClientChannelContext(clientGroupContext, asynchronousSocketChannel);
+					channelContext.setServerNode(serverNode);
+					channelContext.getStat().setTimeClosed(SystemTimer.currentTimeMillis());
+				}
+
+				if (!isReconnect) //is not the reconnection, is the first connection, need to add channelcontext to the Closeds ranks
+				{
