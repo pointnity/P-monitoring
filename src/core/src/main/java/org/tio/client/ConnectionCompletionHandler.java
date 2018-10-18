@@ -62,3 +62,16 @@ public class ConnectionCompletionHandler implements CompletionHandler<Void, Conn
 
 		try {
 			if (throwable == null) {
+				if (isReconnect) {
+					channelContext.setAsynchronousSocketChannel(asynchronousSocketChannel);
+					//				channelContext.getDecodeRunnable().setCanceled(false);
+					channelContext.getHandlerRunnable().setCanceled(false);
+					//		channelContext.getHandlerRunnableHighPrior().setCanceled(false);
+					channelContext.getSendRunnable().setCanceled(false);
+					//		channelContext.getSendRunnableHighPrior().setCanceled(false);
+
+					clientGroupContext.closeds.remove(channelContext);
+				} else {
+					channelContext = new ClientChannelContext(clientGroupContext, asynchronousSocketChannel);
+					channelContext.setServerNode(serverNode);
+					channelContext.getStat().setTimeClosed(SystemTimer.currentTimeMillis
