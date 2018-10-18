@@ -56,3 +56,11 @@ public class ReconnConf {
 	/**
 	 * Thread pool to re-connect
 	 */
+	private ThreadPoolExecutor threadPoolExecutor = null;
+
+	/**
+	 *
+	 *
+	 * @author tanyaowu
+	 *
+	 */
