@@ -23,3 +23,4 @@ public interface ClientAioListener extends AioListener {
 	//	/**
 	//	 * Methods triggered after a connection failure
 	//	 * @param channelContext
+	//	 * @param isReconnect Whether it is a re-connect
