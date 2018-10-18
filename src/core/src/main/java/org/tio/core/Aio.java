@@ -102,3 +102,13 @@ public class Aio {
 	}
 	
 	/**
+	 * Binding token
+	 * @param channelContext
+	 * @param token
+	 * @author tanyaowu
+	 */
+	public static void bindToken(ChannelContext channelContext, String token) {
+		channelContext.getGroupContext().tokens.bind(token, channelContext);
+	}
+
+	/**
