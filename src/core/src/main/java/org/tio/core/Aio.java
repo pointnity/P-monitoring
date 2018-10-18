@@ -127,3 +127,15 @@ public class Aio {
 	}
 
 	/**
+	 * Sent to the specified IP and port
+	 * @param groupContext
+	 * @param ip
+	 * @param port
+	 * @param packet
+	 * @author tanyaowu
+	 */
+	public static Boolean bSend(GroupContext groupContext, String ip, int port, Packet packet) {
+		return send(groupContext, ip, port, packet, true);
+	}
+
+	/**
