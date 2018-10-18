@@ -123,3 +123,12 @@ public class ReconnConf {
 	}
 
 	/**
+	 * @return the threadPoolExecutor
+	 */
+	public ThreadPoolExecutor getThreadPoolExecutor() {
+		return threadPoolExecutor;
+	}
+
+	/**
+	 * @param interval the interval to set
+	 */
