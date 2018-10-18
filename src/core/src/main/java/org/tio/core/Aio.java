@@ -780,3 +780,114 @@ public class Aio {
 		// log.error(e.toString(), e);
 		// }
 		// }
+
+		Lock  lock  =  setWithLock . getLock (). readLock ();
+		Boolean  releasedLock  =  false ;
+		Try  {
+			Lock . lock ();
+			Set < ChannelContext >  set  =  setWithLock . getObj ();
+			If  ( set . size ()  ==  0 )  {
+				Log . debug ( "{}, collection is empty" ,  groupContext . getName ());
+				Return  false ;
+			}
+			If  (! groupContext . isEncodeCareWithChannelContext ())  {
+				ByteBuffer  byteBuffer  =  groupContext . getAioHandler (). encode ( packet ,  groupContext ,  null );
+				Packet . setPreEncodedByteBuffer ( byteBuffer );
+			}
+
+			CountDownLatch  countDownLatch  =  null ;
+			If  ( isBlock )  {
+				countDownLatch  =  new  CountDownLatch ( set . size ());
+			}
+			Int  sendCount  =  0 ;
+			For  ( ChannelContext  channelContext  :  set )  {
+				If  ( channelContextFilter  !=  null )  {
+					Boolean  isfilter  =  channelContextFilter . filter ( channelContext );
+					If  (! isfilter )  {
+						If  ( isBlock )  {
+							countDownLatch . countDown ();
+						}
+						Continue ;
+					}
+				}
+
+				sendCount ++;
+				If  ( isBlock )  {
+					channelContext . traceBlockPacket ( SynPacketAction . BEFORE_WAIT ,  packet ,  countDownLatch ,  null );
+					Send ( channelContext ,  packet ,  countDownLatch ,  PacketSendMode . GROUP_BLOCK );
+				}  else  {
+					Send ( channelContext ,  packet ,  null ,  null );
+				}
+			}
+			Lock . unlock ();
+			releasedLock  =  true ;
+
+			If  ( sendCount  ==  0 )  {
+				Return  false ;
+			}
+
+			If  ( isBlock )  {
+				Try  {
+					Long  timeout  =  sendCount  /  5 ;
+					Timeout  =  timeout  <  10  ?  10  :  timeout ;
+					Boolean  awaitFlag  =  countDownLatch . await ( timeout ,  TimeUnit . SECONDS );
+					If  (! awaitFlag )  {
+						Log . error ( "{}, sync group timeout, size:{}, timeout:{}, packet:{}" ,  groupContext . getName (),  setWithLock . getObj (). size (),  timeout ,  packet . logstr ( ));
+						Return  false ;
+					}  else  {
+						Return  true ;
+					}
+				}  catch  ( InterruptedException  e )  {
+					Log . error ( e . toString ( ),  e );
+					Return  false ;
+				}  finally  {
+
+				}
+			}  else  {
+				Return  true ;
+			}
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . toString ( ),  e );
+			Return  false ;
+		}  finally  {
+			// if (isBlock)
+			// {
+			// org.tio.core.GroupContext.SYN_SEND_SEMAPHORE.release();
+			// }
+			If  (! releasedLock )  {
+				Lock . unlock ();
+			}
+		}
+	}
+
+	/**
+	 * Send a message to the specified user
+	 * @param groupContext
+	 * @param userid
+	 * @param packet
+	 * @author tanyaowu
+	 */
+	Public  static  Boolean  sendToUser ( GroupContext  groupContext ,  String  userid ,  Packet  packet )  {
+		Return  sendToUser ( groupContext ,  userid ,  packet ,  false );
+	}
+	
+	/**
+	 * Send a message to the specified token
+	 * @param groupContext
+	 * @param token
+	 * @param packet
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  Boolean  sendToToken ( GroupContext  groupContext ,  String  token ,  Packet  packet )  {
+		Return  sendToToken ( groupContext ,  token ,  packet ,  false );
+	}
+
+	/**
+	 * Send a message to the specified user
+	 * @param groupContext
+	 * @param userid
+	 * @param packet
+	 * @param isBlock
+	 * @author tanyaowu
+	 */
