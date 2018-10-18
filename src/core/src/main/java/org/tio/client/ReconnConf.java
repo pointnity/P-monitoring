@@ -142,3 +142,7 @@ public class ReconnConf {
 	public void setRetryCount(int retryCount) {
 		this.retryCount = retryCount;
 	}
+
+	//	/**
+	//	 * @param threadPoolExecutor the threadPoolExecutor to set
+	//	 */
