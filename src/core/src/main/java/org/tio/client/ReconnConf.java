@@ -44,3 +44,9 @@ public class ReconnConf {
 	/**
 	 *The interval of the re-connection, in milliseconds per hour
 	 */
+	private long interval = 5000;
+
+	/**
+	 * Consecutive re-connection times, which are no longer re-connected when the successive re-connection fails so many times.0 and negative numbers are always re-connected
+	 */
+	private int retryCount = 0;
