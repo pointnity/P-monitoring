@@ -20,3 +20,14 @@ public class ConnectionCompletionHandler implements CompletionHandler<Void, Conn
 	private static Logger log = LoggerFactory.getLogger(ConnectionCompletionHandler.class);
 
 	/**
+	 *
+	 * @param result
+	 * @param attachment
+	 * @author tanyaowu
+	 */
+	@Override
+	public void completed(Void result, ConnectionCompletionVo attachment) {
+		handler(result, attachment, null);
+	}
+
+	/**
