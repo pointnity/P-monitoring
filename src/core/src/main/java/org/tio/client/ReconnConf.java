@@ -146,3 +146,5 @@ public class ReconnConf {
 	//	/**
 	//	 * @param threadPoolExecutor the threadPoolExecutor to set
 	//	 */
+	//	public void setThreadPoolExecutor(ThreadPoolExecutor threadPoolExecutor)
+	//	{
