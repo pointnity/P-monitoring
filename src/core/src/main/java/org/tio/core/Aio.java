@@ -1020,3 +1020,52 @@ public class Aio {
 	}
 
 	/**
+	 * Untie the relationship with all groups
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public  static  void  unbindGroup ( ChannelContext  channelContext )  {
+		channelContext . getGroupContext (). Groups . the unbind ( channelContext );
+	}
+
+	/**
+	 * Unbind from the specified group
+	 * @param group
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public  static  void  unbindGroup ( String  Group ,  ChannelContext  channelContext )  {
+		channelContext . getGroupContext (). Groups . the unbind ( Group ,  channelContext );
+	}
+
+	// org.tio.core.GroupContext.ipBlacklist
+
+	/**
+	 * Undo the userid of the channelContext binding
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	Public  static  void  unbindUser ( ChannelContext  channelContext )  {
+		channelContext . getGroupContext (). users . unbind ( channelContext );
+	}
+	
+	/**
+	 * Undo the token bound to the channelContext
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	Public  static  void  unbindToken ( ChannelContext  channelContext )  {
+		channelContext . getGroupContext (). tokens . unbind ( channelContext );
+	}
+
+	/**
+	 * Unbind the userid. Generally used for multiple logins, kicking off the previously logged in scenes
+	 * @param groupContext
+	 * @param userid
+	 * @author: tanyaowu
+	 */
+	Public  static  void  unbindUser ( GroupContext  groupContext ,  String  userid )  {
+		groupContext . users . unbind ( groupContext ,  userid );
+	}
+
+}
