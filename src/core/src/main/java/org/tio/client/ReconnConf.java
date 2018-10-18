@@ -64,3 +64,12 @@ public class ReconnConf {
 	 * @author tanyaowu
 	 *
 	 */
+	public ReconnConf() {
+		if (threadPoolExecutor == null) {
+			synchronized (ReconnConf.class) {
+				if (threadPoolExecutor == null) {
+					threadPoolExecutor = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(), Runtime.getRuntime().availableProcessors(), 60L, TimeUnit.SECONDS,
+							new LinkedBlockingQueue<Runnable>(), DefaultThreadFactory.getInstance("tio-client-reconn"));
+				}
+			}
+
