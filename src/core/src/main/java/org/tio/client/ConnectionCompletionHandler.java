@@ -75,3 +75,20 @@ public class ConnectionCompletionHandler implements CompletionHandler<Void, Conn
 					channelContext = new ClientChannelContext(clientGroupContext, asynchronousSocketChannel);
 					channelContext.setServerNode(serverNode);
 					channelContext.getStat().setTimeClosed(SystemTimer.currentTimeMillis
+				}
+
+				channelContext.setBindIp(bindIp);
+				channelContext.setBindPort(bindPort);
+
+				channelContext.setReconnCount(0);
+				channelContext.setClosed(false);
+				isConnected = true;
+
+				attachment.setChannelContext(channelContext);
+
+//				clientGroupContext.ips.bind(channelContext);
+				clientGroupContext.connecteds.add(channelContext);
+
+				ReadCompletionHandler readCompletionHandler = channelContext.getReadCompletionHandler();
+				ByteBuffer readByteBuffer = readCompletionHandler.getReadByteBuffer();//ByteBuffer.allocateDirect(channelContext.getGroupContext().getReadBufferSize());
+				readByteBuffer.position(0);
