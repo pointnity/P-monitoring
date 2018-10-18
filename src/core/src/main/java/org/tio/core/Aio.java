@@ -150,3 +150,14 @@ public class Aio {
 	}
 
 	/**
+	 *Send Message to Group
+	 * @param groupContext
+	 * @param group
+	 * @param packet
+	 * @author tanyaowu
+	 */
+	public static void bSendToGroup(GroupContext groupContext, String group, Packet packet) {
+		bSendToGroup(groupContext, group, packet, null);
+	}
+
+	/**
