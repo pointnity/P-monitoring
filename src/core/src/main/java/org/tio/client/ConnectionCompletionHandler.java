@@ -124,3 +124,10 @@ public class ConnectionCompletionHandler implements CompletionHandler<Void, Conn
 			}
 
 			try {
+				clientAioListener.onAfterConnected(channelContext, isConnected, isReconnect);
+			} catch (Throwable e1) {
+				log.error(e1.toString(), e1);
+			}
+		}
+	}
+}
