@@ -542,3 +542,102 @@ public class Aio {
 	}
 
 	/**
+	 * sent to the specified ip and port
+	 * @param groupContext
+	 * @param ip
+	 * @param port
+	 * @param packet
+	 * @author tanyaowu
+	 */
+	Public  static  Boolean  send ( GroupContext  groupContext ,  String  ip ,  int  port ,  Packet  packet )  {
+		Return  send ( groupContext ,  ip ,  port ,  packet ,  false );
+	}
+
+	/**
+	 * sent to the specified ip and port
+	 * @param groupContext
+	 * @param ip
+	 * @param port
+	 * @param packet
+	 * @param isBlock
+	 * @return
+	 * @author tanyaowu
+	 */
+	Private  static  Boolean  send ( GroupContext  groupContext ,  String  ip ,  int  port ,  Packet  packet ,  boolean  isBlock )  {
+		ChannelContext  channelContext  =  groupContext . clientNodeMap . find ( ip ,  port );
+		If  ( channelContext  !=  null )  {
+			If  ( isBlock )  {
+				Return  bSend ( channelContext ,  packet );
+			}  else  {
+				Return  send ( channelContext ,  packet );
+			}
+		}  else  {
+			Log . info ( "{}, can find channelContext by {}:{}" ,  groupContext . getName (),  ip ,  port );
+			Return  false ;
+		}
+	}
+
+	Public  static  void  sendToAll ( GroupContext  groupContext ,  Packet  packet )  {
+		sendToAll ( groupContext ,  packet ,  null );
+	}
+
+	/**
+	 * Send a message to all connections
+	 * @param groupContext
+	 * @param packet
+	 * @param channelContextFilter
+	 * @author tanyaowu
+	 */
+	Public  static  void  sendToAll ( GroupContext  groupContext ,  Packet  packet ,  ChannelContextFilter  channelContextFilter )  {
+		sendToAll ( groupContext ,  packet ,  channelContextFilter ,  false );
+	}
+
+	/**
+	 *
+	 * @param groupContext
+	 * @param packet
+	 * @param channelContextFilter
+	 * @param isBlock
+	 * @author tanyaowu
+	 */
+	Private  static  Boolean  sendToAll ( GroupContext  groupContext ,  Packet  packet ,  ChannelContextFilter  channelContextFilter ,  boolean  isBlock )  {
+		ObjWithLock < Set < ChannelContext >>  setWithLock  =  groupContext . connections . getSetWithLock ();
+		If  ( setWithLock  ==  null )  {
+			Log . debug ( "{}, no connection" ,  groupContext . getName ());
+			Return  false ;
+		}
+
+		Return  sendToSet ( groupContext ,  setWithLock ,  packet ,  channelContextFilter ,  isBlock );
+	}
+
+	/**
+	 * Send a message to the group
+	 * @param groupContext
+	 * @param group
+	 * @param packet
+	 * @author tanyaowu
+	 */
+	Public  static  void  sendToGroup ( GroupContext  groupContext ,  String  group ,  Packet  packet )  {
+		sendToGroup ( groupContext ,  group ,  packet ,  null );
+	}
+
+	/**
+	 * Send a message to the group
+	 * @param groupContext
+	 * @param group
+	 * @param packet
+	 * @param channelContextFilter
+	 * @author tanyaowu
+	 */
+	Public  static  void  sendToGroup ( GroupContext  groupContext ,  String  group ,  Packet  packet ,  ChannelContextFilter  channelContextFilter )  {
+		sendToGroup ( groupContext ,  group ,  packet ,  channelContextFilter ,  false );
+	}
+
+	/**
+	 * Send a message to the group
+	 * @param groupContext
+	 * @param group
+	 * @param packet
+	 * @param channelContextFilter
+	 * @author tanyaowu
+	 */
