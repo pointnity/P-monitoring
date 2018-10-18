@@ -161,3 +161,15 @@ public class Aio {
 	}
 
 	/**
+	 * Send Message to Group
+	 * @param groupContext
+	 * @param group
+	 * @param packet
+	 * @param channelContextFilter
+	 * @author tanyaowu
+	 */
+	public static Boolean bSendToGroup(GroupContext groupContext, String group, Packet packet, ChannelContextFilter channelContextFilter) {
+		return sendToGroup(groupContext, group, packet, channelContextFilter, true);
+	}
+
+	/**
