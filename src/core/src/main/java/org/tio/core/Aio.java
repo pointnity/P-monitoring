@@ -53,3 +53,28 @@ public class Aio {
 	 * @return true：In this group
 	 * @author: tanyaowu
 	 */
+	public static boolean isInGroup(ChannelContext channelContext, String group) {
+		MapWithLock<ChannelContext, SetWithLock<String>> mapWithLock = channelContext.getGroupContext().groups.getChannelmap();
+		
+		ReadLock lock = mapWithLock.getLock().readLock();
+		try {
+			lock.lock();
+			Map<ChannelContext, SetWithLock<String>> m = mapWithLock.getObj();
+			if (m == null || m.size() == 0) {
+				return false;
+			}
+			SetWithLock<String> set = m.get(channelContext);
+			if (set == null) {
+				return false;
+			}
+			return set.getObj().contains(group);
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+			return false;
+		} finally {
+			lock.unlock();
+		}
+	}
+	
+	/**
+
