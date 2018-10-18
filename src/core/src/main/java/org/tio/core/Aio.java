@@ -77,4 +77,19 @@ public class Aio {
 	}
 	
 	/**
+	 * How many connections are there in a group
+	 * @param group
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static int groupCount(GroupContext groupContext, String group) {
+		SetWithLock<ChannelContext> setWithLock = groupContext.groups.clients(groupContext, group);
+		if (setWithLock == null) {
+			return 0;
+		}
+		
+		return setWithLock.getObj().size();
+	}
+
+	/**
 
