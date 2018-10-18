@@ -126,3 +126,22 @@ public class ConnectionCompletionVo {
 	/**
 	 * @param asynchronousSocketChannel the asynchronousSocketChannel to set
 	 */
+	public void setAsynchronousSocketChannel(AsynchronousSocketChannel asynchronousSocketChannel) {
+		this.asynchronousSocketChannel = asynchronousSocketChannel;
+	}
+
+	/**
+	 * @param bindIp the bindIp to set
+	 */
+	public void setBindIp(String bindIp) {
+		this.bindIp = bindIp;
+	}
+
+	/**
+	 * @param bindPort the bindPort to set
+	 */
+	public void setBindPort(Integer bindPort) {
+		this.bindPort = bindPort;
+	}
+
+	/**
