@@ -21,3 +21,5 @@ public interface ClientAioListener extends AioListener {
 	//	void onAfterReconnected(ChannelContext channelContext, boolean isConnected) throws Exception;
 
 	//	/**
+	//	 * Methods triggered after a connection failure
+	//	 * @param channelContext
