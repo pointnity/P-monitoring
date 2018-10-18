@@ -106,3 +106,23 @@ public class ConnectionCompletionVo {
 	 * @return the serverNode
 	 */
 	public Node getServerNode() {
+		return serverNode;
+	}
+
+	/**
+	 * @return the isReconnect
+	 */
+	public boolean isReconnect() {
+		return isReconnect;
+	}
+
+	/**
+	 * @param aioClient the aioClient to set
+	 */
+	public void setAioClient(AioClient aioClient) {
+		this.aioClient = aioClient;
+	}
+
+	/**
+	 * @param asynchronousSocketChannel the asynchronousSocketChannel to set
+	 */
