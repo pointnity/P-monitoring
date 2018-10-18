@@ -114,3 +114,12 @@ public class ReconnConf {
 	public LinkedBlockingQueue<ChannelContext> getQueue() {
 		return queue;
 	}
+
+	/**
+	 * @return the retryCount
+	 */
+	public int getRetryCount() {
+		return retryCount;
+	}
+
+	/**
