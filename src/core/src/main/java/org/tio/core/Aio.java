@@ -641,3 +641,142 @@ public class Aio {
 	 * @param channelContextFilter
 	 * @author tanyaowu
 	 */
+	Private  static  Boolean  sendToGroup ( GroupContext  groupContext ,  String  group ,  Packet  packet ,  ChannelContextFilter  channelContextFilter ,  boolean  isBlock )  {
+		ObjWithLock < Set < ChannelContext >>  setWithLock  =  groupContext . groups . clients ( groupContext ,  group );
+		If  ( setWithLock  ==  null )  {
+			Log . debug ( "{}, group [{}] does not exist" ,  groupContext . getName (),  group );
+			Return  false ;
+		}
+		Return  sendToSet ( groupContext ,  setWithLock ,  packet ,  channelContextFilter ,  isBlock );
+	}
+	
+	/**
+	 * Block the send to the specified ip corresponding collection
+	 * @param groupContext
+	 * @param ip
+	 * @param packet
+	 * @author: tanyaowu
+	 */
+	Public  static  void  bSendToIp ( GroupContext  groupContext ,  String  ip ,  Packet  packet )  {
+		bSendToIp ( groupContext ,  ip ,  packet ,  null );
+	}
+
+	/**
+	 * Block the send to the specified ip corresponding collection
+	 * @param groupContext
+	 * @param ip
+	 * @param packet
+	 * @param channelContextFilter
+	 * @return
+	 * @author: tanyaowu
+	 */
+	Public  static  Boolean  bSendToIp ( GroupContext  groupContext ,  String  ip ,  Packet  packet ,  ChannelContextFilter  channelContextFilter )  {
+		Return  sendToIp ( groupContext ,  ip ,  packet ,  channelContextFilter ,  true );
+	}
+
+	/**
+	 * Send to the collection corresponding to the specified ip
+	 * @param groupContext
+	 * @param ip
+	 * @param packet
+	 * @author: tanyaowu
+	 */
+	Public  static  void  sendToIp ( GroupContext  groupContext ,  String  ip ,  Packet  packet )  {
+		sendToIp ( groupContext ,  ip ,  packet ,  null );
+	}
+
+	/**
+	 * Send to the collection corresponding to the specified ip
+	 * @param groupContext
+	 * @param ip
+	 * @param packet
+	 * @param channelContextFilter
+	 * @author: tanyaowu
+	 */
+	Public  static  void  sendToIp ( GroupContext  groupContext ,  String  ip ,  Packet  packet ,  ChannelContextFilter  channelContextFilter )  {
+		sendToIp ( groupContext ,  ip ,  packet ,  channelContextFilter ,  false );
+	}
+
+	/**
+	 * Send to the collection corresponding to the specified ip
+	 * @param groupContext
+	 * @param ip
+	 * @param packet
+	 * @param channelContextFilter
+	 * @param isBlock
+	 * @return
+	 * @author: tanyaowu
+	 */
+	Private  static  Boolean  sendToIp ( GroupContext  groupContext ,  String  ip ,  Packet  packet ,  ChannelContextFilter  channelContextFilter ,  boolean  isBlock )  {
+		ObjWithLock < Set < ChannelContext >>  setWithLock  =  groupContext . ips . clients ( groupContext ,  ip );
+		If  ( setWithLock  ==  null )  {
+			Log . info ( "{}, no ip is the opposite of [{}]" ,  groupContext . getName (),  ip );
+			Return  false ;
+		}
+
+		Return  sendToSet ( groupContext ,  setWithLock ,  packet ,  channelContextFilter ,  isBlock );
+	}
+
+	/**
+	 * Send a message to the specified ChannelContext id
+	 * @param channelId
+	 * @param packet
+	 * @author tanyaowu
+	 */
+	Public  static  Boolean  sendToId ( GroupContext  groupContext ,  String  channelId ,  Packet  packet )  {
+		Return  sendToId ( groupContext ,  channelId ,  packet ,  false );
+	}
+
+	/**
+	 * Send a message to the specified ChannelContext id
+	 * @param channelId
+	 * @param packet
+	 * @param isBlock
+	 * @return
+	 * @author tanyaowu
+	 */
+	Private  static  Boolean  sendToId ( GroupContext  groupContext ,  String  channelId ,  Packet  packet ,  boolean  isBlock )  {
+		ChannelContext  channelContext  =  Aio . getChannelContextById ( groupContext ,  channelId );
+		If  ( channelContext  ==  null )  {
+			Return  false ;
+		}
+		If  ( isBlock )  {
+			Return  bSend ( channelContext ,  packet );
+		}  else  {
+			Return  send ( channelContext ,  packet );
+		}
+	}
+
+	/**
+	 * Send a message to the specified collection
+	 * @param groupContext
+	 * @param setWithLock
+	 * @param packet
+	 * @param channelContextFilter
+	 * @author tanyaowu
+	 */
+	Public  static  void  sendToSet ( GroupContext  groupContext ,  ObjWithLock < Set < ChannelContext >>  setWithLock ,  Packet  packet ,  ChannelContextFilter  channelContextFilter )  {
+		sendToSet ( groupContext ,  setWithLock ,  packet ,  channelContextFilter ,  false );
+	}
+
+	/**
+	 * Send a message to the specified collection
+	 * @param groupContext
+	 * @param setWithLock
+	 * @param packet
+	 * @param channelContextFilter
+	 * @param isBlock
+	 * @author tanyaowu
+	 */
+	Private  static  Boolean  sendToSet ( GroupContext  groupContext ,  ObjWithLock < Set < ChannelContext >>  setWithLock ,  Packet  packet ,  ChannelContextFilter  channelContextFilter ,
+			Boolean  isBlock )  {
+		// if (isBlock)
+		// {
+		// try
+		// {
+		// org.tio.core.GroupContext.SYN_SEND_SEMAPHORE.acquire();
+		// } catch (InterruptedException e)
+		// {
+		// log.error(e.toString(), e);
+		// }
+		// }
