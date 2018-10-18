@@ -173,3 +173,13 @@ public class Aio {
 	}
 
 	/**
+	 * Sends a message to the specified Channelcontext ID
+	 * @param channelId
+	 * @param packet
+	 * @author tanyaowu
+	 */
+	public static void bSendToId(GroupContext groupContext, String channelId, Packet packet) {
+		sendToId(groupContext, channelId, packet, true);
+	}
+
+	/**
