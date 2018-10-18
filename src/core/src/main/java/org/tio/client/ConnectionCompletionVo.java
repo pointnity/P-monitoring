@@ -60,3 +60,17 @@ public class ConnectionCompletionVo {
 		this.bindPort = bindPort;
 	}
 
+	/**
+	 * @return the aioClient
+	 */
+	public AioClient getAioClient() {
+		return aioClient;
+	}
+
+	/**
+	 * @return the asynchronousSocketChannel
+	 */
+	public AsynchronousSocketChannel getAsynchronousSocketChannel() {
+		return asynchronousSocketChannel;
+	}
+
