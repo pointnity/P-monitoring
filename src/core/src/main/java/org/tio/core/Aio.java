@@ -311,3 +311,66 @@ public class Aio {
 	}
 
 	/**
+	 * Get ChannelContext based on id
+	 * @param channelId
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  ChannelContext  getChannelContextById ( GroupContext  groupContext ,  String  channelId )  {
+		Return  groupContext . ids . find ( groupContext ,  channelId );
+	}
+
+	/**
+	 * Get SetWithLock<ChannelContext> based on userid
+	 * @param groupContext
+	 * @param userid
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  SetWithLock < ChannelContext >  getChannelContextsByUserid ( GroupContext  groupContext ,  String  userid )  {
+		Return  groupContext . users . find ( groupContext ,  userid );
+	}
+	
+	/**
+	 * Get SetWithLock<ChannelContext> based on the token
+	 * @param groupContext
+	 * @param token
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  SetWithLock < ChannelContext >  getChannelContextsByToken ( GroupContext  groupContext ,  String  token )  {
+		Return  groupContext . tokens . find ( groupContext ,  token );
+	}
+
+	/**
+	 * Get all clients of a group
+	 * @param groupContext
+	 * @param group
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  SetWithLock < ChannelContext >  getChannelContextsByGroup ( GroupContext  groupContext ,  String  group )  {
+		Return  groupContext . groups . clients ( groupContext ,  group );
+	}
+
+	/**
+	 *
+	 * @param groupContext
+	 * @param pageIndex
+	 * @param pageSize
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  Page < ChannelContext >  getPageOfAll ( GroupContext  groupContext ,  Integer  pageIndex ,  Integer  pageSize )  {
+		SetWithLock < ChannelContext >  setWithLock  =  Aio . getAllChannelContexts ( groupContext );
+		Return  PageUtils . fromSetWithLock ( setWithLock ,  pageIndex ,  pageSize );
+	}
+
+	/**
+	 * This method is for the server side.
+	 * @param groupContext
+	 * @param pageIndex
+	 * @param pageSize
+	 * @return
+	 * @author tanyaowu
+	 */
