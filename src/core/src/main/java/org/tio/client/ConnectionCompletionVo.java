@@ -43,3 +43,20 @@ public class ConnectionCompletionVo {
 	 * @param asynchronousSocketChannel
 	 * @param serverNode
 	 * @param bindIp
+	 * @param bindPort
+	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public ConnectionCompletionVo(ClientChannelContext channelContext, AioClient aioClient, boolean isReconnect, AsynchronousSocketChannel asynchronousSocketChannel,
+			Node serverNode, String bindIp, Integer bindPort) {
+		super();
+		this.channelContext = channelContext;
+		this.aioClient = aioClient;
+		this.isReconnect = isReconnect;
+		this.asynchronousSocketChannel = asynchronousSocketChannel;
+		this.serverNode = serverNode;
+		this.bindIp = bindIp;
+		this.bindPort = bindPort;
+	}
+
