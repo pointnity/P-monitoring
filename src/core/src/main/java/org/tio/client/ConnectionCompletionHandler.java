@@ -13,3 +13,10 @@ import org.tio.utils.SystemTimer;
 
 /**
  *
+ * @author tanyaowu
+ *  
+ */
+public class ConnectionCompletionHandler implements CompletionHandler<Void, ConnectionCompletionVo> {
+	private static Logger log = LoggerFactory.getLogger(ConnectionCompletionHandler.class);
+
+	/**
