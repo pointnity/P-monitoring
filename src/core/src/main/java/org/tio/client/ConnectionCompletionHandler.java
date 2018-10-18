@@ -109,3 +109,18 @@ public class ConnectionCompletionHandler implements CompletionHandler<Void, Conn
 
 				if (!isReconnect) //is not the reconnection, is the first connection, need to add channelcontext to the Closeds ranks
 				{
+					clientGroupContext.closeds.add(channelContext);
+				}
+
+				attachment.setChannelContext(channelContext);
+
+				ReconnConf.put(channelContext);
+			}
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		} finally {
+			if (attachment.getCountDownLatch() != null) {
+				attachment.getCountDownLatch().countDown();
+			}
+
+			try {
