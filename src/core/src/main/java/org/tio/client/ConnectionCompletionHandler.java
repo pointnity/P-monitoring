@@ -31,3 +31,16 @@ public class ConnectionCompletionHandler implements CompletionHandler<Void, Conn
 	}
 
 	/**
+	 *
+	 * @param throwable
+	 * @param attachment
+	 * @author tanyaowu
+	 */
+	@Override
+	public void failed(Throwable throwable, ConnectionCompletionVo attachment) {
+		handler(null, attachment, throwable);
+	}
+
+	/**
+	 *
+	 * @param result
