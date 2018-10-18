@@ -410,3 +410,135 @@ public class Aio {
 	 * @param remark
 	 * @author: tanyaowu
 	 */
+	Public  static  void  remove ( GroupContext  groupContext ,  String  ip ,  String  remark )  {
+		SetWithLock < ChannelContext >  setWithLock  =  Aio . getAllChannelContexts ( groupContext );
+		Lock  lock2  =  setWithLock . getLock (). readLock ();
+		Try  {
+			Lock2 . lock ();
+			Set < ChannelContext >  set  =  setWithLock . getObj ();
+			For  ( ChannelContext  channelContext  :  set )  {
+				String  clientIp  =  channelContext . getClientNode (). getIp ();
+				If  ( StringUtils . equals ( clientIp ,  ip ))  {
+					Aio . remove ( channelContext ,  remark );
+				}
+			}
+		}  finally  {
+			Lock2 . unlock ();
+		}
+	}
+
+	/**
+	 * Same as the close method, except that no maintenance operations such as reconnection are performed.
+	 * @param channelContext
+	 * @param throwable
+	 * @param remark
+	 * @author tanyaowu
+	 */
+	Public  static  void  remove ( ChannelContext  channelContext ,  Throwable  throwable ,  String  remark )  {
+		Close ( channelContext ,  throwable ,  remark ,  true );
+	}
+
+	/**
+	 * Same as the close method, except that no maintenance operations such as reconnection are performed.
+	 * @param groupContext
+	 * @param clientIp
+	 * @param clientPort
+	 * @param throwable
+	 * @param remark
+	 * @author tanyaowu
+	 */
+	Public  static  void  remove ( GroupContext  groupContext ,  String  clientIp ,  Integer  clientPort ,  Throwable  throwable ,  String  remark )  {
+		ChannelContext  channelContext  =  groupContext . clientNodeMap . find ( clientIp ,  clientPort );
+		Remove ( channelContext ,  throwable ,  remark );
+	}
+
+	/**
+	 * Send a message to the specified ChannelContext
+	 * @param channelContext
+	 * @param packet
+	 * @author tanyaowu
+	 */
+	Public  static  Boolean  send ( ChannelContext  channelContext ,  Packet  packet )  {
+		Return  send ( channelContext ,  packet ,  null ,  null );
+	}
+
+	/**
+	 *
+	 * @param channelContext
+	 * @param packet
+	 * @param countDownLatch
+	 * @param packetSendMode
+	 * @return
+	 * @author tanyaowu
+	 */
+	Private  static  Boolean  send ( final  ChannelContext  channelContext ,  final  Packet  packet ,  CountDownLatch  countDownLatch ,  PacketSendMode  packetSendMode )  {
+		Try  {
+			If  ( packet  ==  null )  {
+				Return  false ;
+			}
+
+			If  ( channelContext  ==  null  ||  channelContext . isClosed ()  ||  channelContext . isRemoved ())  {
+				If  ( countDownLatch  !=  null )  {
+					countDownLatch . countDown ();
+				}
+				If  ( channelContext  !=  null )  {
+					Log . error ( "{}, isClosed:{}, isRemoved:{}, stack:{} " ,  channelContext ,  channelContext . isClosed (),  channelContext . isRemoved (),  ThreadUtils . stackTrace ());
+				}
+				Return  false ;
+			}
+
+			Boolean  isSingleBlock  =  countDownLatch  !=  null  &&  packetSendMode  ==  PacketSendMode . SINGLE_BLOCK ;
+
+			SendRunnable  sendRunnable  =  channelContext . getSendRunnable ();
+			PacketWithMeta  packetWithMeta  =  null ;
+			Boolean  isAdded  =  false ;
+			If  ( countDownLatch  ==  null )  {
+				isAdded  =  sendRunnable . addMsg ( packet );
+			}  else  {
+				packetWithMeta  =  new  PacketWithMeta ( packet ,  countDownLatch );
+				isAdded  =  sendRunnable . addMsg ( packetWithMeta );
+			}
+
+			If  (! isAdded )  {
+				If  ( countDownLatch  !=  null )  {
+					countDownLatch . countDown ();
+				}
+				Return  false ;
+			}
+
+			//SynThreadPoolExecutor synThreadPoolExecutor = channelContext.getGroupContext().getGroupExecutor();
+			channelContext . getGroupContext (). getTioExecutor (). execute ( sendRunnable );
+
+			If  ( isSingleBlock )  {
+				Long  timeout  =  10 ;
+				Try  {
+					channelContext . traceBlockPacket ( SynPacketAction . BEFORE_WAIT ,  packet ,  countDownLatch ,  null );
+					Boolean  awaitFlag  =  countDownLatch . await ( timeout ,  TimeUnit . SECONDS );
+					channelContext . traceBlockPacket ( SynPacketAction . AFTER__WAIT ,  packet ,  countDownLatch ,  null );
+					//log.error("{} after await, packet:{}, countDownLatch:{}", channelContext, packet.logstr(), countDownLatch);
+
+					If  (! awaitFlag )  {
+						Log . error ( "{} blocking send timeout, timeout:{}s, packet:{}" ,  channelContext ,  timeout ,  packet . logstr ());
+					}
+				}  catch  ( InterruptedException  e )  {
+					Log . error ( e . toString ( ),  e );
+				}
+
+				Boolean  isSentSuccess  =  packetWithMeta . getIsSentSuccess ();
+				Return  isSentSuccess ;
+			}  else  {
+				Return  true ;
+			}
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . toString ( ),  e );
+			Return  false ;
+		}  finally  {
+			// if (isSingleBlock)
+			// {
+			// org.tio.core.GroupContext.SYN_SEND_SEMAPHORE.release();
+			// }
+		}
+
+	}
+
+	/**
