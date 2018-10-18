@@ -148,3 +148,7 @@ public class ReconnConf {
 	//	 */
 	//	public void setThreadPoolExecutor(ThreadPoolExecutor threadPoolExecutor)
 	//	{
+	//		this.threadPoolExecutor = threadPoolExecutor;
+	//	}
+
+}
