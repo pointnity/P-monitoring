@@ -374,3 +374,39 @@ public class Aio {
 	 * @return
 	 * @author tanyaowu
 	 */
+	Public  static  Page < ChannelContext >  getPageOfConnecteds ( GroupContext  groupContext ,  Integer  pageIndex ,  Integer  pageSize )  {
+		ObjWithLock < Set < ChannelContext >>  objWithLock  =  Aio . getAllConnectedsChannelContexts ( groupContext );
+		Return  PageUtils . fromSetWithLock ( objWithLock ,  pageIndex ,  pageSize );
+	}
+
+	/**
+	 *
+	 * @param groupContext
+	 * @param group
+	 * @param pageIndex
+	 * @param pageSize
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  Page < ChannelContext >  getPageOfGroup ( GroupContext  groupContext ,  String  group ,  Integer  pageIndex ,  Integer  pageSize )  {
+		ObjWithLock < Set < ChannelContext >>  objWithLock  =  Aio . getChannelContextsByGroup ( groupContext ,  group );
+		Return  PageUtils . fromSetWithLock ( objWithLock ,  pageIndex ,  pageSize );
+	}
+
+	/**
+	 * Same as the close method, except that no maintenance operations such as reconnection are performed.
+	 * @param channelContext
+	 * @param remark
+	 * @author tanyaowu
+	 */
+	Public  static  void  remove ( ChannelContext  channelContext ,  String  remark )  {
+		Remove ( channelContext ,  null ,  remark );
+	}
+
+	/**
+	 * Remove all connections from client ip to the specified value
+	 * @param groupContext
+	 * @param ip
+	 * @param remark
+	 * @author: tanyaowu
+	 */
