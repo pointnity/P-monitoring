@@ -13,3 +13,17 @@ import org.tio.utils.thread.pool.DefaultThreadFactory;
 /**
  *
  * @author tanyaowu
+ *  
+ */
+public class ReconnConf {
+	private static Logger log = LoggerFactory.getLogger(ChannelContext.class);
+
+	public static boolean isNeedReconn(ClientChannelContext clientChannelContext, boolean putIfTrue) {
+		ClientGroupContext clientGroupContext = (ClientGroupContext) clientChannelContext.getGroupContext();
+		ReconnConf reconnConf = clientGroupContext.getReconnConf();
+		if (reconnConf != null && reconnConf.getInterval() > 0) {
+			if (reconnConf.getRetryCount() <= 0 || reconnConf.getRetryCount() >= clientChannelContext.getReconnCount()) {
+				if (putIfTrue) {
+					clientChannelContext.getStat().setTimeInReconnQueue(SystemTimer.currentTimeMillis());
+					reconnConf.getQueue().add(clientChannelContext);
+				}
