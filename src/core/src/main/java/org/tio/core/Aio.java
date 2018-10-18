@@ -92,4 +92,13 @@ public class Aio {
 	}
 
 	/**
-
+	 *Bind user
+	 * @param channelContext
+	 * @param userid
+	 * @author tanyaowu
+	 */
+	public static void bindUser(ChannelContext channelContext, String userid) {
+		channelContext.getGroupContext().users.bind(userid, channelContext);
+	}
+	
+	/**
