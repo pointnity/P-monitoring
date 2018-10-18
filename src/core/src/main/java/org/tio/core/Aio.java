@@ -50,3 +50,6 @@ public class Aio {
 	 * Whether a channel is in a group
 	 * @param channelContext
 	 * @param group
+	 * @return true：In this group
+	 * @author: tanyaowu
+	 */
