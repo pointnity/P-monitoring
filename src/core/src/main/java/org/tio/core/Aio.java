@@ -139,3 +139,14 @@ public class Aio {
 	}
 
 	/**
+	 * Send messages to all connections
+	 * @param groupContext
+	 * @param packet
+	 * @param channelContextFilter
+	 * @author tanyaowu
+	 */
+	public static Boolean bSendToAll(GroupContext groupContext, Packet packet, ChannelContextFilter channelContextFilter) {
+		return sendToAll(groupContext, packet, channelContextFilter, true);
+	}
+
+	/**
