@@ -73,3 +73,23 @@ public class ReconnConf {
 				}
 			}
 
+		}
+
+	}
+
+	/**
+	 * @param interval
+	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public ReconnConf(long interval) {
+		this();
+		this.setInterval(interval);
+	}
+
+	/**
+	 * @param interval
+	 * @param retryCount
+	 *
+	 * @author tanyaowu
