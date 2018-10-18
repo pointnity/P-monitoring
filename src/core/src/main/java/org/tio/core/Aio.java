@@ -38,3 +38,12 @@ public class Aio {
 
 	/**
 	 * Bind groups
+	 * @param channelContext
+	 * @param group
+	 * @author tanyaowu
+	 */
+	public static void bindGroup(ChannelContext channelContext, String group) {
+		channelContext.getGroupContext().groups.bind(group, channelContext);
+	}
+	
+	/**
