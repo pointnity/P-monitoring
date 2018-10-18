@@ -27,3 +27,12 @@ public class ReconnConf {
 					clientChannelContext.getStat().setTimeInReconnQueue(SystemTimer.currentTimeMillis());
 					reconnConf.getQueue().add(clientChannelContext);
 				}
+				return true;
+			} else {
+				log.info("No need to re-connect{}", clientChannelContext);
+				return false;
+			}
+		}
+
+		return false;
+	}
