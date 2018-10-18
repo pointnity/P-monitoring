@@ -165,3 +165,11 @@ public class ConnectionCompletionVo {
 		this.isReconnect = isReconnect;
 	}
 
+	/**
+	 * @param serverNode the serverNode to set
+	 */
+	public void setServerNode(Node serverNode) {
+		this.serverNode = serverNode;
+	}
+
+}
