@@ -132,3 +132,6 @@ public class ReconnConf {
 	/**
 	 * @param interval the interval to set
 	 */
+	public void setInterval(long interval) {
+		this.interval = interval;
+	}
