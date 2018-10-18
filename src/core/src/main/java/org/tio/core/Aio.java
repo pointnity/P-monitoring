@@ -219,3 +219,95 @@ public class Aio {
 	}
 	/**
 	 * Close the connection
+	 * @param channelContext
+	 * @param remark
+	 * @author tanyaowu
+	 */
+	Public  static  void  close ( ChannelContext  channelContext ,  String  remark )  {
+		Close ( channelContext ,  null ,  remark );
+	}
+
+	/**
+	 * Close the connection
+	 * @param channelContext
+	 * @param throwable
+	 * @param remark
+	 * @author tanyaowu
+	 */
+	Public  static  void  close ( ChannelContext  channelContext ,  Throwable  throwable ,  String  remark )  {
+		Close ( channelContext ,  throwable ,  remark ,  false );
+	}
+
+	/**
+	 *
+	 * @param channelContext
+	 * @param throwable
+	 * @param remark
+	 * @param isNeedRemove
+	 * @author tanyaowu
+	 */
+	Private  static  void  close ( ChannelContext  channelContext ,  Throwable  throwable ,  String  remark ,  boolean  isNeedRemove )  {
+		If  ( channelContext . isWaitingClose ())  {
+			Log . debug ( "{} is waiting to be closed" ,  channelContext );
+			Return ;
+		}
+
+		Synchronized  ( channelContext )  {
+			//double check
+			If  ( channelContext . isWaitingClose ())  {
+				Log . debug ( "{} is waiting to be closed" ,  channelContext );
+				Return ;
+			}
+			channelContext . setWaitingClose ( true );
+			ThreadPoolExecutor  closePoolExecutor  =  channelContext . getGroupContext (). getTioExecutor ();
+			closePoolExecutor . execute ( new  CloseRunnable ( channelContext ,  throwable ,  remark ,  isNeedRemove ));
+		}
+	}
+
+	/**
+	 * Close the connection
+	 * @param groupContext
+	 * @param clientIp
+	 * @param clientPort
+	 * @param throwable
+	 * @param remark
+	 * @author tanyaowu
+	 */
+	Public  static  void  close ( GroupContext  groupContext ,  String  clientIp ,  Integer  clientPort ,  Throwable  throwable ,  String  remark )  {
+		ChannelContext  channelContext  =  groupContext . clientNodeMap . find ( clientIp ,  clientPort );
+		Close ( channelContext ,  throwable ,  remark );
+	}
+
+	/**
+	 * Get all connections, including those currently disconnected
+	 * @param groupContext
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  SetWithLock < ChannelContext >  getAllChannelContexts ( GroupContext  groupContext )  {
+		Return  groupContext . connections . getSetWithLock ();
+	}
+
+	/**
+	 * Get all connections that are in a normal connection
+	 * @param groupContext
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  SetWithLock < ChannelContext >  getAllConnectedsChannelContexts ( GroupContext  groupContext )  {
+		Return  groupContext . connecteds . getSetWithLock ();
+	}
+
+	/**
+	 * Get ChannelContext based on clientip and clientport
+	 * @param groupContext
+	 * @param clientIp
+	 * @param clientPort
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  ChannelContext  getChannelContextByClientNode ( GroupContext  groupContext ,  String  clientIp ,  Integer  clientPort )  {
+		Return  groupContext . clientNodeMap . find ( clientIp ,  clientPort );
+	}
+
+	/**
