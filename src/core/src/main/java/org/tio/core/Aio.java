@@ -195,3 +195,27 @@ public class Aio {
 	}
 
 	/**
+	 * Block messages to specified users
+	 * @param groupContext
+	 * @param userid
+	 * @param packet
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  Boolean  bSendToUser ( GroupContext  groupContext ,  String  userid ,  Packet  packet )  {
+		Return  sendToUser ( groupContext ,  userid ,  packet ,  true );
+	}
+
+	/**
+	 * Block sending a message to the specified token
+	 * @param groupContext
+	 * @param token
+	 * @param packet
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  Boolean  bSendToToken ( GroupContext  groupContext ,  String  token ,  Packet  packet )  {
+		Return  sendToToken ( groupContext ,  token ,  packet ,  true );
+	}
+	/**
+	 * Close the connection
