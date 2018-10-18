@@ -12,3 +12,7 @@ public interface ClientAioHandler extends AioHandler {
 	/**
 	 * Create a Heartbeat Package
 	 * @return
+	 * @author tanyaowu
+	 */
+	Packet heartbeatPacket();
+}
