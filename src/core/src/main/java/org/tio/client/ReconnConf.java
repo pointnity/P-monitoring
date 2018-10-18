@@ -108,3 +108,9 @@ public class ReconnConf {
 		return interval;
 	}
 
+	/**
+	 * @return the queue
+	 */
+	public LinkedBlockingQueue<ChannelContext> getQueue() {
+		return queue;
+	}
