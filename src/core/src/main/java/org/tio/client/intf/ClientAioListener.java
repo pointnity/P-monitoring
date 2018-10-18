@@ -29,3 +29,5 @@ public interface ClientAioListener extends AioListener {
 
 	//	 *
 	//	 */
+	//	void onFailConnected(ChannelContext channelContext, boolean isReconnect, java.lang.Throwable throwable);
+}
