@@ -414,3 +414,23 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	/**
 	 * @param groupContext the groupContext to set
 	 */
+	public void setGroupContext(GroupContext groupContext) {
+		this.groupContext = groupContext;
+
+		if (groupContext != null) {
+			decodeRunnable = new DecodeRunnable(this);
+			//			closeRunnable = new CloseRunnable(this, null, null, groupContext.getCloseExecutor());
+
+			//			handlerRunnableHighPrior = new HandlerRunnable(this, groupContext.getHandlerExecutorHighPrior());
+			handlerRunnable = new HandlerRunnable(this, groupContext.getTioExecutor());
+
+			//			sendRunnableHighPrior = new SendRunnable(this, groupContext.getSendExecutorHighPrior());
+			sendRunnable = new SendRunnable(this, groupContext.getTioExecutor());
+
+			groupContext.connections.add(this);
+		}
+	}
+
+	/**
+	 * @param reConnCount the reConnCount to set
+	 */
