@@ -134,3 +134,26 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	}
 
 	public Object getAttribute() {
+		return getAttribute(DEFAULT_ATTUBITE_KEY);
+	}
+
+	//	public MapWithLock<String, Object> getAttributes() {
+	//		initProps();
+	//		return props;
+	//	}
+
+	/**
+	 * @return the remoteNode
+	 */
+	public Node getClientNode() {
+		return clientNode;
+	}
+
+	/**
+	 * @return the clientNodeTraceFilename
+	 */
+	public String getClientNodeTraceFilename() {
+		return clientNodeTraceFilename;
+	}
+
+	/**
