@@ -533,3 +533,16 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	 */
 	public void traceClient(ChannelAction channelAction, Packet packet, Map<String, Object> extmsg) {
 		if (isTraceClient) {
+			this.getGroupContext().getClientTraceHandler().traceChannel(this, channelAction, packet, extmsg);
+		}
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+}
