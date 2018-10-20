@@ -336,3 +336,27 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 		}
 
 	}
+
+	/**
+	 * @param asynchronousSocketChannel the asynchronousSocketChannel to set
+	 */
+	public void setAsynchronousSocketChannel(AsynchronousSocketChannel asynchronousSocketChannel) {
+		this.asynchronousSocketChannel = asynchronousSocketChannel;
+
+		if (asynchronousSocketChannel != null) {
+			try {
+				Node clientNode = createClientNode(asynchronousSocketChannel);
+				setClientNode(clientNode);
+			} catch (IOException e) {
+				log.info(e.toString(), e);
+				assignAnUnknownClientNode();
+			}
+		} else {
+			assignAnUnknownClientNode();
+		}
+	}
+
+	/**
+	 * Set default Properties
+
+	 * @param value
