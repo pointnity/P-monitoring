@@ -317,3 +317,22 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 			CountDownLatch countDownLatch = packetWithMeta.getCountDownLatch();
 			traceBlockPacket(SynPacketAction.BEFORE_DOWN, packet, countDownLatch, null);
 			countDownLatch.countDown();
+		}
+		try {
+			if (log.isDebugEnabled()) {
+				log.debug("{} has been sent {}", this, packet.logstr());
+			}
+			groupContext.getAioListener().onAfterSent(this, packet, isSentSuccess == null ? false : isSentSuccess);
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		}
+
+		if (packet.getPacketListener() != null) {
+			try {
+				packet.getPacketListener().onAfterSent(this, packet, isSentSuccess);
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			}
+		}
+
+	}
