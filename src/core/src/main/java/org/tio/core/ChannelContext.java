@@ -403,3 +403,14 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	public void setClosed(boolean isClosed) {
 		this.isClosed = isClosed;
 		if (isClosed) {
+			if (clientNode == null || !UNKNOWN_ADDRESS_IP.equals(clientNode.getIp())) {
+				String before = this.toString();
+				assignAnUnknownClientNode();
+				log.info("Close before {}, after closing{}", before, this);
+			}
+		}
+	}
+
+	/**
+	 * @param groupContext the groupContext to set
+	 */
