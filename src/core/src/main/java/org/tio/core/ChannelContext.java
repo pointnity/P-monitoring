@@ -515,3 +515,21 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 			}
 
 			if (extmsg != null) {
+				map.putAll(extmsg);
+			}
+			String logstr = Json.toJson(map);
+			traceSynPacketLog.info(logstr);
+			log.error(logstr);
+
+		}
+	}
+
+	/**
+	 * Trace messages
+	 * @param channelAction
+	 * @param packet
+	 * @param extmsg
+	 * @author tanyaowu
+	 */
+	public void traceClient(ChannelAction channelAction, Packet packet, Map<String, Object> extmsg) {
+		if (isTraceClient) {
