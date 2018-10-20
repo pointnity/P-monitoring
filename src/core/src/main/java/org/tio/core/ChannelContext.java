@@ -80,3 +80,27 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	private String clientNodeTraceFilename;
 
 	private Node serverNode;
+
+	private Logger traceSynPacketLog = LoggerFactory.getLogger("tio-client-trace-syn-log");
+
+	/**
+	 *
+	 * @param groupContext
+	 * @param asynchronousSocketChannel
+	 * @author tanyaowu
+	 */
+	public ChannelContext(GroupContext groupContext, AsynchronousSocketChannel asynchronousSocketChannel) {
+		super();
+		init(groupContext, asynchronousSocketChannel);
+	}
+
+	private void assignAnUnknownClientNode() {
+		Node clientNode = new Node(UNKNOWN_ADDRESS_IP, UNKNOWN_ADDRESS_PORT_SEQ.incrementAndGet());
+		setClientNode(clientNode);
+	}
+
+	/**
+	 * Create node
+	 * @param asynchronousSocketChannel
+	 * @return
+	 * @throws IOException
