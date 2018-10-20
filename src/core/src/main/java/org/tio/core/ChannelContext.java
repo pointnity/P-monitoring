@@ -375,3 +375,31 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 			} catch (Throwable e1) {
 				log.error(e1.toString(), e1);
 			}
+		}
+
+		this.clientNode = clientNode;
+
+		if (this.clientNode != null && !Objects.equals(UNKNOWN_ADDRESS_IP, this.clientNode.getIp())) {
+			try {
+				groupContext.clientNodeMap.put(this);
+			} catch (Throwable e1) {
+				log.error(e1.toString(), e1);
+			}
+		}
+
+		clientNodeTraceFilename = StringUtils.replaceAll(clientNode.toString(), ":", "_");
+	}
+
+	/**
+	 * @param clientNodeTraceFilename the clientNodeTraceFilename to set
+	 */
+	public void setClientNodeTraceFilename(String clientNodeTraceFilename) {
+		this.clientNodeTraceFilename = clientNodeTraceFilename;
+	}
+
+	/**
+	 * @param isClosed the isClosed to set
+	 */
+	public void setClosed(boolean isClosed) {
+		this.isClosed = isClosed;
+		if (isClosed) {
