@@ -157,3 +157,31 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	}
 
 	/**
+	 * @return the closeLock
+	 */
+	public ReentrantReadWriteLock getCloseLock() {
+		return closeLock;
+	}
+
+	/**
+	 * @return the decodeRunnable
+	 */
+	public DecodeRunnable getDecodeRunnable() {
+		return decodeRunnable;
+	}
+
+	/**
+	 * @return the groupContext
+	 */
+	public GroupContext getGroupContext() {
+		return groupContext;
+	}
+
+	/**
+	 * @return the handlerRunnable
+	 */
+	public HandlerRunnable getHandlerRunnable() {
+		return handlerRunnable;
+	}
+
+	/**
