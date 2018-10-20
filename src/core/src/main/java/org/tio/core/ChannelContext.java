@@ -36,3 +36,26 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	private static final String DEFAULT_ATTUBITE_KEY = "t-io-d-a-k";
 
 	public static final String UNKNOWN_ADDRESS_IP = "$UNKNOWN";
+
+	public static final AtomicInteger UNKNOWN_ADDRESS_PORT_SEQ = new AtomicInteger();
+
+	private boolean isTraceClient = false;
+
+	private boolean isTraceSynPacket = false;
+
+	//	private MapWithLock<String, Object> props = null;//
+
+	private GroupContext groupContext = null;
+
+	private DecodeRunnable decodeRunnable = null;
+
+	private HandlerRunnable handlerRunnable = null;
+
+	private SendRunnable sendRunnable = null;
+	private ReentrantReadWriteLock closeLock = new ReentrantReadWriteLock();
+	private ReadCompletionHandler readCompletionHandler = null;//new ReadCompletionHandler(this);
+	private WriteCompletionHandler writeCompletionHandler = null;//new WriteCompletionHandler(this);
+
+	private int reconnCount = 0;//Consecutive reconnection times, this value is reset after the connection is successful 0
+
+	private String userid;
