@@ -104,3 +104,33 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	 * @param asynchronousSocketChannel
 	 * @return
 	 * @throws IOException
+	 * @author tanyaowu
+	 */
+	public abstract Node createClientNode(AsynchronousSocketChannel asynchronousSocketChannel) throws IOException;
+
+	/**
+	 *
+	 * @param obj
+	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		ChannelContext other = (ChannelContext) obj;
+		return Objects.equals(other.hashCode(), this.hashCode());
+	}
+
+	/**
+	 * @return the asynchronousSocketChannel
+	 */
+	public AsynchronousSocketChannel getAsynchronousSocketChannel() {
+		return asynchronousSocketChannel;
+	}
+
+	public Object getAttribute() {
