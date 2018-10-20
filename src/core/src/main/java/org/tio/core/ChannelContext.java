@@ -434,3 +434,29 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	/**
 	 * @param reConnCount the reConnCount to set
 	 */
+	public void setReconnCount(int reconnCount) {
+		this.reconnCount = reconnCount;
+	}
+
+	/**
+	 * @param isRemoved the isRemoved to set
+	 */
+	public void setRemoved(boolean isRemoved) {
+		this.isRemoved = isRemoved;
+	}
+
+	/**
+	 * @param serverNode the serverNode to set
+	 */
+	public void setServerNode(Node serverNode) {
+		this.serverNode = serverNode;
+	}
+
+	/**
+	 * @param isTraceClient the isTraceClient to set
+	 */
+	public void setTraceClient(boolean isTraceClient) {
+		this.isTraceClient = isTraceClient;
+	}
+
+	/**
