@@ -24,3 +24,16 @@ public enum ChannelAction {
 	 *
 	 */
 	AFTER_SEND(4),
+
+	/**
+	 *
+	 */
+	UNCONNECT(5),
+
+	/**
+	 * reconnects
+	 */
+	RE_CONNECT(6),
+
+	/**
+	 *
