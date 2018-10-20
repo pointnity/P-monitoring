@@ -287,3 +287,33 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 
 	/**
 	 * @return the isTraceSynPacket
+	 */
+	public boolean isTraceSynPacket() {
+		return isTraceSynPacket;
+	}
+
+	/**
+	 * @return the isWaitingClose
+	 */
+	public boolean isWaitingClose() {
+		return isWaitingClose;
+	}
+
+	/**
+	 *
+	 * @param obj PacketWithMeta or Packet
+	 * @param isSentSuccess
+	 * @author tanyaowu
+	 */
+	public void processAfterSent(Object obj, Boolean isSentSuccess) {
+		Packet packet = null;
+		PacketWithMeta packetWithMeta = null;
+		boolean isPacket = obj instanceof Packet;
+		if (isPacket) {
+			packet = (Packet) obj;
+		} else {
+			packetWithMeta = (PacketWithMeta) obj;
+			packet = packetWithMeta.getPacket();
+			CountDownLatch countDownLatch = packetWithMeta.getCountDownLatch();
+			traceBlockPacket(SynPacketAction.BEFORE_DOWN, packet, countDownLatch, null);
+			countDownLatch.countDown();
