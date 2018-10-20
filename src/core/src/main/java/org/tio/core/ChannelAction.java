@@ -37,3 +37,18 @@ public enum ChannelAction {
 
 	/**
 	 *
+	 */
+	BEFORE_HANDLER(7),
+	/**
+	 *
+	 */
+	AFTER_HANDLER(8),
+
+	/**
+	 *
+	 */
+	RECEIVED_BUF(9);
+
+	public static ChannelAction forNumber(int value) {
+		switch (value) {
+		case 1:
