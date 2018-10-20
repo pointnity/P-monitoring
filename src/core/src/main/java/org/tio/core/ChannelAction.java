@@ -72,3 +72,18 @@ public enum ChannelAction {
 		default:
 			return null;
 		}
+	}
+
+	private final int value;
+
+	private ChannelAction(int value) {
+		this.value = value;
+	}
+
+	/**
+	 * @return the value
+	 */
+	public int getValue() {
+		return value;
+	}
+}
