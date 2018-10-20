@@ -59,3 +59,24 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	private int reconnCount = 0;//Consecutive reconnection times, this value is reset after the connection is successful 0
 
 	private String userid;
+	
+	private String token;
+
+	private boolean isWaitingClose = false;
+
+	private boolean isClosed = true;
+
+	private boolean isRemoved = false;
+
+	private ChannelStat stat = new ChannelStat();
+
+	/** The asynchronous socket channel. */
+	private AsynchronousSocketChannel asynchronousSocketChannel;
+
+	private String id = null;
+
+	private Node clientNode;
+
+	private String clientNodeTraceFilename;
+
+	private Node serverNode;
