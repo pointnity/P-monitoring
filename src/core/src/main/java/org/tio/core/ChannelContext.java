@@ -263,3 +263,27 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 		this.writeCompletionHandler = new WriteCompletionHandler(this);
 //		this.ipStat = groupContext.ips.get(getClientNode().getIp());
 	}
+
+	/**
+	 * @return the isClosed
+	 */
+	public boolean isClosed() {
+		return isClosed;
+	}
+
+	/**
+	 * @return the isRemoved
+	 */
+	public boolean isRemoved() {
+		return isRemoved;
+	}
+
+	/**
+	 * @return the isTraceClient
+	 */
+	public boolean isTraceClient() {
+		return isTraceClient;
+	}
+
+	/**
+	 * @return the isTraceSynPacket
