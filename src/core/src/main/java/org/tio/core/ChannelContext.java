@@ -460,3 +460,18 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	}
 
 	/**
+	 * @param isTraceSynPacket the isTraceSynPacket to set
+	 */
+	public void setTraceSynPacket(boolean isTraceSynPacket) {
+		this.isTraceSynPacket = isTraceSynPacket;
+	}
+
+	/**
+	 * @param userid the userid to set
+	 * For internal use of the framework, do not call this method
+	 */
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+	/**
