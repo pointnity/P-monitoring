@@ -358,5 +358,20 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 
 	/**
 	 * Set default Properties
-
 	 * @param value
+	 * @author tanyaowu
+	 */
+	public void setAttribute(Object value) {
+		setAttribute(DEFAULT_ATTUBITE_KEY, value);
+	}
+
+	/**
+	 * @param remoteNode the remoteNode to set
+	 */
+	private void setClientNode(Node clientNode) {
+		if (this.clientNode != null) {
+			try {
+				groupContext.clientNodeMap.remove(this);
+			} catch (Throwable e1) {
+				log.error(e1.toString(), e1);
+			}
