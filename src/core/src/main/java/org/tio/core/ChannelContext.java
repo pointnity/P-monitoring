@@ -222,3 +222,44 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	/**
 	 * @return the stat
 	 */
+	public ChannelStat getStat() {
+		return stat;
+	}
+
+	/**
+	 * @return the userid
+	 */
+	public String getUserid() {
+		return userid;
+	}
+
+	/**
+	 * @return the writeCompletionHandler
+	 */
+	public WriteCompletionHandler getWriteCompletionHandler() {
+		return writeCompletionHandler;
+	}
+
+	/**
+	 *
+	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
+	public int hashCode() {
+		if (StringUtils.isNoneBlank(id)) {
+			return this.id.hashCode();
+		} else {
+			return super.hashCode();
+		}
+	}
+
+	public void init(GroupContext groupContext, AsynchronousSocketChannel asynchronousSocketChannel) {
+		id = groupContext.getTioUuid().uuid();
+		this.setGroupContext(groupContext);
+		groupContext.ids.bind(this);
+		this.setAsynchronousSocketChannel(asynchronousSocketChannel);
+		this.readCompletionHandler = new ReadCompletionHandler(this);
+		this.writeCompletionHandler = new WriteCompletionHandler(this);
+//		this.ipStat = groupContext.ips.get(getClientNode().getIp());
+	}
