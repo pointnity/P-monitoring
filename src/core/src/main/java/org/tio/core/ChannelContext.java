@@ -185,3 +185,40 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	}
 
 	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @return the readCompletionHandler
+	 */
+	public ReadCompletionHandler getReadCompletionHandler() {
+		return readCompletionHandler;
+	}
+
+	/**
+	 * @return the reConnCount
+	 */
+	public int getReconnCount() {
+		return reconnCount;
+	}
+
+	/**
+	 * @return the sendRunnable
+	 */
+	public SendRunnable getSendRunnable() {
+		return sendRunnable;
+	}
+
+	/**
+	 * @return the serverNode
+	 */
+	public Node getServerNode() {
+		return serverNode;
+	}
+
+	/**
+	 * @return the stat
+	 */
