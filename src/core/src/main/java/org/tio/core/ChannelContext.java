@@ -493,3 +493,25 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	 * @param extmsg
 	 * @author tanyaowu
 	 */
+	public void traceBlockPacket(SynPacketAction synPacketAction, Packet packet, CountDownLatch countDownLatch, Map<String, Object> extmsg) {
+		if (isTraceSynPacket) {
+			ChannelContext channelContext = this;
+			Map<String, Object> map = new HashMap<>(10);
+			map.put("time", DateTime.now().toString(DatePattern.NORM_DATETIME_MS_FORMAT));
+			map.put("c_id", channelContext.getId());
+			map.put("c", channelContext.toString());
+			map.put("action", synPacketAction);
+
+			MDC.put("tio_client_syn", channelContext.getClientNodeTraceFilename());
+
+			if (packet != null) {
+				map.put("p_id", channelContext.getClientNode().getPort() + "_" + packet.getId()); //packet id
+				map.put("p_respId", packet.getRespId());
+				map.put("packet", packet.logstr());
+			}
+
+			if (countDownLatch != null) {
+				map.put("countDownLatch", countDownLatch.hashCode() + " " + countDownLatch.getCount());
+			}
+
+			if (extmsg != null) {
