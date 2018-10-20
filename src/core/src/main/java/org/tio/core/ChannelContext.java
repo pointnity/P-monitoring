@@ -475,3 +475,21 @@ public abstract class ChannelContext extends MapWithLockPropSupport {
 	}
 
 	/**
+	 * @param isWaitingClose the isWaitingClose to set
+	 */
+	public void setWaitingClose(boolean isWaitingClose) {
+		this.isWaitingClose = isWaitingClose;
+	}
+
+	@Override
+	public String toString() {
+		return this.getClientNode().toString();
+	}
+
+	/**
+	 *Track synchronization messages, primarily tracking locks, for troubleshooting.
+	 * @param synPacketAction
+	 * @param packet
+	 * @param extmsg
+	 * @author tanyaowu
+	 */
