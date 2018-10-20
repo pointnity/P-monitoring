@@ -52,3 +52,23 @@ public enum ChannelAction {
 	public static ChannelAction forNumber(int value) {
 		switch (value) {
 		case 1:
+			return CONNECT;
+		case 2:
+			return RECEIVED;
+		case 3:
+			return BEFORE_SEND;
+		case 4:
+			return AFTER_SEND;
+		case 5:
+			return UNCONNECT;
+		case 6:
+			return RE_CONNECT;
+		case 7:
+			return BEFORE_HANDLER;
+		case 8:
+			return AFTER_HANDLER;
+		case 9:
+			return RECEIVED_BUF;
+		default:
+			return null;
+		}
