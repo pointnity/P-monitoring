@@ -16,3 +16,10 @@ public class DefaultTioUuid implements TioUuid {
 	public static void main(String[] args) {
 
 	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public DefaultTioUuid() {
+	}
