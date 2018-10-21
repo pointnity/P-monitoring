@@ -100,3 +100,15 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	public IpStats ipStats = null;
 
 	/**
+	 * IP blacklist
+	 */
+	public IpBlacklist ipBlacklist = null;//new IpBlacklist();
+
+	public final ChannelContextMapWithLock waitingResps = new ChannelContextMapWithLock();
+
+	/**
+	 * If the packet is encoded into Bytebuffer, is it related to Channelcontext, false:packet encoding is irrelevant to channelcontext
+	 */
+	private boolean isEncodeCareWithChannelContext = true;
+
+	protected String id;
