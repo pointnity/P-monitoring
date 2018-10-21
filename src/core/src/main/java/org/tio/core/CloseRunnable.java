@@ -45,3 +45,19 @@ public class CloseRunnable implements Runnable {
 	 *
 	 * @author tanyaowu
 	 *  
+	 *
+	 */
+	@Override
+	public void run() {
+		try {
+			GroupContext groupContext = channelContext.getGroupContext();
+			AioListener aioListener = groupContext.getAioListener();
+
+			try {
+				AsynchronousSocketChannel asynchronousSocketChannel = channelContext.getAsynchronousSocketChannel();
+				if (asynchronousSocketChannel != null && asynchronousSocketChannel.isOpen()) {
+					try {
+						asynchronousSocketChannel.close();
+					} catch (Throwable e) {
+						log.error(e.toString(), e);
+					}
