@@ -191,3 +191,27 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 
 	/**
 	 * @return the groupListener
+	 */
+	public GroupListener getGroupListener() {
+		return groupListener;
+	}
+
+	/**
+	 * Get Groupstat Object
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public abstract GroupStat getGroupStat();
+
+	/**
+	 * @return the heartbeatTimeout
+	 */
+	public long getHeartbeatTimeout() {
+		return heartbeatTimeout;
+	}
+
+	/**
+	 *
+	 * @return
+	 * @author tanyaowu
+	 */
