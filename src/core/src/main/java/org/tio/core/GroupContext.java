@@ -118,7 +118,7 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	 */
 	protected int maxDecodeErrorCountForIp = 10;
 
-	protected String name = "未命名GroupContext";
+	protected String name = "Unnamed Groupcontext";
 
 	private boolean isStopped = false;
 
