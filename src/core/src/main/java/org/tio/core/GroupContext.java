@@ -80,3 +80,23 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	private ChannelTraceHandler clientTraceHandler = new DefaultChannelTraceHandler();
 
 	private GroupListener groupListener = null;
+
+	private TioUuid tioUuid = new DefaultTioUuid();
+
+	/** The group executor. */
+	protected SynThreadPoolExecutor tioExecutor = null;
+
+	protected ThreadPoolExecutor groupExecutor = null;
+	public final ClientNodeMap clientNodeMap = new ClientNodeMap();
+	public final ChannelContextSetWithLock connections = new ChannelContextSetWithLock();
+	public final ChannelContextSetWithLock connecteds = new ChannelContextSetWithLock();
+
+	public final ChannelContextSetWithLock closeds = new ChannelContextSetWithLock();
+	public final Groups groups = new Groups();
+	public final Users users = new Users();
+	public final Tokens tokens = new Tokens();
+	public final Ids ids = new Ids();
+	public final Ips ips = new Ips();
+	public IpStats ipStats = null;
+
+	/**
