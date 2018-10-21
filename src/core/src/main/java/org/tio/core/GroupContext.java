@@ -71,3 +71,12 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	private PacketHandlerMode packetHandlerMode = PacketHandlerMode.SINGLE_THREAD;//.queue;
 
 	/**
+	 * Buffer size to receive data
+	 */
+	protected int readBufferSize = READ_BUFFER_SIZE;
+
+	protected ReconnConf reconnConf;//Re-connect configuration
+
+	private ChannelTraceHandler clientTraceHandler = new DefaultChannelTraceHandler();
+
+	private GroupListener groupListener = null;
