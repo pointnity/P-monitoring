@@ -44,3 +44,10 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	private static final int MAX_POOL_SIZE = CORE_POOL_SIZE * 4 < 256 ? 256 : CORE_POOL_SIZE * 4;
 
 	//	public static final Semaphore SYN_SEND_SEMAPHORE = new Semaphore(CORE_POOL_SIZE);
+
+	//	/**
+	//	 * Default Heartbeat Time-out (units: milliseconds)
+	//	 */
+	//	private static final long DEFAULT_HEARTBEAT_TIMEOUT = 1000 * 120;
+
+	/**
