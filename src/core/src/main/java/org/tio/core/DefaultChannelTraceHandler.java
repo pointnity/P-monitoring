@@ -53,3 +53,9 @@ public class DefaultChannelTraceHandler implements ChannelTraceHandler {
 			}
 
 			if (extmsg != null) {
+				map.putAll(extmsg);
+			}
+			clientTraceLog.info(Json.toJson(map));
+		}
+	}
+}
