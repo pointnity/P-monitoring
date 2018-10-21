@@ -95,3 +95,19 @@ public class CloseRunnable implements Runnable {
 			try {
 				if (!isLock) {
 					if (isRemove) {
+						if (channelContext.isRemoved()) {
+							return;
+						} else {
+							writeLock.lock();
+						}
+					} else {
+						return;
+					}
+				}
+
+				channelContext.traceClient(ChannelAction.UNCONNECT, null, null);
+
+				if (channelContext.isClosed() && !isRemove) {
+					log.info("{}, {}Closed, note: {}, exception:{}", channelContext.getGroupContext(), channelContext, remark, throwable == null ? "无" : throwable.toString());
+					return;
+				}
