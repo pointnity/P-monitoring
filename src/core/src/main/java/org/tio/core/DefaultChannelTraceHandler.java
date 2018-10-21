@@ -44,3 +44,12 @@ public class DefaultChannelTraceHandler implements ChannelTraceHandler {
 			map.put("action", channelAction);
 			map.put("c_id", channelContext.getId());
 			map.put("c", channelContext.toString());
+			MDC.put("tio_client", channelContext.getClientNodeTraceFilename());
+
+			if (packet != null) {
+				map.put("p_id", channelContext.getClientNode().getPort() + "_" + packet.getId()); //packet id
+				map.put("p_respId", packet.getRespId());
+				map.put("packet", packet.logstr());
+			}
+
+			if (extmsg != null) {
