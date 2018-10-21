@@ -11,3 +11,15 @@ import org.tio.server.intf.ServerAioListener;
 public class DefaultAioListener implements ClientAioListener, ServerAioListener {
 	/**
 	 *
+	 * @param channelContext
+	 * @param throwable
+	 * @param remark
+	 * @param isRemove
+	 * @author tanyaowu
+	 */
+	@Override
+	public void onAfterClose(ChannelContext channelContext, Throwable throwable, String remark, boolean isRemove) {
+	}
+
+	/**
+	 *
