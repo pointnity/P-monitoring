@@ -82,3 +82,16 @@ public class CloseRunnable implements Runnable {
 			}
 
 			try {
+				channelContext.getStat().setTimeClosed(SystemTimer.currentTimeMillis());
+				aioListener.onBeforeClose(channelContext, throwable, remark, isRemove);
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			}
+
+			ReentrantReadWriteLock reentrantReadWriteLock = channelContext.getCloseLock();//.getLock();
+			WriteLock writeLock = reentrantReadWriteLock.writeLock();
+			boolean isLock = writeLock.tryLock();
+
+			try {
+				if (!isLock) {
+					if (isRemove) {
