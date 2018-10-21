@@ -51,3 +51,12 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	//	private static final long DEFAULT_HEARTBEAT_TIMEOUT = 1000 * 120;
 
 	/**
+	 * The default buffer size for receiving data
+	 */
+	public static final int READ_BUFFER_SIZE = Integer.getInteger("tio.default.read.buffer.size", 2048);
+
+	public static final long KEEP_ALIVE_TIME = 90L;
+
+	private final static AtomicInteger ID_ATOMIC = new AtomicInteger();
+
+	private ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
