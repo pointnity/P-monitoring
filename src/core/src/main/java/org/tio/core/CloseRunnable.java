@@ -108,6 +108,13 @@ public class CloseRunnable implements Runnable {
 				channelContext.traceClient(ChannelAction.UNCONNECT, null, null);
 
 				if (channelContext.isClosed() && !isRemove) {
-					log.info("{}, {}Closed, note: {}, exception:{}", channelContext.getGroupContext(), channelContext, remark, throwable == null ? "无" : throwable.toString());
+					log.info("{}, {}Closed, note: {}, exception:{}", channelContext.getGroupContext(), channelContext, remark, throwable == null ? "no" : throwable.toString());
 					return;
 				}
+
+				if (channelContext.isRemoved()) {
+					log.info("{}, {}deleted, note: {}, exception:{}", channelContext.getGroupContext(), channelContext, remark, throwable == null ? "no" : throwable.toString());
+					return;
+				}
+
+				//You must cancel the task before emptying the queue
