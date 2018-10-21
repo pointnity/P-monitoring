@@ -215,3 +215,28 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public String getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @return the packetHandlerMode
+	 */
+	public PacketHandlerMode getPacketHandlerMode() {
+		return packetHandlerMode;
+	}
+
+	/**
+	 * @return the readBufferSize
+	 */
+	public int getReadBufferSize() {
+		return readBufferSize;
+	}
+
+	/**
+	 * @return the reconnConf
+	 */
