@@ -126,3 +126,30 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 
 	public GroupContext() {
 		this(null, null);
+	}
+
+	public GroupContext(SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) {
+		super();
+		this.id = ID_ATOMIC.incrementAndGet() + "";
+		this.ipBlacklist = new IpBlacklist(id, this);
+		this.ipStats = new IpStats(this, null, null);
+		this.tioExecutor = tioExecutor;
+		if (this.tioExecutor == null) {
+			LinkedBlockingQueue<Runnable> tioQueue = new LinkedBlockingQueue<>();
+			String tioThreadName = "tio";
+			this.tioExecutor = new SynThreadPoolExecutor(CORE_POOL_SIZE, CORE_POOL_SIZE, KEEP_ALIVE_TIME, tioQueue,
+					DefaultThreadFactory.getInstance(tioThreadName, Thread.NORM_PRIORITY), tioThreadName);
+			this.tioExecutor.prestartAllCoreThreads();
+		}
+
+		this.groupExecutor = groupExecutor;
+		if (this.groupExecutor == null) {
+			LinkedBlockingQueue<Runnable> groupQueue = new LinkedBlockingQueue<>();
+			String groupThreadName = "tio-group";
+			this.groupExecutor = new ThreadPoolExecutor(MAX_POOL_SIZE, MAX_POOL_SIZE, KEEP_ALIVE_TIME, TimeUnit.SECONDS, groupQueue,
+					DefaultThreadFactory.getInstance(groupThreadName, Thread.NORM_PRIORITY));
+			this.groupExecutor.prestartAllCoreThreads();
+		}
+	}
+
+	/**
