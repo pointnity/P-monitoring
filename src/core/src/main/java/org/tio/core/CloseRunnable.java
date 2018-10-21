@@ -190,3 +190,14 @@ public class CloseRunnable implements Runnable {
 						ReconnConf.put(clientChannelContext);
 					}
 				}
+			} catch (Throwable e) {
+				log.error(throwable.toString(), e);
+			} finally {
+				writeLock.unlock();
+			}
+		} finally {
+			channelContext.setWaitingClose(false);
+		}
+	}
+
+}
