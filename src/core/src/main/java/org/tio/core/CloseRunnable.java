@@ -32,3 +32,16 @@ public class CloseRunnable implements Runnable {
 	 * @author tanyaowu
 	 *  
 	 *
+	 */
+	public CloseRunnable(ChannelContext channelContext, Throwable throwable, String remark, boolean isNeedRemove) {
+		this.channelContext = channelContext;
+		this.throwable = throwable;
+		this.remark = remark;
+		this.isNeedRemove = isNeedRemove;
+	}
+
+	/**
+	 * @see java.lang.Runnable#run()
+	 *
+	 * @author tanyaowu
+	 *  
