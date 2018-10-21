@@ -61,3 +61,24 @@ public class CloseRunnable implements Runnable {
 					} catch (Throwable e) {
 						log.error(e.toString(), e);
 					}
+				}
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			}
+
+			boolean isClientChannelContext = channelContext instanceof ClientChannelContext;
+			//			ReconnConf reconnConf = channelContext.getGroupContext().getReconnConf();
+			boolean isRemove = this.isNeedRemove;
+			if (!isRemove) {
+				if (isClientChannelContext) {
+					ClientChannelContext clientChannelContext = (ClientChannelContext) channelContext;
+
+					if (!ReconnConf.isNeedReconn(clientChannelContext, false)) {
+						isRemove = true;
+					}
+				} else {
+					isRemove = true;
+				}
+			}
+
+			try {
