@@ -16,3 +16,17 @@ import com.xiaoleilu.hutool.date.DateTime;
 /**
  * @author tanyaowu
  *  
+ */
+public class DefaultChannelTraceHandler implements ChannelTraceHandler {
+	//	private static Logger log = LoggerFactory.getLogger(DefaultClientTraceHandler.class);
+
+	private Logger clientTraceLog = LoggerFactory.getLogger("tio-client-trace-log");
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public DefaultChannelTraceHandler() {
+	}
+
+	/**
