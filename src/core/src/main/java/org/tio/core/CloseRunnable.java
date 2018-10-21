@@ -133,3 +133,26 @@ public class CloseRunnable implements Runnable {
 				log.info("{}, {} Preparing to close the connection, isNeedRemove:{}, {}", channelContext.getGroupContext(), channelContext, isRemove, remark);
 
 				try {
+//					channelContext.getIpStat().getActivatedCount().decrementAndGet();
+					
+//					GuavaCache[] caches = channelContext.getGroupContext().ips.getCaches();
+//					for (GuavaCache guavaCache : caches) {
+//						IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
+//						ipStat.getActivatedCount().decrementAndGet();
+//					}
+					
+//					List<Long> durationList = groupContext.ips.list;
+//					for (Long v : durationList) {
+//						IpStat ipStat = (IpStat) channelContext.getGroupContext().ips.get(v, channelContext.getClientNode().getIp());
+//						ipStat.getActivatedCount().decrementAndGet();
+//					}
+//					String clientIp = channelContext.getClientNode().getIp();
+//					AtomicInteger activatedCount = IpStat.getActivatedCount(clientIp, false);
+//					if (activatedCount != null) {
+//						activatedCount.decrementAndGet();
+//						if (activatedCount.get() <= 0) {
+//							IpStat.removeActivatedCount(clientIp);
+//						}
+//					}
+					
+					if (isRemove) {
