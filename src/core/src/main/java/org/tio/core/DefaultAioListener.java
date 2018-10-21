@@ -39,3 +39,14 @@ public class DefaultAioListener implements ClientAioListener, ServerAioListener 
 	 * @param packetSize
 	 * @author tanyaowu
 	 */
+	@Override
+	public void onAfterReceived(ChannelContext channelContext, Packet packet, int packetSize) {
+	}
+
+	/**
+	 *
+	 * @param channelContext
+	 * @param packet
+	 * @param isSentSuccess
+	 * @throws Exception
+	 * @author tanyaowu
