@@ -60,3 +60,14 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	private final static AtomicInteger ID_ATOMIC = new AtomicInteger();
 
 	private ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
+
+	private boolean isShortConnection = false;
+
+	/**
+	 * Heartbeat timeout (in milliseconds), set this value to 0 or negative if the user does not want the frame level to do the heartbeat-related work
+	 */
+	protected long heartbeatTimeout = 1000 * 120;
+
+	private PacketHandlerMode packetHandlerMode = PacketHandlerMode.SINGLE_THREAD;//.queue;
+
+	/**
