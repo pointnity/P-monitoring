@@ -50,3 +50,12 @@ public class DefaultAioListener implements ClientAioListener, ServerAioListener 
 	 * @param isSentSuccess
 	 * @throws Exception
 	 * @author tanyaowu
+	 */
+	@Override
+	public void onAfterSent(ChannelContext channelContext, Packet packet, boolean isSentSuccess) throws Exception {
+	}
+
+	@Override
+	public void onBeforeClose(ChannelContext channelContext, Throwable throwable, String remark, boolean isRemove) {
+	}
+}
