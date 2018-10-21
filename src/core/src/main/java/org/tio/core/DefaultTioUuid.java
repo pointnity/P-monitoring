@@ -23,3 +23,8 @@ public class DefaultTioUuid implements TioUuid {
 	 */
 	public DefaultTioUuid() {
 	}
+
+	/**
+	 * @return
+	 * @author tanyaowu
+	 */
