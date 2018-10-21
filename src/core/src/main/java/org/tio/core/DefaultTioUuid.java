@@ -28,3 +28,8 @@ public class DefaultTioUuid implements TioUuid {
 	 * @return
 	 * @author tanyaowu
 	 */
+	@Override
+	public String uuid() {
+		return java.util.UUID.randomUUID().toString();
+	}
+}
