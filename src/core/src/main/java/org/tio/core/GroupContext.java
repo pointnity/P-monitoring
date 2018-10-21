@@ -269,3 +269,32 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	 * @return the isEncodeCareWithChannelContext
 	 */
 	public boolean isEncodeCareWithChannelContext() {
+		return isEncodeCareWithChannelContext;
+	}
+
+	/**
+	 * @return the isShortConnection
+	 */
+	public boolean isShortConnection() {
+		return isShortConnection;
+	}
+
+	/**
+	 * @return the isStop
+	 */
+	public boolean isStopped() {
+		return isStopped;
+	}
+
+	/**
+	 *
+	 * @param byteOrder
+	 * @author tanyaowu
+	 */
+	public void setByteOrder(ByteOrder byteOrder) {
+		this.byteOrder = byteOrder;
+	}
+
+	/**
+	 * @param clientTraceHandler the clientTraceHandler to set
+	 */
