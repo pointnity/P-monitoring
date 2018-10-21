@@ -23,3 +23,19 @@ public class DefaultAioListener implements ClientAioListener, ServerAioListener 
 
 	/**
 	 *
+	 * @param channelContext
+	 * @param isConnected
+	 * @param isReconnect
+	 * @author tanyaowu
+	 */
+	@Override
+	public void onAfterConnected(ChannelContext channelContext, boolean isConnected, boolean isReconnect) {
+	}
+
+	/**
+	 *
+	 * @param channelContext
+	 * @param packet
+	 * @param packetSize
+	 * @author tanyaowu
+	 */
