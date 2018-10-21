@@ -298,3 +298,31 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	/**
 	 * @param clientTraceHandler the clientTraceHandler to set
 	 */
+	public void setClientTraceHandler(ChannelTraceHandler clientTraceHandler) {
+		this.clientTraceHandler = clientTraceHandler;
+	}
+
+	/**
+	 * @param isEncodeCareWithChannelContext the isEncodeCareWithChannelContext to set
+	 */
+	public void setEncodeCareWithChannelContext(boolean isEncodeCareWithChannelContext) {
+		this.isEncodeCareWithChannelContext = isEncodeCareWithChannelContext;
+	}
+
+	/**
+	 * @param groupListener the groupListener to set
+	 */
+	public void setGroupListener(GroupListener groupListener) {
+		this.groupListener = groupListener;
+	}
+
+	/**
+	 * @param heartbeatTimeout the heartbeatTimeout to set
+	 */
+	public void setHeartbeatTimeout(long heartbeatTimeout) {
+		this.heartbeatTimeout = heartbeatTimeout;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
