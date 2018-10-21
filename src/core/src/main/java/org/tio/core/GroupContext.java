@@ -240,3 +240,32 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	/**
 	 * @return the reconnConf
 	 */
+	public ReconnConf getReconnConf() {
+		return reconnConf;
+	}
+
+	/**
+	 * @return the groupExecutor
+	 */
+	public SynThreadPoolExecutor getTioExecutor() {
+		return tioExecutor;
+	}
+
+	/**
+	 * @return the tioUuid
+	 */
+	public TioUuid getTioUuid() {
+		return tioUuid;
+	}
+
+	/**
+	 * @return the syns
+	 */
+	public ChannelContextMapWithLock getWaitingResps() {
+		return waitingResps;
+	}
+
+	/**
+	 * @return the isEncodeCareWithChannelContext
+	 */
+	public boolean isEncodeCareWithChannelContext() {
