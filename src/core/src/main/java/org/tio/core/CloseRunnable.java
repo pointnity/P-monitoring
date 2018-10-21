@@ -156,3 +156,23 @@ public class CloseRunnable implements Runnable {
 //					}
 					
 					if (isRemove) {
+						MaintainUtils.remove(channelContext);
+					} else {
+//						if (!groupContext.isShortConnection()) {
+							groupContext.closeds.add(channelContext);
+							groupContext.connecteds.remove(channelContext);
+
+							MaintainUtils.close(channelContext);
+//						}
+					}
+
+					try {
+						
+						channelContext.setRemoved(isRemove);
+						channelContext.getGroupContext().getGroupStat().getClosed().incrementAndGet();
+						channelContext.getStat().setTimeClosed(SystemTimer.currentTimeMillis());
+					} catch (Throwable e) {
+						log.error(e.toString(), e);
+					}
+
+					try {
