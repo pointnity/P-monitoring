@@ -27,3 +27,20 @@ import org.tio.core.maintain.Users;
 import org.tio.core.stat.GroupStat;
 import org.tio.utils.prop.MapWithLockPropSupport;
 import org.tio.utils.thread.pool.DefaultThreadFactory;
+import org.tio.utils.thread.pool.SynThreadPoolExecutor;
+
+/**
+ * 
+ * @author tanyaowu 
+ *  
+ */
+public abstract class GroupContext extends MapWithLockPropSupport {
+	static Logger log = LoggerFactory.getLogger(GroupContext.class);
+
+	private static int CORE_POOL_SIZE = Runtime.getRuntime().availableProcessors() * 2;
+
+	//	public static final int CORE_POOL_SIZE = _CORE_POOL_SIZE;// < 160 ? 160 : _CORE_POOL_SIZE;
+
+	private static final int MAX_POOL_SIZE = CORE_POOL_SIZE * 4 < 256 ? 256 : CORE_POOL_SIZE * 4;
+
+	//	public static final Semaphore SYN_SEND_SEMAPHORE = new Semaphore(CORE_POOL_SIZE);
