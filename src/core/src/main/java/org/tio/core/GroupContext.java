@@ -161,3 +161,33 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 
 	/**
 	 * Get Aiohandler Object
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public abstract AioListener getAioListener();
+
+	/**
+	 *
+	 * @return
+	 * @author tanyaowu
+	 */
+	public ByteOrder getByteOrder() {
+		return byteOrder;
+	}
+
+	/**
+	 * @return the clientTraceHandler
+	 */
+	public ChannelTraceHandler getClientTraceHandler() {
+		return clientTraceHandler;
+	}
+
+	/**
+	 * @return the groupExecutor
+	 */
+	public ThreadPoolExecutor getGroupExecutor() {
+		return groupExecutor;
+	}
+
+	/**
+	 * @return the groupListener
