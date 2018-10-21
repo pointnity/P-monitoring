@@ -15,3 +15,7 @@ public interface ChannelContextFilter {
 	 * @author tanyaowu
 	 *  
 	 *
+	 */
+	public boolean filter(ChannelContext channelContext);
+
+}
