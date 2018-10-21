@@ -118,3 +118,18 @@ public class CloseRunnable implements Runnable {
 				}
 
 				//You must cancel the task before emptying the queue
+				//				channelContext.getDecodeRunnable().setCanceled(true);
+				channelContext.getHandlerRunnable().setCanceled(true);
+				//		channelContext.getHandlerRunnableHighPrior().setCanceled(true);
+				channelContext.getSendRunnable().setCanceled(true);
+				//		channelContext.getSendRunnableHighPrior().setCanceled(true);
+
+				channelContext.getDecodeRunnable().clearMsgQueue();
+				channelContext.getHandlerRunnable().clearMsgQueue();
+				//		channelContext.getHandlerRunnableHighPrior().clearMsgQueue();
+				channelContext.getSendRunnable().clearMsgQueue();
+				//		channelContext.getSendRunnableHighPrior().clearMsgQueue();
+
+				log.info("{}, {} Preparing to close the connection, isNeedRemove:{}, {}", channelContext.getGroupContext(), channelContext, isRemove, remark);
+
+				try {
