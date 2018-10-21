@@ -176,3 +176,11 @@ public class CloseRunnable implements Runnable {
 					}
 
 					try {
+						aioListener.onAfterClose(channelContext, throwable, remark, isRemove);
+						channelContext.setClosed(true);
+					} catch (Throwable e) {
+						log.error(e.toString(), e);
+					}					
+				} catch (Throwable e) {
+					log.error(e.toString(), e);
+				} finally {
