@@ -184,3 +184,9 @@ public class CloseRunnable implements Runnable {
 				} catch (Throwable e) {
 					log.error(e.toString(), e);
 				} finally {
+					if (!isRemove && channelContext.isClosed() && isClientChannelContext) //Does not delete and is not connected, it is added to the reconnection queue
+					{
+						ClientChannelContext clientChannelContext = (ClientChannelContext) channelContext;
+						ReconnConf.put(clientChannelContext);
+					}
+				}
