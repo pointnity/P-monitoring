@@ -112,3 +112,17 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	private boolean isEncodeCareWithChannelContext = true;
 
 	protected String id;
+
+	/**
+	 * Decode the exception how many times you pull the IP black
+	 */
+	protected int maxDecodeErrorCountForIp = 10;
+
+	protected String name = "未命名GroupContext";
+
+	private boolean isStopped = false;
+
+	
+
+	public GroupContext() {
+		this(null, null);
