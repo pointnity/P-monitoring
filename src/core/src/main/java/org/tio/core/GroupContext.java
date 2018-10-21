@@ -326,3 +326,39 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	/**
+	 * @param packetHandlerMode the packetHandlerMode to set
+	 */
+	public void setPacketHandlerMode(PacketHandlerMode packetHandlerMode) {
+		this.packetHandlerMode = packetHandlerMode;
+	}
+
+	/**
+	 * @param readBufferSize the readBufferSize to set
+	 */
+	public void setReadBufferSize(int readBufferSize) {
+		this.readBufferSize = readBufferSize;
+	}
+
+	/**
+	 * @param isShortConnection the isShortConnection to set
+	 */
+	public void setShortConnection(boolean isShortConnection) {
+		this.isShortConnection = isShortConnection;
+	}
+
+	/**
+	 * @param isStop the isStop to set
+	 */
+	public void setStopped(boolean isStopped) {
+		this.isStopped = isStopped;
+	}
+
+	/**
+	 * @param tioUuid the tioUuid to set
+	 */
+	public void setTioUuid(TioUuid tioUuid) {
+		this.tioUuid = tioUuid;
+	}
+}
