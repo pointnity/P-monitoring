@@ -153,3 +153,11 @@ public abstract class GroupContext extends MapWithLockPropSupport {
 	}
 
 	/**
+	 * Get Aiohandler Object
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public abstract AioHandler getAioHandler();
+
+	/**
+	 * Get Aiohandler Object
