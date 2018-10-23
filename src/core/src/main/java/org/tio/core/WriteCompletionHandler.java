@@ -181,3 +181,22 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 //					for (GuavaCache guavaCache : caches) {
 //						IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
 //						ipStat.getSentPackets().addAndGet(packetCount);
+//					}
+					
+					for (Long v : list) {
+						IpStat ipStat = (IpStat) channelContext.getGroupContext().ipStats.get(v, channelContext.getClientNode().getIp());
+						ipStat.getSentPackets().addAndGet(packetCount);
+					}
+				}
+
+				for (Object obj : ps) {
+					handleOne(result, throwable, obj, isSentSuccess);
+				}
+			}
+
+			if (!isSentSuccess) {
+				Aio.close(channelContext, throwable, "Write Data back:" + result);
+			}
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		} finally {
