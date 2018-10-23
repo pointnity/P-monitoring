@@ -12,3 +12,6 @@ public enum PacketHandlerMode {
 	SINGLE_THREAD(1),
 
 	/**
+	 * Throw the packet in a queue and let the thread pool handle it.
+	 */
+	QUEUE(2);
