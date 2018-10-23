@@ -214,3 +214,13 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 	 */
 	public void handleOne(Integer result, Throwable throwable, Object obj, Boolean isSentSuccess) {
 		Packet packet = null;
+		PacketWithMeta packetWithMeta = null;
+
+		boolean isPacket = obj instanceof Packet;
+		if (isPacket) {
+			packet = (Packet) obj;
+		} else {
+			packetWithMeta = (PacketWithMeta) obj;
+			packetWithMeta.setIsSentSuccess(isSentSuccess);
+			packet = packetWithMeta.getPacket();
+		}
