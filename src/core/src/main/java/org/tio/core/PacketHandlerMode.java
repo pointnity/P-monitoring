@@ -26,3 +26,9 @@ public enum PacketHandlerMode {
 			return null;
 		}
 	}
+
+	private final int value;
+
+	private PacketHandlerMode(int value) {
+		this.value = value;
+	}
