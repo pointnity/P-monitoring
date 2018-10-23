@@ -81,3 +81,6 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 			//			decodeRunnable.addMsg(newByteBuffer);
 			//			groupContext.getDecodeExecutor().execute(decodeRunnable);
 		} else if (result == 0) {
+			log.error("{}The length of the read data is0", channelContext);
+		} else if (result < 0) {
+			if (result == -1) {
