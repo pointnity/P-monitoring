@@ -17,3 +17,17 @@ import org.tio.core.stat.IpStat;
 import org.tio.utils.SystemTimer;
 
 /**
+*
+ * @author tanyaowu
+ *
+ */
+public class WriteCompletionHandler implements CompletionHandler<Integer, WriteCompletionVo> {
+
+	public static class WriteCompletionVo {
+		private ByteBuffer byteBuffer = null;
+
+		private Object obj = null;
+
+		/**
+		 * @param byteBuffer
+		 * @param obj
