@@ -224,3 +224,14 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 			packetWithMeta.setIsSentSuccess(isSentSuccess);
 			packet = packetWithMeta.getPacket();
 		}
+
+		try {
+			channelContext.traceClient(ChannelAction.AFTER_SEND, packet, null);
+			channelContext.processAfterSent(obj, isSentSuccess);
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		}
+
+	}
+
+}
