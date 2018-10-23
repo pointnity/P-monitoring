@@ -84,3 +84,6 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 			log.error("{}The length of the read data is0", channelContext);
 		} else if (result < 0) {
 			if (result == -1) {
+				Aio.close(channelContext, null, "The other side closed the connection");
+				return;
+			} else {
