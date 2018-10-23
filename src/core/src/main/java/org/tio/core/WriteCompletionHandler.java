@@ -200,3 +200,17 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 		} catch (Throwable e) {
 			log.error(e.toString(), e);
 		} finally {
+
+		}
+	}
+
+	/**
+	 *
+	 * @param result
+	 * @param throwable
+	 * @param obj PacketWithMeta or Packet
+	 * @param isSentSuccess
+	 * @author tanyaowu
+	 */
+	public void handleOne(Integer result, Throwable throwable, Object obj, Boolean isSentSuccess) {
+		Packet packet = null;
