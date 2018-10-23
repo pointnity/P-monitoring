@@ -124,3 +124,33 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 		ChannelStat channelStat = channelContext.getStat();
 		//		AioListener aioListener = groupContext.getAioListener();
 		boolean isSentSuccess = result > 0;
+
+		
+//		GuavaCache[] caches = channelContext.getGroupContext().ips.getCaches();
+		
+		List<Long> list = groupContext.ipStats.durationList;
+		
+		
+		
+		if (isSentSuccess) {
+			groupStat.getSentBytes().addAndGet(result);
+			channelStat.getSentBytes().addAndGet(result);
+//			channelContext.getIpStat().getSentBytes().addAndGet(result);
+			
+//			for (GuavaCache guavaCache : caches) {
+//				IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
+//				ipStat.getSentBytes().addAndGet(result);
+//			}
+			for (Long v : list) {
+				IpStat ipStat = (IpStat) channelContext.getGroupContext().ipStats.get(v, channelContext.getClientNode().getIp());
+				ipStat.getSentBytes().addAndGet(result);
+			}
+			
+		}
+
+		int packetCount = 0;
+		try {
+			boolean isPacket = attachment instanceof Packet;
+			boolean isPacketWithMeta = !isPacket && attachment instanceof PacketWithMeta;
+
+			if (isPacket || isPacketWithMeta) {
