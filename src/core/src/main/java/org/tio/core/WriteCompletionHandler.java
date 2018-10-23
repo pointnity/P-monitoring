@@ -154,3 +154,30 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 			boolean isPacketWithMeta = !isPacket && attachment instanceof PacketWithMeta;
 
 			if (isPacket || isPacketWithMeta) {
+				if (isSentSuccess) {
+					groupStat.getSentPacket().incrementAndGet();
+					channelStat.getSentPackets().incrementAndGet();
+//					channelContext.getIpStat().getSentPackets().incrementAndGet();
+
+//					for (GuavaCache guavaCache : caches) {
+//						IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
+//						ipStat.getSentPackets().incrementAndGet();
+//					}
+					
+					for (Long v : list) {
+						IpStat ipStat = (IpStat) channelContext.getGroupContext().ipStats.get(v, channelContext.getClientNode().getIp());
+						ipStat.getSentPackets().incrementAndGet();
+					}
+				}
+				handleOne(result, throwable, attachment, isSentSuccess);
+			} else {
+				List<?> ps = (List<?>) attachment;
+				if (isSentSuccess) {
+					packetCount = ps.size();
+					groupStat.getSentPacket().addAndGet(packetCount);
+					channelStat.getSentPackets().addAndGet(packetCount);
+//					channelContext.getIpStat().getSentPackets().addAndGet(packetCount);
+					
+//					for (GuavaCache guavaCache : caches) {
+//						IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
+//						ipStat.getSentPackets().addAndGet(packetCount);
