@@ -65,3 +65,13 @@ public class Node implements Comparable<Node> {
 
 	public void setPort(int port) {
 		this.port = port;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(ip).append(":").append(port);
+		return builder.toString();
+	}
+
+}
