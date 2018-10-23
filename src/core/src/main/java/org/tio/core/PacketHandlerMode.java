@@ -15,3 +15,14 @@ public enum PacketHandlerMode {
 	 * Throw the packet in a queue and let the thread pool handle it.
 	 */
 	QUEUE(2);
+
+	public static PacketHandlerMode forNumber(int value) {
+		switch (value) {
+		case 1:
+			return SINGLE_THREAD;
+		case 2:
+			return QUEUE;
+		default:
+			return null;
+		}
+	}
