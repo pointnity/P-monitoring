@@ -30,3 +30,11 @@ public enum PacketSendMode {
 			return GROUP_BLOCK;
 		default:
 			return null;
+		}
+	}
+
+	private final int value;
+
+	private PacketSendMode(int value) {
+		this.value = value;
+	}
