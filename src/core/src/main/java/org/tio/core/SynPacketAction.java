@@ -23,3 +23,16 @@ public enum SynPacketAction {
 
 	public static SynPacketAction forNumber(int value) {
 		switch (value) {
+		case 1:
+			return BEFORE_WAIT;
+		case 2:
+			return AFTER__WAIT;
+		case 3:
+			return BEFORE_DOWN;
+		default:
+			return null;
+		}
+	}
+
+	private final int value;
+
