@@ -44,3 +44,20 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 		 */
 		public ByteBuffer getByteBuffer() {
 			return byteBuffer;
+		}
+
+		/**
+		 * @return the obj
+		 */
+		public Object getObj() {
+			return obj;
+		}
+
+		/**
+		 * @param byteBuffer the byteBuffer to set
+		 */
+		public void setByteBuffer(ByteBuffer byteBuffer) {
+			this.byteBuffer = byteBuffer;
+		}
+
+		/**
