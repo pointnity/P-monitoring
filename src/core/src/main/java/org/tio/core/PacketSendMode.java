@@ -14,3 +14,8 @@ public enum PacketSendMode {
 	 * A single message blocked send, the direct send succeeds, only then retrace
 	 */
 	SINGLE_BLOCK(2),
+
+	/**
+	 *A group of messages blocked send, sent directly to the successful, only to retrace
+	 */
+	GROUP_BLOCK(3);
