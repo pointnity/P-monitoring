@@ -79,3 +79,26 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 	}
 
 	@Override
+	public void completed(Integer result, WriteCompletionVo writeCompletionVo) {
+		//		Object attachment = writeCompletionVo.getObj();
+		ByteBuffer byteBuffer = writeCompletionVo.getByteBuffer();
+		if (byteBuffer.hasRemaining()) {
+			//			int iv = byteBuffer.capacity() - byteBuffer.position();
+			log.info("{} {}/{} has sent", channelContext, byteBuffer.position(), byteBuffer.capacity());
+			AsynchronousSocketChannel asynchronousSocketChannel = channelContext.getAsynchronousSocketChannel();
+			asynchronousSocketChannel.write(byteBuffer, writeCompletionVo, this);
+			channelContext.getStat().setLatestTimeOfSentByte(SystemTimer.currentTimeMillis());
+		} else {
+			channelContext.getStat().setLatestTimeOfSentPacket(SystemTimer.currentTimeMillis());
+			handle(result, null, writeCompletionVo);
+		}
+
+	}
+
+	@Override
+	public void failed(Throwable throwable, WriteCompletionVo writeCompletionVo) {
+		//		Object attachment = writeCompletionVo.getObj();
+		handle(0, throwable, writeCompletionVo);
+	}
+
+	/**
