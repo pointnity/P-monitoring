@@ -112,3 +112,11 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 	}
 
 	/**
+	 *
+	 * @return
+	 * @author tanyaowu
+	 */
+	public ByteBuffer getReadByteBuffer() {
+		return readByteBuffer;
+	}
+}
