@@ -68,3 +68,16 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 			
 
 			if (channelContext.isTraceClient()) {
+				Map<String, Object> map = new HashMap<>(10);
+				map.put("p_r_buf_len", result);
+				channelContext.traceClient(ChannelAction.RECEIVED_BUF, null, map);
+			}
+
+			//			ByteBuffer newByteBuffer = ByteBufferUtils.copy(readByteBuffer, 0, readByteBuffer.position());
+			DecodeRunnable decodeRunnable = channelContext.getDecodeRunnable();
+			readByteBuffer.flip();
+			decodeRunnable.setNewByteBuffer(readByteBuffer);
+			decodeRunnable.run();
+			//			decodeRunnable.addMsg(newByteBuffer);
+			//			groupContext.getDecodeExecutor().execute(decodeRunnable);
+		} else if (result == 0) {
