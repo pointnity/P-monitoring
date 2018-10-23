@@ -54,3 +54,17 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 			
 			
 //			GuavaCache[] caches = groupContext.ips.getCaches();
+//			for (GuavaCache guavaCache : caches) {
+//				IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
+//				ipStat.getReceivedBytes().addAndGet(result);
+//				ipStat.getReceivedTcps().incrementAndGet();
+//			}
+			List<Long> list = groupContext.ipStats.durationList;
+			for (Long v : list) {
+				IpStat ipStat = (IpStat) groupContext.ipStats.get(v, channelContext.getClientNode().getIp());
+				ipStat.getReceivedBytes().addAndGet(result);
+				ipStat.getReceivedTcps().incrementAndGet();
+			}
+			
+
+			if (channelContext.isTraceClient()) {
