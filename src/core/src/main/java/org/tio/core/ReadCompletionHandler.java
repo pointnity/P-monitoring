@@ -87,3 +87,15 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 				Aio.close(channelContext, null, "The other side closed the connection");
 				return;
 			} else {
+				Aio.close(channelContext, null, "return when reading data" + result);
+				return;
+			}
+		}
+
+		if (AioUtils.checkBeforeIO(channelContext)) {
+			AsynchronousSocketChannel asynchronousSocketChannel = channelContext.getAsynchronousSocketChannel();
+			readByteBuffer.position(0);
+			readByteBuffer.limit(readByteBuffer.capacity());
+			asynchronousSocketChannel.read(readByteBuffer, readByteBuffer, this);
+		}
+	}
