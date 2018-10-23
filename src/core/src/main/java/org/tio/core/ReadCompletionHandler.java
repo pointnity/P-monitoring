@@ -31,3 +31,9 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 	 * @param channelContext
 	 * @author tanyaowu
 	 */
+	public ReadCompletionHandler(ChannelContext channelContext) {
+		this.channelContext = channelContext;
+		this.readByteBuffer = ByteBuffer.allocate(channelContext.getGroupContext().getReadBufferSize());
+	}
+
+	@Override
