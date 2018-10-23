@@ -19,3 +19,14 @@ public enum PacketSendMode {
 	 *A group of messages blocked send, sent directly to the successful, only to retrace
 	 */
 	GROUP_BLOCK(3);
+
+	public static PacketSendMode forNumber(int value) {
+		switch (value) {
+		case 1:
+			return QUEUE;
+		case 2:
+			return SINGLE_BLOCK;
+		case 3:
+			return GROUP_BLOCK;
+		default:
+			return null;
