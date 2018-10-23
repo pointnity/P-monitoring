@@ -31,3 +31,16 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 		/**
 		 * @param byteBuffer
 		 * @param obj
+		 * @author tanyaowu
+		 */
+		public WriteCompletionVo(ByteBuffer byteBuffer, Object obj) {
+			super();
+			this.byteBuffer = byteBuffer;
+			this.obj = obj;
+		}
+
+		/**
+		 * @return the byteBuffer
+		 */
+		public ByteBuffer getByteBuffer() {
+			return byteBuffer;
