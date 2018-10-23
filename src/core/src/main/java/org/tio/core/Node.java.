@@ -1,3 +1,17 @@
 package org.tio.core;
 
 import java.util.Objects;
+
+import org.apache.commons.lang3.StringUtils;
+
+/**
+ * 
+ * @author tanyaowu 
+ *  
+ */
+public class Node implements Comparable<Node> {
+	private String ip;
+	private int port;
+
+	public Node(String ip, int port) {
+		super();
