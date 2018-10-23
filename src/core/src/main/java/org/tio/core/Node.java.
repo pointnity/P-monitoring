@@ -53,3 +53,15 @@ public class Node implements Comparable<Node> {
 	public int getPort() {
 		return port;
 	}
+
+	@Override
+	public int hashCode() {
+		return (ip + ":" + port).hashCode();
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
