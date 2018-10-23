@@ -36,3 +36,14 @@ public enum SynPacketAction {
 
 	private final int value;
 
+	private SynPacketAction(int value) {
+		this.value = value;
+	}
+
+	/**
+	 * @return the value
+	 */
+	public int getValue() {
+		return value;
+	}
+}
