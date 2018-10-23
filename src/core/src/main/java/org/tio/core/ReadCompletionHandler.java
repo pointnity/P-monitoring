@@ -106,3 +106,9 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 	 * @param byteBuffer
 	 * @author tanyaowu
 	 */
+	@Override
+	public void failed(Throwable exc, ByteBuffer byteBuffer) {
+		Aio.close(channelContext, exc, "Exception occurred while reading data");
+	}
+
+	/**
