@@ -99,3 +99,10 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 			asynchronousSocketChannel.read(readByteBuffer, readByteBuffer, this);
 		}
 	}
+
+	/**
+	 *
+	 * @param exc
+	 * @param byteBuffer
+	 * @author tanyaowu
+	 */
