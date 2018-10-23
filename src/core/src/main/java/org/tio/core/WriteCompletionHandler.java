@@ -61,3 +61,21 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 		}
 
 		/**
+		 * @param obj the obj to set
+		 */
+		public void setObj(Object obj) {
+			this.obj = obj;
+		}
+	}
+
+	private static Logger log = LoggerFactory.getLogger(WriteCompletionHandler.class);
+
+	private ChannelContext channelContext = null;
+
+	private java.util.concurrent.Semaphore writeSemaphore = new Semaphore(1);
+
+	public WriteCompletionHandler(ChannelContext channelContext) {
+		this.channelContext = channelContext;
+	}
+
+	@Override
