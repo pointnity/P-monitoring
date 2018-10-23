@@ -37,3 +37,20 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 	}
 
 	@Override
+	public void completed(Integer result, ByteBuffer byteBuffer) {
+		//		GroupContext groupContext = channelContext.getGroupContext();
+		if (result > 0) {
+			channelContext.getStat().setLatestTimeOfReceivedByte(SystemTimer.currentTimeMillis());
+			GroupContext groupContext = channelContext.getGroupContext();
+			
+			groupContext.getGroupStat().getReceivedBytes().addAndGet(result);
+			channelContext.getStat().getReceivedBytes().addAndGet(result);
+//			channelContext.getIpStat().getReceivedBytes().addAndGet(result);
+			
+			
+			groupContext.getGroupStat().getReceivedTcps().incrementAndGet();
+			channelContext.getStat().getReceivedTcps().incrementAndGet();
+//			channelContext.getIpStat().getReceivedTcps().incrementAndGet();
+			
+			
+//			GuavaCache[] caches = groupContext.ips.getCaches();
