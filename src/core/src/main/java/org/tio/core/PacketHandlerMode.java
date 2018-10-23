@@ -32,3 +32,11 @@ public enum PacketHandlerMode {
 	private PacketHandlerMode(int value) {
 		this.value = value;
 	}
+
+	/**
+	 * @return the value
+	 */
+	public int getValue() {
+		return value;
+	}
+}
