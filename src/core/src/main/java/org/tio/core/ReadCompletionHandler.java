@@ -22,3 +22,12 @@ import org.tio.utils.SystemTimer;
 public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuffer> {
 	private static Logger log = LoggerFactory.getLogger(ReadCompletionHandler.class);
 	private ChannelContext channelContext = null;
+	private ByteBuffer readByteBuffer;
+
+	//	private ByteBuffer byteBuffer = ByteBuffer.allocate(ChannelContext.READ_BUFFER_SIZE);
+
+	/**
+	 *
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
