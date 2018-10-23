@@ -102,3 +102,25 @@ public class WriteCompletionHandler implements CompletionHandler<Integer, WriteC
 	}
 
 	/**
+	 * @return the writeSemaphore
+	 */
+	public java.util.concurrent.Semaphore getWriteSemaphore() {
+		return writeSemaphore;
+	}
+
+	/**
+	 *
+	 * @param result
+	 * @param throwable
+	 * @param attachment Packet or PacketWithMeta or List<PacketWithMeta> or List<Packet>
+	 * @author tanyaowu
+	 */
+	public void handle(Integer result, Throwable throwable, WriteCompletionVo writeCompletionVo) {
+		this.writeSemaphore.release();
+		Object attachment = writeCompletionVo.getObj();
+
+		GroupContext groupContext = channelContext.getGroupContext();
+		GroupStat groupStat = groupContext.getGroupStat();
+		ChannelStat channelStat = channelContext.getStat();
+		//		AioListener aioListener = groupContext.getAioListener();
+		boolean isSentSuccess = result > 0;
