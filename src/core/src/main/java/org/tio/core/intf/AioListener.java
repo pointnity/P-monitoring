@@ -17,3 +17,13 @@ Public  interface  AioListener  {
 	 * @param isRemove Is it deleted?
 	 * @throws Exception
 	 * @author: tanyaowu
+	 */
+	Void  onAfterClose ( ChannelContext  channelContext ,  Throwable  throwable ,  String  remark ,  boolean  isRemove )  throws  Exception ;
+
+	/**
+	 * This method is triggered after the chain is built. Note: Building the chain is not necessarily successful. You need to pay attention to the parameter isConnected.
+	 * @param channelContext
+	 * @param isConnected Whether the connection is successful, true: indicates that the connection is successful, false: indicates that the connection failed.
+	 * @param isReconnect Whether it is reconnect, true: indicates that this is reconnect, false: indicates that this is the first connection
+	 * @throws Exception
+	 * @author: tanyaowu
