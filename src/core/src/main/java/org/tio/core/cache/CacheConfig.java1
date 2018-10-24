@@ -47,3 +47,12 @@ public enum CacheConfig {
 	}
 
 	public String getCacheName() {
+		return cacheName;
+	}
+
+	public CacheType getCacheType() {
+		return cacheType;
+	}
+
+	public Long getTimeToIdleSeconds() {
+		return timeToIdleSeconds;
