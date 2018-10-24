@@ -8,3 +8,9 @@ import org.tio.core.exception.AioDecodeException;
 
 /**
  * 
+ * @author tanyaowu 
+ *  
+ */
+public interface AioHandler {
+
+	/**
