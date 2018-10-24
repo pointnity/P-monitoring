@@ -8,3 +8,13 @@ import org.tio.core.stat.IpStat;
 
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
+
+/**
+ * @author tanyaowu 
+ *  
+ */
+@SuppressWarnings("rawtypes")
+public class IpStatRemovalListener implements RemovalListener {
+	private static Logger log = LoggerFactory.getLogger(IpStatRemovalListener.class);
+
+	private IpStatListener ipStatListener;
