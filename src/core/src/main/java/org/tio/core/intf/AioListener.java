@@ -27,3 +27,14 @@ Public  interface  AioListener  {
 	 * @param isReconnect Whether it is reconnect, true: indicates that this is reconnect, false: indicates that this is the first connection
 	 * @throws Exception
 	 * @author: tanyaowu
+	 */
+	Void  onAfterConnected ( ChannelContext  channelContext ,  boolean  isConnected ,  boolean  isReconnect )  throws  Exception ;
+
+	/**
+	 * This method is triggered after successful decoding
+	 * @param channelContext
+	 * @param packet
+	 * @param packetSize
+	 * @throws Exception
+	 * @author: tanyaowu
+	 */
