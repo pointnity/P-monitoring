@@ -28,3 +28,12 @@ public class LengthOverflowException extends java.lang.Throwable {
 	 * @param enableSuppression
 	 * @param writableStackTrace
 	 *
+	 * @author: tanyaowu
+	 * 
+	 */
+	public LengthOverflowException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+		super(message, cause, enableSuppression, writableStackTrace);
+
+	}
+
+	/**
