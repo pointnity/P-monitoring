@@ -37,3 +37,10 @@ public interface AioHandler {
 	/**
 	 * Processing message Packets
 	 * @param packet
+	 * @param channelContext
+	 * @throws Exception
+	 * @author: tanyaowu
+	 */
+	void handler(Packet packet, ChannelContext channelContext) throws Exception;
+
+}
