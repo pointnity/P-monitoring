@@ -17,3 +17,11 @@ public interface AioHandler {
 	 * Packet objects that are decoded into business according to Bytebuffer.
 	 * If the received data is incomplete, causing the decoding to fail, return NULL, and the framework layer will automatically renew the previous received data when the next message comes
 	 * @param buffer
+	 * @param channelContext
+	 * @return
+	 * @throws AioDecodeException
+	 * @author: tanyaowu
+	 */
+	Packet decode(ByteBuffer buffer, ChannelContext channelContext) throws AioDecodeException;
+
+	/**
