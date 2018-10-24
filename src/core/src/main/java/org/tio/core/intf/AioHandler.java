@@ -25,3 +25,8 @@ public interface AioHandler {
 	Packet decode(ByteBuffer buffer, ChannelContext channelContext) throws AioDecodeException;
 
 	/**
+	 * Coding
+	 * @param packet
+	 * @param groupContext
+	 * @param channelContext
+	 * @return
