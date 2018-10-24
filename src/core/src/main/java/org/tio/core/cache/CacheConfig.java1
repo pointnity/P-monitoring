@@ -56,3 +56,9 @@ public enum CacheConfig {
 
 	public Long getTimeToIdleSeconds() {
 		return timeToIdleSeconds;
+	}
+
+	public Long getTimeToLiveSeconds() {
+		return timeToLiveSeconds;
+	}
+}
