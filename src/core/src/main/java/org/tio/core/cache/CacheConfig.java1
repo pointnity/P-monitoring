@@ -14,3 +14,18 @@ public enum CacheConfig {
 	 * key: ip
 	 * value: IpStat
 	 */
+	IP_STAT(CacheType.GUAVA, (Long) null, Time.DAY_1);
+	
+
+	public static CacheConfig from(String cacheName) {
+		CacheConfig[] values = CacheConfig.values();
+		for (CacheConfig v : values) {
+			if (Objects.equals(v.cacheName, cacheName)) {
+				return v;
+			}
+		}
+		return null;
+	}
+
+	CacheType cacheType;
+	String cacheName;
