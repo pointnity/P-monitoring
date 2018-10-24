@@ -58,3 +58,7 @@ Public  interface  AioListener  {
 	 * @param throwable the throwable may be empty
 	 * @param remark the remark may be empty
 	 * @param isRemove
+	 * @author tanyaowu
+	 */
+	Void  onBeforeClose ( ChannelContext  channelContext ,  Throwable  throwable ,  String  remark ,  boolean  isRemove );
+}
