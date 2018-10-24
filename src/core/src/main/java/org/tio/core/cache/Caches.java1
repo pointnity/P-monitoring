@@ -25,3 +25,11 @@ public class Caches {
 		//			ret = RedisCache.getCache(cacheName);
 		//		} else if (cacheType == CacheType.GUAVA_REDIS) {
 		//			ret = GuavaRedisCache.getCache(cacheName);
+		//		} else if (cacheType == CacheType.GUAVA) {
+		ret = GuavaCache.getCache(cacheName);
+		//		}
+		if (ret == null) {
+			log.error("cacheName[{}]Not yet registered.", cacheName);
+		}
+		return ret;
+	}
