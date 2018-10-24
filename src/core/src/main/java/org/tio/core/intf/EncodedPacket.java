@@ -21,3 +21,8 @@ Public  class  EncodedPacket  extends  Packet  {
 	}
 
 	/**
+	 * @return the bytes
+	 */
+	Public  byte []  getBytes ()  {
+		Return  bytes ;
+	}
