@@ -1,0 +1,7 @@
+package org.tio.core.cache;
+
+/**
+ * @author tanyaowu
+ *  
+ */
+public enum CacheType {
