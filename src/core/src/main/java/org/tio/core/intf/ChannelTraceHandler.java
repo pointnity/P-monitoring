@@ -18,3 +18,5 @@ Public  interface  ChannelTraceHandler  {
 	 * @param extmsg
 	 * @author tanyaowu
 	 */
+	Public  void  traceChannel ( ChannelContext  channelContext ,  ChannelAction  channelAction ,  Packet  packet ,  Map < String ,  Object >  extmsg );
+}
