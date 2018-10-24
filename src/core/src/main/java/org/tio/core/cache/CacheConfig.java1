@@ -34,3 +34,16 @@ public enum CacheConfig {
 
 	/**
 	 * 
+	 * @param cacheType
+	 * @param timeToLiveSeconds
+	 * @param timeToIdleSeconds
+	 * @author: tanyaowu
+	 */
+	private CacheConfig(CacheType cacheType, Long timeToLiveSeconds, Long timeToIdleSeconds) {
+		this.cacheType = cacheType;
+		this.timeToLiveSeconds = timeToLiveSeconds;
+		this.timeToIdleSeconds = timeToIdleSeconds;
+		this.cacheName = this.name();//.toString();
+	}
+
+	public String getCacheName() {
