@@ -9,3 +9,9 @@ import org.tio.utils.cache.guava.GuavaCache;
  * @author tanyaowu
  *  
  */
+public class Caches {
+	private static Logger log = LoggerFactory.getLogger(Caches.class);
+
+	static {
+		init();
+	}
