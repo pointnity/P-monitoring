@@ -38,3 +38,11 @@ Public  interface  AioListener  {
 	 * @throws Exception
 	 * @author: tanyaowu
 	 */
+	Void  onAfterReceived ( ChannelContext  channelContext ,  Packet  packet ,  int  packetSize )  throws  Exception ;
+
+	/**
+	 * This method is triggered after the message packet is sent.
+	 * @param channelContext
+	 * @param packet
+	 * @param isSentSuccess true: sent successfully, false: failed to send
+	 * @throws Exception
