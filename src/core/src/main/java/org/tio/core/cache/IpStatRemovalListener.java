@@ -46,3 +46,7 @@ public class IpStatRemovalListener implements RemovalListener {
 		if (ipStatListener != null) {
 			ipStatListener.onExpired(groupContext, ipStat);
 		}
+
+		//		log.info("IP data Statistics[{}]\r\n{}", ip, Json.toFormatedJson(ipStat));
+	}
+}
