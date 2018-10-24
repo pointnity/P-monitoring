@@ -64,3 +64,10 @@ public class AioDecodeException extends java.lang.Throwable {
 	 *
 	 * @author tanyaowu
 	 *
+	 */
+	public AioDecodeException(Throwable cause) {
+		super(cause);
+
+	}
+
+}
