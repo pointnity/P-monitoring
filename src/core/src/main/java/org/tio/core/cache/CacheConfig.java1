@@ -6,3 +6,11 @@ import org.tio.utils.time.Time;
 
 /**
  * @author tanyaowu
+
+ */
+public enum CacheConfig {
+	//Level Two cache
+	/**
+	 * key: ip
+	 * value: IpStat
+	 */
