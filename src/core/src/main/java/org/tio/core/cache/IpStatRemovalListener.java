@@ -18,3 +18,16 @@ public class IpStatRemovalListener implements RemovalListener {
 	private static Logger log = LoggerFactory.getLogger(IpStatRemovalListener.class);
 
 	private IpStatListener ipStatListener;
+
+	private GroupContext groupContext = null;
+
+	/**
+	 * 
+	 * @author: tanyaowu
+	 */
+	public IpStatRemovalListener(GroupContext groupContext, IpStatListener ipStatListener) {
+		this.groupContext = groupContext;
+		this.ipStatListener = ipStatListener;
+	}
+
+	/**
