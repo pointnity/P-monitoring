@@ -14,3 +14,10 @@ Public  class  EncodedPacket  extends  Packet  {
 	 *
 	 *
 	 * @author tanyaowu
+	 *
+	 */
+	Public  EncodedPacket ( byte []  bytes )  {
+		the this . bytes  =  bytes ;
+	}
+
+	/**
