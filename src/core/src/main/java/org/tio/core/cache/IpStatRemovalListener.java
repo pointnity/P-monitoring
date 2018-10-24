@@ -37,3 +37,12 @@ public class IpStatRemovalListener implements RemovalListener {
 	public static void main(String[] args) {
 
 	}
+
+	@Override
+	public void onRemoval(RemovalNotification notification) {
+		String ip = (String) notification.getKey();
+		IpStat ipStat = (IpStat) notification.getValue();
+
+		if (ipStatListener != null) {
+			ipStatListener.onExpired(groupContext, ipStat);
+		}
