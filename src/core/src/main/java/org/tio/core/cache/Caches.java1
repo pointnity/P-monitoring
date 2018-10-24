@@ -15,3 +15,13 @@ public class Caches {
 	static {
 		init();
 	}
+
+	public static ICache getCache(CacheConfig cacheConfig) {
+		String cacheName = cacheConfig.getCacheName();
+		//		CacheType cacheType = cacheConfig.getCacheType();
+
+		ICache ret = null;
+		//		if (cacheType == CacheType.REDIS) {
+		//			ret = RedisCache.getCache(cacheName);
+		//		} else if (cacheType == CacheType.GUAVA_REDIS) {
+		//			ret = GuavaRedisCache.getCache(cacheName);
