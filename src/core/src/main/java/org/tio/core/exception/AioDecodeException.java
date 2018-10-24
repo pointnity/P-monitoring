@@ -23,3 +23,15 @@ public class AioDecodeException extends java.lang.Throwable {
 	}
 
 	/**
+	 * @param message
+	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public AioDecodeException(String message) {
+		super(message);
+
+	}
+
+	/**
+	 * @param message
