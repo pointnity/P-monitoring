@@ -47,3 +47,20 @@ public class AioDecodeException extends java.lang.Throwable {
 
 	/**
 	 * @param message
+	 * @param cause
+	 * @param enableSuppression
+	 * @param writableStackTrace
+	 *
+	 * @author tanyaowu
+	 *
+	 */
+	public AioDecodeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+		super(message, cause, enableSuppression, writableStackTrace);
+
+	}
+
+	/**
+	 * @param cause
+	 *
+	 * @author tanyaowu
+	 *
