@@ -14,3 +14,17 @@ public class LengthOverflowException extends java.lang.Throwable {
 	private static final long serialVersionUID = 5231789012657669073L;
 
 	/**
+	 * 
+	 *
+	 * @author: tanyaowu
+	 * 
+	 */
+	public LengthOverflowException() {
+	}
+
+	/**
+	 * @param message
+	 * @param cause
+	 * @param enableSuppression
+	 * @param writableStackTrace
+	 *
