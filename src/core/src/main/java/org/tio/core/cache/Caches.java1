@@ -47,3 +47,9 @@ public class Caches {
 			//			} else if (cacheType == CacheType.GUAVA_REDIS) {
 			//				GuavaRedisCache.register(RedisUtils.get(), cacheName, timeToLiveSeconds, timeToIdleSeconds);
 			//			} else if (cacheType == CacheType.GUAVA) {
+			GuavaCache.register(cacheName, timeToLiveSeconds, timeToIdleSeconds);
+			//			}
+		}
+
+	}
+
