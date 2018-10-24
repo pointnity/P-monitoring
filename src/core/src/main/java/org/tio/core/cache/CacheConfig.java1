@@ -29,3 +29,8 @@ public enum CacheConfig {
 
 	CacheType cacheType;
 	String cacheName;
+	Long timeToLiveSeconds; Units: Seconds
+	Long timeToIdleSeconds; Units: Seconds
+
+	/**
+	 * 
