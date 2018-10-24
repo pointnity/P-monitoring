@@ -43,3 +43,18 @@ public class LengthOverflowException extends java.lang.Throwable {
 	 * @author: tanyaowu
 	 * 
 	 */
+	public LengthOverflowException(String message, Throwable cause) {
+		super(message, cause);
+
+	}
+
+	/**
+	 * @param message
+	 *
+	 * @author: tanyaowu
+	 * 
+	 */
+	public LengthOverflowException(String message) {
+		super(message);
+
+	}
