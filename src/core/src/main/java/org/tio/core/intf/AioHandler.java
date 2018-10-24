@@ -35,3 +35,5 @@ public interface AioHandler {
 	ByteBuffer encode(Packet packet, GroupContext groupContext, ChannelContext channelContext);
 
 	/**
+	 * Processing message Packets
+	 * @param packet
