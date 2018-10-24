@@ -37,3 +37,9 @@ public class LengthOverflowException extends java.lang.Throwable {
 	}
 
 	/**
+	 * @param message
+	 * @param cause
+	 *
+	 * @author: tanyaowu
+	 * 
+	 */
