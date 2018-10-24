@@ -26,3 +26,12 @@ Public  class  EncodedPacket  extends  Packet  {
 	Public  byte []  getBytes ()  {
 		Return  bytes ;
 	}
+
+	/**
+	 * @param bytes the bytes to set
+	 */
+	Public  void  setBytes ( byte []  bytes )  {
+		the this . bytes  =  bytes ;
+	}
+
+}
