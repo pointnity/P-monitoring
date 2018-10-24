@@ -30,3 +30,8 @@ public interface AioHandler {
 	 * @param groupContext
 	 * @param channelContext
 	 * @return
+	 * @author: tanyaowu
+	 */
+	ByteBuffer encode(Packet packet, GroupContext groupContext, ChannelContext channelContext);
+
+	/**
