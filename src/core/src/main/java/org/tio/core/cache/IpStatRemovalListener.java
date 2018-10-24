@@ -31,3 +31,9 @@ public class IpStatRemovalListener implements RemovalListener {
 	}
 
 	/**
+	 * @param args
+	 * @author: tanyaowu
+	 */
+	public static void main(String[] args) {
+
+	}
