@@ -52,3 +52,9 @@ Public  interface  AioListener  {
 	Void  onAfterSent ( ChannelContext  channelContext ,  Packet  packet ,  boolean  isSentSuccess )  throws  Exception ;
 
 	/**
+	 * This method is triggered before the connection is closed.
+	 *
+	 * @param channelContext the channelcontext
+	 * @param throwable the throwable may be empty
+	 * @param remark the remark may be empty
+	 * @param isRemove
