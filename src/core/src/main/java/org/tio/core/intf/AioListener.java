@@ -46,3 +46,9 @@ Public  interface  AioListener  {
 	 * @param packet
 	 * @param isSentSuccess true: sent successfully, false: failed to send
 	 * @throws Exception
+	 * @author tanyaowu
+	 *
+	 */
+	Void  onAfterSent ( ChannelContext  channelContext ,  Packet  packet ,  boolean  isSentSuccess )  throws  Exception ;
+
+	/**
