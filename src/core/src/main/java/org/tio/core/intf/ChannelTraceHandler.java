@@ -9,3 +9,7 @@ Import  org.tio.core.ChannelContext ;
  * @author tanyaowu
  *  
  */
+Public  interface  ChannelTraceHandler  {
+	/**
+	 *
+	 * @param channelContext
