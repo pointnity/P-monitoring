@@ -13,3 +13,8 @@ Public  interface  ChannelTraceHandler  {
 	/**
 	 *
 	 * @param channelContext
+	 * @param channelAction
+	 * @param packet
+	 * @param extmsg
+	 * @author tanyaowu
+	 */
