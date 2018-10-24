@@ -33,3 +33,17 @@ public class Caches {
 		}
 		return ret;
 	}
+
+	private static void init() {
+		CacheConfig[] values = CacheConfig.values();
+		for (CacheConfig cacheConfig : values) {
+			String cacheName = cacheConfig.getCacheName();
+			Long timeToLiveSeconds = cacheConfig.getTimeToLiveSeconds();
+			Long timeToIdleSeconds = cacheConfig.getTimeToIdleSeconds();
+			//			CacheType cacheType = cacheConfig.getCacheType();
+
+			//			if (cacheType == CacheType.REDIS) {
+			//				RedisCache.register(RedisUtils.get(), cacheName, timeToLiveSeconds, timeToIdleSeconds);
+			//			} else if (cacheType == CacheType.GUAVA_REDIS) {
+			//				GuavaRedisCache.register(RedisUtils.get(), cacheName, timeToLiveSeconds, timeToIdleSeconds);
+			//			} else if (cacheType == CacheType.GUAVA) {
