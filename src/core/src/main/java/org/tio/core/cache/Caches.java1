@@ -1,0 +1,11 @@
+package org.tio.core.cache;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.tio.utils.cache.ICache;
+import org.tio.utils.cache.guava.GuavaCache;
+
+/**
+ * @author tanyaowu
+ *  
+ */
