@@ -60,3 +60,11 @@ public class Caches {
 	public static void main(String[] args) {
 
 	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public Caches() {
+	}
+}
