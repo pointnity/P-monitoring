@@ -49,3 +49,13 @@ public class Packet implements java.io.Serializable {
 
 	/**
 	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @return the packetListener
+	 */
+	public PacketListener getPacketListener() {
+		return packetListener;
