@@ -49,3 +49,10 @@ public class PacketWithMeta {
 	}
 
 	/**
+	 * @param isSentSuccess the isSentSuccess to set
+	 */
+	public void setIsSentSuccess(Boolean isSentSuccess) {
+		this.isSentSuccess = isSentSuccess;
+	}
+
+}
