@@ -41,3 +41,11 @@ public class Packet implements java.io.Serializable {
 	private ByteBuffer preEncodedByteBuffer = null;
 
 	/**
+	 * @return the byteCount
+	 */
+	public int getByteCount() {
+		return byteCount;
+	}
+
+	/**
+	 * @return the id
