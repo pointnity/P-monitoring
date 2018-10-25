@@ -64,3 +64,10 @@ public class ChannelContextSetWithLock {
 	}
 
 	public int size() {
+		Lock lock = setWithLock.getLock().readLock();
+
+		try {
+			lock.lock();
+			Set<ChannelContext> m = setWithLock.getObj();
+			return m.size();
+		} catch (Throwable e) {
