@@ -100,3 +100,16 @@ public class Packet implements java.io.Serializable {
 		this.isBlockSend = isBlockSend;
 	}
 
+	/**
+	 * @param byteCount the byteCount to set
+	 */
+	public void setByteCount(int byteCount) {
+		this.byteCount = byteCount;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
