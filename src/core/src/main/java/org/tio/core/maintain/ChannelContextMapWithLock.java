@@ -41,3 +41,11 @@ public class ChannelContextMapWithLock {
 			lock.unlock();
 		}
 	}
+
+	public Packet remove(Integer synSeq) {
+		Lock lock = map.getLock().writeLock();
+		try {
+			lock.lock();
+			Map<Integer, Packet> m = map.getObj();
+			Packet packet = m.remove(synSeq);
+			return packet;
