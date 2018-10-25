@@ -146,3 +146,8 @@ public class Packet implements java.io.Serializable {
 		return isFromCluster;
 	}
 
+	public void setFromCluster(boolean isFromCluster) {
+		this.isFromCluster = isFromCluster;
+	}
+
+}
