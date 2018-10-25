@@ -49,3 +49,11 @@ public class ChannelContextMapWithLock {
 			Map<Integer, Packet> m = map.getObj();
 			Packet packet = m.remove(synSeq);
 			return packet;
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+}
