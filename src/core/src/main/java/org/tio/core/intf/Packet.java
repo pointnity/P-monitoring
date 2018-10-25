@@ -59,3 +59,14 @@ public class Packet implements java.io.Serializable {
 	 */
 	public PacketListener getPacketListener() {
 		return packetListener;
+	}
+
+	/**
+	 * @return the preEncodedByteBuffer
+	 */
+	public ByteBuffer getPreEncodedByteBuffer() {
+		return preEncodedByteBuffer;
+	}
+
+	/**
+	 * @return the respId
