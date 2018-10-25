@@ -138,3 +138,11 @@ public class Packet implements java.io.Serializable {
 	/**
 	 * @param synSeq the synSeq to set
 	 */
+	public void setSynSeq(Integer synSeq) {
+		this.synSeq = synSeq;
+	}
+
+	public boolean isFromCluster() {
+		return isFromCluster;
+	}
+
