@@ -10,3 +10,7 @@ public interface PacketListener {
 	/**
 	 *
 	 * @param channelContext
+	 * @param packet
+	 * @param isSentSuccess
+	 * @throws Exception
+	 * @author tanyaowu
