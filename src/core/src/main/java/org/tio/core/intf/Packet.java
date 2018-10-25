@@ -70,3 +70,13 @@ public class Packet implements java.io.Serializable {
 
 	/**
 	 * @return the respId
+	 */
+	public Long getRespId() {
+		return respId;
+	}
+
+	/**
+	 * @return the synSeq
+	 */
+	public Integer getSynSeq() {
+		return synSeq;
