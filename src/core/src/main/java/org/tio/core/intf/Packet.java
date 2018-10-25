@@ -32,3 +32,7 @@ public class Packet implements java.io.Serializable {
 
 	/**
 	 * Synchronous serial number required when sending synchronously
+	 */
+	private Integer synSeq = 0;
+
+	/**
