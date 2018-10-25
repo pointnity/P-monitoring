@@ -42,3 +42,10 @@ public class PacketWithMeta {
 	}
 
 	/**
+	 * @return the packet
+	 */
+	public Packet getPacket() {
+		return packet;
+	}
+
+	/**
