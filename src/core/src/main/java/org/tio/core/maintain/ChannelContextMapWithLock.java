@@ -18,3 +18,18 @@ public class ChannelContextMapWithLock {
 	/**
 	 * Gets the cacheMap.
 	 *
+	 * @return the cacheMap
+	 */
+	public MapWithLock<Integer, Packet> getMap() {
+		return map;
+	}
+
+	/**
+	 * Adds the.
+	 *
+	 * @param channelContext the channel context
+	 */
+	public void put(Integer synSeq, Packet packet) {
+		Lock lock = map.getLock().writeLock();
+		try {
+			lock.lock();
