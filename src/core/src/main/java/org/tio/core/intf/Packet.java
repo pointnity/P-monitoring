@@ -113,3 +113,19 @@ public class Packet implements java.io.Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	/**
+	 * @param packetListener the packetListener to set
+	 */
+	public void setPacketListener(PacketListener packetListener) {
+		this.packetListener = packetListener;
+	}
+
+	/**
+	 * @param preEncodedByteBuffer the preEncodedByteBuffer to set
+	 */
+	public void setPreEncodedByteBuffer(ByteBuffer preEncodedByteBuffer) {
+		this.preEncodedByteBuffer = preEncodedByteBuffer;
+	}
+
+	/**
