@@ -14,3 +14,12 @@ import org.tio.utils.lock.SetWithLock;
  *  
  */
 public class ChannelContextSetWithLock {
+
+	/** remoteAndChannelContext key: "ip:port" value: ChannelContext. */
+	private SetWithLock<ChannelContext> setWithLock = new SetWithLock<>(new HashSet<ChannelContext>());
+
+	public void add(ChannelContext channelContext) {
+		@SuppressWarnings("unused")
+		GroupContext groupContext = channelContext.getGroupContext();
+//		if (groupContext.isShortConnection()) {
+//			return;
