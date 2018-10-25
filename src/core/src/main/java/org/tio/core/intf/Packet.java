@@ -19,3 +19,8 @@ public class Packet implements java.io.Serializable {
 	private int byteCount = 0;
 
 	private Long respId = null;
+
+	private PacketListener packetListener;
+
+	private boolean isBlockSend = false;
+	
