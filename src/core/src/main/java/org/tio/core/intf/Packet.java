@@ -88,3 +88,15 @@ public class Packet implements java.io.Serializable {
 	public boolean isBlockSend() {
 		return isBlockSend;
 	}
+
+	public String logstr() {
+		return "";
+	}
+
+	/**
+	 * @param isBlockSend the isBlockSend to set
+	 */
+	public void setBlockSend(boolean isBlockSend) {
+		this.isBlockSend = isBlockSend;
+	}
+
