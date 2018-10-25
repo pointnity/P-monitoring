@@ -46,3 +46,13 @@ public class ChannelContextSetWithLock {
 		@SuppressWarnings("unused")
 		GroupContext groupContext = channelContext.getGroupContext();
 //		if (groupContext.isShortConnection()) {
+//			return true;
+//		}
+
+		Lock lock = setWithLock.getLock().writeLock();
+
+		try {
+			lock.lock();
+			Set<ChannelContext> m = setWithLock.getObj();
+			boolean ret = m.remove(channelContext);
+			return ret;
