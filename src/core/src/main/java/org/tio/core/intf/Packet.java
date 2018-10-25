@@ -13,3 +13,9 @@ public class Packet implements java.io.Serializable {
 	private static final long serialVersionUID = 5275372187150637318L;
 
 	private static final AtomicLong ID_ATOMICLONG = new AtomicLong();
+
+	private Long id = ID_ATOMICLONG.incrementAndGet();
+
+	private int byteCount = 0;
+
+	private Long respId = null;
