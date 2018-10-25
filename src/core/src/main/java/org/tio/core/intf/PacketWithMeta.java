@@ -18,3 +18,13 @@ public class PacketWithMeta {
 	 * @param countDownLatch
 	 * @author tanyaowu
 	 */
+	public PacketWithMeta(Packet packet, CountDownLatch countDownLatch) {
+		super();
+		this.packet = packet;
+		this.countDownLatch = countDownLatch;
+		if (countDownLatch != null) {
+			this.packet.setBlockSend(true);
+		}
+	}
+
+	/**
