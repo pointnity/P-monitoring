@@ -22,3 +22,6 @@ public interface GroupListener {
 	 * @param group
 	 * @throws Exception
 	 * @author tanyaowu
+	 */
+	void onAfterUnbind(ChannelContext channelContext, String group) throws Exception;
+}
