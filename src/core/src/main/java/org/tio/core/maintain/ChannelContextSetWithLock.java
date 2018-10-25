@@ -56,3 +56,11 @@ public class ChannelContextSetWithLock {
 			Set<ChannelContext> m = setWithLock.getObj();
 			boolean ret = m.remove(channelContext);
 			return ret;
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	public int size() {
