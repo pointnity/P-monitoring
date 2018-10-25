@@ -129,3 +129,12 @@ public class Packet implements java.io.Serializable {
 	}
 
 	/**
+	 * @param respId the respId to set
+	 */
+	public void setRespId(Long respId) {
+		this.respId = respId;
+	}
+
+	/**
+	 * @param synSeq the synSeq to set
+	 */
