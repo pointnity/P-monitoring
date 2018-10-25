@@ -36,3 +36,8 @@ public class Packet implements java.io.Serializable {
 	private Integer synSeq = 0;
 
 	/**
+	 * Pre-encoded Bytebuffer, if this value is not NULL, the framework ignores the original encode () and uses this value directly
+	 */
+	private ByteBuffer preEncodedByteBuffer = null;
+
+	/**
