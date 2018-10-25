@@ -33,3 +33,11 @@ public class ChannelContextMapWithLock {
 		Lock lock = map.getLock().writeLock();
 		try {
 			lock.lock();
+			Map<Integer, Packet> m = map.getObj();
+			m.put(synSeq, packet);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
