@@ -80,3 +80,11 @@ public class Packet implements java.io.Serializable {
 	 */
 	public Integer getSynSeq() {
 		return synSeq;
+	}
+
+	/**
+	 * @return the isBlockSend
+	 */
+	public boolean isBlockSend() {
+		return isBlockSend;
+	}
