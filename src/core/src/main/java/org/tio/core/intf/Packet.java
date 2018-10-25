@@ -28,3 +28,7 @@ public class Packet implements java.io.Serializable {
 	 * Whether the message was another machine was turned over by topic, and if it is, do not go back to the loop again.
 	 * This attribute is used internally by TIO, business layer users are requested to use
 	 */
+	private boolean isFromCluster = false;
+
+	/**
+	 * Synchronous serial number required when sending synchronously
