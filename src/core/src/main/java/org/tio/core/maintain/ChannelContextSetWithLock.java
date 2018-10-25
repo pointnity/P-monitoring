@@ -23,3 +23,13 @@ public class ChannelContextSetWithLock {
 		GroupContext groupContext = channelContext.getGroupContext();
 //		if (groupContext.isShortConnection()) {
 //			return;
+//		}
+
+		Lock lock = setWithLock.getLock().writeLock();
+
+		try {
+			lock.lock();
+			Set<ChannelContext> m = setWithLock.getObj();
+			m.add(channelContext);
+		} catch (Throwable e) {
+			throw e;
