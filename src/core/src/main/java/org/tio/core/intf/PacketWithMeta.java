@@ -28,3 +28,17 @@ public class PacketWithMeta {
 	}
 
 	/**
+	 * @return the countDownLatch
+	 */
+	public java.util.concurrent.CountDownLatch getCountDownLatch() {
+		return countDownLatch;
+	}
+
+	/**
+	 * @return the isSentSuccess
+	 */
+	public Boolean getIsSentSuccess() {
+		return isSentSuccess;
+	}
+
+	/**
