@@ -33,3 +33,16 @@ public class ChannelContextSetWithLock {
 			m.add(channelContext);
 		} catch (Throwable e) {
 			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	public SetWithLock<ChannelContext> getSetWithLock() {
+		return setWithLock;
+	}
+
+	public boolean remove(ChannelContext channelContext) {
+		@SuppressWarnings("unused")
+		GroupContext groupContext = channelContext.getGroupContext();
+//		if (groupContext.isShortConnection()) {
