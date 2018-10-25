@@ -17,3 +17,8 @@ public interface GroupListener {
 	void onAfterBind(ChannelContext channelContext, String group) throws Exception;
 
 	/**
+	 * Callback This method after unbinding a group
+	 * @param channelContext
+	 * @param group
+	 * @throws Exception
+	 * @author tanyaowu
