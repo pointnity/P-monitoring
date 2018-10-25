@@ -10,3 +10,7 @@ public interface TioUuid {
 	 *
 	 * @return
 	 * @author tanyaowu
+	 */
+	String uuid();
+
+}
