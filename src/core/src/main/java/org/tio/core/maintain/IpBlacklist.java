@@ -92,3 +92,26 @@ public class IpBlacklist {
 		
 		return cache.keys();
 	}
+
+	/**
+	 *
+	 *
+	 * @return
+	 */
+//	public SetWithLock<String> getSetWithLock() {
+//		return setWithLock;
+//	}
+
+	/**
+	 * Is it in the blacklist
+	 * @param ip
+	 * @return
+	 * @author tanyaowu
+	 */
+	public boolean isInBlacklist(String ip) {
+//		Lock lock = setWithLock.getLock().readLock();
+//		try {
+//			lock.lock();
+//			Set<String> m = setWithLock.getObj();
+//			return m.contains(ip);
+//		} catch (Throwable e) {
