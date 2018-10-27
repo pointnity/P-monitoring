@@ -15,3 +15,11 @@ import org.tio.utils.lock.ObjWithLock;
 public class ClientNodeMap {
 
 	/**
+	 *
+	 * @param channelContext
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static String getKey(ChannelContext channelContext) {
+		Node clientNode = channelContext.getClientNode();
+		if (clientNode == null) {
