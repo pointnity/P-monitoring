@@ -58,3 +58,19 @@ public class ClientNodeMap {
 			lock.lock();
 			return m.get(key);
 		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
+	 *
+	 * @param ip
+	 * @param port
+	 * @return
+	 * @author tanyaowu
+	 */
+	public ChannelContext find(String ip, int port) {
+		String key = getKey(ip, port);
+		return find(key);
