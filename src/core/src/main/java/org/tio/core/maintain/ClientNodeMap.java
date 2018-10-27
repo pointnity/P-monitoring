@@ -23,3 +23,13 @@ public class ClientNodeMap {
 	public static String getKey(ChannelContext channelContext) {
 		Node clientNode = channelContext.getClientNode();
 		if (clientNode == null) {
+			throw new RuntimeException("client node is null");
+		}
+		String key = getKey(clientNode.getIp(), clientNode.getPort());
+		return key;
+	}
+
+	/**
+	 *
+	 * @param ip
+	 * @param port
