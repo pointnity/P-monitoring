@@ -165,3 +165,15 @@ public class Groups {
 	/**
 	 * Unbind from all Groups
 	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public void unbind(ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		Lock lock = channelmap.getLock().writeLock();
+		try {
+			SetWithLock<String> set = null;
+			try {
