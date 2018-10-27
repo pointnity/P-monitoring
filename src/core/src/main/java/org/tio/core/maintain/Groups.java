@@ -109,3 +109,11 @@ public class Groups {
 				lock22.unlock();
 			}
 		}
+	}
+
+	/**
+	 * Which clients are in a group
+	 * @param groupid
+	 * @return
+	 * @author tanyaowu
+	 */
