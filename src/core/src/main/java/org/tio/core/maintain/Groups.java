@@ -132,3 +132,19 @@ public class Groups {
 	}
 
 	/**
+	 * @return the channelmap
+	 */
+	public MapWithLock<ChannelContext, SetWithLock<String>> getChannelmap() {
+		return channelmap;
+	}
+
+	/**
+	 * @return the groupmap
+	 */
+	public MapWithLock<String, SetWithLock<ChannelContext>> getGroupmap() {
+		return groupmap;
+	}
+
+	/**
+	 * Which groups a client is in
+	 * @param channelContext
