@@ -6,3 +6,12 @@ import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 import org.tio.core.ChannelContext;
 import org.tio.core.Node;
 import org.tio.utils.lock.ObjWithLock;
+
+/**
+ *
+ * @author tanyaowu
+ *  
+ */
+public class ClientNodeMap {
+
+	/**
