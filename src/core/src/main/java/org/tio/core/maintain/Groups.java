@@ -148,3 +148,20 @@ public class Groups {
 	/**
 	 * Which groups a client is in
 	 * @param channelContext
+	 * @return
+	 * @author tanyaowu
+	 */
+	public SetWithLock<String> groups(ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return null;
+		}
+
+		Map<ChannelContext, SetWithLock<String>> map = channelmap.getObj();
+		SetWithLock<String> set = map.get(channelContext);
+		return set;
+	}
+
+	/**
+	 * Unbind from all Groups
+	 * @param channelContext
