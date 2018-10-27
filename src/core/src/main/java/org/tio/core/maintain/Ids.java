@@ -81,3 +81,27 @@ public class Ids {
 
 	/**
 	 * @return the cacheMap
+	 */
+	public MapWithLock<String, ChannelContext> getMap() {
+		return map;
+	}
+
+	/**
+	 *
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public void unbind(ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		String key = channelContext.getId();
+		if (StringUtils.isBlank(key)) {
+			return;
+		}
+		Lock lock = map.getLock().writeLock();
+		Map<String, ChannelContext> m = map.getObj();
+		try {
+			lock.lock();
