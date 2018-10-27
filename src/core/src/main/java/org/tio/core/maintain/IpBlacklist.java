@@ -115,3 +115,20 @@ public class IpBlacklist {
 //			Set<String> m = setWithLock.getObj();
 //			return m.contains(ip);
 //		} catch (Throwable e) {
+//			throw e;
+//		} finally {
+//			lock.unlock();
+//		}
+		
+		return cache.get(ip) != null;
+	}
+
+	/**
+	 * Remove from blacklist
+	 * @param ip
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public void remove(String ip) {
+//		Lock lock = setWithLock.getLock().writeLock();
+//		try {
