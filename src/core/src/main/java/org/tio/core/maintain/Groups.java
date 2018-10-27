@@ -69,3 +69,16 @@ public class Groups {
 			log.error(e.toString(), e);
 		} finally {
 			lock1.unlock();
+		}
+
+		if (channelContexts != null) {
+			Lock lock11 = channelContexts.getLock().writeLock();
+			try {
+				lock11.lock();
+				channelContexts.getObj().add(channelContext);
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			} finally {
+				lock11.unlock();
+			}
+		}
