@@ -177,3 +177,20 @@ public class Groups {
 		try {
 			SetWithLock<String> set = null;
 			try {
+				lock.lock();
+				Map<ChannelContext, SetWithLock<String>> m = channelmap.getObj();
+				set = m.get(channelContext);
+				m.remove(channelContext);
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			} finally {
+				lock.unlock();
+			}
+
+			if (set != null) {
+
+				GroupListener groupListener = groupContext.getGroupListener();
+				Set<String> groups = set.getObj();
+				if (groups != null && groups.size() > 0) {
+					for (String groupid : groups) {
+						unbind(groupid, channelContext);
