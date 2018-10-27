@@ -47,3 +47,14 @@ public class ClientNodeMap {
 	/**
 	 *
 	 * @param key
+	 * @return
+	 * @author tanyaowu
+	 */
+	public ChannelContext find(String key) {
+		Lock lock = map.getLock().readLock();
+		DualHashBidiMap<String, ChannelContext> m = map.getObj();
+
+		try {
+			lock.lock();
+			return m.get(key);
+		} catch (Throwable e) {
