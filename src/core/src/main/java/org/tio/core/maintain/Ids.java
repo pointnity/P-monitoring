@@ -61,3 +61,23 @@ public class Ids {
 		if (groupContext.isShortConnection()) {
 			return null;
 		}
+
+		if (StringUtils.isBlank(id)) {
+			return null;
+		}
+		String key = id;
+		Lock lock = map.getLock().readLock();
+		Map<String, ChannelContext> m = map.getObj();
+
+		try {
+			lock.lock();
+			return m.get(key);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
+	 * @return the cacheMap
