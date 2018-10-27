@@ -33,3 +33,17 @@ public class ClientNodeMap {
 	 *
 	 * @param ip
 	 * @param port
+	 * @return
+	 * @author tanyaowu
+	 */
+	public static String getKey(String ip, int port) {
+		String key = ip + ":" + port;
+		return key;
+	}
+
+	/** remoteAndChannelContext key: "ip:port" value: ChannelContext. */
+	private ObjWithLock<DualHashBidiMap<String, ChannelContext>> map = new ObjWithLock<>(new DualHashBidiMap<String, ChannelContext>());
+
+	/**
+	 *
+	 * @param key
