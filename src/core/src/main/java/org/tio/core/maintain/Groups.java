@@ -117,3 +117,18 @@ public class Groups {
 	 * @return
 	 * @author tanyaowu
 	 */
+	public SetWithLock<ChannelContext> clients(GroupContext groupContext, String groupid) {
+		if (groupContext.isShortConnection()) {
+			return null;
+		}
+
+		if (StringUtils.isBlank(groupid)) {
+			return null;
+		}
+
+		Map<String, SetWithLock<ChannelContext>> map = groupmap.getObj();
+		SetWithLock<ChannelContext> set = map.get(groupid);
+		return set;
+	}
+
+	/**
