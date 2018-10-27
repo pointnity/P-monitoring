@@ -42,3 +42,22 @@ public class Ids {
 
 		try {
 			lock.lock();
+			m.put(key, channelContext);
+			//			channelContext.setId(id);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
+	 * Find.
+	 *
+	 * @param id the id
+	 * @return the channel context
+	 */
+	public ChannelContext find(GroupContext groupContext, String id) {
+		if (groupContext.isShortConnection()) {
+			return null;
+		}
