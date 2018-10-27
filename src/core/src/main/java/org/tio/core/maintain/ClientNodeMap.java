@@ -86,3 +86,13 @@ public class ClientNodeMap {
 	}
 
 	/**
+	 * Add Mappings
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public void put(ChannelContext channelContext) {
+		String key = getKey(channelContext);
+		Lock lock = map.getLock().writeLock();
+		DualHashBidiMap<String, ChannelContext> m = map.getObj();
+
+		try {
