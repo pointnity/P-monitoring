@@ -57,3 +57,15 @@ public class IpBlacklist {
 		cache.put(ip, SystemTimer.currentTimeMillis());
 
 		//Then delete the associated connection
+		Aio.remove(groupContext, ip, "ip[" + ip + "]Was added to the blacklist");
+		return true;
+	}
+
+	public void clear() {
+//		Lock lock = setWithLock.getLock().writeLock();
+//		try {
+//			lock.lock();
+//			Set<String> m = setWithLock.getObj();
+//			m.clear();
+//		} catch (Throwable e) {
+//			throw e;
