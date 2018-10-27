@@ -220,3 +220,19 @@ public class Groups {
 		GroupContext groupContext = channelContext.getGroupContext();
 		if (groupContext.isShortConnection()) {
 			return;
+		}
+
+		if (StringUtils.isBlank(groupid)) {
+			return;
+		}
+
+		SetWithLock<ChannelContext> set = groupmap.getObj().get(groupid);
+		if (set != null) {
+			Lock lock1 = set.getLock().writeLock();
+			try {
+				lock1.lock();
+				set.getObj().remove(channelContext);
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			} finally {
+				lock1.unlock();
