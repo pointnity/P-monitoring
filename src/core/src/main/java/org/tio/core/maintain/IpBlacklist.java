@@ -31,3 +31,12 @@ public class IpBlacklist {
 	private GroupContext groupContext;
 
 	public IpBlacklist(String id, GroupContext groupContext) {
+		this.id = id;
+		this.groupContext = groupContext;
+		this.cacheName = CACHE_NAME + this.id;
+		this.cache = GuavaCache.register(this.cacheName, TIME_TO_LIVE_SECONDS, TIME_TO_IDLE_SECONDS, null);
+	}
+
+	
+	public boolean add(String ip) {
+		//Add to Blacklist list first
