@@ -74,3 +74,15 @@ public class ClientNodeMap {
 	public ChannelContext find(String ip, int port) {
 		String key = getKey(ip, port);
 		return find(key);
+	}
+
+	/**
+	 *
+	 * @return
+	 * @author tanyaowu
+	 */
+	public ObjWithLock<DualHashBidiMap<String, ChannelContext>> getMap() {
+		return map;
+	}
+
+	/**
