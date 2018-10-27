@@ -36,3 +36,12 @@ public class Groups {
 	 *  key: ChannelContext
 	 *  value: Set<groupid>
 	 */
+	private MapWithLock<ChannelContext, SetWithLock<String>> channelmap = new MapWithLock<>(
+			new ConcurrentHashMap<ChannelContext, SetWithLock<String>>());
+
+	/**
+	 * and group Bindings
+	 * @param groupid
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
