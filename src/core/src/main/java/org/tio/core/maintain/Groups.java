@@ -211,3 +211,12 @@ public class Groups {
 	}
 
 	/**
+	 * Unbind the specified group
+	 * @param groupid
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public void unbind(String groupid, ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return;
