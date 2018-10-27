@@ -132,3 +132,21 @@ public class IpBlacklist {
 	public void remove(String ip) {
 //		Lock lock = setWithLock.getLock().writeLock();
 //		try {
+//			lock.lock();
+//			Set<String> m = setWithLock.getObj();
+//			return m.remove(ip);
+//		} catch (Throwable e) {
+//			throw e;
+//		} finally {
+//			lock.unlock();
+//		}
+		
+		cache.remove(ip);
+	}
+
+//	public int size() {
+//		Lock lock = setWithLock.getLock().readLock();
+//		try {
+//			lock.lock();
+//			Set<String> m = setWithLock.getObj();
+//			return m.size();
