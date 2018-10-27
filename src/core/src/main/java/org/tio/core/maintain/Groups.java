@@ -45,3 +45,17 @@ public class Groups {
 	 * @param channelContext
 	 * @author tanyaowu
 	 */
+	public void bind(String groupid, ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		if (StringUtils.isBlank(groupid)) {
+			return;
+		}
+
+		Lock lock1 = groupmap.getLock().writeLock();
+		SetWithLock<ChannelContext> channelContexts = null;
+		try {
+			lock1.lock();
