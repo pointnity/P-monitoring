@@ -14,3 +14,19 @@ import org.tio.utils.lock.MapWithLock;
  * @author tanyaowu
  * 
  */
+public class Ids {
+
+	/**
+	 * key: id
+	 * value: ChannelContext
+	 */
+	private MapWithLock<String, ChannelContext> map = new MapWithLock<>(new HashMap<String, ChannelContext>());
+
+	/**
+	 *
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public void bind(ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
