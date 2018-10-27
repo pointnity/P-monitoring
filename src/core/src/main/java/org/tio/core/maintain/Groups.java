@@ -95,3 +95,17 @@ public class Groups {
 		} catch (Throwable e) {
 			log.error(e.toString(), e);
 		} finally {
+			lock2.unlock();
+		}
+
+		if (groups != null) {
+			Lock lock22 = groups.getLock().writeLock();
+			try {
+				lock22.lock();
+				groups.getObj().add(groupid);
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			} finally {
+				lock22.unlock();
+			}
+		}
