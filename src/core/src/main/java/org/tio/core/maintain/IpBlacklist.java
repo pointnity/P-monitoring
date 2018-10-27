@@ -69,3 +69,26 @@ public class IpBlacklist {
 //			m.clear();
 //		} catch (Throwable e) {
 //			throw e;
+//		} finally {
+//			lock.unlock();
+//		}
+		
+		cache.clear();
+	}
+
+	public Collection<String> getCopy() {
+//		Lock lock = setWithLock.getLock().readLock();
+//		try {
+//			lock.lock();
+//			Set<String> m = setWithLock.getObj();
+//			Set<String> copyObj = new HashSet<>();
+//			copyObj.addAll(m);
+//			return copyObj;
+//		} catch (Throwable e) {
+//			throw e;
+//		} finally {
+//			lock.unlock();
+//		}
+		
+		return cache.keys();
+	}
