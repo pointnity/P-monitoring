@@ -110,3 +110,17 @@ public class ClientNodeMap {
 	 * @param channelContext
 	 * @author tanyaowu
 	 */
+	public void remove(ChannelContext channelContext) {
+		Lock lock = map.getLock().writeLock();
+		DualHashBidiMap<String, ChannelContext> m = map.getObj();
+		try {
+			lock.lock();
+			m.removeValue(channelContext);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+}
