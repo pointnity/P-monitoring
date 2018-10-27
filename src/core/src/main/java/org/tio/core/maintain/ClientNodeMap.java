@@ -96,3 +96,13 @@ public class ClientNodeMap {
 		DualHashBidiMap<String, ChannelContext> m = map.getObj();
 
 		try {
+			lock.lock();
+			m.put(key, channelContext);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
