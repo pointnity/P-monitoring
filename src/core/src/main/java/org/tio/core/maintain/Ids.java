@@ -105,3 +105,11 @@ public class Ids {
 		Map<String, ChannelContext> m = map.getObj();
 		try {
 			lock.lock();
+			m.remove(key);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+}
