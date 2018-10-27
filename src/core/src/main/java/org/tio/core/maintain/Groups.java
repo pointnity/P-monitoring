@@ -82,3 +82,16 @@ public class Groups {
 				lock11.unlock();
 			}
 		}
+
+		Lock lock2 = channelmap.getLock().writeLock();
+		SetWithLock<String> groups = null;// = channelmap.getObj().get(channelContext);
+		try {
+			lock2.lock();
+			groups = channelmap.getObj().get(channelContext);
+			if (groups == null) {
+				groups = new SetWithLock<>(new HashSet<String>());
+			}
+			channelmap.getObj().put(channelContext, groups);
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		} finally {
