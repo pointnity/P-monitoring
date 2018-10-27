@@ -59,3 +59,13 @@ public class Groups {
 		SetWithLock<ChannelContext> channelContexts = null;
 		try {
 			lock1.lock();
+			Map<String, SetWithLock<ChannelContext>> map = groupmap.getObj();
+			channelContexts = map.get(groupid);
+			if (channelContexts == null) {
+				channelContexts = new SetWithLock<>(new HashSet<ChannelContext>());
+				map.put(groupid, channelContexts);
+			}
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		} finally {
+			lock1.unlock();
