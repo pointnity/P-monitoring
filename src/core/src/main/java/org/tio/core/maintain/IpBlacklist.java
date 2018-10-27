@@ -40,3 +40,20 @@ public class IpBlacklist {
 	
 	public boolean add(String ip) {
 		//Add to Blacklist list first
+//		Lock lock = setWithLock.getLock().writeLock();
+//		try {
+//			lock.lock();
+//			Set<String> m = setWithLock.getObj();
+//			m.add(ip);
+//		} catch (Throwable e) {
+//			throw e;
+//		} finally {
+//			lock.unlock();
+//		}
+		
+		if (isInBlacklist(ip)) {
+			return false;
+		}
+		cache.put(ip, SystemTimer.currentTimeMillis());
+
+		//Then delete the associated connection
