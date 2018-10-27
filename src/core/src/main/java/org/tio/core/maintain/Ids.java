@@ -30,3 +30,15 @@ public class Ids {
 	public void bind(ChannelContext channelContext) {
 		GroupContext groupContext = channelContext.getGroupContext();
 		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		String key = channelContext.getId();
+		if (StringUtils.isBlank(key)) {
+			return;
+		}
+		Lock lock = map.getLock().writeLock();
+		Map<String, ChannelContext> m = map.getObj();
+
+		try {
+			lock.lock();
