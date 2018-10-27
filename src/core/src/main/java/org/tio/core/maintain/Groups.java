@@ -26,3 +26,13 @@ public class Groups {
 	private static Logger log = LoggerFactory.getLogger(Groups.class);
 
 	/** Which clients are in a group
+	 * key: groupid
+	 * value: Set<ChannelContext>
+	 */
+	private MapWithLock<String, SetWithLock<ChannelContext>> groupmap = new MapWithLock<>(
+			new ConcurrentHashMap<String, SetWithLock<ChannelContext>>());
+
+	/** What group of groups a client is in
+	 *  key: ChannelContext
+	 *  value: Set<groupid>
+	 */
