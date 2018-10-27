@@ -194,3 +194,20 @@ public class Groups {
 				if (groups != null && groups.size() > 0) {
 					for (String groupid : groups) {
 						unbind(groupid, channelContext);
+						if (groupListener != null) {
+							try {
+								groupListener.onAfterUnbind(channelContext, groupid);
+							} catch (Throwable e) {
+								log.error(e.toString(), e);
+							}
+						}
+						//groupListener.onAfterUnbind
+					}
+				}
+			}
+		} catch (Throwable e) {
+			throw e;
+		}
+	}
+
+	/**
