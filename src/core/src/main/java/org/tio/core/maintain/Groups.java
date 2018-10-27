@@ -236,3 +236,19 @@ public class Groups {
 				log.error(e.toString(), e);
 			} finally {
 				lock1.unlock();
+			}
+
+			if (set.getObj().size() == 0) {
+				Lock lock2 = groupmap.getLock().writeLock();
+				try {
+					lock2.lock();
+					groupmap.getObj().remove(groupid);
+				} catch (Throwable e) {
+					log.error(e.toString(), e);
+				} finally {
+					lock2.unlock();
+				}
+			}
+		}
+	}
+}
