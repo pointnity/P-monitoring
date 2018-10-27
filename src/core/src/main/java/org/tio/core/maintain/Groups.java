@@ -17,3 +17,12 @@ import org.tio.utils.lock.SetWithLock;
 
 /**
  * 
+ * @author tanyaowu 
+ *  
+ */
+public class Groups {
+
+	/** The log. */
+	private static Logger log = LoggerFactory.getLogger(Groups.class);
+
+	/** Which clients are in a group
