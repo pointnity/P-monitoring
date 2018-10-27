@@ -106,3 +106,7 @@ public class ClientNodeMap {
 	}
 
 	/**
+	 * Removes mapping
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
