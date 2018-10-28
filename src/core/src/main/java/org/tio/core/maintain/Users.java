@@ -129,3 +129,22 @@ public class Users {
 
 			SetWithLock<ChannelContext> setWithLock = m.get(userid);
 			if (setWithLock == null) {
+				log.info("{}, {}, userid:{}, No corresponding setwithlock found.", groupContext.getName(), channelContext.toString(), userid);
+				return;
+			}
+			channelContext.setUserid(null);
+			setWithLock.remove(channelContext);
+			
+			
+			if(setWithLock.getObj().size() == 0) {
+				m.remove(userid);
+			}
+			
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
