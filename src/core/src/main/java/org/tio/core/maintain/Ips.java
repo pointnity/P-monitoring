@@ -87,3 +87,25 @@ public class Ips {
 	/**
 	 * What clients are available for an IP, it is possible to return null
 	 * @param ip
+	 * @return
+	 * @author tanyaowu
+	 */
+	public SetWithLock<ChannelContext> clients(GroupContext groupContext, String ip) {
+//		if (groupContext.isShortConnection()) {
+//			return null;
+//		}
+
+		if (StringUtils.isBlank(ip)) {
+			return null;
+		}
+
+		Map<String, SetWithLock<ChannelContext>> map = ipmap.getObj();
+		SetWithLock<ChannelContext> set = map.get(ip);
+		return set;
+	}
+
+	/**
+	 * @return the ipmap
+	 */
+	public MapWithLock<String, SetWithLock<ChannelContext>> getIpmap() {
+		return ipmap;
