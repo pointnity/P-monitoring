@@ -19,3 +19,14 @@ import org.tio.utils.lock.SetWithLock;
  *  
  */
 public class Ips {
+
+	/** The log. */
+	private static Logger log = LoggerFactory.getLogger(Ips.class);
+
+	/** Which clients are in one IP
+	 * key: ip
+	 * value: Set<ChannelContext>
+	 */
+	private MapWithLock<String, SetWithLock<ChannelContext>> ipmap = new MapWithLock<>(new ConcurrentHashMap<String, SetWithLock<ChannelContext>>());
+
+	/**
