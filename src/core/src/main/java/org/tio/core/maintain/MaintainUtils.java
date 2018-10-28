@@ -55,3 +55,12 @@ public class MaintainUtils {
 				log.error(e.toString(), e);
 			}
 		}
+
+		//Token unbind
+		if (StringUtils.isNotBlank(channelContext.getToken())) {
+			try {
+				Aio.unbindToken(channelContext);
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			}
+		}
