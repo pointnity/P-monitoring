@@ -21,3 +21,19 @@ import org.tio.utils.lock.SetWithLock;
  * @author tanyaowu 
  *  
  */
+public class Tokens {
+	private static Logger log = LoggerFactory.getLogger(Tokens.class);
+
+	/**
+	 * key: token
+	 * value: ChannelContext
+	 */
+	private MapWithLock<String, SetWithLock<ChannelContext>> mapWithLock = new MapWithLock<>(new HashMap<String, SetWithLock<ChannelContext>>());
+
+	/**
+	 * Bind tokens.
+	 *
+	 * @param token the token
+	 * @param channelContext the channel context
+	 * @author tanyaowu
+	 */
