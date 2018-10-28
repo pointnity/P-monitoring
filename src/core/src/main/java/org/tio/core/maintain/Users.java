@@ -47,3 +47,32 @@ public class Users {
 			return;
 		}
 		String key = userid;
+		Lock lock = mapWithLock.getLock().writeLock();
+		Map<String, SetWithLock<ChannelContext>> map = mapWithLock.getObj();
+
+		try {
+			lock.lock();
+
+			SetWithLock<ChannelContext> setWithLock = map.get(key);
+			if (setWithLock == null) {
+				setWithLock = new SetWithLock<>(new HashSet<>());
+				map.put(key, setWithLock);
+			}
+			setWithLock.add(channelContext);
+
+			//			cacheMap.put(key, channelContext);
+
+			channelContext.setUserid(userid);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
+	 * Find.
+	 *
+	 * @param userid the userid
+	 * @return the channel context
+	 */
