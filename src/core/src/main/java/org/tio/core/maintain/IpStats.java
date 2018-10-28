@@ -37,3 +37,19 @@ public class IpStats {
 	/**
 	 * Key: Duration, Unit: seconds
 	 */
+	public final Map<Long, GuavaCache> cacheMap = new HashMap<>();
+
+	public final List<Long> durationList = new ArrayList<>();
+
+	public IpStats(GroupContext groupContext, IpStatListener ipStatListener, Long[] durations) {
+		this.groupContext = groupContext;
+		this.groupContextId = groupContext.getId();
+		if (durations != null) {
+			for (Long duration : durations) {
+				addDuration(duration, ipStatListener);
+			}
+		}
+	}
+
+	/**
+	 * Add Monitoring window
