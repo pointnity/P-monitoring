@@ -76,3 +76,30 @@ public class Users {
 	 * @param userid the userid
 	 * @return the channel context
 	 */
+	public SetWithLock<ChannelContext> find(GroupContext groupContext, String userid) {
+		if (groupContext.isShortConnection()) {
+			return null;
+		}
+
+		if (StringUtils.isBlank(userid)) {
+			return null;
+		}
+		String key = userid;
+		Lock lock = mapWithLock.getLock().readLock();
+		Map<String, SetWithLock<ChannelContext>> m = mapWithLock.getObj();
+
+		try {
+			lock.lock();
+			return m.get(key);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
+	 * @return the mapWithLock
+	 */
+	public ObjWithLock<Map<String, SetWithLock<ChannelContext>>> getMap() {
+		return mapWithLock;
