@@ -99,3 +99,25 @@ public class Tokens {
 	}
 
 	/**
+	 * @return the mapWithLock
+	 */
+	public ObjWithLock<Map<String, SetWithLock<ChannelContext>>> getMap() {
+		return mapWithLock;
+	}
+
+	/**
+	 *Unbind tokens from Channelcontext
+	 *
+	 * @param channelContext the channel context
+	 */
+	public void unbind(ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		String token = channelContext.getToken();
+		if (StringUtils.isBlank(token)) {
+			log.info("{}, {}, Does not bind the user", groupContext.getName(), channelContext.toString());
+			return;
+		}
