@@ -157,3 +157,29 @@ public class Tokens {
 	public void unbind(GroupContext groupContext, String token) {
 		if (groupContext.isShortConnection()) {
 			return;
+		}
+
+		if (StringUtils.isBlank(token)) {
+			return;
+		}
+
+		Lock lock = mapWithLock.getLock().writeLock();
+		Map<String, SetWithLock<ChannelContext>> m = mapWithLock.getObj();
+		try {
+			lock.lock();
+
+			SetWithLock<ChannelContext> setWithLock = m.get(token);
+			if (setWithLock == null) {
+				return;
+			}
+
+			WriteLock writeLock = setWithLock.getLock().writeLock();
+			writeLock.lock();
+			try {
+				Set<ChannelContext> set = setWithLock.getObj();
+				if (set.size() > 0) {
+					for (ChannelContext channelContext : set) {
+						channelContext.setToken(null);
+					}
+					set.clear();
+				}
