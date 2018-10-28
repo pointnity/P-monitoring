@@ -64,3 +64,13 @@ public class MaintainUtils {
 				log.error(e.toString(), e);
 			}
 		}
+
+		//Group Unbind
+		try {
+			Aio.unbindGroup(channelContext);
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		}
+	}
+
+}
