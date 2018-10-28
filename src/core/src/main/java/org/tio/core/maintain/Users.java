@@ -148,3 +148,29 @@ public class Users {
 	}
 
 	/**
+	 * Unbind all channelcontext within the Groupcontext range
+	 *
+	 * @param userid the userid
+	 * @author tanyaowu
+	 */
+	public void unbind(GroupContext groupContext, String userid) {
+		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		if (StringUtils.isBlank(userid)) {
+			return;
+		}
+
+		Lock lock = mapWithLock.getLock().writeLock();
+		Map<String, SetWithLock<ChannelContext>> m = mapWithLock.getObj();
+		try {
+			lock.lock();
+
+			SetWithLock<ChannelContext> setWithLock = m.get(userid);
+			if (setWithLock == null) {
+				return;
+			}
+
+			WriteLock writeLock = setWithLock.getLock().writeLock();
+			writeLock.lock();
