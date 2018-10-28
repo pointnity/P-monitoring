@@ -53,3 +53,17 @@ public class IpStats {
 
 	/**
 	 * Add Monitoring window
+	 * @param duration Units: Seconds
+	 * @param ipStatListener can be null
+	 * @author: tanyaowu
+	 */
+	public void addDuration(Long duration, IpStatListener ipStatListener) {
+		@SuppressWarnings("unchecked")
+		GuavaCache guavaCache = GuavaCache.register(getCacheName(duration), duration, null, new IpStatRemovalListener(groupContext, ipStatListener));
+		cacheMap.put(duration, guavaCache);
+		durationList.add(duration);
+	}
+
+	/**
+	 * Add Monitoring window
+	 * @param durations Units: Seconds
