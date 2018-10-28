@@ -117,3 +117,15 @@ public class Users {
 		}
 
 		String userid = channelContext.getUserid();
+		if (StringUtils.isBlank(userid)) {
+			log.info("{}, {}, Does not bind the user", groupContext.getName(), channelContext.toString());
+			return;
+		}
+
+		Lock lock = mapWithLock.getLock().writeLock();
+		Map<String, SetWithLock<ChannelContext>> m = mapWithLock.getObj();
+		try {
+			lock.lock();
+
+			SetWithLock<ChannelContext> setWithLock = m.get(userid);
+			if (setWithLock == null) {
