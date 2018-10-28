@@ -19,3 +19,15 @@ import org.tio.utils.lock.SetWithLock;
 /**
  * 
  * @author tanyaowu 
+ * 
+ */
+public class Users {
+	private static Logger log = LoggerFactory.getLogger(Users.class);
+
+	/**
+	 * key: userid
+	 * value: ChannelContext
+	 */
+	private MapWithLock<String, SetWithLock<ChannelContext>> mapWithLock = new MapWithLock<>(new HashMap<String, SetWithLock<ChannelContext>>());
+
+	/**
