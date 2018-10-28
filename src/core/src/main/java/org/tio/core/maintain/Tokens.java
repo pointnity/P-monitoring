@@ -121,3 +121,15 @@ public class Tokens {
 			log.info("{}, {}, Does not bind the user", groupContext.getName(), channelContext.toString());
 			return;
 		}
+
+		Lock lock = mapWithLock.getLock().writeLock();
+		Map<String, SetWithLock<ChannelContext>> m = mapWithLock.getObj();
+		try {
+			lock.lock();
+
+			SetWithLock<ChannelContext> setWithLock = m.get(token);
+			if (setWithLock == null) {
+				log.info("{}, {}, token:{}, did not find the corresponding SetWithLock", groupContext.getName(), channelContext.toString(), token);
+				return;
+			}
+			channelContext.setToken(null);
