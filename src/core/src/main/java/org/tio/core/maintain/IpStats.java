@@ -128,3 +128,26 @@ public class IpStats {
 	 * @param duration
 	 * @param ip
 	 * @param forceCreate
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public IpStat get(Long duration, String ip, boolean forceCreate) {
+		if (StringUtils.isBlank(ip)) {
+			return null;
+		}
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
+			return null;
+		}
+
+		IpStat ipStat = (IpStat) guavaCache.get(ip);
+		if (ipStat == null && forceCreate) {
+			synchronized (this) {
+				ipStat = (IpStat) guavaCache.get(ip);
+				if (ipStat == null) {
+					ipStat = new IpStat(ip, duration);
+					guavaCache.put(ip, ipStat);
+				}
+			}
+		}
+		return ipStat;
