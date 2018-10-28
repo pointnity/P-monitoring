@@ -47,3 +47,27 @@ public class Ips {
 		
 //		GroupContext groupContext = channelContext.getGroupContext();
 //		if (groupContext.isShortConnection()) {
+//			return;
+//		}
+
+		if (StringUtils.isBlank(ip)) {
+			return;
+		}
+
+		Lock lock1 = ipmap.getLock().writeLock();
+		SetWithLock<ChannelContext> channelContexts = null;//ipmap.getObj().get(ip);
+		try {
+			lock1.lock();
+			Map<String, SetWithLock<ChannelContext>> map = ipmap.getObj();
+			channelContexts = map.get(ip);
+			if (channelContexts == null) {
+				channelContexts = new SetWithLock<>(new HashSet<ChannelContext>());
+				map.put(ip, channelContexts);
+			}
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		} finally {
+			lock1.unlock();
+		}
+
+		//		if (channelContexts != null) {
