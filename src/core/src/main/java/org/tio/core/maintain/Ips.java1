@@ -74,3 +74,34 @@ public class Ips {
 	/**
 	 * Print
 	 * 
+	 * @author: tanyaowu
+	 */
+	public void print() {
+		synchronized (this) {
+			ConcurrentMap<String, Serializable> map = cache.asMap();
+			log.info(Json.toFormatedJson(map));
+		}
+	}
+
+	/**
+	 * 
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public ConcurrentMap<String, Serializable> map() {
+		ConcurrentMap<String, Serializable> map = cache.asMap();
+		return map;
+	}
+
+	/**
+	 * 
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public Collection<Serializable> values() {
+		Collection<Serializable> set = cache.asMap().values();
+		return set;
+	}
+
+	/**
+	 * 
