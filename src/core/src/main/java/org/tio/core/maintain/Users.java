@@ -174,3 +174,26 @@ public class Users {
 
 			WriteLock writeLock = setWithLock.getLock().writeLock();
 			writeLock.lock();
+			try {
+				Set<ChannelContext> set = setWithLock.getObj();
+				if (set.size() > 0) {
+					for (ChannelContext channelContext : set) {
+						channelContext.setUserid(null);
+					}
+					set.clear();
+				}
+				
+				m.remove(userid);
+			} catch (Throwable e) {
+				log.error(e.getMessage(), e);
+			} finally {
+				writeLock.unlock();
+			}
+
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+}
