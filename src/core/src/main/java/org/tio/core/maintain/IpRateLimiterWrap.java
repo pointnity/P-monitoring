@@ -11,3 +11,14 @@ public class IpRateLimiterWrap {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	public static void main(String[] args) {
+
+	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	public IpRateLimiterWrap() {
+	}
+}
