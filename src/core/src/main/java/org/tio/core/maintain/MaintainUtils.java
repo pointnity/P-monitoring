@@ -21,3 +21,26 @@ public class MaintainUtils {
 	 *
 	 * @author tanyaowu
 	 *
+	 */
+	public static void remove(ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+
+		groupContext.connections.remove(channelContext);
+		groupContext.connecteds.remove(channelContext);
+		groupContext.closeds.remove(channelContext);
+		groupContext.ips.unbind(channelContext);
+
+		//		if (groupContext.isShortConnection()) {
+		//			return;
+		//		}
+
+		try {
+			//ID Unbind
+			groupContext.ids.unbind(channelContext);
+
+			close(channelContext);
+		} catch (Throwable e1) {
+			log.error(e1.toString(), e1);
+		}
+	}
+
