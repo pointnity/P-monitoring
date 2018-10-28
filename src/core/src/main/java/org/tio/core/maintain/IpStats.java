@@ -175,3 +175,23 @@ public class IpStats {
 	public Long size(Long duration) {
 		GuavaCache guavaCache = cacheMap.get(duration);
 		if (guavaCache == null) {
+			return null;
+		}
+		return guavaCache.size();
+	}
+
+	/**
+	 *
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public Collection<Serializable> values(Long duration) {
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
+			return null;
+		}
+		Collection<Serializable> set = guavaCache.asMap().values();
+		return set;
+	}
+
+}
