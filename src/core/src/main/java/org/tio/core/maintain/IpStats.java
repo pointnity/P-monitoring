@@ -151,3 +151,27 @@ public class IpStats {
 			}
 		}
 		return ipStat;
+	}
+
+	/**
+	 *
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public ConcurrentMap<String, Serializable> map(Long duration) {
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
+			return null;
+		}
+		ConcurrentMap<String, Serializable> map = guavaCache.asMap();
+		return map;
+	}
+
+	/**
+	 *
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public Long size(Long duration) {
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
