@@ -133,3 +133,27 @@ public class Tokens {
 				return;
 			}
 			channelContext.setToken(null);
+			setWithLock.remove(channelContext);
+			
+			
+			if(setWithLock.getObj().size() == 0) {
+				m.remove(token);
+			}
+			
+			
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
+	 *Release token bindings for all channelcontext within the Groupcontext range
+	 *
+	 * @param token the token
+	 * @author tanyaowu
+	 */
+	public void unbind(GroupContext groupContext, String token) {
+		if (groupContext.isShortConnection()) {
+			return;
