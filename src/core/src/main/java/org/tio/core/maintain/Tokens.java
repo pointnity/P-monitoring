@@ -183,3 +183,18 @@ public class Tokens {
 					}
 					set.clear();
 				}
+				
+				m.remove(token);
+			} catch (Throwable e) {
+				log.error(e.getMessage(), e);
+			} finally {
+				writeLock.unlock();
+			}
+
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+}
