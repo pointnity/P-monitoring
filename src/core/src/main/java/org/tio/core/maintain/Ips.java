@@ -71,3 +71,19 @@ public class Ips {
 		}
 
 		//		if (channelContexts != null) {
+		Lock lock11 = channelContexts.getLock().writeLock();
+		try {
+			lock11.lock();
+			channelContexts.getObj().add(channelContext);
+		} catch (Throwable e) {
+			log.error(e.toString(), e);
+		} finally {
+			lock11.unlock();
+		}
+		//		}
+
+	}
+
+	/**
+	 * What clients are available for an IP, it is possible to return null
+	 * @param ip
