@@ -105,3 +105,20 @@ public class Ips {
 
 	/**
 	 * 
+	 * 
+	 * @author: tanyaowu
+	 */
+	public void clear() {
+		cache.clear();
+	}
+
+	/**
+	 * 
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public long size() {
+		return cache.size();
+	}
+
+}
