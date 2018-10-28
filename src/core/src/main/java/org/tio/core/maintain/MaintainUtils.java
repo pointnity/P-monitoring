@@ -44,3 +44,14 @@ public class MaintainUtils {
 		}
 	}
 
+	public static void close(ChannelContext channelContext) {
+		//		GroupContext groupContext = channelContext.getGroupContext();
+
+		//User ID Unbind
+		if (StringUtils.isNotBlank(channelContext.getUserid())) {
+			try {
+				Aio.unbindUser(channelContext);
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			}
+		}
