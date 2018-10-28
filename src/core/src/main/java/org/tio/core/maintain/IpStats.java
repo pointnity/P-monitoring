@@ -67,3 +67,18 @@ public class IpStats {
 	/**
 	 * Add Monitoring window
 	 * @param durations Units: Seconds
+	 * @param ipStatListener can be null
+	 * @author: tanyaowu
+	 */
+	public void addDurations(Long[] durations, IpStatListener ipStatListener) {
+		if (durations != null) {
+			for (Long duration : durations) {
+				addDuration(duration, ipStatListener);
+			}
+		}
+	}
+
+	/**
+	 *Delete Monitoring time period
+	 * @param duration
+	 * @author: tanyaowu
