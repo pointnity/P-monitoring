@@ -103,3 +103,17 @@ public class Users {
 	 */
 	public ObjWithLock<Map<String, SetWithLock<ChannelContext>>> getMap() {
 		return mapWithLock;
+	}
+
+	/**
+	 * Remove Channelcontext bound UserID
+	 *
+	 * @param channelContext the channel context
+	 */
+	public void unbind(ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		String userid = channelContext.getUserid();
