@@ -130,3 +130,26 @@ public class Ips {
 		
 		GroupContext groupContext = channelContext.getGroupContext();
 //		if (groupContext.isShortConnection()) {
+//			return;
+//		}
+
+		if (StringUtils.isBlank(ip)) {
+			return;
+		}
+
+		SetWithLock<ChannelContext> channelContexts = ipmap.getObj().get(ip);
+		if (channelContexts != null) {
+			Lock lock1 = channelContexts.getLock().writeLock();
+			try {
+				lock1.lock();
+				channelContexts.getObj().remove(channelContext);
+				
+				if (channelContexts.getObj().size() == 0) {
+					Lock lock2 = ipmap.getLock().writeLock();
+					try {
+						lock2.lock();
+						ipmap.getObj().remove(ip);
+					} catch (Throwable e) {
+						log.error(e.toString(), e);
+					} finally {
+						lock2.unlock();
