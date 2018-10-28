@@ -66,3 +66,36 @@ public class Tokens {
 		} catch (Throwable e) {
 			throw e;
 		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
+	 * Find.
+	 *
+	 * @param token the token
+	 * @return the channel context
+	 */
+	public SetWithLock<ChannelContext> find(GroupContext groupContext, String token) {
+		if (groupContext.isShortConnection()) {
+			return null;
+		}
+
+		if (StringUtils.isBlank(token)) {
+			return null;
+		}
+		String key = token;
+		Lock lock = mapWithLock.getLock().readLock();
+		Map<String, SetWithLock<ChannelContext>> m = mapWithLock.getObj();
+
+		try {
+			lock.lock();
+			return m.get(key);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	/**
