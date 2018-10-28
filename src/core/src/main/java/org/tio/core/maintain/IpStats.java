@@ -115,3 +115,16 @@ public class IpStats {
 	/**
 	 * Gets the ipstat based on IP, if it does not exist in the cache, creates
 	 * @param duration
+	 * @param ip
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public IpStat get(Long duration, String ip) {
+		return get(duration, ip, true);
+	}
+
+	/**
+	 * Gets ipstat based on IP, if not present in the cache, determines whether to create the value based on the Forcecreate
+	 * @param duration
+	 * @param ip
+	 * @param forceCreate
