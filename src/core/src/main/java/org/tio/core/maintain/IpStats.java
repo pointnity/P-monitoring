@@ -20,3 +20,20 @@ import org.tio.utils.cache.guava.GuavaCache;
 /**
  *
  * @author tanyaowu
+ * 
+ */
+public class IpStats {
+	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(IpStats.class);
+
+	private final static String CACHE_NAME = "TIO_IP_STAT";
+	//	private final static Long timeToLiveSeconds = null;
+	//	private final static Long timeToIdleSeconds = Time.DAY_1;
+
+	private String groupContextId;
+	private GroupContext groupContext;
+
+	//	private GuavaCache[] caches = null;
+	/**
+	 * Key: Duration, Unit: seconds
+	 */
