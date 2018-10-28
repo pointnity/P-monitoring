@@ -153,3 +153,16 @@ public class Ips {
 						log.error(e.toString(), e);
 					} finally {
 						lock2.unlock();
+					}
+				}
+				
+			} catch (Throwable e) {
+				log.error(e.toString(), e);
+			} finally {
+				lock1.unlock();
+			}
+		} else {
+			log.error("{}, ip【{}】 Could not find the corresponding SetWithLock", groupContext.getName(), ip);
+		}
+	}
+}
