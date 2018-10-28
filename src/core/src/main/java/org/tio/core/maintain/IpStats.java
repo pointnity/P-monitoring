@@ -102,3 +102,16 @@ public class IpStats {
 
 	/**
 	 * Emptying monitoring data
+	 * @author: tanyaowu
+	 */
+	public void clear(Long duration) {
+		GuavaCache guavaCache = cacheMap.get(duration);
+		if (guavaCache == null) {
+			return;
+		}
+		guavaCache.clear();
+	}
+
+	/**
+	 * Gets the ipstat based on IP, if it does not exist in the cache, creates
+	 * @param duration
