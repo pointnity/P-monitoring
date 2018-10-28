@@ -30,3 +30,20 @@ public class Ips {
 	private MapWithLock<String, SetWithLock<ChannelContext>> ipmap = new MapWithLock<>(new ConcurrentHashMap<String, SetWithLock<ChannelContext>>());
 
 	/**
+	 * and IP bindings
+	 * @param ip
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public void bind(ChannelContext channelContext) {
+		if (channelContext == null) {
+			return;
+		}
+		
+		String ip = channelContext.getClientNode().getIp();
+		if (ChannelContext.UNKNOWN_ADDRESS_IP.equals(ip)) {
+			return;
+		}
+		
+//		GroupContext groupContext = channelContext.getGroupContext();
+//		if (groupContext.isShortConnection()) {
