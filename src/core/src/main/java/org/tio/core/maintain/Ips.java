@@ -109,3 +109,24 @@ public class Ips {
 	 */
 	public MapWithLock<String, SetWithLock<ChannelContext>> getIpmap() {
 		return ipmap;
+	}
+
+	/**
+	 * Unbind from the specified IP
+	 * @param ip
+	 * @param channelContext
+	 * @author tanyaowu
+	 */
+	public void unbind(ChannelContext channelContext) {
+		if (channelContext == null) {
+			return;
+		}
+		
+		String ip = channelContext.getClientNode().getIp();
+		if (ChannelContext.UNKNOWN_ADDRESS_IP.equals(ip)) {
+			log.error("{} ip is not right", channelContext);
+			return;
+		}
+		
+		GroupContext groupContext = channelContext.getGroupContext();
+//		if (groupContext.isShortConnection()) {
