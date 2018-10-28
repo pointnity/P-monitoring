@@ -18,3 +18,24 @@ import org.tio.utils.time.Time;
  * @author tanyaowu
  *  
  */
+public class Ips {
+	private static Logger log = LoggerFactory.getLogger(Ips.class);
+
+	private String id;
+
+	private final static String CACHE_NAME = "TIO_IP_STAT";
+	private final static Long timeToLiveSeconds = null;
+	private final static Long timeToIdleSeconds = Time.DAY_1;
+
+	private String cacheName = null;
+	private GuavaCache cache = null;
+
+	@SuppressWarnings("unchecked")
+	public Ips(String id) {
+		this.id = id;
+		this.cacheName = CACHE_NAME + this.id;
+		this.cache = GuavaCache.register(this.cacheName, timeToLiveSeconds, timeToIdleSeconds, new IpStatRemovalListener());
+	}
+
+	/**
+	 * Gets the ipstat based on IP, if it does not exist in the cache, creates
