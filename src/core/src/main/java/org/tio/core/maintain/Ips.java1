@@ -54,3 +54,23 @@ public class Ips {
 	 * @return
 	 * @author: tanyaowu
 	 */
+	public IpStat get(String ip, boolean forceCreate) {
+		if (StringUtils.isBlank(ip)) {
+			return null;
+		}
+		IpStat ipStat = (IpStat) cache.get(ip);
+		if (ipStat == null && forceCreate) {
+			synchronized (this) {
+				ipStat = (IpStat) cache.get(ip);
+				if (ipStat == null) {
+					ipStat = new IpStat(ip);
+					cache.put(ip, ipStat);
+				}
+			}
+		}
+		return ipStat;
+	}
+
+	/**
+	 * Print
+	 * 
