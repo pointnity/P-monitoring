@@ -37,3 +37,32 @@ public class Tokens {
 	 * @param channelContext the channel context
 	 * @author tanyaowu
 	 */
+	public void bind(String token, ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		if (StringUtils.isBlank(token)) {
+			return;
+		}
+		String key = token;
+		Lock lock = mapWithLock.getLock().writeLock();
+		Map<String, SetWithLock<ChannelContext>> map = mapWithLock.getObj();
+
+		try {
+			lock.lock();
+
+			SetWithLock<ChannelContext> setWithLock = map.get(key);
+			if (setWithLock == null) {
+				setWithLock = new SetWithLock<>(new HashSet<>());
+				map.put(key, setWithLock);
+			}
+			setWithLock.add(channelContext);
+
+			//			cacheMap.put(key, channelContext);
+
+			channelContext.setToken(token);
+		} catch (Throwable e) {
+			throw e;
+		} finally {
