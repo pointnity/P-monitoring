@@ -82,3 +82,23 @@ public class IpStats {
 	 *Delete Monitoring time period
 	 * @param duration
 	 * @author: tanyaowu
+	 */
+	public void removeDuration(Long duration) {
+		clear(duration);
+		cacheMap.remove(duration);
+		durationList.remove(duration);
+	}
+
+	/**
+	 * 
+	 * @param duration
+	 * @return
+	 * @author: tanyaowu
+	 */
+	public String getCacheName(Long duration) {
+		String cacheName = CACHE_NAME + "_" + this.groupContextId + "_";
+		return cacheName + duration;
+	}
+
+	/**
+	 * Emptying monitoring data
