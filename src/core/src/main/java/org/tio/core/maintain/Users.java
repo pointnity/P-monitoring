@@ -31,3 +31,19 @@ public class Users {
 	private MapWithLock<String, SetWithLock<ChannelContext>> mapWithLock = new MapWithLock<>(new HashMap<String, SetWithLock<ChannelContext>>());
 
 	/**
+	 * Binds the UserID.
+	 *
+	 * @param userid the userid
+	 * @param channelContext the channel context
+	 * @author tanyaowu
+	 */
+	public void bind(String userid, ChannelContext channelContext) {
+		GroupContext groupContext = channelContext.getGroupContext();
+		if (groupContext.isShortConnection()) {
+			return;
+		}
+
+		if (StringUtils.isBlank(userid)) {
+			return;
+		}
+		String key = userid;
