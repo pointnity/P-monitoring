@@ -88,3 +88,37 @@ Public  class  GroupStat  implements  java . io . Serializable   {
 	Public  AtomicLong  getHandledPacket ()  {
 		Return  handledPacket ;
 	}
+
+	/**
+	 * @return the receivedBytes
+	 */
+	Public  AtomicLong  getReceivedBytes ()  {
+		Return  receivedBytes ;
+	}
+
+	/**
+	 * @return the receivedPackets
+	 */
+	Public  AtomicLong  getReceivedPackets ()  {
+		Return  receivedPackets ;
+	}
+
+	/**
+	 * @return the sentBytes
+	 */
+	Public  AtomicLong  getSentBytes ()  {
+		Return  sentBytes ;
+	}
+
+	/**
+	 * @return the sentPacket
+	 */
+	Public  AtomicLong  getSentPacket ()  {
+		Return  sentPacket ;
+	}
+
+	/**
+	 * @param closed the closed to set
+	 */
+	Public  void  setClosed ( AtomicLong  closed )  {
+		the this . Closed  =  Closed ;
