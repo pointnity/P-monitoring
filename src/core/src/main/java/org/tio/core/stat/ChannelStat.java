@@ -92,3 +92,32 @@ public class ChannelStat implements java.io.Serializable {
 	Private  AtomicLong  receivedPackets  =  new  AtomicLong ();
 	
 	/**
+	 * Average number of bytes received per TCP, this can be used to monitor slow attacks, configure PacketsPerTcpReceive to locate slow attacks
+	 */
+	Public  double  getBytesPerTcpReceive ()  {
+		If  ( receivedTcps . get ()  ==  0 )  {
+			Return  0 ;
+		}
+		Double  ret  =  ( double ) receivedBytes . get ()  /  ( double ) receivedTcps . get ();
+		Return  ret ;
+	}
+	
+	/**
+	 * Average number of service packets received per TCP, this can be used to monitor slow attacks. The smaller the value, the more suspected the attack is.
+	 */
+	Public  double  getPacketsPerTcpReceive ()  {
+		If  ( receivedTcps . get ()  ==  0 )  {
+			Return  0 ;
+		}
+		Double  ret  =  ( double ) receivedPackets . get ()  /  ( double ) receivedTcps . get ();
+		Return  ret ;
+	}
+
+	/**
+	 * @return the decodeFailCount
+	 */
+	Public  int  getDecodeFailCount ()  {
+		Return  decodeFailCount ;
+	}
+
+	/**
