@@ -27,3 +27,8 @@ public class ChannelStat implements java.io.Serializable {
 	private long latestTimeOfSentPacket = SystemTimer.currentTimeMillis();
 	
 	/**
+	 * Last time a business message packet was received: Bytes received even though
+	 */
+	private long latestTimeOfReceivedByte = SystemTimer.currentTimeMillis();
+
+	/**
