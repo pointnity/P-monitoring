@@ -319,3 +319,15 @@ public class ChannelStat implements java.io.Serializable {
 	/**
 	 * @return the receivedTcps
 	 */
+	Public  AtomicLong  getReceivedTcps ()  {
+		Return  receivedTcps ;
+	}
+
+	/**
+	 * @param receivedTcps the receivedTcps to set
+	 */
+	Public  void  setReceivedTcps ( AtomicLong  receivedTcps )  {
+		This . receivedTcps  =  receivedTcps ;
+	}
+
+}
