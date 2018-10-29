@@ -14,3 +14,25 @@ Import  com.xiaoleilu.hutool.date.BetweenFormater.Level ;
  * @author tanyaowu
  *  
  */
+Public  class  IpStat  implements  java . io . Serializable  {
+
+	Private  static  final  long  serialVersionUID  =  - 6942731710053482089L ;
+
+	Private  Date  start  =  new  Date ();
+
+	/**
+	 * How long is the current statistics, in milliseconds
+	 */
+	Private  long  duration ;
+
+	/**
+	 * Duration type, unit: second, such as 60, 3600, etc.
+	 */
+	Private  Long  durationType ;
+
+	/**
+	 * Client ip
+	 */
+	Private  String  ip ;
+
+	/**
