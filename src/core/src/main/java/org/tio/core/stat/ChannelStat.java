@@ -188,3 +188,37 @@ public class ChannelStat implements java.io.Serializable {
 	 */
 	Public  long  getTimeCreated ()  {
 		Return  timeCreated ;
+	}
+
+	/**
+	 * @return the timeFirstConnected
+	 */
+	Public  Long  getTimeFirstConnected ()  {
+		Return  timeFirstConnected ;
+	}
+
+	/**
+	 * @return the timeInReconnQueue
+	 */
+	Public  long  getTimeInReconnQueue ()  {
+		Return  timeInReconnQueue ;
+	}
+
+	/**
+	 * @param decodeFailCount the decodeFailCount to set
+	 */
+	Public  void  setDecodeFailCount ( int  decodeFailCount )  {
+		the this . decodeFailCount  =  decodeFailCount ;
+	}
+
+	/**
+	 * @param countHandledByte the countHandledByte to set
+	 */
+	Public  void  setHandledBytes ( AtomicLong  countHandledByte )  {
+		the this . handledBytes  =  countHandledByte ;
+	}
+
+	/**
+	 * @param countHandledPacket the countHandledPacket to set
+	 */
+	Public  void  setHandledPackets ( AtomicLong  handledPackets )  {
