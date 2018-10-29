@@ -36,3 +36,31 @@ Public  class  IpStat  implements  java . io . Serializable  {
 	Private  String  ip ;
 
 	/**
+	 * Number of times the decoding is abnormal
+	 */
+	Private  AtomicInteger  decodeErrorCount  =  new  AtomicInteger ();
+
+	/**
+	 * The number of times the IP connection request was received
+	 */
+	Private  AtomicInteger  requestCount  =  new  AtomicInteger ();
+
+	/**
+	 * The number of currently connected
+	 */
+// private static MapWithLock<String, AtomicInteger> activatedCount = new MapWithLock<>(new HashMap<String, AtomicInteger>());
+
+	/**
+	 * The number of bytes sent by this IP
+	 */
+	Private  AtomicLong  sentBytes  =  new  AtomicLong ();
+
+	/**
+	 * The number of packets sent by this IP
+	 */
+	Private  AtomicLong  sentPackets  =  new  AtomicLong ();
+
+	/**
+	 * The number of bytes processed by this IP
+	 */
+	Private  AtomicLong  handledBytes  =  new  AtomicLong ();
