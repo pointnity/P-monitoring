@@ -121,3 +121,35 @@ public class ChannelStat implements java.io.Serializable {
 	}
 
 	/**
+	 * @return the countHandledByte
+	 */
+	Public  AtomicLong  getHandledBytes ()  {
+		Return  handledBytes ;
+	}
+
+	/**
+	 * @return the countHandledPacket
+	 */
+	Public  AtomicLong  getHandledPackets ()  {
+		Return  handledPackets ;
+	}
+
+	/**
+	 * @return the timeLatestReceivedMsg
+	 */
+	Public  long  getLatestTimeOfReceivedPacket ()  {
+		Return  latestTimeOfReceivedPacket ;
+	}
+
+	/**
+	 * @return the timeLatestSentMsg
+	 */
+	Public  long  getLatestTimeOfSentPacket ()  {
+		Return  latestTimeOfSentPacket ;
+	}
+
+	/**
+	 * @return the countReceivedByte
+	 */
+	Public  AtomicLong  getReceivedBytes ()  {
+		Return  receivedBytes ;
