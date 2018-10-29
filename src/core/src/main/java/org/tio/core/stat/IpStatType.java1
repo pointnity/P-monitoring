@@ -1,0 +1,19 @@
+Package org.tio.core.stat;
+
+Import java.util.Objects;
+
+Import org.apache.commons.lang3.StringUtils;
+Import org.tio.utils.time.Time;
+
+/**
+ * @author tanyaowu
+ * June 28, 2017 2:23:16 PM
+ */
+Public enum IpStatType {
+	DAY_1 (Time.DAY_1), MINUTE_1 (Time.MINUTE_1), MINUTE_10 (Time.MINUTE_1 * 10);
+	Public static IpStatType from(String type) {
+		Return from(type, null);
+	}
+
+	Public static IpStatType from(String type, IpStatType defaultIpStatType) {
+		If (StringUtils.isBlank(type)) {
