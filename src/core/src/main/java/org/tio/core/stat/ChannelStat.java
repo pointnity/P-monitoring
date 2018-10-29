@@ -37,3 +37,8 @@ public class ChannelStat implements java.io.Serializable {
 	private long latestTimeOfSentByte = SystemTimer.currentTimeMillis();
 
 	/**
+	 * Channelcontext the time the object was created
+	 */
+	private long timeCreated = SystemTimer.currentTimeMillis();
+
+	/**
