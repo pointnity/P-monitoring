@@ -162,3 +162,35 @@ Public  class  IpStat  implements  java . io . Serializable  {
 		Duration  =  SystemTimer . currentTimeMillis ()  -  this . start . getTime ();
 		BetweenFormater  betweenFormater  =  new  BetweenFormater ( duration ,  Level . MILLSECOND );
 		Return  betweenFormater . format ();
+	}
+
+	/**
+	 * @return the countHandledByte
+	 */
+	Public  AtomicLong  getHandledBytes ()  {
+		Return  handledBytes ;
+	}
+
+	/**
+	 * @return the countHandledPacket
+	 */
+	Public  AtomicLong  getHandledPackets ()  {
+		Return  handledPackets ;
+	}
+
+	/**
+	 * @return the ip
+	 */
+	Public  String  getIp ()  {
+		Return  ip ;
+	}
+
+	/**
+	 * Average number of service packets received per TCP, this can be used to monitor slow attacks. The smaller the value, the more suspected the attack is.
+	 */
+	Public  double  getPacketsPerTcpReceive ()  {
+		If  ( receivedTcps . get ()  ==  0 )  {
+			Return  0 ;
+		}
+		Double  ret  =  ( double )  receivedPackets . get ()  /  ( double )  receivedTcps . get ();
+		Return  ret ;
