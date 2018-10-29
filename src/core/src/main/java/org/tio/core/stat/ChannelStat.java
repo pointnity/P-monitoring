@@ -256,3 +256,34 @@ public class ChannelStat implements java.io.Serializable {
 	/**
 	 * @param countSentByte the countSentByte to set
 	 */
+	Public  void  setSentBytes ( AtomicLong  sentBytes )  {
+		the this . SentBytes  =  SentBytes ;
+	}
+
+	/**
+	 * @param countSentPacket the countSentPacket to set
+	 */
+	Public  void  setSentPackets ( AtomicLong  sentPackets )  {
+		the this . sentPackets  =  sentPackets ;
+	}
+
+	/**
+	 * @param timeClosed the timeClosed to set
+	 */
+	Public  void  setTimeClosed ( long  timeClosed )  {
+		the this . timeClosed  =  timeClosed ;
+	}
+
+	/**
+	 * @param timeFirstConnected the timeFirstConnected to set
+	 */
+	public void setTimeFirstConnected(Long timeFirstConnected) {
+		this.timeFirstConnected = timeFirstConnected;
+	}
+
+	/**
+	 * @param timeInReconnQueue the timeInReconnQueue to set
+	 */
+	public void setTimeInReconnQueue(long timeInReconnQueue) {
+		this.timeInReconnQueue = timeInReconnQueue;
+	}
