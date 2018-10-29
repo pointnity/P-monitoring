@@ -122,3 +122,34 @@ Public  class  GroupStat  implements  java . io . Serializable   {
 	 */
 	Public  void  setClosed ( AtomicLong  closed )  {
 		the this . Closed  =  Closed ;
+	}
+
+	/**
+	 * @param handledBytes the handledBytes to set
+	 */
+	Public  void  setHandledBytes ( AtomicLong  handledBytes )  {
+		the this . handledBytes  =  handledBytes ;
+	}
+
+	/**
+	 * @param receivedBytes the receivedBytes to set
+	 */
+	Public  void  setReceivedBytes ( AtomicLong  receivedBytes )  {
+		the this . ReceivedBytes  =  ReceivedBytes ;
+	}
+
+	/**
+	 * @return the receivedTcps
+	 */
+	Public  AtomicLong  getReceivedTcps ()  {
+		Return  receivedTcps ;
+	}
+
+	/**
+	 * @param receivedTcps the receivedTcps to set
+	 */
+	Public  void  setReceivedTcps ( AtomicLong  receivedTcps )  {
+		This . receivedTcps  =  receivedTcps ;
+	}
+
+}
