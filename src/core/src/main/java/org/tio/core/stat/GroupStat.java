@@ -14,3 +14,26 @@ Public  class  GroupStat  implements  java . io . Serializable   {
 	 */
 	Private  AtomicLong  closed  =  new  AtomicLong ();
 	/**
+	 * Received message packet
+	 */
+	Private  AtomicLong  receivedPackets  =  new  AtomicLong ();
+	
+	/**
+	 * Number of messages received
+	 */
+	Private  AtomicLong  receivedBytes  =  new  AtomicLong ();
+	
+	/**
+	 * How many times TCP packets have been received by this IP?
+	 */
+	Private  AtomicLong  receivedTcps  =  new  AtomicLong ();
+	
+	/**
+	 * Average number of bytes received per TCP, this can be used to monitor slow attacks, configure PacketsPerTcpReceive to locate slow attacks
+	 */
+	Public  double  getBytesPerTcpReceive ()  {
+		If  ( receivedTcps . get ()  ==  0 )  {
+			Return  0 ;
+		}
+		Double  ret  =  ( double ) receivedBytes . get ()  /  ( double ) receivedTcps . get ();
+		Return  ret ;
