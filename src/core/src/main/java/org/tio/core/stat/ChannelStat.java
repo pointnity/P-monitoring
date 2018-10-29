@@ -65,3 +65,30 @@ public class ChannelStat implements java.io.Serializable {
 	 * The number of packets sent by this connection
 	 */
 	Private  AtomicLong  sentPackets  =  new  AtomicLong ();
+
+	/**
+	 * The number of bytes processed by this connection
+	 */
+	Private  AtomicLong  handledBytes  =  new  AtomicLong ();
+
+	/**
+	 * The number of packets processed by this connection
+	 */
+	Private  AtomicLong  handledPackets  =  new  AtomicLong ();
+
+	/**
+	 * The number of bytes that have been received by this connection
+	 */
+	Private  AtomicLong  receivedBytes  =  new  AtomicLong ();
+	
+	/**
+	 * How many times TCP packets have been received by this connection
+	 */
+	Private  AtomicLong  receivedTcps  =  new  AtomicLong ();
+
+	/**
+	 * The number of packets received by this connection
+	 */
+	Private  AtomicLong  receivedPackets  =  new  AtomicLong ();
+	
+	/**
