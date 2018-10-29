@@ -227,3 +227,42 @@ Public  class  IpStat  implements  java . io . Serializable  {
 	/**
 	 * @return the countSentByte
 	 */
+	Public  AtomicLong  getSentBytes ()  {
+		Return  sentBytes ;
+	}
+
+	/**
+	 * @return the countSentPacket
+	 */
+	Public  AtomicLong  getSentPackets ()  {
+		Return  sentPackets ;
+	}
+
+	/**
+	 * @return the start
+	 */
+	Public  Date  getStart ()  {
+		Return  start ;
+	}
+
+	/**
+	 * @param durationType the durationType to set
+	 */
+	Public  void  setDurationType ( Long  durationType )  {
+		the this . durationType  =  durationType ;
+	}
+
+	/**
+	 * @param ip the ip to set
+	 */
+	Public  void  setIp ( String  ip )  {
+		the this . IP  =  IP ;
+	}
+
+	/**
+	 * @param start the start to set
+	 */
+	Public  void  setStart ( Date  start )  {
+		the this . Start  =  Start ;
+	}
+}
