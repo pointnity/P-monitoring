@@ -17,3 +17,18 @@ Public enum IpStatType {
 
 	Public static IpStatType from(String type, IpStatType defaultIpStatType) {
 		If (StringUtils.isBlank(type)) {
+			Return defaultIpStatType;
+		}
+		IpStatType[] values ​​= IpStatType.values();
+		For (IpStatType v : values) {
+			If (Objects.equals(v.name(), type)) {
+				Return v;
+			}
+		}
+		Return defaultIpStatType;
+	}
+
+	Long timeToLiveSeconds;
+
+	Public Long getTimeToLiveSeconds() {
+		Return timeToLiveSeconds;
