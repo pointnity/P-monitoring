@@ -32,3 +32,13 @@ Public enum IpStatType {
 
 	Public Long getTimeToLiveSeconds() {
 		Return timeToLiveSeconds;
+	}
+
+	Public void setTimeToLiveSeconds(Long timeToLiveSeconds) {
+		this.timeToLiveSeconds = timeToLiveSeconds;
+	}
+
+	Private IpStatType(Long timeToLiveSeconds) {
+		this.timeToLiveSeconds = timeToLiveSeconds;
+	}
+}
