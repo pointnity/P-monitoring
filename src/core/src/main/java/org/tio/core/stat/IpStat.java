@@ -64,3 +64,43 @@ Public  class  IpStat  implements  java . io . Serializable  {
 	 * The number of bytes processed by this IP
 	 */
 	Private  AtomicLong  handledBytes  =  new  AtomicLong ();
+
+	/**
+	 * The number of packets processed by this IP
+	 */
+	Private  AtomicLong  handledPackets  =  new  AtomicLong ();
+
+	/**
+	 * The number of bytes received by this IP
+	 */
+	Private  AtomicLong  receivedBytes  =  new  AtomicLong ();
+
+	/**
+	 * How many times TCP packets have been received by this IP?
+	 */
+	Private  AtomicLong  receivedTcps  =  new  AtomicLong ();
+
+	/**
+	 * The number of packets received by this IP
+	 */
+	Private  AtomicLong  receivedPackets  =  new  AtomicLong ();
+
+	Public  IpStat ( String  ip ,  Long  durationType )  {
+		the this . IP  =  IP ;
+		the this . durationType  =  durationType ;
+	}
+
+// /**
+// * @return the activatedCount
+// */
+// public static AtomicInteger getActivatedCount(String ip, boolean forceCreate) {
+// AtomicInteger atomicInteger = activatedCount.getObj().get(ip);
+// if (atomicInteger == null && forceCreate) {
+// Lock lock = activatedCount.getLock().writeLock();
+// try {
+// lock.lock();
+// atomicInteger = activatedCount.getObj().get(ip);
+// if (atomicInteger == null) {
+// atomicInteger = new AtomicInteger();
+// activatedCount.getObj().put(ip, atomicInteger);
+// }
