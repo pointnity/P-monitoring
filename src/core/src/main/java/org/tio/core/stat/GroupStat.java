@@ -37,3 +37,29 @@ Public  class  GroupStat  implements  java . io . Serializable   {
 		}
 		Double  ret  =  ( double ) receivedBytes . get ()  /  ( double ) receivedTcps . get ();
 		Return  ret ;
+	}
+	
+	/**
+	 * Average number of service packets received per TCP, this can be used to monitor slow attacks. The smaller the value, the more suspected the attack is.
+	 */
+	Public  double  getPacketsPerTcpReceive ()  {
+		If  ( receivedTcps . get ()  ==  0 )  {
+			Return  0 ;
+		}
+		Double  ret  =  ( double ) receivedPackets . get ()  /  ( double ) receivedTcps . get ();
+		Return  ret ;
+	}
+	
+	
+	/**
+	 * Number of message packets processed
+	 */
+	Private  AtomicLong  handledPacket  =  new  AtomicLong ();
+
+	Private  AtomicLong  handledBytes  =  new  AtomicLong ();
+
+	/**
+	 * Number of messages sent
+	 */
+	Private  AtomicLong  sentPacket  =  new  AtomicLong ();
+
