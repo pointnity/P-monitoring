@@ -42,3 +42,26 @@ public class ChannelStat implements java.io.Serializable {
 	private long timeCreated = SystemTimer.currentTimeMillis();
 
 	/**
+	 * The time when the first connection was successful
+	 */
+	Private  Long  timeFirstConnected  =  null ;
+
+	/**
+	 * When the connection is closed
+	 */
+	Private  long  timeClosed  =  SystemTimer . currentTimeMillis ();
+
+	/**
+	 * Enter re-queue time
+	 */
+	Private  long  timeInReconnQueue  =  SystemTimer . currentTimeMillis ();
+
+	/**
+	 * The number of bytes sent by this connection
+	 */
+	Private  AtomicLong  sentBytes  =  new  AtomicLong ();
+
+	/**
+	 * The number of packets sent by this connection
+	 */
+	Private  AtomicLong  sentPackets  =  new  AtomicLong ();
