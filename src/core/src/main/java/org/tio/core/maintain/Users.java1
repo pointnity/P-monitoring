@@ -78,3 +78,17 @@ public class Users {
 		} finally {
 			lock.unlock();
 		}
+	}
+
+	/**
+	 * @return the map
+	 */
+	public ObjWithLock<DualHashBidiMap<String, ChannelContext>> getMap() {
+		return map;
+	}
+
+	/**
+	 * Remove Channelcontext bound UserID
+	 *
+	 * @param channelContext the channel context
+	 */
