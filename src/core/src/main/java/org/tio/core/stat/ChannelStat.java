@@ -287,3 +287,35 @@ public class ChannelStat implements java.io.Serializable {
 	public void setTimeInReconnQueue(long timeInReconnQueue) {
 		this.timeInReconnQueue = timeInReconnQueue;
 	}
+
+	/**
+	 * @return the latestTimeOfReceivedByte
+	 */
+	Public  long  getLatestTimeOfReceivedByte ()  {
+		Return  latestTimeOfReceivedByte ;
+	}
+
+	/**
+	 * @param latestTimeOfReceivedByte the latestTimeOfReceivedByte to set
+	 */
+	Public  void  setLatestTimeOfReceivedByte ( long  latestTimeOfReceivedByte )  {
+		the this . latestTimeOfReceivedByte  =  latestTimeOfReceivedByte ;
+	}
+
+	/**
+	 * @return the latestTimeOfSentByte
+	 */
+	Public  long  getLatestTimeOfSentByte ()  {
+		Return  latestTimeOfSentByte ;
+	}
+
+	/**
+	 * @param latestTimeOfSentByte the latestTimeOfSentByte to set
+	 */
+	Public  void  setLatestTimeOfSentByte ( long  latestTimeOfSentByte )  {
+		the this . latestTimeOfSentByte  =  latestTimeOfSentByte ;
+	}
+
+	/**
+	 * @return the receivedTcps
+	 */
