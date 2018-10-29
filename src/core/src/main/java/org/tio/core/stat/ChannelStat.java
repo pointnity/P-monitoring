@@ -222,3 +222,37 @@ public class ChannelStat implements java.io.Serializable {
 	 * @param countHandledPacket the countHandledPacket to set
 	 */
 	Public  void  setHandledPackets ( AtomicLong  handledPackets )  {
+		the this . handledPackets  =  handledPackets ;
+	}
+
+	/**
+	 * @param timeLatestReceivedMsg the timeLatestReceivedMsg to set
+	 */
+	Public  void  setLatestTimeOfReceivedPacket ( long  latestTimeOfReceivedPacket )  {
+		the this . latestTimeOfReceivedPacket  =  latestTimeOfReceivedPacket ;
+	}
+
+	/**
+	 * @param timeLatestSentMsg the timeLatestSentMsg to set
+	 */
+	Public  void  setLatestTimeOfSentPacket ( long  latestTimeOfSentPacket )  {
+		the this . latestTimeOfSentPacket  =  latestTimeOfSentPacket ;
+	}
+
+	/**
+	 * @param countReceivedByte the countReceivedByte to set
+	 */
+	Public  void  setReceivedBytes ( AtomicLong  receivedBytes )  {
+		the this . ReceivedBytes  =  ReceivedBytes ;
+	}
+
+	/**
+	 * @param countReceivedPacket the countReceivedPacket to set
+	 */
+	Public  void  setReceivedPackets ( AtomicLong  receivedPackets )  {
+		This . receivedPackets  =  receivedPackets ;
+	}
+
+	/**
+	 * @param countSentByte the countSentByte to set
+	 */
