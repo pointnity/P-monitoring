@@ -104,3 +104,33 @@ Public  class  IpStat  implements  java . io . Serializable  {
 // atomicInteger = new AtomicInteger();
 // activatedCount.getObj().put(ip, atomicInteger);
 // }
+// } catch (Throwable e) {
+// throw e;
+// } finally {
+// lock.unlock();
+// }
+// }
+// return atomicInteger;
+// }
+//	
+// public static void removeActivatedCount(String ip) {
+// Lock lock = activatedCount.getLock().writeLock();
+// try {
+// lock.lock();
+// activatedCount.getObj().remove(ip);
+// } catch (Throwable e) {
+// throw e;
+// } finally {
+// lock.unlock();
+// }
+// }
+
+	/**
+	 * Average number of bytes received per TCP, this can be used to monitor slow attacks, configure PacketsPerTcpReceive to locate slow attacks
+	 */
+	Public  double  getBytesPerTcpReceive ()  {
+		If  ( receivedTcps . get ()  ==  0 )  {
+			Return  0 ;
+		}
+		Double  ret  =  ( double )  receivedBytes . get ()  /  ( double )  receivedTcps . get ();
+		Return  ret ;
