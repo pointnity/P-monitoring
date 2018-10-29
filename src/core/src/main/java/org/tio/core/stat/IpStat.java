@@ -194,3 +194,36 @@ Public  class  IpStat  implements  java . io . Serializable  {
 		}
 		Double  ret  =  ( double )  receivedPackets . get ()  /  ( double )  receivedTcps . get ();
 		Return  ret ;
+	}
+
+	/**
+	 * @return the countReceivedByte
+	 */
+	Public  AtomicLong  getReceivedBytes ()  {
+		Return  receivedBytes ;
+	}
+
+	/**
+	 * @return the countReceivedPacket
+	 */
+	Public  AtomicLong  getReceivedPackets ()  {
+		Return  receivedPackets ;
+	}
+
+	/**
+	 * @return the receivedTcps
+	 */
+	Public  AtomicLong  getReceivedTcps ()  {
+		Return  receivedTcps ;
+	}
+
+	/**
+	 * @return the requestCount
+	 */
+	Public  AtomicInteger  getRequestCount ()  {
+		Return  requestCount ;
+	}
+
+	/**
+	 * @return the countSentByte
+	 */
