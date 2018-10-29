@@ -134,3 +134,31 @@ Public  class  IpStat  implements  java . io . Serializable  {
 		}
 		Double  ret  =  ( double )  receivedBytes . get ()  /  ( double )  receivedTcps . get ();
 		Return  ret ;
+	}
+
+	/**
+	 * @return the decodeErrorCount
+	 */
+	Public  AtomicInteger  getDecodeErrorCount ()  {
+		Return  decodeErrorCount ;
+	}
+
+	Public  long  getDuration ()  {
+		Duration  =  SystemTimer . currentTimeMillis ()  -  this . start . getTime ();
+		Return  duration ;
+	}
+
+	/**
+	 * @return the durationType
+	 */
+	Public  Long  getDurationType ()  {
+		Return  durationType ;
+	}
+
+	/**
+	 * @return the duration
+	 */
+	Public  String  getFormatedDuration ()  {
+		Duration  =  SystemTimer . currentTimeMillis ()  -  this . start . getTime ();
+		BetweenFormater  betweenFormater  =  new  BetweenFormater ( duration ,  Level . MILLSECOND );
+		Return  betweenFormater . format ();
