@@ -1,0 +1,16 @@
+package org.tio.core.maintain;
+
+import java.util.concurrent.locks.Lock;
+
+import org.apache.commons.collections4.bidimap.DualHashBidiMap;
+import org.apache.commons.lang3.StringUtils;
+import org.tio.core.ChannelContext;
+import org.tio.core.GroupContext;
+import org.tio.utils.lock.ObjWithLock;
+
+/**
+ * 
+ * @author tanyaowu 
+ *  
+ */
+public class Users {
