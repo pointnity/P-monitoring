@@ -14,3 +14,13 @@ import org.tio.utils.lock.ObjWithLock;
  *  
  */
 public class Users {
+
+	/**
+	 * key: userid
+	 * value: ChannelContext
+	 */
+	private ObjWithLock<DualHashBidiMap<String, ChannelContext>> map = new ObjWithLock<>(new DualHashBidiMap<String, ChannelContext>());
+
+	/**
+	 * Binds the UserID.
+	 *
