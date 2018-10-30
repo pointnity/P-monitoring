@@ -69,3 +69,17 @@ public class DecodeRunnable implements Runnable {
 		this.channelContext = channelContext;
 	}
 
+	/**
+	 * Empty the processed queue messages
+	 */
+	public void clearMsgQueue() {
+		lastByteBuffer = null;
+		newByteBuffer = null;
+	}
+
+	/**
+	 * @see java.lang.Runnable#run()
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
