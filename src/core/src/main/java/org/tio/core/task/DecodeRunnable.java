@@ -22,7 +22,7 @@ import org.tio.utils.SystemTimer;
  * Decoding
 *
  * @author  
- * 2012-08-09
+ *  
  *
  */
 public class DecodeRunnable implements Runnable {
