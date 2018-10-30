@@ -170,3 +170,10 @@ public class DecodeRunnable implements Runnable {
 						log.error(e.toString(), e);
 					}
 					handler(channelContext, packet, len);
+
+					int remainingLength = byteBuffer.limit() - byteBuffer.position();
+					if (remainingLength > 0)//After the package, there is data left
+					{
+						if (log.isDebugEnabled()) {
+							log.debug("{},After the package, there is data left:{}", channelContext, remainingLength);
+						}
