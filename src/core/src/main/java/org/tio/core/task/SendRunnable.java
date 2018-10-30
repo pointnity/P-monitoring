@@ -22,3 +22,14 @@ Import  org.tio.utils.thread.pool.AbstractQueueRunnable ;
 /**
  *
  * @author tanyaowu
+*  
+ */
+Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
+
+	Private  static  final  Logger  log  =  LoggerFactory . getLogger ( SendRunnable . class );
+
+	Private  ChannelContext  channelContext  =  null ;
+
+	/**
+	 *
+	 * @param channelContext
