@@ -187,3 +187,11 @@ public class DecodeRunnable implements Runnable {
 				}
 			}
 		} catch (AioDecodeException e) {
+			//			log.error(channelContext.toString() + "Decoding exceptions", e);
+			Aio.close(channelContext, e, "Decoding exceptions:" + e.getMessage());
+			//			int errorCount = channelContext.getIpStat().getDecodeErrorCount().incrementAndGet();
+//			GuavaCache[] caches = channelContext.getGroupContext().ips.getCaches();
+//			for (GuavaCache guavaCache : caches) {
+//				IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
+//				ipStat.getDecodeErrorCount().incrementAndGet();
+//			}
