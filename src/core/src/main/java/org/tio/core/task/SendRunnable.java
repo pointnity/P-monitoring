@@ -78,3 +78,24 @@ Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
 		}
 		Return  byteBuffer ;
 	}
+
+	@Override
+	Public  void  runTask ()  {
+		Int  queueSize  =  msgQueue . size ();
+		If  ( queueSize  ==  0 )  {
+			Return ;
+		}
+		If  ( queueSize  >=  2000 )  {
+			queueSize  =  1000 ;
+		}
+
+		//Packet or PacketWithMeta
+		Object  obj  =  null ;
+		Packet  p  =  null ;
+		PacketWithMeta  packetWithMeta  =  null ;
+		GroupContext  groupContext  =  this . channelContext . getGroupContext ();
+		AioHandler  aioHandler  =  groupContext . getAioHandler ();
+
+		If  ( queueSize  >  1 )  {
+			ByteBuffer []  byteBuffers  =  new  ByteBuffer [ queueSize ];
+			Int  allBytebufferCapacity  =  0 ;
