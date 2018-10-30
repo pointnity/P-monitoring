@@ -88,3 +88,22 @@ Public  class  HandlerRunnable  extends  AbstractQueueRunnable < Packet >  {
 			
 			List < Long >  list  =  groupContext . ipStats . durationList ;
 			For  ( Long  v  :  list )  {
+				IpStat  ipStat  =  ( IpStat )  groupContext . ipStats . get ( v ,  channelContext . getClientNode (). getIp ());
+				ipStat . getHandledPackets (). incrementAndGet ();
+				ipStat . getHandledBytes (). addAndGet ( packet . getByteCount ());
+
+			}
+		}
+
+		// return ret;
+	}
+
+	/**
+	 * @see org.tio.core.threadpool.intf.ISynRunnable#runTask()
+	 *
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
+	@Override
+	Public  void  runTask ()  {
