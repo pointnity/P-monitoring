@@ -209,3 +209,15 @@ public class DecodeRunnable implements Runnable {
 	}
 
 	/**
+	 * @param newByteBuffer the newByteBuffer to set
+	 */
+	public void setNewByteBuffer(ByteBuffer newByteBuffer) {
+		this.newByteBuffer = newByteBuffer;
+	}
+
+	@Override
+	public String toString() {
+		return this.getClass().getSimpleName() + ":" + channelContext.toString();
+	}
+
+}
