@@ -58,3 +58,14 @@ public class DecodeRunnable implements Runnable {
 	private ByteBuffer lastByteBuffer = null;
 
 	/**
+	 *New data received
+	 */
+	private ByteBuffer newByteBuffer = null;
+
+	/**
+	 *
+	 */
+	public DecodeRunnable(ChannelContext channelContext) {
+		this.channelContext = channelContext;
+	}
+
