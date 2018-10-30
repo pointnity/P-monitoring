@@ -199,3 +199,31 @@ Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
 	 */
 	Public  void  sendPacket ( Object  obj )  {
 		Packet  packet  =  null ;
+		PacketWithMeta  packetWithMeta  =  null ;
+
+		Boolean  isPacket  =  obj  instanceof  Packet ;
+		If  ( isPacket )  {
+			Packet  =  ( Packet )  obj ;
+		}  else  {
+			packetWithMeta  =  ( PacketWithMeta )  obj ;
+			Packet  =  packetWithMeta . getPacket ();
+		}
+
+		channelContext . traceClient ( ChannelAction . BEFORE_SEND ,  packet ,  null );
+		GroupContext  groupContext  =  channelContext . getGroupContext ();
+		ByteBuffer  byteBuffer  =  getByteBuffer ( packet ,  groupContext ,  groupContext . getAioHandler ());
+		Int  packetCount  =  1 ;
+
+		If  ( isPacket )  {
+			sendByteBuffer ( byteBuffer ,  packetCount ,  packet );
+		}  else  {
+			sendByteBuffer ( byteBuffer ,  packetCount ,  packetWithMeta );
+		}
+	}
+
+	@Override
+	Public  String  toString ()  {
+		Return  this . getClass (). getSimpleName ()  +  ":"  +  channelContext . toString ();
+	}
+
+}
