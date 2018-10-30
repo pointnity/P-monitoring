@@ -177,3 +177,13 @@ public class DecodeRunnable implements Runnable {
 						if (log.isDebugEnabled()) {
 							log.debug("{},After the package, there is data left:{}", channelContext, remainingLength);
 						}
+						continue label_2;
+					} else//After the package, the data just ran out
+					{
+						lastByteBuffer = null;
+						log.debug("{},After the package, the data just ran out", channelContext);
+						return;
+					}
+				}
+			}
+		} catch (AioDecodeException e) {
