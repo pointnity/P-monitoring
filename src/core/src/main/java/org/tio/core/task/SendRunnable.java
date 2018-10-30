@@ -53,3 +53,28 @@ Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
 
 		Return  msgQueue . add ( obj );
 	}
+
+	/**
+	 * Clear message queue
+	 */
+	@Override
+	Public  void  clearMsgQueue ()  {
+		Object  p  =  null ;
+		While  (( p  =  msgQueue . poll ())  !=  null )  {
+			Try  {
+				channelContext . processAfterSent ( p ,  false );
+			}  catch  ( Throwable  e )  {
+				Log . error ( e . toString ( ),  e );
+			}
+		}
+	}
+
+	Private  ByteBuffer  getByteBuffer ( Packet  packet ,  GroupContext  groupContext ,  AioHandler  aioHandler )  {
+		ByteBuffer  byteBuffer  =  packet . getPreEncodedByteBuffer ();
+		If  ( byteBuffer  !=  null )  {
+			byteBuffer  =  byteBuffer . duplicate ();
+		}  else  {
+			byteBuffer  =  aioHandler . encode ( packet ,  groupContext ,  channelContext );
+		}
+		Return  byteBuffer ;
+	}
