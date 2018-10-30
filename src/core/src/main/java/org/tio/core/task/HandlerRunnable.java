@@ -66,3 +66,25 @@ Public  class  HandlerRunnable  extends  AbstractQueueRunnable < Packet >  {
 				channelContext . traceClient ( ChannelAction . AFTER_HANDLER ,  packet ,  null );
 			}
 			// ret++;
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . toString ( ),  e );
+			// return ret;
+		}  finally  {
+			channelContext . getStat (). getHandledPackets (). incrementAndGet ();
+			channelContext . getStat (). getHandledBytes (). addAndGet ( packet . getByteCount ());
+
+			groupContext . getGroupStat (). getHandledPacket (). incrementAndGet ();
+			groupContext . getGroupStat (). getHandledBytes (). addAndGet ( packet . getByteCount ());
+			
+// channelContext.getIpStat().getHandledPackets().incrementAndGet();
+// channelContext.getIpStat().getHandledBytes().addAndGet(packet.getByteCount());
+			
+// GuavaCache[] caches = channelContext.getGroupContext().ips.getCaches();
+// for (GuavaCache guavaCache : caches) {
+// IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
+// ipStat.getHandledPackets().incrementAndGet();
+// ipStat.getHandledBytes().addAndGet(packet.getByteCount());
+// }
+			
+			List < Long >  list  =  groupContext . ipStats . durationList ;
+			For  ( Long  v  :  list )  {
