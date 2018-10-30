@@ -173,3 +173,29 @@ Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
 			byteBuffer . flip ();
 		}
 		
+		AsynchronousSocketChannel  asynchronousSocketChannel  =  channelContext . getAsynchronousSocketChannel ();
+		WriteCompletionHandler  writeCompletionHandler  =  channelContext . getWriteCompletionHandler ();
+		Try  {
+			// long start = SystemTimer.currentTimeMillis();
+			writeCompletionHandler . getWriteSemaphore (). acquire ();
+			// long end = SystemTimer.currentTimeMillis();
+			// long iv = end - start;
+			// if (iv > 100) {
+			// //log.error("{} Waiting for a send lock: {} ms", channelContext, iv);
+			// }
+
+		}  catch  ( InterruptedException  e )  {
+			Log . error ( e . toString ( ),  e );
+		}
+
+		WriteCompletionVo  writeCompletionVo  =  new  WriteCompletionVo ( byteBuffer ,  packets );
+		asynchronousSocketChannel . write ( byteBuffer ,  writeCompletionVo ,  writeCompletionHandler );
+	}
+
+	/**
+	 *
+	 * @param obj Packet or PacketWithMeta
+	 * @author tanyaowu
+	 */
+	Public  void  sendPacket ( Object  obj )  {
+		Packet  packet  =  null ;
