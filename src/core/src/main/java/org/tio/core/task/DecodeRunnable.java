@@ -83,3 +83,24 @@ public class DecodeRunnable implements Runnable {
 	 * @author tanyaowu
 	 *  
 	 *
+	 */
+	@Override
+	public void run() {
+		ByteBuffer byteBuffer = newByteBuffer;
+		if (byteBuffer != null) {
+			if (lastByteBuffer != null) {
+				byteBuffer = ByteBufferUtils.composite(lastByteBuffer, byteBuffer);
+				lastByteBuffer = null;
+			}
+		} else {
+			return;
+		}
+
+		try {
+			label_2: while (true) {
+				int initPosition = byteBuffer.position();
+				GroupContext groupContext = channelContext.getGroupContext();
+				Packet packet = groupContext.getAioHandler().decode(byteBuffer, channelContext);
+
+				if (packet == null)// The data is not enough to solve the code
+				{
