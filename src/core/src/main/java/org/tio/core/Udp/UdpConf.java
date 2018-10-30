@@ -37,3 +37,21 @@ Public  class  UdpConf  {
 
 	Public  Node  getServerNode ()  {
 		Return  serverNode ;
+	}
+
+	Public  int  getTimeout ()  {
+		Return  timeout ;
+	}
+
+	Public  void  setCharset ( String  charset )  {
+		the this . charset  =  charset ;
+	}
+
+	Public  void  setServerNode ( Node  serverNode )  {
+		the this . ServerNode  =  ServerNode ;
+	}
+
+	Public  void  setTimeout ( int  timeout )  {
+		the this . timeout  =  timeout ;
+	}
+}
