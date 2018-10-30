@@ -145,3 +145,31 @@ Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
 					sendPacket ( p );
 				}  else  {
 					packetWithMeta  =  ( PacketWithMeta )  obj ;
+					p  =  packetWithMeta . getPacket ();
+					sendPacket ( packetWithMeta );
+				}
+			}
+		}
+	}
+
+	/**
+	 *
+	 * @param byteBuffer
+	 * @param packetCount
+	 * @param packets Packet or PacketWithMeta or List<PacketWithMeta> or List<Packet>
+	 * @author tanyaowu
+	 */
+	Public  void  sendByteBuffer ( ByteBuffer  byteBuffer ,  Integer  packetCount ,  Object  packets )  {
+		If  ( byteBuffer  ==  null )  {
+			Log . error ( "{},byteBuffer is null" ,  channelContext );
+			Return ;
+		}
+
+		If  (! AioUtils . checkBeforeIO ( channelContext ))  {
+			Return ;
+		}
+
+		If  ( byteBuffer . position ()  !=  0 )  {
+			byteBuffer . flip ();
+		}
+		
