@@ -99,3 +99,26 @@ Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
 		If  ( queueSize  >  1 )  {
 			ByteBuffer []  byteBuffers  =  new  ByteBuffer [ queueSize ];
 			Int  allBytebufferCapacity  =  0 ;
+
+			Int  packetCount  =  0 ;
+			List < Object >  packets  =  new  ArrayList <>( queueSize );
+			For  ( int  i  =  0 ;  i  <  queueSize ;  i ++)  {
+				If  (( obj  =  msgQueue . poll ())  !=  null )  {
+					Boolean  isPacket  =  obj  instanceof  Packet ;
+					If  ( isPacket )  {
+						p  =  ( Packet )  obj ;
+						Packets . add ( p );
+					}  else  {
+						packetWithMeta  =  ( PacketWithMeta )  obj ;
+						p  =  packetWithMeta . getPacket ();
+						packets . the Add ( packetWithMeta );
+					}
+
+					ByteBuffer  byteBuffer  =  getByteBuffer ( p ,  groupContext ,  aioHandler );
+
+					channelContext . traceClient ( ChannelAction . BEFORE_SEND ,  p ,  null );
+
+					allBytebufferCapacity  +=  byteBuffer . limit ();
+					packetCount ++;
+					byteBuffers [ i ]  =  byteBuffer ;
+				}  else  {
