@@ -114,3 +114,15 @@ public class DecodeRunnable implements Runnable {
 						log.error("{} Decoding failed, this time the total failure {} times, the length of the decoded data is {} bytes, please consider if you want to pull black this IP", channelContext, channelStat.getDecodeFailCount(), len);
 
 					}
+					return;
+				} else //Decoding succeeded
+				{
+					channelContext.getStat().setLatestTimeOfReceivedPacket(SystemTimer.currentTimeMillis());
+
+					ChannelStat channelStat = channelContext.getStat();
+					channelStat.setDecodeFailCount(0);
+
+					int afterDecodePosition = byteBuffer.position();
+					int len = afterDecodePosition - initPosition;
+
+					//					if (len == 0)
