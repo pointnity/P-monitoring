@@ -35,3 +35,17 @@ public class DecodeRunnable implements Runnable {
 	 * @param byteCount
 	 * @author tanyaowu
 	 */
+	public static void handler(ChannelContext channelContext, Packet packet, int byteCount) {
+
+		GroupContext groupContext = channelContext.getGroupContext();
+		PacketHandlerMode packetHandlerMode = groupContext.getPacketHandlerMode();
+
+		HandlerRunnable handlerRunnable = channelContext.getHandlerRunnable();
+		if (packetHandlerMode == PacketHandlerMode.QUEUE) {
+
+			handlerRunnable.addMsg(packet);
+			groupContext.getTioExecutor().execute(handlerRunnable);
+		} else {
+			handlerRunnable.handler(packet);
+		}
+	}
