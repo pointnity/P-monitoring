@@ -151,3 +151,22 @@ public class DecodeRunnable implements Runnable {
 //					for (Long v : durationList) {
 //						IpStat ipStat = (IpStat) groupContext.ips.get(v, channelContext.getClientNode().getIp());
 //						ipStat.getReceivedPackets().incrementAndGet();
+//
+//					}
+					
+					
+
+					channelContext.traceClient(ChannelAction.RECEIVED, packet, null);
+
+					packet.setByteCount(len);
+
+					AioListener aioListener = channelContext.getGroupContext().getAioListener();
+					try {
+						if (log.isDebugEnabled()) {
+							log.debug("{} Receive Message {}", channelContext, packet.logstr());
+						}
+						aioListener.onAfterReceived(channelContext, packet, len);
+					} catch (Throwable e) {
+						log.error(e.toString(), e);
+					}
+					handler(channelContext, packet, len);
