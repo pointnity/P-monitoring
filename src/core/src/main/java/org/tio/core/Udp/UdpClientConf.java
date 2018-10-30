@@ -24,3 +24,8 @@ Public  class  UdpClientConf  extends  UdpConf  {
 	Public  UdpClientConf ( String  serverip ,  int  serverport ,  int  timeout )  {
 		Super ( timeout );
 		Node  node  =  new  Node ( serverip ,  serverport );
+		the this . setServerNode ( Node );
+		This . setTimeout ( timeout );
+	}
+
+}
