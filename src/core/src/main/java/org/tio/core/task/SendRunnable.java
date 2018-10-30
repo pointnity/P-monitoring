@@ -33,3 +33,23 @@ Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
 	/**
 	 *
 	 * @param channelContext
+	 * @param executor
+	 * @author tanyaowu
+	 */
+	Public  SendRunnable ( ChannelContext  channelContext ,  Executor  executor )  {
+		Super ( executor );
+		the this . channelContext  =  channelContext ;
+	}
+
+	/**
+	 *
+	 */
+	@Override
+	Public  boolean  addMsg ( Object  obj )  {
+		If  ( this . isCanceled ())  {
+			Log . error ( "{}, the task has been canceled, {} added to the send queue failed" ,  channelContext ,  obj );
+			Return  false ;
+		}
+
+		Return  msgQueue . add ( obj );
+	}
