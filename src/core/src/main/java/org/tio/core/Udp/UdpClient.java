@@ -15,3 +15,26 @@ Import  org.tio.core.udp.task.UdpSendRunnable ;
  * @author tanyaowu
  *  
  */
+Public  class  UdpClient  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( UdpClient . class );
+
+	// private static final int TIMEOUT = 5000; //Set the timeout for receiving data
+
+	Public  static  void  main ( String []  args )  {
+		UdpClientConf  udpClientConf  =  new  UdpClientConf ( "127.0.0.1" ,  3000 ,  5000 );
+		UdpClient  udpClient  =  new  UdpClient ( udpClientConf );
+		udpClient . start ();
+
+		Long  start  =  System . currentTimeMillis ();
+		For  ( int  i  =  0 ;  i  <  1000000 ;  i ++)  {
+			String  str  =  i  +  ", "  +  "somewhat meaning" ;
+			udpClient . send ( str . getBytes ());
+		}
+		Long  end  =  System . currentTimeMillis ();
+		Long  iv  =  end  -  start ;
+		System . out . println ( "Time consuming:"  +  iv  +  "ms" );
+	}
+
+	Private  LinkedBlockingQueue < DatagramPacket >  queue  =  new  LinkedBlockingQueue <>();
+
+	Private  UdpClientConf  udpClientConf  =  null ;
