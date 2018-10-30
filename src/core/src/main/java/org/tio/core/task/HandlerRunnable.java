@@ -41,3 +41,28 @@ Public  class  HandlerRunnable  extends  AbstractQueueRunnable < Packet >  {
 	 * @return
 	 *
 	 * @author tanyaowu
+	 */
+	Public  void  handler ( Packet  packet )  {
+		// int ret = 0;
+
+		GroupContext  groupContext  =  channelContext . getGroupContext ();
+		Try  {
+
+			Integer  synSeq  =  packet . getSynSeq ();
+			If  ( synSeq  !=  null  &&  synSeq  >  0 )  {
+				ChannelContextMapWithLock  syns  =  channelContext . getGroupContext (). getWaitingResps ();
+				Packet  initPacket  =  syns . remove ( synSeq );
+				If  ( initPacket  !=  null )  {
+					Synchronized  ( initPacket )  {
+						SYNs . PUT ( synSeq ,  Packet );
+						initPacket . notify ();
+					}
+				}  else  {
+					Log . error ( "[{}] synchronization message failed, synSeq is {}, but there is no corresponding key value in the synchronization collection" ,  synFailCount . incrementAndGet (),  synSeq );
+				}
+			}  else  {
+				channelContext . traceClient ( ChannelAction . BEFORE_HANDLER ,  packet ,  null );
+				groupContext . getAioHandler (). handler ( packet ,  channelContext );
+				channelContext . traceClient ( ChannelAction . AFTER_HANDLER ,  packet ,  null );
+			}
+			// ret++;
