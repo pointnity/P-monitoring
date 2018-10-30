@@ -104,3 +104,13 @@ public class DecodeRunnable implements Runnable {
 
 				if (packet == null)// The data is not enough to solve the code
 				{
+					lastByteBuffer = ByteBufferUtils.copy(byteBuffer, initPosition, byteBuffer.limit());
+					ChannelStat channelStat = channelContext.getStat();
+					int decodeFailCount = channelStat.getDecodeFailCount() + 1;
+					channelStat.setDecodeFailCount(decodeFailCount);
+					int len = byteBuffer.limit() - initPosition;
+					log.info("{} Code failed, this time the total failure {} times, the length of the data involved in decoding {} bytes", channelContext, decodeFailCount, len);
+					if (decodeFailCount > 5) {
+						log.error("{} Decoding failed, this time the total failure {} times, the length of the decoded data is {} bytes, please consider if you want to pull black this IP", channelContext, channelStat.getDecodeFailCount(), len);
+
+					}
