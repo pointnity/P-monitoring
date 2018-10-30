@@ -60,3 +60,27 @@ Public  class  UdpClient  {
 	}
 
 	Public  void  send ( String  str )  {
+		Send ( str ,  null );
+	}
+
+	Public  void  send ( String  data ,  String  charset )  {
+		If  ( StringUtils . isBlank ( data ))  {
+			Return ;
+		}
+		Try  {
+			If  ( StringUtils . isBlank ( charset ))  {
+				Charset  =  udpClientConf . getCharset ();
+			}
+			Byte []  bs  =  data . getBytes ( charset );
+			Send ( bs );
+		}  catch  ( UnsupportedEncodingException  e )  {
+			Log . error ( e . toString ( ),  e );
+		}
+	}
+
+	Public  void  start ()  {
+		Thread  thread  =  new  Thread ( udpSendRunnable ,  "tio-udp-client-send" );
+		Thread . setDaemon ( false );
+		Thread . start ();
+	}
+}
