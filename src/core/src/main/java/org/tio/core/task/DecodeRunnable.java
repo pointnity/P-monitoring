@@ -126,3 +126,28 @@ public class DecodeRunnable implements Runnable {
 					int len = afterDecodePosition - initPosition;
 
 					//					if (len == 0)
+					//					{
+					//						String logstr = channelContext + "Decoding succeeded, "+ packet.LOGSTR () + "," + Bytebuffer + "but consumes only 0 bytes, which could lead to a dead loop. " + ThreadUtils.stackTrace();
+					//						log.error(logstr);
+					//					}
+
+					channelContext.getGroupContext().getGroupStat().getReceivedPackets().incrementAndGet();
+					channelContext.getStat().getReceivedPackets().incrementAndGet();
+					//					channelContext.getIpStat().getReceivedPackets().incrementAndGet();
+
+//					GuavaCache[] caches = channelContext.getGroupContext().ips.getCaches();
+//					for (GuavaCache guavaCache : caches) {
+//						IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
+//						ipStat.getReceivedPackets().incrementAndGet();
+//					}
+					
+					List<Long> list = groupContext.ipStats.durationList;
+					for (Long v : list) {
+						IpStat ipStat = (IpStat) groupContext.ipStats.get(v, channelContext.getClientNode().getIp());
+						ipStat.getReceivedPackets().incrementAndGet();
+					}
+					
+//					List<Long> durationList = groupContext.ips.list;
+//					for (Long v : durationList) {
+//						IpStat ipStat = (IpStat) groupContext.ips.get(v, channelContext.getClientNode().getIp());
+//						ipStat.getReceivedPackets().incrementAndGet();
