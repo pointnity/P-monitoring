@@ -49,3 +49,12 @@ public class DecodeRunnable implements Runnable {
 			handlerRunnable.handler(packet);
 		}
 	}
+
+	private ChannelContext channelContext = null;
+
+	/**
+	 * Last decoding the rest of the data
+	 */
+	private ByteBuffer lastByteBuffer = null;
+
+	/**
