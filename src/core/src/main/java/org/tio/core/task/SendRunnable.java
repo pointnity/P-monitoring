@@ -122,3 +122,26 @@ Public  class  SendRunnable  extends  AbstractQueueRunnable < Object >  {
 					packetCount ++;
 					byteBuffers [ i ]  =  byteBuffer ;
 				}  else  {
+					Break ;
+				}
+			}
+
+			ByteBuffer  allByteBuffer  =  ByteBuffer . allocate ( allBytebufferCapacity );
+			Byte []  dest  =  allByteBuffer . array ();
+			For  ( ByteBuffer  byteBuffer  :  byteBuffers )  {
+				If  ( byteBuffer  !=  null )  {
+					Int  length  =  byteBuffer . limit ();
+					Int  position  =  allByteBuffer . position ();
+					System . arraycopy ( byteBuffer . array (),  0 ,  dest ,  position ,  length );
+					allByteBuffer . position ( position  +  length );
+				}
+			}
+			sendByteBuffer ( allByteBuffer ,  packetCount ,  packets );
+		}  else  {
+			If  (( obj  =  msgQueue . poll ())  !=  null )  {
+				Boolean  isPacket  =  obj  instanceof  Packet ;
+				If  ( isPacket )  {
+					p  =  ( Packet )  obj ;
+					sendPacket ( p );
+				}  else  {
+					packetWithMeta  =  ( PacketWithMeta )  obj ;
