@@ -195,3 +195,17 @@ public class DecodeRunnable implements Runnable {
 //				IpStat ipStat = (IpStat) guavaCache.get(channelContext.getClientNode().getIp());
 //				ipStat.getDecodeErrorCount().incrementAndGet();
 //			}
+			
+			GroupContext groupContext = channelContext.getGroupContext();
+			List<Long> list = groupContext.ipStats.durationList;
+			for (Long v : list) {
+				IpStat ipStat = (IpStat) groupContext.ipStats.get(v, channelContext.getClientNode().getIp());
+				ipStat.getDecodeErrorCount().incrementAndGet();
+			}
+			
+			
+			return;
+		}
+	}
+
+	/**
