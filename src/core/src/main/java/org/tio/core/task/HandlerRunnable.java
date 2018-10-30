@@ -20,3 +20,24 @@ Import  org.tio.utils.thread.pool.AbstractQueueRunnable ;
 /**
  *
  * @author 
+ * 
+ *
+ */
+Public  class  HandlerRunnable  extends  AbstractQueueRunnable < Packet >  {
+	Private  static  Final  Logger  log  =  of LoggerFactory . the getLogger ( HandlerRunnable . class );
+
+	Private  ChannelContext  channelContext  =  null ;
+
+	Private  AtomicLong  synFailCount  =  new  AtomicLong ();
+
+	Public  HandlerRunnable ( ChannelContext  channelContext ,  Executor  executor )  {
+		Super ( executor );
+		the this . channelContext  =  channelContext ;
+	}
+
+	/**
+	 * Processing packets
+	 * @param packet
+	 * @return
+	 *
+	 * @author tanyaowu
