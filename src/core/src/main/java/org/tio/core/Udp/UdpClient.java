@@ -38,3 +38,25 @@ Public  class  UdpClient  {
 	Private  LinkedBlockingQueue < DatagramPacket >  queue  =  new  LinkedBlockingQueue <>();
 
 	Private  UdpClientConf  udpClientConf  =  null ;
+
+	/**
+	 * server address
+	 */
+	Private  InetSocketAddress  inetSocketAddress  =  null ;
+
+	Private  UdpSendRunnable  udpSendRunnable  =  null ;
+
+	Public  UdpClient ( UdpClientConf  udpClientConf )  {
+		Super ();
+		the this . udpClientConf  =  udpClientConf ;
+		Node  node  =  this . udpClientConf . getServerNode ();
+		inetSocketAddress  =  new  InetSocketAddress ( node . getIp (),  node . getPort ());
+		udpSendRunnable  =  new  UdpSendRunnable ( queue ,  udpClientConf ,  null );
+	}
+
+	Public  void  send ( byte []  data )  {
+		DatagramPacket  datagramPacket  =  new  DatagramPacket ( data ,  data . length ,  inetSocketAddress );
+		Queue . add ( datagramPacket );
+	}
+
+	Public  void  send ( String  str )  {
