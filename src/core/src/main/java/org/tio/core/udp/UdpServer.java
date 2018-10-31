@@ -80,3 +80,19 @@ Public  class  UdpServer  {
 	 * @author tanyaowu
 	 * @throws SocketException
 	 */
+	Public  UdpServer ( UdpServerConf  udpServerConf )  throws  SocketException  {
+		the this . udpServerConf  =  udpServerConf ;
+		datagramSocket  =  new  DatagramSocket ( this . udpServerConf . getServerNode (). getPort ());
+		readBuf  =  new  byte [ this . udpServerConf . getReadBufferSize ()];
+		udpHandlerRunnable  =  new  UdpHandlerRunnable ( udpServerConf . getUdpHandler (),  handlerQueue ,  datagramSocket );
+
+		udpSendRunnable  =  new  UdpSendRunnable ( sendQueue ,  udpServerConf ,  datagramSocket );
+	}
+
+	Public  void  send ( byte []  data ,  Node  remoteNode )  {
+		InetSocketAddress  inetSocketAddress  =  new  InetSocketAddress ( remoteNode . getIp (),  remoteNode . getPort ());
+		DatagramPacket  datagramPacket  =  new  DatagramPacket ( data ,  data . length ,  inetSocketAddress );
+		sendQueue . add ( datagramPacket );
+	}
+
+	Public  void  send ( String  str ,  Node  remoteNode )  {
