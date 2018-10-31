@@ -168,3 +168,10 @@ Public  class  UdpServer  {
 		Thread . setDaemon ( false );
 		Thread . start ();
 	}
+
+	Public  void  stop ()  {
+		isStopped  =  true ;
+		datagramSocket . close ();
+		udpHandlerRunnable . stop ();
+	}
+}
