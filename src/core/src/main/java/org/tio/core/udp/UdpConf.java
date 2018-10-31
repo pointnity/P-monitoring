@@ -34,3 +34,15 @@ Public  class  UdpConf  {
 	Public  String  getCharset ()  {
 		Return  charset ;
 	}
+
+	Public  Node  getServerNode ()  {
+		Return  serverNode ;
+	}
+
+	Public  int  getTimeout ()  {
+		Return  timeout ;
+	}
+
+	Public  void  setCharset ( String  charset )  {
+		the this . charset  =  charset ;
+	}
