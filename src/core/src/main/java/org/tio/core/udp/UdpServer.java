@@ -138,3 +138,22 @@ Public  class  UdpServer  {
 				}
 
 				While  (! isStopped )  {
+					Try  {
+						DatagramPacket  datagramPacket  =  new  DatagramPacket ( readBuf ,  readBuf . length );
+						datagramSocket . receive ( datagramPacket );
+
+						Byte []  data  =  new  byte [ datagramPacket . getLength ()];
+						System . arraycopy ( readBuf ,  0 ,  data ,  0 ,  datagramPacket . getLength ());
+
+						String  remoteip  =  datagramPacket . getAddress (). getHostAddress ();
+						Int  remoteport  =  datagramPacket . getPort ();
+						Node  remote  =  new  Node ( remoteip ,  remoteport );
+						UdpPacket  udpPacket  =  new  UdpPacket ( data ,  remote );
+
+						handlerQueue . put ( udpPacket );
+					}  catch  ( Throwable  e )  {
+						Log . error ( e . toString ( ),  e );
+					}
+				}
+			}
+		};
