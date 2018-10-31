@@ -116,3 +116,25 @@ Public  class  UdpServer  {
 
 	Public  void  start ()  {
 		startListen ();
+		startHandler ();
+		startSend ();
+	}
+
+	Private  void  startHandler ()  {
+		Thread  thread  =  new  Thread ( udpHandlerRunnable ,  "tio-udp-server-handler" );
+		Thread . setDaemon ( false );
+		Thread . start ();
+	}
+
+	Private  void  startListen ()  {
+		Runnable  runnable  =  new  Runnable ()  {
+			@Override
+			Public  void  run ()  {
+				String  startLog  =  "started tio udp server: "  +  udpServerConf . getServerNode ();
+				If  ( log . isInfoEnabled ())  {
+					Log . info ( startLog );
+				}  else  {
+					System . out . println ( startLog );
+				}
+
+				While  (! isStopped )  {
