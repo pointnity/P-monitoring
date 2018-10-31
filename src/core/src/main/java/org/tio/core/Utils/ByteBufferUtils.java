@@ -157,3 +157,28 @@ Public  class  ByteBufferUtils  {
 	 * @return
 	 * @author: tanyaowu
 	 */
+	Public  static  String  readLine ( ByteBuffer  buffer ,  String  charset ,  Integer  maxlength )  throws  LengthOverflowException  {
+		// boolean canEnd = false;
+		Int  startPosition  =  buffer . position ();
+		Int  endPosition  =  lineEnd ( buffer ,  maxlength );
+
+		If  ( endPosition  >  startPosition )  {
+			Byte []  bs  =  new  byte [ endPosition  -  startPosition ];
+			System . arraycopy ( buffer . array ( ),  startPosition ,  bs ,  0 ,  bs . length );
+			If  ( StringUtils . isNoneBlank ( charset ))  {
+				Try  {
+					Return  new  String ( bs ,  charset );
+				}  catch  ( UnsupportedEncodingException  e )  {
+					Throw  new  RuntimeException ( e );
+				}
+			}  else  {
+				Return  new  String ( bs );
+			}
+
+		}  else  if  ( endPosition  ==  - 1 )  {
+			Return  null ;
+		}  else  if  ( endPosition  ==  startPosition )  {
+			Return  "" ;
+		}
+		Return  null ;
+	}
