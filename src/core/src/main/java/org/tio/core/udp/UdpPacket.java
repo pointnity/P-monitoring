@@ -60,3 +60,12 @@ Public  class  UdpPacket  {
 	Public  void  setData ( byte []  data )  {
 		the this . Data  =  Data ;
 	}
+
+	Public  void  setRemote ( Node  remote )  {
+		the this . Remote  =  Remote ;
+	}
+
+	Public  void  setTime ( long  time )  {
+		the this . Time  =  Time ;
+	}
+}
