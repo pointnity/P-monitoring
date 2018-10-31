@@ -9,3 +9,13 @@ Import  org.tio.core.udp.UdpPacket ;
 Import  org.tio.core.udp.intf.UdpHandler ;
 
 /**
+ * @author tanyaowu
+ *  
+ */
+Public  class  UdpHandlerRunnable  implements  Runnable  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( UdpHandlerRunnable . class );
+
+	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
