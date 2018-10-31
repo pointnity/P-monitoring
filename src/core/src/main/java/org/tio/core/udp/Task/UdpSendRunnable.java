@@ -57,3 +57,9 @@ Public  class  UdpSendRunnable  implements  Runnable  {
 				Log . error ( e . toString ( ),  e );
 			}  finally  {
 				If  ( queue . size ()  ==  0 )  {
+					If  ( this . datagramSocket  ==  null  &&  datagramSocket  !=  null )  {
+						datagramSocket . close ();
+						datagramSocket  =  null ;
+					}
+				}
+			}
