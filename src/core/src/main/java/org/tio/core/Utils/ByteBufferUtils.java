@@ -259,3 +259,11 @@ Public  class  ByteBufferUtils  {
 		Buffer . put (( byte )  ( l  >>>  16 ));
 		Buffer . put (( byte )  ( l  >>>  24 ));
 	}
+
+	Public  static  final  void  writeUB4WithBigEdian ( ByteBuffer  buffer ,  long  l )  {
+		Buffer . put (( byte )  ( l  >>>  24 ));
+		Buffer . put (( byte )  ( l  >>>  16 ));
+		Buffer . put (( byte )  ( l  >>>  8 ));
+		Buffer . put (( byte )  ( l  &  0xff ));
+	}
+}
