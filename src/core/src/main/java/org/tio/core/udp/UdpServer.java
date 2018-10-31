@@ -157,3 +157,14 @@ Public  class  UdpServer  {
 				}
 			}
 		};
+
+		Thread  thread  =  new  Thread ( runnable ,  "tio-udp-server-listen" );
+		Thread . setDaemon ( false );
+		Thread . start ();
+	}
+
+	Private  void  startSend ()  {
+		Thread  thread  =  new  Thread ( udpSendRunnable ,  "tio-udp-client-send" );
+		Thread . setDaemon ( false );
+		Thread . start ();
+	}
