@@ -21,3 +21,15 @@ Public  class  UdpPacket  {
 	 *
 	 */
 	Private  byte []  data ;
+
+	/**
+	 * Peer Node
+	 */
+	Private  Node  remote ;
+
+	/**
+	 * Time when the message was received
+	 */
+	Private  long  time  =  SystemTimer . currentTimeMillis ();
+
+	/**
