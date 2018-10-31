@@ -209,3 +209,32 @@ Public  class  ByteBufferUtils  {
 		Return  null ;
 	}
 
+	Public  static  int  readUB1 ( ByteBuffer  buffer )  {
+		Int  ret  =  buffer . get ()  &  0xff ;
+		Return  ret ;
+	}
+
+	Public  static  int  readUB2 ( ByteBuffer  buffer )  {
+		Int  ret  =  buffer . get ()  &  0xff ;
+		Ret  |=  ( buffer . get ( )  &  0xff )  <<  8 ;
+		Return  ret ;
+	}
+
+	Public  static  int  readUB2WithBigEdian ( ByteBuffer  buffer )  {
+		Int  ret  =  ( buffer . get ( )  &  0xff )  <<  8 ;
+		Ret  |=  buffer . get ()  &  0xff ;
+		Return  ret ;
+	}
+
+	Public  static  long  readUB4 ( ByteBuffer  buffer )  {
+		Long  ret  =  buffer . get ()  &  0xff ;
+		Ret  |=  ( long )  ( buffer . get ( )  &  0xff )  <<  8 ;
+		Ret  |=  ( long )  ( buffer . get ( )  &  0xff )  <<  16 ;
+		Ret  |=  ( long )  ( buffer . get ( )  &  0xff )  <<  24 ;
+		Return  ret ;
+	}
+
+	public static long readUB4WithBigEdian(ByteBuffer buffer) {
+		long ret = (long) (buffer.get() & 0xff) << 24;
+		ret |= (long) (buffer.get() & 0xff) << 16;
+		ret |= (long) (buffer.get() & 0xff) << 8;
