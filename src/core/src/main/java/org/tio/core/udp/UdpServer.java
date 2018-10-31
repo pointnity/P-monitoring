@@ -64,3 +64,19 @@ Public  class  UdpServer  {
 	Private  LinkedBlockingQueue < DatagramPacket >  sendQueue  =  new  LinkedBlockingQueue <>();
 
 	Private  DatagramSocket  datagramSocket  =  null ;
+
+	Private  byte []  readBuf  =  null ;
+
+	Private  boolean  isStopped  =  false ;
+
+	Private  UdpHandlerRunnable  udpHandlerRunnable ;
+
+	Private  UdpSendRunnable  udpSendRunnable  =  null ;
+
+	Private  UdpServerConf  udpServerConf ;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 * @throws SocketException
+	 */
