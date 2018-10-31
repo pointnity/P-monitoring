@@ -31,3 +31,8 @@ Public  class  UdpServerConf  extends  UdpConf  {
 	Public  int  getReadBufferSize ()  {
 		Return  readBufferSize ;
 	}
+
+	Public  UdpHandler  getUdpHandler ()  {
+		Return  udpHandler ;
+	}
+
