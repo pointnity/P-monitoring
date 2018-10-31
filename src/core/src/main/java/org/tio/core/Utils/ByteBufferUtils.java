@@ -129,3 +129,31 @@ Public  class  ByteBufferUtils  {
 				Return  endPosition  -  1 ;
 			}
 		}
+		Return  - 1 ;
+	}
+
+	Public  static  byte []  readBytes ( ByteBuffer  buffer ,  int  length )  {
+		Byte []  ab  =  new  byte [ length ];
+		Buffer . get ( ab );
+		Return  ab ;
+	}
+
+	/**
+	 *
+	 * @param buffer
+	 * @param charset
+	 * @return
+	 * @author: tanyaowu
+	 */
+	Public  static  String  readLine ( ByteBuffer  buffer ,  String  charset )  throws  LengthOverflowException  {
+		Return  readLine ( buffer ,  charset ,  Integer . MAX_VALUE );
+	}
+
+	/**
+	 *
+	 * @param buffer
+	 * @param charset
+	 * @param maxlength
+	 * @return
+	 * @author: tanyaowu
+	 */
