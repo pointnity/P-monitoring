@@ -22,3 +22,12 @@ public class AioUtils {
 		boolean isWaitingClose = channelContext.isWaitingClose();
 
 		if (isWaitingClose) {
+			return false;
+		}
+
+		AsynchronousSocketChannel asynchronousSocketChannel = channelContext.getAsynchronousSocketChannel();
+		Boolean isopen = null;
+		if (asynchronousSocketChannel != null) {
+			isopen = asynchronousSocketChannel.isOpen();
+
+			if (isClosed || isRemoved) {
