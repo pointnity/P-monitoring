@@ -19,3 +19,13 @@ Public  class  UdpHandlerRunnable  implements  Runnable  {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
+
+	Private  UdpHandler  udpHandler ;
+	Private  LinkedBlockingQueue < UdpPacket >  queue ;
+
+	Private  DatagramSocket  datagramSocket ;
+
+	Private  boolean  isStopped  =  false ;
