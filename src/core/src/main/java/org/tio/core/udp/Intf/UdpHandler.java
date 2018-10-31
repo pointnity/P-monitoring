@@ -11,3 +11,10 @@ Import  org.tio.core.udp.UdpPacket ;
 Public  interface  UdpHandler  {
 
 	/**
+	 *
+	 * @param udpPacket
+	 * @param datagramSocket
+	 * @author tanyaowu
+	 */
+	Public  void  handler ( UdpPacket  udpPacket ,  DatagramSocket  datagramSocket );
+}
