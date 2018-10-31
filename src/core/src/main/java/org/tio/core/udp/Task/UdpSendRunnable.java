@@ -52,3 +52,8 @@ Public  class  UdpSendRunnable  implements  Runnable  {
 					datagramSocket . setSoTimeout ( udpConf . getTimeout ());
 				}
 				datagramSocket . send ( datagramPacket );
+
+			}  catch  ( Throwable  e )  {
+				Log . error ( e . toString ( ),  e );
+			}  finally  {
+				If  ( queue . size ()  ==  0 )  {
