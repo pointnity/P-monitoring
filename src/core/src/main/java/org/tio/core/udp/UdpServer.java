@@ -20,3 +20,18 @@ Import  org.tio.core.udp.task.UdpSendRunnable ;
 /**
  * @author tanyaowu
  *  
+*/
+Public  class  UdpServer  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( UdpServer . class );
+
+	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
+	Public  static  void  main ( String []  args )  throws  IOException  {
+		Final  AtomicLong  count  =  new  AtomicLong ();
+		UdpServer  udpServer  =  null ;
+		UdpHandler  udpHandler  =  new  UdpHandler ()  {
+			@Override
+			Public  void  handler ( UdpPacket  udpPacket ,  DatagramSocket  datagramSocket )  {
+				Byte []  data  =  udpPacket . getData ();
