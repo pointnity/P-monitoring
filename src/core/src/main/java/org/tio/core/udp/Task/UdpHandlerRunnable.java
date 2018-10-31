@@ -39,3 +39,10 @@ Public  class  UdpHandlerRunnable  implements  Runnable  {
 
 	@Override
 	Public  void  run ()  {
+		While  (! isStopped )  {
+			Try  {
+				UdpPacket  udpPacket  =  queue . take ();
+				If  ( udpPacket  !=  null )  {
+					udpHandler . handler ( udpPacket ,  datagramSocket );
+				}
+			}  catch  ( Throwable  e )  {
