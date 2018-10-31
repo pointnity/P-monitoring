@@ -82,3 +82,25 @@ Public  class  ByteBufferUtils  {
 		While  ( buffer . hasRemaining ())  {
 			Byte  b  =  buffer . get ();
 			Count ++;
+			If  ( count  >  maxlength )  {
+				Throw  new  LengthOverflowException ( "maxlength is "  +  maxlength );
+			}
+			If  ( b  ==  '\r' )  {
+				canEnd  =  true ;
+			}  else  if  ( b  ==  '\n' )  {
+				If  ( canEnd )  {
+					Int  endPosition  =  buffer . position ();
+					Return  endPosition  -  2 ;
+				}
+			}  else  {
+				canEnd  =  false ;
+			}
+		}
+		Return  - 1 ;
+	}
+
+	/**
+	 * 
+	 * @param buffer
+	 * @param endChar ends
+	 * @param maxlength
