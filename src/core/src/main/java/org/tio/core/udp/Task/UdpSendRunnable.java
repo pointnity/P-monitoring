@@ -45,3 +45,10 @@ Public  class  UdpSendRunnable  implements  Runnable  {
 	Public  void  run ()  {
 		DatagramSocket  datagramSocket  =  this . datagramSocket ;
 		While  (! isStopped )  {
+			Try  {
+				DatagramPacket  datagramPacket  =  queue . take ();
+				If  ( datagramSocket  ==  null )  {
+					datagramSocket  =  new  DatagramSocket ();
+					datagramSocket . setSoTimeout ( udpConf . getTimeout ());
+				}
+				datagramSocket . send ( datagramPacket );
