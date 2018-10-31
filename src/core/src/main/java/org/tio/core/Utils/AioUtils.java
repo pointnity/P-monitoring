@@ -41,3 +41,7 @@ public class AioUtils {
 				log.info("{}, isopen:{}, isClosed:{}, isRemoved:{}", channelContext, isopen, channelContext.isClosed(), channelContext.isRemoved());
 				return false;
 			}
+		}  else  {
+			Log . error ( "{}, check this exception, asynchronousSocketChannel is null, isClosed:{}, isRemoved:{}, {} " ,  channelContext ,  channelContext . isClosed (),  channelContext . isRemoved (),
+					ThreadUtils . stackTrace ());
+			Return  false ;
