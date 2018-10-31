@@ -104,3 +104,28 @@ Public  class  ByteBufferUtils  {
 	 * @param buffer
 	 * @param endChar ends
 	 * @param maxlength
+
+	 * @return
+	 * @throws LengthOverflowException
+	 * @author tanyaowu
+	 */
+	Public  static  int  lineEnd ( ByteBuffer  buffer ,  char  endChar ,  int  maxlength )  throws  LengthOverflowException  {
+		// int startPosition = buffer.position();
+		Int  count  =  0 ;
+// int i = 0;
+		While  ( buffer . hasRemaining ())  {
+			Byte  b  =  buffer . get ();
+			Count ++;
+			If  ( count  >  maxlength )  {
+				Throw  new  LengthOverflowException ( "maxlength is "  +  maxlength );
+			}
+// if (i == 22) {
+// log.error("{}-{}", (char)b, b);
+// }
+// log.error("{},{}-{}", i++, (char)b, b);
+			
+			If  (( char ) b  ==  endChar )  {
+				Int  endPosition  =  buffer . position ();
+				Return  endPosition  -  1 ;
+			}
+		}
