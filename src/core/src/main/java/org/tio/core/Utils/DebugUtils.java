@@ -36,3 +36,9 @@ Public class DebugUtils
 	{
 
 	}
+
+	Public static interface CostIntf
+	{
+		Public void action();
+	}
+}
