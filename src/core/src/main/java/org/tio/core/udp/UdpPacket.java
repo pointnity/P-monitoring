@@ -33,3 +33,14 @@ Public  class  UdpPacket  {
 	Private  long  time  =  SystemTimer . currentTimeMillis ();
 
 	/**
+	 *
+	 * @author tanyaowu
+	 */
+	Public  UdpPacket ()  {
+	}
+
+	Public  UdpPacket ( byte []  data ,  Node  remote )  {
+		Super ();
+		the this . Data  =  Data ;
+		the this . Remote  =  Remote ;
+	}
