@@ -18,3 +18,8 @@ Public  class  UdpClientConf  extends  UdpConf  {
 	}
 
 	/**
+	 *
+	 * @author tanyaowu
+	 */
+	Public  UdpClientConf ( String  serverip ,  int  serverport ,  int  timeout )  {
+		Super ( timeout );
