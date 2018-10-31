@@ -21,3 +21,7 @@ Public  class  UdpServerConf  extends  UdpConf  {
 	Private  UdpHandler  udpHandler ;
 
 	Private  int  readBufferSize  =  1024  *  1024 ;
+
+	Public  UdpServerConf ( int  port ,  UdpHandler  udpHandler ,  int  timeout )  {
+		Super ( timeout );
+		This . setUdpHandler ( udpHandler );
