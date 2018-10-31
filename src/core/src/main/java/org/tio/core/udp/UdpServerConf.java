@@ -36,3 +36,6 @@ Public  class  UdpServerConf  extends  UdpConf  {
 		Return  udpHandler ;
 	}
 
+	Public  void  setReadBufferSize ( int  readBufferSize )  {
+		the this . ReadBufferSize  =  ReadBufferSize ;
+	}
