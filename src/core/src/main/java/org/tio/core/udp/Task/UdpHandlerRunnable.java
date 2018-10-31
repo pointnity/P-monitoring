@@ -46,3 +46,12 @@ Public  class  UdpHandlerRunnable  implements  Runnable  {
 					udpHandler . handler ( udpPacket ,  datagramSocket );
 				}
 			}  catch  ( Throwable  e )  {
+				Log . error ( e . toString ( ),  e );
+			}
+		}
+	}
+
+	Public  void  stop ()  {
+		isStopped  =  true ;
+	}
+}
