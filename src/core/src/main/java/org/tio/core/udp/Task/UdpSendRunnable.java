@@ -20,3 +20,18 @@ Public  class  UdpSendRunnable  implements  Runnable  {
 	 * @author tanyaowu
 	 */
 	Public  static  void  main ( String []  args )  {
+
+	}
+
+	Private  LinkedBlockingQueue < DatagramPacket >  queue ;
+
+	Private  UdpConf  udpConf ;
+
+	Private  boolean  isStopped  =  false ;
+
+	Private  DatagramSocket  datagramSocket ;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
