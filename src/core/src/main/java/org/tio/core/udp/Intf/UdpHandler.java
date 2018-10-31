@@ -8,3 +8,6 @@ Import  org.tio.core.udp.UdpPacket ;
  * @author tanyaowu
  *  
  */
+Public  interface  UdpHandler  {
+
+	/**
