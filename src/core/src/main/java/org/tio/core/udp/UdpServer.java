@@ -96,3 +96,23 @@ Public  class  UdpServer  {
 	}
 
 	Public  void  send ( String  str ,  Node  remoteNode )  {
+		Send ( str ,  null ,  remoteNode );
+	}
+
+	Public  void  send ( String  data ,  String  charset ,  Node  remoteNode )  {
+		If  ( StringUtils . isBlank ( data ))  {
+			Return ;
+		}
+		Try  {
+			If  ( StringUtils . isBlank ( charset ))  {
+				Charset  =  udpServerConf . getCharset ();
+			}
+			Byte []  bs  =  data . getBytes ( charset );
+			Send ( bs ,  remoteNode );
+		}  catch  ( UnsupportedEncodingException  e )  {
+			Log . error ( e . toString ( ),  e );
+		}
+	}
+
+	Public  void  start ()  {
+		startListen ();
