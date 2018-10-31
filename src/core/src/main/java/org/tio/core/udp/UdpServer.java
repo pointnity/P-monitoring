@@ -35,3 +35,19 @@ Public  class  UdpServer  {
 			@Override
 			Public  void  handler ( UdpPacket  udpPacket ,  DatagramSocket  datagramSocket )  {
 				Byte []  data  =  udpPacket . getData ();
+				Node  remote  =  udpPacket . getRemote ();
+				Long  c  =  count . incrementAndGet ();
+				If  ( c  %  100000  ==  0 )  {
+					String  str  =  "["  +  new  String ( data )  +  " ] from "  +  remote ;
+					Log . error ( str );
+				}
+
+				Log . error ( udpPacket . getRemote ()  +  "" );
+				DatagramPacket  datagramPacket  =  new  DatagramPacket ( data ,  data . length ,  new  InetSocketAddress ( udpPacket . getRemote (). getIp (),  udpPacket . getRemote (). getPort ()));
+				Try  {
+					datagramSocket . send ( datagramPacket );
+				}  catch  ( Throwable  e )  {
+					Log . error ( e . toString ( ),  e );
+				}
+
+			}
