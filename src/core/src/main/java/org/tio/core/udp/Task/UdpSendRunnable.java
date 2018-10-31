@@ -63,3 +63,10 @@ Public  class  UdpSendRunnable  implements  Runnable  {
 					}
 				}
 			}
+		}
+	}
+
+	Public  void  stop ()  {
+		isStopped  =  true ;
+	}
+}
