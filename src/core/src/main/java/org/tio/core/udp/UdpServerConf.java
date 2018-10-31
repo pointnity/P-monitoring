@@ -25,3 +25,9 @@ Public  class  UdpServerConf  extends  UdpConf  {
 	Public  UdpServerConf ( int  port ,  UdpHandler  udpHandler ,  int  timeout )  {
 		Super ( timeout );
 		This . setUdpHandler ( udpHandler );
+		This . setServerNode ( new  Node ( null ,  port ));
+	}
+
+	Public  int  getReadBufferSize ()  {
+		Return  readBufferSize ;
+	}
