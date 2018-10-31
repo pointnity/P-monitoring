@@ -238,3 +238,24 @@ Public  class  ByteBufferUtils  {
 		long ret = (long) (buffer.get() & 0xff) << 24;
 		ret |= (long) (buffer.get() & 0xff) << 16;
 		ret |= (long) (buffer.get() & 0xff) << 8;
+		Ret  |=  buffer . get ()  &  0xff ;
+
+		Return  ret ;
+	}
+
+	Public  static  final  void  writeUB2 ( ByteBuffer  buffer ,  int  i )  {
+		Buffer . put (( byte )  ( i  &  0xff ));
+		Buffer . put (( byte )  ( i  >>>  8 ));
+	}
+
+	Public  static  final  void  writeUB2WithBigEdian ( ByteBuffer  buffer ,  int  i )  {
+		Buffer . put (( byte )  ( i  >>>  8 ));
+		Buffer . put (( byte )  ( i  &  0xff ));
+	}
+
+	Public  static  final  void  writeUB4 ( ByteBuffer  buffer ,  long  l )  {
+		Buffer . put (( byte )  ( l  &  0xff ));
+		Buffer . put (( byte )  ( l  >>>  8 ));
+		Buffer . put (( byte )  ( l  >>>  16 ));
+		Buffer . put (( byte )  ( l  >>>  24 ));
+	}
