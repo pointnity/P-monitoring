@@ -35,3 +35,13 @@ Public  class  UdpSendRunnable  implements  Runnable  {
 	 *
 	 * @author tanyaowu
 	 */
+	Public  UdpSendRunnable ( LinkedBlockingQueue < DatagramPacket >  queue ,  UdpConf  udpConf ,  DatagramSocket  datagramSocket )  {
+		the this . Queue  =  Queue ;
+		the this . udpConf  =  udpConf ;
+		the this . DatagramSocket  =  DatagramSocket ;
+	}
+
+	@Override
+	Public  void  run ()  {
+		DatagramSocket  datagramSocket  =  this . datagramSocket ;
+		While  (! isStopped )  {
