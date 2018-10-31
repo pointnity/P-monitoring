@@ -12,3 +12,11 @@ Import  org.tio.core.udp.UdpConf ;
  * @author tanyaowu
  *  
  */
+Public  class  UdpSendRunnable  implements  Runnable  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( UdpSendRunnable . class );
+
+	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
+	Public  static  void  main ( String []  args )  {
