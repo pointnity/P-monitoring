@@ -41,3 +41,24 @@ Public  class  ByteBufferUtils  {
 	}
 
 	/**
+	 *
+	 * @param src
+	 * @param startindex starts at 0
+	 * @param endindex
+	 * @return
+	 *
+	 * @author: tanyaowu
+	 *
+	 */
+	Public  static  ByteBuffer  copy ( ByteBuffer  src ,  int  startindex ,  int  endindex )  {
+		Int  size  =  endindex  -  startindex ;
+		Byte []  dest  =  new  byte [ size ];
+		System . arraycopy ( src . array (),  startindex ,  dest ,  0 ,  dest . length );
+		ByteBuffer  newByteBuffer  =  ByteBuffer . wrap ( dest );
+		Return  newByteBuffer ;
+	}
+
+	/**
+	 *
+	 * @param buffer
+	 * @return
