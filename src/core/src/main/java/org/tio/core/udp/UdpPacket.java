@@ -44,3 +44,19 @@ Public  class  UdpPacket  {
 		the this . Data  =  Data ;
 		the this . Remote  =  Remote ;
 	}
+
+	Public  byte []  getData ()  {
+		Return  data ;
+	}
+
+	Public  Node  getRemote ()  {
+		Return  remote ;
+	}
+
+	Public  long  getTime ()  {
+		Return  time ;
+	}
+
+	Public  void  setData ( byte []  data )  {
+		the this . Data  =  Data ;
+	}
