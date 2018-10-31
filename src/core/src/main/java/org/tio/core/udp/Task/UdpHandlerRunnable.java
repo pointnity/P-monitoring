@@ -29,3 +29,13 @@ Public  class  UdpHandlerRunnable  implements  Runnable  {
 	Private  DatagramSocket  datagramSocket ;
 
 	Private  boolean  isStopped  =  false ;
+
+	Public  UdpHandlerRunnable ( UdpHandler  udpHandler ,  LinkedBlockingQueue < UdpPacket >  queue ,  DatagramSocket  datagramSocket )  {
+		Super ();
+		the this . udpHandler  =  udpHandler ;
+		the this . Queue  =  Queue ;
+		the this . DatagramSocket  =  DatagramSocket ;
+	}
+
+	@Override
+	Public  void  run ()  {
