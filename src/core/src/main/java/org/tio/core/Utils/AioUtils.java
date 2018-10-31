@@ -45,3 +45,14 @@ public class AioUtils {
 			Log . error ( "{}, check this exception, asynchronousSocketChannel is null, isClosed:{}, isRemoved:{}, {} " ,  channelContext ,  channelContext . isClosed (),  channelContext . isRemoved (),
 					ThreadUtils . stackTrace ());
 			Return  false ;
+		}
+
+		If  (! isopen )  {
+			Log . info ( "{}, may the other party close the connection, isopen:{}, isClosed:{}, isRemoved:{}" ,  channelContext ,  isopen ,  channelContext . isClosed (),  channelContext . isRemoved ());
+			Aio . close ( channelContext ,  "asynchronousSocketChannel is not open, maybe the other party has closed the connection" );
+			Return  false ;
+		}
+		Return  true ;
+	}
+
+}
