@@ -31,3 +31,13 @@ public class AioUtils {
 			isopen = asynchronousSocketChannel.isOpen();
 
 			if (isClosed || isRemoved) {
+				if (isopen) {
+					try {
+						Aio.close(channelContext, "asynchronousSocketChannel is open, but channelContext isClosed: " + isClosed + ", isRemoved: " + isRemoved);
+					} catch (Throwable e) {
+						log.error(e.toString(), e);
+					}
+				}
+				log.info("{}, isopen:{}, isClosed:{}, isRemoved:{}", channelContext, isopen, channelContext.isClosed(), channelContext.isRemoved());
+				return false;
+			}
