@@ -34,3 +34,27 @@ Public  class  UdpClient  {
 		Long  iv  =  end  -  start ;
 		System . out . println ( "Time consuming:"  +  iv  +  "ms" );
 	}
+
+	Private  LinkedBlockingQueue < DatagramPacket >  queue  =  new  LinkedBlockingQueue <>();
+
+	Private  UdpClientConf  udpClientConf  =  null ;
+
+	/**
+	 * server address
+	 */
+	Private  InetSocketAddress  inetSocketAddress  =  null ;
+
+	Private  UdpSendRunnable  udpSendRunnable  =  null ;
+
+	Public  UdpClient ( UdpClientConf  udpClientConf )  {
+		Super ();
+		the this . udpClientConf  =  udpClientConf ;
+		Node  node  =  this . udpClientConf . getServerNode ();
+		inetSocketAddress  =  new  InetSocketAddress ( node . getIp (),  node . getPort ());
+		udpSendRunnable  =  new  UdpSendRunnable ( queue ,  udpClientConf ,  null );
+	}
+
+	Public  void  send ( byte []  data )  {
+		DatagramPacket  datagramPacket  =  new  DatagramPacket ( data ,  data . length ,  inetSocketAddress );
+		Queue . add ( datagramPacket );
+	}
