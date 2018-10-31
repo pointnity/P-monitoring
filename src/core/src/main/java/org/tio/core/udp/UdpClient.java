@@ -79,3 +79,8 @@ Public  class  UdpClient  {
 	}
 
 	Public  void  start ()  {
+		Thread  thread  =  new  Thread ( udpSendRunnable ,  "tio-udp-client-send" );
+		Thread . setDaemon ( false );
+		Thread . start ();
+	}
+}
