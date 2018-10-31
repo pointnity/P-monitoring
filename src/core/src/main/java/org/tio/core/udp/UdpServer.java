@@ -51,3 +51,16 @@ Public  class  UdpServer  {
 				}
 
 			}
+		};
+		UdpServerConf  udpServerConf  =  new  UdpServerConf ( 3000 ,  udpHandler ,  5000 );
+
+		udpServer  =  new  UdpServer ( udpServerConf );
+
+		udpServer . start ();
+	}
+
+	Private  LinkedBlockingQueue < UdpPacket >  handlerQueue  =  new  LinkedBlockingQueue <>();
+
+	Private  LinkedBlockingQueue < DatagramPacket >  sendQueue  =  new  LinkedBlockingQueue <>();
+
+	Private  DatagramSocket  datagramSocket  =  null ;
