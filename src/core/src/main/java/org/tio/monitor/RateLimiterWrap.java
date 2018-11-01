@@ -22,3 +22,28 @@ Public  class  RateLimiterWrap  {
 	}
 
 	/**
+	 * Frequency control
+	 */
+	Private  RateLimiter  rateLimiter  =  null ; //RateLimiter.create(3);
+
+	/**
+	 * How many warnings have been received during this phase?
+	 */
+	Private  AtomicInteger  warnCount  =  new  AtomicInteger ();
+
+	/**
+	 * How many warnings have been received in total
+	 */
+	Private  AtomicInteger  allWarnCount  =  new  AtomicInteger ();
+
+	/**
+	 * Maximum number of warnings at this stage
+	 */
+	Private  int  maxWarnCount  =  20 ;
+
+	/**
+	 * A total of more warnings
+	 */
+	Private  int  maxAllWarnCount  =  maxWarnCount  *  10 ;
+
+	/**
