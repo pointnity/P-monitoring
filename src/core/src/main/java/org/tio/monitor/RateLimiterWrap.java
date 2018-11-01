@@ -103,3 +103,27 @@ Public  class  RateLimiterWrap  {
 	 * @return the rateLimiter
 	 */
 	Public  RateLimiter  getRateLimiter ()  {
+		Return  rateLimiter ;
+	}
+
+	/**
+	 * @return the warnClearInterval
+	 */
+	Public  int  getWarnClearInterval ()  {
+		Return  warnClearInterval ;
+	}
+
+	/**
+	 * @return the warnCount
+	 */
+	Public  AtomicInteger  getWarnCount ()  {
+		Return  warnCount ;
+	}
+
+	/**
+	 * @param allWarnCount the allWarnCount to set
+	 */
+	Public  void  setAllWarnCount ( AtomicInteger  allWarnCount )  {
+		This . allWarnCount  =  allWarnCount ;
+	}
+
