@@ -101,3 +101,26 @@ Public  class  AcceptCompletionHandler  implements  CompletionHandler < Asynchro
 			Log . error ( "" ,  e );
 		}  finally  {
 			If  ( aioServer . isWaitingStop ())  {
+			Log . info ( "{} will close the server, no longer accept new requests" ,  aioServer . getServerNode ());
+			}  else  {
+				AsynchronousServerSocketChannel  serverSocketChannel  =  aioServer . getServerSocketChannel ();
+				serverSocketChannel . accept ( aioServer ,  this );
+			}
+		}
+	}
+
+	/**
+	 *
+	 * @param exc
+	 * @param aioServer
+	 * @author tanyaowu
+	 */
+	@Override
+	public  void  failed ( the Throwable  EXC ,  AioServer  aioServer )  {
+		AsynchronousServerSocketChannel  serverSocketChannel  =  aioServer . getServerSocketChannel ();
+		serverSocketChannel . accept ( aioServer ,  this );
+
+		Log . error ( "["  +  aioServer . getServerNode ()  +  "] listens for an exception" ,  exc );
+
+	}
+
