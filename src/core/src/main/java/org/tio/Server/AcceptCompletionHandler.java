@@ -81,3 +81,23 @@ Public  class  AcceptCompletionHandler  implements  CompletionHandler < Asynchro
 			channelContext . getStat (). setTimeFirstConnected ( SystemTimer . currentTimeMillis ());
 			
 			channelContext . traceClient ( ChannelAction . CONNECT ,  null ,  null );
+			
+			serverGroupContext . connecteds . add ( channelContext );
+			serverGroupContext . ips . bind ( channelContext );
+			Try  {
+				serverAioListener . onAfterConnected ( channelContext ,  true ,  false );
+			}  catch  ( Throwable  e )  {
+				Log . error ( e . toString ( ),  e );
+			}
+
+			If  (! aioServer . isWaitingStop ())  {
+				ReadCompletionHandler  readCompletionHandler  =  channelContext . getReadCompletionHandler ();
+				ByteBuffer  readByteBuffer  =  readCompletionHandler . getReadByteBuffer (); //ByteBuffer.allocateDirect(channelContext.getGroupContext().getReadBufferSize());
+				readByteBuffer . position ( 0 );
+				readByteBuffer . limit ( readByteBuffer . capacity ());
+				asynchronousSocketChannel . read ( readByteBuffer ,  readByteBuffer ,  readCompletionHandler );
+			}
+		}  catch  ( Throwable  e )  {
+			Log . error ( "" ,  e );
+		}  finally  {
+			If  ( aioServer . isWaitingStop ())  {
