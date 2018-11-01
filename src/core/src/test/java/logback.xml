@@ -24,3 +24,18 @@
 		<encoder>
 			<pattern>${conversion.pattern}</pattern>
 		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">   
+			<level>ERROR</level>   
+			<onMatch>ACCEPT</onMatch>   
+			<onMismatch>DENY</onMismatch>   
+		</filter> 
+	</appender>
+	<appender name="root-file-warn"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/warn.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/warn.%d{${rolling.policy.file.name.pattern}}.%i.log.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
