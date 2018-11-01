@@ -155,7 +155,7 @@
 
 
 
-	<!-- ip访问打印  -->
+	<!-- IP Access Printing -->
 	<appender name="tio-ip-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/ip.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -175,7 +175,7 @@
 		<appender-ref ref="tio-ip-trace-log-appender"/>
 	</logger>
 	
-	<!-- chatxxxx日志打印  -->
+	<!-- Chatxxxx Log Printing  -->
 	<appender name="tio-chatxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/chatxxxx.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -195,7 +195,7 @@
 		<appender-ref ref="tio-chatxxxx-trace-log-appender"/>
 	</logger>
 	
-	<!-- addressxxxx日志打印  -->
+	<!-- addressxxxxLog printing  -->
 	<appender name="tio-addressxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/addressxxxx.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -215,7 +215,7 @@
 		<appender-ref ref="tio-addressxxxx-trace-log-appender"/>
 	</logger>
 	
-	<!-- userAgentxxxx 日志打印  -->
+	<!-- userAgentxxxx Log printing  -->
 	<appender name="tio-userAgentxxxx-trace-log-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/userAgentxxxx.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
