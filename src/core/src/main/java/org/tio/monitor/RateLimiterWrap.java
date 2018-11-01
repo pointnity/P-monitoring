@@ -127,3 +127,35 @@ Public  class  RateLimiterWrap  {
 		This . allWarnCount  =  allWarnCount ;
 	}
 
+	/**
+	 * @param lastWarnTime the lastWarnTime to set
+	 */
+	Public  void  setLastWarnTime ( long  lastWarnTime )  {
+		the this . lastWarnTime  =  lastWarnTime ;
+	}
+
+	/**
+	 * @param maxAllWarnCount the maxAllWarnCount to set
+	 */
+	Public  void  setMaxAllWarnCount ( int  maxAllWarnCount )  {
+		This . maxAllWarnCount  =  maxAllWarnCount ;
+	}
+
+	/**
+	 * @param maxWarnCount the maxWarnCount to set
+	 */
+	Public  void  setMaxWarnCount ( int  maxWarnCount )  {
+		the this . maxWarnCount  =  maxWarnCount ;
+	}
+
+	/**
+	 * @param rateLimiter the rateLimiter to set
+	 */
+	Public  void  setRateLimiter ( RateLimiter  rateLimiter )  {
+		the this . rateLimiter  =  rateLimiter ;
+	}
+
+	/**
+	 * @param warnClearInterval the warnClearInterval to set
+	 */
+	Public  void  setWarnClearInterval ( int  warnClearInterval )  {
