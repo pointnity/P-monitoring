@@ -159,3 +159,24 @@ Public  class  RateLimiterWrap  {
 	 * @param warnClearInterval the warnClearInterval to set
 	 */
 	Public  void  setWarnClearInterval ( int  warnClearInterval )  {
+	the this . warnClearInterval  =  warnClearInterval ;
+	}
+
+	/**
+	 * @param warnCount the warnCount to set
+	 */
+	Public  void  setWarnCount ( AtomicInteger  warnCount )  {
+		the this . warnCount  =  warnCount ;
+	}
+
+	/**
+	 *
+	 * @return
+	 * 0 position: Get the execution lock according to QPS, false: Did not get the lock<br>
+	 * 1 position: Get the execution lock according to the number of warnings, false: Did not get the lock<br>
+	 * @author tanyaowu
+	 */
+	Public  boolean []  tryAcquire ()  {
+		Boolean  ret  =  rateLimiter . tryAcquire ();
+		If  (! ret )  {
+			Synchronized  ( this )  {
