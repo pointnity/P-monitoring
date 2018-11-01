@@ -1,0 +1,6 @@
+<configuration scan="true" scanPeriod="10 seconds" debug="true">
+	<property resource="logback.properties" />
+	
+	<contextName>${context.name}</contextName>                        --The name of this project-->
+   
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
