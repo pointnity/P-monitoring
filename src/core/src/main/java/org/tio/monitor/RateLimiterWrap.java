@@ -47,3 +47,26 @@ Public  class  RateLimiterWrap  {
 	Private  int  maxAllWarnCount  =  maxWarnCount  *  10 ;
 
 	/**
+	 * Last warning time
+	 */
+	Private  long  lastWarnTime  =  SystemTimer . currentTimeMillis ();
+
+	/**
+	 * Warning clear interval, that is, if there is no warning for such a long time, the number of previous warnings is cleared.
+	 */
+	Private  int  warnClearInterval  =  1000  *  60  *  60  *  2 ;
+
+	/**
+	 *
+	 * @param permitsPerSecond QPS
+	 * @param warnClearInterval Clear the interval of this phase of warning, reference value 1000 * 60 * 60 * 2, the unit is ms
+	 * @param maxWarnCount This stage has the most warnings, the reference value is 10
+	 * @param maxAllWarnCount A total of more warnings
+	 * @author tanyaowu
+	 */
+	Public  RateLimiterWrap ( int  permitsPerSecond ,  int  warnClearInterval ,  int  maxWarnCount ,  int  maxAllWarnCount )  {
+		the this . rateLimiter  =  RateLimiter . Create ( permitsPerSecond );
+		the this . warnClearInterval  =  warnClearInterval ;
+		the this . maxWarnCount  =  maxWarnCount ;
+		This . maxAllWarnCount  =  maxAllWarnCount ;
+	}
