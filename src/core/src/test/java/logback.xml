@@ -229,3 +229,10 @@
 		<encoder>
 			<pattern>%m%n</pattern>
 		</encoder>
+	</appender>
+	<logger name="tio-userAgentxxxx-trace-log" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="tio-userAgentxxxx-trace-log-appender"/>
+	</logger>
+	
+	<!-- ipblacklistxxxx IP blacklist  -->
