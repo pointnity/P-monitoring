@@ -70,3 +70,36 @@ Public  class  RateLimiterWrap  {
 		the this . maxWarnCount  =  maxWarnCount ;
 		This . maxAllWarnCount  =  maxAllWarnCount ;
 	}
+
+	/**
+	 * @return the allWarnCount
+	 */
+	Public  AtomicInteger  getAllWarnCount ()  {
+		Return  allWarnCount ;
+	}
+
+	/**
+	 * @return the lastWarnTime
+	 */
+	Public  long  getLastWarnTime ()  {
+		Return  lastWarnTime ;
+	}
+
+	/**
+	 * @return the maxAllWarnCount
+	 */
+	Public  int  getMaxAllWarnCount ()  {
+		Return  maxAllWarnCount ;
+	}
+
+	/**
+	 * @return the maxWarnCount
+	 */
+	Public  int  getMaxWarnCount ()  {
+		Return  maxWarnCount ;
+	}
+
+	/**
+	 * @return the rateLimiter
+	 */
+	Public  RateLimiter  getRateLimiter ()  {
