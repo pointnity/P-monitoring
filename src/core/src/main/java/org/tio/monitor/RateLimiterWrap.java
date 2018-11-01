@@ -180,3 +180,22 @@ Public  class  RateLimiterWrap  {
 		Boolean  ret  =  rateLimiter . tryAcquire ();
 		If  (! ret )  {
 			Synchronized  ( this )  {
+				Long  nowTime  =  SystemTimer . currentTimeMillis ();
+				If  ( nowTime  -  lastWarnTime  >  warnClearInterval )  {
+					warnCount . set ( 0 );
+				}
+				lastWarnTime  =  SystemTimer . currentTimeMillis ();
+				Int  wc  =  warnCount . incrementAndGet ();
+				Int  awc  =  allWarnCount . incrementAndGet ();
+
+				If  ( wc  >  maxWarnCount  ||  awc  >  maxAllWarnCount )  {
+					Return  new  boolean []  {  false ,  false  };
+				}
+				Return  new  boolean []  {  false ,  true  };
+			}
+		}  else  {
+			Return  new  boolean []  {  true ,  true  };
+		}
+
+	}
+}
