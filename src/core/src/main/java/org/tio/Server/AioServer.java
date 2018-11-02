@@ -53,3 +53,20 @@ public class AioServer {
 	 */
 	public Node getServerNode() {
 		return serverNode;
+	}
+
+	/**
+	 * @return the serverSocketChannel
+	 */
+	public AsynchronousServerSocketChannel getServerSocketChannel() {
+		return serverSocketChannel;
+	}
+
+	/**
+	 * @return the isWaitingStop
+	 */
+	public boolean isWaitingStop() {
+		return isWaitingStop;
+	}
+
+	/**
