@@ -40,3 +40,5 @@ Public  class  ServerGroupStat  extends  GroupStat  {
 	Public  void  setAccepted ( AtomicLong  accepted )  {
 		the this . accepted  =  accepted ;
 	}
+
+}
