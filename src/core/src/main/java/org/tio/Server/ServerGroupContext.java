@@ -243,3 +243,13 @@ public class ServerGroupContext extends GroupContext {
 	@Override
 	Public  AioListener  getAioListener ()  {
 		Return  getServerAioListener ();
+	}
+
+	/**
+	 * @see org.tio.core.GroupContext#getGroupStat()
+	 *
+	 * @return
+	 * @author tanyaowu
+	 * 
+	 *
+	 */
