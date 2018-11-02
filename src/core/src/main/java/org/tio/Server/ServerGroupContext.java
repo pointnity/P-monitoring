@@ -76,3 +76,13 @@ public class ServerGroupContext extends GroupContext {
 
 	/**
 	 * 
+	 * @param name
+	 * @param serverAioHandler
+	 * @param serverAioListener
+	 * @param tioExecutor
+	 * @param groupExecutor
+	 * @author: tanyaowu
+	 */
+	public ServerGroupContext(String name, ServerAioHandler serverAioHandler, ServerAioListener serverAioListener, SynThreadPoolExecutor tioExecutor,
+			ThreadPoolExecutor groupExecutor) {
+		super(tioExecutor, groupExecutor);
