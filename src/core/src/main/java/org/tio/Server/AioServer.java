@@ -70,3 +70,22 @@ public class AioServer {
 	}
 
 	/**
+	 * @param serverGroupContext the serverGroupContext to set
+	 */
+	public void setServerGroupContext(ServerGroupContext serverGroupContext) {
+		this.serverGroupContext = serverGroupContext;
+	}
+
+	/**
+	 * @param isWaitingStop the isWaitingStop to set
+	 */
+	public void setWaitingStop(boolean isWaitingStop) {
+		this.isWaitingStop = isWaitingStop;
+	}
+
+	public void start(String serverIp, int serverPort) throws IOException {
+		this.serverNode = new Node(serverIp, serverPort);
+		//		ExecutorService groupExecutor = serverGroupContext.getGroupExecutor();
+
+		AsynchronousChannelGroup channelGroup = AsynchronousChannelGroup.withThreadPool(serverGroupContext.getGroupExecutor());
+		serverSocketChannel = AsynchronousServerSocketChannel.open(channelGroup);
