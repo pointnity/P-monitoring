@@ -26,3 +26,9 @@ Public  class  ServerGroupStat  extends  GroupStat  {
 	 */
 	Public  ServerGroupStat ()  {
 	}
+
+	/**
+	 * @return the accepted
+	 */
+	Public  AtomicLong  getAccepted ()  {
+		Return  accepted ;
