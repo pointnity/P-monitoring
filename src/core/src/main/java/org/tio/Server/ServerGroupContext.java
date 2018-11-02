@@ -151,3 +151,9 @@ public class ServerGroupContext extends GroupContext {
 												+  "\r\n Total number of connections closed {}"
 												+  "\r\nreceived message ({}p)({}b)" 
 												+  "\r\nProcessed message {}p"
+											+  "\r\nSent message ({}p)({}b)" 
+												+  "\r\n average number of bytes received per TCP packet {}" 
+												+  "\r\nAverage service packets received per TCP packet{}"
+												+  "\r\n Duration of current IP statistics{}" ,
+										ServerGroupContext . this . name , 
+										SystemTimer . currentTimeMillis (), 
