@@ -127,3 +127,11 @@ public class ServerGroupContext extends GroupContext {
 							if (interval > heartbeatTimeout) {
 								log.info("{}, {} Ms does not send and receive messages", channelContext, interval);
 								Aio.remove(channelContext, interval + " Ms does not send and receive messages");
+							}
+						}
+					} catch (Throwable e) {
+						log.error("", e);
+					} finally {
+						try {
+							readLock.unlock();
+
