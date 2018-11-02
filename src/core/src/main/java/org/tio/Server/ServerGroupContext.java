@@ -86,3 +86,9 @@ public class ServerGroupContext extends GroupContext {
 	public ServerGroupContext(String name, ServerAioHandler serverAioHandler, ServerAioListener serverAioListener, SynThreadPoolExecutor tioExecutor,
 			ThreadPoolExecutor groupExecutor) {
 		super(tioExecutor, groupExecutor);
+		this.name = name;
+		this.acceptCompletionHandler = new AcceptCompletionHandler();
+		this.serverAioHandler = serverAioHandler;
+		this.serverAioListener = serverAioListener == null ? new DefaultServerAioListener() : serverAioListener;
+		checkHeartbeatThread = new Thread(new Runnable() {
+			@Override
