@@ -35,3 +35,11 @@ public class ServerGroupContext extends GroupContext {
 	private ServerAioListener serverAioListener = null;
 
 	protected ServerGroupStat serverGroupStat = new ServerGroupStat();
+
+	/** The accept executor. */
+	//private ThreadPoolExecutor acceptExecutor = null;
+
+	private Thread checkHeartbeatThread = null;
+
+	/**
+	 * 
