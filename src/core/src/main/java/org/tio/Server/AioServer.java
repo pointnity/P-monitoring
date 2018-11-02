@@ -35,3 +35,21 @@ public class AioServer {
 	 * @author tanyaowu
 	 *  
 	 *
+	 */
+	public AioServer(ServerGroupContext serverGroupContext) {
+		super();
+		this.serverGroupContext = serverGroupContext;
+	}
+
+	/**
+	 * @return the serverGroupContext
+	 */
+	public ServerGroupContext getServerGroupContext() {
+		return serverGroupContext;
+	}
+
+	/**
+	 * @return the serverNode
+	 */
+	public Node getServerNode() {
+		return serverNode;
