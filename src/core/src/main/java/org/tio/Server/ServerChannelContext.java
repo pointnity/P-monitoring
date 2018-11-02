@@ -19,3 +19,15 @@ public class ServerChannelContext extends ChannelContext {
 	 * @param groupContext
 	 * @param asynchronousSocketChannel
 	 *
+ * @author tanyaowu
+	 *  
+	 *
+	 */
+	public ServerChannelContext(GroupContext groupContext, AsynchronousSocketChannel asynchronousSocketChannel) {
+		super(groupContext, asynchronousSocketChannel);
+	}
+
+	/**
+	 * @see org.tio.core.ChannelContext#createClientNode(java.nio.channels.AsynchronousSocketChannel)
+	 *
+	 * @param asynchronousSocketChannel
