@@ -100,3 +100,7 @@ public class ServerGroupContext extends GroupContext {
 						break;
 					}
 					try {
+						Thread.sleep(heartbeatTimeout);
+					} catch (InterruptedException e1) {
+						log.error(e1.toString(), e1);
+					}
