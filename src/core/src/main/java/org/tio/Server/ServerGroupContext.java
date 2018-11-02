@@ -112,3 +112,14 @@ public class ServerGroupContext extends GroupContext {
 					int count = 0;
 					try {
 						readLock.lock();
+						start1 = SystemTimer.currentTimeMillis();
+						set = objWithLock.getObj();
+
+						for (ChannelContext entry : set) {
+							count++;
+							ChannelContext channelContext = entry;
+							ChannelStat stat = channelContext.getStat();
+							long timeLatestReceivedMsg = stat.getLatestTimeOfReceivedByte();
+							long timeLatestSentMsg = stat.getLatestTimeOfSentPacket();
+							long compareTime = Math.max(timeLatestReceivedMsg, timeLatestSentMsg);
+							long currtime = SystemTimer.currentTimeMillis();
