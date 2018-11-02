@@ -31,3 +31,9 @@ public class ServerChannelContext extends ChannelContext {
 	 * @see org.tio.core.ChannelContext#createClientNode(java.nio.channels.AsynchronousSocketChannel)
 	 *
 	 * @param asynchronousSocketChannel
+	 * @return
+	 * @throws IOException
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
