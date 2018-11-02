@@ -269,3 +269,15 @@ public class ServerGroupContext extends GroupContext {
 	 * @return the serverAioListener
 	 */
 	Public  ServerAioListener  getServerAioListener ()  {
+		Return  serverAioListener ;
+	}
+
+	Public  ServerGroupStat  getServerGroupStat ()  {
+		Return  serverGroupStat ;
+	}
+
+	Public  void  setServerAioListener ( ServerAioListener  serverAioListener )  {
+		the this . serverAioListener  =  serverAioListener ;
+	}
+
+}
