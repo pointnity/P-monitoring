@@ -208,3 +208,19 @@ public class ServerGroupContext extends GroupContext {
 			}
 		},  "tio-timer-checkheartbeat-"  +  id );
 		checkHeartbeatThread . setDaemon ( to true );
+		checkHeartbeatThread . setPriority ( Thread . MIN_PRIORITY );
+		checkHeartbeatThread . start ();
+	}
+
+	/**
+	 * @return the acceptCompletionHandler
+	 */
+	Public  AcceptCompletionHandler  getAcceptCompletionHandler ()  {
+		Return  acceptCompletionHandler ;
+	}
+
+	/**
+	 * @see org.tio.core.GroupContext#getAioHandler()
+	 *
+	 * @return
+	 * @author tanyaowu
