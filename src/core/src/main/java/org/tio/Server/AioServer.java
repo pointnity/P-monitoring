@@ -105,3 +105,13 @@ public class AioServer {
 
 		AcceptCompletionHandler acceptCompletionHandler = serverGroupContext.getAcceptCompletionHandler();
 		serverSocketChannel.accept(this, acceptCompletionHandler);
+
+		log.warn("{} started, listen on {}", serverGroupContext.getName(), this.serverNode);
+	}
+
+	/**
+	 * This method is not available in the production environment and is not tested
+	 * @return
+	 *
+	 * @author tanyaowu
+	 *  
