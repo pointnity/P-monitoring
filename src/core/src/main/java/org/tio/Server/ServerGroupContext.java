@@ -24,3 +24,14 @@ import org.tio.utils.thread.pool.SynThreadPoolExecutor;
  * 
  * @author tanyaowu 
  *  
+ */
+public class ServerGroupContext extends GroupContext {
+	static Logger log = LoggerFactory.getLogger(ServerGroupContext.class);
+
+	private AcceptCompletionHandler acceptCompletionHandler = null;
+
+	private ServerAioHandler serverAioHandler = null;
+
+	private ServerAioListener serverAioListener = null;
+
+	protected ServerGroupStat serverGroupStat = new ServerGroupStat();
