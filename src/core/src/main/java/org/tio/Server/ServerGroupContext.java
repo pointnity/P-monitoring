@@ -143,3 +143,11 @@ public class ServerGroupContext extends GroupContext {
 								}
 
 								log.info(
+										"{}, [{}]:[{}]" 
+												+  "\r\nNumber of current connections{}" 
+												+  "\r\n currently has a different number of ips{}"
+												+  "\r\ngroup(g) {}"
+												+  "\r\n accept connection{}" 
+												+  "\r\n Total number of connections closed {}"
+												+  "\r\nreceived message ({}p)({}b)" 
+												+  "\r\nProcessed message {}p"
