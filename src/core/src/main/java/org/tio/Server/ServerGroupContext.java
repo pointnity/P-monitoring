@@ -53,3 +53,15 @@ public class ServerGroupContext extends GroupContext {
 
 	/**
 	 * 
+	 * @param name
+	 * @param serverAioHandler
+	 * @param serverAioListener
+	 * @author: tanyaowu
+	 */
+	public ServerGroupContext(String name, ServerAioHandler serverAioHandler, ServerAioListener serverAioListener) {
+		this(name, serverAioHandler, serverAioListener, null, null);
+	}
+
+	/**
+	 * 
+	 * @param serverAioHandler
