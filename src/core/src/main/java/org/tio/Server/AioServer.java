@@ -89,3 +89,19 @@ public class AioServer {
 
 		AsynchronousChannelGroup channelGroup = AsynchronousChannelGroup.withThreadPool(serverGroupContext.getGroupExecutor());
 		serverSocketChannel = AsynchronousServerSocketChannel.open(channelGroup);
+
+		serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
+		serverSocketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 64 * 1024);
+
+		InetSocketAddress listenAddress = null;
+
+		if (StringUtils.isBlank(serverIp)) {
+			listenAddress = new InetSocketAddress(serverPort);
+		} else {
+			listenAddress = new InetSocketAddress(serverIp, serverPort);
+		}
+
+		serverSocketChannel.bind(listenAddress, 0);
+
+		AcceptCompletionHandler acceptCompletionHandler = serverGroupContext.getAcceptCompletionHandler();
+		serverSocketChannel.accept(this, acceptCompletionHandler);
