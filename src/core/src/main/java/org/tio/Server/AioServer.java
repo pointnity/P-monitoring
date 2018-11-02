@@ -146,3 +146,10 @@ public class AioServer {
 	}
 
 	//	/**
+	//	 * @param serverNode the serverNode to set
+	//	 */
+	//	public void setServerNode(Node serverNode)
+	//	{
+	//		this.serverNode = serverNode;
+	//	}
+}
