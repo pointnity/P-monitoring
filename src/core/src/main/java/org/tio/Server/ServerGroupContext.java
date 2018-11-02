@@ -169,3 +169,16 @@ public class ServerGroupContext extends GroupContext {
 										serverGroupStat . getSentPacket (). get (), 
 										serverGroupStat . getSentBytes (). get (),
 										serverGroupStat . getBytesPerTcpReceive (), 
+										serverGroupStat . getPacketsPerTcpReceive (), 
+										Json . toJson ( ServerGroupContext . this . ipStats . durationList ));
+							}
+
+							/ / Print each collection information
+							If  ( log . isInfoEnabled ())  {
+								Log . info ( "{}, " 
+									+  "\r\nclientNodes:{}" 
+									+  "\r\nAll connections: {}" 
+									+  "\r\nConnected currently:{}" 
+									+  "\r\nClosed connections: {}" 
+									+  "\r\ngroup: [channelmap:{}, groupmap:{}]"
+									+  "\r\n bind userid number: {}" 
