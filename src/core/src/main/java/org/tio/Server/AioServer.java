@@ -15,3 +15,23 @@ import org.tio.core.Node;
 
 /**
  * @author tanyaowu
+*
+ */
+public class AioServer {
+	private static Logger log = LoggerFactory.getLogger(AioServer.class);
+
+	private ServerGroupContext serverGroupContext;
+
+	private AsynchronousServerSocketChannel serverSocketChannel;
+
+	private Node serverNode;
+
+	private boolean isWaitingStop = false;
+
+	/**
+	 *
+	 * @param serverGroupContext
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
