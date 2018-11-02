@@ -136,3 +136,13 @@ public class AioServer {
 		serverGroupContext.setStopped(true);
 		try {
 			ret = ret && groupExecutor.awaitTermination(6000, TimeUnit.SECONDS);
+			ret = ret && tioExecutor.awaitTermination(6000, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+			log.error(e.getLocalizedMessage(), e);
+		}
+
+		log.info(this.serverNode + " stopped");
+		return ret;
+	}
+
+	//	/**
