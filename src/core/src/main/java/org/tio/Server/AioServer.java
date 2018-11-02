@@ -115,3 +115,24 @@ public class AioServer {
 	 *
 	 * @author tanyaowu
 	 *  
+	 *
+	 */
+	public boolean stop() {
+		isWaitingStop = true;
+		boolean ret = true;
+
+		try {
+			serverSocketChannel.close();
+		} catch (IOException e1) {
+			log.error(e1.toString(), e1);
+		}
+
+		ExecutorService groupExecutor = serverGroupContext.getGroupExecutor();
+		ExecutorService tioExecutor = serverGroupContext.getTioExecutor();
+
+		groupExecutor.shutdown();
+		tioExecutor.shutdown();
+
+		serverGroupContext.setStopped(true);
+		try {
+			ret = ret && groupExecutor.awaitTermination(6000, TimeUnit.SECONDS);
