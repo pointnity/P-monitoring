@@ -92,3 +92,7 @@ public class ServerGroupContext extends GroupContext {
 		this.serverAioListener = serverAioListener == null ? new DefaultServerAioListener() : serverAioListener;
 		checkHeartbeatThread = new Thread(new Runnable() {
 			@Override
+			public void run() {
+				while (!isStopped()) {
+					//					long sleeptime = heartbeatTimeout;
+					if (heartbeatTimeout <= 0) {
