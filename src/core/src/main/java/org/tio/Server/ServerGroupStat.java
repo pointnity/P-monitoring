@@ -32,3 +32,11 @@ Public  class  ServerGroupStat  extends  GroupStat  {
 	 */
 	Public  AtomicLong  getAccepted ()  {
 		Return  accepted ;
+	}
+
+	/**
+	 * @param accepted the accepted to set
+	 */
+	Public  void  setAccepted ( AtomicLong  accepted )  {
+		the this . accepted  =  accepted ;
+	}
