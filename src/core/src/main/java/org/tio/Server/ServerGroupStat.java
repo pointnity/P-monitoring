@@ -16,3 +16,13 @@ Public  class  ServerGroupStat  extends  GroupStat  {
 	 * How many connections were accepted
 	 */
 	Private  AtomicLong  accepted  =  new  AtomicLong ();
+
+	/**
+	 *
+	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
+	Public  ServerGroupStat ()  {
+	}
