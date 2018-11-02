@@ -65,3 +65,14 @@ public class ServerGroupContext extends GroupContext {
 	/**
 	 * 
 	 * @param serverAioHandler
+	 * @param serverAioListener
+	 * @param tioExecutor
+	 * @param groupExecutor
+	 * @author: tanyaowu
+	 */
+	public ServerGroupContext(ServerAioHandler serverAioHandler, ServerAioListener serverAioListener, SynThreadPoolExecutor tioExecutor, ThreadPoolExecutor groupExecutor) {
+		this(null, serverAioHandler, serverAioListener, tioExecutor, groupExecutor);
+	}
+
+	/**
+	 * 
