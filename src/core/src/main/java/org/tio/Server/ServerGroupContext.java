@@ -123,3 +123,7 @@ public class ServerGroupContext extends GroupContext {
 							long timeLatestSentMsg = stat.getLatestTimeOfSentPacket();
 							long compareTime = Math.max(timeLatestReceivedMsg, timeLatestSentMsg);
 							long currtime = SystemTimer.currentTimeMillis();
+							long interval = currtime - compareTime;
+							if (interval > heartbeatTimeout) {
+								log.info("{}, {} Ms does not send and receive messages", channelContext, interval);
+								Aio.remove(channelContext, interval + " Ms does not send and receive messages");
