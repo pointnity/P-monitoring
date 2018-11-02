@@ -135,3 +135,11 @@ public class ServerGroupContext extends GroupContext {
 						try {
 							readLock.unlock();
 
+							if (log.isInfoEnabled()) {
+								int groups = 0;
+								ObjWithLock<Set<ChannelContext>> objwithlock = ServerGroupContext.this.groups.clients(ServerGroupContext.this, "g");
+								if (objwithlock != null) {
+									groups = objwithlock.getObj().size();
+								}
+
+								log.info(
