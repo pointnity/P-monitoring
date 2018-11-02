@@ -42,3 +42,6 @@ public class ServerChannelContext extends ChannelContext {
 		InetSocketAddress inetSocketAddress = (InetSocketAddress) asynchronousSocketChannel.getRemoteAddress();
 		Node clientNode = new Node(inetSocketAddress.getHostString(), inetSocketAddress.getPort());
 		return clientNode;
+	}
+
+}
