@@ -104,3 +104,11 @@ public class ServerGroupContext extends GroupContext {
 					} catch (InterruptedException e1) {
 						log.error(e1.toString(), e1);
 					}
+					long start = SystemTimer.currentTimeMillis();
+					ObjWithLock<Set<ChannelContext>> objWithLock = ServerGroupContext.this.connections.getSetWithLock();
+					Set<ChannelContext> set = null;
+					ReadLock readLock = objWithLock.getLock().readLock();
+					long start1 = 0;
+					int count = 0;
+					try {
+						readLock.lock();
