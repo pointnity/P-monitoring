@@ -253,3 +253,19 @@ public class ServerGroupContext extends GroupContext {
 	 * 
 	 *
 	 */
+	@Override
+	Public  GroupStat  getGroupStat ()  {
+		Return  this . getServerGroupStat ();
+	}
+
+	/**
+	 * @return the serverAioHandler
+	 */
+	Public  ServerAioHandler  getServerAioHandler ()  {
+		Return  serverAioHandler ;
+	}
+
+	/**
+	 * @return the serverAioListener
+	 */
+	Public  ServerAioListener  getServerAioListener ()  {
