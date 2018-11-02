@@ -196,3 +196,15 @@ public class ServerGroupContext extends GroupContext {
 
 							If  ( log . isInfoEnabled ())  {
 								Long  end  =  SystemTimer . currentTimeMillis ();
+								Long  iv1  =  start1  -  start ;
+								Long  iv  =  end  -  start1 ;
+								Log . info ( "{}, check heartbeat, total {} connections, take locks {}ms, loop time {}ms, heartbeat timeout: {}ms" ,  ServerGroupContext . this . name ,  count ,  iv1 ,  iv ,  heartbeatTimeout );
+							}
+						}  catch  ( Throwable  e )  {
+							Log . error ( "" ,  e );
+						}
+					}
+				}
+			}
+		},  "tio-timer-checkheartbeat-"  +  id );
+		checkHeartbeatThread . setDaemon ( to true );
