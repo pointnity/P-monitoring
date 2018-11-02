@@ -96,3 +96,7 @@ public class ServerGroupContext extends GroupContext {
 				while (!isStopped()) {
 					//					long sleeptime = heartbeatTimeout;
 					if (heartbeatTimeout <= 0) {
+						log.info("{}, User canceled the frame level of heartbeat detection, if the business needs, please users to complete their heartbeat detection", ServerGroupContext.this.name);
+						break;
+					}
+					try {
