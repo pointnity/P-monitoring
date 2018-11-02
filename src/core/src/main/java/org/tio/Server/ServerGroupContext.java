@@ -182,3 +182,17 @@ public class ServerGroupContext extends GroupContext {
 									+  "\r\nClosed connections: {}" 
 									+  "\r\ngroup: [channelmap:{}, groupmap:{}]"
 									+  "\r\n bind userid number: {}" 
+									+  "\r\n bind token number: {}" 
+									+  "\r\nwaiting for sync message response: {}"
+								// + "\r\nThe number of ips being monitored: {}"
+										+  "\r\n blacked out ip:{}" ,  ServerGroupContext . this . name ,  ServerGroupContext . this . clientNodeMap . getMap (). getObj (). size (),
+										ServerGroupContext . The this . Connections . GetSetWithLock (). GetObj (). Size (),  ServerGroupContext . The this . Connecteds . GetSetWithLock (). GetObj (). Size (),
+										ServerGroupContext . this . closeds . getSetWithLock (). getObj (). size (),  ServerGroupContext . this . groups . getChannelmap (). getObj (). size (),
+										ServerGroupContext . The this . Groups . GetGroupmap (). GetObj (). Size (),  ServerGroupContext . The this . Users . The getMap (). GetObj (). Size (),  ServerGroupContext . The this . Tokens . The getMap (). GetObj (). Size (),
+										ServerGroupContext . this . waitingResps . getMap (). getObj (). size (),
+										// ServerGroupContext.this.ips.size(),
+										Json . toJson ( ServerGroupContext . this . ipBlacklist . getCopy ()));
+							}
+
+							If  ( log . isInfoEnabled ())  {
+								Long  end  =  SystemTimer . currentTimeMillis ();
