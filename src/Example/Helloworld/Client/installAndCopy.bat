@@ -1,0 +1,1 @@
+Call mvn clean install
