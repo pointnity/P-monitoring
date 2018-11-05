@@ -43,3 +43,11 @@
 		
 	</dependencies>
 	<build>
+		<plugins>
+			<!-- The configuration of maven-assembly-plugin -->
+			<plugin>
+				<groupId> org.apache.maven.plugins </groupId>
+				<artifactId> maven-assembly-plugin </artifactId>
+
+				<executions>
+					<execution>
