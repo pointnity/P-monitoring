@@ -29,3 +29,6 @@ Echo -
 Echo #check version update
 Echo mvn versions: display-dependency-updates
 Echo -
+Echo -
+
+Echo #version change
