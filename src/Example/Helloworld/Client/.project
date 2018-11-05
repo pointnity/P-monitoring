@@ -2,3 +2,7 @@
 <projectDescription>
 	<name> tio-examples-helloworld-client </name>
 	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
