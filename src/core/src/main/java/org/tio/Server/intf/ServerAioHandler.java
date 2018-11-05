@@ -7,3 +7,6 @@ import org.tio.core.intf.AioHandler;
  * @author tanyaowu
  *
  */
+public interface ServerAioHandler extends AioHandler {
+
+}
