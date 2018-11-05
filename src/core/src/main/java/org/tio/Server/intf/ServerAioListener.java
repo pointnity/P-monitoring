@@ -15,3 +15,9 @@ public interface ServerAioListener extends AioListener {
 	 * @param aioServer
 	 * @return false: means rejecting the connection, true: means accepting the connection
 	 *
+	 * @author tanyaowu
+	 *  
+	 *
+	 */
+	// void onAfterAccepted(AsynchronousSocketChannel asynchronousSocketChannel, AioServer aioServer);
+}
