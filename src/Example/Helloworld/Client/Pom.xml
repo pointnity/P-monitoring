@@ -4,3 +4,5 @@
 	<name> ${project.artifactId} </name>
 
 	<parent>
+		<groupId> org.t-io </groupId>
+		<artifactId> tio-examples-parent </artifactId>
