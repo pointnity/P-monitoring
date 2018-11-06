@@ -4,3 +4,9 @@
 	<contextName>${context.name}</contextName>                         <!-- The name of this item-->
    
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${conversion.pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- Root file Log -->
