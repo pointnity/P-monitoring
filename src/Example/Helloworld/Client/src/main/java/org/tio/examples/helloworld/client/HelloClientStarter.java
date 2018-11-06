@@ -47,3 +47,8 @@ Public  class  HelloClientStarter  {
 	}
 
 	Private  static  void  send ()  throws  Exception  {
+		HelloPacket  packet  =  new  HelloPacket ();
+		Packet . setBody ( "hello world" . getBytes ( HelloPacket . CHARSET ));
+		Aio . send ( clientChannelContext ,  packet );
+	}
+}
