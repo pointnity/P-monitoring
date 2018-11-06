@@ -2,3 +2,6 @@
 	<!--  maven.apache.org/plugins/maven-assembly-plugin/assembly.html -->
 	<id>dist</id>
 	<formats>
+		<!-- zip,tar.gz,tar.bz2,jar,dir,war -->
+		<format>dir</format>
+	</formats>
