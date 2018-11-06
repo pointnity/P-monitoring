@@ -9,3 +9,19 @@ Import  org.tio.client.intf.ClientAioListener ;
 Import  org.tio.core.Aio ;
 Import  org.tio.core.Node ;
 Import  org.tio.examples.helloworld.common.Const ;
+Import  org.tio.examples.helloworld.common.HelloPacket ;
+
+/**
+ *
+ * @author tanyaowu
+ *
+ */
+Public  class  HelloClientStarter  {
+	/ / Server node
+	Public  static  Node  serverNode  =  new  Node ( Const . SERVER ,  Const . PORT );
+
+	//handler, including encoding, decoding, message processing
+	Public  static  ClientAioHandler  aioClientHandler  =  new  HelloClientAioHandler ();
+
+	/ / Event listener, can be null, but it is recommended to implement the interface, you can refer to showcase to understand some interfaces
+	Public  static  ClientAioListener  aioListener  =  null ;
