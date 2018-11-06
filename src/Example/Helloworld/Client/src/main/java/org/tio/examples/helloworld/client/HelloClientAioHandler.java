@@ -34,3 +34,12 @@ Public  class  HelloClientAioHandler  implements  ClientAioHandler  {
 		/ / Read the length of the message body
 		Int  bodyLength  =  buffer . getInt ();
 
+		/ / The data is incorrect, throw an AioDecodeException
+		If  ( bodyLength  <  0 )  {
+			Throw  new  AioDecodeException ( "bodyLength ["  +  bodyLength  +  "] is not right, remote:"  +  channelContext . getClientNode ());
+		}
+
+		/ / Calculate the length of data required this time
+		Int  neededLength  =  HelloPacket . HEADER_LENGHT  +  bodyLength ;
+		/ / Is the data received enough for the package?
+		Int  isDataEnough  =  readableLength  -  neededLength ;
