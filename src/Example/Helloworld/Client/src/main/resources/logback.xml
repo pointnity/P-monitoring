@@ -10,3 +10,6 @@
 	</appender>
 	
 	<!-- Root file Log -->
+	<appender name="root-file-error"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/error.log</file>
