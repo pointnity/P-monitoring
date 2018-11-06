@@ -25,3 +25,11 @@ Public  class  HelloClientStarter  {
 
 	/ / Event listener, can be null, but it is recommended to implement the interface, you can refer to showcase to understand some interfaces
 	Public  static  ClientAioListener  aioListener  =  null ;
+
+	/ / Automatically connected after the broken chain, do not want to automatically connect, please set to null
+	Private  static  ReconnConf  reconnConf  =  new  ReconnConf ( 5000L );
+
+	/ / A set of connection shared context objects
+	Public  static  ClientGroupContext  clientGroupContext  =  new  ClientGroupContext ( aioClientHandler ,  aioListener ,  reconnConf );
+
+	Public  static  AioClient  aioClient  =  null ;
