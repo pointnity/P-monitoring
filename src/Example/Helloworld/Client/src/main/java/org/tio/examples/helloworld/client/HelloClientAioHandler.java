@@ -43,3 +43,20 @@ Public  class  HelloClientAioHandler  implements  ClientAioHandler  {
 		Int  neededLength  =  HelloPacket . HEADER_LENGHT  +  bodyLength ;
 		/ / Is the data received enough for the package?
 		Int  isDataEnough  =  readableLength  -  neededLength ;
+		// Not enough message body length (the remaining buffe group can't be a message body)
+		If  ( isDataEnough  <  0 )  {
+			Return  null ;
+		}  else  //The package is successful
+		{
+			HelloPacket  imPacket  =  new  HelloPacket ();
+			If  ( bodyLength  >  0 )  {
+				Byte []  dst  =  new  byte [ bodyLength ];
+				Buffer . get ( dst );
+				imPacket . setBody ( dst );
+			}
+			Return  imPacket ;
+		}
+	}
+
+	/**
+	 * Encoding: encode the service message packet into a ByteBuffer that can be sent.
