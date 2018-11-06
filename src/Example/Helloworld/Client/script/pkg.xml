@@ -5,3 +5,7 @@
 		<!-- zip,tar.gz,tar.bz2,jar,dir,war -->
 		<format>dir</format>
 	</formats>
+	
+	<includeBaseDirectory>false</includeBaseDirectory>
+  
+	<fileSets> 
