@@ -33,3 +33,12 @@ Public  class  HelloClientStarter  {
 	Public  static  ClientGroupContext  clientGroupContext  =  new  ClientGroupContext ( aioClientHandler ,  aioListener ,  reconnConf );
 
 	Public  static  AioClient  aioClient  =  null ;
+	Public  static  ClientChannelContext  clientChannelContext  =  null ;
+
+	/**
+	 * Launcher entry
+	 */
+	Public  static  void  main ( String []  args )  throws  Exception  {
+		clientGroupContext . setHeartbeatTimeout ( Const . TIMEOUT );
+		aioClient  =  new  AioClient ( clientGroupContext );
+		clientChannelContext  =  aioClient . connect ( serverNode );
