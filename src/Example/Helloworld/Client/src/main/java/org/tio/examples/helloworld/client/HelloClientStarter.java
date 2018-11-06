@@ -42,3 +42,8 @@ Public  class  HelloClientStarter  {
 		clientGroupContext . setHeartbeatTimeout ( Const . TIMEOUT );
 		aioClient  =  new  AioClient ( clientGroupContext );
 		clientChannelContext  =  aioClient . connect ( serverNode );
+		/ / After connecting, send a message to play
+		Send ();
+	}
+
+	Private  static  void  send ()  throws  Exception  {
