@@ -106,3 +106,10 @@ Public  class  HelloClientAioHandler  implements  ClientAioHandler  {
 	}
 
 	/**
+	 * If this method returns null, the framework layer will not send a heartbeat; if it returns non-null, the framework layer will periodically send the message packet returned by this method.
+	 */
+	@Override
+	Public  HelloPacket  heartbeatPacket ()  {
+		Return  heartbeatPacket ;
+	}
+}
