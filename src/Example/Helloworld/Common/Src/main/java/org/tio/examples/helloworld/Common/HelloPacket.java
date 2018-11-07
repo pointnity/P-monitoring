@@ -14,3 +14,9 @@ Public  class  HelloPacket  extends  Packet  {
 	/**
 	 * @return the body
 	 */
+	Public  byte []  getBody ()  {
+		Return  body ;
+	}
+
+	/**
+	 * @param body the body to set
