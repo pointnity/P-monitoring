@@ -20,3 +20,12 @@
 		<!-- slf4j-logback binding -->
 		<dependency>
 			<groupId> ch.qos.logback </groupId>
+			<artifactId> logback-classic </artifactId>
+		</dependency>
+		<dependency>
+			<groupId> ch.qos.logback </groupId>
+			<artifactId> logback-access </artifactId>
+		</dependency>
+		
+		
+		<!-- redirect apache commons logging -->
