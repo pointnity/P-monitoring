@@ -17,3 +17,7 @@ Public  interface  Const  {
 	Public  static  final  int  PORT  =  6789 ;
 
 	/**
+	 * Heartbeat timeout
+	 */
+	Public  static  final  int  TIMEOUT  =  5000 ;
+}
