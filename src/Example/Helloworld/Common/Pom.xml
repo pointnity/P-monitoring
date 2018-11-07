@@ -34,3 +34,10 @@
 			<artifactId> jcl-over-slf4j </artifactId>
 		</dependency>
 		<!-- redirect jdk util logging -->
+		<dependency>
+			<groupId> org.slf4j </groupId>
+			<artifactId> jul-to-slf4j </artifactId>
+		</dependency>
+		<!-- redirect log4j -->
+		<dependency>
+			<groupId> org.slf4j </groupId>
