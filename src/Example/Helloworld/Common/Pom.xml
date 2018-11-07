@@ -2,3 +2,7 @@
 	<modelVersion> 4.0.0 </modelVersion>
 	<artifactId> tio-examples-helloworld-common </artifactId>
 	<name> ${project.artifactId} </name>
+
+	<parent>
+		<groupId> org.t-io </groupId>
+		<artifactId> tio-examples-parent </artifactId>
