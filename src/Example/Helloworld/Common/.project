@@ -3,3 +3,6 @@
 	<name> tio-examples-helloworld-common </name>
 	<comment></comment>
 	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
