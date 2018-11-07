@@ -20,3 +20,8 @@ Public  class  HelloPacket  extends  Packet  {
 
 	/**
 	 * @param body the body to set
+	 */
+	Public  void  setBody ( byte []  body )  {
+		the this . body  =  body ;
+	}
+}
