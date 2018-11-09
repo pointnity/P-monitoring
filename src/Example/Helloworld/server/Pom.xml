@@ -2,3 +2,6 @@
 	Xsi:schemaLocation= " maven.apache.org/POM/4.0.0  maven.apache.org/xsd/maven-4.0.0.xsd" >
 	<modelVersion> 4.0.0 </modelVersion>
 	<artifactId> tio-examples-helloworld-server </artifactId>
+	<name> ${project.artifactId} </name>
+
+	<parent>
