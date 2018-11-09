@@ -5,3 +5,6 @@
 	<name> ${project.artifactId} </name>
 
 	<parent>
+		<groupId> org.t-io </groupId>
+		<artifactId> tio-examples-parent </artifactId>
+		<version> 2.0.2.v20171129-RELEASE </version>
