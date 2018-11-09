@@ -16,3 +16,8 @@
 		<dependency>
 			<groupId> org.t-io </groupId>
 			<artifactId> tio-core </artifactId>
+		</dependency>
+		<dependency>
+			<groupId> org.t-io </groupId>
+			<artifactId> tio-examples-helloworld-common </artifactId>
+			<version> ${project.version} </version>
