@@ -51,3 +51,5 @@
 						<phase> package </phase>   <!-- Bind to the package lifecycle stage -->
 						<goals>
 							<goal> single </goal>
+						</goals>
+						<configuration>
