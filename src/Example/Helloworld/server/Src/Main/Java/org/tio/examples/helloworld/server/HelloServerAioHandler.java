@@ -40,3 +40,10 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 		/ / Calculate the length of data required this time
 		Int  neededLength  =  HelloPacket . HEADER_LENGHT  +  bodyLength ;
 		/ / Is the data received enough for the package?
+		Int  isDataEnough  =  readableLength  -  neededLength ;
+		// Not enough message body length (the remaining buffe group can't be a message body)
+		If  ( isDataEnough  <  0 )  {
+			Return  null ;
+		}  else  //The package is successful
+		{
+			HelloPacket  imPacket  =  new  HelloPacket ();
