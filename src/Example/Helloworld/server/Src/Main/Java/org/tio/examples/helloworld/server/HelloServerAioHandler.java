@@ -92,3 +92,10 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 	/**
 	 * Processing messages
 	 */
+	@Override
+	Public  void  handler ( Packet  packet ,  ChannelContext  channelContext )  throws  Exception  {
+		HelloPacket  helloPacket  =  ( HelloPacket )  packet ;
+		byte []  body  =  helloPacket . the getBody ();
+		If  ( body  !=  null )  {
+			String  str  =  new  String ( body ,  HelloPacket . CHARSET );
+			System . out . println ( "received message:"  +  str );
