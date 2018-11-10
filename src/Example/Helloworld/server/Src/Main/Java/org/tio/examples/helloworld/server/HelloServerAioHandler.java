@@ -74,3 +74,12 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 		//The total length of the bytebuffer is = the length of the message header + the length of the message body
 		Int  allLen  =  HelloPacket . HEADER_LENGHT  +  bodyLen ;
 		/ / Create a new bytebuffer
+		ByteBuffer  buffer  =  ByteBuffer . allocate ( allLen );
+		/ / Set the endian
+		Buffer . Order ( groupContext . getByteOrder ());
+
+		/ / Write the message header ---- the content of the message header is the length of the message body
+		Buffer . putInt ( bodyLen );
+
+		/ / Write message body
+		If  ( body  !=  null )  {
