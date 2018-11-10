@@ -19,3 +19,11 @@ Public  class  HelloServerStarter  {
 
 	/ / Event listener, can be null, but it is recommended to implement the interface, you can refer to showcase to understand some interfaces
 	Public  static  ServerAioListener  aioListener  =  null ;
+
+	/ / A set of connection shared context objects
+	Public  static  ServerGroupContext  serverGroupContext  =  new  ServerGroupContext ( aioHandler ,  aioListener );
+
+	//aioServer object
+	Public  static  AioServer  aioServer  =  new  AioServer ( serverGroupContext );
+
+	/ / Sometimes need to bind ip, no need to be null
