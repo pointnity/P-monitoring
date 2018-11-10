@@ -12,3 +12,13 @@
 	<!-- root file log -->
 	<appender  name= "root-file-error"
 		Class= "ch.qos.logback.core.rolling.RollingFileAppender" >
+		<file> ${log.dir}/error.log </file>
+		<rollingPolicy  class= "ch.qos.logback.core.rolling.TimeBasedRollingPolicy" >
+			<fileNamePattern> ${log.dir}/error.%d{${rolling.policy.file.name.pattern}}%d{mmss}.%i.log.zip </fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				Class= "ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP" >
+				<maxFileSize> ${max.file.size} </maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory> ${max.history} </maxHistory>
+		</rollingPolicy>
+		<encoder>
