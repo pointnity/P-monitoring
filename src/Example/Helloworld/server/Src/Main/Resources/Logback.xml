@@ -66,3 +66,13 @@
 		</encoder>
 		<filter  class= "ch.qos.logback.classic.filter.LevelFilter" >   
 			<level> INFO </level>   
+			<onMatch> ACCEPT </onMatch>   
+			<onMismatch> DENY </onMismatch>   
+		</filter> 
+	</appender>
+	<appender  name= "root-file-debug"
+		Class= "ch.qos.logback.core.rolling.RollingFileAppender" >
+		<file> ${log.dir}/debug.log </file>
+		<rollingPolicy  class= "ch.qos.logback.core.rolling.TimeBasedRollingPolicy" >
+			<fileNamePattern> ${log.dir}/debug.%d{${rolling.policy.file.name.pattern}}%d{mmss}.%i.log.zip </fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
