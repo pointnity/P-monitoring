@@ -6,3 +6,9 @@
 		<format> dir </format>
 	</formats>
 	
+	<includeBaseDirectory> false </includeBaseDirectory>
+  
+	<fileSets> 
+		
+		<!-- Put the project configuration file in the config directory -->
+		<fileSet>
