@@ -27,3 +27,9 @@ Public  class  HelloServerStarter  {
 	Public  static  AioServer  aioServer  =  new  AioServer ( serverGroupContext );
 
 	/ / Sometimes need to bind ip, no need to be null
+	Public  static  String  serverIp  =  null ;
+
+	/ / Listening port
+	Public  static  int  serverPort  =  Const . PORT ;
+
+	/**
