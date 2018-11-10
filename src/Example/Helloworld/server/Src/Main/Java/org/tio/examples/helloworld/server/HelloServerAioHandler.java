@@ -66,3 +66,11 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 	Public  ByteBuffer  encode ( Packet  packet ,  GroupContext  groupContext ,  ChannelContext  channelContext )  {
 		HelloPacket  helloPacket  =  ( HelloPacket )  packet ;
 		byte []  body  =  helloPacket . the getBody ();
+		Int  bodyLen  =  0 ;
+		If  ( body  !=  null )  {
+			bodyLen  =  body . length ;
+		}
+
+		//The total length of the bytebuffer is = the length of the message header + the length of the message body
+		Int  allLen  =  HelloPacket . HEADER_LENGHT  +  bodyLen ;
+		/ / Create a new bytebuffer
