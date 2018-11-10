@@ -57,3 +57,12 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 	}
 
 	/**
+	 * Encoding: encode the service message packet into a ByteBuffer that can be sent.
+	 * Total message structure: message header + message body
+	 * Message header structure: 4 bytes, storing the length of the message body
+	 * Message body structure: the byte[] of the object's json string
+	 */
+	@Override
+	Public  ByteBuffer  encode ( Packet  packet ,  GroupContext  groupContext ,  ChannelContext  channelContext )  {
+		HelloPacket  helloPacket  =  ( HelloPacket )  packet ;
+		byte []  body  =  helloPacket . the getBody ();
