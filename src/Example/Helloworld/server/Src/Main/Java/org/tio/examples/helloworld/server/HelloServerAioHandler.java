@@ -99,3 +99,8 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 		If  ( body  !=  null )  {
 			String  str  =  new  String ( body ,  HelloPacket . CHARSET );
 			System . out . println ( "received message:"  +  str );
+
+			HelloPacket  resppacket  =  new  HelloPacket ();
+			Resppacket . setBody (( "Received your message, your message is: "  +  str ). getBytes ( HelloPacket . CHARSET ));
+			Aio . send ( channelContext ,  resppacket );
+		}
