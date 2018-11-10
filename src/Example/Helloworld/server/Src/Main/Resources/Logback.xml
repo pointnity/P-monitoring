@@ -5,3 +5,10 @@
    
 	<appender  name= "console"  class= "ch.qos.logback.core.ConsoleAppender" >
 		<encoder>
+		<pattern> ${conversion.pattern} </pattern>
+		</encoder>
+	</appender>
+	
+	<!-- root file log -->
+	<appender  name= "root-file-error"
+		Class= "ch.qos.logback.core.rolling.RollingFileAppender" >
