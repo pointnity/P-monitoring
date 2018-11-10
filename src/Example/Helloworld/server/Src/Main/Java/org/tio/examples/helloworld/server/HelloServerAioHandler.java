@@ -11,3 +11,13 @@ Import  org.tio.examples.helloworld.common.HelloPacket ;
 Import  org.tio.server.intf.ServerAioHandler ;
 
 /**
+ * @author tanyaowu
+ */
+Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
+
+	/**
+	 * Decoding: Decode the received ByteBuffer into a service message packet that the application can recognize.
+	 * Total message structure: message header + message body
+	 * Message header structure: 4 bytes, storing the length of the message body
+	 * Message body structure: the byte[] of the object's json string
+	 */
