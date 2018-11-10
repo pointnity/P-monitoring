@@ -33,3 +33,9 @@ Public  class  HelloServerStarter  {
 	Public  static  int  serverPort  =  Const . PORT ;
 
 	/**
+	 * Launcher entry
+	 */
+	Public  static  void  main ( String []  args )  throws  IOException  {
+		serverGroupContext . setHeartbeatTimeout ( org . tio . examples . helloworld . common . Const . TIMEOUT );
+
+		aioServer . start ( serverIp ,  serverPort );
