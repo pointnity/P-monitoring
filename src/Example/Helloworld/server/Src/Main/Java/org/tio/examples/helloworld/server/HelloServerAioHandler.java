@@ -47,3 +47,13 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 		}  else  //The package is successful
 		{
 			HelloPacket  imPacket  =  new  HelloPacket ();
+			If  ( bodyLength  >  0 )  {
+				Byte []  dst  =  new  byte [ bodyLength ];
+				Buffer . get ( dst );
+				imPacket . setBody ( dst );
+			}
+			Return  imPacket ;
+		}
+	}
+
+	/**
