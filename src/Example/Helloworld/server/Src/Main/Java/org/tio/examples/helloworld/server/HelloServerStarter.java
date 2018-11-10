@@ -39,3 +39,5 @@ Public  class  HelloServerStarter  {
 		serverGroupContext . setHeartbeatTimeout ( org . tio . examples . helloworld . common . Const . TIMEOUT );
 
 		aioServer . start ( serverIp ,  serverPort );
+	}
+}
