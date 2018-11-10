@@ -13,3 +13,9 @@ Import  org.tio.server.intf.ServerAioListener ;
  * @author tanyaowu
  *  
  */
+Public  class  HelloServerStarter  {
+	//handler, including encoding, decoding, message processing
+	Public  static  ServerAioHandler  aioHandler  =  new  HelloServerAioHandler ();
+
+	/ / Event listener, can be null, but it is recommended to implement the interface, you can refer to showcase to understand some interfaces
+	Public  static  ServerAioListener  aioListener  =  null ;
