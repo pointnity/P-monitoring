@@ -83,3 +83,12 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 
 		/ / Write message body
 		If  ( body  !=  null )  {
+			Buffer . put ( body );
+		}
+		Return  buffer ;
+	}
+
+	
+	/**
+	 * Processing messages
+	 */
