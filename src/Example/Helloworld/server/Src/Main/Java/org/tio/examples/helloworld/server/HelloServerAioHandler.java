@@ -21,3 +21,10 @@ Public  class  HelloServerAioHandler  implements  ServerAioHandler  {
 	 * Message header structure: 4 bytes, storing the length of the message body
 	 * Message body structure: the byte[] of the object's json string
 	 */
+	@Override
+	Public  HelloPacket  decode ( ByteBuffer  buffer ,  ChannelContext  channelContext )  throws  AioDecodeException  {
+		Int  readableLength  =  buffer . limit ()  -  buffer . position ();
+		/ / Received data group can not be a business package, then return null to tell the framework data is not enough
+		If  ( readableLength  <  HelloPacket . HEADER_LENGHT )  {
+			Return  null ;
+		}
