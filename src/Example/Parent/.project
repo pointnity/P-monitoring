@@ -10,3 +10,5 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+	</buildSpec>
+	<natures>
