@@ -81,3 +81,9 @@
 						<exclude> **/*.properties </exclude>
 						<exclude> **/*.conf </exclude>
 						<exclude> **/*.xml </exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			
+			
+		</plugins>
