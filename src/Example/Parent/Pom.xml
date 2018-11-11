@@ -72,3 +72,9 @@
 				<artifactId> maven-jar-plugin </artifactId>
 				<configuration>
 					<archive>
+						<!-- The generated jar, do not include the two files pom.xml and pom.properties -->
+						<addMavenDescriptor> true </addMavenDescriptor>
+					</archive>
+
+					<!-- Filter out files that you don't want included in the jar -->
+					<excludes>
