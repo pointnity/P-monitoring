@@ -17,3 +17,6 @@
 
 
 	<modules>
+
+		<module> ../helloworld/common </module>
+		<module> ../helloworld/client </module>
