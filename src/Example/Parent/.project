@@ -3,3 +3,5 @@
 	<name> tio-examples-parent </name>
 	<comment></comment>
 	<projects>
+	</projects>
+	<buildSpec>
