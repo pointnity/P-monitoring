@@ -23,3 +23,7 @@
 		<module> ../helloworld/server </module>
 		
 		<module> ../showcase/common </module>
+		<module> ../showcase/client </module>
+		<module> ../showcase/server </module>
+
+	</modules>
