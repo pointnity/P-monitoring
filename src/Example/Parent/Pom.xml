@@ -3,3 +3,9 @@
 	<modelVersion> 4.0.0 </modelVersion>
 	<artifactId> tio-examples-parent </artifactId>
 	<packaging> pom </packaging>
+	<name> ${project.artifactId} </name>
+	<url> http://maven.apache.org </url>
+
+	<description> tio-examples's parent </description>
+	
+	<parent>
