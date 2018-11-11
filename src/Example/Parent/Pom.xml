@@ -20,3 +20,6 @@
 
 		<module> ../helloworld/common </module>
 		<module> ../helloworld/client </module>
+		<module> ../helloworld/server </module>
+		
+		<module> ../showcase/common </module>
