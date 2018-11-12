@@ -9,3 +9,8 @@
 		<version> 2.0.2.v20171129-RELEASE </version>
 		<relativePath> ../../parent/pom.xml </relativePath>
 	</parent>
+
+	<dependencies>
+		
+		
+		<dependency>
