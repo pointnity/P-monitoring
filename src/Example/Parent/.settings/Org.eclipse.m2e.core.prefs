@@ -1,2 +1,4 @@
 activeProfiles =
 Eclipse.preferences.version=1
+resolveWorkspaceProjects = true
+Version = 1
