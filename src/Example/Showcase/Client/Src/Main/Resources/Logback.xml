@@ -7,3 +7,7 @@
 		<encoder>
 			<pattern> ${conversion.pattern} </pattern>
 		</encoder>
+	</appender>
+	
+	<!-- root file log -->
+	<appender  name= "root-file-error"
