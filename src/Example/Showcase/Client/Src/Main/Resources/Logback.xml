@@ -57,4 +57,15 @@
 			<fileNamePattern> ${log.dir}/info.%d{${rolling.policy.file.name.pattern}}%d{mmss}.%i.log.zip </fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy
 				Class= "ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP" >
-				<maxFileSize> ${max.file.size} </maxFileSize>
+				<			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory> ${max.history} </maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern> ${conversion.pattern} </pattern>
+		</encoder>
+		<filter  class= "ch.qos.logback.classic.filter.LevelFilter" >   
+			<level> INFO </level>   
+			<onMatch> ACCEPT </onMatch>   
+			<onMismatch> DENY </onMismatch>   
+		</filter> 
+	</appender>maxFileSize> ${max.file.size} </maxFileSize>
