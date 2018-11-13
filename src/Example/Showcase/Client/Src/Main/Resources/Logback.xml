@@ -78,3 +78,10 @@
 				Class= "ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP" >
 				<maxFileSize> ${max.file.size} </maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory> ${max.history} </maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern> ${conversion.pattern} </pattern>
+		</encoder>
+		<filter  class= "ch.qos.logback.classic.filter.LevelFilter" >   
+			<level> debug </level>   
