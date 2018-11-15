@@ -29,3 +29,7 @@ Public  class  ShowcaseClientAioHandler  extends  ShowcaseAbsAioHandler  impleme
 		handlerMap . PUT ( the Type . LOGIN_RESP ,  new new  LoginRespHandler ());
 		handlerMap . put ( Type . P2P_RESP ,  new  P2PRespHandler ());
 	}
+
+	Private  static  ShowcasePacket  heartbeatPacket  =  new  ShowcasePacket ( Type . HEART_BEAT_REQ ,  null );
+
+	/**
