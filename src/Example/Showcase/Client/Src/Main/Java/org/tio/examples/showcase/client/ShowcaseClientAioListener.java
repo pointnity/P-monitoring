@@ -33,3 +33,6 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 	/**
 	 * @param channelContext
 	 * @param throwable
+	 * @param remark
+	 * @param isRemove
+	 * @throws Exception
