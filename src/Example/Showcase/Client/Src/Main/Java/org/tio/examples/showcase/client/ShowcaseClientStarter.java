@@ -37,3 +37,9 @@ Public  class  ShowcaseClientStarter  {
 
 	Private  static  AioClient  aioClient  =  null ;
 
+	Static  ClientChannelContext  clientChannelContext ;
+
+	Public  static  void  command ()  throws  Exception  {
+		@SuppressWarnings ( "resource" )
+		Java . util . Scanner  sc  =  new  java . util . Scanner ( System . in );
+		Int  i  =  1 ;
