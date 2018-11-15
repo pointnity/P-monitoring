@@ -29,3 +29,7 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 	 */
 	Public  ShowcaseClientAioListener ()  {
 	}
+
+	/**
+	 * @param channelContext
+	 * @param throwable
