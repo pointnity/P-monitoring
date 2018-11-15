@@ -24,3 +24,5 @@ Public  class  ShowcaseClientAioHandler  extends  ShowcaseAbsAioHandler  impleme
 
 	Private  static  Map < Byte ,  AbsShowcaseBsHandler <?>>  handlerMap  =  new  HashMap <>();
 	Static  {
+		handlerMap . put ( Type . GROUP_MSG_RESP ,  new  GroupMsgRespHandler ());
+		handlerMap . put ( Type . JOIN_GROUP_RESP ,  new  JoinGroupRespHandler ());
