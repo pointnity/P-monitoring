@@ -20,3 +20,7 @@ Import  org.tio.examples.showcase.common.intf.AbsShowcaseBsHandler ;
  * @author tanyaowu
  *  
  */
+Public  class  ShowcaseClientAioHandler  extends  ShowcaseAbsAioHandler  implements  ClientAioHandler  {
+
+	Private  static  Map < Byte ,  AbsShowcaseBsHandler <?>>  handlerMap  =  new  HashMap <>();
+	Static  {
