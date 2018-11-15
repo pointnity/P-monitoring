@@ -67,3 +67,8 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 	 * @author tanyaowu
 	 */
 	@Override
+	Public  void  onAfterReceived ( ChannelContext  channelContext ,  Packet  packet ,  int  packetSize )  throws  Exception  {
+		Log . info ( "onAfterReceived channelContext:{}, packet:{}, packetSize:{}" ,  channelContext ,  Json . toJson ( packet ),  packetSize );
+	}
+
+	/**
