@@ -138,3 +138,7 @@ Public  class  ShowcaseClientStarter  {
 			reqPacket . setBody ( Json . toJson ( p2pReqBody ). getBytes ( ShowcasePacket . CHARSET ));
 
 			Aio . send ( clientChannelContext ,  reqPacket );
+		}
+
+	}
+}
