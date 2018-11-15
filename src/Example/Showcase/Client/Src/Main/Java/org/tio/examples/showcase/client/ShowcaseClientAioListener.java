@@ -82,3 +82,9 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 	Public  void  onAfterSent ( ChannelContext  channelContext ,  Packet  packet ,  boolean  isSentSuccess )  throws  Exception  {
 		Log . info ( "onAfterSent channelContext:{}, packet:{}, isSentSuccess:{}" ,  channelContext ,  Json . toJson ( packet ),  isSentSuccess );
 	}
+
+	@Override
+	Public  void  onBeforeClose ( ChannelContext  channelContext ,  Throwable  throwable ,  String  remark ,  boolean  isRemove )  {
+	}
+
+}
