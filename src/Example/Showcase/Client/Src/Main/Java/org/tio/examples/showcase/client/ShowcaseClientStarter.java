@@ -90,3 +90,16 @@ Public  class  ShowcaseClientStarter  {
 		If  ( "login" . equalsIgnoreCase ( command ))  {
 			String  loginname  =  args [ 1 ];
 			String  password  =  args [ 2 ];
+
+			LoginReqBody  loginReqBody  =  new  LoginReqBody ();
+			loginReqBody . setLoginname ( loginname );
+			loginReqBody . setPassword ( password );
+
+			ShowcasePacket  reqPacket  =  new  ShowcasePacket ();
+			reqPacket . setType ( the Type . LOGIN_REQ );
+			reqPacket . setBody ( Json . toJson ( loginReqBody ). getBytes ( ShowcasePacket . CHARSET ));
+
+			Aio . send ( clientChannelContext ,  reqPacket );
+
+		}  else  if  ( "join" . equals ( command ))  {
+			String  group  =  args [ 1 ];
