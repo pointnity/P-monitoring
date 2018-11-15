@@ -58,3 +58,15 @@ Public  class  ShowcaseClientStarter  {
 		String  line  =  sc . nextLine ();  // This is the data entered by the user.
 		While  ( true )  {
 			If  ( "exit" . equalsIgnoreCase ( line ))  {
+				System . out . println ( "Thanks for using! bye bye." );
+				Break ;
+			}  else  if  ( "?" . equals ( line ))  {
+				System . out . println ( sb );
+			}
+
+			processCommand ( line );
+
+			Line  =  sc . nextLine ();  // This is the data entered by the user.
+		}
+
+		aioClient . stop ();
