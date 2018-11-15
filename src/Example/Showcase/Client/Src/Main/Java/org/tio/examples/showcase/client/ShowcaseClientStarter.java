@@ -80,3 +80,13 @@ Public  class  ShowcaseClientStarter  {
 	}
 
 	Public  static  void  processCommand ( String  line )  throws  Exception  {
+		If  ( StringUtils . isBlank ( line ))  {
+			Return ;
+		}
+
+		String []  args  =  StringUtils . split ( line ,  " " );
+		String  command  =  args [ 0 ];
+
+		If  ( "login" . equalsIgnoreCase ( command ))  {
+			String  loginname  =  args [ 1 ];
+			String  password  =  args [ 2 ];
