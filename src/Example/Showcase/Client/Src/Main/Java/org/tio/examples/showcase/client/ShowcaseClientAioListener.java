@@ -58,3 +58,12 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 		channelContext . setAttribute ( new  ShowcaseSessionContext ());
 
 	}
+
+	/**
+	 * @param channelContext
+	 * @param packet
+	 * @param packetSize
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
+	@Override
