@@ -30,3 +30,10 @@ Public  class  ShowcaseClientStarter  {
 
 	/ / used to automatically connect, do not want to automatically connect, please set to null
 	Private  static  ReconnConf  reconnConf  =  new  ReconnConf ( 5000L );
+
+	Private  static  ClientAioHandler  aioClientHandler  =  new  ShowcaseClientAioHandler ();
+	Private  static  ClientAioListener  aioListener  =  new  ShowcaseClientAioListener ();
+	Private  static  ClientGroupContext  clientGroupContext  =  new  ClientGroupContext ( aioClientHandler ,  aioListener ,  reconnConf );
+
+	Private  static  AioClient  aioClient  =  null ;
+
