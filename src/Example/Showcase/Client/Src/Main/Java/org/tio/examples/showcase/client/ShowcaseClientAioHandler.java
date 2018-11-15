@@ -26,3 +26,6 @@ Public  class  ShowcaseClientAioHandler  extends  ShowcaseAbsAioHandler  impleme
 	Static  {
 		handlerMap . put ( Type . GROUP_MSG_RESP ,  new  GroupMsgRespHandler ());
 		handlerMap . put ( Type . JOIN_GROUP_RESP ,  new  JoinGroupRespHandler ());
+		handlerMap . PUT ( the Type . LOGIN_RESP ,  new new  LoginRespHandler ());
+		handlerMap . put ( Type . P2P_RESP ,  new  P2PRespHandler ());
+	}
