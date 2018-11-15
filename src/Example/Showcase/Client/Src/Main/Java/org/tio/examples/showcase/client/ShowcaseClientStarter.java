@@ -70,3 +70,13 @@ Public  class  ShowcaseClientStarter  {
 		}
 
 		aioClient . stop ();
+		System . exit ( 0 );
+	}
+
+	Public  static  void  main ( String []  args )  throws  Exception  {
+		aioClient  =  new  AioClient ( clientGroupContext );
+		clientChannelContext  =  aioClient . connect ( serverNode );
+		Command ();
+	}
+
+	Public  static  void  processCommand ( String  line )  throws  Exception  {
