@@ -131,3 +131,10 @@ Public  class  ShowcaseClientStarter  {
 
 			P2PReqBody  p2pReqBody  =  new  P2PReqBody ();
 			p2pReqBody . setToUserid ( toUserid );
+			p2pReqBody . setText ( text );
+
+			ShowcasePacket  reqPacket  =  new  ShowcasePacket ();
+			reqPacket . setType ( the Type . P2P_REQ );
+			reqPacket . setBody ( Json . toJson ( p2pReqBody ). getBytes ( ShowcasePacket . CHARSET ));
+
+			Aio . send ( clientChannelContext ,  reqPacket );
