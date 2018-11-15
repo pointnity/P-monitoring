@@ -48,3 +48,13 @@ Public  class  ShowcaseClientStarter  {
 		Sb . append ( i ++  +  ", need help, type '?'.\r\n" );
 		Sb . append ( i ++  +  ", login, type 'login loginname password'.\r\n" );
 		Sb . append ( i ++  +  ", enter the group, type 'join group1'.\r\n" );
+		Sb . append ( i ++  +  ", group chat, type 'groupMsg group1 text'.\r\n" );
+		Sb . append ( i ++  +  ", peer-to-peer chat, type 'p2pMsg loginname text'.\r\n" );
+
+		Sb . append ( i ++  +  ", exit the program, type 'exit'.\r\n" );
+
+		System . out . println ( sb );
+
+		String  line  =  sc . nextLine ();  // This is the data entered by the user.
+		While  ( true )  {
+			If  ( "exit" . equalsIgnoreCase ( line ))  {
