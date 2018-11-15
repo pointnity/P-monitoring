@@ -33,3 +33,6 @@ Public  class  ShowcaseClientAioHandler  extends  ShowcaseAbsAioHandler  impleme
 	Private  static  ShowcasePacket  heartbeatPacket  =  new  ShowcasePacket ( Type . HEART_BEAT_REQ ,  null );
 
 	/**
+	 * Processing messages
+	 */
+	@Override
