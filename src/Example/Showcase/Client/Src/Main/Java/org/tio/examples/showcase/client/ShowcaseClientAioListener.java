@@ -19,3 +19,7 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
+
