@@ -23,3 +23,9 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 
 	}
 
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	Public  ShowcaseClientAioListener ()  {
+	}
