@@ -43,3 +43,8 @@ Public  class  ShowcaseClientStarter  {
 		@SuppressWarnings ( "resource" )
 		Java . util . Scanner  sc  =  new  java . util . Scanner ( System . in );
 		Int  i  =  1 ;
+		StringBuilder  sb  =  new  StringBuilder ();
+		Sb . append ( "Usage Guide: \r\n" );
+		Sb . append ( i ++  +  ", need help, type '?'.\r\n" );
+		Sb . append ( i ++  +  ", login, type 'login loginname password'.\r\n" );
+		Sb . append ( i ++  +  ", enter the group, type 'join group1'.\r\n" );
