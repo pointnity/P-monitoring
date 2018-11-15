@@ -118,3 +118,16 @@ Public  class  ShowcaseClientStarter  {
 
 			GroupMsgReqBody  groupMsgReqBody  =  new  GroupMsgReqBody ();
 			groupMsgReqBody . setToGroup ( group );
+			groupMsgReqBody . setText ( text );
+
+			ShowcasePacket  reqPacket  =  new  ShowcasePacket ();
+			reqPacket . setType ( the Type . GROUP_MSG_REQ );
+			reqPacket . setBody ( Json . toJson ( groupMsgReqBody ). getBytes ( ShowcasePacket . CHARSET ));
+
+			Aio . send ( clientChannelContext ,  reqPacket );
+		}  else  if  ( "p2pMsg" . equals ( command ))  {
+			String  toUserid  =  args [ 1 ];
+			String  text  =  args [ 2 ];
+
+			P2PReqBody  p2pReqBody  =  new  P2PReqBody ();
+			p2pReqBody . setToUserid ( toUserid );
