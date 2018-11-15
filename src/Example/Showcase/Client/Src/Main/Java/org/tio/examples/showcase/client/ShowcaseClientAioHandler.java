@@ -39,3 +39,6 @@ Public  class  ShowcaseClientAioHandler  extends  ShowcaseAbsAioHandler  impleme
 	Public  void  handler ( Packet  packet ,  ChannelContext  channelContext )  throws  Exception  {
 		ShowcasePacket  showcasePacket  =  ( ShowcasePacket )  packet ;
 		Byte  type  =  showcasePacket . getType ();
+		AbsShowcaseBsHandler <?>  showcaseBsHandler  =  handlerMap . get ( type );
+		showcaseBsHandler . handler ( showcasePacket ,  channelContext );
+		Return ;
