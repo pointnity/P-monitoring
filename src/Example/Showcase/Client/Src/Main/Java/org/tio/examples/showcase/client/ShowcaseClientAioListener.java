@@ -48,3 +48,13 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 	 * @param isConnected
 	 * @param isReconnect
 	 * @throws Exception
+	 * @author tanyaowu
+	 */
+	@Override
+	Public  void  onAfterConnected ( ChannelContext  channelContext ,  boolean  isConnected ,  boolean  isReconnect )  throws  Exception  {
+		Log . info ( "onAfterConnected channelContext:{}, isConnected:{}, isReconnect:{}" ,  channelContext ,  isConnected ,  isReconnect );
+
+		/ / After connecting, you need to set the connection session object to the channelContext
+		channelContext . setAttribute ( new  ShowcaseSessionContext ());
+
+	}
