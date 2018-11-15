@@ -36,3 +36,9 @@ Public  class  ShowcaseClientAioListener  implements  ClientAioListener  {
 	 * @param remark
 	 * @param isRemove
 	 * @throws Exception
+	 * @author tanyaowu
+	 */
+	@Override
+	Public  void  onAfterClose ( ChannelContext  channelContext ,  Throwable  throwable ,  String  remark ,  boolean  isRemove )  throws  Exception  {
+		Log . info ( "onAfterClose channelContext:{}, throwable:{}, remark:{}, isRemove:{}" ,  channelContext ,  throwable ,  remark ,  isRemove );
+	}
