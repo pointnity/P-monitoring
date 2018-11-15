@@ -22,3 +22,11 @@ Import  org.tio.utils.json.Json ;
  *
  * @author tanyaowu
  */
+Public  class  ShowcaseClientStarter  {
+	Static  String  serverIp  =  "127.0.0.1" ;
+	Static  int  serverPort  =  Const . PORT ;
+
+	Private  static  Node  serverNode  =  new  Node ( serverIp ,  serverPort );
+
+	/ / used to automatically connect, do not want to automatically connect, please set to null
+	Private  static  ReconnConf  reconnConf  =  new  ReconnConf ( 5000L );
