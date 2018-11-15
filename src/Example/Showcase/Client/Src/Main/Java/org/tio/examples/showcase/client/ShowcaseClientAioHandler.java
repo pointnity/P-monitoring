@@ -50,3 +50,5 @@ Public  class  ShowcaseClientAioHandler  extends  ShowcaseAbsAioHandler  impleme
 	@Override
 	Public  ShowcasePacket  heartbeatPacket ()  {
 		Return  heartbeatPacket ;
+	}
+}
