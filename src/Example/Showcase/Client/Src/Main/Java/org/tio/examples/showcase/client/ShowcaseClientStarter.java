@@ -103,3 +103,18 @@ Public  class  ShowcaseClientStarter  {
 
 		}  else  if  ( "join" . equals ( command ))  {
 			String  group  =  args [ 1 ];
+
+			JoinGroupReqBody  joinGroupReqBody  =  new  JoinGroupReqBody ();
+			joinGroupReqBody . setGroup ( group );
+
+			ShowcasePacket  reqPacket  =  new  ShowcasePacket ();
+			reqPacket . setType ( the Type . JOIN_GROUP_REQ );
+			reqPacket . setBody ( Json . toJson ( joinGroupReqBody ). getBytes ( ShowcasePacket . CHARSET ));
+
+			Aio . send ( clientChannelContext ,  reqPacket );
+		}  else  if  ( "groupMsg" . equals ( command ))  {
+			String  group  =  args [ 1 ];
+			String  text  =  args [ 2 ];
+
+			GroupMsgReqBody  groupMsgReqBody  =  new  GroupMsgReqBody ();
+			groupMsgReqBody . setToGroup ( group );
