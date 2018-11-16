@@ -52,3 +52,8 @@ public  class  LoginRespHandler  the extends  AbsShowcaseBsHandler < LoginRespBo
 	public  Object  Handler ( ShowcasePacket  Packet ,  LoginRespBody  bsBody ,  ChannelContext  channelContext )  throws  Exception  {
 		System . out . println ( "Received login response message:"  +  Json . toJson ( bsBody ));
 		If  ( LoginRespBody . Code . SUCCESS . equals ( bsBody . getCode ()))  {
+			ShowcaseSessionContext  showcaseSessionContext  =  ( ShowcaseSessionContext )  channelContext . getAttribute ();
+			showcaseSessionContext . setToken ( bsBody . getToken ());
+			System . out . println ( "Login succeeded, token is:"  +  bsBody . getToken ());
+		}
+
