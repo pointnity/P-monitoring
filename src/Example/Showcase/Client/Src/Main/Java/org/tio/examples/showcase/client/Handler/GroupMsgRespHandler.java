@@ -11,3 +11,9 @@ Import  org.tio.utils.json.Json ;
 /**
  * @author tanyaowu
  *  
+*/
+Public  class  GroupMsgRespHandler  extends  AbsShowcaseBsHandler < GroupMsgRespBody >  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( GroupMsgRespHandler . class );
+
+	/**
+	 * @param args
