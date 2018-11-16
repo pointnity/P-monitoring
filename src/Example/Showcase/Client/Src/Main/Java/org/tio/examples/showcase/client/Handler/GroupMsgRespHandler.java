@@ -40,3 +40,6 @@ Public  class  GroupMsgRespHandler  extends  AbsShowcaseBsHandler < GroupMsgResp
 	}
 
 	/**
+	 * @param packet
+	 * @param bsBody
+	 * @param channelContext
