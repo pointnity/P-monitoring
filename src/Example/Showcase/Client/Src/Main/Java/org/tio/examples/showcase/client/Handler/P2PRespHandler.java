@@ -11,3 +11,9 @@ Import  org.tio.utils.json.Json ;
 /**
  * @author tanyaowu
  *  
+ */
+Public  class  P2PRespHandler  extends  AbsShowcaseBsHandler < P2PRespBody >  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( P2PRespHandler . class );
+
+	/**
+	 * @param args
