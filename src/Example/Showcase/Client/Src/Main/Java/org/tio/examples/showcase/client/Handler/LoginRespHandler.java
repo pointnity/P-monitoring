@@ -33,3 +33,12 @@ public  class  LoginRespHandler  the extends  AbsShowcaseBsHandler < LoginRespBo
 
 	/**
 	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
+	public  Class < LoginRespBody >  bodyClass ()  {
+		Return  LoginRespBody . class ;
+	}
+
+	/**
+	 * @param packet
