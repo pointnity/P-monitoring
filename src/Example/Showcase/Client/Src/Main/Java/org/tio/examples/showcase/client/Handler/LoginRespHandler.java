@@ -42,3 +42,9 @@ public  class  LoginRespHandler  the extends  AbsShowcaseBsHandler < LoginRespBo
 
 	/**
 	 * @param packet
+	 * @param bsBody
+	 * @param channelContext
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
