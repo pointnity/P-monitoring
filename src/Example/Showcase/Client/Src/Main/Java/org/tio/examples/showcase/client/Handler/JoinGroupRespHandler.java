@@ -35,3 +35,10 @@ Public  class  JoinGroupRespHandler  extends  AbsShowcaseBsHandler < JoinGroupRe
 	 * @return
 	 * @author tanyaowu
 	 */
+	@Override
+	Public  Class < JoinGroupRespBody >  bodyClass ()  {
+		Return  JoinGroupRespBody . class ;
+	}
+
+	/**
+	 * @param packet
