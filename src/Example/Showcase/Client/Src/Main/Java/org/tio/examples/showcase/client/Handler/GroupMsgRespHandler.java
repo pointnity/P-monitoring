@@ -48,3 +48,8 @@ Public  class  GroupMsgRespHandler  extends  AbsShowcaseBsHandler < GroupMsgResp
 	 * @author tanyaowu
 	 */
 	@Override
+	Public  Object  handler ( ShowcasePacket  packet ,  GroupMsgRespBody  bsBody ,  ChannelContext  channelContext )  throws  Exception  {
+		System . out . println ( "Receive group message:"  +  Json . toJson ( bsBody ));
+		Return  null ;
+	}
+}
