@@ -23,3 +23,10 @@ Public  class  JoinGroupRespHandler  extends  AbsShowcaseBsHandler < JoinGroupRe
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	Public  JoinGroupRespHandler ()  {
+	}
