@@ -22,3 +22,9 @@ Public  class  GroupMsgRespHandler  extends  AbsShowcaseBsHandler < GroupMsgResp
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
+	Public  GroupMsgRespHandler ()  {
