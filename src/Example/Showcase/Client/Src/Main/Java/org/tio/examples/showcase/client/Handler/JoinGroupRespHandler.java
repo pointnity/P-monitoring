@@ -30,3 +30,8 @@ Public  class  JoinGroupRespHandler  extends  AbsShowcaseBsHandler < JoinGroupRe
 	 */
 	Public  JoinGroupRespHandler ()  {
 	}
+
+	/**
+	 * @return
+	 * @author tanyaowu
+	 */
