@@ -17,3 +17,9 @@ Public  class  JoinGroupRespHandler  extends  AbsShowcaseBsHandler < JoinGroupRe
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( JoinGroupRespHandler . class );
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
