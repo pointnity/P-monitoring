@@ -13,3 +13,8 @@ Import  org.tio.utils.json.Json ;
  * @author tanyaowu
  *  
  */
+public  class  LoginRespHandler  the extends  AbsShowcaseBsHandler < LoginRespBody >  {
+	Private  static  Logger  log  =  of LoggerFactory . the getLogger ( LoginRespHandler . class );
+
+	/**
+	 * @param args
