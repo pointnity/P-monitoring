@@ -31,3 +31,12 @@ Public  class  P2PRespHandler  extends  AbsShowcaseBsHandler < P2PRespBody >  {
 	}
 
 	/**
+	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
+	Public  Class < P2PRespBody >  bodyClass ()  {
+		Return  P2PRespBody . class ;
+	}
+
+	/**
