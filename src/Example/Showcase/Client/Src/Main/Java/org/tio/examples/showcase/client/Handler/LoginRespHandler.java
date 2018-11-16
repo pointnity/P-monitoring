@@ -26,3 +26,10 @@ public  class  LoginRespHandler  the extends  AbsShowcaseBsHandler < LoginRespBo
 
 	/**
 	 *
+	 * @author tanyaowu
+	 */
+	Public  LoginRespHandler ()  {
+	}
+
+	/**
+	 * @return
