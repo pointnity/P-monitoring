@@ -54,3 +54,9 @@ Public  class  JoinGroupRespHandler  extends  AbsShowcaseBsHandler < JoinGroupRe
 
 		If  ( JoinGroupRespBody . Code . SUCCESS . equals ( bsBody . getCode ()))  {
 			Aio . bindGroup ( channelContext ,  bsBody . getGroup ());
+			System . out . println ( "Enter group ["  +  bsBody . getGroup ()  +  "] success" );
+		}
+
+		Return  null ;
+	}
+}
