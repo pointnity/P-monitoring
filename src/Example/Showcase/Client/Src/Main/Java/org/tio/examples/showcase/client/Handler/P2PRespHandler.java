@@ -7,3 +7,7 @@ Import  org.tio.examples.showcase.common.ShowcasePacket ;
 Import  org.tio.examples.showcase.common.intf.AbsShowcaseBsHandler ;
 Import  org.tio.examples.showcase.common.packets.P2PRespBody ;
 Import  org.tio.utils.json.Json ;
+
+/**
+ * @author tanyaowu
+ *  
