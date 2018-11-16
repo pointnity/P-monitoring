@@ -43,3 +43,8 @@ Public  class  GroupMsgRespHandler  extends  AbsShowcaseBsHandler < GroupMsgResp
 	 * @param packet
 	 * @param bsBody
 	 * @param channelContext
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
+	@Override
