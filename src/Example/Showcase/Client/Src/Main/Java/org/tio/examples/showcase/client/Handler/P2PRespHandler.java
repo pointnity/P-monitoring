@@ -17,3 +17,9 @@ Public  class  P2PRespHandler  extends  AbsShowcaseBsHandler < P2PRespBody >  {
 
 	/**
 	 * @param args
+	 * @author tanyaowu
+	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
+
