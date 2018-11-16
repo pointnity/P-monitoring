@@ -35,3 +35,8 @@ Public  class  GroupMsgRespHandler  extends  AbsShowcaseBsHandler < GroupMsgResp
 	 * @author tanyaowu
 	 */
 	@Override
+	Public  Class < GroupMsgRespBody >  bodyClass ()  {
+		Return  GroupMsgRespBody . class ;
+	}
+
+	/**
