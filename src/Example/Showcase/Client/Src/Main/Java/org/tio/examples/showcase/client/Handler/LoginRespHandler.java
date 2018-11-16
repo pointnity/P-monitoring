@@ -57,3 +57,6 @@ public  class  LoginRespHandler  the extends  AbsShowcaseBsHandler < LoginRespBo
 			System . out . println ( "Login succeeded, token is:"  +  bsBody . getToken ());
 		}
 
+		Return  null ;
+	}
+}
