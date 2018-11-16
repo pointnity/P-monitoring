@@ -42,3 +42,10 @@ Public  class  JoinGroupRespHandler  extends  AbsShowcaseBsHandler < JoinGroupRe
 
 	/**
 	 * @param packet
+	 * @param bsBody
+	 * @param channelContext
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
+	@Override
