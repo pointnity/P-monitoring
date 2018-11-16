@@ -32,3 +32,6 @@ Public  class  GroupMsgRespHandler  extends  AbsShowcaseBsHandler < GroupMsgResp
 
 	/**
 	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
