@@ -49,3 +49,8 @@ Public  class  JoinGroupRespHandler  extends  AbsShowcaseBsHandler < JoinGroupRe
 	 * @author tanyaowu
 	 */
 	@Override
+	Public  Object  handler ( ShowcasePacket  packet ,  JoinGroupRespBody  bsBody ,  ChannelContext  channelContext )  throws  Exception  {
+		System . out . println ( "received group response message:"  +  Json . toJson ( bsBody ));
+
+		If  ( JoinGroupRespBody . Code . SUCCESS . equals ( bsBody . getCode ()))  {
+			Aio . bindGroup ( channelContext ,  bsBody . getGroup ());
