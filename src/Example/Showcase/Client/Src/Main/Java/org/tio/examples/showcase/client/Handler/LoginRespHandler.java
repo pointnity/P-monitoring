@@ -48,3 +48,7 @@ public  class  LoginRespHandler  the extends  AbsShowcaseBsHandler < LoginRespBo
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	@Override
+	public  Object  Handler ( ShowcasePacket  Packet ,  LoginRespBody  bsBody ,  ChannelContext  channelContext )  throws  Exception  {
+		System . out . println ( "Received login response message:"  +  Json . toJson ( bsBody ));
+		If  ( LoginRespBody . Code . SUCCESS . equals ( bsBody . getCode ()))  {
