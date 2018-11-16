@@ -47,3 +47,9 @@ Public  class  P2PRespHandler  extends  AbsShowcaseBsHandler < P2PRespBody >  {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	@Override
+	Public  Object  handler ( ShowcasePacket  packet ,  P2PRespBody  bsBody ,  ChannelContext  channelContext )  throws  Exception  {
+		System . out . println ( "Receive P2P response message:"  +  Json . toJson ( bsBody ));
+		Return  null ;
+	}
+}
