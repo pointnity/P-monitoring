@@ -16,3 +16,12 @@
 			<groupId> org.t-io </groupId>
 			<artifactId> tio-core </artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId> com.alibaba </groupId>
+			<artifactId> fastjson </artifactId>
+		</dependency>
+		
+		<!-- slf4j-logback binding -->
+		<dependency>
+			<groupId> ch.qos.logback </groupId>
