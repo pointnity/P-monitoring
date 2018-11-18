@@ -10,4 +10,9 @@
 		<relativePath> ../../parent/pom.xml </relativePath>
 	</parent>
 
-	<dependencies>
+	<dependencies>		
+		
+		<dependency>
+			<groupId> org.t-io </groupId>
+			<artifactId> tio-core </artifactId>
+		</dependency>
