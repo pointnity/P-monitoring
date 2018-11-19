@@ -21,3 +21,7 @@ Public  class  ShowcasePacket  extends  Packet  {
 	Public  ShowcasePacket ()  {
 		Super ();
 	}
+
+	/**
+	 * @param type
+	 * @param body
