@@ -20,3 +20,7 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 	 * Message body: byte[]
 	 */
 	@Override
+	Public  ShowcasePacket  decode ( ByteBuffer  buffer ,  ChannelContext  channelContext )  throws  AioDecodeException  {
+		Int  readableLength  =  buffer . limit ()  -  buffer . position ();
+		If  ( readableLength  <  ShowcasePacket . HEADER_LENGHT )  {
+			Return  null ;
