@@ -60,3 +60,6 @@ Public  class  ShowcasePacket  extends  Packet  {
 	}
 
 	/**
+	 * @param type the type to set
+	 */
+	Public  void  setType ( byte  type )  {
