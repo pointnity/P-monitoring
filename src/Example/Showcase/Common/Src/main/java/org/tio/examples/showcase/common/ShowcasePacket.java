@@ -50,3 +50,8 @@ Public  class  ShowcasePacket  extends  Packet  {
 	@Override
 	Public  String  logstr ()  {
 		Return  ""  +  type ;
+	}
+
+	/**
+	 * @param body the body to set
+	 */
