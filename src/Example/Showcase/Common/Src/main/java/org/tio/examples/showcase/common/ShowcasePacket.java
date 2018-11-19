@@ -12,3 +12,7 @@ Public  class  ShowcasePacket  extends  Packet  {
 	Public  static  final  String  CHARSET  =  "utf-8" ;
 
 	/**
+ * Message type whose value is defined in org.tio.examples.showcase.common.Type
+	 */
+	Private  byte  type ;
+
