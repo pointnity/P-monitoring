@@ -24,3 +24,6 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 		Int  readableLength  =  buffer . limit ()  -  buffer . position ();
 		If  ( readableLength  <  ShowcasePacket . HEADER_LENGHT )  {
 			Return  null ;
+		}
+
+		//Message type
