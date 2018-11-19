@@ -32,3 +32,12 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 		int  BodyLength  =  Buffer . the getInt ();
 
 		IF  ( BodyLength  <  0 )  {
+			Throw  new  AioDecodeException ( "bodyLength ["  +  bodyLength  +  "] is not right, remote:"  +  channelContext . getClientNode ());
+		}
+
+		Int  neededLength  =  ShowcasePacket . HEADER_LENGHT  +  bodyLength ;
+		int  Test  =  readableLength  -  neededLength ;
+		If  ( test  <  0 )  // not enough message body length (the remaining buffe group can not be the message body)
+		{
+			Return  null ;
+		}  else  {
