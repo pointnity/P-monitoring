@@ -32,3 +32,6 @@ Public  class  ShowcasePacket  extends  Packet  {
 		the this . type  =  type ;
 		the this . body  =  body ;
 	}
+
+	/**
+	 * @return the body
