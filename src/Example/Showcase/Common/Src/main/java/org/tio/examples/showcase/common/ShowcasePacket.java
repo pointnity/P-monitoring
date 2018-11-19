@@ -5,3 +5,5 @@ Import  org.tio.core.intf.Packet ;
 /**
  *
  * @author tanyaowu
+ */
+Public  class  ShowcasePacket  extends  Packet  {
