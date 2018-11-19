@@ -58,3 +58,5 @@ Public  class  ShowcasePacket  extends  Packet  {
 	Public  void  setBody ( byte []  body )  {
 		the this . body  =  body ;
 	}
+
+	/**
