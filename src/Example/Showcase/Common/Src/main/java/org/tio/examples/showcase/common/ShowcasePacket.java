@@ -41,3 +41,7 @@ Public  class  ShowcasePacket  extends  Packet  {
 	}
 
 	/**
+	 * @return the type
+	 */
+	Public  byte  getType ()  {
+		Return  type ;
