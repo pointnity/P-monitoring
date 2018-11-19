@@ -45,3 +45,8 @@ Public  class  ShowcasePacket  extends  Packet  {
 	 */
 	Public  byte  getType ()  {
 		Return  type ;
+	}
+
+	@Override
+	Public  String  logstr ()  {
+		Return  ""  +  type ;
