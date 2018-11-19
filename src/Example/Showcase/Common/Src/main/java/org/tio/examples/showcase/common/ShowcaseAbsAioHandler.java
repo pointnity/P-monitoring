@@ -55,3 +55,11 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 	/**
 	 * Encoding: encode the service message packet into a ByteBuffer that can be sent.
 	 * Header: type + bodyLength
+	 * Message body: byte[]
+	 */
+	@Override
+	Public  ByteBuffer  encode ( Packet  packet ,  GroupContext  groupContext ,  ChannelContext  channelContext )  {
+		ShowcasePacket  showcasePacket  =  ( ShowcasePacket )  packet ;
+		Byte []  body  =  showcasePacket . getBody ();
+		Int  bodyLen  =  0 ;
+		If  ( body  !=  null )  {
