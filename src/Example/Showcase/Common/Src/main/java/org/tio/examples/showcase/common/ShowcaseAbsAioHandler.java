@@ -78,3 +78,9 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 		Buffer . putInt ( bodyLen );
 
 		/ / Write message body
+		If  ( body  !=  null )  {
+			Buffer . put ( body );
+		}
+		Return  buffer ;
+	}
+}
