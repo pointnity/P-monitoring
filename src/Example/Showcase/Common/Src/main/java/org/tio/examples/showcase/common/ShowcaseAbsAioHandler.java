@@ -27,3 +27,8 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 		}
 
 		//Message type
+		byte  type  =  Buffer . GET ();
+
+		int  BodyLength  =  Buffer . the getInt ();
+
+		IF  ( BodyLength  <  0 )  {
