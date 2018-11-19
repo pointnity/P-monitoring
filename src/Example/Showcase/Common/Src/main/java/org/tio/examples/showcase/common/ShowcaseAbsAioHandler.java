@@ -41,3 +41,8 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 		{
 			Return  null ;
 		}  else  {
+			ShowcasePacket  imPacket  =  new  ShowcasePacket ();
+			imPacket . setType ( of the type );
+			If  ( bodyLength  >  0 )  {
+				Byte []  dst  =  new  byte [ bodyLength ];
+				Buffer . get ( dst );
