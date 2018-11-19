@@ -63,3 +63,13 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 		Byte []  body  =  showcasePacket . getBody ();
 		Int  bodyLen  =  0 ;
 		If  ( body  !=  null )  {
+			bodyLen  =  body . length ;
+		}
+
+		//The total length is the length of the message header + the length of the message body
+		Int  allLen  =  ShowcasePacket . HEADER_LENGHT  +  bodyLen ;
+
+		ByteBuffer  buffer  =  ByteBuffer . allocate ( allLen );
+		Buffer . Order ( groupContext . getByteOrder ());
+
+		/ / Write message type
