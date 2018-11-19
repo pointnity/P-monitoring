@@ -35,3 +35,9 @@ Public  class  ShowcasePacket  extends  Packet  {
 
 	/**
 	 * @return the body
+	 */
+	Public  byte []  getBody ()  {
+		Return  body ;
+	}
+
+	/**
