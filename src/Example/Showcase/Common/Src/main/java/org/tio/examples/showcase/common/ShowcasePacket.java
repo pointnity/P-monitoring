@@ -25,3 +25,8 @@ Public  class  ShowcasePacket  extends  Packet  {
 	/**
 	 * @param type
 	 * @param body
+	 * @author tanyaowu
+	 */
+	Public  ShowcasePacket ( byte  type ,  byte []  body )  {
+		Super ();
+		the this . type  =  type ;
