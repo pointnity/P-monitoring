@@ -30,3 +30,5 @@ Public  class  ShowcasePacket  extends  Packet  {
 	Public  ShowcasePacket ( byte  type ,  byte []  body )  {
 		Super ();
 		the this . type  =  type ;
+		the this . body  =  body ;
+	}
