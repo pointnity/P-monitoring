@@ -16,3 +16,8 @@ Public  class  ShowcasePacket  extends  Packet  {
 	 */
 	Private  byte  type ;
 
+	Private  byte []  body ;
+
+	Public  ShowcasePacket ()  {
+		Super ();
+	}
