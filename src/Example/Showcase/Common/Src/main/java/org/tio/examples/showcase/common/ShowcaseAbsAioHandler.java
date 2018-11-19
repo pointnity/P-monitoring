@@ -46,3 +46,12 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 			If  ( bodyLength  >  0 )  {
 				Byte []  dst  =  new  byte [ bodyLength ];
 				Buffer . get ( dst );
+				imPacket . setBody ( dst );
+			}
+			Return  imPacket ;
+		}
+	}
+
+	/**
+	 * Encoding: encode the service message packet into a ByteBuffer that can be sent.
+	 * Header: type + bodyLength
