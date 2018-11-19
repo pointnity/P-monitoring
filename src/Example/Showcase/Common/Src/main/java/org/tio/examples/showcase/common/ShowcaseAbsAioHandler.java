@@ -73,3 +73,8 @@ Public  abstract  class  ShowcaseAbsAioHandler  implements  AioHandler  {
 		Buffer . Order ( groupContext . getByteOrder ());
 
 		/ / Write message type
+		Buffer . put ( showcasePacket . getType ());
+		/ / Write the length of the message body
+		Buffer . putInt ( bodyLen );
+
+		/ / Write message body
