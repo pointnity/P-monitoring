@@ -25,3 +25,6 @@ Public  abstract  class  AbsShowcaseBsHandler < T  extends  BaseBody >  implemen
 	Public  abstract  Class < T >  bodyClass ();
 
 	@Override
+	Public  Object  handler ( ShowcasePacket  packet ,  ChannelContext  channelContext )  throws  Exception  {
+		String  jsonStr  =  null ;
+		T  bsBody  =  null ;
