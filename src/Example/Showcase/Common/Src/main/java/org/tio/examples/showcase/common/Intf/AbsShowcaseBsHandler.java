@@ -16,3 +16,6 @@ Public  abstract  class  AbsShowcaseBsHandler < T  extends  BaseBody >  implemen
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( AbsShowcaseBsHandler . class );
 
 	/**
+	 *
+	 * @author tanyaowu
+	 */
