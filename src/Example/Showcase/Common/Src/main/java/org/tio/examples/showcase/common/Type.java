@@ -27,3 +27,7 @@ Public  interface  Type  {
 	Byte  JOIN_GROUP_RESP  =  4 ;
 
 	/**
+	 * Peer-to-peer message request
+	 */
+	Byte  P2P_REQ  =  5 ;
+	/**
