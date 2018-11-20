@@ -54,3 +54,7 @@ Public  class  ShowcaseSessionContext  {
 	/**
 	 * @param userid the userid to set
 	 */
+	Public  void  setUserid ( String  userid )  {
+		the this . the userid  =  the userid ;
+	}
+}
