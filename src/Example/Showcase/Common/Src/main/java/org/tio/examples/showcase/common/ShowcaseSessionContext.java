@@ -26,3 +26,9 @@ Public  class  ShowcaseSessionContext  {
 	/**
 	 *
 	 * @author tanyaowu
+	 */
+	Public  ShowcaseSessionContext ()  {
+	}
+
+	/**
+	 * @return the token
