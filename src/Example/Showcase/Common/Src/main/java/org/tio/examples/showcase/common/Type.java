@@ -40,3 +40,8 @@ Public  interface  Type  {
 	 */
 	Byte  GROUP_MSG_REQ  =  7 ;
 	/**
+	 * Group chat message response
+	 */
+	Byte  GROUP_MSG_RESP  =  8 ;
+
+	/**
