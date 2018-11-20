@@ -45,3 +45,8 @@ Public  interface  Type  {
 	Byte  GROUP_MSG_RESP  =  8 ;
 
 	/**
+	 * Heartbeat
+	 */
+	Byte  HEART_BEAT_REQ  =  99 ;
+
+}
