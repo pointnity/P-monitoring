@@ -31,3 +31,7 @@ Public  interface  Type  {
 	 */
 	Byte  P2P_REQ  =  5 ;
 	/**
+	 * Point-to-point message response
+	 */
+	Byte  P2P_RESP  =  6 ;
+
