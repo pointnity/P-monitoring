@@ -34,3 +34,8 @@ Public  abstract  class  AbsShowcaseBsHandler < T  extends  BaseBody >  implemen
 	}
 
 		Return  handler ( packet ,  bsBody ,  channelContext );
+	}
+
+	Public  abstract  Object  handler ( ShowcasePacket  packet ,  T  bsBody ,  ChannelContext  channelContext )  throws  Exception ;
+
+}
