@@ -50,3 +50,7 @@ Public  class  ShowcaseSessionContext  {
 	Public  void  setToken ( String  token )  {
 		the this . token  =  token ;
 	}
+
+	/**
+	 * @param userid the userid to set
+	 */
