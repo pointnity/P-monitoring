@@ -13,3 +13,5 @@ Public  interface  ShowcaseBsHandlerIntf  {
 	/**
 	 *
 	 * @param packet
+	 * @param channelContext
+	 * @return
