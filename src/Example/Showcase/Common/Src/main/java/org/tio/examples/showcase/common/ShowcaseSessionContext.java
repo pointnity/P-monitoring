@@ -38,3 +38,10 @@ Public  class  ShowcaseSessionContext  {
 	}
 
 	/**
+	 * @return the userid
+	 */
+	Public  String  getUserid ()  {
+		Return  userid ;
+	}
+
+	/**
