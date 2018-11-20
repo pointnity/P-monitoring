@@ -29,3 +29,5 @@ Public  abstract  class  AbsShowcaseBsHandler < T  extends  BaseBody >  implemen
 		String  jsonStr  =  null ;
 		T  bsBody  =  null ;
 	If  ( packet . getBody ()  !=  null )  {
+		jsonStr  =  new  String ( packet . getBody (),  Const . CHARSET );
+			bsBody  =  Json . toBean ( jsonStr ,  bodyClass ());
