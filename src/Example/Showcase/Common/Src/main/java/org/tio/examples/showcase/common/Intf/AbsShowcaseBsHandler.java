@@ -19,3 +19,9 @@ Public  abstract  class  AbsShowcaseBsHandler < T  extends  BaseBody >  implemen
 	 *
 	 * @author tanyaowu
 	 */
+	Public  AbsShowcaseBsHandler ()  {
+	}
+
+	Public  abstract  Class < T >  bodyClass ();
+
+	@Override
