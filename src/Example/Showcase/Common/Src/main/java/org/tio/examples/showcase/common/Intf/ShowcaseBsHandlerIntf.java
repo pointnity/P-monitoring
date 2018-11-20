@@ -11,3 +11,5 @@ Import  org.tio.examples.showcase.common.ShowcasePacket ;
 Public  interface  ShowcaseBsHandlerIntf  {
 
 	/**
+	 *
+	 * @param packet
