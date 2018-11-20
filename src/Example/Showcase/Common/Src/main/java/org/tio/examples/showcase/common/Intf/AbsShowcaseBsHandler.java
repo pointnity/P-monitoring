@@ -10,3 +10,9 @@ Import  org.tio.utils.json.Json ;
 
 /**
  * @author tanyaowu
+ *  
+ */
+Public  abstract  class  AbsShowcaseBsHandler < T  extends  BaseBody >  implements  ShowcaseBsHandlerIntf  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( AbsShowcaseBsHandler . class );
+
+	/**
