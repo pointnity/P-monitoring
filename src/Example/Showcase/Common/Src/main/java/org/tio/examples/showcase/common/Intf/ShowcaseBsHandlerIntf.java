@@ -17,3 +17,7 @@ Public  interface  ShowcaseBsHandlerIntf  {
 	 * @return
 	 * @throws Exception
 	 * @author tanyaowu
+	 */
+	Public  Object  handler ( ShowcasePacket  packet ,  ChannelContext  channelContext )  throws  Exception ;
+
+}
