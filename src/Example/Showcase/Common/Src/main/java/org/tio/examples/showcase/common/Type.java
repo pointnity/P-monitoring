@@ -8,3 +8,8 @@ Package  org . tio . examples . showcase . common ;
 Public  interface  Type  {
 
 	/**
+	/**
+	 * Login message request
+	 */
+	Byte  LOGIN_REQ  =  1 ;
+	/**
