@@ -35,3 +35,8 @@ Public  interface  Type  {
 	 */
 	Byte  P2P_RESP  =  6 ;
 
+	/**
+	 * Group chat message request
+	 */
+	Byte  GROUP_MSG_REQ  =  7 ;
+	/**
