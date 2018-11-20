@@ -28,3 +28,4 @@ Public  abstract  class  AbsShowcaseBsHandler < T  extends  BaseBody >  implemen
 	Public  Object  handler ( ShowcasePacket  packet ,  ChannelContext  channelContext )  throws  Exception  {
 		String  jsonStr  =  null ;
 		T  bsBody  =  null ;
+	If  ( packet . getBody ()  !=  null )  {
