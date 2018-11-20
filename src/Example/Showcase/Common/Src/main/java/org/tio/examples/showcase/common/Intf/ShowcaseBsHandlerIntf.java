@@ -8,3 +8,6 @@ Import  org.tio.examples.showcase.common.ShowcasePacket ;
  * @author tanyaowu
  *  
  */
+Public  interface  ShowcaseBsHandlerIntf  {
+
+	/**
