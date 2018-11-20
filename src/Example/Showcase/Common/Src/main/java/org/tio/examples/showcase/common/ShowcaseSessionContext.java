@@ -20,3 +20,9 @@ Public  class  ShowcaseSessionContext  {
 	}
 
 	Private  String  token  =  null ;
+
+	Private  String  userid  =  null ;
+
+	/**
+	 *
+	 * @author tanyaowu
