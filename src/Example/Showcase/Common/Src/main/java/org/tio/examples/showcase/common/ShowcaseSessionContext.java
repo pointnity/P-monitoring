@@ -15,3 +15,8 @@ Public  class  ShowcaseSessionContext  {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
+
+	Private  String  token  =  null ;
