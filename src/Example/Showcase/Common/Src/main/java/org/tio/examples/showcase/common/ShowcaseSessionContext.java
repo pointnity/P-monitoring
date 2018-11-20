@@ -8,3 +8,7 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  *  
  */
+Public  class  ShowcaseSessionContext  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( ShowcaseSessionContext . class );
+
+	/**
