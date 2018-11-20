@@ -32,3 +32,9 @@ Public  class  ShowcaseSessionContext  {
 
 	/**
 	 * @return the token
+	 */
+	Public  String  getToken ()  {
+		Return  token ;
+	}
+
+	/**
