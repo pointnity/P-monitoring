@@ -13,3 +13,8 @@ Public  interface  Type  {
 	 */
 	Byte  LOGIN_REQ  =  1 ;
 	/**
+	 * Login message response
+	 */
+	Byte  LOGIN_RESP  =  2 ;
+
+	/**
