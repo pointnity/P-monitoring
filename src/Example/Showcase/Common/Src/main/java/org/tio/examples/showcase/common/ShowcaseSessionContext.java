@@ -12,3 +12,6 @@ Public  class  ShowcaseSessionContext  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( ShowcaseSessionContext . class );
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
