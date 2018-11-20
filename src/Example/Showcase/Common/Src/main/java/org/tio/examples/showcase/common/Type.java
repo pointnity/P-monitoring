@@ -18,3 +18,7 @@ Public  interface  Type  {
 	Byte  LOGIN_RESP  =  2 ;
 
 	/**
+	 * Enter group message request
+	 */
+	Byte  JOIN_GROUP_REQ  =  3 ;
+	/**
