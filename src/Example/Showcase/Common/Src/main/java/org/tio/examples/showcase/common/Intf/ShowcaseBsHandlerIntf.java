@@ -4,3 +4,5 @@ Import  org.tio.core.ChannelContext ;
 Import  org.tio.examples.showcase.common.ShowcasePacket ;
 
 /**
+ * Business processor interface
+ * @author tanyaowu
