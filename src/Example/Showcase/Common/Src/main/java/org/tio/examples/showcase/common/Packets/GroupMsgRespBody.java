@@ -20,3 +20,8 @@ Import  org.slf4j.LoggerFactory ;
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	//Message content, required
+	Private  String  text ;
+
+	//Which is the message?
