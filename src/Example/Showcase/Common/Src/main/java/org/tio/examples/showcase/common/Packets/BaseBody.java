@@ -13,3 +13,8 @@ Public  class  BaseBody  {
 	 * 
 	 *
 	 */
+	Public  static  void  main ( String []  args )  {
+	}
+
+	/**
+	 * Message delivery time
