@@ -44,3 +44,10 @@ Import  org.slf4j.LoggerFactory ;
 	 * @return the fromUserid
 	 */
 	Public  String  getFromUserid ()  {
+		Return  fromUserid ;
+	}
+
+	/**
+	 * @return the text
+	 */
+	Public  String  getText ()  {
