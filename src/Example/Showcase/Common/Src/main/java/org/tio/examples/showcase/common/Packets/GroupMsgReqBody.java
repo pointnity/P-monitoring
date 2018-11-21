@@ -50,3 +50,7 @@ Public  class  GroupMsgReqBody  extends  BaseBody  {
 	}
 
 	/**
+	 * @param text the text to set
+	 */
+	Public  void  setText ( String  text )  {
+		the this . text  =  text ;
