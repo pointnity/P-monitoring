@@ -13,3 +13,7 @@ Public  class  GroupMsgReqBody  extends  BaseBody  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( GroupMsgReqBody . class );
 
 	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 */
