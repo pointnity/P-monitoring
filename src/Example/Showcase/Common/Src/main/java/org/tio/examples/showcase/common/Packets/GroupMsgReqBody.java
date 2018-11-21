@@ -45,3 +45,8 @@ Public  class  GroupMsgReqBody  extends  BaseBody  {
 	/**
 	 * @return the toGroup
 	 */
+	Public  String  getToGroup ()  {
+		Return  toGroup ;
+	}
+
+	/**
