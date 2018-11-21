@@ -23,3 +23,6 @@ Public  class  GroupMsgReqBody  extends  BaseBody  {
 
 	//Message content, required
 	Private  String  text ;
+
+	//Which group to send a message to, can be empty
+	Private  String  toGroup ;
