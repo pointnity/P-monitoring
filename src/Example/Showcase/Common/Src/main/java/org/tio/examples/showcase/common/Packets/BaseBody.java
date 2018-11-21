@@ -28,3 +28,7 @@ Public  class  BaseBody  {
 	 *  
 	 *
 	 */
+	Public  BaseBody ()  {
+	}
+
+	/**
