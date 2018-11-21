@@ -30,3 +30,7 @@ Public  class  GroupMsgReqBody  extends  BaseBody  {
 	/**
 	 *
 	 * @author tanyaowu
+	 */
+	Public  GroupMsgReqBody ()  {
+
+	}
