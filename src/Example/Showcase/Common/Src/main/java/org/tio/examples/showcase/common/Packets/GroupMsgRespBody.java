@@ -36,3 +36,11 @@ Import  org.slf4j.LoggerFactory ;
 	 *
 	 * @author tanyaowu
 	 */
+	Public  GroupMsgRespBody ()  {
+
+	}
+
+	/**
+	 * @return the fromUserid
+	 */
+	Public  String  getFromUserid ()  {
