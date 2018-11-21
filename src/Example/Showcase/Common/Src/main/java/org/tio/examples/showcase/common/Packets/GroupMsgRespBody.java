@@ -69,3 +69,8 @@ Import  org.slf4j.LoggerFactory ;
 	}
 
 	/**
+	 * @param text the text to set
+	 */
+	Public  void  setText ( String  text )  {
+		the this . text  =  text ;
+	}
