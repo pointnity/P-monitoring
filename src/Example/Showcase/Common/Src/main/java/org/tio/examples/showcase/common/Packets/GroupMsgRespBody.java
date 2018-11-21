@@ -25,3 +25,8 @@ Import  org.slf4j.LoggerFactory ;
 	Private  String  text ;
 
 	//Which is the message?
+	Private  String  fromUserid ;
+
+	/ / In general, you need to bring the user's nickname and other information to send the message, skipped in showcase
+
+	//Which group to send a message to, can be empty
