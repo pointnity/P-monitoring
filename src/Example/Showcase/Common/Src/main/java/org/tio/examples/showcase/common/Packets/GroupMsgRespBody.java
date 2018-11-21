@@ -16,3 +16,7 @@ Import  org.slf4j.LoggerFactory ;
 	 * @param args
 	 *
 	 * @author tanyaowu
+	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
