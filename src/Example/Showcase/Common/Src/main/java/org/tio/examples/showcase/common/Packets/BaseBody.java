@@ -34,3 +34,7 @@ Public  class  BaseBody  {
 	/**
 	 * @return the time
 	 */
+	Public  Long  getTime ()  {
+		Return  time ;
+	}
+
