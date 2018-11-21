@@ -13,3 +13,6 @@ Import  org.slf4j.LoggerFactory ;
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( GroupMsgRespBody . class );
 
 	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
