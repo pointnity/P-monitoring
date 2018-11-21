@@ -59,3 +59,4 @@ Public  class  GroupMsgReqBody  extends  BaseBody  {
 	/**
 	 * @param toGroup the toGroup to set
 	 */
+	Public  void  setToGroup ( String  toGroup )  {
