@@ -4,3 +4,5 @@ Import  org.slf4j.Logger ;
 Import  org.slf4j.LoggerFactory ;
 
 /**
+ * Group message request
+ * @author tanyaowu
