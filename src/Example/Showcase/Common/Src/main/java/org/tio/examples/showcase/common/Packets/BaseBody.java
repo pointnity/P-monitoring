@@ -41,3 +41,7 @@ Public  class  BaseBody  {
 	/**
 	 * @param time the time to set
 	 */
+	Public  void  setTime ( Long  time )  {
+		the this . Time  =  Time ;
+	}
+}
