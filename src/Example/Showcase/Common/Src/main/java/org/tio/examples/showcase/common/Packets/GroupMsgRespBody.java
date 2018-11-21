@@ -62,3 +62,10 @@ Import  org.slf4j.LoggerFactory ;
 	}
 
 	/**
+	 * @param fromUserid the fromUserid to set
+	 */
+	Public  void  setFromUserid ( String  fromUserid )  {
+		This . fromUserid  =  fromUserid ;
+	}
+
+	/**
