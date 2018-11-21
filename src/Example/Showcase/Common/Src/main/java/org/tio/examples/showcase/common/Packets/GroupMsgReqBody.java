@@ -34,3 +34,7 @@ Public  class  GroupMsgReqBody  extends  BaseBody  {
 	Public  GroupMsgReqBody ()  {
 
 	}
+
+	/**
+	 * @return the text
+	 */
