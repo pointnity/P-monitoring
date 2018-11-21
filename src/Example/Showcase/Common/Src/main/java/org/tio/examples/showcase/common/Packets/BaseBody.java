@@ -38,3 +38,6 @@ Public  class  BaseBody  {
 		Return  time ;
 	}
 
+	/**
+	 * @param time the time to set
+	 */
