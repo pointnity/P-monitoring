@@ -18,3 +18,8 @@ Public  class  BaseBody  {
 
 	/**
 	 * Message delivery time
+	 */
+	Private  Long  time  =  System . currentTimeMillis ();
+
+	/**
+	 *
