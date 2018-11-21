@@ -51,3 +51,8 @@ Import  org.slf4j.LoggerFactory ;
 	 * @return the text
 	 */
 	Public  String  getText ()  {
+		Return  text ;
+	}
+
+	/**
+	 * @return the toGroup
