@@ -26,3 +26,7 @@ Public  class  GroupMsgReqBody  extends  BaseBody  {
 
 	//Which group to send a message to, can be empty
 	Private  String  toGroup ;
+
+	/**
+	 *
+	 * @author tanyaowu
