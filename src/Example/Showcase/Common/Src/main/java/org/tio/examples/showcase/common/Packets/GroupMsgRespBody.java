@@ -8,4 +8,5 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  * 
  */
- 
+ Public  class  GroupMsgRespBody  extends  BaseBody  {
+	@SuppressWarnings ( "unused" )
