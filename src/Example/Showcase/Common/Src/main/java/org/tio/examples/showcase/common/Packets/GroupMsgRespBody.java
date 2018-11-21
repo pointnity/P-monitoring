@@ -74,3 +74,7 @@ Import  org.slf4j.LoggerFactory ;
 	Public  void  setText ( String  text )  {
 		the this . text  =  text ;
 	}
+
+	/**
+	 * @param toGroup the toGroup to set
+	 */
