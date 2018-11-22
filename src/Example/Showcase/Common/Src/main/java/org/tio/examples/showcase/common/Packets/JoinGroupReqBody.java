@@ -13,3 +13,5 @@ Public  class  JoinGroupReqBody  extends  BaseBody  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( JoinGroupReqBody . class );
 
 	/**
+	 * @param args
+	 *
