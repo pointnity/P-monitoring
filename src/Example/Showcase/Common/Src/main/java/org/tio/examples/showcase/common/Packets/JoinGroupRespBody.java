@@ -18,3 +18,5 @@ public class JoinGroupRespBody extends BaseBody {
 	private static Logger log = LoggerFactory.getLogger(JoinGroupRespBody.class);
 
 	/**
+	 * @param args
+	 *
