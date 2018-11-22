@@ -34,3 +34,5 @@ Public  class  JoinGroupReqBody  extends  BaseBody  {
 	/**
 	 * @return the group
 	 */
+	Public  String  getGroup ()  {
+		Return  group ;
