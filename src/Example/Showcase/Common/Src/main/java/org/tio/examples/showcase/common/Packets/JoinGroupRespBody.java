@@ -80,3 +80,7 @@ public class JoinGroupRespBody extends BaseBody {
 	/**
 	 * @param msg the msg to set
 	 */
+	Public  void  setMsg ( String  msg )  {
+		the this . MSG  =  MSG ;
+	}
+}
