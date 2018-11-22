@@ -58,3 +58,6 @@ public class JoinGroupRespBody extends BaseBody {
 
 	/**
 	 * @return the msg
+	 */
+	Public  String  getMsg ()  {
+		Return  msg ;
