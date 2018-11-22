@@ -14,3 +14,12 @@ Import  org.slf4j.LoggerFactory ;
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( LoginReqBody . class );
 
 	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
+
+	Private  String  loginname ;
