@@ -25,3 +25,8 @@ public class JoinGroupRespBody extends BaseBody {
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	/ / into the group results, see Code interface, showcase for easy to understand, will return success
+	Private  Integer  code ;
+
+	/ / If the group fails, you need to provide msg
