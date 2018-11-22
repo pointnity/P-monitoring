@@ -15,3 +15,6 @@ public class JoinGroupRespBody extends BaseBody {
 	}
 
 	@SuppressWarnings("unused")
+	private static Logger log = LoggerFactory.getLogger(JoinGroupRespBody.class);
+
+	/**
