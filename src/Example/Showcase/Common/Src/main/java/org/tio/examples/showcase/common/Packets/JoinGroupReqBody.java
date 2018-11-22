@@ -26,3 +26,8 @@ Public  class  JoinGroupReqBody  extends  BaseBody  {
 	/**
 	 *
 	 * @author tanyaowu
+	 */
+	Public  JoinGroupReqBody ()  {
+
+	}
+
