@@ -31,3 +31,6 @@ Public  class  JoinGroupReqBody  extends  BaseBody  {
 
 	}
 
+	/**
+	 * @return the group
+	 */
