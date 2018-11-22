@@ -39,3 +39,8 @@ Import  org.slf4j.LoggerFactory ;
 	 */
 	Public  String  getLoginname ()  {
 		Return  loginname ;
+	}
+
+	/**
+	 * @return the password
+	 */
