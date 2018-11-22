@@ -30,3 +30,6 @@ public class JoinGroupRespBody extends BaseBody {
 	Private  Integer  code ;
 
 	/ / If the group fails, you need to provide msg
+	Private  String  msg ;
+
+	Private  String  group ;
