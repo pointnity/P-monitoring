@@ -51,3 +51,8 @@ Import  org.slf4j.LoggerFactory ;
 	/**
 	 * @param loginname the loginname to set
 	 */
+	Public  void  setLoginname ( String  loginname )  {
+		the this . LoginName  =  LoginName ;
+	}
+
+	/**
