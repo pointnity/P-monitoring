@@ -78,3 +78,5 @@ public class JoinGroupRespBody extends BaseBody {
 	}
 
 	/**
+	 * @param msg the msg to set
+	 */
