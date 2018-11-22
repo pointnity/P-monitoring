@@ -8,3 +8,5 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  *  
  */
+Public  class  JoinGroupReqBody  extends  BaseBody  {
+	@SuppressWarnings ( "unused" )
