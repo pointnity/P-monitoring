@@ -64,3 +64,8 @@ public class JoinGroupRespBody extends BaseBody {
 	}
 
 	/**
+	 * @param code the code to set
+	 */
+	Public  void  setCode ( Integer  code )  {
+		the this . code  =  code ;
+	}
