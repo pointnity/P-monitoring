@@ -8,3 +8,5 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  *  
  */
+public class JoinGroupRespBody extends BaseBody {
+	public static interface Code {
