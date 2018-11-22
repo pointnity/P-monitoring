@@ -10,3 +10,8 @@ Import  org.slf4j.LoggerFactory ;
  */
 public class JoinGroupRespBody extends BaseBody {
 	public static interface Code {
+		Integer SUCCESS = 1;
+		Integer FAIL = 2;
+	}
+
+	@SuppressWarnings("unused")
