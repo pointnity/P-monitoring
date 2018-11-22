@@ -44,3 +44,10 @@ Import  org.slf4j.LoggerFactory ;
 	/**
 	 * @return the password
 	 */
+	Public  String  getPassword ()  {
+		Return  password ;
+	}
+
+	/**
+	 * @param loginname the loginname to set
+	 */
