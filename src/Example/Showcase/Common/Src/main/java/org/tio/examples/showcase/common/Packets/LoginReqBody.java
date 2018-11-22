@@ -30,3 +30,12 @@ Import  org.slf4j.LoggerFactory ;
 	 *
 	 * @author tanyaowu
 	 */
+	Public  LoginReqBody ()  {
+
+	}
+
+	/**
+	 * @return the loginname
+	 */
+	Public  String  getLoginname ()  {
+		Return  loginname ;
