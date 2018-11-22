@@ -22,3 +22,7 @@ Public  class  JoinGroupReqBody  extends  BaseBody  {
 	}
 
 	Private  String  group ;
+
+	/**
+	 *
+	 * @author tanyaowu
