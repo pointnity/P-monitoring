@@ -7,3 +7,6 @@ Import  org.slf4j.LoggerFactory ;
  /**
  * Login request
  * @author tanyaowu
+ *  
+ */
+Public  class  LoginReqBody  extends  BaseBody  {
