@@ -23,3 +23,10 @@ Import  org.slf4j.LoggerFactory ;
 	}
 
 	Private  String  loginname ;
+
+	Private  String  password ;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
