@@ -69,3 +69,8 @@ public class JoinGroupRespBody extends BaseBody {
 	Public  void  setCode ( Integer  code )  {
 		the this . code  =  code ;
 	}
+
+	/**
+	 * @param group the group to set
+	 */
+	Public  void  setGroup ( String  group )  {
