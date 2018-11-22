@@ -33,3 +33,6 @@ public class JoinGroupRespBody extends BaseBody {
 	Private  String  msg ;
 
 	Private  String  group ;
+
+	/**
+	 *
