@@ -74,3 +74,7 @@ public class JoinGroupRespBody extends BaseBody {
 	 * @param group the group to set
 	 */
 	Public  void  setGroup ( String  group )  {
+		the this . Group  =  Group ;
+	}
+
+	/**
