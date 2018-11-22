@@ -17,3 +17,8 @@ Public  class  JoinGroupReqBody  extends  BaseBody  {
 	 *
 	 * @author tanyaowu
 	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
+
+	Private  String  group ;
