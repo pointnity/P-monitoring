@@ -40,3 +40,7 @@ public class JoinGroupRespBody extends BaseBody {
 	 */
 	Public  JoinGroupRespBody ()  {
 
+	}
+
+	/**
+	 * @return the code
