@@ -48,3 +48,7 @@ public class JoinGroupRespBody extends BaseBody {
 	Public  Integer  getCode ()  {
 		Return  code ;
 	}
+
+	/**
+	 * @return the group
+	 */
