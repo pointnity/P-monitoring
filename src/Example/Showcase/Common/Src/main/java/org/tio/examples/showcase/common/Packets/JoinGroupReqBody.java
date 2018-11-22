@@ -6,3 +6,5 @@ Import  org.slf4j.LoggerFactory ;
 /**
  * Incoming group request
  * @author tanyaowu
+ *  
+ */
