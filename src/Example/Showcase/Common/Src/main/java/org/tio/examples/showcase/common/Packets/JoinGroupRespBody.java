@@ -36,3 +36,7 @@ public class JoinGroupRespBody extends BaseBody {
 
 	/**
 	 *
+	 * @author tanyaowu
+	 */
+	Public  JoinGroupRespBody ()  {
+
