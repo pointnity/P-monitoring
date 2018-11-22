@@ -59,3 +59,6 @@ Import  org.slf4j.LoggerFactory ;
 	 * @param password the password to set
 	 */
 	Public  void  setPassword ( String  password )  {
+		the this . password  =  password ;
+	}
+}
