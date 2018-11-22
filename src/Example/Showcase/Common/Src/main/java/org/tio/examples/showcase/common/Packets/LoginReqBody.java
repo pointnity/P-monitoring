@@ -9,4 +9,8 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  *  
  */
-Public  class  LoginReqBody  extends  BaseBody  {
+ Public  class  LoginReqBody  extends  BaseBody  {
+	@SuppressWarnings ( "unused" )
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( LoginReqBody . class );
+
+	/**
