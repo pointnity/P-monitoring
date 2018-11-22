@@ -10,3 +10,6 @@ Import  org.slf4j.LoggerFactory ;
  */
 Public  class  JoinGroupReqBody  extends  BaseBody  {
 	@SuppressWarnings ( "unused" )
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( JoinGroupReqBody . class );
+
+	/**
