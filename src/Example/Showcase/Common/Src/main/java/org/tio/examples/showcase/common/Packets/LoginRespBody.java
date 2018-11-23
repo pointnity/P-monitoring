@@ -66,3 +66,10 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	Public  void  setCode ( Integer  code )  {
 		the this . code  =  code ;
 	}
+
+	/**
+	 * @param msg the msg to set
+	 */
+	Public  void  setMsg ( String  msg )  {
+		the this . MSG  =  MSG ;
+	}
