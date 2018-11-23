@@ -30,3 +30,6 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	Private  Integer  code ;
 
 	Private  String  msg ;
+
+	/**
+	 *
