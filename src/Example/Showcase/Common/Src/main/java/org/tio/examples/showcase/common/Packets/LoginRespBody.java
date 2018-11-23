@@ -18,3 +18,6 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	Private  static  Logger  log  =  of LoggerFactory . the getLogger ( LoginRespBody . class );
 
 	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
