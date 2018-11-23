@@ -20,3 +20,9 @@ Public  class  P2PReqBody  extends  BaseBody  {
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	//Message content, required
+	Private  String  text ;
+
+	/ / To whom to send a message, in the authentication process, in order to reduce the amount of showcase code, we have assumed loginname = userid
+	Private  String  toUserid ;
