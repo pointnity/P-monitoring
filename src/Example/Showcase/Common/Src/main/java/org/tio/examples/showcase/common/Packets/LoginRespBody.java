@@ -13,3 +13,8 @@ public  class  LoginRespBody  the extends  BaseBody  {
 		Integer  SUCCESS  =  1 ;
 		Integer  FAIL  =  2 ;
 	}
+
+	@SuppressWarnings ( "unused" )
+	Private  static  Logger  log  =  of LoggerFactory . the getLogger ( LoginRespBody . class );
+
+	/**
