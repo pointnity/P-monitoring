@@ -17,3 +17,6 @@ Public  class  P2PReqBody  extends  BaseBody  {
 	 *
 	 * @author tanyaowu
 	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
