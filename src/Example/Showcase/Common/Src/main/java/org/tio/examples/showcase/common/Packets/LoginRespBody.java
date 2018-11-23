@@ -55,3 +55,9 @@ public  class  LoginRespBody  the extends  BaseBody  {
 
 	/**
 	 * @return the token
+	 */
+	Public  String  getToken ()  {
+		Return  token ;
+	}
+
+	/**
