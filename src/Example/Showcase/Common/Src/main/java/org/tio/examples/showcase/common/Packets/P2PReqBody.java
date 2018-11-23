@@ -44,3 +44,7 @@ Public  class  P2PReqBody  extends  BaseBody  {
 
 	/**
 	 * @return the toUserid
+	}
+
+	/**
+	 * @return the toUserid
