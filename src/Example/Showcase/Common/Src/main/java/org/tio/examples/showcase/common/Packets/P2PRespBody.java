@@ -33,3 +33,9 @@ Public  class  P2PRespBody  extends  BaseBody  {
 	 *
 	 * @author tanyaowu
 	 */
+	Public  P2PRespBody ()  {
+
+	}
+
+	/**
+	 * @return the fromUserid
