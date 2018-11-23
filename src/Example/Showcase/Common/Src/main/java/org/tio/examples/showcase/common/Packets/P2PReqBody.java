@@ -26,3 +26,8 @@ Public  class  P2PReqBody  extends  BaseBody  {
 
 	/ / To whom to send a message, in the authentication process, in order to reduce the amount of showcase code, we have assumed loginname = userid
 	Private  String  toUserid ;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
