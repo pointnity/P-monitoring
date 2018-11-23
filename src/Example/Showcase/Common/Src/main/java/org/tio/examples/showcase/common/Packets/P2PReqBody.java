@@ -40,3 +40,7 @@ Public  class  P2PReqBody  extends  BaseBody  {
 	 */
 	Public  String  getText ()  {
 		Return  text ;
+	}
+
+	/**
+	 * @return the toUserid
