@@ -45,3 +45,10 @@ Public  class  P2PRespBody  extends  BaseBody  {
 	}
 
 	/**
+	 * @return the text
+	 */
+	Public  String  getText ()  {
+		Return  text ;
+	}
+
+	/**
