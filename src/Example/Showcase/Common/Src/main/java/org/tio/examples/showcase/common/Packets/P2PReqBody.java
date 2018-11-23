@@ -36,3 +36,7 @@ Public  class  P2PReqBody  extends  BaseBody  {
 	}
 
 	/**
+	 * @return the text
+	 */
+	Public  String  getText ()  {
+		Return  text ;
