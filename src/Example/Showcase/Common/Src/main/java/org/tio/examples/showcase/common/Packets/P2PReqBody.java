@@ -60,3 +60,6 @@ Public  class  P2PReqBody  extends  BaseBody  {
 	 * @param toUserid the toUserid to set
 	 */
 	Public  void  setToUserid ( String  toUserid )  {
+		the this . toUserid  =  toUserid ;
+	}
+}
