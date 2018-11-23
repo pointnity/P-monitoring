@@ -9,3 +9,7 @@ Import  org.slf4j.LoggerFactory ;
  *  
  */
 Public  class  P2PRespBody  extends  BaseBody  {
+	@SuppressWarnings ( "unused" )
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( P2PRespBody . class );
+
+	/**
