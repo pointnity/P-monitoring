@@ -8,3 +8,6 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  *  
  */
+public  class  LoginRespBody  the extends  BaseBody  {
+	Public  static  interface  Code  {
+		Integer  SUCCESS  =  1 ;
