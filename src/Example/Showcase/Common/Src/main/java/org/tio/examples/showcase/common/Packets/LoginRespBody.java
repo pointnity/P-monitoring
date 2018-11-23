@@ -33,3 +33,8 @@ public  class  LoginRespBody  the extends  BaseBody  {
 
 	/**
 	 *
+	 * @author tanyaowu
+	 */
+	Public  LoginRespBody ()  {
+
+	}
