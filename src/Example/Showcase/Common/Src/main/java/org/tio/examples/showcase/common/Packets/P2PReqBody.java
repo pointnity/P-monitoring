@@ -13,3 +13,7 @@ Public  class  P2PReqBody  extends  BaseBody  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( P2PReqBody . class );
 
 	/**
+	 * @param args
+	 *
+	 * @author tanyaowu
+	 */
