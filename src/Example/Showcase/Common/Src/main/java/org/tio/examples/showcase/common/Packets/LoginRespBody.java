@@ -42,3 +42,9 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	/**
 	 * @return the code
 	 */
+	Public  Integer  getCode ()  {
+		Return  code ;
+	}
+
+	/**
+	 * @return the msg
