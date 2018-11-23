@@ -27,3 +27,9 @@ Public  class  P2PRespBody  extends  BaseBody  {
 	/ / In general, you need to bring the user's nickname and other information to send the message, skipped in showcase
 
 	//Which is the message?
+	Private  String  fromUserid ;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
