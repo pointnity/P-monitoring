@@ -17,3 +17,9 @@ Public  class  P2PRespBody  extends  BaseBody  {
 	 *
 	 * @author tanyaowu
 	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
+
+	//Message content, required
+	Private  String  text ;
