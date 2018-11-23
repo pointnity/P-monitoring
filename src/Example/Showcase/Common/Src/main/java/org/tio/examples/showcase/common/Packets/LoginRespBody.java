@@ -5,3 +5,6 @@ Import  org.slf4j.LoggerFactory ;
 
 /**
  * Login response
+ * @author tanyaowu
+ *  
+ */
