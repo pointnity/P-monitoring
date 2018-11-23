@@ -52,3 +52,8 @@ Public  class  P2PRespBody  extends  BaseBody  {
 	}
 
 	/**
+	 * @param fromUserid the fromUserid to set
+	 */
+	Public  void  setFromUserid ( String  fromUserid )  {
+		This . fromUserid  =  fromUserid ;
+	}
