@@ -57,3 +57,7 @@ Public  class  P2PRespBody  extends  BaseBody  {
 	Public  void  setFromUserid ( String  fromUserid )  {
 		This . fromUserid  =  fromUserid ;
 	}
+
+	/**
+	 * @param text the text to set
+	 */
