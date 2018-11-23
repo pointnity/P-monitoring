@@ -77,3 +77,7 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	/**
 	 * @param token the token to set
 	 */
+	Public  void  setToken ( String  token )  {
+		the this . token  =  token ;
+	}
+}
