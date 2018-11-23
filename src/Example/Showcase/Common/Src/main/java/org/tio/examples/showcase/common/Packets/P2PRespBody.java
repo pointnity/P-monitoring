@@ -61,3 +61,8 @@ Public  class  P2PRespBody  extends  BaseBody  {
 	/**
 	 * @param text the text to set
 	 */
+	Public  void  setText ( String  text )  {
+		the this . text  =  text ;
+	}
+
+}
