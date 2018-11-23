@@ -52,3 +52,6 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	Public  String  getMsg ()  {
 		Return  msg ;
 	}
+
+	/**
+	 * @return the token
