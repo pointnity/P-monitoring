@@ -38,3 +38,7 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	Public  LoginRespBody ()  {
 
 	}
+
+	/**
+	 * @return the code
+	 */
