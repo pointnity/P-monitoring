@@ -39,3 +39,9 @@ Public  class  P2PRespBody  extends  BaseBody  {
 
 	/**
 	 * @return the fromUserid
+	 */
+	Public  String  getFromUserid ()  {
+		Return  fromUserid ;
+	}
+
+	/**
