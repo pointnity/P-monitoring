@@ -25,3 +25,8 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	Private  String  token ;
+	Private  Integer  code ;
+
+	Private  String  msg ;
