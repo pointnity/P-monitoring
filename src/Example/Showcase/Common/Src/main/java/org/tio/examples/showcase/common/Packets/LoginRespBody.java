@@ -48,3 +48,7 @@ public  class  LoginRespBody  the extends  BaseBody  {
 
 	/**
 	 * @return the msg
+	 */
+	Public  String  getMsg ()  {
+		Return  msg ;
+	}
