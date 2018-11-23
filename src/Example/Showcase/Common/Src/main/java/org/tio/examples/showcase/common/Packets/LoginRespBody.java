@@ -73,3 +73,7 @@ public  class  LoginRespBody  the extends  BaseBody  {
 	Public  void  setMsg ( String  msg )  {
 		the this . MSG  =  MSG ;
 	}
+
+	/**
+	 * @param token the token to set
+	 */
