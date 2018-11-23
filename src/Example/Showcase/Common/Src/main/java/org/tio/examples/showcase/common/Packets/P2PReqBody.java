@@ -31,3 +31,8 @@ Public  class  P2PReqBody  extends  BaseBody  {
 	 *
 	 * @author tanyaowu
 	 */
+	Public  P2PReqBody ()  {
+
+	}
+
+	/**
