@@ -47,3 +47,4 @@
 				<artifactId> maven-assembly-plugin </artifactId>
 
 				<executions>
+					<execution>
