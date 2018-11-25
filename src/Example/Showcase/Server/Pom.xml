@@ -51,3 +51,5 @@
 						<id> make-assembly </id>  <!--any name-->
 						<phase> package </phase>   <!-- Bind to the package lifecycle stage -->
 						<goals>
+							<goal> single </goal>
+						</goals>
