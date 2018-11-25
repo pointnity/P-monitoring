@@ -19,3 +19,5 @@
 		</dependency>
 		<dependency>
 			<groupId> org.t-io </groupId>
+			<artifactId> tio-examples-showcase-common </artifactId>
+			<version> ${project.version} </version>
