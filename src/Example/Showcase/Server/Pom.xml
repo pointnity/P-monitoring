@@ -61,3 +61,6 @@
 						  <outputDirectory> ${project.build.directory}/dist/ </outputDirectory>
 						</configuration>
 					</execution>
+				</executions>
+			</plugin>
+		</plugins>
