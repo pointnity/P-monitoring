@@ -58,3 +58,6 @@
 						  <descriptors>
 							<descriptor> script/pkg.xml </descriptor>
 						  </descriptors>
+						  <outputDirectory> ${project.build.directory}/dist/ </outputDirectory>
+						</configuration>
+					</execution>
