@@ -40,3 +40,6 @@
 	</dependencies>
 	
 	<build>
+		<plugins>
+			<!-- The configuration of maven-assembly-plugin -->
+			<plugin>
