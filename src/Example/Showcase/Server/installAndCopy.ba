@@ -1,1 +1,3 @@
 Call mvn clean install
+
+Call rd ..\..\..\..\dist\examples\showcase\server /s /q
