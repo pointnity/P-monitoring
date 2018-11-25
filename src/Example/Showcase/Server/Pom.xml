@@ -53,3 +53,6 @@
 						<goals>
 							<goal> single </goal>
 						</goals>
+						<configuration>
+						  <appendAssemblyId> false </appendAssemblyId>
+						  <descriptors>
