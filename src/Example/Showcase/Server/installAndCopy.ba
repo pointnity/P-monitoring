@@ -1,3 +1,4 @@
 Call mvn clean install
 
 Call rd ..\..\..\..\dist\examples\showcase\server /s /q
+Call xcopy target\dist\tio-examples-showcase-server-2.0.0.v20170824-RELEASE ..\..\..\..\dist\examples\showcase\server\ /s /e /q /y
