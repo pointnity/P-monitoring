@@ -90,3 +90,4 @@
 			<onMismatch> DENY </onMismatch>   
 		</filter> 
 	</appender>
+	<root  level= "${root.level}" >
