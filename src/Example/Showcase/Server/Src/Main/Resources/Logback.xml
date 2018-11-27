@@ -41,3 +41,6 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 			<maxHistory> ${max.history} </maxHistory>
 		</rollingPolicy>
+		<encoder>
+			<pattern> ${conversion.pattern} </pattern>
+		</encoder>
