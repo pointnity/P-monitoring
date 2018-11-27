@@ -93,3 +93,5 @@
 	<root  level= "${root.level}" >
 		<appender-ref  ref= "console"  />
 		<appender-ref  ref= "root-file-error" />
+		<appender-ref  ref= "root-file-warn" />
+		<appender-ref  ref= "root-file-info" />
