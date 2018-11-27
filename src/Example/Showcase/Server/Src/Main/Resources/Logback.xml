@@ -46,3 +46,6 @@
 		</encoder>
 		<filter  class= "ch.qos.logback.classic.filter.LevelFilter" >   
 			<level> warn </level>   
+			<onMatch> ACCEPT </onMatch>   
+			<onMismatch> DENY </onMismatch>   
+		</filter> 
