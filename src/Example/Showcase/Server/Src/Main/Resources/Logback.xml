@@ -97,3 +97,5 @@
 		<appender-ref  ref= "root-file-info" />
 		<appender-ref  ref= "root-file-debug" />
 	</root>
+
+</configuration>
