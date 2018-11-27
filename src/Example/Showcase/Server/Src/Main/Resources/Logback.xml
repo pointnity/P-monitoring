@@ -49,3 +49,5 @@
 			<onMatch> ACCEPT </onMatch>   
 			<onMismatch> DENY </onMismatch>   
 		</filter> 
+	</appender>
+	<appender  name= "root-file-info"
