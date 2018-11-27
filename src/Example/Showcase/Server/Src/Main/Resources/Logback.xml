@@ -56,3 +56,8 @@
 		<rollingPolicy  class= "ch.qos.logback.core.rolling.TimeBasedRollingPolicy" >
 			<fileNamePattern> ${log.dir}/info.%d{${rolling.policy.file.name.pattern}}%d{mmss}.%i.log.zip </fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy
+				Class= "ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP" >
+				<maxFileSize> ${max.file.size} </maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory> ${max.history} </maxHistory>
+		</rollingPolicy>
