@@ -44,3 +44,5 @@
 		<encoder>
 			<pattern> ${conversion.pattern} </pattern>
 		</encoder>
+		<filter  class= "ch.qos.logback.classic.filter.LevelFilter" >   
+			<level> warn </level>   
