@@ -91,3 +91,5 @@
 		</filter> 
 	</appender>
 	<root  level= "${root.level}" >
+		<appender-ref  ref= "console"  />
+		<appender-ref  ref= "root-file-error" />
