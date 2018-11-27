@@ -81,3 +81,4 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 			<maxHistory> ${max.history} </maxHistory>
 		</rollingPolicy>
+		<encoder>
