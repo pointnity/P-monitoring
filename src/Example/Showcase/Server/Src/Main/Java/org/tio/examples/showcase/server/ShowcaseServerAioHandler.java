@@ -13,3 +13,5 @@ Import  org.tio.examples.showcase.common.Type ;
 Import  org.tio.examples.showcase.common.intf.AbsShowcaseBsHandler ;
 Import  org.tio.examples.showcase.server.handler.GroupMsgReqHandler ;
 Import  org.tio.examples.showcase.server.handler.HeartbeatReqHandler ;
+Import  org.tio.examples.showcase.server.handler.JoinGroupReqHandler ;
+Import  org.tio.examples.showcase.server.handler.LoginReqHandler ;
