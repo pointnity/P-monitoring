@@ -39,3 +39,5 @@ Public  class  ShowcaseServerAioHandler  extends  ShowcaseAbsAioHandler  impleme
 	 * Processing messages
 	 */
 	@Override
+	Public  void  handler ( Packet  packet ,  ChannelContext  channelContext )  throws  Exception  {
+		ShowcasePacket  showcasePacket  =  ( ShowcasePacket )  packet ;
