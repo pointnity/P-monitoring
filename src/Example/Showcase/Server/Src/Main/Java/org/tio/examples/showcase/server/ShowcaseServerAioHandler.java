@@ -25,3 +25,5 @@ Import  org.tio.server.intf.ServerAioHandler ;
 */
 Public  class  ShowcaseServerAioHandler  extends  ShowcaseAbsAioHandler  implements  ServerAioHandler  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( ShowcaseServerAioHandler . class );
+
+	Private  static  Map < Byte ,  AbsShowcaseBsHandler <?>>  handlerMap  =  new  HashMap <>();
