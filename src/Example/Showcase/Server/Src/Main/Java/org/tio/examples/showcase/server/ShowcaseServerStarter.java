@@ -13,3 +13,4 @@ Import  org.tio.server.intf.ServerAioListener ;
  *  
  */
 Public  class  ShowcaseServerStarter  {
+	Static  ServerAioHandler  aioHandler  =  new  ShowcaseServerAioHandler ();
