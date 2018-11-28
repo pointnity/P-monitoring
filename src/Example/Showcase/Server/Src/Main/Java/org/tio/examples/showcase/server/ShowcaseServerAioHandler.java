@@ -27,3 +27,6 @@ Public  class  ShowcaseServerAioHandler  extends  ShowcaseAbsAioHandler  impleme
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( ShowcaseServerAioHandler . class );
 
 	Private  static  Map < Byte ,  AbsShowcaseBsHandler <?>>  handlerMap  =  new  HashMap <>();
+	Static  {
+		handlerMap . put ( Type . GROUP_MSG_REQ ,  new  GroupMsgReqHandler ());
+		handlerMap . put ( Type . HEART_BEAT_REQ ,  new  HeartbeatReqHandler ());
