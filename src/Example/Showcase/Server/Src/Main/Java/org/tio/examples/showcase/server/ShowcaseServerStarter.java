@@ -22,3 +22,6 @@ Public  class  ShowcaseServerStarter  {
 	Static  int  serverPort  =  org . tio . examples . showcase . common . Const . PORT ;
 
 	Public  static  void  main ( String []  args )  throws  IOException  {
+		aioServer . start ( serverIp ,  serverPort );
+	}
+}
