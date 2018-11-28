@@ -16,3 +16,4 @@ Public  class  ShowcaseServerStarter  {
 	Static  ServerAioHandler  aioHandler  =  new  ShowcaseServerAioHandler ();
 	Static  ServerAioListener  aioListener  =  new  ShowcaseServerAioListener ();
 	Static  ServerGroupContext  serverGroupContext  =  new  ServerGroupContext ( aioHandler ,  aioListener );
+	Static  AioServer  aioServer  =  new  AioServer ( serverGroupContext );  // can be empty
