@@ -41,3 +41,4 @@ Public  class  ShowcaseServerAioHandler  extends  ShowcaseAbsAioHandler  impleme
 	@Override
 	Public  void  handler ( Packet  packet ,  ChannelContext  channelContext )  throws  Exception  {
 		ShowcasePacket  showcasePacket  =  ( ShowcasePacket )  packet ;
+		Byte  type  =  showcasePacket . getType ();
