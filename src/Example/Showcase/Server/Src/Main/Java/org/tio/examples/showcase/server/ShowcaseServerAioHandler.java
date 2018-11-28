@@ -45,3 +45,4 @@ Public  class  ShowcaseServerAioHandler  extends  ShowcaseAbsAioHandler  impleme
 		AbsShowcaseBsHandler <?>  showcaseBsHandler  =  handlerMap . get ( type );
 		If  ( showcaseBsHandler  ==  null )  {
 			Log . error ( "{}, can't find the processing class, type:{}" ,  channelContext ,  type );
+			Return ;
