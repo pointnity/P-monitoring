@@ -43,3 +43,4 @@ Public  class  ShowcaseServerAioHandler  extends  ShowcaseAbsAioHandler  impleme
 		ShowcasePacket  showcasePacket  =  ( ShowcasePacket )  packet ;
 		Byte  type  =  showcasePacket . getType ();
 		AbsShowcaseBsHandler <?>  showcaseBsHandler  =  handlerMap . get ( type );
+		If  ( showcaseBsHandler  ==  null )  {
