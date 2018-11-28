@@ -31,3 +31,4 @@ Public  class  ShowcaseServerAioHandler  extends  ShowcaseAbsAioHandler  impleme
 		handlerMap . put ( Type . GROUP_MSG_REQ ,  new  GroupMsgReqHandler ());
 		handlerMap . put ( Type . HEART_BEAT_REQ ,  new  HeartbeatReqHandler ());
 		handlerMap . put ( Type . JOIN_GROUP_REQ ,  new  JoinGroupReqHandler ());
+		handlerMap . put ( Type . LOGIN_REQ ,  new  LoginReqHandler ());
