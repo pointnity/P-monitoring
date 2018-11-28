@@ -22,3 +22,6 @@ Import  org.tio.server.intf.ServerAioHandler ;
  *
  * @author tanyaowu
  *
+*/
+Public  class  ShowcaseServerAioHandler  extends  ShowcaseAbsAioHandler  implements  ServerAioHandler  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( ShowcaseServerAioHandler . class );
