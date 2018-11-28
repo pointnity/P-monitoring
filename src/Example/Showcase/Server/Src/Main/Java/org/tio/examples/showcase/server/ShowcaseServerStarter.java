@@ -19,3 +19,4 @@ Public  class  ShowcaseServerStarter  {
 	Static  AioServer  aioServer  =  new  AioServer ( serverGroupContext );  // can be empty
 
 	Static  String  serverIp  =  null ;
+	Static  int  serverPort  =  org . tio . examples . showcase . common . Const . PORT ;
