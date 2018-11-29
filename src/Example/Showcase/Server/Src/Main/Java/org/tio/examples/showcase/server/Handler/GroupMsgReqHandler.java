@@ -38,3 +38,9 @@ Public  class  GroupMsgReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBo
 	 * @author tanyaowu
 	 */
 	@Override
+	Public  Class < GroupMsgReqBody >  bodyClass ()  {
+		Return  GroupMsgReqBody . class ;
+	}
+
+	/**
+	 * @param packet
