@@ -44,3 +44,6 @@ Public  class  GroupMsgReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBo
 
 	/**
 	 * @param packet
+	 * @param bsBody
+	 * @param channelContext
+	 * @return
