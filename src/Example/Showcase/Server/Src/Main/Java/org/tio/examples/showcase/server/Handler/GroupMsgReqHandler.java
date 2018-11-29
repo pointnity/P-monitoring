@@ -10,3 +10,8 @@ Import  org.tio.examples.showcase.common.intf.AbsShowcaseBsHandler ;
 Import  org.tio.examples.showcase.common.packets.GroupMsgReqBody ;
 Import  org.tio.examples.showcase.common.packets.GroupMsgRespBody ;
 Import  org.tio.utils.json.Json ;
+
+/**
+ * @author tanyaowu
+ *  
+ */
