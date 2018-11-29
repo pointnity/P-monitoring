@@ -19,3 +19,6 @@ Public  class  GroupMsgReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBo
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( GroupMsgReqHandler . class );
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
