@@ -50,3 +50,7 @@ Public  class  GroupMsgReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBo
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	@Override
+	Public  Object  handler ( ShowcasePacket  packet ,  GroupMsgReqBody  bsBody ,  ChannelContext  channelContext )  throws  Exception  {
+		Log . info ( "Receive group chat request message: {}" ,  Json . toJson ( bsBody ));
+		GroupMsgRespBody  groupMsgRespBody  =  new  GroupMsgRespBody ();
