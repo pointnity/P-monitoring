@@ -50,3 +50,6 @@ Public  class  ShowcaseServerAioListener  implements  ServerAioListener  {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	@Override
+	Public  void  onAfterConnected ( ChannelContext  channelContext ,  boolean  isConnected ,  boolean  isReconnect )  throws  Exception  {
+		Log . info ( "onAfterCon
