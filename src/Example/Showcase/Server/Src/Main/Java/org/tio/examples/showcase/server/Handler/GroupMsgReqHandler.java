@@ -35,3 +35,6 @@ Public  class  GroupMsgReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBo
 
 	/**
 	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
