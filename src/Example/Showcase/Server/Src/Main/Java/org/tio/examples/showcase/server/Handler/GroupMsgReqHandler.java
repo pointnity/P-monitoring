@@ -47,3 +47,6 @@ Public  class  GroupMsgReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBo
 	 * @param bsBody
 	 * @param channelContext
 	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
