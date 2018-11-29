@@ -59,3 +59,6 @@ Public  class  GroupMsgReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBo
 
 		ShowcasePacket  respPacket  =  new  ShowcasePacket ();
 		respPacket . setType ( the Type . GROUP_MSG_RESP );
+		respPacket . setBody ( Json . toJson ( groupMsgRespBody ). getBytes ( ShowcasePacket . CHARSET ));
+		Aio . sendToGroup ( channelContext . getGroupContext (),  bsBody . getToGroup (),  respPacket );
+
