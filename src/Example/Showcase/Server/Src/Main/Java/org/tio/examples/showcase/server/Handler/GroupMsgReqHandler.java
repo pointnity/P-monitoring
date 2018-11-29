@@ -56,3 +56,6 @@ Public  class  GroupMsgReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBo
 		GroupMsgRespBody  groupMsgRespBody  =  new  GroupMsgRespBody ();
 		groupMsgRespBody . setText ( bsBody . getText ());
 		groupMsgRespBody . setToGroup ( bsBody . getToGroup ());
+
+		ShowcasePacket  respPacket  =  new  ShowcasePacket ();
+		respPacket . setType ( the Type . GROUP_MSG_RESP );
