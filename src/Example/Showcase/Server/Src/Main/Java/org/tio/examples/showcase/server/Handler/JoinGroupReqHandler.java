@@ -55,3 +55,6 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 		Log . info ( "received group request message: {}" ,  Json . toJson ( bsBody ));
 		JoinGroupRespBody  joinGroupRespBody  =  new  JoinGroupRespBody ();
 		joinGroupRespBody . setCode ( JoinGroupRespBody . Code . SUCCESS );
+		joinGroupRespBody . setGroup ( bsBody . getGroup ());
+
+		Aio . bindGroup ( channelContext ,  bsBody . getGroup ());
