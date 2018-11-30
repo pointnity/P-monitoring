@@ -50,3 +50,4 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 	@Override
 	Public  Object  handler ( ShowcasePacket  packet ,  GroupMsgReqBody  bsBody ,  ChannelContext  channelContext )  throws  Exception  {
 		//Heartbeat message, you don’t have to do it.
+		Return  null ;
