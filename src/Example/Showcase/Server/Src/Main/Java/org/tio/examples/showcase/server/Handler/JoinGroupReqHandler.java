@@ -23,3 +23,7 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 	 * @author tanyaowu
 	 */
 	Public  static  void  main ( String []  args )  {
+
+	}
+
+	/**
