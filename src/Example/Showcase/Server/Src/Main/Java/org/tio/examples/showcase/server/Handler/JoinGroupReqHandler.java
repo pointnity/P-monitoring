@@ -27,3 +27,6 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 	}
 
 	/**
+	 *
+	 * @author tanyaowu
+	 */
