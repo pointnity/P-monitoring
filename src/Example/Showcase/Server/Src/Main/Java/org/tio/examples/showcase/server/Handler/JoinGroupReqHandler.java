@@ -43,3 +43,6 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 	}
 
 	/**
+	 * @param packet
+	 * @param bsBody
+	 * @param channelContext
