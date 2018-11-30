@@ -37,3 +37,7 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 	@Override
 	Public  Class < GroupMsgReqBody >  bodyClass ()  {
 		Return  GroupMsgReqBody . class ;
+	}
+
+	/**
+	 * @param packet
