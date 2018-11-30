@@ -32,3 +32,6 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 
 	/**
 	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
