@@ -60,3 +60,5 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 		Aio . bindGroup ( channelContext ,  bsBody . getGroup ());
 
 		ShowcasePacket  respPacket  =  new  ShowcasePacket ();
+		respPacket . setType ( the Type . JOIN_GROUP_RESP );
+		respPacket . setBody ( Json . toJson ( joinGroupRespBody ). getBytes ( ShowcasePacket . CHARSET ));
