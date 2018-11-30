@@ -47,3 +47,4 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	@Override
