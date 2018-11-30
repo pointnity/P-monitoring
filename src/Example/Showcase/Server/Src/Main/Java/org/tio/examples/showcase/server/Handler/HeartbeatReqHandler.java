@@ -9,3 +9,5 @@ Import  org.tio.examples.showcase.common.packets.GroupMsgReqBody ;
 
 /**
  * Heartbeat processing
+ * @author tanyaowu
+ *  
