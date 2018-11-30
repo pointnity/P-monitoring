@@ -51,3 +51,6 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 	 * @author tanyaowu
 	 */
 	@Override
+	Public  Object  handler ( ShowcasePacket  packet ,  JoinGroupReqBody  bsBody ,  ChannelContext  channelContext )  throws  Exception  {
+		Log . info ( "received group request message: {}" ,  Json . toJson ( bsBody ));
+		JoinGroupRespBody  joinGroupRespBody  =  new  JoinGroupRespBody ();
