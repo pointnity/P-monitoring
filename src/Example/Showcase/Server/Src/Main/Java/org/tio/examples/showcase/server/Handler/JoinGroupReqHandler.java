@@ -16,3 +16,6 @@ Import  org.tio.utils.json.Json ;
  * 
  */
 Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReqBody >  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( JoinGroupReqHandler . class );
+
+	/**
