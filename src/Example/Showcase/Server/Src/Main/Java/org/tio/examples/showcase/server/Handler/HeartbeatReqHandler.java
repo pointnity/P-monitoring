@@ -14,3 +14,6 @@ Import  org.tio.examples.showcase.common.packets.GroupMsgReqBody ;
  */
 Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqBody >  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( HeartbeatReqHandler . class );
+
+	/**
+	 * @param args
