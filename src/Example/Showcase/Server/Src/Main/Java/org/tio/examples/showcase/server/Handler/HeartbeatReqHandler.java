@@ -17,3 +17,8 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 
 	/**
 	 * @param args
+	 * @author tanyaowu
+	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
