@@ -39,3 +39,7 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 	 */
 	@Override
 	Public  Class < JoinGroupReqBody >  bodyClass ()  {
+		Return  JoinGroupReqBody . class ;
+	}
+
+	/**
