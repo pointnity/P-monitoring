@@ -29,3 +29,6 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 	 */
 	Public  HeartbeatReqHandler ()  {
 	}
+
+	/**
+	 * @return
