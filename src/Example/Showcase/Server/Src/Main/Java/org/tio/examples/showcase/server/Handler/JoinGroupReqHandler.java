@@ -49,3 +49,5 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 	 * @return
 	 * @throws Exception
 	 * @author tanyaowu
+	 */
+	@Override
