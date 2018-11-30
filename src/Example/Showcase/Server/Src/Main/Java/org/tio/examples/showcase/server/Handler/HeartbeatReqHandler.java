@@ -22,3 +22,6 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	/**
+	 *
