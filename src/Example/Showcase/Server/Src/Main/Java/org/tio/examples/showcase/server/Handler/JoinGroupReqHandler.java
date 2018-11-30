@@ -15,3 +15,4 @@ Import  org.tio.utils.json.Json ;
  * @author tanyaowu
  * 
  */
+Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReqBody >  {
