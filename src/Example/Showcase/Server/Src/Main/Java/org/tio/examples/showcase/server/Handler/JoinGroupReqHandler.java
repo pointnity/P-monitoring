@@ -19,3 +19,6 @@ Public  class  JoinGroupReqHandler  extends  AbsShowcaseBsHandler < JoinGroupReq
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( JoinGroupReqHandler . class );
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
