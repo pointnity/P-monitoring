@@ -41,3 +41,5 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 
 	/**
 	 * @param packet
+	 * @param bsBody
+	 * @param channelContext
