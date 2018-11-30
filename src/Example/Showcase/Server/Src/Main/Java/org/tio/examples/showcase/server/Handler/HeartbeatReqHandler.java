@@ -45,3 +45,5 @@ Public  class  HeartbeatReqHandler  extends  AbsShowcaseBsHandler < GroupMsgReqB
 	 * @param channelContext
 	 * @return
 	 * @throws Exception
+	 * @author tanyaowu
+	 */
