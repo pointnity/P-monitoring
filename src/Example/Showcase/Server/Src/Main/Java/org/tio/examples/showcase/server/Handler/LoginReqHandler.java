@@ -53,3 +53,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	 * @param bsBody
 	 * @param channelContext
 	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
