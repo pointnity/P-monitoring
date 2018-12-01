@@ -70,3 +70,5 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 		showcaseSessionContext.setUserid(userid);
 
 		ShowcasePacket respPacket = new ShowcasePacket();
+		respPacket.setType(Type.LOGIN_RESP);
+		respPacket.setBody(Json.toJson(loginRespBody).getBytes(ShowcasePacket.CHARSET));
