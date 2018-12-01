@@ -19,3 +19,7 @@ import org.tio.utils.json.Json;
  * @author tanyaowu
  *  
  */
+public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
+	private static Logger log = LoggerFactory.getLogger(LoginReqHandler.class);
+
+	/**
