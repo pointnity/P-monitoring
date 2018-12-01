@@ -11,3 +11,5 @@ import org.tio.examples.showcase.common.ShowcaseSessionContext;
 import org.tio.examples.showcase.common.Type;
 import org.tio.examples.showcase.common.intf.AbsShowcaseBsHandler;
 import org.tio.examples.showcase.common.packets.JoinGroupRespBody;
+import org.tio.examples.showcase.common.packets.LoginReqBody;
+import org.tio.examples.showcase.common.packets.LoginRespBody;
