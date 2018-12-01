@@ -72,3 +72,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 		ShowcasePacket respPacket = new ShowcasePacket();
 		respPacket.setType(Type.LOGIN_RESP);
 		respPacket.setBody(Json.toJson(loginRespBody).getBytes(ShowcasePacket.CHARSET));
+		Aio.send(channelContext, respPacket);
+
+		return null;
