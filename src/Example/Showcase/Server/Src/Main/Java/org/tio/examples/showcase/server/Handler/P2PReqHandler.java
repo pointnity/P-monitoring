@@ -67,3 +67,5 @@ public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
 		Aio.sendToUser(channelContext.getGroupContext(), bsBody.getToUserid(), respPacket);
 
 		return null;
+	}
+}
