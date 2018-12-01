@@ -23,3 +23,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	private static Logger log = LoggerFactory.getLogger(LoginReqHandler.class);
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
