@@ -49,3 +49,7 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	}
 
 	/**
+	 * @param packet
+	 * @param bsBody
+	 * @param channelContext
+	 * @return
