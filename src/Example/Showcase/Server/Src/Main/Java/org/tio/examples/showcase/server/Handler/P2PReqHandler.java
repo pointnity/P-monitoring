@@ -41,3 +41,8 @@ public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
 	@Override
 	public Class<P2PReqBody> bodyClass() {
 		return P2PReqBody.class;
+	}
+
+	/**
+	 * @param packet
+	 * @param bsBody
