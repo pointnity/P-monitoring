@@ -21,3 +21,10 @@ public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
 
 	/**
 	 * @param args
+	 * @author tanyaowu
+	 */
+	public static void main(String[] args) {
+
+	}
+
+	/**
