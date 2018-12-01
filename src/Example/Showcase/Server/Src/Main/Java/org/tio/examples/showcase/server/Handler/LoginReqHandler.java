@@ -78,3 +78,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	}
 
 	private String newToken() {
+		return System.currentTimeMillis() + "_" + tokenSeq.incrementAndGet();
+	}
+}
