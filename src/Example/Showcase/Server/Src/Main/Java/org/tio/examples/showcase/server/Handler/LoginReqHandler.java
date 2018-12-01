@@ -75,3 +75,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 		Aio.send(channelContext, respPacket);
 
 		return null;
+	}
+
+	private String newToken() {
