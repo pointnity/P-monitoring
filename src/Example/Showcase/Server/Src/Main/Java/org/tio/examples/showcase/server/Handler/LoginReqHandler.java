@@ -59,3 +59,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	@Override
 	public Object handler(ShowcasePacket packet, LoginReqBody bsBody, ChannelContext channelContext) throws Exception {
 		log.info("Receive Login Request message:{}", Json.toJson(bsBody));
+		LoginRespBody loginRespBody = new LoginRespBody();
+		loginRespBody.setCode(JoinGroupRespBody.Code.SUCCESS);
+		loginRespBody.setToken(newToken());
