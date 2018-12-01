@@ -38,3 +38,6 @@ public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
 	 * @return
 	 * @author tanyaowu
 	 */
+	@Override
+	public Class<P2PReqBody> bodyClass() {
+		return P2PReqBody.class;
