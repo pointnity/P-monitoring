@@ -26,3 +26,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	public static void main(String[] args) {
+
+	}
