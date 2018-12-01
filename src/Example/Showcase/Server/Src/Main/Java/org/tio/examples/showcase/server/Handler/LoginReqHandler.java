@@ -44,3 +44,8 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	 * @author tanyaowu
 	 */
 	@Override
+	public Class<LoginReqBody> bodyClass() {
+		return LoginReqBody.class;
+	}
+
+	/**
