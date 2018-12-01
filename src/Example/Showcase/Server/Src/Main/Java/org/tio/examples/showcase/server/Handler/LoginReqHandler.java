@@ -7,3 +7,5 @@ import org.slf4j.LoggerFactory;
 import org.tio.core.Aio;
 import org.tio.core.ChannelContext;
 import org.tio.examples.showcase.common.ShowcasePacket;
+import org.tio.examples.showcase.common.ShowcaseSessionContext;
+import org.tio.examples.showcase.common.Type;
