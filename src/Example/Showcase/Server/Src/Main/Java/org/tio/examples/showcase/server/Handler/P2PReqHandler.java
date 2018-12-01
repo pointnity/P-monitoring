@@ -46,3 +46,8 @@ public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
 	/**
 	 * @param packet
 	 * @param bsBody
+	 * @param channelContext
+	 * @return
+	 * @throws Exception
+	 * @author tanyaowu
+	 */
