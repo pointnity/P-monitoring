@@ -15,3 +15,6 @@ import org.tio.utils.json.Json;
 /**
  * @author tanyaowu
  *  
+ */
+public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
+	private static Logger log = LoggerFactory.getLogger(P2PReqHandler.class);
