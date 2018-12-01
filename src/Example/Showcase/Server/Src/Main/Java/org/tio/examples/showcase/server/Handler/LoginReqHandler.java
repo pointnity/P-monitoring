@@ -35,3 +35,9 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	/**
 	 *
 	 * @author tanyaowu
+	 */
+	public LoginReqHandler() {
+	}
+
+	/**
+	 * @return
