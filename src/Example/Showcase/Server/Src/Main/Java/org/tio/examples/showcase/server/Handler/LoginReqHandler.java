@@ -15,3 +15,7 @@ import org.tio.examples.showcase.common.packets.LoginReqBody;
 import org.tio.examples.showcase.common.packets.LoginRespBody;
 import org.tio.utils.json.Json;
 
+/**
+ * @author tanyaowu
+ *  
+ */
