@@ -58,3 +58,7 @@ public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
 		ShowcaseSessionContext showcaseSessionContext = (ShowcaseSessionContext) channelContext.getAttribute();
 
 		P2PRespBody p2pRespBody = new P2PRespBody();
+		p2pRespBody.setFromUserid(showcaseSessionContext.getUserid());
+		p2pRespBody.setText(bsBody.getText());
+
+		ShowcasePacket respPacket = new ShowcasePacket();
