@@ -62,3 +62,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 		LoginRespBody loginRespBody = new LoginRespBody();
 		loginRespBody.setCode(JoinGroupRespBody.Code.SUCCESS);
 		loginRespBody.setToken(newToken());
+
+		String userid = bsBody.getLoginname();
+		Aio.bindUser(channelContext, userid);
