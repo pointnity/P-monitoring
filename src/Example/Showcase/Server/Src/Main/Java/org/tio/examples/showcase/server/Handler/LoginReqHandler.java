@@ -65,3 +65,8 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 
 		String userid = bsBody.getLoginname();
 		Aio.bindUser(channelContext, userid);
+
+		ShowcaseSessionContext showcaseSessionContext = (ShowcaseSessionContext) channelContext.getAttribute();
+		showcaseSessionContext.setUserid(userid);
+
+		ShowcasePacket respPacket = new ShowcasePacket();
