@@ -28,3 +28,6 @@ public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
 	}
 
 	/**
+	 *
+	 * @author tanyaowu
+	 */
