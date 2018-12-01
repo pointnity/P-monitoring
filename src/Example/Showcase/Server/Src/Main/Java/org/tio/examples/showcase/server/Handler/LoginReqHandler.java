@@ -29,3 +29,9 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	public static void main(String[] args) {
 
 	}
+
+	java.util.concurrent.atomic.AtomicLong tokenSeq = new AtomicLong();
+
+	/**
+	 *
+	 * @author tanyaowu
