@@ -54,3 +54,7 @@ public class P2PReqHandler extends AbsShowcaseBsHandler<P2PReqBody> {
 	@Override
 	public Object handler(ShowcasePacket packet, P2PReqBody bsBody, ChannelContext channelContext) throws Exception {
 		log.info("Receive a point-to-point request message:{}", Json.toJson(bsBody));
+
+		ShowcaseSessionContext showcaseSessionContext = (ShowcaseSessionContext) channelContext.getAttribute();
+
+		P2PRespBody p2pRespBody = new P2PRespBody();
