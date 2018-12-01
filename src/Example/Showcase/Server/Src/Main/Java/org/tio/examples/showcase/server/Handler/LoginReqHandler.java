@@ -56,3 +56,6 @@ public class LoginReqHandler extends AbsShowcaseBsHandler<LoginReqBody> {
 	 * @throws Exception
 	 * @author tanyaowu
 	 */
+	@Override
+	public Object handler(ShowcasePacket packet, LoginReqBody bsBody, ChannelContext channelContext) throws Exception {
+		log.info("Receive Login Request message:{}", Json.toJson(bsBody));
