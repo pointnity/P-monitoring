@@ -13,3 +13,4 @@
 	</buildSpec>
 	<natures>
 		<nature> org.eclipse.m2e.core.maven2Nature </nature>
+	</natures>
