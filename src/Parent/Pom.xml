@@ -536,3 +536,65 @@
 
 				<!-- resource plugin, set the code -->
 				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-resources-plugin </artifactId>
+					<configuration>
+						<encoding> ${project.build.sourceEncoding} </encoding>
+					</configuration>
+				</plugin>
+
+				<!-- jar related plugin -->
+				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-jar-plugin </artifactId>
+					<configuration>
+						<archive>
+							<!-- The generated jar, do not include the two files pom.xml and pom.properties -->
+							<addMavenDescriptor> true </addMavenDescriptor>
+						</archive>
+
+						<!-- Filter out files that you don't want included in the jar -->
+						<excludes>
+							<exclude> **/*.properties </exclude>
+							<exclude> **/*.conf </exclude>
+							<exclude> **/*.xml </exclude>
+						</excludes>
+					</configuration>
+				</plugin>
+
+
+				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-source-plugin </artifactId>
+				</plugin>
+
+				<!-- clean plugin -->
+				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-clean-plugin </artifactId>
+					<version> 3.0.0 </version>
+				</plugin>
+
+				<!-- install plugin -->
+				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-install-plugin </artifactId>
+					<version> 2.5.2 </version>
+				</plugin>
+
+				<!-- eclipse plugin, set download source and block .svn file -->
+				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-eclipse-plugin </artifactId>
+					<configuration>
+						<sourceExcludes>
+							<sourceExclude> **/.svn/ </sourceExclude>
+						</sourceExcludes>
+						<downloadSources> false </downloadSources>
+						<downloadJavadocs> false </downloadJavadocs>
+						<ajdtVersion> ${jdk.version} </ajdtVersion>
+					</configuration>
+				</plugin>
+
+				<!-- dependency plugin -->
+				<plugin>
