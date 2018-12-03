@@ -64,3 +64,5 @@
 		<commons-codec.version> 1.11 </commons-codec.version>
 		<commons-compress.version> 1.15 </commons-compress.version>
 		<fastjson.version> 1.2.41 </fastjson.version>
+		<testng.version> 6.11 </testng.version>
+		<hutool.version> 3.2.1 </hutool.version>
