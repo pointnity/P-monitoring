@@ -24,3 +24,6 @@
 		<connection> scm:svn://gitee.com/tywo45/t-io </connection>
 		<developerConnection> scm:svn://gitee.com/tywo45/t-io </developerConnection>
 		<url> svn://gitee.com/tywo45/t-io </url>
+	</scm>
+
+	<modules>
