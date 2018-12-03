@@ -42,3 +42,7 @@
 		<tio-websocket.version> 0.0.4-tio-websocket </tio-websocket.version>
 		<tio-live.version> 0.0.4-tio-live </tio-live.version>
 		<tio-bs.version> 0.0.4-tio-bs </tio-bs.version>
+
+
+
+		<project.build.sourceEncoding> UTF-8 </project.build.sourceEncoding>
