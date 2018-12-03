@@ -40,3 +40,5 @@
 
 		<tio-http.version> 0.0.4-tio-http </tio-http.version>
 		<tio-websocket.version> 0.0.4-tio-websocket </tio-websocket.version>
+		<tio-live.version> 0.0.4-tio-live </tio-live.version>
+		<tio-bs.version> 0.0.4-tio-bs </tio-bs.version>
