@@ -9,3 +9,7 @@
 	<url> http://maven.apache.org </url>
 
 	<description> t-io is a aio framework for java </description>
+
+	<!-- <prerequisites> <maven>3.3.9</maven> </prerequisites> -->
+
+	<licenses>
