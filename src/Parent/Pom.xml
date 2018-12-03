@@ -6,3 +6,6 @@
 	<packaging> pom </packaging>
 	<version> 2.0.2.v20171129-RELEASE </version>
 	<name> ${project.artifactId} </name>
+	<url> http://maven.apache.org </url>
+
+	<description> t-io is a aio framework for java </description>
