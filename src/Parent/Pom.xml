@@ -74,3 +74,4 @@
 		<protostuff.version> 1.6.0 </protostuff.version>
 		<redisson.version> 3.5.5 </redisson.version>
 		<jodd.version> 3.9.1 </jodd.version>
+		<quartz.version> 2.3.0 </quartz.version>
