@@ -136,3 +136,5 @@
 			<dependency>
 				<groupId> org.t-io </groupId>
 				<artifactId> tio-websocket-server </artifactId>
+				<version> ${tio-websocket.version} </version>
+			</dependency>
