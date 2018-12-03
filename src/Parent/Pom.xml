@@ -27,3 +27,5 @@
 	</scm>
 
 	<modules>
+		<module> ../utils </module>
+		<module> ../core </module>
