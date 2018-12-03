@@ -132,3 +132,5 @@
 				<groupId> org.t-io </groupId>
 				<artifactId> tio-websocket-common </artifactId>
 				<version> ${tio-websocket.version} </version>
+			</dependency>
+			<dependency>
