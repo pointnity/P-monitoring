@@ -30,3 +30,5 @@
 		<module> ../utils </module>
 		<module> ../core </module>
 		<module> ../zoo/parent </module>
+		<module> ../example/parent </module>
+	</modules>
