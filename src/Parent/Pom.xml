@@ -120,3 +120,6 @@
 			<dependency>
 				<groupId> org.t-io </groupId>
 				<artifactId> tio-live-bs-api </artifactId>
+				<version> ${tio-bs.version} </version>
+			</dependency>
+			<dependency>
