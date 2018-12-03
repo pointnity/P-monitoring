@@ -70,3 +70,7 @@
 		<protobuf- java.version> 3.5.0 </protobuf-java.version>
 		<commons-beanutils.version> 1.9.3 </commons-beanutils.version>
 		<protobuf-java-format.version> 1.4 </protobuf-java-format.version>
+
+		<protostuff.version> 1.6.0 </protostuff.version>
+		<redisson.version> 3.5.5 </redisson.version>
+		<jodd.version> 3.9.1 </jodd.version>
