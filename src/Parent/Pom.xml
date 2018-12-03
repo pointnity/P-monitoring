@@ -66,3 +66,5 @@
 		<fastjson.version> 1.2.41 </fastjson.version>
 		<testng.version> 6.11 </testng.version>
 		<hutool.version> 3.2.1 </hutool.version>
+
+		<protobuf- java.version> 3.5.0 </protobuf-java.version>
