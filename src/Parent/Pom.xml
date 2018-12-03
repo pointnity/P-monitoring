@@ -36,3 +36,6 @@
 	<properties>
 		<tio-utils.version> 2.0.2.v20171129-RELEASE </tio-utils.version>
 		<tio-core.version> ${tio-utils.version} </tio-core.version>
+		<tio-flash-policy-server.version> ${tio-utils.version} </tio-flash-policy-server.version>
+
+		<tio-http.version> 0.0.4-tio-http </tio-http.version>
