@@ -32,3 +32,5 @@
 		<module> ../zoo/parent </module>
 		<module> ../example/parent </module>
 	</modules>
+
+	<properties>
