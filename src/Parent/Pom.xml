@@ -177,3 +177,56 @@
 				<artifactId> tio-live-web-client </artifactId>
 				<version> ${tio-live.version} </version>
 			</dependency>
+
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-im-common </artifactId>
+				<version> ${tio-live.version} </version>
+			</dependency>
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-im-server </artifactId>
+				<version> ${tio-live.version} </version>
+			</dependency>
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-im-client </artifactId>
+				<version> ${tio-live.version} </version>
+			</dependency>
+			<!-- tio-live end -->
+
+			<dependency>
+				<groupId> com.jfinal </groupId>
+				<artifactId> jfinal </artifactId>
+				<version> ${jfinal.version} </version>
+			</dependency>
+
+			<dependency>
+				<groupId> com.xiaoleilu </groupId>
+				<artifactId> hutool-core </artifactId>
+				<version> ${hutool.version} </version>
+			</dependency>
+
+			<dependency>
+				<groupId> com.xiaoleilu </groupId>
+				<artifactId> hutool-all </artifactId>
+				<version> ${hutool.version} </version>
+			</dependency>
+
+			<dependency>
+				<groupId> org.redisson </groupId>
+				<artifactId> redisson </artifactId>
+				<version> ${redisson.version} </version>
+			</dependency>
+
+			<dependency>
+				<groupId> com.googlecode.protobuf-java-format </groupId>
+				<artifactId> protobuf-java-format </artifactId>
+				<version> ${protobuf-java-format.version} </version>
+			</dependency>
+
+			<dependency>
+				<groupId> commons-beanutils </groupId>
+				<artifactId> commons-beanutils </artifactId>
+				<version> ${commons-beanutils.version} </version>
+			</dependency>
