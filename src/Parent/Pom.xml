@@ -140,3 +140,7 @@
 			</dependency>
 
 			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-http-common </artifactId>
+				<version> ${tio-http.version} </version>
+			</dependency>
