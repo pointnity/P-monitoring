@@ -144,3 +144,10 @@
 				<artifactId> tio-http-common </artifactId>
 				<version> ${tio-http.version} </version>
 			</dependency>
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-http-server </artifactId>
+				<version> ${tio-http.version} </version>
+			</dependency>
+
+			<!-- tio-live start -->
