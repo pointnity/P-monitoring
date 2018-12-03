@@ -34,3 +34,4 @@
 	</modules>
 
 	<properties>
+		<tio-utils.version> 2.0.2.v20171129-RELEASE </tio-utils.version>
