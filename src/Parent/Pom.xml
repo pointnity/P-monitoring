@@ -598,3 +598,63 @@
 
 				<!-- dependency plugin -->
 				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-dependency-plugin </artifactId>
+					<version> 2.10 </version>
+				</plugin>
+
+
+				<!-- Plugin to run java program -->
+				<plugin>
+					<groupId> org.codehaus.mojo </groupId>
+					<artifactId> exec-maven-plugin </artifactId>
+				</plugin>
+
+				<!-- sonar plugin -->
+				<plugin>
+					<groupId> org.codehaus.mojo </groupId>
+					<artifactId> sonar-maven-plugin </artifactId>
+				</plugin>
+
+				<plugin>
+					<groupId> org.codehaus.mojo </groupId>
+					<artifactId> findbugs-maven-plugin </artifactId>
+					<version> 3.0.3 </version>
+					<configuration>
+						<!-- <configLocation>${basedir}/springside-findbugs.xml</configLocation> -->
+						<!-- findbugs xml output -->
+						<findbugsXmlOutput> true </findbugsXmlOutput>
+						<!-- findbugs xml output path -->
+						<findbugsXmlOutputDirectory> target/site </findbugsXmlOutputDirectory>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-pmd-plugin </artifactId>
+				</plugin>
+
+				<!-- Release plugin -->
+				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-deploy-plugin </artifactId>
+					<version> 2.8.2 </version>
+				</plugin>
+
+
+				<plugin>
+					<groupId> org.apache.maven.plugins </groupId>
+					<artifactId> maven-checkstyle-plugin </artifactId>
+				</plugin>
+
+
+				<plugin>
+					<artifactId> maven-assembly-plugin </artifactId>
+					<version> 2.6 </version>
+					<configuration>
+						<appendAssemblyId> false </appendAssemblyId>
+						<descriptorRefs>
+							<descriptorRef> jar-with-dependencies </descriptorRef>
+						</descriptorRefs>
+					</configuration>
+				</plugin>
