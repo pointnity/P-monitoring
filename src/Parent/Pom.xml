@@ -151,3 +151,29 @@
 			</dependency>
 
 			<!-- tio-live start -->
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-bs-api </artifactId>
+				<version> ${tio-live.version} </version>
+			</dependency>
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-bs-service </artifactId>
+				<version> ${tio-live.version} </version>
+			</dependency>
+
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-web-common </artifactId>
+				<version> ${tio-live.version} </version>
+			</dependency>
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-web-server </artifactId>
+				<version> ${tio-live.version} </version>
+			</dependency>
+			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-web-client </artifactId>
+				<version> ${tio-live.version} </version>
+			</dependency>
