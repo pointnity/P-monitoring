@@ -118,3 +118,5 @@
 			</dependency>
 
 			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-bs-api </artifactId>
