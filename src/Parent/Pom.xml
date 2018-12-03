@@ -86,3 +86,6 @@
 			<email> tywo45@163.com </email>
 			<url>  gitee.com/tywo45/t-io </url>
 		</developer>
+	</developers>
+
+	<repositories>
