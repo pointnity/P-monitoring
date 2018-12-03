@@ -418,3 +418,53 @@
 				<artifactId> protostuff-runtime </artifactId>
 				<version> ${protostuff.version} </version>
 			</dependency>
+
+			<dependency>
+				<groupId> org.quartz-scheduler </groupId>
+				<artifactId> quartz </artifactId>
+				<version> ${quartz.version} </version>
+			</dependency>
+			<dependency>
+				<groupId> org.quartz-scheduler </groupId>
+				<artifactId> quartz-jobs </artifactId>
+				<version> ${quartz.version} </version>
+			</dependency>
+
+			<dependency>
+				<groupId> de.ruedigermoeller </groupId>
+				<artifactId> fst </artifactId>
+				<version> 2.56 </version>
+			</dependency>
+
+			<dependency>
+				<groupId> io.github.lukehutch </groupId>
+				<artifactId> fast-classpath-scanner </artifactId>
+				<version> 2.9.3 </version>
+			</dependency>
+			<dependency>
+				<groupId> com.thoughtworks.paranamer </groupId>
+				<artifactId> paranamer </artifactId>
+				<version> 2.8 </version>
+			</dependency>
+
+			<dependency>
+				<groupId> org.freemarker </groupId>
+				<artifactId> freemarker </artifactId>
+				<version> 2.3.27-incubating </version>
+			</dependency>
+
+			<dependency>
+				<groupId> com.aliyun </groupId>
+				<artifactId> aliyun-java-sdk-core </artifactId>
+				<version> 3.5.0 </version>
+			</dependency>
+			<dependency>
+				<groupId> com.aliyun </groupId>
+				<artifactId> aliyun-java-sdk-live </artifactId>
+				<version> 3.0.0 </version>
+			</dependency>
+			<dependency>
+				<groupId> com.aliyun.oss </groupId>
+				<artifactId> aliyun-sdk-oss </artifactId>
+				<version> 2.8.1 </version>
+			</dependency>
