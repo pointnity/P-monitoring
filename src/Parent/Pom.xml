@@ -116,3 +116,5 @@
 				<artifactId> tio-flash-policy-server </artifactId>
 				<version> ${tio-flash-policy-server.version} </version>
 			</dependency>
+
+			<dependency>
