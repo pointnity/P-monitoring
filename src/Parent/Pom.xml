@@ -21,3 +21,4 @@
 
 
 	<scm>
+		<connection> scm:svn://gitee.com/tywo45/t-io </connection>
