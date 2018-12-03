@@ -99,3 +99,4 @@
 	</pluginRepositories>
 
 	<dependencyManagement>
+		<dependencies>
