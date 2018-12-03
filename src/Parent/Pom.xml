@@ -265,3 +265,45 @@
 				<artifactId> slf4j-ext </artifactId>
 				<version> ${slf4j.version} </version>
 			</dependency>
+			<dependency>
+				<groupId> org.slf4j </groupId>
+				<artifactId> slf4j-api </artifactId>
+				<version> ${slf4j.version} </version>
+			</dependency>
+			<dependency>
+				<groupId> ch.qos.logback </groupId>
+				<artifactId> logback-classic </artifactId>
+				<version> ${logback.version} </version>
+			</dependency>
+			<!-- redirect apache commons logging -->
+			<dependency>
+				<groupId> org.slf4j </groupId>
+				<artifactId> jcl-over-slf4j </artifactId>
+				<version> ${slf4j.version} </version>
+			</dependency>
+			<!-- redirect jdk util logging -->
+			<dependency>
+				<groupId> org.slf4j </groupId>
+				<artifactId> jul-to-slf4j </artifactId>
+				<version> ${slf4j.version} </version>
+			</dependency>
+			<!-- redirect log4j -->
+			<dependency>
+				<groupId> org.slf4j </groupId>
+				<artifactId> log4j-over-slf4j </artifactId>
+				<version> ${slf4j.version} </version>
+			</dependency>
+			<!-- log framework end -->
+
+			<dependency>
+				<groupId> junit </groupId>
+				<artifactId> junit </artifactId>
+				<version> ${junit.version} </version>
+			</dependency>
+
+			<!-- The logback-access access module integrates with the Servlet container to provide access to the diary via Http -->
+			<dependency>
+				<groupId> ch.qos.logback </groupId>
+				<artifactId> logback-access </artifactId>
+				<version> ${logback.version} </version>
+			</dependency>
