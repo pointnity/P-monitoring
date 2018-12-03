@@ -123,3 +123,5 @@
 				<version> ${tio-bs.version} </version>
 			</dependency>
 			<dependency>
+				<groupId> org.t-io </groupId>
+				<artifactId> tio-live-bs-service </artifactId>
