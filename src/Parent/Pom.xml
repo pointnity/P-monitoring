@@ -68,3 +68,5 @@
 		<hutool.version> 3.2.1 </hutool.version>
 
 		<protobuf- java.version> 3.5.0 </protobuf-java.version>
+		<commons-beanutils.version> 1.9.3 </commons-beanutils.version>
+		<protobuf-java-format.version> 1.4 </protobuf-java-format.version>
