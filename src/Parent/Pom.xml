@@ -108,3 +108,5 @@
 			<dependency>
 				<groupId> org.t-io </groupId>
 				<artifactId> tio-core </artifactId>
+				<version> ${tio-core.version} </version>
+			</dependency>
