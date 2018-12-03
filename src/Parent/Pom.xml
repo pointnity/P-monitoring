@@ -138,3 +138,5 @@
 				<artifactId> tio-websocket-server </artifactId>
 				<version> ${tio-websocket.version} </version>
 			</dependency>
+
+			<dependency>
