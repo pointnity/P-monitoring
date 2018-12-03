@@ -100,3 +100,4 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
