@@ -21,3 +21,4 @@ Echo -
 
 Echo #Copy the jar to the repository directory ()
 Echo mvn dependency:copy-dependencies -Dmdep.useRepositoryLayout=true -Dmdep.copyPom=true
+Echo -
