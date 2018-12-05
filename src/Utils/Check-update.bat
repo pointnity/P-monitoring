@@ -13,3 +13,4 @@ Echo -
 
 Echo # jar out
 Echo mvn dependency:unpack-dependencies
+Echo -
