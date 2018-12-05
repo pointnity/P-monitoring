@@ -36,3 +36,4 @@ Echo -
 
 
 Call mvn versions: display-dependency-updates
+Pause
