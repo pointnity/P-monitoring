@@ -112,3 +112,5 @@
 			<scope> provided </scope>
 		</dependency>
 		<dependency>
+			<groupId> org.jodd </groupId>
+			<artifactId> jodd-core </artifactId>
