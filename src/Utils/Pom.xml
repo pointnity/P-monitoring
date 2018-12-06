@@ -56,3 +56,8 @@
 			<groupId> ch.qos.logback </groupId>
 			<artifactId> logback-access </artifactId>
 			<scope> provided </scope>
+		</dependency>
+
+
+		<!-- redirect apache commons logging -->
+		<dependency>
