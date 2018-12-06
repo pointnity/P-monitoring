@@ -106,3 +106,6 @@
 			<scope> provided </scope>
 		</dependency>
 		<dependency>
+			<groupId> org.apache.curator </groupId>
+			<artifactId> curator-x-discovery </artifactId>
+			<version> 4.0.0 </version>
