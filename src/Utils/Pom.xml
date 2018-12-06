@@ -92,3 +92,4 @@
 			<groupId> com.xiaoleilu </groupId>
 			<artifactId> hutool-all </artifactId>
 		</dependency>
+		<dependency>
