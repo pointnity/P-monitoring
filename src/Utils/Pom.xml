@@ -43,3 +43,4 @@
 		<dependency>
 			<groupId> org.quartz-scheduler </groupId>
 			<artifactId> quartz-jobs </artifactId>
+			<scope> provided </scope>
