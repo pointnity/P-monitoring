@@ -25,3 +25,4 @@
 			<artifactId> commons-text </artifactId>
 		</dependency>
 		<dependency>
+			<groupId> org.slf4j </groupId>
