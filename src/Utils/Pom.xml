@@ -40,3 +40,4 @@
 			<artifactId> quartz </artifactId>
 			<scope> provided </scope>
 		</dependency>
+		<dependency>
