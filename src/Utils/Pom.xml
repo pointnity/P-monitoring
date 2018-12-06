@@ -34,3 +34,5 @@
 			<artifactId> redisson </artifactId>
 			<scope> provided </scope>
 		</dependency>
+
+		<dependency>
