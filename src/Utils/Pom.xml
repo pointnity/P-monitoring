@@ -47,3 +47,4 @@
 		</dependency>
 
 		<!-- slf4j-logback binding -->
+		<dependency>
