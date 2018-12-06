@@ -71,3 +71,5 @@
 			<artifactId> jul-to-slf4j </artifactId>
 			<scope> provided </scope>
 		</dependency>
+		<!-- redirect log4j -->
+		<dependency>
