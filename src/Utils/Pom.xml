@@ -52,3 +52,4 @@
 			<artifactId> logback-classic </artifactId>
 			<scope> provided </scope>
 		</dependency>
+		<dependency>
