@@ -45,3 +45,5 @@
 			<artifactId> quartz-jobs </artifactId>
 			<scope> provided </scope>
 		</dependency>
+
+		<!-- slf4j-logback binding -->
