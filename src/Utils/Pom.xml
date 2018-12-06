@@ -70,3 +70,4 @@
 			<groupId> org.slf4j </groupId>
 			<artifactId> jul-to-slf4j </artifactId>
 			<scope> provided </scope>
+		</dependency>
