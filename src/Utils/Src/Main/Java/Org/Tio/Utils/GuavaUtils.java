@@ -113,3 +113,9 @@ Public  class  GuavaUtils  {
 				recordStats );
 
 		loadCache . put ( "1" ,  "1" );
+		Object  o  =  loadingCache . get ( "1" );
+
+		TimeUnit . SECONDS . sleep ( 3 );
+		loadCache . put ( "2" ,  "2" );
+		o  =  loadingCache . getIfPresent ( "1" );
+		System . out . println ( o );
