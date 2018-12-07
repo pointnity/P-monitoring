@@ -76,3 +76,6 @@ Public  class  GuavaUtils  {
 		cacheBuilder . maximumSize ( maximumSize );
 
 		If  ( recordStats )  {
+			/ / Set the hit rate to count the cache
+			cacheBuilder . recordStats ();
+		}
