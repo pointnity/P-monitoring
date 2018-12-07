@@ -119,3 +119,10 @@ Public  class  GuavaUtils  {
 		loadCache . put ( "2" ,  "2" );
 		o  =  loadingCache . getIfPresent ( "1" );
 		System . out . println ( o );
+		o  =  loadingCache . getIfPresent ( "2" );
+		System . out . println ( o );
+	}
+
+	/**
+	 *
+	 */
