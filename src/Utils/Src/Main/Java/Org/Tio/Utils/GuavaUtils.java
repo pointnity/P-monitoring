@@ -54,3 +54,10 @@ Public  class  GuavaUtils  {
 				Public  void  onRemoval ( RemovalNotification < K ,  V >  notification )  {
 					Log . info ( notification . getKey ()  +  " was removed" );
 				}
+			};
+		}
+
+		CacheBuilder < K ,  V >  cacheBuilder  =  CacheBuilder . newBuilder (). removalListener ( removalListener );
+
+		/ / Set the concurrency level to 8, concurrency level refers to the number of threads that can write cache at the same time
+		cacheBuilder . concurrencyLevel ( concurrencyLevel );
