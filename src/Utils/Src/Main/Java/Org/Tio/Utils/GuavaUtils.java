@@ -93,3 +93,11 @@ Public  class  GuavaUtils  {
 		// //Get the data from the cache. Since we haven't set the cache, we need to load the cached data through CacheLoader.
 		// Long student = studentCache.get("p");
 		// System.out.println(student);
+		// //Hibernate for 1 second
+		// TimeUnit.SECONDS.sleep(1);
+		// }
+
+		// System.out.println("cache stats:");
+		/ / Finally print the cache hit rate and so on
+		// System.out.println(studentCache.stats().toString());
+	}
