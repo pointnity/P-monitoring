@@ -101,3 +101,8 @@ Public  class  GuavaUtils  {
 		/ / Finally print the cache hit rate and so on
 		// System.out.println(studentCache.stats().toString());
 	}
+
+	Public  static  void  main ( String []  args )  throws  Exception  {
+		Integer  concurrencyLevel  =  8 ;
+		Long  timeToLiveSeconds  =  1L ;
+		Long  timeToIdleSeconds  =  null ;
