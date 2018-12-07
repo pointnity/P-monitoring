@@ -61,3 +61,7 @@ Public  class  GuavaUtils  {
 
 		/ / Set the concurrency level to 8, concurrency level refers to the number of threads that can write cache at the same time
 		cacheBuilder . concurrencyLevel ( concurrencyLevel );
+		If  ( timeToLiveSeconds  !=  null  &&  timeToLiveSeconds  >  0 )  {
+			/ / Set the write cache 8 seconds after the expiration
+			cacheBuilder . expireAfterWrite ( timeToLiveSeconds ,  TimeUnit . SECONDS );
+		}
