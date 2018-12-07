@@ -45,3 +45,7 @@ Public  class  GuavaUtils  {
 	 * @param removalListener
 	 * @return
 	 */
+	Public  static  < K ,  V >  LoadingCache < K ,  V >  createLoadingCache ( Integer  concurrencyLevel ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds ,  Integer  initialCapacity ,
+			Integer  maximumSize ,  boolean  recordStats ,  RemovalListener < K ,  V >  removalListener )  {
+
+		If  ( removalListener  ==  null )  {
