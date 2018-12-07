@@ -49,3 +49,5 @@ Public  class  GuavaUtils  {
 			Integer  maximumSize ,  boolean  recordStats ,  RemovalListener < K ,  V >  removalListener )  {
 
 		If  ( removalListener  ==  null )  {
+			removalListener  =  new  RemovalListener < K ,  V >()  {
+				@Override
