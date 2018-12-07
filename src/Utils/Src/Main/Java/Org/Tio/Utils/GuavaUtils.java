@@ -16,3 +16,4 @@ Import  com.google.common.cache.RemovalNotification ;
  * @author tanyaowu
  * 
  */
+Public  class  GuavaUtils  {
