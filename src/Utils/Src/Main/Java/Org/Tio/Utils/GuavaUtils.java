@@ -65,3 +65,5 @@ Public  class  GuavaUtils  {
 			/ / Set the write cache 8 seconds after the expiration
 			cacheBuilder . expireAfterWrite ( timeToLiveSeconds ,  TimeUnit . SECONDS );
 		}
+		If  ( timeToIdleSeconds  !=  null  &&  timeToIdleSeconds  >  0 )  {
+			/ / Set the access cache 8 seconds after the expiration
