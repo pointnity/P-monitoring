@@ -79,3 +79,8 @@ Public  class  GuavaUtils  {
 			/ / Set the hit rate to count the cache
 			cacheBuilder . recordStats ();
 		}
+		// CacheLoader can be specified in the build method, and the cache is automatically loaded by the CacheLoader implementation when the cache does not exist.
+		LoadingCache < K ,  V >  loadingCache  =  cacheBuilder . build ( new  CacheLoader < K ,  V >()  {
+			@Override
+			Public  V  load ( K  key )  throws  Exception  {
+				Return  null ;
