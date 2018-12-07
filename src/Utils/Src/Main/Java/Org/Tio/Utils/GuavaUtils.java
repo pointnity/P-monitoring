@@ -106,3 +106,10 @@ Public  class  GuavaUtils  {
 		Integer  concurrencyLevel  =  8 ;
 		Long  timeToLiveSeconds  =  1L ;
 		Long  timeToIdleSeconds  =  null ;
+		Integer  initialCapacity  =  10 ;
+		Integer  maximumSize  =  1000 ;
+		Boolean  recordStats  =  false ;
+		LoadingCache < String ,  Object >  loadingCache  =  GuavaUtils . CreateLoadingCache ( concurrencyLevel ,  timeToLiveSeconds ,  timeToIdleSeconds ,  initialCapacity ,  maximumSize ,
+				recordStats );
+
+		loadCache . put ( "1" ,  "1" );
