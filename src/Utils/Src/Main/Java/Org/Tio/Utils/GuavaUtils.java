@@ -51,3 +51,6 @@ Public  class  GuavaUtils  {
 		If  ( removalListener  ==  null )  {
 			removalListener  =  new  RemovalListener < K ,  V >()  {
 				@Override
+				Public  void  onRemoval ( RemovalNotification < K ,  V >  notification )  {
+					Log . info ( notification . getKey ()  +  " was removed" );
+				}
