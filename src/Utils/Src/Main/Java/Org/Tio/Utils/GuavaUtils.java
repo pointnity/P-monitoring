@@ -72,3 +72,7 @@ Public  class  GuavaUtils  {
 
 		/ / Set the initial capacity of the cache container to 10
 		cacheBuilder . initialCapacity ( initialCapacity );
+		/ / Set the maximum buffer size of 100, after more than 100 will follow the LRU least recently used algorithm to remove the cache item
+		cacheBuilder . maximumSize ( maximumSize );
+
+		If  ( recordStats )  {
