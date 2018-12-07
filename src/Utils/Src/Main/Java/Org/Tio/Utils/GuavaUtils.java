@@ -126,3 +126,7 @@ Public  class  GuavaUtils  {
 	/**
 	 *
 	 */
+	Public  GuavaUtils ()  {
+
+	}
+}
