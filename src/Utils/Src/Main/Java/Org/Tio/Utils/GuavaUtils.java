@@ -84,3 +84,12 @@ Public  class  GuavaUtils  {
 			@Override
 			Public  V  load ( K  key )  throws  Exception  {
 				Return  null ;
+			}
+		});
+		Return  loadingCache ;
+
+		// for (int i = 0; i < 20; i++)
+		// {
+		// //Get the data from the cache. Since we haven't set the cache, we need to load the cached data through CacheLoader.
+		// Long student = studentCache.get("p");
+		// System.out.println(student);
