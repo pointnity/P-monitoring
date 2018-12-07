@@ -27,3 +27,5 @@ Public  class  GuavaUtils  {
 	 * @param initialCapacity
 	 * @param maximumSize
 	 * @param recordStats
+	 * @return
+	 */
