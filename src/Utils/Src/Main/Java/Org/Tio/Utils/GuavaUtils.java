@@ -29,3 +29,7 @@ Public  class  GuavaUtils  {
 	 * @param recordStats
 	 * @return
 	 */
+	Public  static  < K ,  V >  LoadingCache < K ,  V >  createLoadingCache ( Integer  concurrencyLevel ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds ,  Integer  initialCapacity ,
+			Integer  maximumSize ,  boolean  recordStats )  {
+		Return  createLoadingCache ( concurrencyLevel ,  timeToLiveSeconds ,  timeToIdleSeconds ,  initialCapacity ,  maximumSize ,  recordStats ,  null );
+	}
