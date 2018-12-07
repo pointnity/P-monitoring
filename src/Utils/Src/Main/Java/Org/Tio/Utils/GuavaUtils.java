@@ -67,3 +67,8 @@ Public  class  GuavaUtils  {
 		}
 		If  ( timeToIdleSeconds  !=  null  &&  timeToIdleSeconds  >  0 )  {
 			/ / Set the access cache 8 seconds after the expiration
+			cacheBuilder . expireAfterAccess ( timeToIdleSeconds ,  TimeUnit . SECONDS );
+		}
+
+		/ / Set the initial capacity of the cache container to 10
+		cacheBuilder . initialCapacity ( initialCapacity );
