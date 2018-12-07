@@ -40,3 +40,6 @@ Public  class  GuavaUtils  {
 	 * @param timeToLiveSeconds Set the expiration time after write cache (unit: second)
 	 * @param timeToIdleSeconds Sets the expiration time after reading the cache (unit: second)
 	 * @param initialCapacity
+	 * @param maximumSize
+	 * @param recordStats
+	 * @param removalListener
