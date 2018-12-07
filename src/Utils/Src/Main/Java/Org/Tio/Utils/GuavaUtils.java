@@ -17,3 +17,6 @@ Import  com.google.common.cache.RemovalNotification ;
  * 
  */
 Public  class  GuavaUtils  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( GuavaUtils . class );
+
+	/**
