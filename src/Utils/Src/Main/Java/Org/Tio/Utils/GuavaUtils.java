@@ -43,3 +43,5 @@ Public  class  GuavaUtils  {
 	 * @param maximumSize
 	 * @param recordStats
 	 * @param removalListener
+	 * @return
+	 */
