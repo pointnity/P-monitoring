@@ -20,3 +20,4 @@ Public  class  SystemTimer  {
 
 	Private  final  static  ScheduledExecutorService  EXECUTOR  =  new  ScheduledThreadPoolExecutor ( 1 ,  new  ThreadFactory ()  {
 		@Override
+		Public  Thread  newThread ( Runnable  runnable )  {
