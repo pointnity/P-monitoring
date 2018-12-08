@@ -35,3 +35,7 @@ Public  class  Uuid  {
 
 	Public  static  int  getWorkid ()  {
 		Return  workid ;
+	}
+
+	Public  static  void  setWorkid ( Integer  workid )  {
+		Synchronized  ( log )  {
