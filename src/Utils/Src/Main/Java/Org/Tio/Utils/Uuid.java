@@ -7,3 +7,6 @@ Import  com.google.common.base.Objects ;
 Import  com.xiaoleilu.hutool.util.RandomUtil ;
 
 /**
+ * @author tanyaowu 
+ *  
+ */
