@@ -61,3 +61,4 @@ Public  class  Uuid  {
 
 	Public  static  void  setDatacenterid ( Integer  datacenterid )  {
 		Synchronized  ( log )  {
+			If  ( datacenteridSetted )  {
