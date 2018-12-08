@@ -32,3 +32,4 @@ Public  class  SystemTimer  {
 	Private  static  volatile  long  time  =  System . currentTimeMillis ();
 
 	Static  {
+		EXECUTOR . scheduleAtFixedRate ( new  TimerTask (),  PERIOD ,  PERIOD ,  TimeUnit . MILLISECONDS );
