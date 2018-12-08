@@ -45,3 +45,6 @@ Public  class  Uuid  {
 				}
 				Return ;
 			}
+			If  ( workid  ==  null )  {
+				Log . error ( "workid is not allowed to be null" );
+				Return ;
