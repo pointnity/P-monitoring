@@ -51,3 +51,8 @@ Public  class  Uuid  {
 			}
 			Uuid . workid  =  workid ;
 			workidSetted  =  true ;
+		}
+
+	}
+
+	Public  static  int  getDatacenterid ()  {
