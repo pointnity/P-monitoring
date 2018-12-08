@@ -48,3 +48,6 @@ Public  class  Uuid  {
 			If  ( workid  ==  null )  {
 				Log . error ( "workid is not allowed to be null" );
 				Return ;
+			}
+			Uuid . workid  =  workid ;
+			workidSetted  =  true ;
