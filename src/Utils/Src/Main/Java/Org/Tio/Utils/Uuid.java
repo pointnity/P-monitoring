@@ -26,3 +26,7 @@ Public  class  Uuid  {
 	 */
 	Private  static  Integer  workid  =  RandomUtil . randomInt ( 0 ,  31 );
 	Private  static  boolean  workidSetted  =  false ;
+	
+	/**
+	 * 
+	 */
