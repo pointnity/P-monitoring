@@ -14,3 +14,6 @@ Public  class  Uuid  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( Uuid . class );
 
 	/**
+	 * 
+	 * @author: tanyaowu
+	 */
