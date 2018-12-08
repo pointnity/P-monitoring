@@ -46,3 +46,4 @@ Public  class  SystemTimer  {
 	 *
 	 * @return the long
 	 */
+	Public  static  long  currentTimeMillis ()  {
