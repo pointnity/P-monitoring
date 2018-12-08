@@ -22,3 +22,5 @@ Public  class  Uuid  {
 
 
 	/**
+	 * When the system starts, reset these two values, only
+	 */
