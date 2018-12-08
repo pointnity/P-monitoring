@@ -28,3 +28,5 @@ Public  class  SystemTimer  {
 	});
 
 	Private  static  final  long  PERIOD  =  Long . parseLong ( System . getProperty ( "system.timer.period" ,  "10" ));
+
+	Private  static  volatile  long  time  =  System . currentTimeMillis ();
