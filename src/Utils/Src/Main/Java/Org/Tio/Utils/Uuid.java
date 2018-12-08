@@ -66,3 +66,5 @@ Public  class  Uuid  {
 					Log . error ( "datacenterid is only allowed to be set once" );
 				}
 				Return ;
+			}
+			If  ( datacenterid  ==  null )  {
