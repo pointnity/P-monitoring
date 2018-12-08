@@ -19,3 +19,6 @@ Public  class  Uuid  {
 	 */
 	Public  Uuid ()  {
 	}
+
+
+	/**
