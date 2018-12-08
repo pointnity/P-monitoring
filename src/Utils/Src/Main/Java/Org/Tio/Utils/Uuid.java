@@ -30,3 +30,5 @@ Public  class  Uuid  {
 	/**
 	 * 
 	 */
+	Private  static  Integer  datacenterid  =  RandomUtil . randomInt ( 0 ,  31 );
+	Private  static  boolean  datacenteridSetted  =  false ;
