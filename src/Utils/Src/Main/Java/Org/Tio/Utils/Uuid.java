@@ -68,3 +68,5 @@ Public  class  Uuid  {
 				Return ;
 			}
 			If  ( datacenterid  ==  null )  {
+				Log . error ( "datacenterid is not allowed to be null" );
+				Return ;
