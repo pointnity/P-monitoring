@@ -65,3 +65,4 @@ Public  class  Uuid  {
 				If  (! Objects . equal ( datacenterid ,  Uuid . datacenterid ))  {
 					Log . error ( "datacenterid is only allowed to be set once" );
 				}
+				Return ;
