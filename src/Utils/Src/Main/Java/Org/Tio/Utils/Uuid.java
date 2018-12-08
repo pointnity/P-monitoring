@@ -70,3 +70,7 @@ Public  class  Uuid  {
 			If  ( datacenterid  ==  null )  {
 				Log . error ( "datacenterid is not allowed to be null" );
 				Return ;
+			}
+
+			Uuid . datacenterid  =  datacenterid ;
+			datacenteridSetted  =  true ;
