@@ -48,3 +48,5 @@ Public  class  SystemTimer  {
 	 */
 	Public  static  long  currentTimeMillis ()  {
 		Return  time ;
+	}
+}
