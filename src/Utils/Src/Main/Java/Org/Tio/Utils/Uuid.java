@@ -17,3 +17,5 @@ Public  class  Uuid  {
 	 * 
 	 * @author: tanyaowu
 	 */
+	Public  Uuid ()  {
+	}
