@@ -14,3 +14,6 @@ Public  class  SystemTimer  {
 	Private  static  class  TimerTask  implements  Runnable  {
 		@Override
 		Public  void  run ()  {
+			Time  =  System . currentTimeMillis ();
+		}
+	}
