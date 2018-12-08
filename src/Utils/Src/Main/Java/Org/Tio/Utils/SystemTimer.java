@@ -36,3 +36,4 @@ Public  class  SystemTimer  {
 		Runtime . getRuntime (). addShutdownHook ( new  Thread ()  {
 			@Override
 			Public  void  run ()  {
+				EXECUTOR . shutdown ();
