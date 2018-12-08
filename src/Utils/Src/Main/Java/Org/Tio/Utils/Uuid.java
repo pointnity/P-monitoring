@@ -62,3 +62,6 @@ Public  class  Uuid  {
 	Public  static  void  setDatacenterid ( Integer  datacenterid )  {
 		Synchronized  ( log )  {
 			If  ( datacenteridSetted )  {
+				If  (! Objects . equal ( datacenterid ,  Uuid . datacenterid ))  {
+					Log . error ( "datacenterid is only allowed to be set once" );
+				}
