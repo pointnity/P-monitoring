@@ -58,3 +58,6 @@ Public  class  Uuid  {
 	Public  static  int  getDatacenterid ()  {
 		Return  datacenterid ;
 	}
+
+	Public  static  void  setDatacenterid ( Integer  datacenterid )  {
+		Synchronized  ( log )  {
