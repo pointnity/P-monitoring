@@ -25,3 +25,6 @@ Public  class  SystemTimer  {
 			Thread . setDaemon ( true );
 			Return  thread ;
 		}
+	});
+
+	Private  static  final  long  PERIOD  =  Long . parseLong ( System . getProperty ( "system.timer.period" ,  "10" ));
