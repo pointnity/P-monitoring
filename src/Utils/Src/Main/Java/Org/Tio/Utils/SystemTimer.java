@@ -22,3 +22,4 @@ Public  class  SystemTimer  {
 		@Override
 		Public  Thread  newThread ( Runnable  runnable )  {
 			Thread  thread  =  new  Thread ( runnable ,  "SystemTimer" );
+			Thread . setDaemon ( true );
