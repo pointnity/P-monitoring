@@ -44,3 +44,5 @@ Public  class  SystemTimer  {
 	/**
 	 * Current time millis.
 	 *
+	 * @return the long
+	 */
