@@ -39,3 +39,7 @@ Public  class  Uuid  {
 
 	Public  static  void  setWorkid ( Integer  workid )  {
 		Synchronized  ( log )  {
+			If  ( workidSetted )  {
+				If  (! Objects . equal ( workid ,  Uuid . workid ))  {
+					Log . error ( "workid is only allowed to be set once" );
+				}
