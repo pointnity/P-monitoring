@@ -10,3 +10,7 @@ Import  com.xiaoleilu.hutool.util.RandomUtil ;
  * @author tanyaowu 
  *  
  */
+Public  class  Uuid  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( Uuid . class );
+
+	/**
