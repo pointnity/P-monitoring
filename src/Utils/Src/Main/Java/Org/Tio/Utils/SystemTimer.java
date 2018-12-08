@@ -23,3 +23,5 @@ Public  class  SystemTimer  {
 		Public  Thread  newThread ( Runnable  runnable )  {
 			Thread  thread  =  new  Thread ( runnable ,  "SystemTimer" );
 			Thread . setDaemon ( true );
+			Return  thread ;
+		}
