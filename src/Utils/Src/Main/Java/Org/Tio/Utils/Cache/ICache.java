@@ -51,3 +51,5 @@ Public  interface  ICache  {
 	/**
 	 * Delete a key
 	 * @param key
+	 * @return
+	 * @author tanyaowu
