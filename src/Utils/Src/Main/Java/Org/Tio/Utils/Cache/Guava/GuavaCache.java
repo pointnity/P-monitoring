@@ -96,3 +96,10 @@ Public  class  GuavaCache  implements  ICache  {
 	@Override
 	Public  void  put ( String  key ,  Serializable  value )  {
 		If  ( StringUtils . isBlank ( key ))  {
+			Return ;
+		}
+		loadCache . put ( key ,  value );
+	}
+
+	@Override
+	Public  void  remove ( St
