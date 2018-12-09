@@ -92,3 +92,7 @@ Public  class  GuavaCache  implements  ICache  {
 		ConcurrentMap < String ,  Serializable >  map  =  loadingCache . asMap ();
 		Return  map . keySet ();
 	}
+
+	@Override
+	Public  void  put ( String  key ,  Serializable  value )  {
+		If  ( StringUtils . isBlank ( key ))  {
