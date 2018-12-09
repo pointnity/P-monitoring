@@ -49,3 +49,5 @@ Public  interface  ICache  {
 	Public  void  put ( String  key ,  Serializable  value );
 
 	/**
+	 * Delete a key
+	 * @param key
