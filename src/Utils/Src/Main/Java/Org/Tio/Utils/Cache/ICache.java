@@ -10,3 +10,5 @@ Import  java.util.Collection ;
 Public  interface  ICache  {
 
 	/**
+	 *
+	 * Clear all caches
