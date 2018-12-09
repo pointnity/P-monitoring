@@ -56,3 +56,7 @@ Public  class  GuavaCache  implements  ICache  {
 					Integer  initialCapacity  =  10 ;
 					Integer  maximumSize  =  1000000000 ;
 					Boolean  recordStats  =  false ;
+					LoadingCache < String ,  the Serializable >  loadingCache  =  GuavaUtils . CreateLoadingCache ( concurrencyLevel ,  timeToLiveSeconds ,  timeToIdleSeconds ,  initialCapacity ,
+							maximumSize ,  recordStats ,  removalListener );
+					guavaCache  =  new  GuavaCache ( loadingCache );
+					Map . put ( cacheName ,  guavaCache );
