@@ -22,3 +22,6 @@ Public  interface  ICache  {
 	 * @return
 	 * @author tanyaowu
 	 */
+	Public  Serializable  get ( String  key );
+	
+	/**
