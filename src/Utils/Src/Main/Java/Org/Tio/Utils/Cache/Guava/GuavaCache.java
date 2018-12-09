@@ -126,3 +126,6 @@ Public  class  GuavaCache  implements  ICache  {
 	Public  long  size ()  {
 		Return  loadingCache . size ();
 	}
+
+	@SuppressWarnings ( "unchecked" )
+	@Override
