@@ -44,3 +44,7 @@ Public  class  GuavaCache  implements  ICache  {
 	Public  static  GuavaCache  register ( String  cacheName ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds )  {
 		GuavaCache  guavaCache  =  register ( cacheName ,  timeToLiveSeconds ,  timeToIdleSeconds ,  null );
 		Return  guavaCache ;
+	}
+
+	Public  static  GuavaCache  register ( String  cacheName ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds ,  RemovalListener < String ,  Serializable >  removalListener )  {
+		GuavaCache  guavaCache  =  map . get ( cacheName );
