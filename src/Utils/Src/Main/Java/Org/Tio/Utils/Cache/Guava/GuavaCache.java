@@ -40,3 +40,7 @@ Public  class  GuavaCache  implements  ICache  {
 	 * @param timeToIdleSeconds
 	 * @return
 	 * @author tanyaowu
+	 */
+	Public  static  GuavaCache  register ( String  cacheName ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds )  {
+		GuavaCache  guavaCache  =  register ( cacheName ,  timeToLiveSeconds ,  timeToIdleSeconds ,  null );
+		Return  guavaCache ;
