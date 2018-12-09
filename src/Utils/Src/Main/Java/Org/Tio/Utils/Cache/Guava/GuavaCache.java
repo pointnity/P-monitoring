@@ -28,3 +28,5 @@ Public  class  GuavaCache  implements  ICache  {
 	Public  static  GuavaCache  getCache ( String  cacheName )  {
 		GuavaCache  guavaCache  =  map . get ( cacheName );
 		If  ( guavaCache  ==  null )  {
+			Log . error ( "cacheName[{}] has not been registered yet, please call: {}.register(cacheName, timeToLiveSeconds, timeToIdleSeconds)" ,  cacheName ,  GuavaCache . class . getSimpleName ());
+		}
