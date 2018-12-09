@@ -12,3 +12,6 @@ Public  interface  ICache  {
 	/**
 	 *
 	 * Clear all caches
+	 * @author tanyaowu
+	 */
+	Void  clear ();
