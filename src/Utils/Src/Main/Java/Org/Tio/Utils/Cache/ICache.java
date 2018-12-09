@@ -25,3 +25,6 @@ Public  interface  ICache  {
 	Public  Serializable  get ( String  key );
 	
 	/**
+	 * Get value based on key
+	 * @param key
+	 * @param clazz
