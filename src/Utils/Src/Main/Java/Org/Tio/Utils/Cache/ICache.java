@@ -41,3 +41,6 @@ Public  interface  ICache  {
 	Collection < String >  keys ();
 
 	/**
+	 * Save the key value to the cache
+	 * @param key
+	 * @param value
