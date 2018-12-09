@@ -31,3 +31,6 @@ Public  interface  ICache  {
 	 * @return
 	 * @author: tanyaowu
 	 */
+	Public  < T >  T  get ( String  key ,  Class < T >  clazz );
+
+	/**
