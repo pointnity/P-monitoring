@@ -15,3 +15,7 @@ Public  interface  ICache  {
 	 * @author tanyaowu
 	 */
 	Void  clear ();
+
+	/**
+	 * Get value based on key
+	 * @param key
