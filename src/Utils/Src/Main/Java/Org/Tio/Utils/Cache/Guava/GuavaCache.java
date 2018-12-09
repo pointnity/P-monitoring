@@ -52,3 +52,7 @@ Public  class  GuavaCache  implements  ICache  {
 			Synchronized  ( GuavaCache . class )  {
 				guavaCache  =  map . get ( cacheName );
 				If  ( guavaCache  ==  null )  {
+					Integer  concurrencyLevel  =  8 ;
+					Integer  initialCapacity  =  10 ;
+					Integer  maximumSize  =  1000000000 ;
+					Boolean  recordStats  =  false ;
