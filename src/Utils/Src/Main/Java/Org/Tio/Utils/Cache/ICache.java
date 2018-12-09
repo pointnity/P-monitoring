@@ -44,3 +44,8 @@ Public  interface  ICache  {
 	 * Save the key value to the cache
 	 * @param key
 	 * @param value
+	 * @author tanyaowu
+	 */
+	Public  void  put ( String  key ,  Serializable  value );
+
+	/**
