@@ -103,3 +103,8 @@ Public  class  GuavaCache  implements  ICache  {
 
 	@Override
 	Public  void  remove ( St
+		If  ( StringUtils . isBlank ( key ))  {
+			Return ;
+		}
+		loadingCache . invalidate ( key );
+	}
