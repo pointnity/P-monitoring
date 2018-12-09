@@ -38,3 +38,5 @@ Public  class  GuavaCache  implements  ICache  {
 	 * @param cacheName
 	 * @param timeToLiveSeconds
 	 * @param timeToIdleSeconds
+	 * @return
+	 * @author tanyaowu
