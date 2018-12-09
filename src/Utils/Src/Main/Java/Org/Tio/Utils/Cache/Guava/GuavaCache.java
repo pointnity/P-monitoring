@@ -114,3 +114,8 @@ Public  class  GuavaCache  implements  ICache  {
 	 * @return
 	 * @author: tanyaowu
 	 */
+	Public  ConcurrentMap < String ,  Serializable >  asMap ()  {
+		Return  loadingCache . asMap ();
+	}
+	
+	/**
