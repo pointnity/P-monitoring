@@ -27,3 +27,4 @@ Public  class  GuavaCache  implements  ICache  {
 
 	Public  static  GuavaCache  getCache ( String  cacheName )  {
 		GuavaCache  guavaCache  =  map . get ( cacheName );
+		If  ( guavaCache  ==  null )  {
