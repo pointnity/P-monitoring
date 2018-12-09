@@ -19,3 +19,5 @@ Import  com.google.common.cache.RemovalListener ;
  *
  * @author tanyaowu
  *  
+ */
+Public  class  GuavaCache  implements  ICache  {
