@@ -60,3 +60,8 @@ Public  class  GuavaCache  implements  ICache  {
 							maximumSize ,  recordStats ,  removalListener );
 					guavaCache  =  new  GuavaCache ( loadingCache );
 					Map . put ( cacheName ,  guavaCache );
+				}
+			}
+		}
+		Return  guavaCache ;
+	}
