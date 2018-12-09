@@ -19,3 +19,6 @@ Public  interface  ICache  {
 	/**
 	 * Get value based on key
 	 * @param key
+	 * @return
+	 * @author tanyaowu
+	 */
