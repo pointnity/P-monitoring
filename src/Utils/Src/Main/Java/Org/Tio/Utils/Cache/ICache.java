@@ -28,3 +28,6 @@ Public  interface  ICache  {
 	 * Get value based on key
 	 * @param key
 	 * @param clazz
+	 * @return
+	 * @author: tanyaowu
+	 */
