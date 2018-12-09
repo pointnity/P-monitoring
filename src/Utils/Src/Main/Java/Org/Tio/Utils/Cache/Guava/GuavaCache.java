@@ -21,3 +21,6 @@ Import  com.google.common.cache.RemovalListener ;
  *  
  */
 Public  class  GuavaCache  implements  ICache  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( GuavaCache . class );
+
+	Public  static  Map < String ,  GuavaCache >  map  =  new  HashMap <>();
