@@ -24,3 +24,6 @@ Public  class  GuavaCache  implements  ICache  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( GuavaCache . class );
 
 	Public  static  Map < String ,  GuavaCache >  map  =  new  HashMap <>();
+
+	Public  static  GuavaCache  getCache ( String  cacheName )  {
+		GuavaCache  guavaCache  =  map . get ( cacheName );
