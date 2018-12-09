@@ -72,3 +72,9 @@ Public  class  GuavaCache  implements  ICache  {
 
 	Private  GuavaCache ( LoadingCache < String ,  Serializable >  loadingCache )  {
 		the this . loadingCache  =  loadingCache ;
+	}
+
+	@Override
+	Public  void  clear ()  {
+		loadingCache . invalidateAll ();
+	}
