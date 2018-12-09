@@ -30,3 +30,5 @@ Public  class  GuavaCache  implements  ICache  {
 		If  ( guavaCache  ==  null )  {
 			Log . error ( "cacheName[{}] has not been registered yet, please call: {}.register(cacheName, timeToLiveSeconds, timeToIdleSeconds)" ,  cacheName ,  GuavaCache . class . getSimpleName ());
 		}
+		Return  guavaCache ;
+	}
