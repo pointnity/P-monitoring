@@ -78,3 +78,11 @@ Public  class  GuavaCache  implements  ICache  {
 	Public  void  clear ()  {
 		loadingCache . invalidateAll ();
 	}
+
+	@Override
+	Public  Serializable  get ( String  key )  {
+		If  ( StringUtils . isBlank ( key ))  {
+			Return  null ;
+		}
+		Return  loadingCache . getIfPresent ( key );
+	}
