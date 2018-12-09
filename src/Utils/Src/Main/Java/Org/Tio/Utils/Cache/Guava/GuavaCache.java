@@ -119,3 +119,7 @@ Public  class  GuavaCache  implements  ICache  {
 	}
 	
 	/**
+	 * 
+	 * @return
+	 * @author: tanyaowu
+	 */
