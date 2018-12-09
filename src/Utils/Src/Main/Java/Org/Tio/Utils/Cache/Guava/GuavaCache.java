@@ -65,3 +65,10 @@ Public  class  GuavaCache  implements  ICache  {
 		}
 		Return  guavaCache ;
 	}
+
+	//
+
+	Private  LoadingCache < String ,  Serializable >  loadingCache  =  null ;
+
+	Private  GuavaCache ( LoadingCache < String ,  Serializable >  loadingCache )  {
+		the this . loadingCache  =  loadingCache ;
