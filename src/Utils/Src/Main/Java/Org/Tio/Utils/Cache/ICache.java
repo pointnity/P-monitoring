@@ -53,3 +53,6 @@ Public  interface  ICache  {
 	 * @param key
 	 * @return
 	 * @author tanyaowu
+	 */
+	Public  void  remove ( String  key );
+}
