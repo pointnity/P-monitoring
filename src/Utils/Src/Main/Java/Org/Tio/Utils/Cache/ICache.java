@@ -34,3 +34,7 @@ Public  interface  ICache  {
 	Public  < T >  T  get ( String  key ,  Class < T >  clazz );
 
 	/**
+	 * Get all the keys
+	 * @return
+	 * @author tanyaowu
+	 */
