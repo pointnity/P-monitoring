@@ -36,3 +36,5 @@ Public  class  GuavaCache  implements  ICache  {
 	/**
 	 * timeToLiveSeconds and timeToIdleSeconds are not allowed to be null at the same time
 	 * @param cacheName
+	 * @param timeToLiveSeconds
+	 * @param timeToIdleSeconds
