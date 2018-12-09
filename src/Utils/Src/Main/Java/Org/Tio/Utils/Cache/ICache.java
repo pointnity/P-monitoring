@@ -7,3 +7,6 @@ Import  java.util.Collection ;
  * @author tanyaowu
  *  
  */
+Public  interface  ICache  {
+
+	/**
