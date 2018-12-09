@@ -86,3 +86,9 @@ Public  class  GuavaCache  implements  ICache  {
 		}
 		Return  loadingCache . getIfPresent ( key );
 	}
+
+	@Override
+	Public  Collection < String >  keys ()  {
+		ConcurrentMap < String ,  Serializable >  map  =  loadingCache . asMap ();
+		Return  map . keySet ();
+	}
