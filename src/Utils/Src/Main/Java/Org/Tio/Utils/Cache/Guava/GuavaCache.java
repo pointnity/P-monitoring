@@ -108,3 +108,9 @@ Public  class  GuavaCache  implements  ICache  {
 		}
 		loadingCache . invalidate ( key );
 	}
+
+	/**
+	 * 
+	 * @return
+	 * @author: tanyaowu
+	 */
