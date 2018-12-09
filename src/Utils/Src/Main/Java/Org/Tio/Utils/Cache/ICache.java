@@ -38,3 +38,6 @@ Public  interface  ICache  {
 	 * @return
 	 * @author tanyaowu
 	 */
+	Collection < String >  keys ();
+
+	/**
