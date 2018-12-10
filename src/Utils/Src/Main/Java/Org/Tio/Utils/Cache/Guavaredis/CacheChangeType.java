@@ -29,3 +29,5 @@ Public  enum  CacheChangeType  {
 		CacheChangeType []  values  =  CacheChangeType . values ();
 		For  ( CacheChangeType  v  :  values )  {
 			If  ( Objects . equals ( v . value ,  method ))  {
+				Return  v ;
+			}
