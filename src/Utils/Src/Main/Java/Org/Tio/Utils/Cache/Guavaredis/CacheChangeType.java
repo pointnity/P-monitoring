@@ -8,3 +8,6 @@ Import  java.util.Objects ;
  *  
  */
 Public  enum  CacheChangeType  {
+	/**
+	 * key level clear local cache
+	 */
