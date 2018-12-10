@@ -31,3 +31,8 @@ Public  enum  CacheChangeType  {
 			If  ( Objects . equals ( v . value ,  method ))  {
 				Return  v ;
 			}
+		}
+		Return  null ;
+	}
+
+	Integer  value ;
