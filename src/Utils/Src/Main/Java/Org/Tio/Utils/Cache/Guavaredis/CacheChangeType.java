@@ -21,3 +21,5 @@ Public  enum  CacheChangeType  {
 	 */
 	PUT ( 3 ),
 	/**
+	 * cacheName level clears the local cache
+	 */
