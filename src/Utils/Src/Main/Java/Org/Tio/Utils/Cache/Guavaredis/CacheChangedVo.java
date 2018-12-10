@@ -41,3 +41,8 @@ Public  class  CacheChangedVo  implements  Serializable  {
 
 	/**
 	 * @param cacheName
+	 * @param type
+	 * @author tanyaowu
+	 */
+	Public  CacheChangedVo ( String  cacheName ,  CacheChangeType  type )  {
+		This ();
