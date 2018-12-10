@@ -36,3 +36,8 @@ Public  enum  CacheChangeType  {
 	}
 
 	Integer  value ;
+
+	Private  CacheChangeType ( Integer  value )  {
+		the this . value  =  value ;
+	}
+}
