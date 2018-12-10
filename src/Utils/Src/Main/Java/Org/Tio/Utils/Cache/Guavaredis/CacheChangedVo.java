@@ -60,3 +60,9 @@ Public  class  CacheChangedVo  implements  Serializable  {
 		This ();
 		the this . CacheName  =  CacheName ;
 		the this . Key  =  Key ;
+		the this . type  =  type ;
+	}
+
+	/**
+	 * @return the cacheName
+	 */
