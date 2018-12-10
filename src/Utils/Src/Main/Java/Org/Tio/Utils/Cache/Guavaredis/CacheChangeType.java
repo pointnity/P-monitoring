@@ -15,3 +15,5 @@ Public  enum  CacheChangeType  {
 	/**
 	 * key level clear local cache
 	 */
+	UPDATE ( 2 ),
+	/**
