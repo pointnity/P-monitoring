@@ -66,3 +66,12 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	/**
 	 * @return the cacheName
 	 */
+	Public  String  getCacheName ()  {
+		Return  cacheName ;
+	}
+
+	/**
+	 * @return the clientId
+	 */
+	Public  String  getClientId ()  {
+		Return  clientId ;
