@@ -14,3 +14,6 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	Public  static  final  String  CLIENTID  =  UUID . randomUUID (). toString ();
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
