@@ -7,3 +7,4 @@ Import  java.util.UUID ;
  * @author tanyaowu
  *  
  */
+Public  class  CacheChangedVo  implements  Serializable  {
