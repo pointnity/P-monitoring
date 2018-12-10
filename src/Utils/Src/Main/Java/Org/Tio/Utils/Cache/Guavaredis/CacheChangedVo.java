@@ -101,3 +101,5 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	/**
 	 * @param clientId the clientId to set
 	 */
+	Public  void  setClientId ( String  clientId )  {
+		the this . clientId  =  clientId ;
