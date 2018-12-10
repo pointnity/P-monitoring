@@ -94,3 +94,8 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	/**
 	 * @param cacheName the cacheName to set
 	 */
+	Public  void  setCacheName ( String  cacheName )  {
+		the this . CacheName  =  CacheName ;
+	}
+
+	/**
