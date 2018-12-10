@@ -75,3 +75,15 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	 */
 	Public  String  getClientId ()  {
 		Return  clientId ;
+	}
+
+	/**
+	 * @return the key
+	 */
+	Public  String  getKey ()  {
+		Return  key ;
+	}
+
+	/**
+	 * @return the type
+	 */
