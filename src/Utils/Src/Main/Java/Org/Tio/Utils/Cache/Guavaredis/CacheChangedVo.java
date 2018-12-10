@@ -11,3 +11,6 @@ Public  class  CacheChangedVo  implements  Serializable  {
 
 	Private  static  final  long  serialVersionUID  =  1546804469064012259L ;
 
+	Public  static  final  String  CLIENTID  =  UUID . randomUUID (). toString ();
+
+	/**
