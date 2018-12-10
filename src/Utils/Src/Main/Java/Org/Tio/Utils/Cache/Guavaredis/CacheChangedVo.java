@@ -87,3 +87,10 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	/**
 	 * @return the type
 	 */
+	Public  CacheChangeType  getType ()  {
+		Return  type ;
+	}
+
+	/**
+	 * @param cacheName the cacheName to set
+	 */
