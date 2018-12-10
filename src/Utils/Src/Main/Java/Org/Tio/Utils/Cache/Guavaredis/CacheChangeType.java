@@ -23,3 +23,6 @@ Public  enum  CacheChangeType  {
 	/**
 	 * cacheName level clears the local cache
 	 */
+	CLEAR ( 4 );
+
+	Public  static  CacheChangeType  from ( Integer  method )  {
