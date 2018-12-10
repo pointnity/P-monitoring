@@ -27,3 +27,4 @@ Public  enum  CacheChangeType  {
 
 	Public  static  CacheChangeType  from ( Integer  method )  {
 		CacheChangeType []  values  =  CacheChangeType . values ();
+		For  ( CacheChangeType  v  :  values )  {
