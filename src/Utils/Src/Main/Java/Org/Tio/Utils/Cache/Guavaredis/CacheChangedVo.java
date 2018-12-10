@@ -108,3 +108,5 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	/**
 	 * @param key the key to set
 	 */
+	Public  void  setKey ( String  key )  {
+		the this . Key  =  Key ;
