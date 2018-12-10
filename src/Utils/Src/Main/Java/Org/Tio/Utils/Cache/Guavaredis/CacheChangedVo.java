@@ -112,3 +112,7 @@ Public  class  CacheChangedVo  implements  Serializable  {
 		the this . Key  =  Key ;
 	 * @param type the type to set
 	 */
+	public  void  setType ( CacheChangeType  type )  {
+		the this . type  =  type ;
+	}
+}
