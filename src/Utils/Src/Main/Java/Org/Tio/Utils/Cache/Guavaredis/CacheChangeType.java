@@ -26,3 +26,4 @@ Public  enum  CacheChangeType  {
 	CLEAR ( 4 );
 
 	Public  static  CacheChangeType  from ( Integer  method )  {
+		CacheChangeType []  values  =  CacheChangeType . values ();
