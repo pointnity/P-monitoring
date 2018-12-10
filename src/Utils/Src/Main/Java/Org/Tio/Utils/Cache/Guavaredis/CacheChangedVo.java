@@ -28,3 +28,8 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	Private  String  clientId  =  CLIENTID ;
 
 	Private  CacheChangeType  type ;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
