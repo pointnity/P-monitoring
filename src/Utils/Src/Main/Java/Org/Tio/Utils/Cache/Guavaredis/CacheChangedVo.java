@@ -33,3 +33,4 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	 *
 	 * @author tanyaowu
 	 */
+	Public  CacheChangedVo ()  {
