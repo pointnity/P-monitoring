@@ -51,3 +51,6 @@ Public  class  CacheChangedVo  implements  Serializable  {
 	}
 
 	/**
+	 * @param cacheName
+	 * @param key
+	 * @param type
