@@ -140,3 +140,5 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	 * @param redisCache
 	 * @author tanyaowu
 	 */
+	Public  GuavaRedisCache ( String  cacheName ,  GuavaCache  guavaCache ,  RedisCache  redisCache )  {
+		Super ();
