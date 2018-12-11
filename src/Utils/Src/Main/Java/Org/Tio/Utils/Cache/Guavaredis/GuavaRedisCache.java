@@ -204,3 +204,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	Public  void  put ( String  key ,  Serializable  value )  {
 		guavaCache . put ( key ,  value );
 		redisCache . put ( key ,  value );
+
+		CacheChangedVo  cacheChangedVo  =  new  CacheChangedVo ( cacheName ,  key ,  CacheChangeType . PUT );
+		Topic . publish ( cacheChangedVo );
+	}
