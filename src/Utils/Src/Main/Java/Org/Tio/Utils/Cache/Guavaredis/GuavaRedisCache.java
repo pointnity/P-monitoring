@@ -155,3 +155,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	Public  void  clear ()  {
 		guavaCache . clear ();
 		redisCache . clear ();
+
+		CacheChangedVo  cacheChangedVo  =  new  CacheChangedVo ( cacheName ,  CacheChangeType . CLEAR );
+		Topic . publish ( cacheChangedVo );
+	}
