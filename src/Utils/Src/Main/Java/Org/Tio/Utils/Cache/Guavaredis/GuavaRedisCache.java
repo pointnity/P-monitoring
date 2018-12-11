@@ -73,3 +73,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 							CacheChangeType  type  =  cacheChangedVo . getType ();
 							If  ( type  ==  CacheChangeType . PUT  ||  type  ==  CacheChangeType . UPDATE  ||  type  ==  CacheChangeType . REMOVE )  {
 								String  key  =  cacheChangedVo . getKey ();
+								guavaRedisCache . guavaCache . remove ( key );
+							}  else  if  ( type  ==  CacheChangeType . CLEAR )  {
+								guavaRedisCache . guavaCache . clear ();
