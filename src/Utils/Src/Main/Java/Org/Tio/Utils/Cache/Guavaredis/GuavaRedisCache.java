@@ -221,3 +221,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		
 		guavaCache . remove ( key );
 		redisCache . remove ( key );
+
+		CacheChangedVo  cacheChangedVo  =  new  CacheChangedVo ( cacheName ,  key ,  CacheChangeType . REMOVE );
+		Topic . publish ( cacheChangedVo );
+	}
