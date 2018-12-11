@@ -100,3 +100,4 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		If  ( guavaRedisCache  ==  null )  {
 			Synchronized  ( GuavaRedisCache . class )  {
 				guavaRedisCache  =  map . get ( cacheName );
+				If  ( guavaRedisCache  ==  null )  {
