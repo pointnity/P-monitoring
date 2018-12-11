@@ -212,3 +212,8 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	/**
 	 * @param key
 	 * @author tanyaowu
+	 */
+	@Override
+	Public  void  remove ( String  key )  {
+		If  ( StringUtils . isBlank ( key ))  {
+			Return ;
