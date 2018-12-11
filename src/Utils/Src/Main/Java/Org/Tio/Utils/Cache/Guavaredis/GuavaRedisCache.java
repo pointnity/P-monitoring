@@ -51,3 +51,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 				If  (! inited )  {
 					Topic  =  redisson . getTopic ( CACHE_CHANGE_TOPIC );
 					Topic . the addListener ( new new  the MessageListener < CacheChangedVo > ()  {
+						@Override
+						Public  void  onMessage ( String  channel ,  CacheChangedVo  cacheChangedVo )  {
+							String  clientid  =  cacheChangedVo . getClientId ();
+							If  ( StringUtils . isBlank ( clientid ))  {
