@@ -13,3 +13,5 @@ Import  org.redisson.api.listener.MessageListener ;
 Import  org.slf4j.Logger ;
 Import  org.slf4j.LoggerFactory ;
 Import  org.tio.utils.cache.ICache ;
+Import  org.tio.utils.cache.guava.GuavaCache ;
+Import  org.tio.utils.cache.redis.RedisCache ;
