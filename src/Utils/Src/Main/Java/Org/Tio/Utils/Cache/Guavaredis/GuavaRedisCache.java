@@ -119,3 +119,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 				}
 			}
 		}
+		Return  guavaRedisCache ;
+	}
+
+	GuavaCache  guavaCache ;
