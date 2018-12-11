@@ -136,3 +136,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	}
 
 	/**
+	 * @param guavaCache
+	 * @param redisCache
+	 * @author tanyaowu
+	 */
