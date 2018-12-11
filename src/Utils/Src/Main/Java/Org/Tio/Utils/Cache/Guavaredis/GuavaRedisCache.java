@@ -79,3 +79,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 							}
 						}
 					});
+					Inited  =  true ;
+				}
+			}
