@@ -38,3 +38,5 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	Private  static  boolean  inited  =  false ;
 
 	Public  static  GuavaRedisCache  getCache ( String  cacheName )  {
+		GuavaRedisCache  guavaRedisCache  =  map . get ( cacheName );
+		If  ( guavaRedisCache  ==  null )  {
