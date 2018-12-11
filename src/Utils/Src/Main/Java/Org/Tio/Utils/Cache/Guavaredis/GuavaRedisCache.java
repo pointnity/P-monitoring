@@ -64,3 +64,5 @@ Public  class  GuavaRedisCache  implements  ICache  {
 							}
 
 							String  cacheName  =  cacheChangedVo . getCacheName ();
+							GuavaRedisCache  guavaRedisCache  =  GuavaRedisCache . getCache ( cacheName );
+							If  ( guavaRedisCache  ==  null )  {
