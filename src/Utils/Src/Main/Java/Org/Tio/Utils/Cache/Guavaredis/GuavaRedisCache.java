@@ -225,3 +225,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		CacheChangedVo  cacheChangedVo  =  new  CacheChangedVo ( cacheName ,  key ,  CacheChangeType . REMOVE );
 		Topic . publish ( cacheChangedVo );
 	}
+	
+	@SuppressWarnings ( "unchecked" )
+	@Override
