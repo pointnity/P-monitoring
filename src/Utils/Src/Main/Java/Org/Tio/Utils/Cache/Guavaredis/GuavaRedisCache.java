@@ -142,3 +142,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	 */
 	Public  GuavaRedisCache ( String  cacheName ,  GuavaCache  guavaCache ,  RedisCache  redisCache )  {
 		Super ();
+		the this . CacheName  =  CacheName ;
+		the this . guavaCache  =  guavaCache ;
+		the this . redisCache  =  redisCache ;
