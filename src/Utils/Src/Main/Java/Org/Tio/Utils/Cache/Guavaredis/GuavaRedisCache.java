@@ -68,3 +68,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 							If  ( guavaRedisCache  ==  null )  {
 								Log . warn ( "Cannot find GuavaRedisCache object based on cacheName[{}]" ,  cacheName );
 								Return ;
+							}
+
+							CacheChangeType  type  =  cacheChangedVo . getType ();
