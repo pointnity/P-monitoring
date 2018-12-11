@@ -76,3 +76,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 								guavaRedisCache . guavaCache . remove ( key );
 							}  else  if  ( type  ==  CacheChangeType . CLEAR )  {
 								guavaRedisCache . guavaCache . clear ();
+							}
+						}
+					});
