@@ -21,3 +21,6 @@ Import  org.tio.utils.cache.redis.RedisExpireUpdateTask ;
  * @author tanyaowu
  *  
  */
+Public  class  GuavaRedisCache  implements  ICache  {
+
+	Public  static  final  String  CACHE_CHANGE_TOPIC  =  "TIO_CACHE_CHANGE_TOPIC" ;
