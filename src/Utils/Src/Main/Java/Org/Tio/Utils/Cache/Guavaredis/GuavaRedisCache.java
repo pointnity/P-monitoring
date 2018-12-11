@@ -164,3 +164,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	 * @param key
 	 * @return
 	 * @author tanyaowu
+	 */
+	@Override
+	Public  Serializable  get ( String  key )  {
+		If  ( StringUtils . isBlank ( key ))  {
