@@ -208,3 +208,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		CacheChangedVo  cacheChangedVo  =  new  CacheChangedVo ( cacheName ,  key ,  CacheChangeType . PUT );
 		Topic . publish ( cacheChangedVo );
 	}
+
+	/**
+	 * @param key
+	 * @author tanyaowu
