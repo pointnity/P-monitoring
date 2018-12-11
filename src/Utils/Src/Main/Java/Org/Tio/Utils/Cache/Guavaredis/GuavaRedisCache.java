@@ -150,3 +150,8 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	/**
 	 *
 	 * @author tanyaowu
+	 */
+	@Override
+	Public  void  clear ()  {
+		guavaCache . clear ();
+		redisCache . clear ();
