@@ -34,3 +34,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	Public  static  int  MAX_EXPIRE_IN_LOCAL  =  1800 ;
 
 	Static  RTopic < CacheChangedVo >  topic ;
+
+	Private  static  boolean  inited  =  false ;
+
+	Public  static  GuavaRedisCache  getCache ( String  cacheName )  {
