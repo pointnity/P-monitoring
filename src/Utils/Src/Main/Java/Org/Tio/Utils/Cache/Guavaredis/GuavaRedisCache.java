@@ -44,3 +44,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		}
 		Return  guavaRedisCache ;
 	}
+
+	Private  static  void  init ( RedissonClient  redisson )  {
+		If  (! inited )  {
