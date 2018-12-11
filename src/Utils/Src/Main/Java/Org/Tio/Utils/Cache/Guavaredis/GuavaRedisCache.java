@@ -104,3 +104,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 					RedisCache  redisCache  =  RedisCache . register ( redisson ,  cacheName ,  timeToLiveSeconds ,  timeToIdleSeconds );
 					
 					Long  timeToLiveSecondsForGuava  =  timeToLiveSeconds ;
+					Long  timeToIdleSecondsForGuava  =  timeToIdleSeconds ;
+					
+					If  ( timeToLiveSecondsForGuava  !=  null )  {
