@@ -200,3 +200,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	 * @param value
 	 * @author tanyaowu
 	 */
+	@Override
+	Public  void  put ( String  key ,  Serializable  value )  {
+		guavaCache . put ( key ,  value );
+		redisCache . put ( key ,  value );
