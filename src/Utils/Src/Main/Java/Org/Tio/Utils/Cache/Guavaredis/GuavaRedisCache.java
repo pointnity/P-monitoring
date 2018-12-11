@@ -29,3 +29,5 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	Public  static  Map < String ,  GuavaRedisCache >  map  =  new  HashMap <>();
 	
 	/**
+	 * The maximum expiration time in the local, this can prevent the memory from bursting, the unit: seconds
+	 */
