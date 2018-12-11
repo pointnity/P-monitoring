@@ -58,3 +58,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 								Log . error ( "clientid is null" );
 								Return ;
 							}
+							If  ( Objects . equals ( CacheChangedVo . CLIENTID ,  clientid ))  {
+								Log . info ( "self-published message, {}" ,  clientid );
+								Return ;
