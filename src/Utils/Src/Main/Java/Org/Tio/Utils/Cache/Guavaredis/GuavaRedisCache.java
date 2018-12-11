@@ -61,3 +61,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 							If  ( Objects . equals ( CacheChangedVo . CLIENTID ,  clientid ))  {
 								Log . info ( "self-published message, {}" ,  clientid );
 								Return ;
+							}
+
+							String  cacheName  =  cacheChangedVo . getCacheName ();
