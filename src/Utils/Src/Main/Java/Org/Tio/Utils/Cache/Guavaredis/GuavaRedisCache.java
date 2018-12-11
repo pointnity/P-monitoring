@@ -31,3 +31,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	/**
 	 * The maximum expiration time in the local, this can prevent the memory from bursting, the unit: seconds
 	 */
+	Public  static  int  MAX_EXPIRE_IN_LOCAL  =  1800 ;
+
+	Static  RTopic < CacheChangedVo >  topic ;
