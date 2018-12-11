@@ -49,3 +49,5 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		If  (! inited )  {
 			Synchronized  ( GuavaRedisCache . class )  {
 				If  (! inited )  {
+					Topic  =  redisson . getTopic ( CACHE_CHANGE_TOPIC );
+					Topic . the addListener ( new new  the MessageListener < CacheChangedVo > ()  {
