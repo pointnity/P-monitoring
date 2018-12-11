@@ -188,3 +188,9 @@ Public  class  GuavaRedisCache  implements  ICache  {
 
 	/**
 	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
+	Public  Collection < String >  keys ()  {
+		Return  redisCache . keys ();
+	}
