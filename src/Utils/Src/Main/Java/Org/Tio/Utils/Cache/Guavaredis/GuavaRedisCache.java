@@ -89,3 +89,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	 * @param args
 	 * @author tanyaowu
 	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
