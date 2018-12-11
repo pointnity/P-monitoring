@@ -178,3 +178,5 @@ Public  class  GuavaRedisCache  implements  ICache  {
 				guavaCache . put ( key ,  ret );
 			}
 		}  else  {
+			Long  timeToIdleSeconds  =  redisCache . getTimeToIdleSeconds ();
+			If  ( timeToIdleSeconds  !=  null )  {
