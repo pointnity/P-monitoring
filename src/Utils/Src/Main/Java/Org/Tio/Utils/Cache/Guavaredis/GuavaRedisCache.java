@@ -42,3 +42,5 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		If  ( guavaRedisCache  ==  null )  {
 			Log . error ( "cacheName[{}] is not registered yet, please call when initialized: {}.register(cacheName, timeToLiveSeconds, timeToIdleSeconds)" ,  cacheName ,  GuavaRedisCache . class . getSimpleName ());
 		}
+		Return  guavaRedisCache ;
+	}
