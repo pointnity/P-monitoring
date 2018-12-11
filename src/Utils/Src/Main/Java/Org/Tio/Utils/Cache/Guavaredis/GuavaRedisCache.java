@@ -180,3 +180,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		}  else  {
 			Long  timeToIdleSeconds  =  redisCache . getTimeToIdleSeconds ();
 			If  ( timeToIdleSeconds  !=  null )  {
+				RedisExpireUpdateTask . add ( cacheName ,  key ,  timeToIdleSeconds );
+			}
+		}
