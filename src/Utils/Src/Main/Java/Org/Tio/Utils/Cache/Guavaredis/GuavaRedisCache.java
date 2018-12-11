@@ -170,3 +170,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		If  ( StringUtils . isBlank ( key ))  {
 			Return  null ;
 		}
+		
+		Serializable  ret  =  guavaCache . get ( key );
+		If  ( ret  ==  null )  {
