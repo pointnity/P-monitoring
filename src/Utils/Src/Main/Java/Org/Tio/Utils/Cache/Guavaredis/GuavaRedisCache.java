@@ -217,3 +217,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	Public  void  remove ( String  key )  {
 		If  ( StringUtils . isBlank ( key ))  {
 			Return ;
+		}
+		
+		guavaCache . remove ( key );
+		redisCache . remove ( key );
