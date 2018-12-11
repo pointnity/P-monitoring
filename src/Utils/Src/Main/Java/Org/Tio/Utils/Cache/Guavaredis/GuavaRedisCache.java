@@ -175,3 +175,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		If  ( ret  ==  null )  {
 			Ret  =  redisCache . get ( key );
 			If  ( ret  !=  null )  {
+				guavaCache . put ( key ,  ret );
+			}
+		}  else  {
