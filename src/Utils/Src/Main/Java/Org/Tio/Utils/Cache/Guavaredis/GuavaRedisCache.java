@@ -127,3 +127,8 @@ Public  class  GuavaRedisCache  implements  ICache  {
 	RedisCache  redisCache ;
 
 	String  cacheName ;
+
+	/**
+	 *
+	 * @author tanyaowu
+	 */
