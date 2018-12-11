@@ -112,3 +112,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 					If  ( timeToIdleSecondsForGuava  !=  null )  {
 						timeToIdleSecondsForGuava  =  Math . min ( timeToIdleSecondsForGuava ,  MAX_EXPIRE_IN_LOCAL );
 					}
+					GuavaCache  guavaCache  =  GuavaCache . register ( cacheName ,  timeToLiveSecondsForGuava ,  timeToIdleSecondsForGuava );
+
+					guavaRedisCache  =  new  GuavaRedisCache ( cacheName ,  guavaCache ,  redisCache );
