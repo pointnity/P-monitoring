@@ -95,3 +95,6 @@ Public  class  GuavaRedisCache  implements  ICache  {
 
 	Public  static  GuavaRedisCache  register ( RedissonClient  redisson ,  String  cacheName ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds )  {
 		Init ( redisson );
+
+		GuavaRedisCache  guavaRedisCache  =  map . get ( cacheName );
+		If  ( guavaRedisCache  ==  null )  {
