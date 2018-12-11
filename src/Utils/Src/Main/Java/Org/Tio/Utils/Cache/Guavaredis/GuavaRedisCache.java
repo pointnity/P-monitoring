@@ -115,3 +115,7 @@ Public  class  GuavaRedisCache  implements  ICache  {
 					GuavaCache  guavaCache  =  GuavaCache . register ( cacheName ,  timeToLiveSecondsForGuava ,  timeToIdleSecondsForGuava );
 
 					guavaRedisCache  =  new  GuavaRedisCache ( cacheName ,  guavaCache ,  redisCache );
+					Map . put ( cacheName ,  guavaRedisCache );
+				}
+			}
+		}
