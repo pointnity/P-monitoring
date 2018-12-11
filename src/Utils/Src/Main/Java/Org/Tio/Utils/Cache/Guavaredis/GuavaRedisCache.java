@@ -145,3 +145,8 @@ Public  class  GuavaRedisCache  implements  ICache  {
 		the this . CacheName  =  CacheName ;
 		the this . guavaCache  =  guavaCache ;
 		the this . redisCache  =  redisCache ;
+	}
+
+	/**
+	 *
+	 * @author tanyaowu
