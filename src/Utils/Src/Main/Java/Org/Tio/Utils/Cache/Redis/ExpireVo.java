@@ -77,3 +77,7 @@ Public  class  ExpireVo  {
 		Result  =  prime  *  result  +  ( cacheName  ==  null  ?  0  :  cacheName . hashCode ());
 		Result  =  prime  *  result  +  ( key  ==  null  ?  0  :  key . hashCode ());
 		Return  result ;
+	}
+
+	Public  void  setCacheName ( String  cacheName )  {
+		the this . CacheName  =  CacheName ;
