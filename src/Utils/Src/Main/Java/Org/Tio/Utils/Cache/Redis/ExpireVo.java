@@ -89,3 +89,5 @@ Public  class  ExpireVo  {
 
 	Public  void  setKey ( String  key )  {
 		the this . Key  =  Key ;
+	}
+}
