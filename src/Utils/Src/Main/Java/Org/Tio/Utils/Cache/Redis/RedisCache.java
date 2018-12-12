@@ -20,3 +20,6 @@ Import  org.tio.utils.cache.ICache ;
  * @author tanyaowu
  *  
  */
+Public  class  RedisCache  implements  ICache  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( RedisCache . class );
+	Private  static  Map < String ,  RedisCache >  map  =  new  HashMap <>();
