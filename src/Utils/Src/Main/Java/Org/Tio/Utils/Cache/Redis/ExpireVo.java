@@ -81,3 +81,7 @@ Public  class  ExpireVo  {
 
 	Public  void  setCacheName ( String  cacheName )  {
 		the this . CacheName  =  CacheName ;
+	}
+
+	Public  void  setExpire ( long  expire )  {
+		the this . The expire  =  The expire ;
