@@ -35,3 +35,5 @@ Public  class  ExpireVo  {
 	Private  long  expire ;
 
 	Public  ExpireVo ( String  cacheName ,  String  key ,  long  expire )  {
+		Super ();
+		the this . CacheName  =  CacheName ;
