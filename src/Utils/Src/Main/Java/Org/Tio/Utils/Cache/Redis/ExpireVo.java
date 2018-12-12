@@ -74,3 +74,6 @@ Public  class  ExpireVo  {
 	Public  int  hashCode ()  {
 		Final  int  prime  =  31 ;
 		Int  result  =  1 ;
+		Result  =  prime  *  result  +  ( cacheName  ==  null  ?  0  :  cacheName . hashCode ());
+		Result  =  prime  *  result  +  ( key  ==  null  ?  0  :  key . hashCode ());
+		Return  result ;
