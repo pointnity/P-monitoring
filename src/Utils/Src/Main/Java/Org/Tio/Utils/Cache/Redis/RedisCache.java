@@ -149,3 +149,9 @@ Public  class  RedisCache  implements  ICache  {
 	Public  void  put ( String  key ,  Serializable  value )  {
 		If  ( StringUtils . isBlank ( key ))  {
 			Return ;
+		}
+		RBucket < Serializable >  bucket  =  getBucket ( key );
+		Bucket . set ( value ,  timeout ,  TimeUnit . SECONDS );
+	}
+
+	@Override
