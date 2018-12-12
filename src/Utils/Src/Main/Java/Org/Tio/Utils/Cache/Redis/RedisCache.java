@@ -31,3 +31,7 @@ Public  class  RedisCache  implements  ICache  {
 	Public  static  RedisCache  getCache ( String  cacheName )  {
 		RedisCache  redisCache  =  map . get ( cacheName );
 		If  ( redisCache  ==  null )  {
+			Log . error ( "cacheName[{}] has not been registered yet, please call when initialized: {}.register(redisson, cacheName, timeToLiveSeconds, timeToIdleSeconds)" ,  cacheName ,  RedisCache . class . getSimpleName ());
+		}
+		Return  redisCache ;
+	}
