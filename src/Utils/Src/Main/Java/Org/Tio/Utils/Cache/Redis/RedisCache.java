@@ -85,3 +85,15 @@ Public  class  RedisCache  implements  ICache  {
 		the this . timeout  =  the this . timeToLiveSeconds  ==  null  ?  the this . timeToIdleSeconds  :  the this . timeToLiveSeconds ;
 
 	}
+
+	@Override
+	Public  void  clear ()  {
+		Long  start  =  SystemTimer . currentTimeMillis ();
+		
+		RKeys  keys  =  redisson . getKeys ();
+		Keys . deleteByPattern ( keyPrefix ( cacheName )  +  "*" );
+		
+		Long  end  =  SystemTimer . currentTimeMillis ();
+		Long  iv  =  end  -  start ;
+		Log . info ( "clear cache {}, cost {}ms" ,  cacheName ,  iv );
+	}
