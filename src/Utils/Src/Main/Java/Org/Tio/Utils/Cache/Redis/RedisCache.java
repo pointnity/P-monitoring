@@ -23,3 +23,7 @@ Import  org.tio.utils.cache.ICache ;
 Public  class  RedisCache  implements  ICache  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( RedisCache . class );
 	Private  static  Map < String ,  RedisCache >  map  =  new  HashMap <>();
+
+	Public  static  String  cacheKey ( String  cacheName ,  String  key )  {
+		Return  keyPrefix ( cacheName )  +  key ;
+	}
