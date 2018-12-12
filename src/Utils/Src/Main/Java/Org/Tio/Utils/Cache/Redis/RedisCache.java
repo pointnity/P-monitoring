@@ -42,3 +42,10 @@ Public  class  RedisCache  implements  ICache  {
 
 	Public  static  void  main ( String []  args )  {
 	}
+
+	/**
+	 * timeToLiveSeconds and timeToIdleSeconds are not allowed to be null at the same time
+	 * @param cacheName
+	 * @param timeToLiveSeconds
+	 * @param timeToIdleSeconds
+	 * @return
