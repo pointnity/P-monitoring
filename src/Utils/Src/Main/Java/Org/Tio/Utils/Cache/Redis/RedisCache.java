@@ -59,3 +59,8 @@ Public  class  RedisCache  implements  ICache  {
 			Synchronized  ( RedisCache . class )  {
 				redisCache  =  map . get ( cacheName );
 				If  ( redisCache  ==  null )  {
+					redisCache  =  new  RedisCache ( redisson ,  cacheName ,  timeToLiveSeconds ,  timeToIdleSeconds );
+					Map . put ( cacheName ,  redisCache );
+				}
+			}
+		}
