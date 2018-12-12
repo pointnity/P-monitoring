@@ -80,3 +80,8 @@ Public  class  RedisCache  implements  ICache  {
 	Private  RedisCache ( RedissonClient  redisson ,  String  cacheName ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds )  {
 		the this . redisson  =  redisson ;
 		the this . CacheName  =  CacheName ;
+		the this . timeToLiveSeconds  =  timeToLiveSeconds ;
+		the this . timeToIdleSeconds  =  timeToIdleSeconds ;
+		the this . timeout  =  the this . timeToLiveSeconds  ==  null  ?  the this . timeToIdleSeconds  :  the this . timeToLiveSeconds ;
+
+	}
