@@ -48,3 +48,5 @@ Public  class  ExpireVo  {
 			Return  true ;
 		}
 		If  ( obj  ==  null )  {
+			Return  false ;
+		}
