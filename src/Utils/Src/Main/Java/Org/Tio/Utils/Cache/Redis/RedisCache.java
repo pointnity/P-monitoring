@@ -106,3 +106,11 @@ Public  class  RedisCache  implements  ICache  {
 		RBucket < Serializable >  bucket  =  getBucket ( key );
 		Serializable  ret  =  bucket . get ();
 		If  ( timeToIdleSeconds  !=  null )  {
+			// bucket.expire(timeout, TimeUnit.SECONDS);
+			RedisExpireUpdateTask . add ( cacheName ,  key ,  timeout );
+		}
+		Return  ret ;
+	}
+
+	Public  RBucket < Serializable >  getBucket ( String  key )  {
+		Key  =  cacheKey ( cacheName ,  key );
