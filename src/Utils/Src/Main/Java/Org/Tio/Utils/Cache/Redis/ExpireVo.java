@@ -54,3 +54,6 @@ Public  class  ExpireVo  {
 			Return  false ;
 		}
 		ExpireVo  other  =  ( ExpireVo )  obj ;
+
+		Return  Objects . equals ( cacheName ,  other . cacheName )  &&  Objects . equals ( key ,  other . key );
+	}
