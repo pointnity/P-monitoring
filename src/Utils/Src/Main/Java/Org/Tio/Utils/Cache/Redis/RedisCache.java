@@ -165,3 +165,7 @@ Public  class  RedisCache  implements  ICache  {
 	
 	@SuppressWarnings ( "unchecked" )
 	@Override
+	Public  < T >  T  get ( String  key ,  Class < T >  clazz )  {
+		Return  ( T ) get ( key );
+	}
+}
