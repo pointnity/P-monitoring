@@ -97,3 +97,12 @@ Public  class  RedisCache  implements  ICache  {
 		Long  iv  =  end  -  start ;
 		Log . info ( "clear cache {}, cost {}ms" ,  cacheName ,  iv );
 	}
+
+	@Override
+	Public  Serializable  get ( String  key )  {
+		If  ( StringUtils . isBlank ( key ))  {
+			Return  null ;
+		}
+		RBucket < Serializable >  bucket  =  getBucket ( key );
+		Serializable  ret  =  bucket . get ();
+		If  ( timeToIdleSeconds  !=  null )  {
