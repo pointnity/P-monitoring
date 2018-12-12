@@ -120,3 +120,15 @@ Public  class  RedisCache  implements  ICache  {
 
 	Public  String  getCacheName ()  {
 		Return  cacheName ;
+	}
+
+	Public  RedissonClient  getRedisson ()  {
+		Return  redisson ;
+	}
+
+	Public  Long  getTimeout ()  {
+		Return  timeout ;
+	}
+
+	Public  Long  getTimeToIdleSeconds ()  {
+		Return  timeToIdleSeconds ;
