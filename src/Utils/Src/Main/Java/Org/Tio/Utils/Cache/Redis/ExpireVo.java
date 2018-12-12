@@ -22,3 +22,6 @@ Public  class  ExpireVo  {
 		//
 		// boolean x = set.add(expireVo1);
 		// boolean y = set.add(expireVo2);
+		// boolean z = set.add(expireVo3);
+		//
+		// System.out.println(set.size());
