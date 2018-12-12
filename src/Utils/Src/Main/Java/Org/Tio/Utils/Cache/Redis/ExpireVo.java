@@ -45,3 +45,6 @@ Public  class  ExpireVo  {
 	@Override
 	Public  boolean  equals ( Object  obj )  {
 		If  ( this  ==  obj )  {
+			Return  true ;
+		}
+		If  ( obj  ==  null )  {
