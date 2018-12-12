@@ -159,3 +159,6 @@ Public  class  RedisCache  implements  ICache  {
 		If  ( StringUtils . isBlank ( key ))  {
 			Return ;
 		}
+		RBucket < Serializable >  bucket  =  getBucket ( key );
+		Bucket . delete ();
+	}
