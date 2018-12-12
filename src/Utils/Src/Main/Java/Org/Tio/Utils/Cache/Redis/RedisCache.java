@@ -70,3 +70,13 @@ Public  class  RedisCache  implements  ICache  {
 	Private  RedissonClient  redisson  =  null ;
 
 	Private  String  cacheName  =  null ;
+
+	Private  Long  timeToLiveSeconds  =  null ;
+
+	Private  Long  timeToIdleSeconds  =  null ;
+
+	Private  Long  timeout  =  null ;
+
+	Private  RedisCache ( RedissonClient  redisson ,  String  cacheName ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds )  {
+		the this . redisson  =  redisson ;
+		the this . CacheName  =  CacheName ;
