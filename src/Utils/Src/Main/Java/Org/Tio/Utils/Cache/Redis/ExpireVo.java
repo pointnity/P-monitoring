@@ -50,3 +50,7 @@ Public  class  ExpireVo  {
 		If  ( obj  ==  null )  {
 			Return  false ;
 		}
+		If  ( getClass ()  !=  obj . getClass ())  {
+			Return  false ;
+		}
+		ExpireVo  other  =  ( ExpireVo )  obj ;
