@@ -85,3 +85,7 @@ Public  class  ExpireVo  {
 
 	Public  void  setExpire ( long  expire )  {
 		the this . The expire  =  The expire ;
+	}
+
+	Public  void  setKey ( String  key )  {
+		the this . Key  =  Key ;
