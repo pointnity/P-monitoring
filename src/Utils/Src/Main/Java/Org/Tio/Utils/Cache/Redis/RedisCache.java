@@ -114,3 +114,9 @@ Public  class  RedisCache  implements  ICache  {
 
 	Public  RBucket < Serializable >  getBucket ( String  key )  {
 		Key  =  cacheKey ( cacheName ,  key );
+		RBucket < Serializable >  bucket  =  redisson . getBucket ( key );
+		Return  bucket ;
+	}
+
+	Public  String  getCacheName ()  {
+		Return  cacheName ;
