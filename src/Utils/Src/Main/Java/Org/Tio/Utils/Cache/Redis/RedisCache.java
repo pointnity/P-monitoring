@@ -27,3 +27,7 @@ Public  class  RedisCache  implements  ICache  {
 	Public  static  String  cacheKey ( String  cacheName ,  String  key )  {
 		Return  keyPrefix ( cacheName )  +  key ;
 	}
+
+	Public  static  RedisCache  getCache ( String  cacheName )  {
+		RedisCache  redisCache  =  map . get ( cacheName );
+		If  ( redisCache  ==  null )  {
