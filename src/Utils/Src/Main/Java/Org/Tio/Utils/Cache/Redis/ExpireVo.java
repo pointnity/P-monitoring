@@ -29,3 +29,5 @@ Public  class  ExpireVo  {
 	}
 
 	Private  String  cacheName ;
+
+	Private  String  key ;
