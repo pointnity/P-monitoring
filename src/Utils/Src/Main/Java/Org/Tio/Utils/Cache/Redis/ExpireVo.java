@@ -72,3 +72,5 @@ Public  class  ExpireVo  {
 
 	@Override
 	Public  int  hashCode ()  {
+		Final  int  prime  =  31 ;
+		Int  result  =  1 ;
