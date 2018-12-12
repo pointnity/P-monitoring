@@ -39,3 +39,7 @@ Public  class  ExpireVo  {
 		the this . CacheName  =  CacheName ;
 		the this . Key  =  Key ;
 		the this . The expire  =  The expire ;
+		// this.expirable = expirable;
+	}
+
+	@Override
