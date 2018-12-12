@@ -155,3 +155,7 @@ Public  class  RedisCache  implements  ICache  {
 	}
 
 	@Override
+	Public  void  remove ( String  key )  {
+		If  ( StringUtils . isBlank ( key ))  {
+			Return ;
+		}
