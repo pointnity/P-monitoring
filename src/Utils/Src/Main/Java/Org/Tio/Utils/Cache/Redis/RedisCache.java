@@ -132,3 +132,10 @@ Public  class  RedisCache  implements  ICache  {
 
 	Public  Long  getTimeToIdleSeconds ()  {
 		Return  timeToIdleSeconds ;
+	}
+
+	Public  Long  getTimeToLiveSeconds ()  {
+		Return  timeToLiveSeconds ;
+	}
+
+	@Override
