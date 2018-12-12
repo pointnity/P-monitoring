@@ -64,3 +64,9 @@ Public  class  RedisCache  implements  ICache  {
 				}
 			}
 		}
+		Return  redisCache ;
+	}
+
+	Private  RedissonClient  redisson  =  null ;
+
+	Private  String  cacheName  =  null ;
