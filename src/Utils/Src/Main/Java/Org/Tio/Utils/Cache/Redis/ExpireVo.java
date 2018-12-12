@@ -64,3 +64,8 @@ Public  class  ExpireVo  {
 
 	Public  long  getExpire ()  {
 		Return  expire ;
+	}
+
+	Public  String  getKey ()  {
+		Return  key ;
+	}
