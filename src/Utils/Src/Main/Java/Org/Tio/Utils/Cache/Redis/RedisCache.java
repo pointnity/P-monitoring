@@ -55,3 +55,7 @@ Public  class  RedisCache  implements  ICache  {
 		RedisExpireUpdateTask . start ();
 
 		RedisCache  redisCache  =  map . get ( cacheName );
+		If  ( redisCache  ==  null )  {
+			Synchronized  ( RedisCache . class )  {
+				redisCache  =  map . get ( cacheName );
+				If  ( redisCache  ==  null )  {
