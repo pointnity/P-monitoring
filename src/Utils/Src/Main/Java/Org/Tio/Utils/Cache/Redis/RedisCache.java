@@ -139,3 +139,13 @@ Public  class  RedisCache  implements  ICache  {
 	}
 
 	@Override
+	Public  Collection < String >  keys ()  {
+		RKeys  keys  =  redisson . getKeys ();
+		Collection < String >  allkey  =  keys . findKeysByPattern ( keyPrefix ( cacheName )  +  "*" );
+		Return  allkey ;
+	}
+
+	@Override
+	Public  void  put ( String  key ,  Serializable  value )  {
+		If  ( StringUtils . isBlank ( key ))  {
+			Return ;
