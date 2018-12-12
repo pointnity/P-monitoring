@@ -49,3 +49,9 @@ Public  class  RedisCache  implements  ICache  {
 	 * @param timeToLiveSeconds
 	 * @param timeToIdleSeconds
 	 * @return
+	 * @author tanyaowu
+	 */
+	Public  static  RedisCache  register ( RedissonClient  redisson ,  String  cacheName ,  Long  timeToLiveSeconds ,  Long  timeToIdleSeconds )  {
+		RedisExpireUpdateTask . start ();
+
+		RedisCache  redisCache  =  map . get ( cacheName );
