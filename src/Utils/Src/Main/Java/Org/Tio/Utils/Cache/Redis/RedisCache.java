@@ -162,3 +162,6 @@ Public  class  RedisCache  implements  ICache  {
 		RBucket < Serializable >  bucket  =  getBucket ( key );
 		Bucket . delete ();
 	}
+	
+	@SuppressWarnings ( "unchecked" )
+	@Override
