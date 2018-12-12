@@ -69,3 +69,6 @@ Public  class  ExpireVo  {
 	Public  String  getKey ()  {
 		Return  key ;
 	}
+
+	@Override
+	Public  int  hashCode ()  {
