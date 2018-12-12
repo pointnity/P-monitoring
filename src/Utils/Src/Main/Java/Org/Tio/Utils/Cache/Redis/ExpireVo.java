@@ -58,5 +58,5 @@ Public  class  ExpireVo  {
 		Return  Objects . equals ( cacheName ,  other . cacheName )  &&  Objects . equals ( key ,  other . key );
 	}
 
-		Return  Objects . equals ( cacheName ,  other . cacheName )  &&  Objects . equals ( key ,  other . key );
-	}
+	Public  String  getCacheName ()  {
+		Return  cacheName ;
