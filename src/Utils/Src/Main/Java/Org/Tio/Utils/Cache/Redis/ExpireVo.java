@@ -60,3 +60,7 @@ Public  class  ExpireVo  {
 
 	Public  String  getCacheName ()  {
 		Return  cacheName ;
+	}
+
+	Public  long  getExpire ()  {
+		Return  expire ;
