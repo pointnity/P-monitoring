@@ -35,3 +35,10 @@ Public  class  RedisCache  implements  ICache  {
 		}
 		Return  redisCache ;
 	}
+
+	Public  static  String  keyPrefix ( String  cacheName )  {
+		Return  cacheName  +  ":" ;
+	}
+
+	Public  static  void  main ( String []  args )  {
+	}
