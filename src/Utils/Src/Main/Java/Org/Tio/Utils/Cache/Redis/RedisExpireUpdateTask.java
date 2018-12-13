@@ -18,3 +18,5 @@ Public  class  RedisExpireUpdateTask  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( RedisExpireUpdateTask . class );
 
 	Private  static  boolean  started  =  false ;
+
+	Private  static  Set < ExpireVo >  set  =  new  HashSet <>();
