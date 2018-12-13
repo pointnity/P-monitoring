@@ -35,3 +35,5 @@ Public  class  RedisExpireUpdateTask  {
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	Public  static  void  start ()  {
