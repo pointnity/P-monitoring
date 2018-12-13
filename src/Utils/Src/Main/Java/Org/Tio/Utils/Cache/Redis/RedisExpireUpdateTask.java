@@ -62,3 +62,5 @@ Public  class  RedisExpireUpdateTask  {
 
 							RedisCache . getCache ( expireVo . getCacheName ()). getBucket ( expireVo . getKey ()). expire ( expireVo . getExpire (),  TimeUnit . SECONDS );
 							// expireVo.getExpirable().expire(expireVo.getExpire(), TimeUnit.SECONDS);
+						}
+						Set . clear ();
