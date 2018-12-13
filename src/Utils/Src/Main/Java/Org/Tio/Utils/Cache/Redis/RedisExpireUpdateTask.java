@@ -37,3 +37,5 @@ Public  class  RedisExpireUpdateTask  {
 	}
 
 	Public  static  void  start ()  {
+		// INSTANCE = new RedisExpireUpdateTask();
+		If  ( started )  {
