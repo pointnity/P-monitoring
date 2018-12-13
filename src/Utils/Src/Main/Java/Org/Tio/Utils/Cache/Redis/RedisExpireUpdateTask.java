@@ -72,3 +72,5 @@ Public  class  RedisExpireUpdateTask  {
 						}  catch  ( InterruptedException  e )  {
 							Log . error ( e . toString ( ),  e );
 						}
+					}
+				}
