@@ -54,3 +54,5 @@ Public  class  RedisExpireUpdateTask  {
 				While  ( true )  {
 					WriteLock  writeLock  =  setWithLock . getLock (). writeLock ();
 					writeLock . lock ();
+					Try  {
+						Set < ExpireVo >  set  =  setWithLock . getObj ();
