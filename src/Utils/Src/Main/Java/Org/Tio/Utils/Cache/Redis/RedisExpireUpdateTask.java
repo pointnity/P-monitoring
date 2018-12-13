@@ -67,3 +67,5 @@ Public  class  RedisExpireUpdateTask  {
 						Log . error ( e . getMessage (),  e );
 					}  finally  {
 						writeLock . unlock ();
+						Try  {
+							Thread . sleep ( 1000  *  10 );
