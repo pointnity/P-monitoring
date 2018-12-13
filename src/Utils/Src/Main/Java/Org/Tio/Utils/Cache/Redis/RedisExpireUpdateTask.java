@@ -56,3 +56,4 @@ Public  class  RedisExpireUpdateTask  {
 					writeLock . lock ();
 					Try  {
 						Set < ExpireVo >  set  =  setWithLock . getObj ();
+						For  ( ExpireVo  expireVo  :  set )  {
