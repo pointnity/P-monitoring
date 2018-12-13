@@ -52,3 +52,5 @@ Public  class  RedisExpireUpdateTask  {
 			@Override
 			Public  void  run ()  {
 				While  ( true )  {
+					WriteLock  writeLock  =  setWithLock . getLock (). writeLock ();
+					writeLock . lock ();
