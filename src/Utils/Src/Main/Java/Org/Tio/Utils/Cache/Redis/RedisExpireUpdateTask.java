@@ -24,3 +24,4 @@ Public  class  RedisExpireUpdateTask  {
 	Private  static  SetWithLock < ExpireVo >  setWithLock  =  new  SetWithLock <>( set );
 
 	Public  static  void  add ( String  cacheName ,  String  key ,  long  expire )  {
+		ExpireVo  expireVo  =  new  ExpireVo ( cacheName ,  key ,  expire );
