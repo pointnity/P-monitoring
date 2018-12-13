@@ -82,3 +82,6 @@ Public  class  RedisExpireUpdateTask  {
 	/**
 	 *
 	 * @author tanyaowu
+		// this.redisson = redisson;
+	}
+}
