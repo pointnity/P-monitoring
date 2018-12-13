@@ -40,3 +40,6 @@ Public  class  RedisExpireUpdateTask  {
 		// INSTANCE = new RedisExpireUpdateTask();
 		If  ( started )  {
 			Return ;
+		}
+		Synchronized  ( RedisExpireUpdateTask . class )  {
+			If  ( started )  {
