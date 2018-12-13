@@ -57,15 +57,3 @@ Public  class  RedisExpireUpdateTask  {
 					Try  {
 						Set < ExpireVo >  set  =  setWithLock . getObj ();
 						For  ( ExpireVo  expireVo  :  set )  {
-						For  ( ExpireVo  expireVo  :  set )  {
-							Log . info ( "Update cache expiration time, cacheName:{}, key:{}, expire:{}" ,  expireVo . getCacheName (),  expireVo . getKey (),  expireVo . getExpire ());
-
-							RedisCache . getCache ( expireVo . getCacheName ()). getBucket ( expireVo . getKey ()). expire ( expireVo . getExpire (),  TimeUnit . SECONDS );
-							// expireVo.getExpirable().expire(expireVo.getExpire(), TimeUnit.SECONDS);
-						}
-						Set . clear ();
-					}  catch  ( Throwable  e )  {
-						Log . error ( e . getMessage (),  e );
-					}  finally  {
-						writeLock . unlock ();
-						Try  {
