@@ -45,3 +45,5 @@ Public  class  RedisExpireUpdateTask  {
 			If  ( started )  {
 				Return ;
 			}
+			Started  =  true ;
+		}
