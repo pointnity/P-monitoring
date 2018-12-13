@@ -43,3 +43,5 @@ Public  class  RedisExpireUpdateTask  {
 		}
 		Synchronized  ( RedisExpireUpdateTask . class )  {
 			If  ( started )  {
+				Return ;
+			}
