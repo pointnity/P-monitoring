@@ -68,3 +68,4 @@ Public  class  RedisExpireUpdateTask  {
 						Log . error ( e . getMessage (),  e );
 					}  finally  {
 						writeLock . unlock ();
+						Try  {
