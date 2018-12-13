@@ -20,3 +20,5 @@ Public  class  RedisExpireUpdateTask  {
 	Private  static  boolean  started  =  false ;
 
 	Private  static  Set < ExpireVo >  set  =  new  HashSet <>();
+
+	Private  static  SetWithLock < ExpireVo >  setWithLock  =  new  SetWithLock <>( set );
