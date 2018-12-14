@@ -82,3 +82,5 @@ Public  class  FreemarkerUtils  {
         Template  t  =  configuration . getTemplate ( templateFilePath );
         File  destFile  =  new  File ( destFilePath );
         If  ( override  ||  append  ||  ! destFile . exists ())  {
+            File  parent  =  destFile . getParentFile ();
+            If  ( null  !=  parent )  {
