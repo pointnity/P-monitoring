@@ -36,3 +36,7 @@ Public  class  FreemarkerUtils  {
 	 */
 	Public  FreemarkerUtils ()  {
 	}
+
+	 /**
+     * @param templateFilePath
+     * @param destFilePath
