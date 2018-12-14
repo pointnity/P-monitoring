@@ -99,3 +99,6 @@ Public  class  FreemarkerUtils  {
 
     /**
      * @param template
+     * @param configuration
+     * @return render result
+     * @throws TemplateException
