@@ -33,3 +33,6 @@ Public  class  FreemarkerUtils  {
 	/**
 	 * 
 	 * @author tanyaowu
+	 */
+	Public  FreemarkerUtils ()  {
+	}
