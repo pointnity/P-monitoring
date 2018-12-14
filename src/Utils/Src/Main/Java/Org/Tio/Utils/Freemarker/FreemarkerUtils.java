@@ -112,3 +112,6 @@ Public  class  FreemarkerUtils  {
     /**
      * @param template
      * @param configuration
+     * @param model
+     * @return render result
+     * @throws IOException
