@@ -119,3 +119,6 @@ Public  class  FreemarkerUtils  {
      */
     Public  static  String  generateStringByFile ( String  template ,  Configuration  configuration ,  Object  model )
             throws  IOException ,  TemplateException  {
+        StringWriter  writer  =  new  StringWriter ();
+        generateStringByFile ( writer ,  template ,  configuration ,  model );
+        Return  writer . toString ();
