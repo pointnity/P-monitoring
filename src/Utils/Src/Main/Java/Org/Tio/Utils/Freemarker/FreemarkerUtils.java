@@ -42,3 +42,6 @@ Public  class  FreemarkerUtils  {
      * @param destFilePath
      * @param configuration
      * @param model
+     * @throws IOException
+     * @throws TemplateException
+     */
