@@ -49,3 +49,6 @@ Public  class  FreemarkerUtils  {
             Object  model )  throws  IOException ,  TemplateException  {
         generateFileByFile ( templateFilePath ,  destFilePath ,  configuration ,  model ,  true ,  false );
     }
+
+    /**
+     * @param templateFilePath
