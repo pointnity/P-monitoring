@@ -57,3 +57,5 @@ Public  class  FreemarkerUtils  {
      * @param model
      * @param override
      * @throws IOException
+     * @throws TemplateException
+     */
