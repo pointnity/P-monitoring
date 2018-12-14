@@ -25,3 +25,7 @@ Import  freemarker.template.TemplateNotFoundException ;
  * @author tanyaowu 
  *  
  */
+Public  class  FreemarkerUtils  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( FreemarkerUtils . class );
+	
+	Public  static  final  String  DEFAULT_CHARSET  =  "utf-8" ;
