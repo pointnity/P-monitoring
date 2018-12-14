@@ -155,3 +155,7 @@ Public  class  FreemarkerUtils  {
         Template  tpl  =  new  Template ( null ,  templateContent ,  configuration );
         StringWriter  writer  =  new  StringWriter ();
         Tpl . process ( model ,  writer );
+        Return  writer . toString ();
+    }
+
+	/**
