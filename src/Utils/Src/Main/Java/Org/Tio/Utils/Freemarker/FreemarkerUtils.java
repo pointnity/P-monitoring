@@ -72,3 +72,5 @@ Public  class  FreemarkerUtils  {
      * @param override
      * @param append
      * @throws ParseException
+     * @throws MalformedTemplateNameException
+     * @throws IOException
