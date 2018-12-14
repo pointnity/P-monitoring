@@ -110,3 +110,5 @@ Public  class  FreemarkerUtils  {
     }
 
     /**
+     * @param template
+     * @param configuration
