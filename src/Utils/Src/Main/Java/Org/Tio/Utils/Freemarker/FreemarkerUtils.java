@@ -152,3 +152,6 @@ Public  class  FreemarkerUtils  {
      */
     Public  static  String  generateStringByString ( String  templateContent ,  Configuration  configuration ,  Object  model )
             throws  IOException ,  TemplateException  {
+        Template  tpl  =  new  Template ( null ,  templateContent ,  configuration );
+        StringWriter  writer  =  new  StringWriter ();
+        Tpl . process ( model ,  writer );
