@@ -93,3 +93,5 @@ Public  class  FreemarkerUtils  {
             }
             Log . info ( destFilePath  +  " saved!" );
         }  else  {
+            Log . error ( destFilePath  +  " already exists!" );
+        }
