@@ -122,3 +122,8 @@ Public  class  FreemarkerUtils  {
         StringWriter  writer  =  new  StringWriter ();
         generateStringByFile ( writer ,  template ,  configuration ,  model );
         Return  writer . toString ();
+    }
+
+    /**
+     * @param writer
+     * @param template
