@@ -86,3 +86,5 @@ Public  class  FreemarkerUtils  {
             If  ( null  !=  parent )  {
                 Parent . mkdirs ();
             }
+            Try  ( FileOutputStream  outputStream  =  new  FileOutputStream ( destFile ,  append );
+                    FileLock  fileLock  =  outputStream . getChannel (). tryLock ();)  {
