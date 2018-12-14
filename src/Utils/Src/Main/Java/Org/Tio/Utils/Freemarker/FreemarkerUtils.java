@@ -150,3 +150,5 @@ Public  class  FreemarkerUtils  {
      * @throws IOException
      * @throws TemplateException
      */
+    Public  static  String  generateStringByString ( String  templateContent ,  Configuration  configuration ,  Object  model )
+            throws  IOException ,  TemplateException  {
