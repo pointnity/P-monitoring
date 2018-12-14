@@ -78,3 +78,5 @@ Public  class  FreemarkerUtils  {
      */
     Public  static  void  generateFileByFile ( String  templateFilePath ,  String  destFilePath ,  Configuration  configuration ,
             Object  model ,  boolean  override ,  boolean  append )
+            throws  MalformedTemplateNameException ,  a ParseException ,  IOException ,  TemplateException  {
+        Template  t  =  configuration . getTemplate ( templateFilePath );
