@@ -74,3 +74,5 @@ Public  class  FreemarkerUtils  {
      * @throws ParseException
      * @throws MalformedTemplateNameException
      * @throws IOException
+     * @throws TemplateException
+     */
