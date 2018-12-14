@@ -106,3 +106,7 @@ Public  class  FreemarkerUtils  {
      */
     Public  static  String  generateStringByFile ( String  template ,  Configuration  configuration )
             throws  IOException ,  TemplateException  {
+        Return  generateStringByFile ( template ,  configuration ,  new  HashMap < String ,  Object >());
+    }
+
+    /**
