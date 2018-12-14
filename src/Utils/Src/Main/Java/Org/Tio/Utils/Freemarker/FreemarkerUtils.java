@@ -15,3 +15,4 @@ Import  org.slf4j.LoggerFactory ;
 Import  freemarker.core.ParseException ;
 Import  freemarker.template.Configuration ;
 Import  freemarker.template.MalformedTemplateNameException ;
+Import  freemarker.template.Template ;
