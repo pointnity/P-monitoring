@@ -17,3 +17,4 @@ Import  freemarker.template.Configuration ;
 Import  freemarker.template.MalformedTemplateNameException ;
 Import  freemarker.template.Template ;
 Import  freemarker.template.TemplateException ;
+Import  freemarker.template.TemplateNotFoundException ;
