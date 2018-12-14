@@ -90,3 +90,5 @@ Public  class  FreemarkerUtils  {
                     FileLock  fileLock  =  outputStream . getChannel (). tryLock ();)  {
                 Writer  out  =  new  OutputStreamWriter ( outputStream ,  DEFAULT_CHARSET );
                 T . Process ( Model ,  OUT );
+            }
+            Log . info ( destFilePath  +  " saved!" );
