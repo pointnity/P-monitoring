@@ -144,3 +144,6 @@ Public  class  FreemarkerUtils  {
 
     /**
      * @param templateContent
+     * @param configuration
+     * @param model
+     * @return render result
