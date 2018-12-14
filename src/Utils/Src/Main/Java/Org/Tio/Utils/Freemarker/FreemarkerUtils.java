@@ -104,3 +104,5 @@ Public  class  FreemarkerUtils  {
      * @throws TemplateException
      * @throws IOException
      */
+    Public  static  String  generateStringByFile ( String  template ,  Configuration  configuration )
+            throws  IOException ,  TemplateException  {
