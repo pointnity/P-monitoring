@@ -140,3 +140,7 @@ Public  class  FreemarkerUtils  {
             throws  TemplateNotFoundException ,  MalformedTemplateNameException ,  a ParseException ,  IOException ,  TemplateException  {
         Template  tpl  =  configuration . getTemplate ( template );
         Tpl . process ( model ,  writer );
+    }
+
+    /**
+     * @param templateContent
