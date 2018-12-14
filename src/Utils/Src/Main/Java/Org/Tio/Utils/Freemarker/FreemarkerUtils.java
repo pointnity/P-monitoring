@@ -95,3 +95,7 @@ Public  class  FreemarkerUtils  {
         }  else  {
             Log . error ( destFilePath  +  " already exists!" );
         }
+    }
+
+    /**
+     * @param template
