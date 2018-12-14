@@ -84,3 +84,5 @@ Public  class  FreemarkerUtils  {
         If  ( override  ||  append  ||  ! destFile . exists ())  {
             File  parent  =  destFile . getParentFile ();
             If  ( null  !=  parent )  {
+                Parent . mkdirs ();
+            }
