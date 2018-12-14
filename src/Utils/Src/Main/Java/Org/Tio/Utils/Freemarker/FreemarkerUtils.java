@@ -127,3 +127,7 @@ Public  class  FreemarkerUtils  {
     /**
      * @param writer
      * @param template
+     * @param configuration
+     * @param model
+     * @throws TemplateNotFoundException
+     * @throws MalformedTemplateNameException
