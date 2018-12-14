@@ -18,3 +18,7 @@ Import  freemarker.template.MalformedTemplateNameException ;
 Import  freemarker.template.Template ;
 Import  freemarker.template.TemplateException ;
 Import  freemarker.template.TemplateNotFoundException ;
+
+/**
+ * This code is taken without prejudice to the open source protocol: https://gitee.com/sanluan/PublicCMS-preview/blob/master/publiccms-parent/publiccms-common/src/main/java/com/publiccms/common /tools/FreeMarkerUtils.java 
+ *  
