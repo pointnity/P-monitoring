@@ -45,3 +45,7 @@ Public  class  FreemarkerUtils  {
      * @throws IOException
      * @throws TemplateException
      */
+   Public  static  void  generateFileByFile ( String  templateFilePath ,  String  destFilePath ,  Configuration  configuration ,
+            Object  model )  throws  IOException ,  TemplateException  {
+        generateFileByFile ( templateFilePath ,  destFilePath ,  configuration ,  model ,  true ,  false );
+    }
