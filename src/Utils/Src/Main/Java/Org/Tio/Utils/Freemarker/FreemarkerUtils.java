@@ -76,3 +76,5 @@ Public  class  FreemarkerUtils  {
      * @throws IOException
      * @throws TemplateException
      */
+    Public  static  void  generateFileByFile ( String  templateFilePath ,  String  destFilePath ,  Configuration  configuration ,
+            Object  model ,  boolean  override ,  boolean  append )
