@@ -80,3 +80,5 @@ Public  class  FreemarkerUtils  {
             Object  model ,  boolean  override ,  boolean  append )
             throws  MalformedTemplateNameException ,  a ParseException ,  IOException ,  TemplateException  {
         Template  t  =  configuration . getTemplate ( templateFilePath );
+        File  destFile  =  new  File ( destFilePath );
+        If  ( override  ||  append  ||  ! destFile . exists ())  {
