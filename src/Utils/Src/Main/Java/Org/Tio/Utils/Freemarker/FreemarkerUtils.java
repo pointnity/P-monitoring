@@ -88,3 +88,5 @@ Public  class  FreemarkerUtils  {
             }
             Try  ( FileOutputStream  outputStream  =  new  FileOutputStream ( destFile ,  append );
                     FileLock  fileLock  =  outputStream . getChannel (). tryLock ();)  {
+                Writer  out  =  new  OutputStreamWriter ( outputStream ,  DEFAULT_CHARSET );
+                T . Process ( Model ,  OUT );
