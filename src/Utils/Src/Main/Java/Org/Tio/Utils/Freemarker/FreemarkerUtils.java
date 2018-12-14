@@ -70,3 +70,5 @@ Public  class  FreemarkerUtils  {
      * @param configuration
      * @param model
      * @param override
+     * @param append
+     * @throws ParseException
