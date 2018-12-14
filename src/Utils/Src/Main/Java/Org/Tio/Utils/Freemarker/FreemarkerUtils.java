@@ -137,3 +137,6 @@ Public  class  FreemarkerUtils  {
      */
     Public  static  void  generateStringByFile ( Writer  writer ,  String  template ,  Configuration  configuration ,
     		Object  model )
+            throws  TemplateNotFoundException ,  MalformedTemplateNameException ,  a ParseException ,  IOException ,  TemplateException  {
+        Template  tpl  =  configuration . getTemplate ( template );
+        Tpl . process ( model ,  writer );
