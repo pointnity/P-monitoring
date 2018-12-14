@@ -131,3 +131,7 @@ Public  class  FreemarkerUtils  {
      * @param model
      * @throws TemplateNotFoundException
      * @throws MalformedTemplateNameException
+     * @throws ParseException
+     * @throws IOException
+     * @throws TemplateException
+     */
