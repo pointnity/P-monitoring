@@ -13,3 +13,6 @@ Import  com.jfinal.plugin.activerecord.Record ;
  * 
  */
 Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
+	Public  static  final  JfinalRecordSerializer  INSTANCE  =  new  JfinalRecordSerializer ();
+
+	/**
