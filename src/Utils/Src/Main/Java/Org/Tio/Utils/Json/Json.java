@@ -68,3 +68,5 @@ Public  class  Json  {
 	Public  static  String  toJson ( Object  bean ,  SerializeFilter  serializeFilter )  {
 		Try  {
 			If  ( serializeFilter  !=  null )  {
+				Return  JSON . toJSONString ( bean ,  mapping ,  serializeFilter ,  SerializerFeature . DisableCircularReferenceDetect );
+			}  else  {
