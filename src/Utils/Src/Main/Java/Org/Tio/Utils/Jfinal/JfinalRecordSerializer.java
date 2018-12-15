@@ -44,3 +44,6 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 		If  ( object  ==  null )  {
 			Serializer . OUT . writeNull ();
 			Return ;
+		}
+
+		Record  record  =  ( Record )  object ;
