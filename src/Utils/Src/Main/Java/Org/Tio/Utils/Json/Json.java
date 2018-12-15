@@ -33,3 +33,8 @@ Public  class  Json  {
 	
 	Public  static  SerializeConfig  put ( Class <?>  clazz ,  ObjectSerializer  serializer )  {
 		Mapping . put ( clazz ,  serializer );
+		Return  mapping ;
+	}
+
+	Public  static  < T >  T  toBean ( String  jsonString ,  Class < T >  tt )  {
+		Try  {
