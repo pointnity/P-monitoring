@@ -45,3 +45,6 @@ Public  class  Json  {
 			T  t  =  JSON . parseObject ( jsonString ,  tt );
 			Return  t ;
 		}  catch  ( Throwable  e )  {
+			Throw  new  RuntimeException ( e );
+		}
+	}
