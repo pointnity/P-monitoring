@@ -16,3 +16,4 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 	Public  static  final  JfinalRecordSerializer  INSTANCE  =  new  JfinalRecordSerializer ();
 
 	/**
+	 * @param args
