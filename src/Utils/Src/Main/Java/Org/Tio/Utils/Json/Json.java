@@ -56,3 +56,8 @@ Public  class  Json  {
 			Throw  new  RuntimeException ( e );
 		}
 	}
+
+	Public  static  String  toJson ( Object  bean )  {
+		Try  {
+			Return  JSON . toJSONString ( bean ,  mapping ,  SerializerFeature . DisableCircularReferenceDetect );
+		}  catch  ( Throwable  e )  {
