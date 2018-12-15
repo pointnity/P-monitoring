@@ -64,3 +64,7 @@ Public  class  Json  {
 			Throw  new  RuntimeException ( e );
 		}
 	}
+
+	Public  static  String  toJson ( Object  bean ,  SerializeFilter  serializeFilter )  {
+		Try  {
+			If  ( serializeFilter  !=  null )  {
