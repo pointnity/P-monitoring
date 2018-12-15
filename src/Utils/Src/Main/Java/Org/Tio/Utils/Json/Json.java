@@ -53,3 +53,6 @@ Public  class  Json  {
 		Try  {
 			Return  JSON . toJSONString ( bean ,  mapping ,  SerializerFeature . DisableCircularReferenceDetect ,  SerializerFeature . PrettyFormat );
 		}  catch  ( Throwable  e )  {
+			Throw  new  RuntimeException ( e );
+		}
+	}
