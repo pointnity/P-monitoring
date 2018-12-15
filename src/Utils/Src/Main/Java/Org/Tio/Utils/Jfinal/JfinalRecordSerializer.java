@@ -47,3 +47,6 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 		}
 
 		Record  record  =  ( Record )  object ;
+
+		Map < String ,  Object >  map  =  record . getColumns ();
+		Serializer . write ( map );
