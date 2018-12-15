@@ -25,3 +25,7 @@ Public  class  Json  {
 		Mapping . put ( java . sql . Timestamp . class ,  new  SimpleDateFormatSerializer ( "yyyy-MM-dd HH:mm:ss" ));
 		Mapping . put ( java . sql . Time . class ,  new  SimpleDateFormatSerializer ( "HH:mm:ss" ));
 	}
+
+	Public  static  SerializeConfig  put ( Class <?>  clazz ,  SerializeFilter  filter )  {
+		Mapping . addFilter ( clazz ,  filter );
+		Return  mapping ;
