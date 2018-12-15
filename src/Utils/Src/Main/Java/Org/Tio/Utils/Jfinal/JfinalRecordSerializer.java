@@ -12,3 +12,4 @@ Import  com.jfinal.plugin.activerecord.Record ;
  * @author tanyaowu
  * 
  */
+Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
