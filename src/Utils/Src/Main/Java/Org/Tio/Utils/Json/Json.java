@@ -70,3 +70,5 @@ Public  class  Json  {
 			If  ( serializeFilter  !=  null )  {
 				Return  JSON . toJSONString ( bean ,  mapping ,  serializeFilter ,  SerializerFeature . DisableCircularReferenceDetect );
 			}  else  {
+				Return  JSON . toJSONString ( bean ,  mapping ,  SerializerFeature . DisableCircularReferenceDetect );
+			}
