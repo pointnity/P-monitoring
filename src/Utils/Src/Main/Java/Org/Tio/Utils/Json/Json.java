@@ -38,3 +38,6 @@ Public  class  Json  {
 
 	Public  static  < T >  T  toBean ( String  jsonString ,  Class < T >  tt )  {
 		Try  {
+			If  ( StringUtils . isBlank ( jsonString ))  {
+				Return  null ;
+			}
