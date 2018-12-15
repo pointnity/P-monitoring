@@ -72,3 +72,6 @@ Public  class  Json  {
 			}  else  {
 				Return  JSON . toJSONString ( bean ,  mapping ,  SerializerFeature . DisableCircularReferenceDetect );
 			}
+
+		}  catch  ( Throwable  e )  {
+			Throw  new  RuntimeException ( e );
