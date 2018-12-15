@@ -36,3 +36,6 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 	 * @param fieldName
 	 * @param fieldType
 	 * @param features
+	 * @throws IOException
+	 * @author tanyaowu
+	 */
