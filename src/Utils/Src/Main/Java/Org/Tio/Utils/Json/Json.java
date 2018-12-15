@@ -29,3 +29,7 @@ Public  class  Json  {
 	Public  static  SerializeConfig  put ( Class <?>  clazz ,  SerializeFilter  filter )  {
 		Mapping . addFilter ( clazz ,  filter );
 		Return  mapping ;
+	}
+	
+	Public  static  SerializeConfig  put ( Class <?>  clazz ,  ObjectSerializer  serializer )  {
+		Mapping . put ( clazz ,  serializer );
