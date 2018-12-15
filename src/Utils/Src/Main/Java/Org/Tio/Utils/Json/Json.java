@@ -16,3 +16,7 @@ Import  com.alibaba.fastjson.serializer.SimpleDateFormatSerializer ;
  * @author tanyaowu
  *  
  */
+Public  class  Json  {
+	Private  static  SerializeConfig  mapping  =  new  SerializeConfig ();
+
+	Static  {
