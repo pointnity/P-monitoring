@@ -20,3 +20,8 @@ Public  class  Json  {
 	Private  static  SerializeConfig  mapping  =  new  SerializeConfig ();
 
 	Static  {
+		Mapping . put ( Date . class ,  new  SimpleDateFormatSerializer ( "yyyy-MM-dd HH:mm:ss" ));
+		Mapping . put ( java . sql . Date . class ,  new  SimpleDateFormatSerializer ( "yyyy-MM-dd HH:mm:ss" ));
+		Mapping . put ( java . sql . Timestamp . class ,  new  SimpleDateFormatSerializer ( "yyyy-MM-dd HH:mm:ss" ));
+		Mapping . put ( java . sql . Time . class ,  new  SimpleDateFormatSerializer ( "HH:mm:ss" ));
+	}
