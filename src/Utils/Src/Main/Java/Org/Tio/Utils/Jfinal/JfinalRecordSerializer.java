@@ -29,3 +29,7 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 	 */
 	Public  jfinalRecordSerializer ()  {
 	}
+
+	/**
+	 * @param serializer
+	 * @param object
