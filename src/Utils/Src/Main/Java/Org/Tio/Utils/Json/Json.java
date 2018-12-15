@@ -48,3 +48,8 @@ Public  class  Json  {
 			Throw  new  RuntimeException ( e );
 		}
 	}
+
+	Public  static  String  toFormatedJson ( Object  bean )  {
+		Try  {
+			Return  JSON . toJSONString ( bean ,  mapping ,  SerializerFeature . DisableCircularReferenceDetect ,  SerializerFeature . PrettyFormat );
+		}  catch  ( Throwable  e )  {
