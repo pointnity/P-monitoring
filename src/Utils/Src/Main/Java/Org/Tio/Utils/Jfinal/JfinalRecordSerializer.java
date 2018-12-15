@@ -25,3 +25,7 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 
 	/**
 	 *
+	 * @author tanyaowu
+	 */
+	Public  jfinalRecordSerializer ()  {
+	}
