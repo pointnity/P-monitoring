@@ -17,3 +17,5 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 
 	/**
 	 * @param args
+	 * @author tanyaowu
+	 */
