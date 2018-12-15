@@ -50,3 +50,5 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 
 		Map < String ,  Object >  map  =  record . getColumns ();
 		Serializer . write ( map );
+	}
+}
