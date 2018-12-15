@@ -40,3 +40,5 @@ Public  class  JfinalRecordSerializer  implements  ObjectSerializer  {
 	 * @author tanyaowu
 	 */
 	@Override
+	Public  void  write ( JSONSerializer  serializer ,  Object  object ,  Object  fieldName ,  Type  fieldType ,  int  features )  throws  IOException  {
+		If  ( object  ==  null )  {
