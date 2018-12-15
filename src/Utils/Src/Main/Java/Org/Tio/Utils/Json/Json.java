@@ -41,3 +41,7 @@ Public  class  Json  {
 			If  ( StringUtils . isBlank ( jsonString ))  {
 				Return  null ;
 			}
+
+			T  t  =  JSON . parseObject ( jsonString ,  tt );
+			Return  t ;
+		}  catch  ( Throwable  e )  {
