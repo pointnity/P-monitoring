@@ -70,3 +70,7 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 			If  ( oldValue  ==  null )  {
 				Return  value ;
 			}  else  {
+				Return  oldValue ;
+			}
+			
+		}  catch  ( Throwable  e )  {
