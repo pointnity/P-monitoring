@@ -41,3 +41,6 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	 * @author tanyaowu
 	 */
 	Public  boolean  add ( T  t )  {
+		WriteLock  writeLock  =  this . getLock (). writeLock ();
+		writeLock . lock ();
+		Try  {
