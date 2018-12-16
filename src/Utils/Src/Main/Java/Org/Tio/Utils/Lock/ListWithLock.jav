@@ -29,3 +29,6 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	 * @param lock
 	 * @author tanyaowu
 	 */
+	Public  ListWithLock ( List < T >  list ,  ReentrantReadWriteLock  lock )  {
+		Super ( list ,  lock );
+	}
