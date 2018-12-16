@@ -27,3 +27,5 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 	/**
 	 * @param cacheMap
 	 * @param lock
+	 * @author tanyaowu
+	 */
