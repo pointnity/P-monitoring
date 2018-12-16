@@ -98,3 +98,6 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	 * @author tanyaowu
 	 */
 	Public  int  size ()  {
+		ReadLock  readLock  =  this . getLock (). readLock ();
+		readLock . lock ();
+		Try  {
