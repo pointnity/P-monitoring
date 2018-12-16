@@ -40,3 +40,6 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 	 * @return
 	 * @author tanyaowu
 	 */
+	Public  V  put ( K  key ,  V  value )  {
+		WriteLock  writeLock  =  this . getLock (). writeLock ();
+		writeLock . lock ();
