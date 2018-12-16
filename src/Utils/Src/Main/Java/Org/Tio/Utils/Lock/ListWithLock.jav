@@ -66,3 +66,7 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 			List < T >  list  =  this . getObj ();
 			List . clear ();
 		}  catch  ( Throwable  e )  {
+			Log . error ( e . getMessage (),  e );
+		}  finally  {
+			writeLock . unlock ();
+		}
