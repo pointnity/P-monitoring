@@ -31,3 +31,7 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 	 */
 	Public  MapWithLock ( Map < K ,  V >  map ,  ReentrantReadWriteLock  lock )  {
 		Super ( map ,  lock );
+	}
+
+	/**
+	 * 
