@@ -83,3 +83,6 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 
 	/**
 	 * 
+	 * @param otherMap
+	 * @author tanyaowu
+	 */
