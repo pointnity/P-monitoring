@@ -86,3 +86,6 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 	 * @param otherMap
 	 * @author tanyaowu
 	 */
+	Public  void  putAll ( Map < K ,  V >  otherMap )  {
+		If  ( otherMap  ==  null  ||  otherMap . isEmpty ())  {
+			Return ;
