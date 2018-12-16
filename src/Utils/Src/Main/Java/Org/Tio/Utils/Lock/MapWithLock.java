@@ -133,3 +133,14 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 		Try  {
 			Map < K ,  V >  map  =  this . getObj ();
 			Map . clear ();
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . getMessage (),  e );
+		}  finally  {
+			writeLock . unlock ();
+		}
+	}
+
+	/**
+	 * 
+	 * @param key
+	 * @return
