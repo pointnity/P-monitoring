@@ -89,3 +89,8 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 	Public  void  putAll ( Map < K ,  V >  otherMap )  {
 		If  ( otherMap  ==  null  ||  otherMap . isEmpty ())  {
 			Return ;
+		}
+		
+		WriteLock  writeLock  =  this . getLock (). writeLock ();
+		writeLock . lock ();
+		Try  {
