@@ -10,4 +10,7 @@ Import  org.slf4j.LoggerFactory ;
 
 /**
  * @author tanyaowu
- * May 14th, 2017 at 9:55:37 AM
+ * 
+ */
+Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
+	Private  static  final  long  serialVersionUID  =  8549668315606224029L ;
