@@ -58,3 +58,7 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	 *
 	 *
 	 * @author tanyaowu
+	 */
+	Public  void  clear ()  {
+		WriteLock  writeLock  =  this . getLock (). writeLock ();
+		writeLock . lock ();
