@@ -39,3 +39,5 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	 * @param t
 	 * @return
 	 * @author tanyaowu
+	 */
+	Public  boolean  add ( T  t )  {
