@@ -125,3 +125,11 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 
 	/**
 	 * clear
+	 * @author tanyaowu
+	 */
+	Public  void  clear ()  {
+		WriteLock  writeLock  =  this . getLock (). writeLock ();
+		writeLock . lock ();
+		Try  {
+			Map < K ,  V >  map  =  this . getObj ();
+			Map . clear ();
