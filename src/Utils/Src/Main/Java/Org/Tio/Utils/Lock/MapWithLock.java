@@ -12,3 +12,5 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  *  
  */
+Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
+	Private  static  final  long  serialVersionUID  =  - 652862323697152866L ;
