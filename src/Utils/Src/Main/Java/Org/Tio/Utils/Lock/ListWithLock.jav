@@ -17,3 +17,6 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	Private  static  final  Logger  log  =  LoggerFactory . getLogger ( ListWithLock . class );
 
 	/**
+	 * @param durationList
+	 * @author tanyaowu
+	 */
