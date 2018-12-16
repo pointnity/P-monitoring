@@ -65,3 +65,8 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 		WriteLock  writeLock  =  this . getLock (). writeLock ();
 		writeLock . lock ();
 		Try  {
+			Map < K ,  V >  map  =  this . getObj ();
+			V  oldValue  =  map . putIfAbsent ( key ,  value );
+			If  ( oldValue  ==  null )  {
+				Return  value ;
+			}  else  {
