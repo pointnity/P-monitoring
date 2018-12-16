@@ -55,3 +55,6 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	}
 
 	/**
+	 *
+	 *
+	 * @author tanyaowu
