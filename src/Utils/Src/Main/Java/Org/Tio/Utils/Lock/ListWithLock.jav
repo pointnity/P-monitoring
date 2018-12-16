@@ -94,3 +94,7 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	
 	/**
 	 * 
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  int  size ()  {
