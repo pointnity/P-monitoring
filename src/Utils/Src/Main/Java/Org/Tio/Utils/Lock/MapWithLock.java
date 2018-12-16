@@ -144,3 +144,12 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 	 * 
 	 * @param key
 	 * @return
+	 * @author tanyaowu
+	 */
+	Public  v  get ( K  key )  {
+		ReadLock  readLock  =  this . getLock (). readLock ();
+		readLock . lock ();
+		Try  {
+			Map < K ,  V >  map  =  this . getObj ();
+			Return  map . get ( key );
+		}  catch  ( Throwable  e )  {
