@@ -23,3 +23,6 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 	Public  ListWithLock ( List < T >  list )  {
 		Super ( list );
 	}
+
+	/**
+	 * @param durationList
