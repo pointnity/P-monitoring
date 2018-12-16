@@ -17,3 +17,6 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 	Private  static  final  Logger  log  =  LoggerFactory . getLogger ( MapWithLock . class );
 
 	/**
+	 * @param cacheMap
+	 * @author tanyaowu
+	 */
