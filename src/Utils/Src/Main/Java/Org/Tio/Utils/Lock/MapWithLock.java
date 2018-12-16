@@ -78,3 +78,8 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 		}  finally  {
 			writeLock . unlock ();
 		}
+		Return  null ;
+	}
+
+	/**
+	 * 
