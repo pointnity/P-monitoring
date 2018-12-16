@@ -99,3 +99,11 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 		}  catch  ( Throwable  e )  {
 			Log . error ( e . getMessage (),  e );
 		}  finally  {
+			writeLock . unlock ();
+		}
+	}
+
+	/**
+	 * 
+	 * @param key
+	 * @return
