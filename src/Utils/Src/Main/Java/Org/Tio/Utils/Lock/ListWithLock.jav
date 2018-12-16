@@ -26,3 +26,6 @@ Public  class  ListWithLock < T >  extends  ObjWithLock < List < T >>  {
 
 	/**
 	 * @param durationList
+	 * @param lock
+	 * @author tanyaowu
+	 */
