@@ -163,3 +163,9 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 	/**
 	 * 
 	 * @return
+	 * @author tanyaowu
+	 */
+	Public  int  size ()  {
+		ReadLock  readLock  =  this . getLock (). readLock ();
+		readLock . lock ();
+		Try  {
