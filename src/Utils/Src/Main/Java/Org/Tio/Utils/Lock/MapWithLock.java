@@ -94,3 +94,8 @@ Public  class  MapWithLock < K ,  V >  extends  ObjWithLock < Map < K ,  V >>  {
 		WriteLock  writeLock  =  this . getLock (). writeLock ();
 		writeLock . lock ();
 		Try  {
+			Map < K ,  V >  map  =  this . getObj ();
+			Map . putAll ( otherMap );
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . getMessage (),  e );
+		}  finally  {
