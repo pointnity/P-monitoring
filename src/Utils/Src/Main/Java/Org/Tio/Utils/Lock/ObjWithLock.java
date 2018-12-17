@@ -41,3 +41,6 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	 * @param lock the lock
 	 * @author tanyaowu
 	 *  
+	 */
+	Public  ObjWithLock ( T  obj ,  ReentrantReadWriteLock  lock )  {
+		Super ();
