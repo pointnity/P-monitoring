@@ -30,3 +30,4 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	 * @author tanyaowu
 	 *  
 	 */
+	Public  ObjWithLock ( T  obj )  {
