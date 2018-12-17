@@ -28,3 +28,5 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	 *
 	 * @param obj the obj
 	 * @author tanyaowu
+	 *  
+	 */
