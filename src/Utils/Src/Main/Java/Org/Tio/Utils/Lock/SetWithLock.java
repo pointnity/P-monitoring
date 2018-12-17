@@ -29,3 +29,13 @@ Public  class  SetWithLock < T >  extends  ObjWithLock < Set < T >>  {
 	 * @param lock
 	 * @author tanyaowu
 	 */
+	Public  SetWithLock ( Set < T >  set ,  ReentrantReadWriteLock  lock )  {
+		Super ( set ,  lock );
+	}
+
+	/**
+	 *
+	 * @param t
+	 * @return
+	 * @author tanyaowu
+	 */
