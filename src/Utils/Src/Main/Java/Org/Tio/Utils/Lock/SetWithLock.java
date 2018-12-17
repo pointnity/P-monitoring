@@ -39,3 +39,14 @@ Public  class  SetWithLock < T >  extends  ObjWithLock < Set < T >>  {
 	 * @return
 	 * @author tanyaowu
 	 */
+	Public  boolean  add ( T  t )  {
+		WriteLock  writeLock  =  this . getLock (). writeLock ();
+		writeLock . lock ();
+		Try  {
+			Set < T >  set  =  this . getObj ();
+			Return  set . add ( t );
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . getMessage (),  e );
+		}  finally  {
+			writeLock . unlock ();
+		}
