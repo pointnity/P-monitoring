@@ -47,3 +47,7 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 		the this . obj  =  obj ;
 		the this . Lock  =  Lock ;
 	}
+
+	/**
+	 * Gets the lock.
+	 *
