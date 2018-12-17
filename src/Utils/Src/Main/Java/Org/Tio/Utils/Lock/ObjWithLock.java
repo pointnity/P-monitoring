@@ -21,3 +21,6 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	 * @meaning:
 	 * @Type: ReentrantReadWriteLock
 	 */
+	Private  ReentrantReadWriteLock with  Lock  =  null ;
+
+	/**
