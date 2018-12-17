@@ -81,3 +81,6 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	Public  T  getObj ()  {
 		Return  obj ;
 	}
+
+	/**
+	 * Sets the obj.
