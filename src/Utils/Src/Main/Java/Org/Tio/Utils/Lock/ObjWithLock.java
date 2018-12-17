@@ -68,3 +68,5 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	// */
 	// public void setLock(ReentrantReadWriteLock lock)
 	// {
+	// this.lock = lock;
+	// }
