@@ -6,3 +6,5 @@ Import  java.util.concurrent.locks.ReentrantReadWriteLock ;
 /**
  * Objects with read-write locks.
  *
+ * @author tanyaowu
+ */
