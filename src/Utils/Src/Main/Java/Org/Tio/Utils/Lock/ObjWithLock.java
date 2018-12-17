@@ -70,3 +70,6 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	// {
 	// this.lock = lock;
 	// }
+
+	/**
+	 * Gets the obj.
