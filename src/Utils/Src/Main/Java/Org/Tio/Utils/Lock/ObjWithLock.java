@@ -13,3 +13,6 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	Private  static  final  long  serialVersionUID  =  - 3048283373239453901L ;
 
 	/** The obj. */
+	Private  T  obj  =  null ;
+
+	/**
