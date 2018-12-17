@@ -55,3 +55,5 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	 * @author tanyaowu
 	 *  
 	 */
+	Public  ReentrantReadWriteLock  getLock ()  {
+		Return  lock ;
