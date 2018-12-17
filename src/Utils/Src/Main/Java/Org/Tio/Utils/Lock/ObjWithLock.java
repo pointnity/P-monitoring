@@ -61,3 +61,6 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 
 	// /**
 	// * Sets the lock.
+	// *
+	// * @param lock the new lock
+	// * @author tanyaowu
