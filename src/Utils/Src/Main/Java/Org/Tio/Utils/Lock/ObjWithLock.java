@@ -89,3 +89,4 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	 * @author tanyaowu
 	 *  
 	 */
+	Public  void  setObj ( T  obj )  {
