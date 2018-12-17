@@ -89,3 +89,11 @@ Public  class  SetWithLock < T >  extends  ObjWithLock < Set < T >>  {
 		}  finally  {
 			writeLock . unlock ();
 		}
+		Return  false ;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 * @author tanyaowu
+	 */
