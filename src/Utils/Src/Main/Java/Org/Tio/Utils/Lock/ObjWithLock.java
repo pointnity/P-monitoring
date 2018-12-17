@@ -16,3 +16,5 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	Private  T  obj  =  null ;
 
 	/**
+	 * The lock.
+	 *
