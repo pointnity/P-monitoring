@@ -69,3 +69,23 @@ Public  class  SetWithLock < T >  extends  ObjWithLock < Set < T >>  {
 		}  finally  {
 			writeLock . unlock ();
 		}
+		}
+	}
+
+	/**
+	 *
+	 * @param t
+	 * @return
+	 * @author tanyaowu
+	 */
+	Public  boolean  remove ( T  t )  {
+		WriteLock  writeLock  =  this . getLock (). writeLock ();
+		writeLock . lock ();
+		Try  {
+			Set < T >  set  =  this . getObj ();
+			Return  set . remove ( t );
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . getMessage (),  e );
+		}  finally  {
+			writeLock . unlock ();
+		}
