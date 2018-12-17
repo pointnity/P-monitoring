@@ -97,3 +97,14 @@ Public  class  SetWithLock < T >  extends  ObjWithLock < Set < T >>  {
 	 * @return
 	 * @author tanyaowu
 	 */
+	Public  int  size ()  {
+		ReadLock  readLock  =  this . getLock (). readLock ();
+		readLock . lock ();
+		Try  {
+			Set < T >  set  =  this . getObj ();
+			Return  set . size ();
+		}  finally  {
+			readLock . unlock ();
+		}
+	}
+}
