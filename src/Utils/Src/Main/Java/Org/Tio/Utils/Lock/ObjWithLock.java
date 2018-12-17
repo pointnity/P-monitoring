@@ -37,3 +37,5 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	/**
 	 * Instantiates a new obj with read write lock.
 	 *
+	 * @param obj the obj
+	 * @param lock the lock
