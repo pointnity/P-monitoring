@@ -31,3 +31,5 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	 *  
 	 */
 	Public  ObjWithLock ( T  obj )  {
+		This ( obj ,  new  ReentrantReadWriteLock ());
+	}
