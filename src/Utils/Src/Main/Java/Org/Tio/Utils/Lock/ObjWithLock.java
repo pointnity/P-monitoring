@@ -90,3 +90,6 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 	 *  
 	 */
 	Public  void  setObj ( T  obj )  {
+		the this . obj  =  obj ;
+	}
+}
