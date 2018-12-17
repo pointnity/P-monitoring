@@ -50,3 +50,22 @@ Public  class  SetWithLock < T >  extends  ObjWithLock < Set < T >>  {
 		}  finally  {
 			writeLock . unlock ();
 		}
+		Return  false ;
+	}
+
+	/**
+	 *
+	 *
+	 * @author tanyaowu
+	 */
+	Public  void  clear ()  {
+		WriteLock  writeLock  =  this . getLock (). writeLock ();
+		writeLock . lock ();
+		Try  {
+			Set < T >  set  =  this . getObj ();
+			Set . clear ();
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . getMessage (),  e );
+		}  finally  {
+			writeLock . unlock ();
+		}
