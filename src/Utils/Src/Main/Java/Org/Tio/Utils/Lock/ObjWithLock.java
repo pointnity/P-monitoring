@@ -73,3 +73,5 @@ Public  class  ObjWithLock < T >  implements  Serializable  {
 
 	/**
 	 * Gets the obj.
+	 *
+	 * @return the obj
