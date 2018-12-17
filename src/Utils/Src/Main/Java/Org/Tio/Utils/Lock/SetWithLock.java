@@ -18,3 +18,14 @@ Public  class  SetWithLock < T >  extends  ObjWithLock < Set < T >>  {
 
 	/**
 	 * @param set
+	 * @author tanyaowu
+	 */
+	Public  SetWithLock ( Set < T >  set )  {
+		Super ( set );
+	}
+
+	/**
+	 * @param set
+	 * @param lock
+	 * @author tanyaowu
+	 */
