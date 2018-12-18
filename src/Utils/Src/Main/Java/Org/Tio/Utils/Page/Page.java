@@ -31,3 +31,4 @@ Public  class  Page < T >  implements  Serializable  {
 	Public  Page ( List < T >  pageData ,  Integer  pageIndex ,  Integer  pageSize ,  Integer  recordCount )  {
 		the this . PageData  =  PageData ;
 		the this . the pageIndex  =  the pageIndex ;
+		the this . the pageSize  =  the pageSize ;
