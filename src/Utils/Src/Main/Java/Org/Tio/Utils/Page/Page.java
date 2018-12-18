@@ -48,3 +48,4 @@ Public  class  Page < T >  implements  Serializable  {
 
 	Public  int  getPageSize ()  {
 		Return  pageSize ;
+	}
