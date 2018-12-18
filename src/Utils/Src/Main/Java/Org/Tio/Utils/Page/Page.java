@@ -28,3 +28,5 @@ Public  class  Page < T >  implements  Serializable  {
 	 * @param recordCount
 	 * @author tanyaowu
 	 */
+	Public  Page ( List < T >  pageData ,  Integer  pageIndex ,  Integer  pageSize ,  Integer  recordCount )  {
+		the this . PageData  =  PageData ;
