@@ -59,3 +59,4 @@ Public  class  Page < T >  implements  Serializable  {
 	 */
 	Public  void  setPageData ( List < T >  pageData )  {
 		the this . PageData  =  PageData ;
+	}
