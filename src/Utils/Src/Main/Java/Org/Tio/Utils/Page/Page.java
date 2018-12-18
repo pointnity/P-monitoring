@@ -8,3 +8,4 @@ Import  java.util.List ;
  * @author tanyaowu
  * 
  */
+Public  class  Page < T >  implements  Serializable  {
