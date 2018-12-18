@@ -11,3 +11,4 @@ Import  java.util.List ;
 Public  class  Page < T >  implements  Serializable  {
 
 	Private  static  final  long  serialVersionUID  =  6551482606063638959L ;
+	Private  List < T >  pageData  =  null ;  //data of the current page
