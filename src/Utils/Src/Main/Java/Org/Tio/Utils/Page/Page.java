@@ -33,3 +33,6 @@ Public  class  Page < T >  implements  Serializable  {
 		the this . the pageIndex  =  the pageIndex ;
 		the this . the pageSize  =  the pageSize ;
 		the this . recordCount  =  recordCount ;
+	}
+
+	/**
