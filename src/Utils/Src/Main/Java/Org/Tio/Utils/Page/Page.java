@@ -52,3 +52,6 @@ Public  class  Page < T >  implements  Serializable  {
 
 	Public  int  getRecordCount ()  {
 		Return  recordCount ;
+	}
+
+	/**
