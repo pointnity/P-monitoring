@@ -17,3 +17,7 @@ Public  class  Page < T >  implements  Serializable  {
 	Private  Integer  recordCount ;  // total number of items
 
 	Public  Page ()  {
+
+	}
+
+	/**
