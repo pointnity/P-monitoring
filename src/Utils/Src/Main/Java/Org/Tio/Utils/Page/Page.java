@@ -44,3 +44,4 @@ Public  class  Page < T >  implements  Serializable  {
 
 	Public  int  getPageIndex ()  {
 		Return  pageIndex ;
+	}
