@@ -59,3 +59,6 @@ Public  class  PageUtils  {
 		For  ( T  t  :  set )  {
 			If  ( i  >=  endIndex )  {
 				Break ;
+			}
+			If  ( i  <  startIndex )  {
+				i ++;
