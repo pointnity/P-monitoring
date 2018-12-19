@@ -77,3 +77,5 @@ Public  class  PageUtils  {
 		If  ( setWithLock  ==  null )  {
 			Return  null ;
 		}
+		Lock  lock  =  setWithLock . getLock (). readLock ();
+		Try  {
