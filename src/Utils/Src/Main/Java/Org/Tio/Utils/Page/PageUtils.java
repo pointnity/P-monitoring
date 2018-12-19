@@ -75,3 +75,5 @@ Public  class  PageUtils  {
 
 	Public  static  < T >  Page < T >  fromSetWithLock ( ObjWithLock < Set < T >>  setWithLock ,  int  pageIndex ,  int  pageSize )  {
 		If  ( setWithLock  ==  null )  {
+			Return  null ;
+		}
