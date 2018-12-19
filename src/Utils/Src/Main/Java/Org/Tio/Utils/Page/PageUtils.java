@@ -14,3 +14,5 @@ Import  org.slf4j.LoggerFactory ;
  */
 Public  class  PageUtils  {
 	@SuppressWarnings ( "unused" )
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( PageUtils . class );
+
