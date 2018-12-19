@@ -18,3 +18,5 @@ Public  class  PageUtils  {
 
 	Public  static  < T >  Page < T >  fromList ( List < T >  list ,  int  pageIndex ,  int  pageSize )  {
 		If  ( list  ==  null )  {
+			Return  null ;
+		}
