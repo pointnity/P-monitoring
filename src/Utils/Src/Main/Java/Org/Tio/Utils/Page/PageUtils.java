@@ -24,3 +24,5 @@ Public  class  PageUtils  {
 		Page < T >  page  =  pre ( list ,  pageIndex ,  pageSize );
 
 		List < T >  pageData  =  page . getPageData ();
+		If  ( pageData  ==  null )  {
+			Return  page ;
