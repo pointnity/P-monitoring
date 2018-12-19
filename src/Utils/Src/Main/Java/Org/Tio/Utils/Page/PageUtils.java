@@ -39,3 +39,6 @@ Public  class  PageUtils  {
 	}
 		Return  page ;
 	}
+
+	Public  static  < T >  Page < T >  fromSet ( Set < T >  set ,  int  pageIndex ,  int  pageSize )  {
+		If  ( set  ==  null )  {
