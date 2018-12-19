@@ -98,3 +98,6 @@ Public  class  PageUtils  {
 		Int  recordCount  =  list . size ();
 		If  ( pageSize  >  recordCount )  {
 			pageSize  =  recordCount ;
+		}
+
+		List < T >  pageData  =  new  ArrayList <>( pageSize );
