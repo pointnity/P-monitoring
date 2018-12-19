@@ -49,3 +49,5 @@ Public  class  PageUtils  {
 
 		List < T >  pageData  =  page . getPageData ();
 		If  ( pageData  ==  null )  {
+			Return  page ;
+		}
