@@ -91,3 +91,8 @@ Public  class  PageUtils  {
 		If  ( list  ==  null )  {
 			Return  new  Page <>( null ,  pageIndex ,  pageSize ,  0 );
 		}
+
+		pageSize  =  processPageSize ( pageSize );
+		pageIndex  =  processPageIndex ( pageIndex );
+
+		Int  recordCount  =  list . size ();
