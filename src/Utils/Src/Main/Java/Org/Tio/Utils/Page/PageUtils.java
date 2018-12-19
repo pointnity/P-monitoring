@@ -96,3 +96,5 @@ Public  class  PageUtils  {
 		pageIndex  =  processPageIndex ( pageIndex );
 
 		Int  recordCount  =  list . size ();
+		If  ( pageSize  >  recordCount )  {
+			pageSize  =  recordCount ;
