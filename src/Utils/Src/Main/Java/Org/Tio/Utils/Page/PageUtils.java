@@ -12,3 +12,5 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  *  
  */
+Public  class  PageUtils  {
+	@SuppressWarnings ( "unused" )
