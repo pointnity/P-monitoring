@@ -44,3 +44,5 @@ Public  class  PageUtils  {
 		If  ( set  ==  null )  {
 			Return  null ;
 		}
+
+		Page < T >  page  =  pre ( set ,  pageIndex ,  pageSize );
