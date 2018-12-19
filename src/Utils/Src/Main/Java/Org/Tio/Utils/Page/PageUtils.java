@@ -46,3 +46,6 @@ Public  class  PageUtils  {
 		}
 
 		Page < T >  page  =  pre ( set ,  pageIndex ,  pageSize );
+
+		List < T >  pageData  =  page . getPageData ();
+		If  ( pageData  ==  null )  {
