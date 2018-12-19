@@ -26,3 +26,9 @@ Public  class  PageUtils  {
 		List < T >  pageData  =  page . getPageData ();
 		If  ( pageData  ==  null )  {
 			Return  page ;
+		}
+
+		Int  startIndex  =  Math . min (( page . getPageIndex ()  -  1 )  *  page . getPageSize (),  list . size ());
+		Int  endIndex  =  Math . min ( page . getPageIndex ( )  *  page . getPageSize (),  list . size ());
+
+		For  ( int  i  =  startIndex ;  i  <  endIndex ;  i ++)  {
