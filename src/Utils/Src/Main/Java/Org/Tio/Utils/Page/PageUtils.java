@@ -103,3 +103,6 @@ Public  class  PageUtils  {
 		List < T >  pageData  =  new  ArrayList <>( pageSize );
 		Page < T >  ret  =  new  Page <>( pageData ,  pageIndex ,  pageSize ,  recordCount );
 		Return  ret ;
+	}
+
+	Private  static  int  processPageIndex ( int  pageIndex )  {
