@@ -20,3 +20,7 @@ Public  class  PageUtils  {
 		If  ( list  ==  null )  {
 			Return  null ;
 		}
+
+		Page < T >  page  =  pre ( list ,  pageIndex ,  pageSize );
+
+		List < T >  pageData  =  page . getPageData ();
