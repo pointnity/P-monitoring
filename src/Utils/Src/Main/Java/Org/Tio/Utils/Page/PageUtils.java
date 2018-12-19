@@ -86,3 +86,6 @@ Public  class  PageUtils  {
 		}
 
 	}
+
+	Private  static  < T >  Page < T >  pre ( java . util . Collection < T >  list ,  int  pageIndex ,  int  pageSize )  {
+		If  ( list  ==  null )  {
