@@ -79,3 +79,4 @@ Public  class  PageUtils  {
 		}
 		Lock  lock  =  setWithLock . getLock (). readLock ();
 		Try  {
+			Lock . lock ();
