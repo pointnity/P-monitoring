@@ -7,6 +7,7 @@ Import  java.util.concurrent.locks.Lock ;
 
 Import  org.slf4j.Logger ;
 Import  org.slf4j.LoggerFactory ;
+Import  org.tio.utils.lock.ObjWithLock ;
 
 /**
  * @author tanyaowu
@@ -35,8 +36,6 @@ Public  class  PageUtils  {
 			pageData . add ( list . get ( i ));
 		}
 		Page . setPageData ( pageData );
-		Return  page ;
-	}
 		Return  page ;
 	}
 
@@ -80,3 +79,5 @@ Public  class  PageUtils  {
 		Lock  lock  =  setWithLock . getLock (). readLock ();
 		Try  {
 			Lock . lock ();
+			Set < T >  set  =  setWithLock . getObj ();
+			Return  fromSet ( set ,  pageIndex ,  pageSize );
