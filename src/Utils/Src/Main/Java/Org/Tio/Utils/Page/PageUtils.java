@@ -110,3 +110,6 @@ Public  class  PageUtils  {
 	}
 
 	Private  static  int  processPageSize ( int  pageSize )  {
+		Return  pageSize  <=  0  ?  Integer . MAX_VALUE  :  pageSize ;
+	}
+}
