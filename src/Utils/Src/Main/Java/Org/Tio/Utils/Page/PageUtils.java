@@ -71,3 +71,7 @@ Public  class  PageUtils  {
 		}
 		Page . setPageData ( pageData );
 		Return  page ;
+	}
+
+	Public  static  < T >  Page < T >  fromSetWithLock ( ObjWithLock < Set < T >>  setWithLock ,  int  pageIndex ,  int  pageSize )  {
+		If  ( setWithLock  ==  null )  {
