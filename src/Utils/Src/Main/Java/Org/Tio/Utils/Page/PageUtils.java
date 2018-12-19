@@ -106,3 +106,5 @@ Public  class  PageUtils  {
 	}
 
 	Private  static  int  processPageIndex ( int  pageIndex )  {
+		Return  pageIndex  <=  0  ?  1  :  pageIndex ;
+	}
