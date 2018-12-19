@@ -35,3 +35,5 @@ Public  class  PageUtils  {
 			pageData . add ( list . get ( i ));
 		}
 		Page . setPageData ( pageData );
+		Return  page ;
+	}
