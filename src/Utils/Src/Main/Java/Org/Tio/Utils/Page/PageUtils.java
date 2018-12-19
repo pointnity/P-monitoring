@@ -58,3 +58,4 @@ Public  class  PageUtils  {
 		Int  i  =  0 ;
 		For  ( T  t  :  set )  {
 			If  ( i  >=  endIndex )  {
+				Break ;
