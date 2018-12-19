@@ -81,3 +81,4 @@ Public  class  PageUtils  {
 			Lock . lock ();
 			Set < T >  set  =  setWithLock . getObj ();
 			Return  fromSet ( set ,  pageIndex ,  pageSize );
+		}  finally  {
