@@ -56,3 +56,4 @@ Public  class  PageUtils  {
 		Int  endIndex  =  Math . min ( page . getPageIndex ( )  *  page . getPageSize (),  set . size ());
 
 		Int  i  =  0 ;
+		For  ( T  t  :  set )  {
