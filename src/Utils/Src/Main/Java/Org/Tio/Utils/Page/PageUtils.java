@@ -16,3 +16,5 @@ Public  class  PageUtils  {
 	@SuppressWarnings ( "unused" )
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( PageUtils . class );
 
+	Public  static  < T >  Page < T >  fromList ( List < T >  list ,  int  pageIndex ,  int  pageSize )  {
+		If  ( list  ==  null )  {
