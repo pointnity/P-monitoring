@@ -32,3 +32,6 @@ Public  class  PageUtils  {
 		Int  endIndex  =  Math . min ( page . getPageIndex ( )  *  page . getPageSize (),  list . size ());
 
 		For  ( int  i  =  startIndex ;  i  <  endIndex ;  i ++)  {
+			pageData . add ( list . get ( i ));
+		}
+		Page . setPageData ( pageData );
