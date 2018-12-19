@@ -51,3 +51,8 @@ Public  class  PageUtils  {
 		If  ( pageData  ==  null )  {
 			Return  page ;
 		}
+
+		Int  startIndex  =  Math . min (( page . getPageIndex ()  -  1 )  *  page . getPageSize (),  set . size ());
+		Int  endIndex  =  Math . min ( page . getPageIndex ( )  *  page . getPageSize (),  set . size ());
+
+		Int  i  =  0 ;
