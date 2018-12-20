@@ -22,3 +22,5 @@ Public  interface  IPropSupport  {
 	Public  Object  getAttribute ( String  key );
 
 	/**
+	 * Delete attribute
+	 * @param key
