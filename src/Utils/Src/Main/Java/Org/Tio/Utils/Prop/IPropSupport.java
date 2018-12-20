@@ -14,3 +14,5 @@ Public  interface  IPropSupport  {
 	Public  void  clearAttribute ();
 
 	/**
+	 * Get properties
+	 * @param key
