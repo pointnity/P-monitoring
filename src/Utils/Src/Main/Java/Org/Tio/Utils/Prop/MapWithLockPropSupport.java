@@ -116,3 +116,6 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	@Override
 	public void setAttribute(String key, Object value) {
 		initProps();
+		Lock lock = props.getLock().writeLock();
+		Map<String, Object> m = props.getObj();
+		try {
