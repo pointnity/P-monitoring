@@ -49,3 +49,10 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 			Throw  e ;
 		}  finally  {
 			Lock . unlock ();
+		}
+	}
+
+	/**
+	 *
+	 * @param key
+	 * @return
