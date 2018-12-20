@@ -79,3 +79,6 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	}
 
 	Private  void  initProps ()  {
+		If  ( props  ==  null )  {
+			Synchronized  ( this )  {
+				If  ( props  ==  null )  {
