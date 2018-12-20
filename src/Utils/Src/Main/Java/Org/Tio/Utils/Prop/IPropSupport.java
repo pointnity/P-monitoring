@@ -26,3 +26,6 @@ Public  interface  IPropSupport  {
 	 * @param key
 	 * @author: tanyaowu
 	 */
+	Public  void  removeAttribute ( String  key );
+
+	/**
