@@ -64,3 +64,18 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 		Map < String ,  Object >  m  =  props . getObj ();
 		Object  ret  =  m . get ( key );
 		Return  ret ;
+
+		// Lock lock = props.getLock().readLock();
+		// Map<String, Object> m = props.getObj();
+		// try {
+		// lock.lock();
+		// Object ret = m.get(key);
+		// return ret;
+		// } catch (Throwable e) {
+		// throw e;
+		// } finally {
+		// lock.unlock();
+		// }
+	}
+
+	Private  void  initProps ()  {
