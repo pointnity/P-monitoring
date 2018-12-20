@@ -17,3 +17,6 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( MapWithLockPropSupport . class );
 
 	/**
+	 * @param args
+	 * @author tanyaowu
+	 */
