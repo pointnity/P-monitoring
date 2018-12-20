@@ -122,3 +122,5 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 			lock.lock();
 			m.put(key, value);
 		} catch (Throwable e) {
+			throw e;
+		} finally {
