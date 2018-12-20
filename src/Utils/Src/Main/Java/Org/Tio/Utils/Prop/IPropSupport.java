@@ -31,3 +31,6 @@ Public  interface  IPropSupport  {
 	/**
 	 * Delete attribute
 	 * @param key
+	 * @param value
+	 * @author: tanyaowu
+	 */
