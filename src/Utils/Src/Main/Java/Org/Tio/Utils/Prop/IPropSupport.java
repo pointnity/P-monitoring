@@ -9,3 +9,5 @@ Public  interface  IPropSupport  {
 	/**
 	 * Clear all attributes
 	 * 
+	 * @author: tanyaowu
+	 */
