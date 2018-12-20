@@ -82,3 +82,8 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 		If  ( props  ==  null )  {
 			Synchronized  ( this )  {
 				If  ( props  ==  null )  {
+					The props  =  new new  MapWithLock <> ( new new  the HashMap < String ,  Object > ( 10 ));
+				}
+			}
+		}
+	}
