@@ -95,3 +95,6 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	@Override
 	Public  void  removeAttribute ( String  key )  {
 		initProps ();
+		Lock  lock  =  props . getLock (). writeLock ();
+		Map < String ,  Object >  m  =  props . getObj ();
+		Try  {
