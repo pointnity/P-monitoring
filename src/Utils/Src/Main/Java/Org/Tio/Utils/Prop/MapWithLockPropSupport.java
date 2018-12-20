@@ -40,3 +40,7 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	@Override
 	Public  void  clearAttribute ()  {
 		initProps ();
+		Lock  lock  =  props . getLock (). writeLock ();
+		Map < String ,  Object >  m  =  props . getObj ();
+		Try  {
+			Lock . lock ();
