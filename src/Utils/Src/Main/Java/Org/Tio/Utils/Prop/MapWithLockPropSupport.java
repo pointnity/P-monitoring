@@ -35,3 +35,8 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 
 	/**
 	 *
+	 * @author tanyaowu
+	 */
+	@Override
+	Public  void  clearAttribute ()  {
+		initProps ();
