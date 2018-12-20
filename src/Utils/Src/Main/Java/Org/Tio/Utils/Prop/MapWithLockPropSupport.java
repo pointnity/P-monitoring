@@ -27,3 +27,6 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	Private  MapWithLock < String ,  Object >  props  =  null ; //
 
 	/**
+	 *
+	 * @author tanyaowu
+	 */
