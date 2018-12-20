@@ -111,3 +111,8 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	 *
 	 * @param key
 	 * @param value
+	 * @author tanyaowu
+	 */
+	@Override
+	public void setAttribute(String key, Object value) {
+		initProps();
