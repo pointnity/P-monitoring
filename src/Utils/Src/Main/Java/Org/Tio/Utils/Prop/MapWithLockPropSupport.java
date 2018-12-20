@@ -12,3 +12,5 @@ Import  org.tio.utils.lock.MapWithLock ;
  * @author tanyaowu
  * 
  */
+Public  class  MapWithLockPropSupport  implements  IPropSupport  {
+	@SuppressWarnings ( "unused" )
