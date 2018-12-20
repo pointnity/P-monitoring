@@ -19,3 +19,6 @@ Public  interface  IPropSupport  {
 	 * @return
 	 * @author: tanyaowu
 	 */
+	Public  Object  getAttribute ( String  key );
+
+	/**
