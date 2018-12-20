@@ -34,3 +34,5 @@ Public  interface  IPropSupport  {
 	 * @param value
 	 * @author: tanyaowu
 	 */
+	Public  void  setAttribute ( String  key ,  Object  value );
+}
