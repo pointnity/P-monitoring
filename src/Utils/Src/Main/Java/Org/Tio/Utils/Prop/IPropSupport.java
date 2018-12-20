@@ -29,3 +29,5 @@ Public  interface  IPropSupport  {
 	Public  void  removeAttribute ( String  key );
 
 	/**
+	 * Delete attribute
+	 * @param key
