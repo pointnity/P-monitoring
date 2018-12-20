@@ -98,3 +98,6 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 		Lock  lock  =  props . getLock (). writeLock ();
 		Map < String ,  Object >  m  =  props . getObj ();
 		Try  {
+			lock.lock();
+			m.remove(key);
+		} catch (Throwable e) {
