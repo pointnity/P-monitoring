@@ -11,3 +11,6 @@ Public  interface  IPropSupport  {
 	 * 
 	 * @author: tanyaowu
 	 */
+	Public  void  clearAttribute ();
+
+	/**
