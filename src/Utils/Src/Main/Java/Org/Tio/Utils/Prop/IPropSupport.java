@@ -7,3 +7,5 @@ Package  org . tio . utils . prop ;
  */
 Public  interface  IPropSupport  {
 	/**
+	 * Clear all attributes
+	 * 
