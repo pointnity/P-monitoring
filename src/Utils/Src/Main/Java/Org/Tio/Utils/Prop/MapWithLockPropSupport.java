@@ -101,3 +101,7 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 			lock.lock();
 			m.remove(key);
 		} catch (Throwable e) {
+			throw e;
+		} finally {
+			lock.unlock();
+		}
