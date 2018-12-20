@@ -16,3 +16,6 @@ Public  interface  IPropSupport  {
 	/**
 	 * Get properties
 	 * @param key
+	 * @return
+	 * @author: tanyaowu
+	 */
