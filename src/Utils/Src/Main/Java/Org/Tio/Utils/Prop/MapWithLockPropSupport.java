@@ -92,3 +92,6 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	 * @param key
 	 * @author tanyaowu
 	 */
+	@Override
+	Public  void  removeAttribute ( String  key )  {
+		initProps ();
