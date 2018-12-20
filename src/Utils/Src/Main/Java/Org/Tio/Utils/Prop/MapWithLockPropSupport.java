@@ -56,3 +56,11 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	 *
 	 * @param key
 	 * @return
+	 * @author tanyaowu
+	 */
+	@Override
+	Public  Object  getAttribute ( String  key )  {
+		initProps ();
+		Map < String ,  Object >  m  =  props . getObj ();
+		Object  ret  =  m . get ( key );
+		Return  ret ;
