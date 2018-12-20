@@ -87,3 +87,8 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 			}
 		}
 	}
+
+	/**
+	 * @param key
+	 * @author tanyaowu
+	 */
