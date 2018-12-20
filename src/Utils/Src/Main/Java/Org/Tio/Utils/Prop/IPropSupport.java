@@ -5,3 +5,5 @@ Package  org . tio . utils . prop ;
  * @author tanyaowu
  *  
  */
+Public  interface  IPropSupport  {
+	/**
