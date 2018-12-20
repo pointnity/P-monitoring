@@ -105,3 +105,9 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 		} finally {
 			lock.unlock();
 		}
+	}
+
+	/**
+	 *
+	 * @param key
+	 * @param value
