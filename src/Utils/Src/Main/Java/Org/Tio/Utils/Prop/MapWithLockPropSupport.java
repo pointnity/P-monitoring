@@ -30,3 +30,8 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	 *
 	 * @author tanyaowu
 	 */
+	Public  MapWithLockPropSupport ()  {
+	}
+
+	/**
+	 *
