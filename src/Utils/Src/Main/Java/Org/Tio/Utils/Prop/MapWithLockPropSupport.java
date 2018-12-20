@@ -23,3 +23,7 @@ Public  class  MapWithLockPropSupport  implements  IPropSupport  {
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	Private  MapWithLock < String ,  Object >  props  =  null ; //
+
+	/**
