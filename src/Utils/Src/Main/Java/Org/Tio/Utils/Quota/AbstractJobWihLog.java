@@ -37,3 +37,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 		Try  {
 			Run ( context );
 		}  catch  ( JobExecutionException  e )  {
+			Throw  e ;
