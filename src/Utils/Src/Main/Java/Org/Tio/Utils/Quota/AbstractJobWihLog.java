@@ -30,3 +30,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	 * @author: tanyaowu
 	 */
 	@Override
+	Public  void  execute ( JobExecutionContext  context )  throws  JobExecutionException  {
