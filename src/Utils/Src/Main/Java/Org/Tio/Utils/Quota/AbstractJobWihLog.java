@@ -13,3 +13,4 @@ Import  com.xiaoleilu.hutool.date.DateUtil ;
  * @author tanyaowu 
  * 
  */
+Public  abstract  class  AbstractJobWihLog  implements  Job  {
