@@ -42,3 +42,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 			Log . error ( e . toString ( ),  e );
 		}
 		Long  end  =  SystemTimer . currentTimeMillis ();
+		Long  iv  =  end  -  start ;
