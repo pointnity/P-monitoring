@@ -35,3 +35,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 				DateUtil . formatDateTime ( context . getPreviousFireTime ()),  DateUtil . formatDateTime ( context . getNextFireTime ()));
 		Long  start  =  SystemTimer . currentTimeMillis ();
 		Try  {
+			Run ( context );
