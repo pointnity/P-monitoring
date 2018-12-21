@@ -29,3 +29,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	 * @throws JobExecutionException
 	 * @author: tanyaowu
 	 */
+	@Override
