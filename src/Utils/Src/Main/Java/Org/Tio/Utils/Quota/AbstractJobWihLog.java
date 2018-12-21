@@ -40,3 +40,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 			Throw  e ;
 		}  catch  ( Throwable  e )  {
 			Log . error ( e . toString ( ),  e );
+		}
