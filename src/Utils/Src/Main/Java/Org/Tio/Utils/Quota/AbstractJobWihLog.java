@@ -56,3 +56,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	Public  abstract  void  run ( JobExecutionContext  context )  throws  Exception ;
 
 	/**
+	 * @param args
