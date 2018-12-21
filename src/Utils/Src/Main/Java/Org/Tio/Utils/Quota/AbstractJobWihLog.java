@@ -57,3 +57,5 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 
 	/**
 	 * @param args
+	 * @author: tanyaowu
+	 */
