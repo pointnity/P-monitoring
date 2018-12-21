@@ -36,3 +36,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 		Long  start  =  SystemTimer . currentTimeMillis ();
 		Try  {
 			Run ( context );
+		}  catch  ( JobExecutionException  e )  {
