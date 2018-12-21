@@ -34,3 +34,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 		Log . info ( "Timed task [{}] runs start, this time id:{}, this execution time: {}, last execution time: {}, next execution time: {}" ,  this . getClass ( ). getName (),  context . getFireInstanceId (),  DateUtil . FormatDateTime ( context . getFireTime ()),
 				DateUtil . formatDateTime ( context . getPreviousFireTime ()),  DateUtil . formatDateTime ( context . getNextFireTime ()));
 		Long  start  =  SystemTimer . currentTimeMillis ();
+		Try  {
