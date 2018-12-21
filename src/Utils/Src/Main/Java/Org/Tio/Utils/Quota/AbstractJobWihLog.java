@@ -52,3 +52,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	 * @param context
 	 * @throws Exception
 	 * @author: tanyaowu
+	 */
