@@ -21,3 +21,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	 * @author: tanyaowu
 	 */
 	Public  AbstractJobWihLog ()  {
+		Log  =  LoggerFactory . getLogger ( AbstractJobWihLog . class );
