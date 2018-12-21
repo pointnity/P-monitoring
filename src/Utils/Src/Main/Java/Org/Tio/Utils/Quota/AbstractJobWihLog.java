@@ -53,3 +53,6 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	 * @throws Exception
 	 * @author: tanyaowu
 	 */
+	Public  abstract  void  run ( JobExecutionContext  context )  throws  Exception ;
+
+	/**
