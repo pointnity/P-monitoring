@@ -22,3 +22,6 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	 */
 	Public  AbstractJobWihLog ()  {
 		Log  =  LoggerFactory . getLogger ( AbstractJobWihLog . class );
+	}
+
+	/** 
