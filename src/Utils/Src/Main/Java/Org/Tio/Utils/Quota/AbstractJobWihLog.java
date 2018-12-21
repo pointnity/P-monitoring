@@ -50,3 +50,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	/**
 	 * Write business logic here
 	 * @param context
+	 * @throws Exception
