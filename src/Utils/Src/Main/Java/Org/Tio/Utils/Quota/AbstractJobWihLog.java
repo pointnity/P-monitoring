@@ -46,3 +46,5 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 		Log . info ( "Timed task [{}] has finished running, this time id:{}, this execution time: {}, time-consuming: {}ms" ,  this . getClass (). getName (),  context . getFireInstanceId (),  DateUtil . formatDateTime ( context . getFireTime ()),  iv );
 
 	}
+
+	/**
