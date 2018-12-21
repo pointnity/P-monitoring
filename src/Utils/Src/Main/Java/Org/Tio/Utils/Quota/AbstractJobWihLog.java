@@ -17,3 +17,4 @@ Public  abstract  class  AbstractJobWihLog  implements  Job  {
 	Private  Logger  log  =  LoggerFactory . getLogger ( AbstractJobWihLog . class );
 
 	/**
+	 * 
