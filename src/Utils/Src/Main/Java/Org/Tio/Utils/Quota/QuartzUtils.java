@@ -85,3 +85,6 @@ Public  class  QuartzUtils  {
 
 					@SuppressWarnings ( "unused" )
 					Date  d  =  scheduler . scheduleJob ( job ,  trigger );
+					Log . info ( "Timed Task [{}] has started, cron:{}" ,  clazzz . getName (),  trigger . getCronExpression ());
+
+				}  catch  ( ClassNotFoundException  e )  {
