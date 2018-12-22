@@ -61,3 +61,5 @@ Public  class  QuartzUtils  {
 	/**
 	 * 
 	 * @param file1 is shaped like "/config/tio-quartz.properties"
+	 * @author: tanyaowu
+	 */
