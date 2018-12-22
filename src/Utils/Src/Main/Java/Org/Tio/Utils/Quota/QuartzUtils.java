@@ -28,3 +28,6 @@ Import  com.xiaoleilu.hutool.setting.dialect.Props ;
  *  
  */
 Public  class  QuartzUtils  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( QuartzUtils . class );
+
+	/**
