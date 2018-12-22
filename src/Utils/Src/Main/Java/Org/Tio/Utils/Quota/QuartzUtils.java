@@ -88,3 +88,4 @@ Public  class  QuartzUtils  {
 					Log . info ( "Timed Task [{}] has started, cron:{}" ,  clazzz . getName (),  trigger . getCronExpression ());
 
 				}  catch  ( ClassNotFoundException  e )  {
+					Log . error ( e . toString ( ),  e );
