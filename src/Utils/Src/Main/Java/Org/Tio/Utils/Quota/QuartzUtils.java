@@ -106,3 +106,4 @@ Public  class  QuartzUtils  {
 	 * @author: tanyaowu
 	 */
 	Private  static  void  initJobClasses ()  {
+		Props  props  =  new  Props ( file );
