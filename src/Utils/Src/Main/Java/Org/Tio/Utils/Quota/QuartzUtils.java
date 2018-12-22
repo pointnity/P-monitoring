@@ -71,3 +71,5 @@ Public  class  QuartzUtils  {
 		If  ( JOB_CLASSES . size ()  <=  0 )  {
 			Log . error ( "The timer task class is not configured in file [{}]" ,  file1 );
 			Return ;
+		}
+		Try  {
