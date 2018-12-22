@@ -41,3 +41,7 @@ Public  class  QuartzUtils  {
 	 * 
 	 * @author: tanyaowu
 	 */
+	Private  QuartzUtils ()  {
+	}
+
+	/**
