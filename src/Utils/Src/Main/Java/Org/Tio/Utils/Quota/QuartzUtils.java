@@ -112,3 +112,5 @@ Public  class  QuartzUtils  {
 			For  ( Entry < Object ,  Object >  entry  :  set )  {
 				String  clazz  =  StringUtils . trim (( String )  entry . getKey ());
 				String  cron  =  StringUtils . trim (( String )  entry . getValue ());
+
+				QuartzTimeVo  quartzTimeVo  =  new  QuartzTimeVo ( clazz ,  cron );
