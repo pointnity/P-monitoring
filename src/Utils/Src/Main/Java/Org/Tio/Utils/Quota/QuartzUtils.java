@@ -78,3 +78,5 @@ Public  class  QuartzUtils  {
 			For  ( QuartzTimeVo  quartzTimeVo  :  JOB_CLASSES )  {
 				Try  {
 					@SuppressWarnings ( "unchecked" )
+					Class <?  extends  Job >  clazzz  =  ( Class <?  extends  Job >)  Class . forName ( quartzTimeVo . getClazz ());
+					@SuppressWarnings("unchecked")
