@@ -128,3 +128,5 @@ Public  class  QuartzUtils  {
 			the this . clazz  =  clazz ;
 			the this . the cron  =  the cron ;
 		}
+
+		Public  String  getClazz ()  {
