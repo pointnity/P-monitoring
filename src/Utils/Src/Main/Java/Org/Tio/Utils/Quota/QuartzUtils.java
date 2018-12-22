@@ -111,3 +111,4 @@ Public  class  QuartzUtils  {
 		If  ( set  !=  null  &&  set . size ()  >  0 )  {
 			For  ( Entry < Object ,  Object >  entry  :  set )  {
 				String  clazz  =  StringUtils . trim (( String )  entry . getKey ());
+				String  cron  =  StringUtils . trim (( String )  entry . getValue ());
