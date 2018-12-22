@@ -107,3 +107,5 @@ Public  class  QuartzUtils  {
 	 */
 	Private  static  void  initJobClasses ()  {
 		Props  props  =  new  Props ( file );
+		Set < Entry < Object ,  Object >>  set  =  props . entrySet (); //.keySet();
+		If  ( set  !=  null  &&  set . size ()  >  0 )  {
