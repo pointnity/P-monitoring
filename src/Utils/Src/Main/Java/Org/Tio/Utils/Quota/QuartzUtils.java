@@ -80,3 +80,7 @@ Public  class  QuartzUtils  {
 					@SuppressWarnings ( "unchecked" )
 					Class <?  extends  Job >  clazzz  =  ( Class <?  extends  Job >)  Class . forName ( quartzTimeVo . getClazz ());
 					@SuppressWarnings("unchecked")
+					JobDetail  job  =  JobBuilder . newJob ( clazzz ). withIdentity ( "job-"  +  index ,  "group-"  +  index ). build ();
+					CronTrigger  trigger  =  newTrigger (). withIdentity ( "  trigger- " +  index ,  "group-"  +  index ). withSchedule ( cronSchedule ( quartzTimeVo . getCron ())). build ();
+
+					@SuppressWarnings ( "unused" )
