@@ -77,3 +77,4 @@ Public  class  QuartzUtils  {
 			Int  index  =  1 ;
 			For  ( QuartzTimeVo  quartzTimeVo  :  JOB_CLASSES )  {
 				Try  {
+					@SuppressWarnings ( "unchecked" )
