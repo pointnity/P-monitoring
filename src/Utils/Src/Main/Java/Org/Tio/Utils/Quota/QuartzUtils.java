@@ -130,3 +130,5 @@ Public  class  QuartzUtils  {
 		}
 
 		Public  String  getClazz ()  {
+			Return  clazz ;
+		}
