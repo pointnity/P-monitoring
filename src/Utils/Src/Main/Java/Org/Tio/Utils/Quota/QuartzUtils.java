@@ -109,3 +109,4 @@ Public  class  QuartzUtils  {
 		Props  props  =  new  Props ( file );
 		Set < Entry < Object ,  Object >>  set  =  props . entrySet (); //.keySet();
 		If  ( set  !=  null  &&  set . size ()  >  0 )  {
+			For  ( Entry < Object ,  Object >  entry  :  set )  {
