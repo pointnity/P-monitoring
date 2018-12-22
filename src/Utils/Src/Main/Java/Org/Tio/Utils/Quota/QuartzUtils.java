@@ -125,3 +125,4 @@ Public  class  QuartzUtils  {
 
 		Public  QuartzTimeVo ( String  clazz ,  String  cron )  {
 			Super ();
+			the this . clazz  =  clazz ;
