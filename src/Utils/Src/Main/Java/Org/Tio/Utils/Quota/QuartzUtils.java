@@ -115,3 +115,6 @@ Public  class  QuartzUtils  {
 
 				QuartzTimeVo  quartzTimeVo  =  new  QuartzTimeVo ( clazz ,  cron );
 				JOB_CLASSES . add ( quartzTimeVo );
+			}
+		}
+	}
