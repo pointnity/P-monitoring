@@ -94,3 +94,4 @@ Public  class  QuartzUtils  {
 				}
 			}
 			Scheduler . start ();
+		}  catch  ( SchedulerException  e )  {
