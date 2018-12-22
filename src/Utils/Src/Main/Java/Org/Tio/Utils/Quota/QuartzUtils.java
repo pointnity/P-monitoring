@@ -68,3 +68,4 @@ Public  class  QuartzUtils  {
 			File  =  DEFAULT_FILE ;
 		}
 		initJobClasses ();
+		If  ( JOB_CLASSES . size ()  <=  0 )  {
