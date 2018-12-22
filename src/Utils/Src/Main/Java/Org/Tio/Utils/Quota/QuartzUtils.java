@@ -96,3 +96,5 @@ Public  class  QuartzUtils  {
 			Scheduler . start ();
 		}  catch  ( SchedulerException  e )  {
 			Log . error ( e . toString ( ),  e );
+			Throw  new  RuntimeException ( e );
+		}
