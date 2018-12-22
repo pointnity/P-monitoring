@@ -132,3 +132,5 @@ Public  class  QuartzUtils  {
 		Public  String  getClazz ()  {
 			Return  clazz ;
 		}
+
+		Public  String  getCron ()  {
