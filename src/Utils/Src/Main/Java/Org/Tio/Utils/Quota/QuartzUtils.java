@@ -36,3 +36,6 @@ Public  class  QuartzUtils  {
 	Private  static  final  String  DEFAULT_FILE  =  "classpath:config/tio-quartz.properties" ;
 
 	Private  static  String  file  =  DEFAULT_FILE ;
+
+	/**
+	 * 
