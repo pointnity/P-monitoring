@@ -64,3 +64,4 @@ Public  class  QuartzUtils  {
 	 * @author: tanyaowu
 	 */
 	Public  static  void  start ( String  file1 )  {
+		If  ( StringUtils . isBlank ( file1 ))  {
