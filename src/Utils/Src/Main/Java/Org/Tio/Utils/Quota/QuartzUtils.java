@@ -114,3 +114,4 @@ Public  class  QuartzUtils  {
 				String  cron  =  StringUtils . trim (( String )  entry . getValue ());
 
 				QuartzTimeVo  quartzTimeVo  =  new  QuartzTimeVo ( clazz ,  cron );
+				JOB_CLASSES . add ( quartzTimeVo );
