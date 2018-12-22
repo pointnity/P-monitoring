@@ -124,3 +124,4 @@ Public  class  QuartzUtils  {
 		Private  String  cron  =  null ;
 
 		Public  QuartzTimeVo ( String  clazz ,  String  cron )  {
+			Super ();
