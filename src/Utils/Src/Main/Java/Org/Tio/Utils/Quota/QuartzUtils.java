@@ -134,3 +134,7 @@ Public  class  QuartzUtils  {
 		}
 
 		Public  String  getCron ()  {
+			Return  cron ;
+		}
+	}
+}
