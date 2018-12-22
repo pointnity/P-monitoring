@@ -73,3 +73,7 @@ Public  class  QuartzUtils  {
 			Return ;
 		}
 		Try  {
+			Scheduler  scheduler  =  StdSchedulerFactory . getDefaultScheduler ();
+			Int  index  =  1 ;
+			For  ( QuartzTimeVo  quartzTimeVo  :  JOB_CLASSES )  {
+				Try  {
