@@ -122,3 +122,5 @@ Public  class  QuartzUtils  {
 	Private  static  class  QuartzTimeVo  {
 		Private  String  clazz  =  null ;
 		Private  String  cron  =  null ;
+
+		Public  QuartzTimeVo ( String  clazz ,  String  cron )  {
