@@ -84,3 +84,4 @@ Public  class  QuartzUtils  {
 					CronTrigger  trigger  =  newTrigger (). withIdentity ( "  trigger- " +  index ,  "group-"  +  index ). withSchedule ( cronSchedule ( quartzTimeVo . getCron ())). build ();
 
 					@SuppressWarnings ( "unused" )
+					Date  d  =  scheduler . scheduleJob ( job ,  trigger );
