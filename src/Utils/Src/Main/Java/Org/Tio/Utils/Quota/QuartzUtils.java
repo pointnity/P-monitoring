@@ -63,3 +63,4 @@ Public  class  QuartzUtils  {
 	 * @param file1 is shaped like "/config/tio-quartz.properties"
 	 * @author: tanyaowu
 	 */
+	Public  static  void  start ( String  file1 )  {
