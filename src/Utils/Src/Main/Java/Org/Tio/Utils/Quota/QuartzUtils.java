@@ -105,3 +105,4 @@ Public  class  QuartzUtils  {
 	 * 
 	 * @author: tanyaowu
 	 */
+	Private  static  void  initJobClasses ()  {
