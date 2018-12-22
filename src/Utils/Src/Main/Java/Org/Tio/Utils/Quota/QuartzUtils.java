@@ -67,3 +67,4 @@ Public  class  QuartzUtils  {
 		If  ( StringUtils . isBlank ( file1 ))  {
 			File  =  DEFAULT_FILE ;
 		}
+		initJobClasses ();
