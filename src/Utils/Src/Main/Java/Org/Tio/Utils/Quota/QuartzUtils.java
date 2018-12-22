@@ -23,3 +23,5 @@ Import  org.slf4j.LoggerFactory ;
 Import  com.xiaoleilu.hutool.setting.dialect.Props ;
 
 /**
+ * For Quartz packaging, use: <a href="https://my.oschina.net/talenttan/blog/1550826">https://my.oschina.net/talenttan/blog/1550826</a >
+ * @author tanyaowu 
