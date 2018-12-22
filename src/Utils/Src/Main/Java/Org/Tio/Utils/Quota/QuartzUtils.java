@@ -66,3 +66,4 @@ Public  class  QuartzUtils  {
 	Public  static  void  start ( String  file1 )  {
 		If  ( StringUtils . isBlank ( file1 ))  {
 			File  =  DEFAULT_FILE ;
+		}
