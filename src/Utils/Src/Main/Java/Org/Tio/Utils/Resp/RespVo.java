@@ -47,3 +47,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	/**
 	 * Business data, such as paging data, user information data, etc.
 	 */
+	Private  Object  data ;
+
+	/**
