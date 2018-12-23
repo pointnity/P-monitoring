@@ -31,3 +31,4 @@ Public  enum  RespResult  {
 			}
 		}
 		Logger  log  =  LoggerFactory . getLogger ( RespResult . class );
+		Log . error ( "can not find RespResult by "  +  value );
