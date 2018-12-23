@@ -36,3 +36,6 @@ Public  enum  RespResult  {
 	}
 
 	Int  value ;
+
+	Private  RespResult ( int  value )  {
+		the this . value  =  value ;
