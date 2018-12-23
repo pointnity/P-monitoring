@@ -37,3 +37,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	/**
 	 * Result: Success, Failure or Unknown
 	 */
+	Private  RespResult  result ;
+
+	/**
