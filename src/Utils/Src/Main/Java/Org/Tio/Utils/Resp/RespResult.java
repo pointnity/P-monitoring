@@ -22,3 +22,5 @@ Public  enum  RespResult  {
 	 * Unknown response
 	 */
 	UNKNOWN ( 3 );
+
+	Public  static  RespResult  from ( int  value )  {
