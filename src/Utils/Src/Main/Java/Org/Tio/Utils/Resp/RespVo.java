@@ -89,3 +89,5 @@ Public  class  RespVo  implements  java . io . Serializable  {
 // }
 
 	Public  boolean  isOk ()  {
+		Return  this . result  ==  RespResult . OK ;
+	}
