@@ -11,3 +11,5 @@ Import  org.slf4j.LoggerFactory ;
  */
 Public  enum  RespResult  {
 	/**
+	 * Successful response
+	 */
