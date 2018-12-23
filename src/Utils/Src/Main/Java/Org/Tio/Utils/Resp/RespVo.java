@@ -58,3 +58,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	 *
 	 * @author tanyaowu
 	 */
+	Private  RespVo ( RespResult  respCode )  {
+		the this . Result  =  respCode ;
+	}
