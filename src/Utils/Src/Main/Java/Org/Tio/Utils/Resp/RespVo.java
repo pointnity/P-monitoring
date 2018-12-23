@@ -69,3 +69,5 @@ Public  class  RespVo  implements  java . io . Serializable  {
 
 	Public  RespVo  data ( Object  data )  {
 		This . setData ( data );
+		Return  this ;
+	}
