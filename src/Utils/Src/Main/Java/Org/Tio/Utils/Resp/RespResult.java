@@ -9,3 +9,5 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  * 
  */
+Public  enum  RespResult  {
+	/**
