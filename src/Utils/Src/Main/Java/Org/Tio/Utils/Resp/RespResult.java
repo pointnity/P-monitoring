@@ -26,3 +26,4 @@ Public  enum  RespResult  {
 	Public  static  RespResult  from ( int  value )  {
 		RespResult []  values  =  RespResult . values ();
 		For  ( RespResult  v  :  values )  {
+			If  ( Objects . equals ( v . value ,  value ))  {
