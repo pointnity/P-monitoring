@@ -61,3 +61,7 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	Private  RespVo ( RespResult  respCode )  {
 		the this . Result  =  respCode ;
 	}
+
+	Public  RespVo  code ( Integer  code )  {
+		This . setCode ( code );
+		Return  this ;
