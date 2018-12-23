@@ -30,3 +30,4 @@ Public  enum  RespResult  {
 				Return  v ;
 			}
 		}
+		Logger  log  =  LoggerFactory . getLogger ( RespResult . class );
