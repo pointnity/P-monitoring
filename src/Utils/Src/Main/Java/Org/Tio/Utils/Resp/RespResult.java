@@ -27,3 +27,4 @@ Public  enum  RespResult  {
 		RespResult []  values  =  RespResult . values ();
 		For  ( RespResult  v  :  values )  {
 			If  ( Objects . equals ( v . value ,  value ))  {
+				Return  v ;
