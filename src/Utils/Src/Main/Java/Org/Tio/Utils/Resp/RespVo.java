@@ -10,3 +10,5 @@ Public  class  RespVo  implements  java . io . Serializable  {
 
 	Public  static  RespVo  fail ()  {
 		RespVo  resp  =  new  RespVo ( RespResult . FAIL );
+		Return  resp ;
+	}
