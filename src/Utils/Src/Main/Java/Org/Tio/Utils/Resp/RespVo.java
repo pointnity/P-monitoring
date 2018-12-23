@@ -94,3 +94,5 @@ Public  class  RespVo  implements  java . io . Serializable  {
 
 	Public  RespVo  msg ( String  msg )  {
 		This . setMsg ( msg );
+		Return  this ;
+	}
