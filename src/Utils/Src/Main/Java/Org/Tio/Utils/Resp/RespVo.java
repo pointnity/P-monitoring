@@ -99,3 +99,7 @@ Public  class  RespVo  implements  java . io . Serializable  {
 
 	Public  void  setCode ( Integer  code )  {
 		the this . code  =  code ;
+	}
+
+	Public  void  setData ( Object  data )  {
+		the this . Data  =  Data ;
