@@ -40,3 +40,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	Private  RespResult  result ;
 
 	/**
+	 * Message, generally used for display
+	 */
+	Private  String  msg ;
