@@ -20,3 +20,5 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	/**
 	 * @param args
 	 * @author tanyaowu
+	 */
+	Public  static  void  main ( String []  args )  {
