@@ -108,3 +108,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	Public  void  setMsg ( String  msg )  {
 		the this . MSG  =  MSG ;
 	}
+
+// public void setResult(RespResult result) {
+// this.result = result;
