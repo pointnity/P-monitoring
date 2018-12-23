@@ -71,3 +71,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 		This . setData ( data );
 		Return  this ;
 	}
+
+	Public  Integer  getCode ()  {
+		Return  code ;
