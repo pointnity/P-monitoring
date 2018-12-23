@@ -103,3 +103,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 
 	Public  void  setData ( Object  data )  {
 		the this . Data  =  Data ;
+	}
+
+	Public  void  setMsg ( String  msg )  {
