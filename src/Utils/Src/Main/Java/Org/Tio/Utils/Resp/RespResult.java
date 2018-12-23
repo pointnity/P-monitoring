@@ -19,3 +19,5 @@ Public  enum  RespResult  {
 	 */
 	FAIL ( 2 ), 
 	/**
+	 * Unknown response
+	 */
