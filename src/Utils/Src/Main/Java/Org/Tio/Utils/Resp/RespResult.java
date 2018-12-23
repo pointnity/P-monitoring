@@ -21,3 +21,4 @@ Public  enum  RespResult  {
 	/**
 	 * Unknown response
 	 */
+	UNKNOWN ( 3 );
