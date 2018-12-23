@@ -78,3 +78,8 @@ Public  class  RespVo  implements  java . io . Serializable  {
 
 	Public  Object  getData ()  {
 		Return  data ;
+	}
+
+	Public  String  getMsg ()  {
+		Return  msg ;
+	}
