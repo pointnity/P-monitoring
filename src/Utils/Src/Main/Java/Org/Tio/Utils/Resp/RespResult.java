@@ -28,3 +28,5 @@ Public  enum  RespResult  {
 		For  ( RespResult  v  :  values )  {
 			If  ( Objects . equals ( v . value ,  value ))  {
 				Return  v ;
+			}
+		}
