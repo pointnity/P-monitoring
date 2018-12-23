@@ -15,3 +15,5 @@ Public  enum  RespResult  {
 	 */
 	OK ( 1 ), 
 	/**
+	 * failed response
+	 */
