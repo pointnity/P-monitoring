@@ -24,3 +24,4 @@ Public  enum  RespResult  {
 	UNKNOWN ( 3 );
 
 	Public  static  RespResult  from ( int  value )  {
+		RespResult []  values  =  RespResult . values ();
