@@ -43,3 +43,7 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	 * Message, generally used for display
 	 */
 	Private  String  msg ;
+
+	/**
+	 * Business data, such as paging data, user information data, etc.
+	 */
