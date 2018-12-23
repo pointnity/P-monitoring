@@ -17,3 +17,5 @@ Public  enum  RespResult  {
 	/**
 	 * failed response
 	 */
+	FAIL ( 2 ), 
+	/**
