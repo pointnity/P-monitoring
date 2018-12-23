@@ -50,3 +50,5 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	Private  Object  data ;
 
 	/**
+	 * Business coding: This is generally used in case of failure to inform the user of the reason for the failure.
+	 */
