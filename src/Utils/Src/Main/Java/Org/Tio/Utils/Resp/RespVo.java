@@ -52,3 +52,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	/**
 	 * Business coding: This is generally used in case of failure to inform the user of the reason for the failure.
 	 */
+	Private  Integer  code ;
+
+	/**
