@@ -31,3 +31,5 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	}
 
 	Public  static  RespVo  ok ( Object  data )  {
+		Return  ok (). data ( data );
+	}
