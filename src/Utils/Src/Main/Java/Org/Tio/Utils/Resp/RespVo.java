@@ -28,3 +28,6 @@ Public  class  RespVo  implements  java . io . Serializable  {
 	Public  static  RespVo  ok ()  {
 		RespVo  resp  =  new  RespVo ( RespResult . OK );
 		Return  resp ;
+	}
+
+	Public  static  RespVo  ok ( Object  data )  {
