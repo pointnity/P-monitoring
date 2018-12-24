@@ -11,3 +11,7 @@ Import  org.slf4j.LoggerFactory ;
  * @author tanyaowu
  *  
  */
+Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnable  {
+	Private  static  final  Logger  log  =  LoggerFactory . getLogger ( AbstractQueueRunnable . class );
+
+	/** The msg queue. */
