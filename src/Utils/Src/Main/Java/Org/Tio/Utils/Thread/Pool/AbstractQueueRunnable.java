@@ -18,3 +18,5 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	Protected  ConcurrentLinkedQueue < T >  msgQueue  =  new  ConcurrentLinkedQueue <>();
 
 	/**
+	 *
+	 * @param executor
