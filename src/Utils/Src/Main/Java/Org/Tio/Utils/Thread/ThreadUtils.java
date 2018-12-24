@@ -9,3 +9,4 @@ Public  class  ThreadUtils  {
 	Public  static  String  stackTrace ()  {
 		StackTraceElement []  elements  =  Thread . currentThread (). getStackTrace ();
 		StringBuilder  buf  =  new  StringBuilder ();
+		For  ( StackTraceElement  element  :  elements )  {
