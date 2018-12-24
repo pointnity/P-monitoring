@@ -7,3 +7,4 @@ Package  org . tio . utils . thread ;
  */
 Public  class  ThreadUtils  {
 	Public  static  String  stackTrace ()  {
+		StackTraceElement []  elements  =  Thread . currentThread (). getStackTrace ();
