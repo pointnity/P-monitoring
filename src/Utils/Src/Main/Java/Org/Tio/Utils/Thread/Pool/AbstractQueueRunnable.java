@@ -35,3 +35,6 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 			Log . error ( "task has been canceled" );
 			Return  false ;
 		}
+
+		Return  msgQueue . add ( t );
+	}
