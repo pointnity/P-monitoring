@@ -33,3 +33,5 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	Public  boolean  addMsg ( T  t )  {
 		If  ( this . isCanceled ())  {
 			Log . error ( "task has been canceled" );
+			Return  false ;
+		}
