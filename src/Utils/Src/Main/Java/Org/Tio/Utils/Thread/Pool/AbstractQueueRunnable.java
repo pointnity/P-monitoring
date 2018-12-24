@@ -55,3 +55,5 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	// *
 	// */
 	@Override
+	// public ConcurrentLinkedQueue<T> getMsgQueue()
+	// {
