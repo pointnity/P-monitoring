@@ -38,3 +38,7 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 
 		Return  msgQueue . add ( t );
 	}
+
+	/**
+	 * Clear processed queue messages
+	 */
