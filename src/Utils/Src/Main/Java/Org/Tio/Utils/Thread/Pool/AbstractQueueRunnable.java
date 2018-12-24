@@ -15,3 +15,6 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	Private  static  final  Logger  log  =  LoggerFactory . getLogger ( AbstractQueueRunnable . class );
 
 	/** The msg queue. */
+	Protected  ConcurrentLinkedQueue < T >  msgQueue  =  new  ConcurrentLinkedQueue <>();
+
+	/**
