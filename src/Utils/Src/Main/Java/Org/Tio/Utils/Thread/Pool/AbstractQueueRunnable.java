@@ -42,3 +42,5 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	/**
 	 * Clear processed queue messages
 	 */
+	Public  void  clearMsgQueue ()  {
+		msgQueue . clear ();
