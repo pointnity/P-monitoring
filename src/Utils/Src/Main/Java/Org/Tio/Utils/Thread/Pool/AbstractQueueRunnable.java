@@ -30,3 +30,4 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	 * @return
 	 *
 	 */
+	Public  boolean  addMsg ( T  t )  {
