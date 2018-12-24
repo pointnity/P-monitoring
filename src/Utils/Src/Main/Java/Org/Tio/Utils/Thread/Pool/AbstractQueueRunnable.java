@@ -49,3 +49,7 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	@Override
 	Public  boolean  isNeededExecute ()  {
 		Return  msgQueue . size ()  >  0 ;
+	}
+
+	// /**
+	// *
