@@ -27,3 +27,6 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	}
 
 	/**
+	 * @return
+	 *
+	 */
