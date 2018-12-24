@@ -24,3 +24,6 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	 */
 	Public  AbstractQueueRunnable ( Executor  executor )  {
 		Super ( executor );
+	}
+
+	/**
