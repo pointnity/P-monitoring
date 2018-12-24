@@ -44,3 +44,8 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	 */
 	Public  void  clearMsgQueue ()  {
 		msgQueue . clear ();
+	}
+
+	@Override
+	Public  boolean  isNeededExecute ()  {
+		Return  msgQueue . size ()  >  0 ;
