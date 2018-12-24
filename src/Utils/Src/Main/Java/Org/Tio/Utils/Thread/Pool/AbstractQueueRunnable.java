@@ -22,3 +22,5 @@ Public  abstract  class  AbstractQueueRunnable < T >  extends  AbstractSynRunnab
 	 * @param executor
 	 * @author tanyaowu
 	 */
+	Public  AbstractQueueRunnable ( Executor  executor )  {
+		Super ( executor );
