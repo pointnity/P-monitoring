@@ -34,3 +34,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	/**
 	 * @return the executor
 	 */
+	Public  Executor  getExecutor ()  {
+		Return  executor ;
