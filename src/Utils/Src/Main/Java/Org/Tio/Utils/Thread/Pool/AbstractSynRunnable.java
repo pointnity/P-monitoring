@@ -81,3 +81,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	Public  ReadWriteLock  runningLock ()  {
 		Return  runningLock ;
 	}
+
+	@Override
