@@ -19,3 +19,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( AbstractSynRunnable . class );
 
 	Private  ReadWriteLock  runningLock  =  new  ReentrantReadWriteLock ();
+
+	Private  Executor  executor ;
