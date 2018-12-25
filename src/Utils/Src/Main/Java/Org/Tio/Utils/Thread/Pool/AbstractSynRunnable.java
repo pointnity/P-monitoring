@@ -36,3 +36,6 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	 */
 	Public  Executor  getExecutor ()  {
 		Return  executor ;
+	}
+
+	@Override
