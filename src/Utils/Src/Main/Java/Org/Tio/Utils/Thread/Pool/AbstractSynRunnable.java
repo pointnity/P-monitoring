@@ -68,3 +68,7 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 			}
 		}
 	}
+
+	/**
+	 * @see org.tio.core.threadpool.intf.ISynRunnable#runningLock()
+	 *
