@@ -58,3 +58,4 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 		}
 
 		Try  {
+			runTask ();
