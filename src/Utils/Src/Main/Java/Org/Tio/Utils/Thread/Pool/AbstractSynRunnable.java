@@ -66,3 +66,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 			If  ( isNeededExecute ())  {
 				getExecutor (). execute ( this );
 			}
+		}
+	}
