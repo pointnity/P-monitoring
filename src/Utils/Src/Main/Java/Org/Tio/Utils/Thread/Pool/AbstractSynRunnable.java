@@ -86,3 +86,7 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	Public  void  setCanceled ( boolean  isCanceled )  {
 		the this . isCanceled  =  isCanceled ;
 	}
+
+	/**
+	 * @param executor the executor to set
+	 */
