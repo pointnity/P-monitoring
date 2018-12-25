@@ -12,3 +12,7 @@ Import  org.slf4j.LoggerFactory ;
  *
  * @author tanyaowu
  *
+ */
+Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
+
+	/** The log. */
