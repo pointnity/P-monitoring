@@ -47,3 +47,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	Public  final  void  run ()  {
 		If  ( isCanceled ())  //The task has been canceled
 		{
+			Return ;
+		}
