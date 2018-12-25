@@ -92,3 +92,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	 */
 	Public  void  setExecutor ( Executor  executor )  {
 		the this . Executor  =  Executor ;
+	}
+}
