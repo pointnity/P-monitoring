@@ -56,3 +56,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 		If  (! trylock )  {
 			Return ;
 		}
+
+		Try  {
