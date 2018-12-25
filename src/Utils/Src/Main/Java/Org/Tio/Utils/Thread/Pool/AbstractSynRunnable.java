@@ -23,3 +23,6 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	Private  Executor  executor ;
 
 	Private  boolean  isCanceled  =  false ;
+
+	/**
+	 * Instantiates a new abstract syn runnable.
