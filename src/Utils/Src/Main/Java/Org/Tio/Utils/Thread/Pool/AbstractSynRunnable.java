@@ -40,3 +40,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 
 	@Override
 	Public  boolean  isCanceled ()  {
+		Return  isCanceled ;
+	}
