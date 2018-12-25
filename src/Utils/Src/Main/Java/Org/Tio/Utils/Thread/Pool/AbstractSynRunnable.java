@@ -16,3 +16,4 @@ Import  org.slf4j.LoggerFactory ;
 Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 
 	/** The log. */
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( AbstractSynRunnable . class );
