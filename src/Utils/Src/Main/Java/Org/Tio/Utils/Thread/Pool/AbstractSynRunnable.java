@@ -54,3 +54,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 		Lock  writeLock  =  runningLock . writeLock ();
 		Boolean  trylock  =  writeLock . tryLock ();
 		If  (! trylock )  {
+			Return ;
+		}
