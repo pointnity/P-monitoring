@@ -84,3 +84,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 
 	@Override
 	Public  void  setCanceled ( boolean  isCanceled )  {
+		the this . isCanceled  =  isCanceled ;
+	}
