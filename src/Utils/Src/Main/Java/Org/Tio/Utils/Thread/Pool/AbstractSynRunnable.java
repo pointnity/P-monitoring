@@ -63,3 +63,6 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 			Log . error ( e . toString ( ),  e );
 		}  finally  {
 			writeLock . unlock ();
+			If  ( isNeededExecute ())  {
+				getExecutor (). execute ( this );
+			}
