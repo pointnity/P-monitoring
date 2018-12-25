@@ -59,3 +59,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 
 		Try  {
 			runTask ();
+		}  catch  ( Throwable  e )  {
+			Log . error ( e . toString ( ),  e );
