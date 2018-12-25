@@ -61,3 +61,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 			runTask ();
 		}  catch  ( Throwable  e )  {
 			Log . error ( e . toString ( ),  e );
+		}  finally  {
+			writeLock . unlock ();
