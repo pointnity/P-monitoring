@@ -21,3 +21,5 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	Private  ReadWriteLock  runningLock  =  new  ReentrantReadWriteLock ();
 
 	Private  Executor  executor ;
+
+	Private  boolean  isCanceled  =  false ;
