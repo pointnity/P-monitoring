@@ -29,3 +29,6 @@ Public  abstract  class  AbstractSynRunnable  implements  ISynRunnable  {
 	 */
 	Protected  AbstractSynRunnable ( Executor  executor )  {
 		This . setExecutor ( executor );
+	}
+
+	/**
