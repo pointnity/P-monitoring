@@ -19,3 +19,5 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	Private  static  Map < String ,  AtomicInteger >  mapOfNameAndAtomicInteger  =  new  HashMap <>();
 
 	Public  static  DefaultThreadFactory  getInstance ( String  threadName )  {
+		Return  getInstance ( threadName ,  Thread . NORM_PRIORITY );
+	}
