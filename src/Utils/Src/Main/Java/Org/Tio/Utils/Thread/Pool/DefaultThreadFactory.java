@@ -53,3 +53,6 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	/**
 	 * Instantiates a new default thread factory.
 	 */
+	Private  DefaultThreadFactory ()  {
+
+	}
