@@ -11,3 +11,5 @@ Import  java.util.concurrent.atomic.AtomicInteger ;
  *  
  */
 Public  class  DefaultThreadFactory  implements  ThreadFactory  {
+
+	/** The cacheMap of name and thread factory. */
