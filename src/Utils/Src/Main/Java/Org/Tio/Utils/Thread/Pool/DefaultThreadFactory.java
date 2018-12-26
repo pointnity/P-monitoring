@@ -89,3 +89,5 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	 * @param threadName the new thread name
 	 */
 	Public  void  setThreadName ( String  threadName )  {
+		the this . threadPoolName  =  threadName ;
+	}
