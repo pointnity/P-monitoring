@@ -31,3 +31,4 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	 */
 	Public  static  DefaultThreadFactory  getInstance ( String  threadName ,  Integer  priority )  {
 		DefaultThreadFactory  defaultThreadFactory  =  mapOfNameAndThreadFactory . get ( threadName );
+		If  ( defaultThreadFactory  ==  null )  {
