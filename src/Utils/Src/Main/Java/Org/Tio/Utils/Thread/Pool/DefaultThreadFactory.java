@@ -78,3 +78,5 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	@Override
 	Public  Thread  newThread ( Runnable  r )  {
 		Thread  thread  =  new  Thread ( r );
+		Thread . setName ( this . getThreadPoolName ( )  +  "-"  +  mapOfNameAndAtomicInteger . get ( this . getThreadPoolName ()). incrementAndGet ());
+		Thread . setPriority ( priority );
