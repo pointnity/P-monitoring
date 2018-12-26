@@ -38,3 +38,4 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 			}
 
 			defaultThreadFactory . setThreadName ( threadName );
+			mapOfNameAndThreadFactory . put ( threadName ,  defaultThreadFactory );
