@@ -16,3 +16,4 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	Private  static  Map < String ,  DefaultThreadFactory >  mapOfNameAndThreadFactory  =  new  HashMap <>();
 
 	/** The cacheMap of name and atomic integer. */
+	Private  static  Map < String ,  AtomicInteger >  mapOfNameAndAtomicInteger  =  new  HashMap <>();
