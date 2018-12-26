@@ -56,3 +56,8 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	Private  DefaultThreadFactory ()  {
 
 	}
+
+	/**
+	 * Gets the thread pool name.
+	 *
+	 * @return the thread pool name
