@@ -51,3 +51,5 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	Private  int  priority  =  Thread . NORM_PRIORITY ;
 
 	/**
+	 * Instantiates a new default thread factory.
+	 */
