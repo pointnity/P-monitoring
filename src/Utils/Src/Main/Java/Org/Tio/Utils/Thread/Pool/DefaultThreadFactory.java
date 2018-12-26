@@ -10,3 +10,4 @@ Import  java.util.concurrent.atomic.AtomicInteger ;
  * @author tanyaowu
  *  
  */
+Public  class  DefaultThreadFactory  implements  ThreadFactory  {
