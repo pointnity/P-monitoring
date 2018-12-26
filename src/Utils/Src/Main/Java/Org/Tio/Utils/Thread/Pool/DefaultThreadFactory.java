@@ -76,3 +76,5 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	 *
 	 */
 	@Override
+	Public  Thread  newThread ( Runnable  r )  {
+		Thread  thread  =  new  Thread ( r );
