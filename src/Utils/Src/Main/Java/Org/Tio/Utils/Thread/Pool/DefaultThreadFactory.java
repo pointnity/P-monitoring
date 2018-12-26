@@ -61,3 +61,6 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	 * Gets the thread pool name.
 	 *
 	 * @return the thread pool name
+	 */
+	Public  String  getThreadPoolName ()  {
+		Return  threadPoolName ;
