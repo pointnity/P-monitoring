@@ -35,3 +35,6 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 			defaultThreadFactory  =  new  DefaultThreadFactory ();
 			If  ( priority  !=  null )  {
 				defaultThreadFactory . priority  =  priority ;
+			}
+
+			defaultThreadFactory . setThreadName ( threadName );
