@@ -48,3 +48,4 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	Private  String  threadPoolName  =  null ;
 
 	/** The priority. */
+	Private  int  priority  =  Thread . NORM_PRIORITY ;
