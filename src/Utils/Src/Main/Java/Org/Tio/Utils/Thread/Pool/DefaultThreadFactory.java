@@ -64,8 +64,6 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	 */
 	Public  String  getThreadPoolName ()  {
 		Return  threadPoolName ;
-	 */
-	Public  String  getThreadPoolName ()  {
-		Return  threadPoolName ;
-	 * @see java.util.concurrent.ThreadFactory#newThread(java.lang.Runnable)
-	 *
+	}
+
+	/**
