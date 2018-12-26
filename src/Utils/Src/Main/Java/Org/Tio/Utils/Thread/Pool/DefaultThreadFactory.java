@@ -26,3 +26,4 @@ Public  class  DefaultThreadFactory  implements  ThreadFactory  {
 	 * Gets the single INSTANCE of DefaultThreadFactory.
 	 *
 	 * @param threadName the thread name
+	 * @param priority the priority
