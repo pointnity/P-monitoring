@@ -29,3 +29,6 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 * @param name
 	 * @author tanyaowu
 	 */
+	Public  SynThreadPoolExecutor ( int  corePoolSize ,  int  maximumPoolSize ,  long  keepAliveTime ,  BlockingQueue < Runnable >  runnableQueue ,  ThreadFactory  threadFactory ,  String  name )  {
+		Super ( corePoolSize ,  maximumPoolSize ,  keepAliveTime ,  TimeUnit . SECONDS ,  runnableQueue ,  threadFactory );
+		the this . name  =  name ;
