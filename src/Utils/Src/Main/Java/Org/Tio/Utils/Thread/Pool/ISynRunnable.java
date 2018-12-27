@@ -9,3 +9,5 @@ Import  java.util.concurrent.locks.ReadWriteLock ;
  */
 Public  interface  ISynRunnable  extends  Runnable  {
 	/**
+	 * Has the task been cancelled?
+	 * @return
