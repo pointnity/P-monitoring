@@ -38,3 +38,4 @@ Public  interface  ISynRunnable  extends  Runnable  {
 
 	/**
 	 * Set whether the task is cancelled
+	 * @param isCanceled
