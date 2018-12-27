@@ -24,3 +24,6 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 * @param corePoolSize
 	 * @param maximumPoolSize
 	 * @param keepAliveTime Unit: second
+	 * @param runnableQueue
+	 * @param threadFactory
+	 * @param name
