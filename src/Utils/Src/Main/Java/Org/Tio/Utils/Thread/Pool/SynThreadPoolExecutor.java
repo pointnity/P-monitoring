@@ -81,3 +81,4 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 *
 	 * @param name the new name
 	 */
+	Public  void  setName ( String  name )  {
