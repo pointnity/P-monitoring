@@ -34,3 +34,4 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	 * 
 	 * @author: tanyaowu
 	 */
+	Public  void  runTask ();
