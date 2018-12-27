@@ -44,3 +44,5 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 		If  ( runnable  instanceof  ISynRunnable )  {
 			ISynRunnable  synRunnableIntf  =  ( ISynRunnable )  runnable ;
 			ReadWriteLock  runningLock  =  synRunnableIntf . runningLock ();
+			Lock  writeLock  =  runningLock . writeLock ();
+			Boolean  tryLock  =  false ;
