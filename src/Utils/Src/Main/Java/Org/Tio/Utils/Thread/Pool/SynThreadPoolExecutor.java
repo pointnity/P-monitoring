@@ -86,3 +86,5 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	}
 
 	@Override
+	Public  < R >  Future < R >  submit ( Runnable  runnable ,  R  result )  {
+		If  ( checkBeforeExecute ( runnable ))  {
