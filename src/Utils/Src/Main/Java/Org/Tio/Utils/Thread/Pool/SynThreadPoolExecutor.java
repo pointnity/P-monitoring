@@ -40,3 +40,5 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 * @return
 	 * @author tanyaowu
 	 */
+	Private  boolean  checkBeforeExecute ( Runnable  runnable )  {
+		If  ( runnable  instanceof  ISynRunnable )  {
