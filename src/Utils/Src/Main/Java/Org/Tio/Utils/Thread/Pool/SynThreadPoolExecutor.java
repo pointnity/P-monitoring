@@ -18,3 +18,9 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 
 	/** The name. */
 	Private  String  name  =  null ;
+
+	/**
+	 *
+	 * @param corePoolSize
+	 * @param maximumPoolSize
+	 * @param keepAliveTime Unit: second
