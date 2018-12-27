@@ -11,3 +11,5 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	/**
 	 * Has the task been cancelled?
 	 * @return
+	 * @author: tanyaowu
+	 */
