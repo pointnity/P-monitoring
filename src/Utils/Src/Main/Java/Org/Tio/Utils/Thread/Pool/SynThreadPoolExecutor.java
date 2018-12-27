@@ -52,3 +52,6 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 			}  finally  {
 				If  ( tryLock )  {
 					writeLock . unlock ();
+				}
+			}
+		}  else  {
