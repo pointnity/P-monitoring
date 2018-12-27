@@ -17,3 +17,4 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	// private static Logger log = LoggerFactory.getLogger(SynThreadPoolExecutor.class);
 
 	/** The name. */
+	Private  String  name  =  null ;
