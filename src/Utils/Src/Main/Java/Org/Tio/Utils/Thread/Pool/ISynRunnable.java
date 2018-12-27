@@ -25,3 +25,5 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	/**
 	 * Run lock
 	 * @return
+	 * @author: tanyaowu
+	 */
