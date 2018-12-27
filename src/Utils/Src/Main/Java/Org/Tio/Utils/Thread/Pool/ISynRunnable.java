@@ -18,3 +18,5 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	/**
 	 * Is it still necessary to perform?
 	 * @return
+	 * @author: tanyaowu
+	 */
