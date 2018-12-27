@@ -42,3 +42,5 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 */
 	Private  boolean  checkBeforeExecute ( Runnable  runnable )  {
 		If  ( runnable  instanceof  ISynRunnable )  {
+			ISynRunnable  synRunnableIntf  =  ( ISynRunnable )  runnable ;
+			ReadWriteLock  runningLock  =  synRunnableIntf . runningLock ();
