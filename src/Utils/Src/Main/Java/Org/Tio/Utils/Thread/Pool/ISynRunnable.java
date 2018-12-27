@@ -16,3 +16,5 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	Public  boolean  isCanceled ();
 
 	/**
+	 * Is it still necessary to perform?
+	 * @return
