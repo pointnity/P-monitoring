@@ -30,3 +30,5 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	Public  ReadWriteLock  runningLock ();
 
 	/**
+	 * Perform tasks
+	 * 
