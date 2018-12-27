@@ -74,3 +74,6 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 */
 	Public  String  getName ()  {
 		Return  name ;
+	}
+
+	/**
