@@ -77,3 +77,7 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	}
 
 	/**
+	 * Sets the name.
+	 *
+	 * @param name the new name
+	 */
