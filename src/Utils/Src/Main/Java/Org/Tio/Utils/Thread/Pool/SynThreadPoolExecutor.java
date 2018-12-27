@@ -90,3 +90,6 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 		If  ( checkBeforeExecute ( runnable ))  {
 			Future < R >  ret  =  super . submit ( runnable ,  result );
 			Return  ret ;
+		}  else  {
+			Return  null ;
+		}
