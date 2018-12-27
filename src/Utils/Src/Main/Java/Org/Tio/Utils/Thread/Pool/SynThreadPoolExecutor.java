@@ -46,3 +46,4 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 			ReadWriteLock  runningLock  =  synRunnableIntf . runningLock ();
 			Lock  writeLock  =  runningLock . writeLock ();
 			Boolean  tryLock  =  false ;
+			Try  {
