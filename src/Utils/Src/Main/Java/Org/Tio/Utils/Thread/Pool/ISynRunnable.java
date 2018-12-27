@@ -23,3 +23,5 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	Public  boolean  isNeededExecute ();
 
 	/**
+	 * Run lock
+	 * @return
