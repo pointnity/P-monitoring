@@ -27,3 +27,5 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 * @param runnableQueue
 	 * @param threadFactory
 	 * @param name
+	 * @author tanyaowu
+	 */
