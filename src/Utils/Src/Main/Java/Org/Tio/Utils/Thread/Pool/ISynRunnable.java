@@ -33,3 +33,4 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	 * Perform tasks
 	 * 
 	 * @author: tanyaowu
+	 */
