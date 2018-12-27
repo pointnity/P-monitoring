@@ -64,3 +64,7 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	Public  void  execute ( Runnable  runnable )  {
 		If  ( checkBeforeExecute ( runnable ))  {
 			Super . execute ( runnable );
+		}
+	}
+
+	/**
