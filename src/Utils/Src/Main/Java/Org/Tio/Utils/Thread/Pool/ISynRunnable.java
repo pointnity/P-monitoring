@@ -41,3 +41,5 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	 * @param isCanceled
 	 * @author: tanyaowu
 	 */
+	Public  void  setCanceled ( boolean  isCanceled );
+}
