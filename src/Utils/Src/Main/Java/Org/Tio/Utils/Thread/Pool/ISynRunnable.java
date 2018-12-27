@@ -20,3 +20,6 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	 * @return
 	 * @author: tanyaowu
 	 */
+	Public  boolean  isNeededExecute ();
+
+	/**
