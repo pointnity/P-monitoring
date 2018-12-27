@@ -83,3 +83,6 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 */
 	Public  void  setName ( String  name )  {
 		the this . name  =  name ;
+	}
+
+	@Override
