@@ -37,3 +37,4 @@ Public  interface  ISynRunnable  extends  Runnable  {
 	Public  void  runTask ();
 
 	/**
+	 * Set whether the task is cancelled
