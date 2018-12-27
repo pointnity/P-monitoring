@@ -38,3 +38,5 @@ Public  class  SynThreadPoolExecutor  extends  ThreadPoolExecutor  {
 	 *
 	 * @param runnable
 	 * @return
+	 * @author tanyaowu
+	 */
