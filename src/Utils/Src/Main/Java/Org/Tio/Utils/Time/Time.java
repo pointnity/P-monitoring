@@ -5,3 +5,6 @@ Package  org . tio . utils . time ;
  *  
  */
 Public  class  Time  {
+
+	/**
+	 * one second
