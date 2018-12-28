@@ -36,3 +36,4 @@ Public  class  Time  {
 	 *
 	 * @author tanyaowu
 	 */
+	public  Time ()  {
