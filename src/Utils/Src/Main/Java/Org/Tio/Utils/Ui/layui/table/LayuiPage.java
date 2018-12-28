@@ -16,3 +16,5 @@ Public  class  LayuiPage  {
 	Public  static  LayuiPage  fail ()  {
 		Return  new  LayuiPage ( 2 );
 	}
+
+	/**
