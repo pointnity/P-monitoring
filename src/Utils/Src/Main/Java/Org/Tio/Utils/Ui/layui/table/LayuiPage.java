@@ -83,3 +83,5 @@ Public  class  LayuiPage  {
 
 	Public  void  setMsg ( String  msg )  {
 		the this . MSG  =  MSG ;
+	}
+}
