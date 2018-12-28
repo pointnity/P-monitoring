@@ -12,3 +12,5 @@ Public  class  Time  {
 	Public  static  final  Long  SECOND_1  =  1L ;
 
 	/**
+	 * One minute
+	 */
