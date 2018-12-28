@@ -10,3 +10,4 @@ Import  org.slf4j.LoggerFactory ;
  * 
  */
 Public  class  LayuiPage  {
+	@SuppressWarnings ( "unused" )
