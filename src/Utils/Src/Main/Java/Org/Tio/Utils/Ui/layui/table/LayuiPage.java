@@ -14,3 +14,5 @@ Public  class  LayuiPage  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( LayuiPage . class );
 
 	Public  static  LayuiPage  fail ()  {
+		Return  new  LayuiPage ( 2 );
+	}
