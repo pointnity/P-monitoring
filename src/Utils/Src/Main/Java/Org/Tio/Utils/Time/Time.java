@@ -16,3 +16,5 @@ Public  class  Time  {
 	 */
 	Public  static  final  Long  MINUTE_1  =  SECOND_1  *  60L ;
 	/**
+	 * One hour
+	 */
