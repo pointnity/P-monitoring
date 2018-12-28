@@ -78,3 +78,5 @@ Public  class  LayuiPage  {
 	}
 
 	Public  void  setData ( Collection < Object >  data )  {
+		the this . Data  =  Data ;
+	}
