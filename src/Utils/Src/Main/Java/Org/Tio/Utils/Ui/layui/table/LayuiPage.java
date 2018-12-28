@@ -56,3 +56,6 @@ Public  class  LayuiPage  {
 	Public  int  getCode ()  {
 		Return  code ;
 	}
+
+	Public  long  getCount ()  {
+		Return  count ;
