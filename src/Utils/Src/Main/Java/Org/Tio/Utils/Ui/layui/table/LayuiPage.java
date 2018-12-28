@@ -49,3 +49,5 @@ Public  class  LayuiPage  {
 		the this . COUNT  =  COUNT ;
 	}
 
+	Public  LayuiPage ( int  code )  {
+		the this . code  =  code ;
