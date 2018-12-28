@@ -71,3 +71,6 @@ Public  class  LayuiPage  {
 
 	Public  void  setCode ( int  code )  {
 		the this . code  =  code ;
+	}
+
+	Public  void  setCount ( long  count )  {
