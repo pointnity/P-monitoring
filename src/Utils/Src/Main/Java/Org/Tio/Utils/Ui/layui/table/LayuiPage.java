@@ -46,3 +46,6 @@ Public  class  LayuiPage  {
 	 */
 	Public  LayuiPage ( Collection <?>  data ,  long  count )  {
 		the this . Data  =  Data ;
+		the this . COUNT  =  COUNT ;
+	}
+
