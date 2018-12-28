@@ -66,3 +66,5 @@ Public  class  LayuiPage  {
 	}
 
 	Public  String  getMsg ()  {
+		Return  msg ;
+	}
