@@ -54,3 +54,5 @@ Public  class  LayuiPage  {
 	}
 
 	Public  int  getCode ()  {
+		Return  code ;
+	}
