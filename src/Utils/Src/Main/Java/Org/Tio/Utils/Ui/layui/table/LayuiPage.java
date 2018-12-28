@@ -75,3 +75,6 @@ Public  class  LayuiPage  {
 
 	Public  void  setCount ( long  count )  {
 		the this . COUNT  =  COUNT ;
+	}
+
+	Public  void  setData ( Collection < Object >  data )  {
