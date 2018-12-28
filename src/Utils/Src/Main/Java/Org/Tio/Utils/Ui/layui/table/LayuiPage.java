@@ -21,3 +21,6 @@ Public  class  LayuiPage  {
 	 * @param args
 	 * @author: tanyaowu
 	 */
+	Public  static  void  main ( String []  args )  {
+
+	}
