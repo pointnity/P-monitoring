@@ -51,3 +51,6 @@ Public  class  LayuiPage  {
 
 	Public  LayuiPage ( int  code )  {
 		the this . code  =  code ;
+	}
+
+	Public  int  getCode ()  {
