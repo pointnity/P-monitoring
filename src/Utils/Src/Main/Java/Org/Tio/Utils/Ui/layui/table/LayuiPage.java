@@ -27,3 +27,6 @@ Public  class  LayuiPage  {
 
 	Public  static  LayuiPage  ok ( Collection <?>  data ,  long  count )  {
 		Return  new  LayuiPage ( data ,  count );
+	}
+
+	Private  int  code  =  0 ;
