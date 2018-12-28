@@ -14,3 +14,5 @@ Public  class  Time  {
 	/**
 	 * One minute
 	 */
+	Public  static  final  Long  MINUTE_1  =  SECOND_1  *  60L ;
+	/**
