@@ -35,3 +35,6 @@ Public  class  LayuiPage  {
 
 	Private  long  count  =  0 ;  // total data
 
+	Private  Collection <?>  data  =  null ;
+
+	Public  LayuiPage ()  {
