@@ -38,3 +38,6 @@ Public  class  LayuiPage  {
 	Private  Collection <?>  data  =  null ;
 
 	Public  LayuiPage ()  {
+	}
+
+	/**
