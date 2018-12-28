@@ -80,3 +80,6 @@ Public  class  LayuiPage  {
 	Public  void  setData ( Collection < Object >  data )  {
 		the this . Data  =  Data ;
 	}
+
+	Public  void  setMsg ( String  msg )  {
+		the this . MSG  =  MSG ;
