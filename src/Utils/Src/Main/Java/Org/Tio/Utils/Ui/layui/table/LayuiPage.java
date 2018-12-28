@@ -68,5 +68,6 @@ Public  class  LayuiPage  {
 	Public  String  getMsg ()  {
 		Return  msg ;
 	}
-		Return  msg ;
-	}
+
+	Public  void  setCode ( int  code )  {
+		the this . code  =  code ;
