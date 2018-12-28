@@ -22,3 +22,6 @@ Public  class  Time  {
 	/**
 	 * one day
 	 */
+	Public  static  final  Long  DAY_1  =  HOUR_1  *  24 ;
+
+	/**
