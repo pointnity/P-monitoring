@@ -18,3 +18,6 @@ Public  class  LayuiPage  {
 	}
 
 	/**
+	 * @param args
+	 * @author: tanyaowu
+	 */
