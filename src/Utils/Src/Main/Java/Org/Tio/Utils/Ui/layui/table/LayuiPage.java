@@ -32,3 +32,6 @@ Public  class  LayuiPage  {
 	Private  int  code  =  0 ;
 
 	Private  String  msg  =  null ;
+
+	Private  long  count  =  0 ;  // total data
+
