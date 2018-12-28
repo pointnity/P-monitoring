@@ -63,3 +63,6 @@ Public  class  LayuiPage  {
 
 	Public  Collection <?>  getData ()  {
 		Return  data ;
+	}
+
+	Public  String  getMsg ()  {
