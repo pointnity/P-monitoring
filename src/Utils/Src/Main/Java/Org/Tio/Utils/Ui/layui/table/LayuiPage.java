@@ -59,3 +59,7 @@ Public  class  LayuiPage  {
 
 	Public  long  getCount ()  {
 		Return  count ;
+	}
+
+	Public  Collection <?>  getData ()  {
+		Return  data ;
