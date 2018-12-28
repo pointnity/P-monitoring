@@ -25,3 +25,4 @@ Public  class  Time  {
 	Public  static  final  Long  DAY_1  =  HOUR_1  *  24 ;
 
 	/**
+	 * @param args
