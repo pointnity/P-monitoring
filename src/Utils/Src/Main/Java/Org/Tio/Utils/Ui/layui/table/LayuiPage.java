@@ -24,3 +24,6 @@ Public  class  LayuiPage  {
 	Public  static  void  main ( String []  args )  {
 
 	}
+
+	Public  static  LayuiPage  ok ( Collection <?>  data ,  long  count )  {
+		Return  new  LayuiPage ( data ,  count );
