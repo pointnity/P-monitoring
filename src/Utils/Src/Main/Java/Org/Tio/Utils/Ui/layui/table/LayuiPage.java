@@ -30,3 +30,5 @@ Public  class  LayuiPage  {
 	}
 
 	Private  int  code  =  0 ;
+
+	Private  String  msg  =  null ;
