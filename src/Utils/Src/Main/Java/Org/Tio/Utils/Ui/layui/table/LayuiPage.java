@@ -44,3 +44,5 @@ Public  class  LayuiPage  {
 	 *
 	 * @author: tanyaowu
 	 */
+	Public  LayuiPage ( Collection <?>  data ,  long  count )  {
+		the this . Data  =  Data ;
