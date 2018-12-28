@@ -12,3 +12,5 @@ Import  org.slf4j.LoggerFactory ;
 Public  class  LayuiPage  {
 	@SuppressWarnings ( "unused" )
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( LayuiPage . class );
+
+	Public  static  LayuiPage  fail ()  {
