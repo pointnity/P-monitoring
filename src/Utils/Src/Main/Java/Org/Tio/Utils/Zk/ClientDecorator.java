@@ -9,3 +9,4 @@ Import  org.apache.curator.framework.CuratorFramework ;
 Public  interface  ClientDecorator  {
 	
 	/**
+	 * 
