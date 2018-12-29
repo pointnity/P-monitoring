@@ -131,3 +131,31 @@ Public  class  Zk  {
 		If  ( b  !=  null )  {
 			System . out . println ( new  String ( b ,  CHARSET ));
 		}
+
+		Zk . createOrUpdate ( path  +  "/children" ,  "children-data" ,  CreateMode . EPHEMERAL );
+		List < String >  children  =  Zk . getChildren ( path );
+		System . out . println ( "children:"  +  Json . toJson ( children ));
+
+		Zk . delete ( path );
+	}
+
+	/**
+	 * 
+	 * @param path
+	 * @param content
+	 * @param createMode
+	 * @return
+	 * @throws Exception
+	 * @author: tanyaowu
+	 *  
+	 */
+	Public  static  String  createOrUpdate ( String  path ,  String  content ,  CreateMode  createMode )  throws  Exception  {
+		If  ( content  !=  null )  {
+			Return  createOrUpdate ( path ,  content . getBytes ( CHARSET ),  createMode );
+		}
+		Return  createOrUpdate ( path ,  ( byte [])  null ,  createMode );
+
+	}
+
+	/**
+	 * 
