@@ -364,3 +364,10 @@ Public  class  Zk  {
 		// }
 		//
 		// }
+		// };
+		// //Register listener 
+		Cache . getListenable (). addListener ( pathChildrenCacheListener );
+
+	}
+
+}
