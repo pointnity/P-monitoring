@@ -313,3 +313,18 @@ Public  class  Zk  {
 // * @author: tanyaowu
 // * 
 // *
+// */
+@Deprecated
+// public static void addListener(String path, String content) throws Exception {
+//
+// zkclient.get.getCuratorListenable().addListener(listener);
+// // zkclient.getCuratorListenable().addListener(listener);;
+//
+// }
+
+	/**
+	 * 
+	 * @param path
+	 * @param pathChildrenCacheListener
+	 * @throws Exception
+	 * @author: tanyaowu
