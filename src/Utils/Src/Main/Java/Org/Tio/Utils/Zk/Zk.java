@@ -24,3 +24,7 @@ Import  com.xiaoleilu.hutool.io.FileUtil ;
  * @author tanyaowu 
  * 
  */
+Public  class  Zk  {
+	Private  static  Logger  log  =  LoggerFactory . getLogger ( Zk . class );
+
+	/**
