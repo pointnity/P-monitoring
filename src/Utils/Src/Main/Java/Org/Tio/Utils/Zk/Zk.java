@@ -298,3 +298,18 @@ Public  class  Zk  {
 	 * @author: tanyaowu
 	 * 
 	 */
+	Public  static  void  setData ( String  path ,  String  content )  throws  Exception  {
+		If  (! StringUtils . isBlank ( content ))  {
+			setData ( path ,  content . getBytes ( CHARSET ));
+		}
+	}
+
+// /**
+// * Not yet implemented
+// * @param path
+// * @param content
+// * @throws Exception
+// *
+// * @author: tanyaowu
+// * 
+// *
