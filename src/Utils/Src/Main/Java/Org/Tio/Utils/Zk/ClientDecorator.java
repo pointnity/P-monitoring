@@ -11,3 +11,4 @@ Public  interface  ClientDecorator  {
 	/**
 	 * 
 	 * @param zclient
+	 * @author tanyaowu
