@@ -6,3 +6,4 @@ Import  org.apache.curator.framework.CuratorFramework ;
  * @author tanyaowu 
  *  
  */
+Public  interface  ClientDecorator  {
