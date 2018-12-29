@@ -181,3 +181,28 @@ Public  class  Zk  {
 
 		Return  str ;
 	}
+
+	Public  static  void  createContainers ( String  path )  throws  Exception  {
+		Zkclient . createContainers ( path );
+	}
+
+	/**
+	 * 
+	 * @param path
+	 * @throws Exception
+	 * @author: tanyaowu
+	 * 
+	 */
+	Public  static  void  delete ( String  path )  throws  Exception  {
+		Zkclient . delete (). guaranteed (). deletingChildrenIfNeeded (). forPath ( path );
+		Log . info ( "{} deleted" ,  path );
+	}
+
+	/**
+	 * 
+	 * @param path
+	 * @return
+	 * @throws Exception
+	 * @author: tanyaowu
+	 * 
+	 */
