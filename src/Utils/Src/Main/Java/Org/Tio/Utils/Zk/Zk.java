@@ -35,3 +35,7 @@ Public  class  Zk  {
 	}
 
 	Private  static  final  String  CHARSET  =  "utf-8" ;
+
+	Public  static  CuratorFramework  zkclient  =  null ;
+	// static String nameSpace = "php";
+	// static {
