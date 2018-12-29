@@ -206,3 +206,20 @@ Public  class  Zk  {
 	 * @author: tanyaowu
 	 * 
 	 */
+	Public  static  boolean  exists ( String  path )  throws  Exception  {
+		Stat  stat  =  zkclient . checkExists (). forPath ( path );
+		If  ( stat  ==  null )  {
+			Return  false ;
+		}  else  {
+			Return  true ;
+		}
+	}
+
+	/**
+	 * 
+	 * @param path
+	 * @return
+	 * @throws Exception
+	 * @author: tanyaowu
+	 *  
+	 */
