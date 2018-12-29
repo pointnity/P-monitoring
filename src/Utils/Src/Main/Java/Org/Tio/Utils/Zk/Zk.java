@@ -105,3 +105,29 @@ Public  class  Zk  {
 			Public  void  childEvent ( CuratorFramework  client ,  PathChildrenCacheEvent  event )  throws  Exception  {
 				Switch  ( event . getType ())  {
 				Case  CHILD_ADDED:  {
+					Log . error ( "Node added: path:"  +  event . getData (). getPath ()  +  ", data:"  +  new  String ( event . getData (). getData ()));
+					Break ;
+				}
+
+				Case  CHILD_UPDATED:  {
+					Log . error ( "Node changed: path:"  +  event . getData (). getPath ()  +  ", data:"  +  new  String ( event . getData (). getData ()));
+					Break ;
+				}
+
+				Case  CHILD_REMOVED:  {
+					Log . error ( "Node removed: path:"  +  event . getData (). getPath ()  +  ", data:"  +  new  String ( event . getData (). getData ()));
+					Break ;
+				}
+				
+				Default :{
+					Log . error ( "not found correct event type" );
+					Break ;
+				}
+				}
+			}
+		});
+
+		Byte []  b  =  Zk . getBytes ( path );
+		If  ( b  !=  null )  {
+			System . out . println ( new  String ( b ,  CHARSET ));
+		}
