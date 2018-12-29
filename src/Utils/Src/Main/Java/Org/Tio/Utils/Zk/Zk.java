@@ -249,3 +249,24 @@ Public  class  Zk  {
 	}
 
 	/**
+	 * 
+	 * @param path
+	 * @return
+	 * @throws Exception
+	 * @author: tanyaowu
+	 * 
+	 */
+	Public  static  List < String >  getChildren ( String  path )  throws  Exception  {
+		List < String >  paths  =  zkclient . getChildren (). forPath ( path );
+		Return  paths ;
+	}
+
+	/**
+	 * 
+	 * @param path
+	 * @param localpath
+	 * @param createMode
+	 * @throws Exception
+	 * @author: tanyaowu
+	 * 
+	 */
