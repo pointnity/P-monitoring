@@ -59,3 +59,22 @@ Public  class  Zk  {
 
 	/**
 	 * 
+	 * @param address
+	 * @param clientDecorator
+	 * @author tanyaowu
+	 */
+	Public  static  void  init ( String  address ,  ClientDecorator  clientDecorator )  {
+		// String zkhost = "192.168.1.41:2181";//AppConfig.getInstance().getString("zk.address", null);//"192.168.1.41:2181";//ZK host
+		// zkhost = AppConfig.getInstance().getString("zk.address", null);
+
+		If  ( StringUtils . isBlank ( address ))  {
+			Log . error ( "zk address is null" );
+			Throw  new  RuntimeException ( "zk address is null" );
+		}
+
+		RetryPolicy  rp  =  new  ExponentialBackoffRetry ( 500 ,  Integer . MAX_VALUE ); //Retry mechanism
+		Builder  builder  =  CuratorFrameworkFactory . builder (). connectString ( address ). connectionTimeoutMs ( 5000 ). sessionTimeoutMs ( 5000 ). retryPolicy ( rp );
+		// builder.namespace(nameSpace);
+		Zkclient  =  builder . build ();
+		
+		If  ( clientDecorator  !=  null )  {
