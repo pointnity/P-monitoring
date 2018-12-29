@@ -236,3 +236,16 @@ Public  class  Zk  {
 	 * @author: tanyaowu
 	 * 
 	 */
+	Public  static  String  getString ( String  path ,  String  charset )  throws  Exception  {
+		Byte []  bs  =  getBytes ( path );
+		If  ( bs  !=  null  &&  bs . length  >  0 )  {
+			Return  new  String ( bs ,  charset );
+		}
+		Return  null ;
+	}
+
+	Public  static  String  getString ( String  path )  throws  Exception  {
+		Return  getString ( path ,  "utf-8" );
+	}
+
+	/**
