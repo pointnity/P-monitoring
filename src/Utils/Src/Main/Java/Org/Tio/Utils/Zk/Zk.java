@@ -165,7 +165,7 @@ Public  class  Zk  {
 	 * @return
 	 * @throws Exception
 	 * @author: tanyaowu
-	 * @Created on: August 3, 2013 at 11:06:54 AM
+	 * 
 	 */
 	Public  static  String  createOrUpdate ( String  path ,  byte []  content ,  CreateMode  createMode )  throws  Exception  {
 		If  (! createMode . isSequential ())  {
@@ -266,6 +266,20 @@ Public  class  Zk  {
 	 * @param path
 	 * @param localpath
 	 * @param createMode
+	 * @throws Exception
+	 * @author: tanyaowu
+	 * 
+	 */
+	 */
+	Public  static  void  upload ( String  path ,  String  localpath ,  CreateMode  createMode )  throws  Exception  {
+		Byte []  bs  =  FileUtil . readBytes ( new  File ( localpath ));
+		setData ( path ,  bs );
+	}
+
+	/**
+	 * 
+	 * @param path
+	 * @param bs
 	 * @throws Exception
 	 * @author: tanyaowu
 	 * 
