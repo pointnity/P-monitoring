@@ -223,3 +223,16 @@ Public  class  Zk  {
 	 * @author: tanyaowu
 	 *  
 	 */
+	Public  static  byte []  getBytes ( String  path )  throws  Exception  {
+		Return  zkclient . getData (). forPath ( path );
+	}
+
+	/**
+	 * 
+	 * @param path
+	 * @param charset
+	 * @return
+	 * @throws Exception
+	 * @author: tanyaowu
+	 * 
+	 */
