@@ -33,3 +33,5 @@ Public  class  Zk  {
 	 */
 	Public  Zk ()  {
 	}
+
+	Private  static  final  String  CHARSET  =  "utf-8" ;
