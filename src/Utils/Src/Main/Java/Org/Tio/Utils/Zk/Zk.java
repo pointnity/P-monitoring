@@ -39,3 +39,6 @@ Public  class  Zk  {
 	Public  static  CuratorFramework  zkclient  =  null ;
 	// static String nameSpace = "php";
 	// static {
+	// String zkhost = "192.168.1.41:2181";//AppConfig.getInstance().getString("zk.address", null);//"192.168.1.41:2181";//ZK host
+	// zkhost = AppConfig.getInstance().getString("zk.address", null);
+	//
