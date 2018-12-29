@@ -328,3 +328,19 @@ Public  class  Zk  {
 	 * @param pathChildrenCacheListener
 	 * @throws Exception
 	 * @author: tanyaowu
+	 *  
+	 */
+	@SuppressWarnings ( "resource" )
+	Public  static  void  addPathChildrenCacheListener ( String  path ,  PathChildrenCacheListener  pathChildrenCacheListener )  throws  Exception  {
+		PathChildrenCache  cache  =  new  PathChildrenCache ( zkclient ,  path ,  true );
+		Cache . start ();
+
+		// System.out.println("Listing starts /zk........");
+		// PathChildrenCacheListener plis = new PathChildrenCacheListener()
+		// {
+		//
+		@Override
+		// public void childEvent(CuratorFramework client, PathChildrenCacheEvent event) throws Exception
+		// {
+		// switch (event.getType())
+		// {
