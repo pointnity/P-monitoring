@@ -10,3 +10,4 @@ Public  interface  ClientDecorator  {
 	
 	/**
 	 * 
+	 * @param zclient
