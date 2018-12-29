@@ -42,3 +42,20 @@ Public  class  Zk  {
 	// String zkhost = "192.168.1.41:2181";//AppConfig.getInstance().getString("zk.address", null);//"192.168.1.41:2181";//ZK host
 	// zkhost = AppConfig.getInstance().getString("zk.address", null);
 	//
+	// if (StringUtils.isBlank(zkhost)) {
+	// log.error("Please configure zookeeper address: {}", "zk.address");
+	//
+	// }
+	//
+	// RetryPolicy rp = new ExponentialBackoffRetry(500, Integer.MAX_VALUE);//Retry mechanism
+	// Builder builder = CuratorFrameworkFactory.builder().connectString(zkhost).connectionTimeoutMs(5000).sessionTimeoutMs(5000).retryPolicy(rp);
+	// // builder.namespace(nameSpace);
+	// CuratorFramework zclient = builder.build();
+	// zkclient = zclient;
+	// zkclient.start();// Implemented in the front
+	// // zkclient.newNamespaceAwareEnsurePath(nameSpace);
+	//
+	// }
+
+	/**
+	 * 
