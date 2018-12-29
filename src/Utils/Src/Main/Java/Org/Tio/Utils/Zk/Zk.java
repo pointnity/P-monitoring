@@ -284,3 +284,17 @@ Public  class  Zk  {
 	 * @author: tanyaowu
 	 * 
 	 */
+	Public  static  void  setData ( String  path ,  byte [ ]  bs )  throws  Exception  {
+		If  ( bs  !=  null )  {
+			Zkclient . setData (). forPath ( path ,  bs );
+		}
+	}
+
+	/**
+	 * 
+	 * @param path
+	 * @param content
+	 * @throws Exception
+	 * @author: tanyaowu
+	 * 
+	 */
