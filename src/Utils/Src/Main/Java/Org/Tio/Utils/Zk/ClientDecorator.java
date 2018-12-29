@@ -14,3 +14,5 @@ Public  interface  ClientDecorator  {
 	 * @author tanyaowu
 	 */
 	Public  void  decorate ( CuratorFramework  zclient );
+
+}
