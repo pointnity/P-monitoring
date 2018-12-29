@@ -159,3 +159,25 @@ Public  class  Zk  {
 
 	/**
 	 * 
+	 * @param path
+	 * @param content
+	 * @param createMode
+	 * @return
+	 * @throws Exception
+	 * @author: tanyaowu
+	 * @Created on: August 3, 2013 at 11:06:54 AM
+	 */
+	Public  static  String  createOrUpdate ( String  path ,  byte []  content ,  CreateMode  createMode )  throws  Exception  {
+		If  (! createMode . isSequential ())  {
+			If  ( exists ( path ))  {
+				Log . info ( "The node already exists: {}" ,  path );
+				If  ( content  !=  null )  {
+					setData ( path ,  content );
+				}
+				Return  path ;
+			}
+		}
+		String  str  =  zkclient . create (). creatingParentsIfNeeded (). withMode ( createMode ). forPath ( path ,  content );
+
+		Return  str ;
+	}
