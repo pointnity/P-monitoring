@@ -78,3 +78,30 @@ Public  class  Zk  {
 		Zkclient  =  builder . build ();
 		
 		If  ( clientDecorator  !=  null )  {
+			clientDecorator . decorate ( zkclient );
+		}
+
+// zkclient.start();
+	}
+	
+	/**
+	 * Start the client. Most mutator methods will not work until the client is started
+	 * @author tanyaowu
+	 */
+	Public  static  void  start ()  {
+		Zk . zkclient . start ();
+	}
+
+	Public  static  void  main ( String []  args )  throws  Exception  {
+		String  path  =  "/192.168.0.0" ;
+		String  s  =  Zk . createOrUpdate ( path ,  ( byte [])  null ,  CreateMode . PERSISTENT );
+		System . out . println ( s );
+		s  =  Zk . createOrUpdate ( path ,  "hello1" ,  CreateMode . EPHEMERAL );
+		System . out . println ( s );
+
+		addPathChildrenCacheListener ( path ,  new  PathChildrenCacheListener ()  {
+
+			@Override
+			Public  void  childEvent ( CuratorFramework  client ,  PathChildrenCacheEvent  event )  throws  Exception  {
+				Switch  ( event . getType ())  {
+				Case  CHILD_ADDED:  {
