@@ -28,3 +28,8 @@ Public  class  Zk  {
 	Private  static  Logger  log  =  LoggerFactory . getLogger ( Zk . class );
 
 	/**
+	 * 
+	 * @author: tanyaowu
+	 */
+	Public  Zk ()  {
+	}
