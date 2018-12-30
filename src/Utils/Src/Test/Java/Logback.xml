@@ -126,3 +126,10 @@
 		<level  value= "info" />
 		<appender-ref  ref= "tio-client-trace-log-appender" />
 	</logger>
+	
+
+
+
+
+
+	<appender  name= "root-file-debug"
