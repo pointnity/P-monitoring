@@ -97,3 +97,10 @@
 		<appender-ref  ref= "root-file-info" />
 		<appender-ref  ref= "root-file-debug" />
 	</root>
+	
+	
+	
+	
+	<!-- Track client behavior -->
+	<appender  name= "tio-client-trace-log-appender"  class= "ch.qos.logback.classic.sift.SiftingAppender" >
+		<discriminator>
