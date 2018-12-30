@@ -253,3 +253,5 @@
 	</appender>
 	<logger  name= "tio-ipblacklistxxxx-trace-log"  additivity= "false" >
 		<level  value= "info" />
+		<appender-ref  ref= "tio-ipblacklistxxxx-trace-log-appender" />
+	</logger>
