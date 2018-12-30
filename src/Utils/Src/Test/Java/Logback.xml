@@ -150,3 +150,10 @@
 			<level> debug </level>   
 			<onMatch> ACCEPT </onMatch>   
 			<onMismatch> DENY </onMismatch>   
+		</filter> 
+	</appender>
+
+
+
+
+	<!-- ip access print -->
