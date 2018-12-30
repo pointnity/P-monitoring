@@ -247,3 +247,7 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 			<maxHistory> ${max.history} </maxHistory>
 		</rollingPolicy>
+		<encoder>
+			<pattern> %m%n </pattern>
+		</encoder>
+	</appender>
