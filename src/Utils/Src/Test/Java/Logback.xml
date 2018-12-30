@@ -191,3 +191,11 @@
 			<pattern> %d%n %m%n </pattern>
 		</encoder>
 	</appender>
+	<logger  name= "tio-chatxxxx-trace-log"  additivity= "false" >
+		<level  value= "info" />
+		<appender-ref  ref= "tio-chatxxxx-trace-log-appender" />
+	</logger>
+	
+	<!-- addressxxxx log printing -->
+	<appender  name= "tio-addressxxxx-trace-log-appender"  class= "ch.qos.logback.core.rolling.RollingFileAppender" >
+		<file> ${log.dir}/addressxxxx.log </file>
