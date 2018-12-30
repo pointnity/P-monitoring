@@ -251,3 +251,5 @@
 			<pattern> %m%n </pattern>
 		</encoder>
 	</appender>
+	<logger  name= "tio-ipblacklistxxxx-trace-log"  additivity= "false" >
+		<level  value= "info" />
